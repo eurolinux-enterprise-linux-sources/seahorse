@@ -1,0 +1,1306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SeahorseMultiOperation</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libseahorse-SeahorseObject.html" title="SeahorseObject">
+<link rel="next" href="libseahorse-SeahorseCommands.html" title="SeahorseCommands">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libseahorse-SeahorseObject.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-SeahorseCommands.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-SeahorseMultiOperation.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-SeahorseMultiOperation.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="SeahorseMultiOperation">
+<a name="libseahorse-SeahorseMultiOperation"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-SeahorseMultiOperation.top_of_page"></a>SeahorseMultiOperation</span></h2>
+<p>SeahorseMultiOperation</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-SeahorseMultiOperation.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>;
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-new-complete"
+>seahorse_operation_new_complete</a>     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> *err);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-new-cancelled"
+>seahorse_operation_new_cancelled</a>    ();
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-cancel"
+>seahorse_operation_cancel</a>           (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-is-running"
+>seahorse_operation_is_running</a>       (operation)
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-is-cancelled"
+>seahorse_operation_is_cancelled</a>     (operation)
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-is-successful"
+>seahorse_operation_is_successful</a>    (operation)
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-copy-error"
+>seahorse_operation_copy_error</a>       (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a>*       <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-get-error"
+>seahorse_operation_get_error</a>        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-display-error"
+>seahorse_operation_display_error</a>    (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWidget.html"
+>GtkWidget</a> *parent);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-wait"
+>seahorse_operation_wait</a>             (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);
+void                (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseDoneFunc"
+>*SeahorseDoneFunc</a>)                 (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *op,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> userdata);
+void                (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseProgressFunc"
+>*SeahorseProgressFunc</a>)             (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *op,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *status,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> progress,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> userdata);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-watch"
+>seahorse_operation_watch</a>            (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseDoneFunc"
+>SeahorseDoneFunc</a> done_callback,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> donedata,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseProgressFunc"
+>SeahorseProgressFunc</a> progress_callback,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> progdata);
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-get-progress"
+>seahorse_operation_get_progress</a>     (op)
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-get-message"
+>seahorse_operation_get_message</a>      (operation)
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-get-result"
+>seahorse_operation_get_result</a>       (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-list-add"
+>seahorse_operation_list_add</a>         (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *list,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-list-remove"
+>seahorse_operation_list_remove</a>      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *list,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-list-cancel"
+>seahorse_operation_list_cancel</a>      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *list);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-list-purge"
+>seahorse_operation_list_purge</a>       (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *list);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-list-free"
+>seahorse_operation_list_free</a>        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *list);
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SEAHORSE-TYPE-MULTI-OPERATION--CAPS"
+>SEAHORSE_TYPE_MULTI_OPERATION</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SEAHORSE-MULTI-OPERATION--CAPS"
+>SEAHORSE_MULTI_OPERATION</a>            (obj)
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SEAHORSE-MULTI-OPERATION-CLASS--CAPS"
+>SEAHORSE_MULTI_OPERATION_CLASS</a>      (klass)
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SEAHORSE-IS-MULTI-OPERATION--CAPS"
+>SEAHORSE_IS_MULTI_OPERATION</a>         (obj)
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SEAHORSE-IS-MULTI-OPERATION-CLASS--CAPS"
+>SEAHORSE_IS_MULTI_OPERATION_CLASS</a>   (klass)
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SEAHORSE-MULTI-OPERATION-GET-CLASS--CAPS"
+>SEAHORSE_MULTI_OPERATION_GET_CLASS</a>  (obj)
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseMultiOperation"
+>SeahorseMultiOperation</a>;
+<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a>               <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-multi-operation-get-type"
+>seahorse_multi_operation_get_type</a>   ();
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseMultiOperation"
+>SeahorseMultiOperation</a>* <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-multi-operation-new"
+>seahorse_multi_operation_new</a>    ();
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-multi-operation-take"
+>seahorse_multi_operation_take</a>       (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseMultiOperation"
+>SeahorseMultiOperation</a> *mop,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *op);
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#DECLARE-OPERATION--CAPS"
+>DECLARE_OPERATION</a>                   (Opx, opx)
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SEAHORSE-CALC-PROGRESS--CAPS"
+>SEAHORSE_CALC_PROGRESS</a>              (cur, tot)
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-mark-start"
+>seahorse_operation_mark_start</a>       (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-mark-done"
+>seahorse_operation_mark_done</a>        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> cancelled,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> *error);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-mark-progress"
+>seahorse_operation_mark_progress</a>    (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> progress);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-mark-progress-full"
+>seahorse_operation_mark_progress_full</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> current,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> total);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#seahorse-operation-mark-result"
+>seahorse_operation_mark_result</a>      (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> result,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"
+>GDestroyNotify</a> notify_func);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-SeahorseMultiOperation.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-SeahorseMultiOperation.details"></a><h2>Details</h2>
+<div class="refsect2" title="SeahorseOperation">
+<a name="SeahorseOperation"></a><h3>SeahorseOperation</h3>
+<pre class="programlisting">typedef struct {
+    GObject parent;
+    
+    gchar *message;                /* Progress status details ie: "foobar.jpg" */
+    gdouble progress;              /* The current progress position, -1 for indeterminate */
+    
+    guint is_running : 1;          /* If the operation is running or not */
+    guint is_done : 1;             /* Operation is done or not */
+    guint is_cancelled : 1;        /* Operation is cancelled or not */;
+
+    GError *error;
+} SeahorseOperation;
+</pre>
+<p>
+An operation taking place over time.
+</p>
+<p>
+- Generally this class is derived and a base class actually hooks in and
+  performs the operation, keeps the properties updated etc...
+- Used all over to represent things like key loading operations, search
+- SeahorseMultiOperation allows you to combine multiple operations into
+  a single one. Used when searching multiple key servers for example.
+- Can be tied to a progress bar (see seahorse-progress.h)
+- Holds a reference to itself while the operation is in progress.
+- The seahorse_operation_mark_* are used by derived classes to update
+  properties of the operation as things progress.
+</p>
+<p>
+Signals:
+  done: The operation is complete.
+  progress: The operation has progressed, or changed state somehow.
+</p>
+<p>
+Properties:
+  result: The 'result' of the operation (if applicable).
+          This depends on the derived operation class.
+  progress: A fraction between 0.0 and 1.0 inclusive representing how far
+          along this operation is. 0.0 = indeterminate, and 1.0 is done.
+  message: A progress message to display to the user.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a> <em class="structfield"><code>parent</code></em>;</span></p></td>
+<td> The parent <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+><span class="type">GObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>message</code></em>;</span></p></td>
+<td> Progress status details ie: "foobar.jpg"
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>progress</code></em>;</span></p></td>
+<td> The current progress position, -1 for indeterminate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> <em class="structfield"><code>is_running</code></em> : 1;</span></p></td>
+<td> If the operation is running or not
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> <em class="structfield"><code>is_done</code></em> : 1;</span></p></td>
+<td> Operation is done or not
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> <em class="structfield"><code>is_cancelled</code></em> : 1;</span></p></td>
+<td> Operation is cancelled or not
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> *<em class="structfield"><code>error</code></em>;</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+><span class="type">GError</span></a> for the operation
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_new_complete ()">
+<a name="seahorse-operation-new-complete"></a><h3>seahorse_operation_new_complete ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  seahorse_operation_new_complete     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> *err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_new_cancelled ()">
+<a name="seahorse-operation-new-cancelled"></a><h3>seahorse_operation_new_cancelled ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  seahorse_operation_new_cancelled    ();</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_cancel ()">
+<a name="seahorse-operation-cancel"></a><h3>seahorse_operation_cancel ()</h3>
+<pre class="programlisting">void                seahorse_operation_cancel           (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_is_running()">
+<a name="seahorse-operation-is-running"></a><h3>seahorse_operation_is_running()</h3>
+<pre class="programlisting">#define             seahorse_operation_is_running(operation)</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_is_cancelled()">
+<a name="seahorse-operation-is-cancelled"></a><h3>seahorse_operation_is_cancelled()</h3>
+<pre class="programlisting">#define             seahorse_operation_is_cancelled(operation)</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_is_successful()">
+<a name="seahorse-operation-is-successful"></a><h3>seahorse_operation_is_successful()</h3>
+<pre class="programlisting">#define             seahorse_operation_is_successful(operation)</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_copy_error ()">
+<a name="seahorse-operation-copy-error"></a><h3>seahorse_operation_copy_error ()</h3>
+<pre class="programlisting">void                seahorse_operation_copy_error       (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_get_error ()">
+<a name="seahorse-operation-get-error"></a><h3>seahorse_operation_get_error ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a>*       seahorse_operation_get_error        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_display_error ()">
+<a name="seahorse-operation-display-error"></a><h3>seahorse_operation_display_error ()</h3>
+<pre class="programlisting">void                seahorse_operation_display_error    (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWidget.html"
+>GtkWidget</a> *parent);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_wait ()">
+<a name="seahorse-operation-wait"></a><h3>seahorse_operation_wait ()</h3>
+<pre class="programlisting">void                seahorse_operation_wait             (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="SeahorseDoneFunc ()">
+<a name="SeahorseDoneFunc"></a><h3>SeahorseDoneFunc ()</h3>
+<pre class="programlisting">void                (*SeahorseDoneFunc)                 (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *op,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> userdata);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>userdata</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="SeahorseProgressFunc ()">
+<a name="SeahorseProgressFunc"></a><h3>SeahorseProgressFunc ()</h3>
+<pre class="programlisting">void                (*SeahorseProgressFunc)             (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *op,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *status,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> progress,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> userdata);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>progress</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>userdata</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_watch ()">
+<a name="seahorse-operation-watch"></a><h3>seahorse_operation_watch ()</h3>
+<pre class="programlisting">void                seahorse_operation_watch            (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseDoneFunc"
+>SeahorseDoneFunc</a> done_callback,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> donedata,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseProgressFunc"
+>SeahorseProgressFunc</a> progress_callback,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> progdata);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>done_callback</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>donedata</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>progress_callback</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>progdata</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_get_progress()">
+<a name="seahorse-operation-get-progress"></a><h3>seahorse_operation_get_progress()</h3>
+<pre class="programlisting">#define             seahorse_operation_get_progress(op)</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_get_message()">
+<a name="seahorse-operation-get-message"></a><h3>seahorse_operation_get_message()</h3>
+<pre class="programlisting">#define             seahorse_operation_get_message(operation)</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_get_result ()">
+<a name="seahorse-operation-get-result"></a><h3>seahorse_operation_get_result ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            seahorse_operation_get_result       (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_list_add ()">
+<a name="seahorse-operation-list-add"></a><h3>seahorse_operation_list_add ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             seahorse_operation_list_add         (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *list,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_list_remove ()">
+<a name="seahorse-operation-list-remove"></a><h3>seahorse_operation_list_remove ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             seahorse_operation_list_remove      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *list,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_list_cancel ()">
+<a name="seahorse-operation-list-cancel"></a><h3>seahorse_operation_list_cancel ()</h3>
+<pre class="programlisting">void                seahorse_operation_list_cancel      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *list);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_list_purge ()">
+<a name="seahorse-operation-list-purge"></a><h3>seahorse_operation_list_purge ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             seahorse_operation_list_purge       (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *list);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_list_free ()">
+<a name="seahorse-operation-list-free"></a><h3>seahorse_operation_list_free ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             seahorse_operation_list_free        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *list);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_TYPE_MULTI_OPERATION">
+<a name="SEAHORSE-TYPE-MULTI-OPERATION--CAPS"></a><h3>SEAHORSE_TYPE_MULTI_OPERATION</h3>
+<pre class="programlisting">#define SEAHORSE_TYPE_MULTI_OPERATION            (seahorse_multi_operation_get_type ())
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_MULTI_OPERATION()">
+<a name="SEAHORSE-MULTI-OPERATION--CAPS"></a><h3>SEAHORSE_MULTI_OPERATION()</h3>
+<pre class="programlisting">#define SEAHORSE_MULTI_OPERATION(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), SEAHORSE_TYPE_MULTI_OPERATION, SeahorseMultiOperation))
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_MULTI_OPERATION_CLASS()">
+<a name="SEAHORSE-MULTI-OPERATION-CLASS--CAPS"></a><h3>SEAHORSE_MULTI_OPERATION_CLASS()</h3>
+<pre class="programlisting">#define SEAHORSE_MULTI_OPERATION_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), SEAHORSE_TYPE_MULTI_OPERATION, SeahorseMultiOperationClass))
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>klass</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_IS_MULTI_OPERATION()">
+<a name="SEAHORSE-IS-MULTI-OPERATION--CAPS"></a><h3>SEAHORSE_IS_MULTI_OPERATION()</h3>
+<pre class="programlisting">#define SEAHORSE_IS_MULTI_OPERATION(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), SEAHORSE_TYPE_MULTI_OPERATION))
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_IS_MULTI_OPERATION_CLASS()">
+<a name="SEAHORSE-IS-MULTI-OPERATION-CLASS--CAPS"></a><h3>SEAHORSE_IS_MULTI_OPERATION_CLASS()</h3>
+<pre class="programlisting">#define SEAHORSE_IS_MULTI_OPERATION_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), SEAHORSE_TYPE_MULTI_OPERATION))
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>klass</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_MULTI_OPERATION_GET_CLASS()">
+<a name="SEAHORSE-MULTI-OPERATION-GET-CLASS--CAPS"></a><h3>SEAHORSE_MULTI_OPERATION_GET_CLASS()</h3>
+<pre class="programlisting">#define SEAHORSE_MULTI_OPERATION_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), SEAHORSE_TYPE_MULTI_OPERATION, SeahorseMultiOperationClass))
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="SeahorseMultiOperation">
+<a name="SeahorseMultiOperation"></a><h3>SeahorseMultiOperation</h3>
+<pre class="programlisting">typedef struct {
+    SeahorseOperation parent;
+    
+    GSList *operations;
+} SeahorseMultiOperation;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_multi_operation_get_type ()">
+<a name="seahorse-multi-operation-get-type"></a><h3>seahorse_multi_operation_get_type ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a>               seahorse_multi_operation_get_type   ();</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_multi_operation_new ()">
+<a name="seahorse-multi-operation-new"></a><h3>seahorse_multi_operation_new ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseMultiOperation"
+>SeahorseMultiOperation</a>* seahorse_multi_operation_new    ();</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_multi_operation_take ()">
+<a name="seahorse-multi-operation-take"></a><h3>seahorse_multi_operation_take ()</h3>
+<pre class="programlisting">void                seahorse_multi_operation_take       (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseMultiOperation"
+>SeahorseMultiOperation</a> *mop,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *op);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mop</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="DECLARE_OPERATION()">
+<a name="DECLARE-OPERATION--CAPS"></a><h3>DECLARE_OPERATION()</h3>
+<pre class="programlisting">#define             DECLARE_OPERATION(Opx, opx)</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Opx</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opx</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_CALC_PROGRESS()">
+<a name="SEAHORSE-CALC-PROGRESS--CAPS"></a><h3>SEAHORSE_CALC_PROGRESS()</h3>
+<pre class="programlisting">#define SEAHORSE_CALC_PROGRESS(cur, tot)
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cur</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tot</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_mark_start ()">
+<a name="seahorse-operation-mark-start"></a><h3>seahorse_operation_mark_start ()</h3>
+<pre class="programlisting">void                seahorse_operation_mark_start       (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_mark_done ()">
+<a name="seahorse-operation-mark-done"></a><h3>seahorse_operation_mark_done ()</h3>
+<pre class="programlisting">void                seahorse_operation_mark_done        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> cancelled,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> *error);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cancelled</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_mark_progress ()">
+<a name="seahorse-operation-mark-progress"></a><h3>seahorse_operation_mark_progress ()</h3>
+<pre class="programlisting">void                seahorse_operation_mark_progress    (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> progress);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>progress</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_mark_progress_full ()">
+<a name="seahorse-operation-mark-progress-full"></a><h3>seahorse_operation_mark_progress_full ()</h3>
+<pre class="programlisting">void                seahorse_operation_mark_progress_full
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> current,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> total);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>current</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>total</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_operation_mark_result ()">
+<a name="seahorse-operation-mark-result"></a><h3>seahorse_operation_mark_result ()</h3>
+<pre class="programlisting">void                seahorse_operation_mark_result      (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *operation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> result,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"
+>GDestroyNotify</a> notify_func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operation</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>notify_func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

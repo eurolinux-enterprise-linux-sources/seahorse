@@ -1,0 +1,93 @@
+<!-- ##### SECTION Title ##### -->
+SeahorseObjectModel
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseObjectModel ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION seahorse_object_model_new ##### -->
+<para>
+
+</para>
+
+@n_columns: 
+@types: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_model_set_column_types ##### -->
+<para>
+
+</para>
+
+@self: 
+@n_columns: 
+@types: 
+
+
+<!-- ##### FUNCTION seahorse_object_model_set_row_object ##### -->
+<para>
+
+</para>
+
+@self: 
+@iter: 
+@object: 
+
+
+<!-- ##### FUNCTION seahorse_object_model_get_row_key ##### -->
+<para>
+
+</para>
+
+@self: 
+@iter: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_model_get_rows_for_object ##### -->
+<para>
+
+</para>
+
+@self: 
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_model_remove_rows_for_object ##### -->
+<para>
+
+</para>
+
+@self: 
+@object: 
+
+
+<!-- ##### FUNCTION seahorse_object_model_free_rows ##### -->
+<para>
+
+</para>
+
+@rows: 
+
+

@@ -1,0 +1,387 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml"> 
+]>
+<refentry id="libcryptui-CryptUIKeyset">
+<refmeta>
+<refentrytitle role="top_of_page" id="libcryptui-CryptUIKeyset.top_of_page">CryptUIKeyset</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBCRYPTUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>CryptUIKeyset</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libcryptui-CryptUIKeyset.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="CryptUIKeysetPrivate">CryptUIKeysetPrivate</link>;
+                    <link linkend="CryptUIKeyset">CryptUIKeyset</link>;
+<link linkend="CryptUIKeyset">CryptUIKeyset</link>*      <link linkend="cryptui-keyset-new">cryptui_keyset_new</link>                  (const <link linkend="gchar">gchar</link> *keytype,
+                                                         <link linkend="gboolean">gboolean</link> expand_keys);
+<link linkend="gboolean">gboolean</link>            <link linkend="cryptui-keyset-has-key">cryptui_keyset_has_key</link>              (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);
+const <link linkend="gchar">gchar</link>*        <link linkend="cryptui-keyset-get-keytype">cryptui_keyset_get_keytype</link>          (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset);
+<link linkend="GList">GList</link>*              <link linkend="cryptui-keyset-get-keys">cryptui_keyset_get_keys</link>             (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset);
+<link linkend="guint">guint</link>               <link linkend="cryptui-keyset-get-count">cryptui_keyset_get_count</link>            (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset);
+<link linkend="void">void</link>                <link linkend="cryptui-keyset-refresh">cryptui_keyset_refresh</link>              (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset);
+<link linkend="gpointer">gpointer</link>            <link linkend="cryptui-keyset-get-closure">cryptui_keyset_get_closure</link>          (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);
+<link linkend="void">void</link>                <link linkend="cryptui-keyset-set-closure">cryptui_keyset_set_closure</link>          (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gpointer">gpointer</link> closure);
+<link linkend="gboolean">gboolean</link>            <link linkend="cryptui-keyset-get-expand-keys">cryptui_keyset_get_expand_keys</link>      (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset);
+<link linkend="void">void</link>                <link linkend="cryptui-keyset-set-expand-keys">cryptui_keyset_set_expand_keys</link>      (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         <link linkend="gboolean">gboolean</link> expand_keys);
+<link linkend="void">void</link>                <link linkend="cryptui-keyset-cache-key">cryptui_keyset_cache_key</link>            (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);
+<link linkend="gchar">gchar</link>*              <link linkend="cryptui-keyset-key-get-string">cryptui_keyset_key_get_string</link>       (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         const <link linkend="gchar">gchar</link> *prop);
+<link linkend="guint">guint</link>               <link linkend="cryptui-keyset-key-get-uint">cryptui_keyset_key_get_uint</link>         (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         const <link linkend="gchar">gchar</link> *prop);
+<link linkend="guint">guint</link>               <link linkend="cryptui-keyset-key-flags">cryptui_keyset_key_flags</link>            (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);
+<link linkend="gchar">gchar</link>*              <link linkend="cryptui-keyset-key-display-name">cryptui_keyset_key_display_name</link>     (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);
+<link linkend="gchar">gchar</link>*              <link linkend="cryptui-keyset-key-display-id">cryptui_keyset_key_display_id</link>       (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);
+<link linkend="gchar">gchar</link>*              <link linkend="cryptui-keyset-key-raw-keyid">cryptui_keyset_key_raw_keyid</link>        (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);
+<link linkend="gchar">gchar</link>**             <link linkend="cryptui-keyset-keys-raw-keyids">cryptui_keyset_keys_raw_keyids</link>      (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> **keys);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libcryptui-CryptUIKeyset.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libcryptui-CryptUIKeyset.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="CryptUIKeysetPrivate" role="struct">
+<title>CryptUIKeysetPrivate</title>
+<indexterm zone="CryptUIKeysetPrivate"><primary sortas="KeysetPrivate">CryptUIKeysetPrivate</primary></indexterm><programlisting>typedef struct _CryptUIKeysetPrivate CryptUIKeysetPrivate;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="CryptUIKeyset" role="struct">
+<title>CryptUIKeyset</title>
+<indexterm zone="CryptUIKeyset"><primary sortas="Keyset">CryptUIKeyset</primary></indexterm><programlisting>typedef struct {
+    GtkObject parent;
+} CryptUIKeyset;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cryptui-keyset-new" role="function">
+<title>cryptui_keyset_new ()</title>
+<indexterm zone="cryptui-keyset-new"><primary sortas="keyset_new">cryptui_keyset_new</primary></indexterm><programlisting><link linkend="CryptUIKeyset">CryptUIKeyset</link>*      cryptui_keyset_new                  (const <link linkend="gchar">gchar</link> *keytype,
+                                                         <link linkend="gboolean">gboolean</link> expand_keys);</programlisting>
+<para>
+Creates a new keylist</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keytype</parameter>&#160;:</term>
+<listitem><simpara> libcryptui key prefix
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>expand_keys</parameter>&#160;:</term>
+<listitem><simpara> whether key's non-primary uids are part of the set
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new keyset
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-has-key" role="function">
+<title>cryptui_keyset_has_key ()</title>
+<indexterm zone="cryptui-keyset-has-key"><primary sortas="keyset_has_key">cryptui_keyset_has_key</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            cryptui_keyset_has_key              (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Determines whether or not a key is present in the keyset</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui key
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if the key is present, FALSE otherwise
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-get-keytype" role="function">
+<title>cryptui_keyset_get_keytype ()</title>
+<indexterm zone="cryptui-keyset-get-keytype"><primary sortas="keyset_get_keytype">cryptui_keyset_get_keytype</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        cryptui_keyset_get_keytype          (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset);</programlisting>
+<para>
+Gets the libcryptui key prefix for the keyset</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a libcryptui key prefix
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-get-keys" role="function">
+<title>cryptui_keyset_get_keys ()</title>
+<indexterm zone="cryptui-keyset-get-keys"><primary sortas="keyset_get_keys">cryptui_keyset_get_keys</primary></indexterm><programlisting><link linkend="GList">GList</link>*              cryptui_keyset_get_keys             (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset);</programlisting>
+<para>
+Gets a list of keys contained in the key set</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a doubly linked list of keys
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-get-count" role="function">
+<title>cryptui_keyset_get_count ()</title>
+<indexterm zone="cryptui-keyset-get-count"><primary sortas="keyset_get_count">cryptui_keyset_get_count</primary></indexterm><programlisting><link linkend="guint">guint</link>               cryptui_keyset_get_count            (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset);</programlisting>
+<para>
+Gets the number of keys stored in the keyset</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the number of keys
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-refresh" role="function">
+<title>cryptui_keyset_refresh ()</title>
+<indexterm zone="cryptui-keyset-refresh"><primary sortas="keyset_refresh">cryptui_keyset_refresh</primary></indexterm><programlisting><link linkend="void">void</link>                cryptui_keyset_refresh              (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset);</programlisting>
+<para>
+Checks the remote keyset to see which keys have been added or removed</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-get-closure" role="function">
+<title>cryptui_keyset_get_closure ()</title>
+<indexterm zone="cryptui-keyset-get-closure"><primary sortas="keyset_get_closure">cryptui_keyset_get_closure</primary></indexterm><programlisting><link linkend="gpointer">gpointer</link>            cryptui_keyset_get_closure          (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+TODO: Find out what closure is and document this function</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui key
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> closure associated with key
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-set-closure" role="function">
+<title>cryptui_keyset_set_closure ()</title>
+<indexterm zone="cryptui-keyset-set-closure"><primary sortas="keyset_set_closure">cryptui_keyset_set_closure</primary></indexterm><programlisting><link linkend="void">void</link>                cryptui_keyset_set_closure          (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gpointer">gpointer</link> closure);</programlisting>
+<para>
+TODO: Find out what closure is and document this function</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui key
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>closure</parameter>&#160;:</term>
+<listitem><simpara> TODO
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-get-expand-keys" role="function">
+<title>cryptui_keyset_get_expand_keys ()</title>
+<indexterm zone="cryptui-keyset-get-expand-keys"><primary sortas="keyset_get_expand_keys">cryptui_keyset_get_expand_keys</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            cryptui_keyset_get_expand_keys      (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset);</programlisting>
+<para>
+Gets whether or not non-primary key UIDs are included in the keyset</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if non-primary key UIDs are included in the keyset
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-set-expand-keys" role="function">
+<title>cryptui_keyset_set_expand_keys ()</title>
+<indexterm zone="cryptui-keyset-set-expand-keys"><primary sortas="keyset_set_expand_keys">cryptui_keyset_set_expand_keys</primary></indexterm><programlisting><link linkend="void">void</link>                cryptui_keyset_set_expand_keys      (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         <link linkend="gboolean">gboolean</link> expand_keys);</programlisting>
+<para>
+Sets whether or not non-primary key UIDs are included in the keyset</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>expand_keys</parameter>&#160;:</term>
+<listitem><simpara> a gboolean
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-cache-key" role="function">
+<title>cryptui_keyset_cache_key ()</title>
+<indexterm zone="cryptui-keyset-cache-key"><primary sortas="keyset_cache_key">cryptui_keyset_cache_key</primary></indexterm><programlisting><link linkend="void">void</link>                cryptui_keyset_cache_key            (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Stores the key's fields returned by the DBus method GetKeyFields in the
+keyset.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> libcryptui key to cache
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-key-get-string" role="function">
+<title>cryptui_keyset_key_get_string ()</title>
+<indexterm zone="cryptui-keyset-key-get-string"><primary sortas="keyset_key_get_string">cryptui_keyset_key_get_string</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              cryptui_keyset_key_get_string       (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         const <link linkend="gchar">gchar</link> *prop);</programlisting>
+<para>
+Gets the given property of the key in the keyset.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> libcryptui key to fetch a property of
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>prop</parameter>&#160;:</term>
+<listitem><simpara> string property to get
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a string containing the property's value
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-key-get-uint" role="function">
+<title>cryptui_keyset_key_get_uint ()</title>
+<indexterm zone="cryptui-keyset-key-get-uint"><primary sortas="keyset_key_get_uint">cryptui_keyset_key_get_uint</primary></indexterm><programlisting><link linkend="guint">guint</link>               cryptui_keyset_key_get_uint         (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         const <link linkend="gchar">gchar</link> *prop);</programlisting>
+<para>
+Gets the given property of the key in the keyset.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> libcryptui key to fetch a property of
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>prop</parameter>&#160;:</term>
+<listitem><simpara> uint property to get
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a uint containing the property's value
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-key-flags" role="function">
+<title>cryptui_keyset_key_flags ()</title>
+<indexterm zone="cryptui-keyset-key-flags"><primary sortas="keyset_key_flags">cryptui_keyset_key_flags</primary></indexterm><programlisting><link linkend="guint">guint</link>               cryptui_keyset_key_flags            (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Gets the key's flags</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui key
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a uint containing the flags
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-key-display-name" role="function">
+<title>cryptui_keyset_key_display_name ()</title>
+<indexterm zone="cryptui-keyset-key-display-name"><primary sortas="keyset_key_display_name">cryptui_keyset_key_display_name</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              cryptui_keyset_key_display_name     (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Gets the "display-name" property of the given key</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui key
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the display name of the key
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-key-display-id" role="function">
+<title>cryptui_keyset_key_display_id ()</title>
+<indexterm zone="cryptui-keyset-key-display-id"><primary sortas="keyset_key_display_id">cryptui_keyset_key_display_id</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              cryptui_keyset_key_display_id       (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Gets the "display-id" property of the given key</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui key
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the display id of the key
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-key-raw-keyid" role="function">
+<title>cryptui_keyset_key_raw_keyid ()</title>
+<indexterm zone="cryptui-keyset-key-raw-keyid"><primary sortas="keyset_key_raw_keyid">cryptui_keyset_key_raw_keyid</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              cryptui_keyset_key_raw_keyid        (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Gets the key's raw key id</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui key
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a string with the raw key id
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-keyset-keys-raw-keyids" role="function">
+<title>cryptui_keyset_keys_raw_keyids ()</title>
+<indexterm zone="cryptui-keyset-keys-raw-keyids"><primary sortas="keyset_keys_raw_keyids">cryptui_keyset_keys_raw_keyids</primary></indexterm><programlisting><link linkend="gchar">gchar</link>**             cryptui_keyset_keys_raw_keyids      (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> **keys);</programlisting>
+<para>
+Gets the keys' raw key ids</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> a libcryptui keyset
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keys</parameter>&#160;:</term>
+<listitem><simpara> an array of libcryptui keys
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> an array of raw key ids
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

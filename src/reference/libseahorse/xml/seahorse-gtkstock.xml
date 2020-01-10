@@ -1,0 +1,139 @@
+<refentry id="libseahorse-seahorse-gtkstock">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-gtkstock.top_of_page">seahorse-gtkstock</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-gtkstock</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-gtkstock.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+#define             <link linkend="SEAHORSE-STOCK-KEY--CAPS">SEAHORSE_STOCK_KEY</link>
+#define             <link linkend="SEAHORSE-STOCK-SECRET--CAPS">SEAHORSE_STOCK_SECRET</link>
+#define             <link linkend="SEAHORSE-STOCK-KEY-SSH--CAPS">SEAHORSE_STOCK_KEY_SSH</link>
+#define             <link linkend="SEAHORSE-STOCK-PERSON--CAPS">SEAHORSE_STOCK_PERSON</link>
+#define             <link linkend="SEAHORSE-STOCK-SIGN--CAPS">SEAHORSE_STOCK_SIGN</link>
+#define             <link linkend="SEAHORSE-STOCK-SIGN-OK--CAPS">SEAHORSE_STOCK_SIGN_OK</link>
+#define             <link linkend="SEAHORSE-STOCK-SIGN-BAD--CAPS">SEAHORSE_STOCK_SIGN_BAD</link>
+#define             <link linkend="SEAHORSE-STOCK-SIGN-UNKNOWN--CAPS">SEAHORSE_STOCK_SIGN_UNKNOWN</link>
+#define             <link linkend="SEAHORSE-STOCK-SHARING--CAPS">SEAHORSE_STOCK_SHARING</link>
+#define             <link linkend="SEAHORSE-THEMED-WEBBROWSER--CAPS">SEAHORSE_THEMED_WEBBROWSER</link>
+#define             <link linkend="SEAHORSE-THEMED-FOLDER--CAPS">SEAHORSE_THEMED_FOLDER</link>
+<link linkend="void">void</link>                <link linkend="seahorse-gtkstock-init">seahorse_gtkstock_init</link>              (void);
+<link linkend="void">void</link>                <link linkend="seahorse-gtkstock-add-icons">seahorse_gtkstock_add_icons</link>         (const <link linkend="gchar">gchar</link> **icons);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-gtkstock.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-gtkstock.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SEAHORSE-STOCK-KEY--CAPS" role="macro">
+<title>SEAHORSE_STOCK_KEY</title>
+<indexterm zone="SEAHORSE-STOCK-KEY--CAPS"><primary sortas="STOCK_KEY">SEAHORSE_STOCK_KEY</primary></indexterm><programlisting>#define SEAHORSE_STOCK_KEY          "seahorse-key"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-STOCK-SECRET--CAPS" role="macro">
+<title>SEAHORSE_STOCK_SECRET</title>
+<indexterm zone="SEAHORSE-STOCK-SECRET--CAPS"><primary sortas="STOCK_SECRET">SEAHORSE_STOCK_SECRET</primary></indexterm><programlisting>#define SEAHORSE_STOCK_SECRET       "seahorse-key-personal"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-STOCK-KEY-SSH--CAPS" role="macro">
+<title>SEAHORSE_STOCK_KEY_SSH</title>
+<indexterm zone="SEAHORSE-STOCK-KEY-SSH--CAPS"><primary sortas="STOCK_KEY_SSH">SEAHORSE_STOCK_KEY_SSH</primary></indexterm><programlisting>#define SEAHORSE_STOCK_KEY_SSH      "seahorse-key-ssh"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-STOCK-PERSON--CAPS" role="macro">
+<title>SEAHORSE_STOCK_PERSON</title>
+<indexterm zone="SEAHORSE-STOCK-PERSON--CAPS"><primary sortas="STOCK_PERSON">SEAHORSE_STOCK_PERSON</primary></indexterm><programlisting>#define SEAHORSE_STOCK_PERSON       "seahorse-person"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-STOCK-SIGN--CAPS" role="macro">
+<title>SEAHORSE_STOCK_SIGN</title>
+<indexterm zone="SEAHORSE-STOCK-SIGN--CAPS"><primary sortas="STOCK_SIGN">SEAHORSE_STOCK_SIGN</primary></indexterm><programlisting>#define SEAHORSE_STOCK_SIGN         "seahorse-sign"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-STOCK-SIGN-OK--CAPS" role="macro">
+<title>SEAHORSE_STOCK_SIGN_OK</title>
+<indexterm zone="SEAHORSE-STOCK-SIGN-OK--CAPS"><primary sortas="STOCK_SIGN_OK">SEAHORSE_STOCK_SIGN_OK</primary></indexterm><programlisting>#define SEAHORSE_STOCK_SIGN_OK      "seahorse-sign-ok"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-STOCK-SIGN-BAD--CAPS" role="macro">
+<title>SEAHORSE_STOCK_SIGN_BAD</title>
+<indexterm zone="SEAHORSE-STOCK-SIGN-BAD--CAPS"><primary sortas="STOCK_SIGN_BAD">SEAHORSE_STOCK_SIGN_BAD</primary></indexterm><programlisting>#define SEAHORSE_STOCK_SIGN_BAD     "seahorse-sign-bad"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-STOCK-SIGN-UNKNOWN--CAPS" role="macro">
+<title>SEAHORSE_STOCK_SIGN_UNKNOWN</title>
+<indexterm zone="SEAHORSE-STOCK-SIGN-UNKNOWN--CAPS"><primary sortas="STOCK_SIGN_UNKNOWN">SEAHORSE_STOCK_SIGN_UNKNOWN</primary></indexterm><programlisting>#define SEAHORSE_STOCK_SIGN_UNKNOWN "seahorse-sign-unknown"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-STOCK-SHARING--CAPS" role="macro">
+<title>SEAHORSE_STOCK_SHARING</title>
+<indexterm zone="SEAHORSE-STOCK-SHARING--CAPS"><primary sortas="STOCK_SHARING">SEAHORSE_STOCK_SHARING</primary></indexterm><programlisting>#define SEAHORSE_STOCK_SHARING      "seahorse-share-keys"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-THEMED-WEBBROWSER--CAPS" role="macro">
+<title>SEAHORSE_THEMED_WEBBROWSER</title>
+<indexterm zone="SEAHORSE-THEMED-WEBBROWSER--CAPS"><primary sortas="THEMED_WEBBROWSER">SEAHORSE_THEMED_WEBBROWSER</primary></indexterm><programlisting>#define SEAHORSE_THEMED_WEBBROWSER  "web-browser"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-THEMED-FOLDER--CAPS" role="macro">
+<title>SEAHORSE_THEMED_FOLDER</title>
+<indexterm zone="SEAHORSE-THEMED-FOLDER--CAPS"><primary sortas="THEMED_FOLDER">SEAHORSE_THEMED_FOLDER</primary></indexterm><programlisting>#define SEAHORSE_THEMED_FOLDER      "folder"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-gtkstock-init" role="function">
+<title>seahorse_gtkstock_init ()</title>
+<indexterm zone="seahorse-gtkstock-init"><primary sortas="gtkstock_init">seahorse_gtkstock_init</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_gtkstock_init              (void);</programlisting>
+<para>
+Adds the default icons to the icon factory</para>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-gtkstock-add-icons" role="function">
+<title>seahorse_gtkstock_add_icons ()</title>
+<indexterm zone="seahorse-gtkstock-add-icons"><primary sortas="gtkstock_add_icons">seahorse_gtkstock_add_icons</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_gtkstock_add_icons         (const <link linkend="gchar">gchar</link> **icons);</programlisting>
+<para>
+Adds icons to the factory</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>icons</parameter>&#160;:</term>
+<listitem><simpara> The icons to add to the default factory
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

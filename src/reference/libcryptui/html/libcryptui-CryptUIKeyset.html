@@ -1,0 +1,736 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CryptUIKeyset</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libcryptui Reference Manual">
+<link rel="up" href="ch01.html" title="libcryptui Objects and Functions">
+<link rel="prev" href="ch01.html" title="libcryptui Objects and Functions">
+<link rel="next" href="libcryptui-cryptui-key-combo.html" title="cryptui-key-combo">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="libcryptui Objects and Functions">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libcryptui Reference Manual</th>
+<td><a accesskey="n" href="libcryptui-cryptui-key-combo.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libcryptui-CryptUIKeyset.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libcryptui-CryptUIKeyset.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="CryptUIKeyset">
+<a name="libcryptui-CryptUIKeyset"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libcryptui-CryptUIKeyset.top_of_page"></a>CryptUIKeyset</span></h2>
+<p>CryptUIKeyset</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libcryptui-CryptUIKeyset.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeysetPrivate" title="CryptUIKeysetPrivate">CryptUIKeysetPrivate</a>;
+                    <a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a>;
+<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a>*      <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-new" title="cryptui_keyset_new ()">cryptui_keyset_new</a>                  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *keytype,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> expand_keys);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-has-key" title="cryptui_keyset_has_key ()">cryptui_keyset_has_key</a>              (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-get-keytype" title="cryptui_keyset_get_keytype ()">cryptui_keyset_get_keytype</a>          (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a>*              <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-get-keys" title="cryptui_keyset_get_keys ()">cryptui_keyset_get_keys</a>             (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-get-count" title="cryptui_keyset_get_count ()">cryptui_keyset_get_count</a>            (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset);
+void                <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-refresh" title="cryptui_keyset_refresh ()">cryptui_keyset_refresh</a>              (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-get-closure" title="cryptui_keyset_get_closure ()">cryptui_keyset_get_closure</a>          (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);
+void                <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-set-closure" title="cryptui_keyset_set_closure ()">cryptui_keyset_set_closure</a>          (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> closure);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-get-expand-keys" title="cryptui_keyset_get_expand_keys ()">cryptui_keyset_get_expand_keys</a>      (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset);
+void                <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-set-expand-keys" title="cryptui_keyset_set_expand_keys ()">cryptui_keyset_set_expand_keys</a>      (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> expand_keys);
+void                <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-cache-key" title="cryptui_keyset_cache_key ()">cryptui_keyset_cache_key</a>            (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-key-get-string" title="cryptui_keyset_key_get_string ()">cryptui_keyset_key_get_string</a>       (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *prop);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-key-get-uint" title="cryptui_keyset_key_get_uint ()">cryptui_keyset_key_get_uint</a>         (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *prop);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-key-flags" title="cryptui_keyset_key_flags ()">cryptui_keyset_key_flags</a>            (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-key-display-name" title="cryptui_keyset_key_display_name ()">cryptui_keyset_key_display_name</a>     (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-key-display-id" title="cryptui_keyset_key_display_id ()">cryptui_keyset_key_display_id</a>       (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-key-raw-keyid" title="cryptui_keyset_key_raw_keyid ()">cryptui_keyset_key_raw_keyid</a>        (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>**             <a class="link" href="libcryptui-CryptUIKeyset.html#cryptui-keyset-keys-raw-keyids" title="cryptui_keyset_keys_raw_keyids ()">cryptui_keyset_keys_raw_keyids</a>      (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **keys);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libcryptui-CryptUIKeyset.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libcryptui-CryptUIKeyset.details"></a><h2>Details</h2>
+<div class="refsect2" title="CryptUIKeysetPrivate">
+<a name="CryptUIKeysetPrivate"></a><h3>CryptUIKeysetPrivate</h3>
+<pre class="programlisting">typedef struct _CryptUIKeysetPrivate CryptUIKeysetPrivate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CryptUIKeyset">
+<a name="CryptUIKeyset"></a><h3>CryptUIKeyset</h3>
+<pre class="programlisting">typedef struct {
+    GtkObject parent;
+} CryptUIKeyset;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_new ()">
+<a name="cryptui-keyset-new"></a><h3>cryptui_keyset_new ()</h3>
+<pre class="programlisting"><a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a>*      cryptui_keyset_new                  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *keytype,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> expand_keys);</pre>
+<p>
+Creates a new keylist</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keytype</code></em> :</span></p></td>
+<td> libcryptui key prefix
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>expand_keys</code></em> :</span></p></td>
+<td> whether key's non-primary uids are part of the set
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new keyset
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_has_key ()">
+<a name="cryptui-keyset-has-key"></a><h3>cryptui_keyset_has_key ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            cryptui_keyset_has_key              (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);</pre>
+<p>
+Determines whether or not a key is present in the keyset</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> a libcryptui key
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if the key is present, FALSE otherwise
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_get_keytype ()">
+<a name="cryptui-keyset-get-keytype"></a><h3>cryptui_keyset_get_keytype ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        cryptui_keyset_get_keytype          (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset);</pre>
+<p>
+Gets the libcryptui key prefix for the keyset</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a libcryptui key prefix
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_get_keys ()">
+<a name="cryptui-keyset-get-keys"></a><h3>cryptui_keyset_get_keys ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a>*              cryptui_keyset_get_keys             (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset);</pre>
+<p>
+Gets a list of keys contained in the key set</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a doubly linked list of keys
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_get_count ()">
+<a name="cryptui-keyset-get-count"></a><h3>cryptui_keyset_get_count ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               cryptui_keyset_get_count            (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset);</pre>
+<p>
+Gets the number of keys stored in the keyset</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of keys
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_refresh ()">
+<a name="cryptui-keyset-refresh"></a><h3>cryptui_keyset_refresh ()</h3>
+<pre class="programlisting">void                cryptui_keyset_refresh              (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset);</pre>
+<p>
+Checks the remote keyset to see which keys have been added or removed</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_get_closure ()">
+<a name="cryptui-keyset-get-closure"></a><h3>cryptui_keyset_get_closure ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            cryptui_keyset_get_closure          (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);</pre>
+<p>
+TODO: Find out what closure is and document this function</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> a libcryptui key
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> closure associated with key
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_set_closure ()">
+<a name="cryptui-keyset-set-closure"></a><h3>cryptui_keyset_set_closure ()</h3>
+<pre class="programlisting">void                cryptui_keyset_set_closure          (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> closure);</pre>
+<p>
+TODO: Find out what closure is and document this function</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> a libcryptui key
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>closure</code></em> :</span></p></td>
+<td> TODO
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_get_expand_keys ()">
+<a name="cryptui-keyset-get-expand-keys"></a><h3>cryptui_keyset_get_expand_keys ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            cryptui_keyset_get_expand_keys      (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset);</pre>
+<p>
+Gets whether or not non-primary key UIDs are included in the keyset</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if non-primary key UIDs are included in the keyset
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_set_expand_keys ()">
+<a name="cryptui-keyset-set-expand-keys"></a><h3>cryptui_keyset_set_expand_keys ()</h3>
+<pre class="programlisting">void                cryptui_keyset_set_expand_keys      (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> expand_keys);</pre>
+<p>
+Sets whether or not non-primary key UIDs are included in the keyset</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>expand_keys</code></em> :</span></p></td>
+<td> a gboolean
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_cache_key ()">
+<a name="cryptui-keyset-cache-key"></a><h3>cryptui_keyset_cache_key ()</h3>
+<pre class="programlisting">void                cryptui_keyset_cache_key            (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);</pre>
+<p>
+Stores the key's fields returned by the DBus method GetKeyFields in the
+keyset.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> libcryptui key to cache
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_key_get_string ()">
+<a name="cryptui-keyset-key-get-string"></a><h3>cryptui_keyset_key_get_string ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              cryptui_keyset_key_get_string       (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *prop);</pre>
+<p>
+Gets the given property of the key in the keyset.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> libcryptui key to fetch a property of
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop</code></em> :</span></p></td>
+<td> string property to get
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a string containing the property's value
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_key_get_uint ()">
+<a name="cryptui-keyset-key-get-uint"></a><h3>cryptui_keyset_key_get_uint ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               cryptui_keyset_key_get_uint         (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *prop);</pre>
+<p>
+Gets the given property of the key in the keyset.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> libcryptui key to fetch a property of
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop</code></em> :</span></p></td>
+<td> uint property to get
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a uint containing the property's value
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_key_flags ()">
+<a name="cryptui-keyset-key-flags"></a><h3>cryptui_keyset_key_flags ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               cryptui_keyset_key_flags            (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);</pre>
+<p>
+Gets the key's flags</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> a libcryptui key
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a uint containing the flags
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_key_display_name ()">
+<a name="cryptui-keyset-key-display-name"></a><h3>cryptui_keyset_key_display_name ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              cryptui_keyset_key_display_name     (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);</pre>
+<p>
+Gets the "display-name" property of the given key</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> a libcryptui key
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the display name of the key
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_key_display_id ()">
+<a name="cryptui-keyset-key-display-id"></a><h3>cryptui_keyset_key_display_id ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              cryptui_keyset_key_display_id       (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);</pre>
+<p>
+Gets the "display-id" property of the given key</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> a libcryptui key
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the display id of the key
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_key_raw_keyid ()">
+<a name="cryptui-keyset-key-raw-keyid"></a><h3>cryptui_keyset_key_raw_keyid ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              cryptui_keyset_key_raw_keyid        (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);</pre>
+<p>
+Gets the key's raw key id</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> a libcryptui key
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a string with the raw key id
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_keyset_keys_raw_keyids ()">
+<a name="cryptui-keyset-keys-raw-keyids"></a><h3>cryptui_keyset_keys_raw_keyids ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>**             cryptui_keyset_keys_raw_keyids      (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **keys);</pre>
+<p>
+Gets the keys' raw key ids</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> a libcryptui keyset
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keys</code></em> :</span></p></td>
+<td> an array of libcryptui keys
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> an array of raw key ids
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

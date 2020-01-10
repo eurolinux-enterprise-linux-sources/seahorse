@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml"> 
+]>
+<refentry id="libcryptui-cryptui-key-combo">
+<refmeta>
+<refentrytitle role="top_of_page" id="libcryptui-cryptui-key-combo.top_of_page">cryptui-key-combo</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBCRYPTUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>cryptui-key-combo</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libcryptui-cryptui-key-combo.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+<link linkend="GtkComboBox">GtkComboBox</link>*        <link linkend="cryptui-key-combo-new">cryptui_key_combo_new</link>               (<link linkend="CryptUIKeyStore">CryptUIKeyStore</link> *ckstore);
+<link linkend="void">void</link>                <link linkend="cryptui-key-combo-setup">cryptui_key_combo_setup</link>             (<link linkend="GtkComboBox">GtkComboBox</link> *combo,
+                                                         <link linkend="CryptUIKeyStore">CryptUIKeyStore</link> *ckstore);
+<link linkend="CryptUIKeyStore">CryptUIKeyStore</link>*    <link linkend="cryptui-key-combo-get-key-store">cryptui_key_combo_get_key_store</link>     (<link linkend="GtkComboBox">GtkComboBox</link> *ckcombo);
+<link linkend="CryptUIKeyset">CryptUIKeyset</link>*      <link linkend="cryptui-key-combo-get-keyset">cryptui_key_combo_get_keyset</link>        (<link linkend="GtkComboBox">GtkComboBox</link> *ckcombo);
+<link linkend="void">void</link>                <link linkend="cryptui-key-combo-set-key">cryptui_key_combo_set_key</link>           (<link linkend="GtkComboBox">GtkComboBox</link> *ckcombo,
+                                                         const <link linkend="gchar">gchar</link> *key);
+const <link linkend="gchar">gchar</link>*        <link linkend="cryptui-key-combo-get-key">cryptui_key_combo_get_key</link>           (<link linkend="GtkComboBox">GtkComboBox</link> *ckcombo);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libcryptui-cryptui-key-combo.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libcryptui-cryptui-key-combo.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="cryptui-key-combo-new" role="function">
+<title>cryptui_key_combo_new ()</title>
+<indexterm zone="cryptui-key-combo-new"><primary sortas="key_combo_new">cryptui_key_combo_new</primary></indexterm><programlisting><link linkend="GtkComboBox">GtkComboBox</link>*        cryptui_key_combo_new               (<link linkend="CryptUIKeyStore">CryptUIKeyStore</link> *ckstore);</programlisting>
+<para>
+Creates a combobox containing the keys in ckstore</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>ckstore</parameter>&#160;:</term>
+<listitem><simpara> key store containing keys to be listed in the combo
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new CryptUIKeyCombo
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-combo-setup" role="function">
+<title>cryptui_key_combo_setup ()</title>
+<indexterm zone="cryptui-key-combo-setup"><primary sortas="key_combo_setup">cryptui_key_combo_setup</primary></indexterm><programlisting><link linkend="void">void</link>                cryptui_key_combo_setup             (<link linkend="GtkComboBox">GtkComboBox</link> *combo,
+                                                         <link linkend="CryptUIKeyStore">CryptUIKeyStore</link> *ckstore);</programlisting>
+<para>
+Populates an existing GtkComboBox with keys from a CryptUIKeyStore</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>combo</parameter>&#160;:</term>
+<listitem><simpara> a GtkComboBox
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ckstore</parameter>&#160;:</term>
+<listitem><simpara> key store containing keys to be listed in the combo
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-combo-get-key-store" role="function">
+<title>cryptui_key_combo_get_key_store ()</title>
+<indexterm zone="cryptui-key-combo-get-key-store"><primary sortas="key_combo_get_key_store">cryptui_key_combo_get_key_store</primary></indexterm><programlisting><link linkend="CryptUIKeyStore">CryptUIKeyStore</link>*    cryptui_key_combo_get_key_store     (<link linkend="GtkComboBox">GtkComboBox</link> *ckcombo);</programlisting>
+<para>
+Gets the key store from a CryptUiCombo</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>ckcombo</parameter>&#160;:</term>
+<listitem><simpara> a CryptUICombo
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the key store
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-combo-get-keyset" role="function">
+<title>cryptui_key_combo_get_keyset ()</title>
+<indexterm zone="cryptui-key-combo-get-keyset"><primary sortas="key_combo_get_keyset">cryptui_key_combo_get_keyset</primary></indexterm><programlisting><link linkend="CryptUIKeyset">CryptUIKeyset</link>*      cryptui_key_combo_get_keyset        (<link linkend="GtkComboBox">GtkComboBox</link> *ckcombo);</programlisting>
+<para>
+Gets the keyset stored in the combo's key store.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>ckcombo</parameter>&#160;:</term>
+<listitem><simpara> a CryptUICombo
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a CryptuiKeyset
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-combo-set-key" role="function">
+<title>cryptui_key_combo_set_key ()</title>
+<indexterm zone="cryptui-key-combo-set-key"><primary sortas="key_combo_set_key">cryptui_key_combo_set_key</primary></indexterm><programlisting><link linkend="void">void</link>                cryptui_key_combo_set_key           (<link linkend="GtkComboBox">GtkComboBox</link> *ckcombo,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Sets the combo's selection to the indicated key</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>ckcombo</parameter>&#160;:</term>
+<listitem><simpara> a CryptUICombo
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a CryptUI Key
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-combo-get-key" role="function">
+<title>cryptui_key_combo_get_key ()</title>
+<indexterm zone="cryptui-key-combo-get-key"><primary sortas="key_combo_get_key">cryptui_key_combo_get_key</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        cryptui_key_combo_get_key           (<link linkend="GtkComboBox">GtkComboBox</link> *ckcombo);</programlisting>
+<para>
+Gets the first selected key from the combo</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>ckcombo</parameter>&#160;:</term>
+<listitem><simpara> a CryptUICombo
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the first selected key
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

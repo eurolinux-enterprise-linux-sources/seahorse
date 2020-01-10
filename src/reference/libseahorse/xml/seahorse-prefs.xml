@@ -1,0 +1,127 @@
+<refentry id="libseahorse-seahorse-prefs">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-prefs.top_of_page">seahorse-prefs</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-prefs</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-prefs.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+<link linkend="SeahorseWidget">SeahorseWidget</link> *    <link linkend="seahorse-prefs-new">seahorse_prefs_new</link>                  (<link linkend="GtkWindow">GtkWindow</link> *parent);
+<link linkend="void">void</link>                <link linkend="seahorse-prefs-add-tab">seahorse_prefs_add_tab</link>              (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *label,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *tab);
+<link linkend="void">void</link>                <link linkend="seahorse-prefs-select-tab">seahorse_prefs_select_tab</link>           (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *tab);
+<link linkend="void">void</link>                <link linkend="seahorse-prefs-select-tabid">seahorse_prefs_select_tabid</link>         (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         const <link linkend="gchar">gchar</link> *tab);
+<link linkend="void">void</link>                <link linkend="seahorse-prefs-remove-tab">seahorse_prefs_remove_tab</link>           (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *tab);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-prefs.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-prefs.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="seahorse-prefs-new" role="function">
+<title>seahorse_prefs_new ()</title>
+<indexterm zone="seahorse-prefs-new"><primary sortas="prefs_new">seahorse_prefs_new</primary></indexterm><programlisting><link linkend="SeahorseWidget">SeahorseWidget</link> *    seahorse_prefs_new                  (<link linkend="GtkWindow">GtkWindow</link> *parent);</programlisting>
+<para>
+Create a new preferences window.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="GtkWindow"><type>GtkWindow</type></link> to set as the preferences dialog's parent
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The preferences window.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-prefs-add-tab" role="function">
+<title>seahorse_prefs_add_tab ()</title>
+<indexterm zone="seahorse-prefs-add-tab"><primary sortas="prefs_add_tab">seahorse_prefs_add_tab</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_prefs_add_tab              (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *label,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *tab);</programlisting>
+<para>
+Add a tab to the preferences window</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>swidget</parameter>&#160;:</term>
+<listitem><simpara> The preferences window
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> Label for the tab to be added
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tab</parameter>&#160;:</term>
+<listitem><simpara> Tab to be added
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-prefs-select-tab" role="function">
+<title>seahorse_prefs_select_tab ()</title>
+<indexterm zone="seahorse-prefs-select-tab"><primary sortas="prefs_select_tab">seahorse_prefs_select_tab</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_prefs_select_tab           (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *tab);</programlisting>
+<para>
+Sets the input tab to be the active one</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>swidget</parameter>&#160;:</term>
+<listitem><simpara> The preferences window
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tab</parameter>&#160;:</term>
+<listitem><simpara> The tab to be set active
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-prefs-select-tabid" role="function">
+<title>seahorse_prefs_select_tabid ()</title>
+<indexterm zone="seahorse-prefs-select-tabid"><primary sortas="prefs_select_tabid">seahorse_prefs_select_tabid</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_prefs_select_tabid         (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         const <link linkend="gchar">gchar</link> *tab);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>swidget</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tab</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-prefs-remove-tab" role="function">
+<title>seahorse_prefs_remove_tab ()</title>
+<indexterm zone="seahorse-prefs-remove-tab"><primary sortas="prefs_remove_tab">seahorse_prefs_remove_tab</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_prefs_remove_tab           (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *tab);</programlisting>
+<para>
+Removes a tab from the preferences window</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>swidget</parameter>&#160;:</term>
+<listitem><simpara> The preferences window
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tab</parameter>&#160;:</term>
+<listitem><simpara> The tab to be removed
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

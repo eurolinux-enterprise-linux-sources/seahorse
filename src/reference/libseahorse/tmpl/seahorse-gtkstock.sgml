@@ -1,0 +1,111 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-gtkstock
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO SEAHORSE_STOCK_KEY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_STOCK_SECRET ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_STOCK_KEY_SSH ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_STOCK_PERSON ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_STOCK_SIGN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_STOCK_SIGN_OK ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_STOCK_SIGN_BAD ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_STOCK_SIGN_UNKNOWN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_STOCK_SHARING ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_THEMED_WEBBROWSER ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_THEMED_FOLDER ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION seahorse_gtkstock_init ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION seahorse_gtkstock_add_icons ##### -->
+<para>
+
+</para>
+
+@icons: 
+
+

@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="libseahorse Reference Manual" link="index.html" author="" name="libseahorse">
+  <chapters>
+    <sub name="[Insert title here]" link="ch01.html">
+      <sub name="SeahorseUnknownSource" link="libseahorse-SeahorseUnknownSource.html"/>
+      <sub name="SeahorseObjectModel" link="libseahorse-SeahorseObjectModel.html"/>
+      <sub name="seahorse-source" link="libseahorse-seahorse-source.html"/>
+      <sub name="SeahorseSet" link="libseahorse-SeahorseSet.html"/>
+      <sub name="SeahorseXxx" link="libseahorse-SeahorseXxx.html"/>
+      <sub name="SeahorseContext" link="libseahorse-SeahorseContext.html"/>
+      <sub name="SeahorseObjectWidget" link="libseahorse-SeahorseObjectWidget.html"/>
+      <sub name="SeahorseSetModel" link="libseahorse-SeahorseSetModel.html"/>
+      <sub name="seahorse-view" link="libseahorse-seahorse-view.html"/>
+      <sub name="SeahorseWidget" link="libseahorse-SeahorseWidget.html"/>
+      <sub name="SeahorseUnknown" link="libseahorse-SeahorseUnknown.html"/>
+      <sub name="SeahorseSecureEntry" link="libseahorse-SeahorseSecureEntry.html"/>
+      <sub name="seahorse-transfer-operation" link="libseahorse-seahorse-transfer-operation.html"/>
+      <sub name="SeahorseObject" link="libseahorse-SeahorseObject.html"/>
+      <sub name="SeahorseMultiOperation" link="libseahorse-SeahorseMultiOperation.html"/>
+      <sub name="SeahorseCommands" link="libseahorse-SeahorseCommands.html"/>
+      <sub name="SeahorseServiceDiscovery" link="libseahorse-SeahorseServiceDiscovery.html"/>
+      <sub name="SeahorseKeyserverControl" link="libseahorse-SeahorseKeyserverControl.html"/>
+      <sub name="seahorse-secure-memory" link="libseahorse-seahorse-secure-memory.html"/>
+      <sub name="seahorse-gconf" link="libseahorse-seahorse-gconf.html"/>
+      <sub name="seahorse-servers" link="libseahorse-seahorse-servers.html"/>
+      <sub name="seahorse-marshal" link="libseahorse-seahorse-marshal.html"/>
+      <sub name="seahorse-check-button-control" link="libseahorse-seahorse-check-button-control.html"/>
+      <sub name="seahorse-types" link="libseahorse-seahorse-types.html"/>
+      <sub name="seahorse-combo-keys" link="libseahorse-seahorse-combo-keys.html"/>
+      <sub name="seahorse-libdialogs" link="libseahorse-seahorse-libdialogs.html"/>
+      <sub name="seahorse-util" link="libseahorse-seahorse-util.html"/>
+      <sub name="seahorse-progress" link="libseahorse-seahorse-progress.html"/>
+      <sub name="seahorse-prefs" link="libseahorse-seahorse-prefs.html"/>
+      <sub name="seahorse-validity" link="libseahorse-seahorse-validity.html"/>
+      <sub name="seahorse-passphrase" link="libseahorse-seahorse-passphrase.html"/>
+      <sub name="seahorse-gtkstock" link="libseahorse-seahorse-gtkstock.html"/>
+      <sub name="seahorse-unix-signal" link="libseahorse-seahorse-unix-signal.html"/>
+    </sub>
+    <sub name="Object Hierarchy" link="object-tree.html"/>
+    <sub name="API Index" link="api-index-full.html"/>
+  </chapters>
+  <functions>
+    <function name="SeahorseUnknownSourcePrivate" link="libseahorse-SeahorseUnknownSource.html#SeahorseUnknownSourcePrivate"/>
+    <function name="SeahorseUnknownSource" link="libseahorse-SeahorseUnknownSource.html#SeahorseUnknownSource"/>
+    <function name="seahorse_unknown_source_new ()" link="libseahorse-SeahorseUnknownSource.html#seahorse-unknown-source-new"/>
+    <function name="seahorse_unknown_source_add_object ()" link="libseahorse-SeahorseUnknownSource.html#seahorse-unknown-source-add-object"/>
+    <function name="SeahorseObjectModel" link="libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"/>
+    <function name="seahorse_object_model_new ()" link="libseahorse-SeahorseObjectModel.html#seahorse-object-model-new"/>
+    <function name="seahorse_object_model_set_column_types ()" link="libseahorse-SeahorseObjectModel.html#seahorse-object-model-set-column-types"/>
+    <function name="seahorse_object_model_set_row_object ()" link="libseahorse-SeahorseObjectModel.html#seahorse-object-model-set-row-object"/>
+    <function name="seahorse_object_model_get_row_key ()" link="libseahorse-SeahorseObjectModel.html#seahorse-object-model-get-row-key"/>
+    <function name="seahorse_object_model_get_rows_for_object ()" link="libseahorse-SeahorseObjectModel.html#seahorse-object-model-get-rows-for-object"/>
+    <function name="seahorse_object_model_remove_rows_for_object ()" link="libseahorse-SeahorseObjectModel.html#seahorse-object-model-remove-rows-for-object"/>
+    <function name="seahorse_object_model_free_rows ()" link="libseahorse-SeahorseObjectModel.html#seahorse-object-model-free-rows"/>
+    <function name="SEAHORSE_SOURCE_GET_INTERFACE()" link="libseahorse-seahorse-source.html#SEAHORSE-SOURCE-GET-INTERFACE--CAPS"/>
+    <function name="SeahorseSource" link="libseahorse-seahorse-source.html#SeahorseSource"/>
+    <function name="SeahorseSourceIface" link="libseahorse-seahorse-source.html#SeahorseSourceIface"/>
+    <function name="seahorse_source_load ()" link="libseahorse-seahorse-source.html#seahorse-source-load"/>
+    <function name="seahorse_source_load_sync ()" link="libseahorse-seahorse-source.html#seahorse-source-load-sync"/>
+    <function name="seahorse_source_load_async ()" link="libseahorse-seahorse-source.html#seahorse-source-load-async"/>
+    <function name="seahorse_source_search ()" link="libseahorse-seahorse-source.html#seahorse-source-search"/>
+    <function name="seahorse_source_import ()" link="libseahorse-seahorse-source.html#seahorse-source-import"/>
+    <function name="seahorse_source_import_sync ()" link="libseahorse-seahorse-source.html#seahorse-source-import-sync"/>
+    <function name="seahorse_source_export_objects ()" link="libseahorse-seahorse-source.html#seahorse-source-export-objects"/>
+    <function name="seahorse_source_delete_objects ()" link="libseahorse-seahorse-source.html#seahorse-source-delete-objects"/>
+    <function name="seahorse_source_export ()" link="libseahorse-seahorse-source.html#seahorse-source-export"/>
+    <function name="seahorse_source_export_raw ()" link="libseahorse-seahorse-source.html#seahorse-source-export-raw"/>
+    <function name="seahorse_source_get_tag ()" link="libseahorse-seahorse-source.html#seahorse-source-get-tag"/>
+    <function name="seahorse_source_get_location ()" link="libseahorse-seahorse-source.html#seahorse-source-get-location"/>
+    <function name="SeahorseSetPrivate" link="libseahorse-SeahorseSet.html#SeahorseSetPrivate"/>
+    <function name="SeahorseSet" link="libseahorse-SeahorseSet.html#SeahorseSet"/>
+    <function name="seahorse_set_new ()" link="libseahorse-SeahorseSet.html#seahorse-set-new"/>
+    <function name="seahorse_set_new_full ()" link="libseahorse-SeahorseSet.html#seahorse-set-new-full"/>
+    <function name="seahorse_set_has_object ()" link="libseahorse-SeahorseSet.html#seahorse-set-has-object"/>
+    <function name="seahorse_set_get_objects ()" link="libseahorse-SeahorseSet.html#seahorse-set-get-objects"/>
+    <function name="seahorse_set_get_count ()" link="libseahorse-SeahorseSet.html#seahorse-set-get-count"/>
+    <function name="seahorse_set_refresh ()" link="libseahorse-SeahorseSet.html#seahorse-set-refresh"/>
+    <function name="seahorse_set_get_closure ()" link="libseahorse-SeahorseSet.html#seahorse-set-get-closure"/>
+    <function name="seahorse_set_set_closure ()" link="libseahorse-SeahorseSet.html#seahorse-set-set-closure"/>
+    <function name="SeahorseXxxPrivate" link="libseahorse-SeahorseXxx.html#SeahorseXxxPrivate"/>
+    <function name="SeahorseXxx" link="libseahorse-SeahorseXxx.html#SeahorseXxx"/>
+    <function name="seahorse_xxx_new ()" link="libseahorse-SeahorseXxx.html#seahorse-xxx-new"/>
+    <function name="SeahorseContextPrivate" link="libseahorse-SeahorseContext.html#SeahorseContextPrivate"/>
+    <function name="SeahorseContext" link="libseahorse-SeahorseContext.html#SeahorseContext"/>
+    <function name="SeahorseObjectFunc ()" link="libseahorse-SeahorseContext.html#SeahorseObjectFunc"/>
+    <function name="SCTX_APP()" link="libseahorse-SeahorseContext.html#SCTX-APP--CAPS"/>
+    <function name="seahorse_context_for_app ()" link="libseahorse-SeahorseContext.html#seahorse-context-for-app"/>
+    <function name="seahorse_context_new ()" link="libseahorse-SeahorseContext.html#seahorse-context-new"/>
+    <function name="seahorse_context_destroy ()" link="libseahorse-SeahorseContext.html#seahorse-context-destroy"/>
+    <function name="seahorse_context_is_daemon()" link="libseahorse-SeahorseContext.html#seahorse-context-is-daemon"/>
+    <function name="seahorse_context_add_source ()" link="libseahorse-SeahorseContext.html#seahorse-context-add-source"/>
+    <function name="seahorse_context_take_source ()" link="libseahorse-SeahorseContext.html#seahorse-context-take-source"/>
+    <function name="seahorse_context_remove_source ()" link="libseahorse-SeahorseContext.html#seahorse-context-remove-source"/>
+    <function name="seahorse_context_find_source ()" link="libseahorse-SeahorseContext.html#seahorse-context-find-source"/>
+    <function name="seahorse_context_find_sources ()" link="libseahorse-SeahorseContext.html#seahorse-context-find-sources"/>
+    <function name="seahorse_context_remote_source ()" link="libseahorse-SeahorseContext.html#seahorse-context-remote-source"/>
+    <function name="seahorse_context_add_object ()" link="libseahorse-SeahorseContext.html#seahorse-context-add-object"/>
+    <function name="seahorse_context_take_object ()" link="libseahorse-SeahorseContext.html#seahorse-context-take-object"/>
+    <function name="seahorse_context_get_count ()" link="libseahorse-SeahorseContext.html#seahorse-context-get-count"/>
+    <function name="seahorse_context_get_object ()" link="libseahorse-SeahorseContext.html#seahorse-context-get-object"/>
+    <function name="seahorse_context_get_objects ()" link="libseahorse-SeahorseContext.html#seahorse-context-get-objects"/>
+    <function name="seahorse_context_find_object ()" link="libseahorse-SeahorseContext.html#seahorse-context-find-object"/>
+    <function name="seahorse_context_find_objects ()" link="libseahorse-SeahorseContext.html#seahorse-context-find-objects"/>
+    <function name="seahorse_context_find_objects_full ()" link="libseahorse-SeahorseContext.html#seahorse-context-find-objects-full"/>
+    <function name="seahorse_context_for_objects_full ()" link="libseahorse-SeahorseContext.html#seahorse-context-for-objects-full"/>
+    <function name="seahorse_context_verify_objects ()" link="libseahorse-SeahorseContext.html#seahorse-context-verify-objects"/>
+    <function name="seahorse_context_remove_object ()" link="libseahorse-SeahorseContext.html#seahorse-context-remove-object"/>
+    <function name="seahorse_context_get_discovery ()" link="libseahorse-SeahorseContext.html#seahorse-context-get-discovery"/>
+    <function name="seahorse_context_get_default_key ()" link="libseahorse-SeahorseContext.html#seahorse-context-get-default-key"/>
+    <function name="seahorse_context_refresh_auto ()" link="libseahorse-SeahorseContext.html#seahorse-context-refresh-auto"/>
+    <function name="seahorse_context_search_remote ()" link="libseahorse-SeahorseContext.html#seahorse-context-search-remote"/>
+    <function name="seahorse_context_transfer_objects ()" link="libseahorse-SeahorseContext.html#seahorse-context-transfer-objects"/>
+    <function name="seahorse_context_retrieve_objects ()" link="libseahorse-SeahorseContext.html#seahorse-context-retrieve-objects"/>
+    <function name="seahorse_context_discover_objects ()" link="libseahorse-SeahorseContext.html#seahorse-context-discover-objects"/>
+    <function name="seahorse_context_object_from_dbus ()" link="libseahorse-SeahorseContext.html#seahorse-context-object-from-dbus"/>
+    <function name="seahorse_context_object_to_dbus ()" link="libseahorse-SeahorseContext.html#seahorse-context-object-to-dbus"/>
+    <function name="seahorse_context_id_to_dbus ()" link="libseahorse-SeahorseContext.html#seahorse-context-id-to-dbus"/>
+    <function name="SeahorseCanonizeFunc ()" link="libseahorse-SeahorseContext.html#SeahorseCanonizeFunc"/>
+    <function name="seahorse_context_canonize_id ()" link="libseahorse-SeahorseContext.html#seahorse-context-canonize-id"/>
+    <function name="SeahorseObjectWidget" link="libseahorse-SeahorseObjectWidget.html#SeahorseObjectWidget"/>
+    <function name="seahorse_object_widget_new ()" link="libseahorse-SeahorseObjectWidget.html#seahorse-object-widget-new"/>
+    <function name="SeahorseSetModelColumn" link="libseahorse-SeahorseSetModel.html#SeahorseSetModelColumn"/>
+    <function name="SeahorseSetModel" link="libseahorse-SeahorseSetModel.html#SeahorseSetModel"/>
+    <function name="seahorse_set_model_new ()" link="libseahorse-SeahorseSetModel.html#seahorse-set-model-new"/>
+    <function name="seahorse_set_model_new_full ()" link="libseahorse-SeahorseSetModel.html#seahorse-set-model-new-full"/>
+    <function name="seahorse_set_model_set_columns ()" link="libseahorse-SeahorseSetModel.html#seahorse-set-model-set-columns"/>
+    <function name="seahorse_set_model_object_for_iter ()" link="libseahorse-SeahorseSetModel.html#seahorse-set-model-object-for-iter"/>
+    <function name="seahorse_set_model_iter_for_object ()" link="libseahorse-SeahorseSetModel.html#seahorse-set-model-iter-for-object"/>
+    <function name="SeahorseCommands" link="libseahorse-seahorse-view.html#SeahorseCommands"/>
+    <function name="SEAHORSE_VIEW_GET_INTERFACE()" link="libseahorse-seahorse-view.html#SEAHORSE-VIEW-GET-INTERFACE--CAPS"/>
+    <function name="SeahorseView" link="libseahorse-seahorse-view.html#SeahorseView"/>
+    <function name="SeahorseViewIface" link="libseahorse-seahorse-view.html#SeahorseViewIface"/>
+    <function name="seahorse_view_get_selected_objects ()" link="libseahorse-seahorse-view.html#seahorse-view-get-selected-objects"/>
+    <function name="seahorse_view_set_selected_objects ()" link="libseahorse-seahorse-view.html#seahorse-view-set-selected-objects"/>
+    <function name="seahorse_view_get_selected_matching ()" link="libseahorse-seahorse-view.html#seahorse-view-get-selected-matching"/>
+    <function name="seahorse_view_get_selected ()" link="libseahorse-seahorse-view.html#seahorse-view-get-selected"/>
+    <function name="seahorse_view_set_selected ()" link="libseahorse-seahorse-view.html#seahorse-view-set-selected"/>
+    <function name="seahorse_view_get_current_set ()" link="libseahorse-seahorse-view.html#seahorse-view-get-current-set"/>
+    <function name="seahorse_view_get_window ()" link="libseahorse-seahorse-view.html#seahorse-view-get-window"/>
+    <function name="seahorse_view_register_ui ()" link="libseahorse-seahorse-view.html#seahorse-view-register-ui"/>
+    <function name="seahorse_view_register_commands ()" link="libseahorse-seahorse-view.html#seahorse-view-register-commands"/>
+    <function name="SeahorseWidget" link="libseahorse-SeahorseWidget.html#SeahorseWidget"/>
+    <function name="seahorse_widget_new ()" link="libseahorse-SeahorseWidget.html#seahorse-widget-new"/>
+    <function name="seahorse_widget_new_allow_multiple ()" link="libseahorse-SeahorseWidget.html#seahorse-widget-new-allow-multiple"/>
+    <function name="seahorse_widget_find ()" link="libseahorse-SeahorseWidget.html#seahorse-widget-find"/>
+    <function name="seahorse_widget_get_name ()" link="libseahorse-SeahorseWidget.html#seahorse-widget-get-name"/>
+    <function name="seahorse_widget_get_toplevel ()" link="libseahorse-SeahorseWidget.html#seahorse-widget-get-toplevel"/>
+    <function name="seahorse_widget_get_widget ()" link="libseahorse-SeahorseWidget.html#seahorse-widget-get-widget"/>
+    <function name="seahorse_widget_show ()" link="libseahorse-SeahorseWidget.html#seahorse-widget-show"/>
+    <function name="seahorse_widget_show_help ()" link="libseahorse-SeahorseWidget.html#seahorse-widget-show-help"/>
+    <function name="seahorse_widget_set_visible ()" link="libseahorse-SeahorseWidget.html#seahorse-widget-set-visible"/>
+    <function name="seahorse_widget_set_sensitive ()" link="libseahorse-SeahorseWidget.html#seahorse-widget-set-sensitive"/>
+    <function name="seahorse_widget_destroy ()" link="libseahorse-SeahorseWidget.html#seahorse-widget-destroy"/>
+    <function name="SeahorseUnknown" link="libseahorse-SeahorseUnknown.html#SeahorseUnknown"/>
+    <function name="seahorse_unknown_new ()" link="libseahorse-SeahorseUnknown.html#seahorse-unknown-new"/>
+    <function name="SeahorseSecureEntry" link="libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"/>
+    <function name="seahorse_secure_entry_new ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-new"/>
+    <function name="seahorse_secure_entry_reset_changed ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-reset-changed"/>
+    <function name="seahorse_secure_entry_get_changed ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-changed"/>
+    <function name="seahorse_secure_entry_set_visibility ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-visibility"/>
+    <function name="seahorse_secure_entry_get_visibility ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-visibility"/>
+    <function name="seahorse_secure_entry_set_invisible_char ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-invisible-char"/>
+    <function name="seahorse_secure_entry_get_invisible_char ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-invisible-char"/>
+    <function name="seahorse_secure_entry_set_has_frame ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-has-frame"/>
+    <function name="seahorse_secure_entry_get_has_frame ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-has-frame"/>
+    <function name="seahorse_secure_entry_set_max_length ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-max-length"/>
+    <function name="seahorse_secure_entry_get_max_length ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-max-length"/>
+    <function name="seahorse_secure_entry_set_activates_default ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-activates-default"/>
+    <function name="seahorse_secure_entry_get_activates_default ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-activates-default"/>
+    <function name="seahorse_secure_entry_set_width_chars ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-width-chars"/>
+    <function name="seahorse_secure_entry_get_width_chars ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-width-chars"/>
+    <function name="seahorse_secure_entry_set_text ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-text"/>
+    <function name="seahorse_secure_entry_get_text ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-text"/>
+    <function name="seahorse_secure_entry_get_layout ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-layout"/>
+    <function name="seahorse_secure_entry_get_layout_offsets ()" link="libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-layout-offsets"/>
+    <function name="seahorse_transfer_operation_new ()" link="libseahorse-seahorse-transfer-operation.html#seahorse-transfer-operation-new"/>
+    <function name="SeahorseObjectPrivate" link="libseahorse-SeahorseObject.html#SeahorseObjectPrivate"/>
+    <function name="SeahorseObject" link="libseahorse-SeahorseObject.html#SeahorseObject"/>
+    <function name="seahorse_object_new ()" link="libseahorse-SeahorseObject.html#seahorse-object-new"/>
+    <function name="seahorse_object_realize ()" link="libseahorse-SeahorseObject.html#seahorse-object-realize"/>
+    <function name="seahorse_object_refresh ()" link="libseahorse-SeahorseObject.html#seahorse-object-refresh"/>
+    <function name="seahorse_object_delete ()" link="libseahorse-SeahorseObject.html#seahorse-object-delete"/>
+    <function name="seahorse_object_get_id ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-id"/>
+    <function name="seahorse_object_get_tag ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-tag"/>
+    <function name="seahorse_object_get_source ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-source"/>
+    <function name="seahorse_object_set_source ()" link="libseahorse-SeahorseObject.html#seahorse-object-set-source"/>
+    <function name="seahorse_object_get_context ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-context"/>
+    <function name="seahorse_object_get_preferred ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-preferred"/>
+    <function name="seahorse_object_set_preferred ()" link="libseahorse-SeahorseObject.html#seahorse-object-set-preferred"/>
+    <function name="seahorse_object_get_parent ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-parent"/>
+    <function name="seahorse_object_set_parent ()" link="libseahorse-SeahorseObject.html#seahorse-object-set-parent"/>
+    <function name="seahorse_object_get_children ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-children"/>
+    <function name="seahorse_object_get_nth_child ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-nth-child"/>
+    <function name="seahorse_object_get_label ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-label"/>
+    <function name="seahorse_object_get_markup ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-markup"/>
+    <function name="seahorse_object_get_identifier ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-identifier"/>
+    <function name="seahorse_object_get_description ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-description"/>
+    <function name="seahorse_object_get_nickname ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-nickname"/>
+    <function name="seahorse_object_get_icon ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-icon"/>
+    <function name="seahorse_object_get_location ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-location"/>
+    <function name="seahorse_object_get_usage ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-usage"/>
+    <function name="seahorse_object_get_flags ()" link="libseahorse-SeahorseObject.html#seahorse-object-get-flags"/>
+    <function name="seahorse_object_lookup_property ()" link="libseahorse-SeahorseObject.html#seahorse-object-lookup-property"/>
+    <function name="SeahorseObjectPredicateFunc ()" link="libseahorse-SeahorseObject.html#SeahorseObjectPredicateFunc"/>
+    <function name="SeahorseObjectPredicate" link="libseahorse-SeahorseObject.html#SeahorseObjectPredicate"/>
+    <function name="seahorse_object_predicate_clear ()" link="libseahorse-SeahorseObject.html#seahorse-object-predicate-clear"/>
+    <function name="seahorse_object_predicate_match ()" link="libseahorse-SeahorseObject.html#seahorse-object-predicate-match"/>
+    <function name="SeahorseOperation" link="libseahorse-SeahorseMultiOperation.html#SeahorseOperation"/>
+    <function name="seahorse_operation_new_complete ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-new-complete"/>
+    <function name="seahorse_operation_new_cancelled ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-new-cancelled"/>
+    <function name="seahorse_operation_cancel ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-cancel"/>
+    <function name="seahorse_operation_is_running()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-is-running"/>
+    <function name="seahorse_operation_is_cancelled()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-is-cancelled"/>
+    <function name="seahorse_operation_is_successful()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-is-successful"/>
+    <function name="seahorse_operation_copy_error ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-copy-error"/>
+    <function name="seahorse_operation_get_error ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-get-error"/>
+    <function name="seahorse_operation_display_error ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-display-error"/>
+    <function name="seahorse_operation_wait ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-wait"/>
+    <function name="SeahorseDoneFunc ()" link="libseahorse-SeahorseMultiOperation.html#SeahorseDoneFunc"/>
+    <function name="SeahorseProgressFunc ()" link="libseahorse-SeahorseMultiOperation.html#SeahorseProgressFunc"/>
+    <function name="seahorse_operation_watch ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-watch"/>
+    <function name="seahorse_operation_get_progress()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-get-progress"/>
+    <function name="seahorse_operation_get_message()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-get-message"/>
+    <function name="seahorse_operation_get_result ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-get-result"/>
+    <function name="seahorse_operation_list_add ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-list-add"/>
+    <function name="seahorse_operation_list_remove ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-list-remove"/>
+    <function name="seahorse_operation_list_cancel ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-list-cancel"/>
+    <function name="seahorse_operation_list_purge ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-list-purge"/>
+    <function name="seahorse_operation_list_free ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-list-free"/>
+    <function name="SEAHORSE_TYPE_MULTI_OPERATION" link="libseahorse-SeahorseMultiOperation.html#SEAHORSE-TYPE-MULTI-OPERATION--CAPS"/>
+    <function name="SEAHORSE_MULTI_OPERATION()" link="libseahorse-SeahorseMultiOperation.html#SEAHORSE-MULTI-OPERATION--CAPS"/>
+    <function name="SEAHORSE_MULTI_OPERATION_CLASS()" link="libseahorse-SeahorseMultiOperation.html#SEAHORSE-MULTI-OPERATION-CLASS--CAPS"/>
+    <function name="SEAHORSE_IS_MULTI_OPERATION()" link="libseahorse-SeahorseMultiOperation.html#SEAHORSE-IS-MULTI-OPERATION--CAPS"/>
+    <function name="SEAHORSE_IS_MULTI_OPERATION_CLASS()" link="libseahorse-SeahorseMultiOperation.html#SEAHORSE-IS-MULTI-OPERATION-CLASS--CAPS"/>
+    <function name="SEAHORSE_MULTI_OPERATION_GET_CLASS()" link="libseahorse-SeahorseMultiOperation.html#SEAHORSE-MULTI-OPERATION-GET-CLASS--CAPS"/>
+    <function name="SeahorseMultiOperation" link="libseahorse-SeahorseMultiOperation.html#SeahorseMultiOperation"/>
+    <function name="seahorse_multi_operation_get_type ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-multi-operation-get-type"/>
+    <function name="seahorse_multi_operation_new ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-multi-operation-new"/>
+    <function name="seahorse_multi_operation_take ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-multi-operation-take"/>
+    <function name="DECLARE_OPERATION()" link="libseahorse-SeahorseMultiOperation.html#DECLARE-OPERATION--CAPS"/>
+    <function name="SEAHORSE_CALC_PROGRESS()" link="libseahorse-SeahorseMultiOperation.html#SEAHORSE-CALC-PROGRESS--CAPS"/>
+    <function name="seahorse_operation_mark_start ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-mark-start"/>
+    <function name="seahorse_operation_mark_done ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-mark-done"/>
+    <function name="seahorse_operation_mark_progress ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-mark-progress"/>
+    <function name="seahorse_operation_mark_progress_full ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-mark-progress-full"/>
+    <function name="seahorse_operation_mark_result ()" link="libseahorse-SeahorseMultiOperation.html#seahorse-operation-mark-result"/>
+    <function name="SeahorseCommandsPrivate" link="libseahorse-SeahorseCommands.html#SeahorseCommandsPrivate"/>
+    <function name="SeahorseCommands" link="libseahorse-SeahorseCommands.html#SeahorseCommands"/>
+    <function name="seahorse_commands_show_properties ()" link="libseahorse-SeahorseCommands.html#seahorse-commands-show-properties"/>
+    <function name="seahorse_commands_delete_objects ()" link="libseahorse-SeahorseCommands.html#seahorse-commands-delete-objects"/>
+    <function name="seahorse_commands_get_view ()" link="libseahorse-SeahorseCommands.html#seahorse-commands-get-view"/>
+    <function name="seahorse_commands_get_window ()" link="libseahorse-SeahorseCommands.html#seahorse-commands-get-window"/>
+    <function name="seahorse_commands_get_command_actions ()" link="libseahorse-SeahorseCommands.html#seahorse-commands-get-command-actions"/>
+    <function name="seahorse_commands_get_ui_definition ()" link="libseahorse-SeahorseCommands.html#seahorse-commands-get-ui-definition"/>
+    <function name="SeahorseServiceDiscoveryPriv" link="libseahorse-SeahorseServiceDiscovery.html#SeahorseServiceDiscoveryPriv"/>
+    <function name="SeahorseServiceDiscovery" link="libseahorse-SeahorseServiceDiscovery.html#SeahorseServiceDiscovery"/>
+    <function name="seahorse_service_discovery_new ()" link="libseahorse-SeahorseServiceDiscovery.html#seahorse-service-discovery-new"/>
+    <function name="seahorse_service_discovery_list ()" link="libseahorse-SeahorseServiceDiscovery.html#seahorse-service-discovery-list"/>
+    <function name="seahorse_service_discovery_get_uri ()" link="libseahorse-SeahorseServiceDiscovery.html#seahorse-service-discovery-get-uri"/>
+    <function name="seahorse_service_discovery_get_uris ()" link="libseahorse-SeahorseServiceDiscovery.html#seahorse-service-discovery-get-uris"/>
+    <function name="SeahorseKeyserverControl" link="libseahorse-SeahorseKeyserverControl.html#SeahorseKeyserverControl"/>
+    <function name="seahorse_keyserver_control_new ()" link="libseahorse-SeahorseKeyserverControl.html#seahorse-keyserver-control-new"/>
+    <function name="seahorse_keyserver_control_selected ()" link="libseahorse-SeahorseKeyserverControl.html#seahorse-keyserver-control-selected"/>
+    <function name="seahorse_use_secure_mem" link="libseahorse-seahorse-secure-memory.html#seahorse-use-secure-mem"/>
+    <function name="WITH_SECURE_MEM()" link="libseahorse-seahorse-secure-memory.html#WITH-SECURE-MEM--CAPS"/>
+    <function name="seahorse_secure_memory_init ()" link="libseahorse-seahorse-secure-memory.html#seahorse-secure-memory-init"/>
+    <function name="ENCRYPTSELF_KEY" link="libseahorse-seahorse-gconf.html#ENCRYPTSELF-KEY--CAPS"/>
+    <function name="MULTI_EXTENSION_KEY" link="libseahorse-seahorse-gconf.html#MULTI-EXTENSION-KEY--CAPS"/>
+    <function name="MULTI_SEPERATE_KEY" link="libseahorse-seahorse-gconf.html#MULTI-SEPERATE-KEY--CAPS"/>
+    <function name="KEYSERVER_KEY" link="libseahorse-seahorse-gconf.html#KEYSERVER-KEY--CAPS"/>
+    <function name="AUTORETRIEVE_KEY" link="libseahorse-seahorse-gconf.html#AUTORETRIEVE-KEY--CAPS"/>
+    <function name="AUTOSYNC_KEY" link="libseahorse-seahorse-gconf.html#AUTOSYNC-KEY--CAPS"/>
+    <function name="LASTSEARCH_KEY" link="libseahorse-seahorse-gconf.html#LASTSEARCH-KEY--CAPS"/>
+    <function name="LASTSERVERS_KEY" link="libseahorse-seahorse-gconf.html#LASTSERVERS-KEY--CAPS"/>
+    <function name="PUBLISH_TO_KEY" link="libseahorse-seahorse-gconf.html#PUBLISH-TO-KEY--CAPS"/>
+    <function name="SEAHORSE_SCHEMAS" link="libseahorse-seahorse-gconf.html#SEAHORSE-SCHEMAS--CAPS"/>
+    <function name="KEYSHARING_KEY" link="libseahorse-seahorse-gconf.html#KEYSHARING-KEY--CAPS"/>
+    <function name="WINDOW_SIZE" link="libseahorse-seahorse-gconf.html#WINDOW-SIZE--CAPS"/>
+    <function name="seahorse_gconf_disconnect ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-disconnect"/>
+    <function name="seahorse_gconf_set_boolean ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-set-boolean"/>
+    <function name="seahorse_gconf_get_boolean ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-get-boolean"/>
+    <function name="seahorse_gconf_set_integer ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-set-integer"/>
+    <function name="seahorse_gconf_get_integer ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-get-integer"/>
+    <function name="seahorse_gconf_set_string ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-set-string"/>
+    <function name="seahorse_gconf_get_string ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-get-string"/>
+    <function name="seahorse_gconf_set_string_list ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-set-string-list"/>
+    <function name="seahorse_gconf_get_string_list ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-get-string-list"/>
+    <function name="seahorse_gconf_get_entry ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-get-entry"/>
+    <function name="seahorse_gconf_notify ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-notify"/>
+    <function name="seahorse_gconf_notify_lazy ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-notify-lazy"/>
+    <function name="seahorse_gconf_unnotify ()" link="libseahorse-seahorse-gconf.html#seahorse-gconf-unnotify"/>
+    <function name="seahorse_servers_get_types ()" link="libseahorse-seahorse-servers.html#seahorse-servers-get-types"/>
+    <function name="seahorse_servers_get_names ()" link="libseahorse-seahorse-servers.html#seahorse-servers-get-names"/>
+    <function name="seahorse_servers_get_description ()" link="libseahorse-seahorse-servers.html#seahorse-servers-get-description"/>
+    <function name="seahorse_servers_get_uris ()" link="libseahorse-seahorse-servers.html#seahorse-servers-get-uris"/>
+    <function name="seahorse_servers_is_valid_uri ()" link="libseahorse-seahorse-servers.html#seahorse-servers-is-valid-uri"/>
+    <function name="SeahorseValidUriFunc ()" link="libseahorse-seahorse-servers.html#SeahorseValidUriFunc"/>
+    <function name="seahorse_servers_register_type ()" link="libseahorse-seahorse-servers.html#seahorse-servers-register-type"/>
+    <function name="seahorse_marshal_VOID__STRING_DOUBLE ()" link="libseahorse-seahorse-marshal.html#seahorse-marshal-VOID--STRING-DOUBLE"/>
+    <function name="seahorse_marshal_VOID__OBJECT_UINT ()" link="libseahorse-seahorse-marshal.html#seahorse-marshal-VOID--OBJECT-UINT"/>
+    <function name="seahorse_marshal_VOID__OBJECT_POINTER ()" link="libseahorse-seahorse-marshal.html#seahorse-marshal-VOID--OBJECT-POINTER"/>
+    <function name="seahorse_marshal_VOID__OBJECT_UINT_POINTER ()" link="libseahorse-seahorse-marshal.html#seahorse-marshal-VOID--OBJECT-UINT-POINTER"/>
+    <function name="seahorse_marshal_VOID__OBJECT_OBJECT ()" link="libseahorse-seahorse-marshal.html#seahorse-marshal-VOID--OBJECT-OBJECT"/>
+    <function name="seahorse_check_button_gconf_attach ()" link="libseahorse-seahorse-check-button-control.html#seahorse-check-button-gconf-attach"/>
+    <function name="seahorse_check_button_gconf_detach ()" link="libseahorse-seahorse-check-button-control.html#seahorse-check-button-gconf-detach"/>
+    <function name="SEAHORSE_TYPE_LOCATION" link="libseahorse-seahorse-types.html#SEAHORSE-TYPE-LOCATION--CAPS"/>
+    <function name="SEAHORSE_TYPE_USAGE" link="libseahorse-seahorse-types.html#SEAHORSE-TYPE-USAGE--CAPS"/>
+    <function name="enum SeahorseLocation" link="libseahorse-seahorse-types.html#SeahorseLocation"/>
+    <function name="seahorse_location_get_type ()" link="libseahorse-seahorse-types.html#seahorse-location-get-type"/>
+    <function name="enum SeahorseUsage" link="libseahorse-seahorse-types.html#SeahorseUsage"/>
+    <function name="seahorse_usage_get_type ()" link="libseahorse-seahorse-types.html#seahorse-usage-get-type"/>
+    <function name="enum SeahorseKeyFlags" link="libseahorse-seahorse-types.html#SeahorseKeyFlags"/>
+    <function name="SEAHORSE_TAG_INVALID" link="libseahorse-seahorse-types.html#SEAHORSE-TAG-INVALID--CAPS"/>
+    <function name="seahorse_combo_keys_attach ()" link="libseahorse-seahorse-combo-keys.html#seahorse-combo-keys-attach"/>
+    <function name="seahorse_combo_keys_set_active_id ()" link="libseahorse-seahorse-combo-keys.html#seahorse-combo-keys-set-active-id"/>
+    <function name="seahorse_combo_keys_set_active ()" link="libseahorse-seahorse-combo-keys.html#seahorse-combo-keys-set-active"/>
+    <function name="seahorse_combo_keys_get_active ()" link="libseahorse-seahorse-combo-keys.html#seahorse-combo-keys-get-active"/>
+    <function name="seahorse_combo_keys_get_active_id ()" link="libseahorse-seahorse-combo-keys.html#seahorse-combo-keys-get-active-id"/>
+    <function name="seahorse_notify_import ()" link="libseahorse-seahorse-libdialogs.html#seahorse-notify-import"/>
+    <function name="seahorse_notify_import_local ()" link="libseahorse-seahorse-libdialogs.html#seahorse-notify-import-local"/>
+    <function name="seahorse_notification_display ()" link="libseahorse-seahorse-libdialogs.html#seahorse-notification-display"/>
+    <function name="seahorse_notification_have ()" link="libseahorse-seahorse-libdialogs.html#seahorse-notification-have"/>
+    <function name="seahorse_util_dns_sd_get_poll ()" link="libseahorse-seahorse-util.html#seahorse-util-dns-sd-get-poll"/>
+    <function name="enum SeahorseSuffix" link="libseahorse-seahorse-util.html#SeahorseSuffix"/>
+    <function name="SEAHORSE_EXT_ASC" link="libseahorse-seahorse-util.html#SEAHORSE-EXT-ASC--CAPS"/>
+    <function name="SEAHORSE_EXT_SIG" link="libseahorse-seahorse-util.html#SEAHORSE-EXT-SIG--CAPS"/>
+    <function name="SEAHORSE_EXT_PGP" link="libseahorse-seahorse-util.html#SEAHORSE-EXT-PGP--CAPS"/>
+    <function name="SEAHORSE_EXT_GPG" link="libseahorse-seahorse-util.html#SEAHORSE-EXT-GPG--CAPS"/>
+    <function name="seahorse_util_get_date_string ()" link="libseahorse-seahorse-util.html#seahorse-util-get-date-string"/>
+    <function name="seahorse_util_get_display_date_string ()" link="libseahorse-seahorse-util.html#seahorse-util-get-display-date-string"/>
+    <function name="SEAHORSE_ERROR" link="libseahorse-seahorse-util.html#SEAHORSE-ERROR--CAPS"/>
+    <function name="seahorse_util_error_domain ()" link="libseahorse-seahorse-util.html#seahorse-util-error-domain"/>
+    <function name="seahorse_util_show_error ()" link="libseahorse-seahorse-util.html#seahorse-util-show-error"/>
+    <function name="seahorse_util_handle_error ()" link="libseahorse-seahorse-util.html#seahorse-util-handle-error"/>
+    <function name="seahorse_util_prompt_delete ()" link="libseahorse-seahorse-util.html#seahorse-util-prompt-delete"/>
+    <function name="seahorse_util_read_to_memory ()" link="libseahorse-seahorse-util.html#seahorse-util-read-to-memory"/>
+    <function name="seahorse_util_read_data_block ()" link="libseahorse-seahorse-util.html#seahorse-util-read-data-block"/>
+    <function name="seahorse_util_memory_input_string ()" link="libseahorse-seahorse-util.html#seahorse-util-memory-input-string"/>
+    <function name="seahorse_util_memory_output_length ()" link="libseahorse-seahorse-util.html#seahorse-util-memory-output-length"/>
+    <function name="seahorse_util_print_fd ()" link="libseahorse-seahorse-util.html#seahorse-util-print-fd"/>
+    <function name="seahorse_util_printf_fd ()" link="libseahorse-seahorse-util.html#seahorse-util-printf-fd"/>
+    <function name="seahorse_util_filename_for_objects ()" link="libseahorse-seahorse-util.html#seahorse-util-filename-for-objects"/>
+    <function name="seahorse_util_uri_exists ()" link="libseahorse-seahorse-util.html#seahorse-util-uri-exists"/>
+    <function name="seahorse_util_uri_unique ()" link="libseahorse-seahorse-util.html#seahorse-util-uri-unique"/>
+    <function name="seahorse_util_uri_replace_ext ()" link="libseahorse-seahorse-util.html#seahorse-util-uri-replace-ext"/>
+    <function name="seahorse_util_uri_get_last ()" link="libseahorse-seahorse-util.html#seahorse-util-uri-get-last"/>
+    <function name="seahorse_util_uri_split_last ()" link="libseahorse-seahorse-util.html#seahorse-util-uri-split-last"/>
+    <function name="seahorse_util_uris_package ()" link="libseahorse-seahorse-util.html#seahorse-util-uris-package"/>
+    <function name="seahorse_util_detect_mime_type ()" link="libseahorse-seahorse-util.html#seahorse-util-detect-mime-type"/>
+    <function name="seahorse_util_detect_data_type ()" link="libseahorse-seahorse-util.html#seahorse-util-detect-data-type"/>
+    <function name="seahorse_util_detect_file_type ()" link="libseahorse-seahorse-util.html#seahorse-util-detect-file-type"/>
+    <function name="seahorse_util_write_file_private ()" link="libseahorse-seahorse-util.html#seahorse-util-write-file-private"/>
+    <function name="seahorse_util_chooser_open_new ()" link="libseahorse-seahorse-util.html#seahorse-util-chooser-open-new"/>
+    <function name="seahorse_util_chooser_save_new ()" link="libseahorse-seahorse-util.html#seahorse-util-chooser-save-new"/>
+    <function name="seahorse_util_chooser_show_key_files ()" link="libseahorse-seahorse-util.html#seahorse-util-chooser-show-key-files"/>
+    <function name="seahorse_util_chooser_show_archive_files ()" link="libseahorse-seahorse-util.html#seahorse-util-chooser-show-archive-files"/>
+    <function name="seahorse_util_chooser_set_filename_full ()" link="libseahorse-seahorse-util.html#seahorse-util-chooser-set-filename-full"/>
+    <function name="seahorse_util_chooser_set_filename ()" link="libseahorse-seahorse-util.html#seahorse-util-chooser-set-filename"/>
+    <function name="seahorse_util_chooser_open_prompt ()" link="libseahorse-seahorse-util.html#seahorse-util-chooser-open-prompt"/>
+    <function name="seahorse_util_chooser_save_prompt ()" link="libseahorse-seahorse-util.html#seahorse-util-chooser-save-prompt"/>
+    <function name="seahorse_util_check_suffix ()" link="libseahorse-seahorse-util.html#seahorse-util-check-suffix"/>
+    <function name="seahorse_util_add_suffix ()" link="libseahorse-seahorse-util.html#seahorse-util-add-suffix"/>
+    <function name="seahorse_util_remove_suffix ()" link="libseahorse-seahorse-util.html#seahorse-util-remove-suffix"/>
+    <function name="seahorse_util_strvec_dup ()" link="libseahorse-seahorse-util.html#seahorse-util-strvec-dup"/>
+    <function name="seahorse_util_strvec_length ()" link="libseahorse-seahorse-util.html#seahorse-util-strvec-length"/>
+    <function name="seahorse_util_objects_sort ()" link="libseahorse-seahorse-util.html#seahorse-util-objects-sort"/>
+    <function name="seahorse_util_objects_splice ()" link="libseahorse-seahorse-util.html#seahorse-util-objects-splice"/>
+    <function name="seahorse_util_string_equals ()" link="libseahorse-seahorse-util.html#seahorse-util-string-equals"/>
+    <function name="seahorse_util_string_up_first ()" link="libseahorse-seahorse-util.html#seahorse-util-string-up-first"/>
+    <function name="seahorse_util_string_lower ()" link="libseahorse-seahorse-util.html#seahorse-util-string-lower"/>
+    <function name="seahorse_util_string_slist_free ()" link="libseahorse-seahorse-util.html#seahorse-util-string-slist-free"/>
+    <function name="seahorse_util_string_slist_copy ()" link="libseahorse-seahorse-util.html#seahorse-util-string-slist-copy"/>
+    <function name="seahorse_util_string_slist_equal ()" link="libseahorse-seahorse-util.html#seahorse-util-string-slist-equal"/>
+    <function name="seahorse_util_string_is_whitespace ()" link="libseahorse-seahorse-util.html#seahorse-util-string-is-whitespace"/>
+    <function name="seahorse_util_string_trim_whitespace ()" link="libseahorse-seahorse-util.html#seahorse-util-string-trim-whitespace"/>
+    <function name="seahorse_util_hex_encode ()" link="libseahorse-seahorse-util.html#seahorse-util-hex-encode"/>
+    <function name="seahorse_util_determine_popup_menu_position ()" link="libseahorse-seahorse-util.html#seahorse-util-determine-popup-menu-position"/>
+    <function name="seahorse_util_wait_until()" link="libseahorse-seahorse-util.html#seahorse-util-wait-until"/>
+    <function name="DBG_PRINT()" link="libseahorse-seahorse-util.html#DBG-PRINT--CAPS"/>
+    <function name="seahorse_progress_status_set_operation ()" link="libseahorse-seahorse-progress.html#seahorse-progress-status-set-operation"/>
+    <function name="seahorse_progress_status_get_operation ()" link="libseahorse-seahorse-progress.html#seahorse-progress-status-get-operation"/>
+    <function name="seahorse_progress_show ()" link="libseahorse-seahorse-progress.html#seahorse-progress-show"/>
+    <function name="seahorse_prefs_new ()" link="libseahorse-seahorse-prefs.html#seahorse-prefs-new"/>
+    <function name="seahorse_prefs_add_tab ()" link="libseahorse-seahorse-prefs.html#seahorse-prefs-add-tab"/>
+    <function name="seahorse_prefs_select_tab ()" link="libseahorse-seahorse-prefs.html#seahorse-prefs-select-tab"/>
+    <function name="seahorse_prefs_select_tabid ()" link="libseahorse-seahorse-prefs.html#seahorse-prefs-select-tabid"/>
+    <function name="seahorse_prefs_remove_tab ()" link="libseahorse-seahorse-prefs.html#seahorse-prefs-remove-tab"/>
+    <function name="enum SeahorseValidity" link="libseahorse-seahorse-validity.html#SeahorseValidity"/>
+    <function name="seahorse_validity_get_string ()" link="libseahorse-seahorse-validity.html#seahorse-validity-get-string"/>
+    <function name="SEAHORSE_PASS_BAD" link="libseahorse-seahorse-passphrase.html#SEAHORSE-PASS-BAD--CAPS"/>
+    <function name="SEAHORSE_PASS_NEW" link="libseahorse-seahorse-passphrase.html#SEAHORSE-PASS-NEW--CAPS"/>
+    <function name="seahorse_passphrase_prompt_show ()" link="libseahorse-seahorse-passphrase.html#seahorse-passphrase-prompt-show"/>
+    <function name="seahorse_passphrase_prompt_get ()" link="libseahorse-seahorse-passphrase.html#seahorse-passphrase-prompt-get"/>
+    <function name="seahorse_passphrase_prompt_checked ()" link="libseahorse-seahorse-passphrase.html#seahorse-passphrase-prompt-checked"/>
+    <function name="SEAHORSE_STOCK_KEY" link="libseahorse-seahorse-gtkstock.html#SEAHORSE-STOCK-KEY--CAPS"/>
+    <function name="SEAHORSE_STOCK_SECRET" link="libseahorse-seahorse-gtkstock.html#SEAHORSE-STOCK-SECRET--CAPS"/>
+    <function name="SEAHORSE_STOCK_KEY_SSH" link="libseahorse-seahorse-gtkstock.html#SEAHORSE-STOCK-KEY-SSH--CAPS"/>
+    <function name="SEAHORSE_STOCK_PERSON" link="libseahorse-seahorse-gtkstock.html#SEAHORSE-STOCK-PERSON--CAPS"/>
+    <function name="SEAHORSE_STOCK_SIGN" link="libseahorse-seahorse-gtkstock.html#SEAHORSE-STOCK-SIGN--CAPS"/>
+    <function name="SEAHORSE_STOCK_SIGN_OK" link="libseahorse-seahorse-gtkstock.html#SEAHORSE-STOCK-SIGN-OK--CAPS"/>
+    <function name="SEAHORSE_STOCK_SIGN_BAD" link="libseahorse-seahorse-gtkstock.html#SEAHORSE-STOCK-SIGN-BAD--CAPS"/>
+    <function name="SEAHORSE_STOCK_SIGN_UNKNOWN" link="libseahorse-seahorse-gtkstock.html#SEAHORSE-STOCK-SIGN-UNKNOWN--CAPS"/>
+    <function name="SEAHORSE_STOCK_SHARING" link="libseahorse-seahorse-gtkstock.html#SEAHORSE-STOCK-SHARING--CAPS"/>
+    <function name="SEAHORSE_THEMED_WEBBROWSER" link="libseahorse-seahorse-gtkstock.html#SEAHORSE-THEMED-WEBBROWSER--CAPS"/>
+    <function name="SEAHORSE_THEMED_FOLDER" link="libseahorse-seahorse-gtkstock.html#SEAHORSE-THEMED-FOLDER--CAPS"/>
+    <function name="seahorse_gtkstock_init ()" link="libseahorse-seahorse-gtkstock.html#seahorse-gtkstock-init"/>
+    <function name="seahorse_gtkstock_add_icons ()" link="libseahorse-seahorse-gtkstock.html#seahorse-gtkstock-add-icons"/>
+    <function name="signal_handler ()" link="libseahorse-seahorse-unix-signal.html#signal-handler"/>
+    <function name="seahorse_unix_signal_register ()" link="libseahorse-seahorse-unix-signal.html#seahorse-unix-signal-register"/>
+  </functions>
+</book>

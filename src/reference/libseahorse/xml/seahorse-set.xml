@@ -1,0 +1,220 @@
+<refentry id="libseahorse-SeahorseSet">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-SeahorseSet.top_of_page">SeahorseSet</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SeahorseSet</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-SeahorseSet.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SeahorseSetPrivate">SeahorseSetPrivate</link>;
+                    <link linkend="SeahorseSet">SeahorseSet</link>;
+<link linkend="SeahorseSet">SeahorseSet</link>*        <link linkend="seahorse-set-new">seahorse_set_new</link>                    (<link linkend="GQuark">GQuark</link> ktype,
+                                                         <link linkend="SeahorseUsage">SeahorseUsage</link> usage,
+                                                         <link linkend="SeahorseLocation">SeahorseLocation</link> location,
+                                                         <link linkend="guint">guint</link> flags,
+                                                         <link linkend="guint">guint</link> nflags);
+<link linkend="SeahorseSet">SeahorseSet</link>*        <link linkend="seahorse-set-new-full">seahorse_set_new_full</link>               (<link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link> *pred);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-set-has-object">seahorse_set_has_object</link>             (<link linkend="SeahorseSet">SeahorseSet</link> *skset,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *sobj);
+<link linkend="GList">GList</link>*              <link linkend="seahorse-set-get-objects">seahorse_set_get_objects</link>            (<link linkend="SeahorseSet">SeahorseSet</link> *skset);
+<link linkend="guint">guint</link>               <link linkend="seahorse-set-get-count">seahorse_set_get_count</link>              (<link linkend="SeahorseSet">SeahorseSet</link> *skset);
+<link linkend="void">void</link>                <link linkend="seahorse-set-refresh">seahorse_set_refresh</link>                (<link linkend="SeahorseSet">SeahorseSet</link> *skset);
+<link linkend="gpointer">gpointer</link>            <link linkend="seahorse-set-get-closure">seahorse_set_get_closure</link>            (<link linkend="SeahorseSet">SeahorseSet</link> *skset,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *sobj);
+<link linkend="void">void</link>                <link linkend="seahorse-set-set-closure">seahorse_set_set_closure</link>            (<link linkend="SeahorseSet">SeahorseSet</link> *skset,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *sobj,
+                                                         <link linkend="gpointer">gpointer</link> closure);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-SeahorseSet.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-SeahorseSet.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SeahorseSetPrivate" role="struct">
+<title>SeahorseSetPrivate</title>
+<indexterm zone="SeahorseSetPrivate"><primary sortas="SetPrivate">SeahorseSetPrivate</primary></indexterm><programlisting>typedef struct _SeahorseSetPrivate SeahorseSetPrivate;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SeahorseSet" role="struct">
+<title>SeahorseSet</title>
+<indexterm zone="SeahorseSet"><primary sortas="Set">SeahorseSet</primary></indexterm><programlisting>typedef struct {
+    GtkObject parent;
+} SeahorseSet;
+</programlisting>
+<para>
+A subset list of the keys in the SeahorseContext.
+</para>
+<para>
+- Used all over by various views to narrow in on the keys that they're
+  interested in.
+- Originally was going to be called SeahorseView (database parlance) but
+  that's far too confusing with overloaded terminology.
+- Uses a SeahorseObjectPredicate to match keys.
+- Sends out events when keys get added and removed from it's view. Or a
+  key in the view changes etc...
+- Supports per key event 'closures'. When a closure is set for a key, it's
+  then passed as an argument to the 'changed' and 'removed' events.
+</para>
+<para>
+Signals:
+  added: A key was added to this keyset.
+  removed: A key disappeared from this keyset.
+  changed: A key in the keyset changed.
+  set-changed: The number of keys in the keyset changed
+</para>
+<para>
+Properties:
+  count: The number of keys
+  predicate: (SeahorseObjectPredicate) The predicate used for matching.</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GtkObject">GtkObject</link>&#160;<structfield>parent</structfield>;</term>
+<listitem><simpara> The parent <link linkend="GtkObject"><type>GtkObject</type></link>
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-set-new" role="function">
+<title>seahorse_set_new ()</title>
+<indexterm zone="seahorse-set-new"><primary sortas="set_new">seahorse_set_new</primary></indexterm><programlisting><link linkend="SeahorseSet">SeahorseSet</link>*        seahorse_set_new                    (<link linkend="GQuark">GQuark</link> ktype,
+                                                         <link linkend="SeahorseUsage">SeahorseUsage</link> usage,
+                                                         <link linkend="SeahorseLocation">SeahorseLocation</link> location,
+                                                         <link linkend="guint">guint</link> flags,
+                                                         <link linkend="guint">guint</link> nflags);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>ktype</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>usage</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>location</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>flags</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>nflags</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-set-new-full" role="function">
+<title>seahorse_set_new_full ()</title>
+<indexterm zone="seahorse-set-new-full"><primary sortas="set_new_full">seahorse_set_new_full</primary></indexterm><programlisting><link linkend="SeahorseSet">SeahorseSet</link>*        seahorse_set_new_full               (<link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link> *pred);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pred</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-set-has-object" role="function">
+<title>seahorse_set_has_object ()</title>
+<indexterm zone="seahorse-set-has-object"><primary sortas="set_has_object">seahorse_set_has_object</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_set_has_object             (<link linkend="SeahorseSet">SeahorseSet</link> *skset,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *sobj);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>skset</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sobj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-set-get-objects" role="function">
+<title>seahorse_set_get_objects ()</title>
+<indexterm zone="seahorse-set-get-objects"><primary sortas="set_get_objects">seahorse_set_get_objects</primary></indexterm><programlisting><link linkend="GList">GList</link>*              seahorse_set_get_objects            (<link linkend="SeahorseSet">SeahorseSet</link> *skset);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>skset</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-set-get-count" role="function">
+<title>seahorse_set_get_count ()</title>
+<indexterm zone="seahorse-set-get-count"><primary sortas="set_get_count">seahorse_set_get_count</primary></indexterm><programlisting><link linkend="guint">guint</link>               seahorse_set_get_count              (<link linkend="SeahorseSet">SeahorseSet</link> *skset);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>skset</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-set-refresh" role="function">
+<title>seahorse_set_refresh ()</title>
+<indexterm zone="seahorse-set-refresh"><primary sortas="set_refresh">seahorse_set_refresh</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_set_refresh                (<link linkend="SeahorseSet">SeahorseSet</link> *skset);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>skset</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-set-get-closure" role="function">
+<title>seahorse_set_get_closure ()</title>
+<indexterm zone="seahorse-set-get-closure"><primary sortas="set_get_closure">seahorse_set_get_closure</primary></indexterm><programlisting><link linkend="gpointer">gpointer</link>            seahorse_set_get_closure            (<link linkend="SeahorseSet">SeahorseSet</link> *skset,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *sobj);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>skset</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sobj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-set-set-closure" role="function">
+<title>seahorse_set_set_closure ()</title>
+<indexterm zone="seahorse-set-set-closure"><primary sortas="set_set_closure">seahorse_set_set_closure</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_set_set_closure            (<link linkend="SeahorseSet">SeahorseSet</link> *skset,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *sobj,
+                                                         <link linkend="gpointer">gpointer</link> closure);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>skset</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sobj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>closure</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

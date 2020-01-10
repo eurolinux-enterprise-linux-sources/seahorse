@@ -1,0 +1,633 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>seahorse-gconf</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libseahorse-seahorse-secure-memory.html" title="seahorse-secure-memory">
+<link rel="next" href="libseahorse-seahorse-servers.html" title="seahorse-servers">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libseahorse-seahorse-secure-memory.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-seahorse-servers.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-seahorse-gconf.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-seahorse-gconf.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="seahorse-gconf">
+<a name="libseahorse-seahorse-gconf"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-seahorse-gconf.top_of_page"></a>seahorse-gconf</span></h2>
+<p>seahorse-gconf</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-seahorse-gconf.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#ENCRYPTSELF-KEY--CAPS"
+>ENCRYPTSELF_KEY</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#MULTI-EXTENSION-KEY--CAPS"
+>MULTI_EXTENSION_KEY</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#MULTI-SEPERATE-KEY--CAPS"
+>MULTI_SEPERATE_KEY</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#KEYSERVER-KEY--CAPS"
+>KEYSERVER_KEY</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#AUTORETRIEVE-KEY--CAPS"
+>AUTORETRIEVE_KEY</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#AUTOSYNC-KEY--CAPS"
+>AUTOSYNC_KEY</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#LASTSEARCH-KEY--CAPS"
+>LASTSEARCH_KEY</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#LASTSERVERS-KEY--CAPS"
+>LASTSERVERS_KEY</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#PUBLISH-TO-KEY--CAPS"
+>PUBLISH_TO_KEY</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#SEAHORSE-SCHEMAS--CAPS"
+>SEAHORSE_SCHEMAS</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#KEYSHARING-KEY--CAPS"
+>KEYSHARING_KEY</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#WINDOW-SIZE--CAPS"
+>WINDOW_SIZE</a>
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-disconnect"
+>seahorse_gconf_disconnect</a>           ();
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-set-boolean"
+>seahorse_gconf_set_boolean</a>          (const char *key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> boolean_value);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-get-boolean"
+>seahorse_gconf_get_boolean</a>          (const char *key);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-set-integer"
+>seahorse_gconf_set_integer</a>          (const char *key,
+                                                         int int_value);
+int                 <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-get-integer"
+>seahorse_gconf_get_integer</a>          (const char *key);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-set-string"
+>seahorse_gconf_set_string</a>           (const char *key,
+                                                         const char *string_value);
+char*               <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-get-string"
+>seahorse_gconf_get_string</a>           (const char *key);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-set-string-list"
+>seahorse_gconf_set_string_list</a>      (const char *key,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *slist);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-get-string-list"
+>seahorse_gconf_get_string_list</a>      (const char *key);
+<a
+href="/usr/share/gtk-doc/html/gconf/gconf-gconf-value.html#GConfEntry"
+>GConfEntry</a>*         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-get-entry"
+>seahorse_gconf_get_entry</a>            (const char *key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-notify"
+>seahorse_gconf_notify</a>               (const char *key,
+                                                         <a
+href="/usr/share/gtk-doc/html/gconf/gconf-GConfClient.html#GConfClientNotifyFunc"
+>GConfClientNotifyFunc</a> notification_callback,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> callback_data);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-notify-lazy"
+>seahorse_gconf_notify_lazy</a>          (const char *key,
+                                                         <a
+href="/usr/share/gtk-doc/html/gconf/gconf-GConfClient.html#GConfClientNotifyFunc"
+>GConfClientNotifyFunc</a> notification_callback,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> callback_data,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> lifetime);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html#seahorse-gconf-unnotify"
+>seahorse_gconf_unnotify</a>             (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> notification_id);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-seahorse-gconf.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-seahorse-gconf.details"></a><h2>Details</h2>
+<div class="refsect2" title="ENCRYPTSELF_KEY">
+<a name="ENCRYPTSELF-KEY--CAPS"></a><h3>ENCRYPTSELF_KEY</h3>
+<pre class="programlisting">#define ENCRYPTSELF_KEY SEAHORSE_DESKTOP_KEYS "/encrypt_to_self"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="MULTI_EXTENSION_KEY">
+<a name="MULTI-EXTENSION-KEY--CAPS"></a><h3>MULTI_EXTENSION_KEY</h3>
+<pre class="programlisting">#define MULTI_EXTENSION_KEY SEAHORSE_DESKTOP_KEYS "/package_extension"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="MULTI_SEPERATE_KEY">
+<a name="MULTI-SEPERATE-KEY--CAPS"></a><h3>MULTI_SEPERATE_KEY</h3>
+<pre class="programlisting">#define MULTI_SEPERATE_KEY SEAHORSE_DESKTOP_KEYS "/multi_seperate"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="KEYSERVER_KEY">
+<a name="KEYSERVER-KEY--CAPS"></a><h3>KEYSERVER_KEY</h3>
+<pre class="programlisting">#define KEYSERVER_KEY SEAHORSE_DESKTOP_KEYS "/keyservers/all_keyservers"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="AUTORETRIEVE_KEY">
+<a name="AUTORETRIEVE-KEY--CAPS"></a><h3>AUTORETRIEVE_KEY</h3>
+<pre class="programlisting">#define AUTORETRIEVE_KEY SEAHORSE_DESKTOP_KEYS "/keyservers/auto_retrieve"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="AUTOSYNC_KEY">
+<a name="AUTOSYNC-KEY--CAPS"></a><h3>AUTOSYNC_KEY</h3>
+<pre class="programlisting">#define AUTOSYNC_KEY SEAHORSE_DESKTOP_KEYS "/keyservers/auto_sync"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="LASTSEARCH_KEY">
+<a name="LASTSEARCH-KEY--CAPS"></a><h3>LASTSEARCH_KEY</h3>
+<pre class="programlisting">#define LASTSEARCH_KEY SEAHORSE_DESKTOP_KEYS "/keyservers/search_text"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="LASTSERVERS_KEY">
+<a name="LASTSERVERS-KEY--CAPS"></a><h3>LASTSERVERS_KEY</h3>
+<pre class="programlisting">#define LASTSERVERS_KEY SEAHORSE_DESKTOP_KEYS "/keyservers/search_keyservers"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="PUBLISH_TO_KEY">
+<a name="PUBLISH-TO-KEY--CAPS"></a><h3>PUBLISH_TO_KEY</h3>
+<pre class="programlisting">#define PUBLISH_TO_KEY SEAHORSE_DESKTOP_KEYS "/keyservers/publish_to"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_SCHEMAS">
+<a name="SEAHORSE-SCHEMAS--CAPS"></a><h3>SEAHORSE_SCHEMAS</h3>
+<pre class="programlisting">#define SEAHORSE_SCHEMAS            "/apps/seahorse"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="KEYSHARING_KEY">
+<a name="KEYSHARING-KEY--CAPS"></a><h3>KEYSHARING_KEY</h3>
+<pre class="programlisting">#define KEYSHARING_KEY              SEAHORSE_SCHEMAS "/sharing/sharing_enabled"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="WINDOW_SIZE">
+<a name="WINDOW-SIZE--CAPS"></a><h3>WINDOW_SIZE</h3>
+<pre class="programlisting">#define WINDOW_SIZE                SEAHORSE_SCHEMAS "/windows/"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_disconnect ()">
+<a name="seahorse-gconf-disconnect"></a><h3>seahorse_gconf_disconnect ()</h3>
+<pre class="programlisting">void                seahorse_gconf_disconnect           ();</pre>
+<p>
+Remove registered dirs and free the global gconf client</p>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_set_boolean ()">
+<a name="seahorse-gconf-set-boolean"></a><h3>seahorse_gconf_set_boolean ()</h3>
+<pre class="programlisting">void                seahorse_gconf_set_boolean          (const char *key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> boolean_value);</pre>
+<p>
+Set a value for a boolean key in the GConf storage
+</p>
+<p>
+Errors are handled internally and are mapped to a warning</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> The key
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>boolean_value</code></em> :</span></p></td>
+<td> The value to set
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_get_boolean ()">
+<a name="seahorse-gconf-get-boolean"></a><h3>seahorse_gconf_get_boolean ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_gconf_get_boolean          (const char *key);</pre>
+<p>
+Read a boolean key from the GConf storage</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> The key to read
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> It returns the read value. On error it returns FALSE
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_set_integer ()">
+<a name="seahorse-gconf-set-integer"></a><h3>seahorse_gconf_set_integer ()</h3>
+<pre class="programlisting">void                seahorse_gconf_set_integer          (const char *key,
+                                                         int int_value);</pre>
+<p>
+Set a value for an integer key in the GConf storage
+</p>
+<p>
+Errors are handled internally and are mapped to a warning</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> The key
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>int_value</code></em> :</span></p></td>
+<td> The value to set
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_get_integer ()">
+<a name="seahorse-gconf-get-integer"></a><h3>seahorse_gconf_get_integer ()</h3>
+<pre class="programlisting">int                 seahorse_gconf_get_integer          (const char *key);</pre>
+<p>
+Read an integer key from the GConf storage</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> The key to read
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> It returns the read value. On error it returns 0.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_set_string ()">
+<a name="seahorse-gconf-set-string"></a><h3>seahorse_gconf_set_string ()</h3>
+<pre class="programlisting">void                seahorse_gconf_set_string           (const char *key,
+                                                         const char *string_value);</pre>
+<p>
+Set a value for a string key in the GConf storage
+</p>
+<p>
+Errors are handled internally and are mapped to a warning</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> The key
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>string_value</code></em> :</span></p></td>
+<td> The value to set
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_get_string ()">
+<a name="seahorse-gconf-get-string"></a><h3>seahorse_gconf_get_string ()</h3>
+<pre class="programlisting">char*               seahorse_gconf_get_string           (const char *key);</pre>
+<p>
+Read a string key from the GConf storage</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> The key to read
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> It returns the read value. On error it returns "". The returned string should be 
+freed with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><span class="type">g_free</span></a> when no longer needed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_set_string_list ()">
+<a name="seahorse-gconf-set-string-list"></a><h3>seahorse_gconf_set_string_list ()</h3>
+<pre class="programlisting">void                seahorse_gconf_set_string_list      (const char *key,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *slist);</pre>
+<p>
+Set a value for a string list (linked list of strings) key in the GConf storage
+</p>
+<p>
+Errors are handled internally and are mapped to a warning</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> The key
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>slist</code></em> :</span></p></td>
+<td> The list to set
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_get_string_list ()">
+<a name="seahorse-gconf-get-string-list"></a><h3>seahorse_gconf_get_string_list ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             seahorse_gconf_get_string_list      (const char *key);</pre>
+<p>
+Read a string list (linked list of strings) key from the GConf storage</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> The key to read
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> It returns the read value. On error it returns NULL. Each returned
+string should be freed with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><span class="type">g_free</span></a> when no longer needed. The list must be
+freed with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#g-slist-free"
+><span class="type">g_slist_free</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_get_entry ()">
+<a name="seahorse-gconf-get-entry"></a><h3>seahorse_gconf_get_entry ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/gconf/gconf-gconf-value.html#GConfEntry"
+>GConfEntry</a>*         seahorse_gconf_get_entry            (const char *key);</pre>
+<p>
+Get an entry key from the GConf storage</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> The key to read
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> It returns the read value. On error it returns NULL. Must be freed
+with <a
+href="/usr/share/gtk-doc/html/gconf/gconf-gconf-value.html#gconf-entry-free"
+><span class="type">gconf_entry_free</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_notify ()">
+<a name="seahorse-gconf-notify"></a><h3>seahorse_gconf_notify ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               seahorse_gconf_notify               (const char *key,
+                                                         <a
+href="/usr/share/gtk-doc/html/gconf/gconf-GConfClient.html#GConfClientNotifyFunc"
+>GConfClientNotifyFunc</a> notification_callback,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> callback_data);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> The key to add the notification for
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>notification_callback</code></em> :</span></p></td>
+<td> The callback function to add
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback_data</code></em> :</span></p></td>
+<td> user data to pass to the callback function
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The connection ID. On error it returns 0
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_notify_lazy ()">
+<a name="seahorse-gconf-notify-lazy"></a><h3>seahorse_gconf_notify_lazy ()</h3>
+<pre class="programlisting">void                seahorse_gconf_notify_lazy          (const char *key,
+                                                         <a
+href="/usr/share/gtk-doc/html/gconf/gconf-GConfClient.html#GConfClientNotifyFunc"
+>GConfClientNotifyFunc</a> notification_callback,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> callback_data,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> lifetime);</pre>
+<p>
+The callback is bound to the object (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-set-data-full"
+><span class="type">g_object_set_data_full</span></a>) and
+the notification is automatically unnotified as soon as the object is
+destroyed</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> The key to add the notification for
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>notification_callback</code></em> :</span></p></td>
+<td> The callback function to add
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback_data</code></em> :</span></p></td>
+<td> user data to pass to the callback function
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lifetime</code></em> :</span></p></td>
+<td> a GObject to bind the callback to
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_gconf_unnotify ()">
+<a name="seahorse-gconf-unnotify"></a><h3>seahorse_gconf_unnotify ()</h3>
+<pre class="programlisting">void                seahorse_gconf_unnotify             (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> notification_id);</pre>
+<p>
+Removes a notification identified by the ID</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>notification_id</code></em> :</span></p></td>
+<td> ID to remove
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

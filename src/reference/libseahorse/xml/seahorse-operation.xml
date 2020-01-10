@@ -1,0 +1,640 @@
+<refentry id="libseahorse-SeahorseMultiOperation">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-SeahorseMultiOperation.top_of_page">SeahorseMultiOperation</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SeahorseMultiOperation</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-SeahorseMultiOperation.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SeahorseOperation">SeahorseOperation</link>;
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-operation-new-complete">seahorse_operation_new_complete</link>     (<link linkend="GError">GError</link> *err);
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-operation-new-cancelled">seahorse_operation_new_cancelled</link>    ();
+<link linkend="void">void</link>                <link linkend="seahorse-operation-cancel">seahorse_operation_cancel</link>           (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation);
+#define             <link linkend="seahorse-operation-is-running">seahorse_operation_is_running</link>       (operation)
+#define             <link linkend="seahorse-operation-is-cancelled">seahorse_operation_is_cancelled</link>     (operation)
+#define             <link linkend="seahorse-operation-is-successful">seahorse_operation_is_successful</link>    (operation)
+<link linkend="void">void</link>                <link linkend="seahorse-operation-copy-error">seahorse_operation_copy_error</link>       (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         <link linkend="GError">GError</link> **err);
+const <link linkend="GError">GError</link>*       <link linkend="seahorse-operation-get-error">seahorse_operation_get_error</link>        (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation);
+<link linkend="void">void</link>                <link linkend="seahorse-operation-display-error">seahorse_operation_display_error</link>    (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *parent);
+<link linkend="void">void</link>                <link linkend="seahorse-operation-wait">seahorse_operation_wait</link>             (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation);
+<link linkend="void">void</link>                (<link linkend="SeahorseDoneFunc">*SeahorseDoneFunc</link>)                 (<link linkend="SeahorseOperation">SeahorseOperation</link> *op,
+                                                         <link linkend="gpointer">gpointer</link> userdata);
+<link linkend="void">void</link>                (<link linkend="SeahorseProgressFunc">*SeahorseProgressFunc</link>)             (<link linkend="SeahorseOperation">SeahorseOperation</link> *op,
+                                                         const <link linkend="gchar">gchar</link> *status,
+                                                         <link linkend="gdouble">gdouble</link> progress,
+                                                         <link linkend="gpointer">gpointer</link> userdata);
+<link linkend="void">void</link>                <link linkend="seahorse-operation-watch">seahorse_operation_watch</link>            (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         <link linkend="SeahorseDoneFunc">SeahorseDoneFunc</link> done_callback,
+                                                         <link linkend="gpointer">gpointer</link> donedata,
+                                                         <link linkend="SeahorseProgressFunc">SeahorseProgressFunc</link> progress_callback,
+                                                         <link linkend="gpointer">gpointer</link> progdata);
+#define             <link linkend="seahorse-operation-get-progress">seahorse_operation_get_progress</link>     (op)
+#define             <link linkend="seahorse-operation-get-message">seahorse_operation_get_message</link>      (operation)
+<link linkend="gpointer">gpointer</link>            <link linkend="seahorse-operation-get-result">seahorse_operation_get_result</link>       (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation);
+<link linkend="GSList">GSList</link>*             <link linkend="seahorse-operation-list-add">seahorse_operation_list_add</link>         (<link linkend="GSList">GSList</link> *list,
+                                                         <link linkend="SeahorseOperation">SeahorseOperation</link> *operation);
+<link linkend="GSList">GSList</link>*             <link linkend="seahorse-operation-list-remove">seahorse_operation_list_remove</link>      (<link linkend="GSList">GSList</link> *list,
+                                                         <link linkend="SeahorseOperation">SeahorseOperation</link> *operation);
+<link linkend="void">void</link>                <link linkend="seahorse-operation-list-cancel">seahorse_operation_list_cancel</link>      (<link linkend="GSList">GSList</link> *list);
+<link linkend="GSList">GSList</link>*             <link linkend="seahorse-operation-list-purge">seahorse_operation_list_purge</link>       (<link linkend="GSList">GSList</link> *list);
+<link linkend="GSList">GSList</link>*             <link linkend="seahorse-operation-list-free">seahorse_operation_list_free</link>        (<link linkend="GSList">GSList</link> *list);
+#define             <link linkend="SEAHORSE-TYPE-MULTI-OPERATION--CAPS">SEAHORSE_TYPE_MULTI_OPERATION</link>
+#define             <link linkend="SEAHORSE-MULTI-OPERATION--CAPS">SEAHORSE_MULTI_OPERATION</link>            (obj)
+#define             <link linkend="SEAHORSE-MULTI-OPERATION-CLASS--CAPS">SEAHORSE_MULTI_OPERATION_CLASS</link>      (klass)
+#define             <link linkend="SEAHORSE-IS-MULTI-OPERATION--CAPS">SEAHORSE_IS_MULTI_OPERATION</link>         (obj)
+#define             <link linkend="SEAHORSE-IS-MULTI-OPERATION-CLASS--CAPS">SEAHORSE_IS_MULTI_OPERATION_CLASS</link>   (klass)
+#define             <link linkend="SEAHORSE-MULTI-OPERATION-GET-CLASS--CAPS">SEAHORSE_MULTI_OPERATION_GET_CLASS</link>  (obj)
+                    <link linkend="SeahorseMultiOperation">SeahorseMultiOperation</link>;
+<link linkend="GType">GType</link>               <link linkend="seahorse-multi-operation-get-type">seahorse_multi_operation_get_type</link>   ();
+<link linkend="SeahorseMultiOperation">SeahorseMultiOperation</link>* <link linkend="seahorse-multi-operation-new">seahorse_multi_operation_new</link>    ();
+<link linkend="void">void</link>                <link linkend="seahorse-multi-operation-take">seahorse_multi_operation_take</link>       (<link linkend="SeahorseMultiOperation">SeahorseMultiOperation</link> *mop,
+                                                         <link linkend="SeahorseOperation">SeahorseOperation</link> *op);
+#define             <link linkend="DECLARE-OPERATION--CAPS">DECLARE_OPERATION</link>                   (Opx, opx)
+#define             <link linkend="SEAHORSE-CALC-PROGRESS--CAPS">SEAHORSE_CALC_PROGRESS</link>              (cur, tot)
+<link linkend="void">void</link>                <link linkend="seahorse-operation-mark-start">seahorse_operation_mark_start</link>       (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation);
+<link linkend="void">void</link>                <link linkend="seahorse-operation-mark-done">seahorse_operation_mark_done</link>        (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         <link linkend="gboolean">gboolean</link> cancelled,
+                                                         <link linkend="GError">GError</link> *error);
+<link linkend="void">void</link>                <link linkend="seahorse-operation-mark-progress">seahorse_operation_mark_progress</link>    (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         const <link linkend="gchar">gchar</link> *message,
+                                                         <link linkend="gdouble">gdouble</link> progress);
+<link linkend="void">void</link>                <link linkend="seahorse-operation-mark-progress-full">seahorse_operation_mark_progress_full</link>
+                                                        (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         const <link linkend="gchar">gchar</link> *message,
+                                                         <link linkend="gdouble">gdouble</link> current,
+                                                         <link linkend="gdouble">gdouble</link> total);
+<link linkend="void">void</link>                <link linkend="seahorse-operation-mark-result">seahorse_operation_mark_result</link>      (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         <link linkend="gpointer">gpointer</link> result,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> notify_func);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-SeahorseMultiOperation.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-SeahorseMultiOperation.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SeahorseOperation" role="struct">
+<title>SeahorseOperation</title>
+<indexterm zone="SeahorseOperation"><primary sortas="Operation">SeahorseOperation</primary></indexterm><programlisting>typedef struct {
+    GObject parent;
+    
+    gchar *message;                /* Progress status details ie: "foobar.jpg" */
+    gdouble progress;              /* The current progress position, -1 for indeterminate */
+    
+    guint is_running : 1;          /* If the operation is running or not */
+    guint is_done : 1;             /* Operation is done or not */
+    guint is_cancelled : 1;        /* Operation is cancelled or not */;
+
+    GError *error;
+} SeahorseOperation;
+</programlisting>
+<para>
+An operation taking place over time.
+</para>
+<para>
+- Generally this class is derived and a base class actually hooks in and
+  performs the operation, keeps the properties updated etc...
+- Used all over to represent things like key loading operations, search
+- SeahorseMultiOperation allows you to combine multiple operations into
+  a single one. Used when searching multiple key servers for example.
+- Can be tied to a progress bar (see seahorse-progress.h)
+- Holds a reference to itself while the operation is in progress.
+- The seahorse_operation_mark_* are used by derived classes to update
+  properties of the operation as things progress.
+</para>
+<para>
+Signals:
+  done: The operation is complete.
+  progress: The operation has progressed, or changed state somehow.
+</para>
+<para>
+Properties:
+  result: The 'result' of the operation (if applicable).
+          This depends on the derived operation class.
+  progress: A fraction between 0.0 and 1.0 inclusive representing how far
+          along this operation is. 0.0 = indeterminate, and 1.0 is done.
+  message: A progress message to display to the user.</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GObject">GObject</link>&#160;<structfield>parent</structfield>;</term>
+<listitem><simpara> The parent <link linkend="GObject"><type>GObject</type></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>message</structfield>;</term>
+<listitem><simpara> Progress status details ie: "foobar.jpg"
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gdouble">gdouble</link>&#160;<structfield>progress</structfield>;</term>
+<listitem><simpara> The current progress position, -1 for indeterminate
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>is_running</structfield>&#160;:&#160;1;</term>
+<listitem><simpara> If the operation is running or not
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>is_done</structfield>&#160;:&#160;1;</term>
+<listitem><simpara> Operation is done or not
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>is_cancelled</structfield>&#160;:&#160;1;</term>
+<listitem><simpara> Operation is cancelled or not
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GError">GError</link>&#160;*<structfield>error</structfield>;</term>
+<listitem><simpara> <link linkend="GError"><type>GError</type></link> for the operation
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-new-complete" role="function">
+<title>seahorse_operation_new_complete ()</title>
+<indexterm zone="seahorse-operation-new-complete"><primary sortas="operation_new_complete">seahorse_operation_new_complete</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_operation_new_complete     (<link linkend="GError">GError</link> *err);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>err</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-new-cancelled" role="function">
+<title>seahorse_operation_new_cancelled ()</title>
+<indexterm zone="seahorse-operation-new-cancelled"><primary sortas="operation_new_cancelled">seahorse_operation_new_cancelled</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_operation_new_cancelled    ();</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-cancel" role="function">
+<title>seahorse_operation_cancel ()</title>
+<indexterm zone="seahorse-operation-cancel"><primary sortas="operation_cancel">seahorse_operation_cancel</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_operation_cancel           (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-is-running" role="macro">
+<title>seahorse_operation_is_running()</title>
+<indexterm zone="seahorse-operation-is-running"><primary sortas="operation_is_running">seahorse_operation_is_running</primary></indexterm><programlisting>#define             seahorse_operation_is_running(operation)</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-is-cancelled" role="macro">
+<title>seahorse_operation_is_cancelled()</title>
+<indexterm zone="seahorse-operation-is-cancelled"><primary sortas="operation_is_cancelled">seahorse_operation_is_cancelled</primary></indexterm><programlisting>#define             seahorse_operation_is_cancelled(operation)</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-is-successful" role="macro">
+<title>seahorse_operation_is_successful()</title>
+<indexterm zone="seahorse-operation-is-successful"><primary sortas="operation_is_successful">seahorse_operation_is_successful</primary></indexterm><programlisting>#define             seahorse_operation_is_successful(operation)</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-copy-error" role="function">
+<title>seahorse_operation_copy_error ()</title>
+<indexterm zone="seahorse-operation-copy-error"><primary sortas="operation_copy_error">seahorse_operation_copy_error</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_operation_copy_error       (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         <link linkend="GError">GError</link> **err);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>err</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-get-error" role="function">
+<title>seahorse_operation_get_error ()</title>
+<indexterm zone="seahorse-operation-get-error"><primary sortas="operation_get_error">seahorse_operation_get_error</primary></indexterm><programlisting>const <link linkend="GError">GError</link>*       seahorse_operation_get_error        (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-display-error" role="function">
+<title>seahorse_operation_display_error ()</title>
+<indexterm zone="seahorse-operation-display-error"><primary sortas="operation_display_error">seahorse_operation_display_error</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_operation_display_error    (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *parent);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-wait" role="function">
+<title>seahorse_operation_wait ()</title>
+<indexterm zone="seahorse-operation-wait"><primary sortas="operation_wait">seahorse_operation_wait</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_operation_wait             (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseDoneFunc" role="function">
+<title>SeahorseDoneFunc ()</title>
+<indexterm zone="SeahorseDoneFunc"><primary sortas="DoneFunc">SeahorseDoneFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*SeahorseDoneFunc)                 (<link linkend="SeahorseOperation">SeahorseOperation</link> *op,
+                                                         <link linkend="gpointer">gpointer</link> userdata);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>op</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>userdata</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseProgressFunc" role="function">
+<title>SeahorseProgressFunc ()</title>
+<indexterm zone="SeahorseProgressFunc"><primary sortas="ProgressFunc">SeahorseProgressFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*SeahorseProgressFunc)             (<link linkend="SeahorseOperation">SeahorseOperation</link> *op,
+                                                         const <link linkend="gchar">gchar</link> *status,
+                                                         <link linkend="gdouble">gdouble</link> progress,
+                                                         <link linkend="gpointer">gpointer</link> userdata);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>op</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>status</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>userdata</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-watch" role="function">
+<title>seahorse_operation_watch ()</title>
+<indexterm zone="seahorse-operation-watch"><primary sortas="operation_watch">seahorse_operation_watch</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_operation_watch            (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         <link linkend="SeahorseDoneFunc">SeahorseDoneFunc</link> done_callback,
+                                                         <link linkend="gpointer">gpointer</link> donedata,
+                                                         <link linkend="SeahorseProgressFunc">SeahorseProgressFunc</link> progress_callback,
+                                                         <link linkend="gpointer">gpointer</link> progdata);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>done_callback</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>donedata</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>progress_callback</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>progdata</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-get-progress" role="macro">
+<title>seahorse_operation_get_progress()</title>
+<indexterm zone="seahorse-operation-get-progress"><primary sortas="operation_get_progress">seahorse_operation_get_progress</primary></indexterm><programlisting>#define             seahorse_operation_get_progress(op)</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>op</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-get-message" role="macro">
+<title>seahorse_operation_get_message()</title>
+<indexterm zone="seahorse-operation-get-message"><primary sortas="operation_get_message">seahorse_operation_get_message</primary></indexterm><programlisting>#define             seahorse_operation_get_message(operation)</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-get-result" role="function">
+<title>seahorse_operation_get_result ()</title>
+<indexterm zone="seahorse-operation-get-result"><primary sortas="operation_get_result">seahorse_operation_get_result</primary></indexterm><programlisting><link linkend="gpointer">gpointer</link>            seahorse_operation_get_result       (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-list-add" role="function">
+<title>seahorse_operation_list_add ()</title>
+<indexterm zone="seahorse-operation-list-add"><primary sortas="operation_list_add">seahorse_operation_list_add</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             seahorse_operation_list_add         (<link linkend="GSList">GSList</link> *list,
+                                                         <link linkend="SeahorseOperation">SeahorseOperation</link> *operation);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-list-remove" role="function">
+<title>seahorse_operation_list_remove ()</title>
+<indexterm zone="seahorse-operation-list-remove"><primary sortas="operation_list_remove">seahorse_operation_list_remove</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             seahorse_operation_list_remove      (<link linkend="GSList">GSList</link> *list,
+                                                         <link linkend="SeahorseOperation">SeahorseOperation</link> *operation);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-list-cancel" role="function">
+<title>seahorse_operation_list_cancel ()</title>
+<indexterm zone="seahorse-operation-list-cancel"><primary sortas="operation_list_cancel">seahorse_operation_list_cancel</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_operation_list_cancel      (<link linkend="GSList">GSList</link> *list);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-list-purge" role="function">
+<title>seahorse_operation_list_purge ()</title>
+<indexterm zone="seahorse-operation-list-purge"><primary sortas="operation_list_purge">seahorse_operation_list_purge</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             seahorse_operation_list_purge       (<link linkend="GSList">GSList</link> *list);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-list-free" role="function">
+<title>seahorse_operation_list_free ()</title>
+<indexterm zone="seahorse-operation-list-free"><primary sortas="operation_list_free">seahorse_operation_list_free</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             seahorse_operation_list_free        (<link linkend="GSList">GSList</link> *list);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SEAHORSE-TYPE-MULTI-OPERATION--CAPS" role="macro">
+<title>SEAHORSE_TYPE_MULTI_OPERATION</title>
+<indexterm zone="SEAHORSE-TYPE-MULTI-OPERATION--CAPS"><primary sortas="TYPE_MULTI_OPERATION">SEAHORSE_TYPE_MULTI_OPERATION</primary></indexterm><programlisting>#define SEAHORSE_TYPE_MULTI_OPERATION            (seahorse_multi_operation_get_type ())
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-MULTI-OPERATION--CAPS" role="macro">
+<title>SEAHORSE_MULTI_OPERATION()</title>
+<indexterm zone="SEAHORSE-MULTI-OPERATION--CAPS"><primary sortas="MULTI_OPERATION">SEAHORSE_MULTI_OPERATION</primary></indexterm><programlisting>#define SEAHORSE_MULTI_OPERATION(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), SEAHORSE_TYPE_MULTI_OPERATION, SeahorseMultiOperation))
+</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>obj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SEAHORSE-MULTI-OPERATION-CLASS--CAPS" role="macro">
+<title>SEAHORSE_MULTI_OPERATION_CLASS()</title>
+<indexterm zone="SEAHORSE-MULTI-OPERATION-CLASS--CAPS"><primary sortas="MULTI_OPERATION_CLASS">SEAHORSE_MULTI_OPERATION_CLASS</primary></indexterm><programlisting>#define SEAHORSE_MULTI_OPERATION_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), SEAHORSE_TYPE_MULTI_OPERATION, SeahorseMultiOperationClass))
+</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>klass</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SEAHORSE-IS-MULTI-OPERATION--CAPS" role="macro">
+<title>SEAHORSE_IS_MULTI_OPERATION()</title>
+<indexterm zone="SEAHORSE-IS-MULTI-OPERATION--CAPS"><primary sortas="IS_MULTI_OPERATION">SEAHORSE_IS_MULTI_OPERATION</primary></indexterm><programlisting>#define SEAHORSE_IS_MULTI_OPERATION(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), SEAHORSE_TYPE_MULTI_OPERATION))
+</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>obj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SEAHORSE-IS-MULTI-OPERATION-CLASS--CAPS" role="macro">
+<title>SEAHORSE_IS_MULTI_OPERATION_CLASS()</title>
+<indexterm zone="SEAHORSE-IS-MULTI-OPERATION-CLASS--CAPS"><primary sortas="IS_MULTI_OPERATION_CLASS">SEAHORSE_IS_MULTI_OPERATION_CLASS</primary></indexterm><programlisting>#define SEAHORSE_IS_MULTI_OPERATION_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), SEAHORSE_TYPE_MULTI_OPERATION))
+</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>klass</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SEAHORSE-MULTI-OPERATION-GET-CLASS--CAPS" role="macro">
+<title>SEAHORSE_MULTI_OPERATION_GET_CLASS()</title>
+<indexterm zone="SEAHORSE-MULTI-OPERATION-GET-CLASS--CAPS"><primary sortas="MULTI_OPERATION_GET_CLASS">SEAHORSE_MULTI_OPERATION_GET_CLASS</primary></indexterm><programlisting>#define SEAHORSE_MULTI_OPERATION_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), SEAHORSE_TYPE_MULTI_OPERATION, SeahorseMultiOperationClass))
+</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>obj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseMultiOperation" role="struct">
+<title>SeahorseMultiOperation</title>
+<indexterm zone="SeahorseMultiOperation"><primary sortas="MultiOperation">SeahorseMultiOperation</primary></indexterm><programlisting>typedef struct {
+    SeahorseOperation parent;
+    
+    GSList *operations;
+} SeahorseMultiOperation;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-multi-operation-get-type" role="function">
+<title>seahorse_multi_operation_get_type ()</title>
+<indexterm zone="seahorse-multi-operation-get-type"><primary sortas="multi_operation_get_type">seahorse_multi_operation_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               seahorse_multi_operation_get_type   ();</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-multi-operation-new" role="function">
+<title>seahorse_multi_operation_new ()</title>
+<indexterm zone="seahorse-multi-operation-new"><primary sortas="multi_operation_new">seahorse_multi_operation_new</primary></indexterm><programlisting><link linkend="SeahorseMultiOperation">SeahorseMultiOperation</link>* seahorse_multi_operation_new    ();</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-multi-operation-take" role="function">
+<title>seahorse_multi_operation_take ()</title>
+<indexterm zone="seahorse-multi-operation-take"><primary sortas="multi_operation_take">seahorse_multi_operation_take</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_multi_operation_take       (<link linkend="SeahorseMultiOperation">SeahorseMultiOperation</link> *mop,
+                                                         <link linkend="SeahorseOperation">SeahorseOperation</link> *op);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>mop</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>op</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="DECLARE-OPERATION--CAPS" role="macro">
+<title>DECLARE_OPERATION()</title>
+<indexterm zone="DECLARE-OPERATION--CAPS"><primary>DECLARE_OPERATION</primary></indexterm><programlisting>#define             DECLARE_OPERATION(Opx, opx)</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>Opx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>opx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SEAHORSE-CALC-PROGRESS--CAPS" role="macro">
+<title>SEAHORSE_CALC_PROGRESS()</title>
+<indexterm zone="SEAHORSE-CALC-PROGRESS--CAPS"><primary sortas="CALC_PROGRESS">SEAHORSE_CALC_PROGRESS</primary></indexterm><programlisting>#define SEAHORSE_CALC_PROGRESS(cur, tot)
+</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cur</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tot</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-mark-start" role="function">
+<title>seahorse_operation_mark_start ()</title>
+<indexterm zone="seahorse-operation-mark-start"><primary sortas="operation_mark_start">seahorse_operation_mark_start</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_operation_mark_start       (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-mark-done" role="function">
+<title>seahorse_operation_mark_done ()</title>
+<indexterm zone="seahorse-operation-mark-done"><primary sortas="operation_mark_done">seahorse_operation_mark_done</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_operation_mark_done        (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         <link linkend="gboolean">gboolean</link> cancelled,
+                                                         <link linkend="GError">GError</link> *error);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancelled</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-mark-progress" role="function">
+<title>seahorse_operation_mark_progress ()</title>
+<indexterm zone="seahorse-operation-mark-progress"><primary sortas="operation_mark_progress">seahorse_operation_mark_progress</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_operation_mark_progress    (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         const <link linkend="gchar">gchar</link> *message,
+                                                         <link linkend="gdouble">gdouble</link> progress);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>message</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-mark-progress-full" role="function">
+<title>seahorse_operation_mark_progress_full ()</title>
+<indexterm zone="seahorse-operation-mark-progress-full"><primary sortas="operation_mark_progress_full">seahorse_operation_mark_progress_full</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_operation_mark_progress_full
+                                                        (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         const <link linkend="gchar">gchar</link> *message,
+                                                         <link linkend="gdouble">gdouble</link> current,
+                                                         <link linkend="gdouble">gdouble</link> total);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>message</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>current</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>total</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-operation-mark-result" role="function">
+<title>seahorse_operation_mark_result ()</title>
+<indexterm zone="seahorse-operation-mark-result"><primary sortas="operation_mark_result">seahorse_operation_mark_result</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_operation_mark_result      (<link linkend="SeahorseOperation">SeahorseOperation</link> *operation,
+                                                         <link linkend="gpointer">gpointer</link> result,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> notify_func);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>operation</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>result</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>notify_func</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

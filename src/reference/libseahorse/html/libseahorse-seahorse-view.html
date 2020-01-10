@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>seahorse-view</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libseahorse-SeahorseSetModel.html" title="SeahorseSetModel">
+<link rel="next" href="libseahorse-SeahorseWidget.html" title="SeahorseWidget">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libseahorse-SeahorseSetModel.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-SeahorseWidget.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-seahorse-view.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-seahorse-view.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="seahorse-view">
+<a name="libseahorse-seahorse-view"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-seahorse-view.top_of_page"></a>seahorse-view</span></h2>
+<p>seahorse-view</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-seahorse-view.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a>;
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SEAHORSE-VIEW-GET-INTERFACE--CAPS"
+>SEAHORSE_VIEW_GET_INTERFACE</a>         (obj)
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a>;
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseViewIface"
+>SeahorseViewIface</a>;
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#seahorse-view-get-selected-objects"
+>seahorse_view_get_selected_objects</a>  (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#seahorse-view-set-selected-objects"
+>seahorse_view_set_selected_objects</a>  (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#seahorse-view-get-selected-matching"
+>seahorse_view_get_selected_matching</a> (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObjectPredicate"
+>SeahorseObjectPredicate</a> *pred);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a>*     <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#seahorse-view-get-selected"
+>seahorse_view_get_selected</a>          (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#seahorse-view-set-selected"
+>seahorse_view_set_selected</a>          (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a> *value);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSet.html#SeahorseSet"
+>SeahorseSet</a>*        <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#seahorse-view-get-current-set"
+>seahorse_view_get_current_set</a>       (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self);
+<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html"
+>GtkWindow</a>*          <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#seahorse-view-get-window"
+>seahorse_view_get_window</a>            (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#seahorse-view-register-ui"
+>seahorse_view_register_ui</a>           (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObjectPredicate"
+>SeahorseObjectPredicate</a> *pred,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *ui_definition,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkActionGroup.html"
+>GtkActionGroup</a> *actions);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#seahorse-view-register-commands"
+>seahorse_view_register_commands</a>     (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObjectPredicate"
+>SeahorseObjectPredicate</a> *pred,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *commands);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-seahorse-view.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-seahorse-view.details"></a><h2>Details</h2>
+<div class="refsect2" title="SeahorseCommands">
+<a name="SeahorseCommands"></a><h3>SeahorseCommands</h3>
+<pre class="programlisting">typedef struct {
+	GObject parent_instance;
+	SeahorseCommandsPrivate *pv;
+} SeahorseCommands;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_VIEW_GET_INTERFACE()">
+<a name="SEAHORSE-VIEW-GET-INTERFACE--CAPS"></a><h3>SEAHORSE_VIEW_GET_INTERFACE()</h3>
+<pre class="programlisting">#define SEAHORSE_VIEW_GET_INTERFACE(obj)   (G_TYPE_INSTANCE_GET_INTERFACE ((obj), SEAHORSE_TYPE_VIEW, SeahorseViewIface))
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="SeahorseView">
+<a name="SeahorseView"></a><h3>SeahorseView</h3>
+<pre class="programlisting">typedef struct _SeahorseView SeahorseView;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SeahorseViewIface">
+<a name="SeahorseViewIface"></a><h3>SeahorseViewIface</h3>
+<pre class="programlisting">typedef struct {
+	GTypeInterface parent_iface;
+
+	/* virtual metdods */
+	GList*          (*get_selected_objects)   (SeahorseView *self);
+	
+	void            (*set_selected_objects)   (SeahorseView *self, 
+	                                           GList *objects);
+	
+	GList*          (*get_selected_matching)  (SeahorseView *self, 
+	                                           SeahorseObjectPredicate *pred);
+	
+	SeahorseObject* (*get_selected)           (SeahorseView *self);
+	
+	void            (*set_selected)           (SeahorseView *self, 
+	                                           SeahorseObject *value);
+	
+	SeahorseSet*    (*get_current_set)        (SeahorseView *self);
+	
+	GtkWindow*      (*get_window)             (SeahorseView *self);
+	
+	void            (*register_commands)      (SeahorseView *self, 
+	                                           SeahorseObjectPredicate *pred,
+	                                           SeahorseCommands *commands);
+	
+	void            (*register_ui)            (SeahorseView *self, 
+	                                           SeahorseObjectPredicate *pred, 
+	                                           const gchar *ui_definition, 
+	                                           GtkActionGroup *actions);
+} SeahorseViewIface;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_view_get_selected_objects ()">
+<a name="seahorse-view-get-selected-objects"></a><h3>seahorse_view_get_selected_objects ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a>*              seahorse_view_get_selected_objects  (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_view_set_selected_objects ()">
+<a name="seahorse-view-set-selected-objects"></a><h3>seahorse_view_set_selected_objects ()</h3>
+<pre class="programlisting">void                seahorse_view_set_selected_objects  (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>objects</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_view_get_selected_matching ()">
+<a name="seahorse-view-get-selected-matching"></a><h3>seahorse_view_get_selected_matching ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a>*              seahorse_view_get_selected_matching (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObjectPredicate"
+>SeahorseObjectPredicate</a> *pred);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pred</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_view_get_selected ()">
+<a name="seahorse-view-get-selected"></a><h3>seahorse_view_get_selected ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a>*     seahorse_view_get_selected          (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_view_set_selected ()">
+<a name="seahorse-view-set-selected"></a><h3>seahorse_view_set_selected ()</h3>
+<pre class="programlisting">void                seahorse_view_set_selected          (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a> *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_view_get_current_set ()">
+<a name="seahorse-view-get-current-set"></a><h3>seahorse_view_get_current_set ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSet.html#SeahorseSet"
+>SeahorseSet</a>*        seahorse_view_get_current_set       (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_view_get_window ()">
+<a name="seahorse-view-get-window"></a><h3>seahorse_view_get_window ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html"
+>GtkWindow</a>*          seahorse_view_get_window            (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_view_register_ui ()">
+<a name="seahorse-view-register-ui"></a><h3>seahorse_view_register_ui ()</h3>
+<pre class="programlisting">void                seahorse_view_register_ui           (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObjectPredicate"
+>SeahorseObjectPredicate</a> *pred,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *ui_definition,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkActionGroup.html"
+>GtkActionGroup</a> *actions);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pred</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ui_definition</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actions</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_view_register_commands ()">
+<a name="seahorse-view-register-commands"></a><h3>seahorse_view_register_commands ()</h3>
+<pre class="programlisting">void                seahorse_view_register_commands     (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObjectPredicate"
+>SeahorseObjectPredicate</a> *pred,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *commands);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pred</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>commands</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

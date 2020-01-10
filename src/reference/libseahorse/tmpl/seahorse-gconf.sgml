@@ -1,0 +1,221 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-gconf
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO ENCRYPTSELF_KEY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO MULTI_EXTENSION_KEY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO MULTI_SEPERATE_KEY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO KEYSERVER_KEY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO AUTORETRIEVE_KEY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO AUTOSYNC_KEY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LASTSEARCH_KEY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LASTSERVERS_KEY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO PUBLISH_TO_KEY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_SCHEMAS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO KEYSHARING_KEY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO WINDOW_SIZE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION seahorse_gconf_disconnect ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION seahorse_gconf_set_boolean ##### -->
+<para>
+
+</para>
+
+@key: 
+@boolean_value: 
+
+
+<!-- ##### FUNCTION seahorse_gconf_get_boolean ##### -->
+<para>
+
+</para>
+
+@key: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_gconf_set_integer ##### -->
+<para>
+
+</para>
+
+@key: 
+@int_value: 
+
+
+<!-- ##### FUNCTION seahorse_gconf_get_integer ##### -->
+<para>
+
+</para>
+
+@key: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_gconf_set_string ##### -->
+<para>
+
+</para>
+
+@key: 
+@string_value: 
+
+
+<!-- ##### FUNCTION seahorse_gconf_get_string ##### -->
+<para>
+
+</para>
+
+@key: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_gconf_set_string_list ##### -->
+<para>
+
+</para>
+
+@key: 
+@slist: 
+
+
+<!-- ##### FUNCTION seahorse_gconf_get_string_list ##### -->
+<para>
+
+</para>
+
+@key: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_gconf_get_entry ##### -->
+<para>
+
+</para>
+
+@key: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_gconf_notify ##### -->
+<para>
+
+</para>
+
+@key: 
+@notification_callback: 
+@callback_data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_gconf_notify_lazy ##### -->
+<para>
+
+</para>
+
+@key: 
+@notification_callback: 
+@callback_data: 
+@lifetime: 
+
+
+<!-- ##### FUNCTION seahorse_gconf_unnotify ##### -->
+<para>
+
+</para>
+
+@notification_id: 
+
+

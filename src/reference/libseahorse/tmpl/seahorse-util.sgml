@@ -1,0 +1,541 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-util
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### FUNCTION seahorse_util_dns_sd_get_poll ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### ENUM SeahorseSuffix ##### -->
+<para>
+
+</para>
+
+@SEAHORSE_CRYPT_SUFFIX: 
+@SEAHORSE_SIG_SUFFIX: 
+
+<!-- ##### MACRO SEAHORSE_EXT_ASC ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_EXT_SIG ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_EXT_PGP ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_EXT_GPG ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION seahorse_util_get_date_string ##### -->
+<para>
+
+</para>
+
+@time: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_get_display_date_string ##### -->
+<para>
+
+</para>
+
+@time: 
+@Returns: 
+
+
+<!-- ##### MACRO SEAHORSE_ERROR ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION seahorse_util_error_domain ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_show_error ##### -->
+<para>
+
+</para>
+
+@parent: 
+@heading: 
+@message: 
+
+
+<!-- ##### FUNCTION seahorse_util_handle_error ##### -->
+<para>
+
+</para>
+
+@err: 
+@desc: 
+@Varargs: 
+
+
+<!-- ##### FUNCTION seahorse_util_prompt_delete ##### -->
+<para>
+
+</para>
+
+@text: 
+@parent: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_read_to_memory ##### -->
+<para>
+
+</para>
+
+@input: 
+@len: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_read_data_block ##### -->
+<para>
+
+</para>
+
+@buf: 
+@input: 
+@start: 
+@end: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_memory_input_string ##### -->
+<para>
+
+</para>
+
+@string: 
+@length: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_memory_output_length ##### -->
+<para>
+
+</para>
+
+@output: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_print_fd ##### -->
+<para>
+
+</para>
+
+@fd: 
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_printf_fd ##### -->
+<para>
+
+</para>
+
+@fd: 
+@data: 
+@Varargs: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_filename_for_objects ##### -->
+<para>
+
+</para>
+
+@objects: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_uri_exists ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_uri_unique ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_uri_replace_ext ##### -->
+<para>
+
+</para>
+
+@uri: 
+@ext: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_uri_get_last ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_uri_split_last ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_uris_package ##### -->
+<para>
+
+</para>
+
+@package: 
+@uris: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_detect_mime_type ##### -->
+<para>
+
+</para>
+
+@mime: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_detect_data_type ##### -->
+<para>
+
+</para>
+
+@data: 
+@length: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_detect_file_type ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_write_file_private ##### -->
+<para>
+
+</para>
+
+@filename: 
+@contents: 
+@err: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_chooser_open_new ##### -->
+<para>
+
+</para>
+
+@title: 
+@parent: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_chooser_save_new ##### -->
+<para>
+
+</para>
+
+@title: 
+@parent: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_chooser_show_key_files ##### -->
+<para>
+
+</para>
+
+@dialog: 
+
+
+<!-- ##### FUNCTION seahorse_util_chooser_show_archive_files ##### -->
+<para>
+
+</para>
+
+@dialog: 
+
+
+<!-- ##### FUNCTION seahorse_util_chooser_set_filename_full ##### -->
+<para>
+
+</para>
+
+@dialog: 
+@objects: 
+
+
+<!-- ##### FUNCTION seahorse_util_chooser_set_filename ##### -->
+<para>
+
+</para>
+
+@dialog: 
+@object: 
+
+
+<!-- ##### FUNCTION seahorse_util_chooser_open_prompt ##### -->
+<para>
+
+</para>
+
+@dialog: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_chooser_save_prompt ##### -->
+<para>
+
+</para>
+
+@dialog: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_check_suffix ##### -->
+<para>
+
+</para>
+
+@path: 
+@suffix: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_add_suffix ##### -->
+<para>
+
+</para>
+
+@path: 
+@suffix: 
+@prompt: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_remove_suffix ##### -->
+<para>
+
+</para>
+
+@path: 
+@prompt: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_strvec_dup ##### -->
+<para>
+
+</para>
+
+@vec: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_strvec_length ##### -->
+<para>
+
+</para>
+
+@vec: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_objects_sort ##### -->
+<para>
+
+</para>
+
+@objects: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_objects_splice ##### -->
+<para>
+
+</para>
+
+@objects: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_string_equals ##### -->
+<para>
+
+</para>
+
+@s1: 
+@s2: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_string_up_first ##### -->
+<para>
+
+</para>
+
+@orig: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_string_lower ##### -->
+<para>
+
+</para>
+
+@s: 
+
+
+<!-- ##### FUNCTION seahorse_util_string_slist_free ##### -->
+<para>
+
+</para>
+
+@slist: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_string_slist_copy ##### -->
+<para>
+
+</para>
+
+@slist: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_string_slist_equal ##### -->
+<para>
+
+</para>
+
+@sl1: 
+@sl2: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_string_is_whitespace ##### -->
+<para>
+
+</para>
+
+@text: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_string_trim_whitespace ##### -->
+<para>
+
+</para>
+
+@text: 
+
+
+<!-- ##### FUNCTION seahorse_util_hex_encode ##### -->
+<para>
+
+</para>
+
+@value: 
+@length: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_util_determine_popup_menu_position ##### -->
+<para>
+
+</para>
+
+@menu: 
+@x: 
+@y: 
+@push_in: 
+@gdata: 
+
+
+<!-- ##### MACRO seahorse_util_wait_until ##### -->
+<para>
+
+</para>
+
+@expr: 
+
+
+<!-- ##### MACRO DBG_PRINT ##### -->
+<para>
+
+</para>
+
+@x: 
+
+

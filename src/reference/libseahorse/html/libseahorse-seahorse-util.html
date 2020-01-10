@@ -1,0 +1,2151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>seahorse-util</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libseahorse-seahorse-libdialogs.html" title="seahorse-libdialogs">
+<link rel="next" href="libseahorse-seahorse-progress.html" title="seahorse-progress">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libseahorse-seahorse-libdialogs.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-seahorse-progress.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-seahorse-util.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-seahorse-util.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="seahorse-util">
+<a name="libseahorse-seahorse-util"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-seahorse-util.top_of_page"></a>seahorse-util</span></h2>
+<p>seahorse-util</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-seahorse-util.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+const AvahiPoll*    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-dns-sd-get-poll"
+>seahorse_util_dns_sd_get_poll</a>       ();
+enum                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#SeahorseSuffix"
+>SeahorseSuffix</a>;
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#SEAHORSE-EXT-ASC--CAPS"
+>SEAHORSE_EXT_ASC</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#SEAHORSE-EXT-SIG--CAPS"
+>SEAHORSE_EXT_SIG</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#SEAHORSE-EXT-PGP--CAPS"
+>SEAHORSE_EXT_PGP</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#SEAHORSE-EXT-GPG--CAPS"
+>SEAHORSE_EXT_GPG</a>
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-get-date-string"
+>seahorse_util_get_date_string</a>       (const time_t time);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-get-display-date-string"
+>seahorse_util_get_display_date_string</a>
+                                                        (const time_t time);
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#SEAHORSE-ERROR--CAPS"
+>SEAHORSE_ERROR</a>
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a>              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-error-domain"
+>seahorse_util_error_domain</a>          ();
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-show-error"
+>seahorse_util_show_error</a>            (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWidget.html"
+>GtkWidget</a> *parent,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *heading,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *message);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-handle-error"
+>seahorse_util_handle_error</a>          (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> *err,
+                                                         const char *desc,
+                                                         ...);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-prompt-delete"
+>seahorse_util_prompt_delete</a>         (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *text,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWidget.html"
+>GtkWidget</a> *parent);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+>guchar</a>*             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-read-to-memory"
+>seahorse_util_read_to_memory</a>        (<a
+href="http://library.gnome.org/devel/gio/unstable/GInputStream.html"
+>GInputStream</a> *input,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> *len);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-read-data-block"
+>seahorse_util_read_data_block</a>       (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Strings.html#GString"
+>GString</a> *buf,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GInputStream.html"
+>GInputStream</a> *input,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *start,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *end);
+<a
+href="http://library.gnome.org/devel/gio/unstable/GMemoryInputStream.html"
+>GMemoryInputStream</a> * <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-memory-input-string"
+>seahorse_util_memory_input_string</a>  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *string,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"
+>gsize</a> length);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"
+>gsize</a>               <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-memory-output-length"
+>seahorse_util_memory_output_length</a>  (<a
+href="http://library.gnome.org/devel/gio/unstable/GMemoryOutputStream.html"
+>GMemoryOutputStream</a> *output);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-print-fd"
+>seahorse_util_print_fd</a>              (int fd,
+                                                         const char *data);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-printf-fd"
+>seahorse_util_printf_fd</a>             (int fd,
+                                                         const char *data,
+                                                         ...);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-filename-for-objects"
+>seahorse_util_filename_for_objects</a>  (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-uri-exists"
+>seahorse_util_uri_exists</a>            (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *uri);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-uri-unique"
+>seahorse_util_uri_unique</a>            (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *uri);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-uri-replace-ext"
+>seahorse_util_uri_replace_ext</a>       (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *uri,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *ext);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-uri-get-last"
+>seahorse_util_uri_get_last</a>          (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *uri);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-uri-split-last"
+>seahorse_util_uri_split_last</a>        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *uri);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-uris-package"
+>seahorse_util_uris_package</a>          (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *package,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **uris);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a>              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-detect-mime-type"
+>seahorse_util_detect_mime_type</a>      (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *mime);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a>              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-detect-data-type"
+>seahorse_util_detect_data_type</a>      (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *data,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> length);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a>              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-detect-file-type"
+>seahorse_util_detect_file_type</a>      (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *uri);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-write-file-private"
+>seahorse_util_write_file_private</a>    (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *filename,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *contents,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a>*          <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-chooser-open-new"
+>seahorse_util_chooser_open_new</a>      (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html"
+>GtkWindow</a> *parent);
+<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a>*          <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-chooser-save-new"
+>seahorse_util_chooser_save_new</a>      (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html"
+>GtkWindow</a> *parent);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-chooser-show-key-files"
+>seahorse_util_chooser_show_key_files</a>
+                                                        (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-chooser-show-archive-files"
+>seahorse_util_chooser_show_archive_files</a>
+                                                        (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-chooser-set-filename-full"
+>seahorse_util_chooser_set_filename_full</a>
+                                                        (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-chooser-set-filename"
+>seahorse_util_chooser_set_filename</a>  (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog,
+                                                         struct _SeahorseObject *object);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-chooser-open-prompt"
+>seahorse_util_chooser_open_prompt</a>   (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-chooser-save-prompt"
+>seahorse_util_chooser_save_prompt</a>   (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-check-suffix"
+>seahorse_util_check_suffix</a>          (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *path,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#SeahorseSuffix"
+>SeahorseSuffix</a> suffix);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-add-suffix"
+>seahorse_util_add_suffix</a>            (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *path,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#SeahorseSuffix"
+>SeahorseSuffix</a> suffix,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *prompt);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-remove-suffix"
+>seahorse_util_remove_suffix</a>         (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *path,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *prompt);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>**             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-strvec-dup"
+>seahorse_util_strvec_dup</a>            (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **vec);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-strvec-length"
+>seahorse_util_strvec_length</a>         (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **vec);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-objects-sort"
+>seahorse_util_objects_sort</a>          (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-objects-splice"
+>seahorse_util_objects_splice</a>        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-string-equals"
+>seahorse_util_string_equals</a>         (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *s1,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *s2);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-string-up-first"
+>seahorse_util_string_up_first</a>       (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *orig);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-string-lower"
+>seahorse_util_string_lower</a>          (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *s);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-string-slist-free"
+>seahorse_util_string_slist_free</a>     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *slist);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-string-slist-copy"
+>seahorse_util_string_slist_copy</a>     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *slist);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-string-slist-equal"
+>seahorse_util_string_slist_equal</a>    (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *sl1,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *sl2);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-string-is-whitespace"
+>seahorse_util_string_is_whitespace</a>  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *text);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-string-trim-whitespace"
+>seahorse_util_string_trim_whitespace</a>
+                                                        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *text);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-hex-encode"
+>seahorse_util_hex_encode</a>            (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"
+>gsize</a> length);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-determine-popup-menu-position"
+>seahorse_util_determine_popup_menu_position</a>
+                                                        (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkMenu.html"
+>GtkMenu</a> *menu,
+                                                         int *x,
+                                                         int *y,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> *push_in,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> gdata);
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#seahorse-util-wait-until"
+>seahorse_util_wait_until</a>            (expr)
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#DBG-PRINT--CAPS"
+>DBG_PRINT</a>                           (x)
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-seahorse-util.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-seahorse-util.details"></a><h2>Details</h2>
+<div class="refsect2" title="seahorse_util_dns_sd_get_poll ()">
+<a name="seahorse-util-dns-sd-get-poll"></a><h3>seahorse_util_dns_sd_get_poll ()</h3>
+<pre class="programlisting">const AvahiPoll*    seahorse_util_dns_sd_get_poll       ();</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum SeahorseSuffix">
+<a name="SeahorseSuffix"></a><h3>enum SeahorseSuffix</h3>
+<pre class="programlisting">typedef enum {
+    SEAHORSE_CRYPT_SUFFIX,
+    SEAHORSE_SIG_SUFFIX,
+} SeahorseSuffix;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_EXT_ASC">
+<a name="SEAHORSE-EXT-ASC--CAPS"></a><h3>SEAHORSE_EXT_ASC</h3>
+<pre class="programlisting">#define SEAHORSE_EXT_ASC ".asc"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_EXT_SIG">
+<a name="SEAHORSE-EXT-SIG--CAPS"></a><h3>SEAHORSE_EXT_SIG</h3>
+<pre class="programlisting">#define SEAHORSE_EXT_SIG ".sig"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_EXT_PGP">
+<a name="SEAHORSE-EXT-PGP--CAPS"></a><h3>SEAHORSE_EXT_PGP</h3>
+<pre class="programlisting">#define SEAHORSE_EXT_PGP ".pgp"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_EXT_GPG">
+<a name="SEAHORSE-EXT-GPG--CAPS"></a><h3>SEAHORSE_EXT_GPG</h3>
+<pre class="programlisting">#define SEAHORSE_EXT_GPG ".gpg"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_get_date_string ()">
+<a name="seahorse-util-get-date-string"></a><h3>seahorse_util_get_date_string ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              seahorse_util_get_date_string       (const time_t time);</pre>
+<p>
+Creates a string representation of <em class="parameter"><code>time</code></em> for use with gpg.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>time</code></em> :</span></p></td>
+<td> Time value to parse
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A string representing <em class="parameter"><code>time</code></em>. The returned string should be freed
+with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><span class="type">g_free</span></a> when no longer needed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_get_display_date_string ()">
+<a name="seahorse-util-get-display-date-string"></a><h3>seahorse_util_get_display_date_string ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              seahorse_util_get_display_date_string
+                                                        (const time_t time);</pre>
+<p>
+Creates a string representation of <em class="parameter"><code>time</code></em> for display in the UI.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>time</code></em> :</span></p></td>
+<td> Time value to parse
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A string representing <em class="parameter"><code>time</code></em>. The returned string should be freed 
+with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><span class="type">g_free</span></a> when no longer needed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_ERROR">
+<a name="SEAHORSE-ERROR--CAPS"></a><h3>SEAHORSE_ERROR</h3>
+<pre class="programlisting">#define SEAHORSE_ERROR  (seahorse_util_error_domain ())
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_error_domain ()">
+<a name="seahorse-util-error-domain"></a><h3>seahorse_util_error_domain ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a>              seahorse_util_error_domain          ();</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The GError domain for generic seahorse errors
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_show_error ()">
+<a name="seahorse-util-show-error"></a><h3>seahorse_util_show_error ()</h3>
+<pre class="programlisting">void                seahorse_util_show_error            (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWidget.html"
+>GtkWidget</a> *parent,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *heading,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *message);</pre>
+<p>
+This displays an error dialog.
+The parent widget can be any widget. The dialog will be a child of the window
+the widget is in.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td> The parent widget. Can be NULL
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>heading</code></em> :</span></p></td>
+<td> The heading of the dialog
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> The message to display
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_handle_error ()">
+<a name="seahorse-util-handle-error"></a><h3>seahorse_util_handle_error ()</h3>
+<pre class="programlisting">void                seahorse_util_handle_error          (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> *err,
+                                                         const char *desc,
+                                                         ...);</pre>
+<p>
+Displays an error box. The message is the error message.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td> The <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+><span class="type">GError</span></a> to print.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>desc</code></em> :</span></p></td>
+<td> The heading of the box
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td> Parameters to insert into the format string desc.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_prompt_delete ()">
+<a name="seahorse-util-prompt-delete"></a><h3>seahorse_util_prompt_delete ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_util_prompt_delete         (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *text,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWidget.html"
+>GtkWidget</a> *parent);</pre>
+<p>
+Displays a modal dialog with "cancel" and "delete"</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td> The text to display in the delete-dialog
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td> The widget to display the dialog for. Can be NULL
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if the user pressed "delete", FALSE else
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_read_to_memory ()">
+<a name="seahorse-util-read-to-memory"></a><h3>seahorse_util_read_to_memory ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+>guchar</a>*             seahorse_util_read_to_memory        (<a
+href="http://library.gnome.org/devel/gio/unstable/GInputStream.html"
+>GInputStream</a> *input,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> *len);</pre>
+<p>
+Reads data from the input stream and returns them as <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+><span class="type">guchar</span></a></p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td> Data to read. The <a
+href="http://library.gnome.org/devel/gio/unstable/GInputStream.html"
+><span class="type">GInputStream</span></a> is read till the end.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
+<td> Length of the data read (out)
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The string read from data. The returned string should be freed
+with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><span class="type">g_free</span></a> when no longer needed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_read_data_block ()">
+<a name="seahorse-util-read-data-block"></a><h3>seahorse_util_read_data_block ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               seahorse_util_read_data_block       (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Strings.html#GString"
+>GString</a> *buf,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GInputStream.html"
+>GInputStream</a> *input,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *start,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *end);</pre>
+<p>
+Breaks out one block of data (usually a key)</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buf</code></em> :</span></p></td>
+<td> A string buffer to write the data to.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td> The input stream to read from.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>start</code></em> :</span></p></td>
+<td> The start signature to look for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>end</code></em> :</span></p></td>
+<td> The end signature to look for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The number of bytes copied.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_memory_input_string ()">
+<a name="seahorse-util-memory-input-string"></a><h3>seahorse_util_memory_input_string ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gio/unstable/GMemoryInputStream.html"
+>GMemoryInputStream</a> * seahorse_util_memory_input_string  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *string,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"
+>gsize</a> length);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>string</code></em> :</span></p></td>
+<td> The string to create the stream from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td> The length of this string
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The new input stream of type <a
+href="http://library.gnome.org/devel/gio/unstable/GMemoryInputStream.html"
+><span class="type">GMemoryInputStream</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_memory_output_length ()">
+<a name="seahorse-util-memory-output-length"></a><h3>seahorse_util_memory_output_length ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"
+>gsize</a>               seahorse_util_memory_output_length  (<a
+href="http://library.gnome.org/devel/gio/unstable/GMemoryOutputStream.html"
+>GMemoryOutputStream</a> *output);</pre>
+<p>
+A replacement for <a
+href="http://library.gnome.org/devel/gio/unstable/GMemoryOutputStream.html#g-memory-output-stream-get-data-size"
+><span class="type">g_memory_output_stream_get_data_size</span></a> (since 2.18)</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td> a stream
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The length of the stream
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_print_fd ()">
+<a name="seahorse-util-print-fd"></a><h3>seahorse_util_print_fd ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_util_print_fd              (int fd,
+                                                         const char *data);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fd</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_printf_fd ()">
+<a name="seahorse-util-printf-fd"></a><h3>seahorse_util_printf_fd ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_util_printf_fd             (int fd,
+                                                         const char *data,
+                                                         ...);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fd</code></em> :</span></p></td>
+<td> The file descriptor to write to
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td> The printf format of the data to write
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td> The parameters to insert
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE on success, FALSE on error
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_filename_for_objects ()">
+<a name="seahorse-util-filename-for-objects"></a><h3>seahorse_util_filename_for_objects ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              seahorse_util_filename_for_objects  (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects);</pre>
+<p>
+If the single object has a nickname, this will be returned (with .asc attached)
+If there are multiple objects, "Multiple Keys.asc" will be returned.
+Single objects default to "Key Data.asc".
+Results are internationalized</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>objects</code></em> :</span></p></td>
+<td> A list of objects
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> NULL on error, the filename else. The returned string should be
+freed with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><span class="type">g_free</span></a> when no longer needed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_uri_exists ()">
+<a name="seahorse-util-uri-exists"></a><h3>seahorse_util_uri_exists ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_util_uri_exists            (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *uri);</pre>
+<p>
+Verify whether a given uri exists or not.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td> The uri to check
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> FALSE if it does not exist, TRUE else
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_uri_unique ()">
+<a name="seahorse-util-uri-unique"></a><h3>seahorse_util_uri_unique ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              seahorse_util_uri_unique            (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *uri);</pre>
+<p>
+Creates a URI based on <em class="parameter"><code>uri</code></em> that does not exist.
+A simple numbering scheme is used to create new
+URIs. Not meant for temp file creation.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td> The uri to guarantee is unique
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Newly allocated unique URI.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_uri_replace_ext ()">
+<a name="seahorse-util-uri-replace-ext"></a><h3>seahorse_util_uri_replace_ext ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              seahorse_util_uri_replace_ext       (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *uri,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *ext);</pre>
+<p>
+Replaces the extension on <em class="parameter"><code>uri</code></em></p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td> The uri with old extension
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ext</code></em> :</span></p></td>
+<td> The new extension
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Newly allocated URI string with new extension. The returned string
+should be freed with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><span class="type">g_free</span></a> when no longer needed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_uri_get_last ()">
+<a name="seahorse-util-uri-get-last"></a><h3>seahorse_util_uri_get_last ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        seahorse_util_uri_get_last          (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *uri);</pre>
+<p>
+Finds the last portion of <em class="parameter"><code>uri</code></em>. Note that this does
+not modify <em class="parameter"><code>uri</code></em>. If the uri is invalid or has no 
+directories then the entire thing is returned.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td> The uri to parse
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Last portion of <em class="parameter"><code>uri</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_uri_split_last ()">
+<a name="seahorse-util-uri-split-last"></a><h3>seahorse_util_uri_split_last ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        seahorse_util_uri_split_last        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *uri);</pre>
+<p>
+Splits the uri in two at it's last component. The result
+is still part of the same string, so don't free it. This 
+modifies the <em class="parameter"><code>uri</code></em> argument.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td> The uri to split
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The last component
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_uris_package ()">
+<a name="seahorse-util-uris-package"></a><h3>seahorse_util_uris_package ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_util_uris_package          (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *package,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **uris);</pre>
+<p>
+Package uris into an archive. The uris must be local.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>package</code></em> :</span></p></td>
+<td> Package uri
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uris</code></em> :</span></p></td>
+<td> null-terminated array of uris to package 
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE on success or FALSE on failure
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_detect_mime_type ()">
+<a name="seahorse-util-detect-mime-type"></a><h3>seahorse_util_detect_mime_type ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a>              seahorse_util_detect_mime_type      (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *mime);</pre>
+<p>
+Return the mime type depending on the mime string</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mime</code></em> :</span></p></td>
+<td> The mime string
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> SEAHORSE_PGP, SEAHORSE_SSH or 0
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_detect_data_type ()">
+<a name="seahorse-util-detect-data-type"></a><h3>seahorse_util_detect_data_type ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a>              seahorse_util_detect_data_type      (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *data,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> length);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td> The buffer to test for content type
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td> The length of this buffer
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> SEAHORSE_PGP, SEAHORSE_SSH or 0
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_detect_file_type ()">
+<a name="seahorse-util-detect-file-type"></a><h3>seahorse_util_detect_file_type ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a>              seahorse_util_detect_file_type      (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *uri);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td> The file uri to test for content type
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> SEAHORSE_PGP, SEAHORSE_SSH or 0
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_write_file_private ()">
+<a name="seahorse-util-write-file-private"></a><h3>seahorse_util_write_file_private ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_util_write_file_private    (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *filename,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *contents,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td> file to write to
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>contents</code></em> :</span></p></td>
+<td> nul-terminated string to write to the file
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td> error of the write operation
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><span class="type">TRUE</span></a> on success, <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE--CAPS"
+><span class="type">FALSE</span></a> if an error occured
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_chooser_open_new ()">
+<a name="seahorse-util-chooser-open-new"></a><h3>seahorse_util_chooser_open_new ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a>*          seahorse_util_chooser_open_new      (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html"
+>GtkWindow</a> *parent);</pre>
+<p>
+Creates a file chooser dialog to open files.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td> The title of the dialog
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td> The parent of the dialog
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The new open dialog
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_chooser_save_new ()">
+<a name="seahorse-util-chooser-save-new"></a><h3>seahorse_util_chooser_save_new ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a>*          seahorse_util_chooser_save_new      (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html"
+>GtkWindow</a> *parent);</pre>
+<p>
+Creates a file chooser dialog to save files.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td> The title of the dialog
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td> The parent of the dialog
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The new save dialog
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_chooser_show_key_files ()">
+<a name="seahorse-util-chooser-show-key-files"></a><h3>seahorse_util_chooser_show_key_files ()</h3>
+<pre class="programlisting">void                seahorse_util_chooser_show_key_files
+                                                        (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog);</pre>
+<p>
+Adds a key file filter and a "All files" filter. The key filter
+is used.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>dialog</code></em> :</span></p></td>
+<td> the dialog to add the filter for
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_chooser_show_archive_files ()">
+<a name="seahorse-util-chooser-show-archive-files"></a><h3>seahorse_util_chooser_show_archive_files ()</h3>
+<pre class="programlisting">void                seahorse_util_chooser_show_archive_files
+                                                        (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog);</pre>
+<p>
+Adds a archive file filter and a "All files" filter. The archive filter
+is used.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>dialog</code></em> :</span></p></td>
+<td> the dialog to add the filter for
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_chooser_set_filename_full ()">
+<a name="seahorse-util-chooser-set-filename-full"></a><h3>seahorse_util_chooser_set_filename_full ()</h3>
+<pre class="programlisting">void                seahorse_util_chooser_set_filename_full
+                                                        (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dialog</code></em> :</span></p></td>
+<td> The dialog to pre set the name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>objects</code></em> :</span></p></td>
+<td> generate the file name from this object
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_chooser_set_filename ()">
+<a name="seahorse-util-chooser-set-filename"></a><h3>seahorse_util_chooser_set_filename ()</h3>
+<pre class="programlisting">void                seahorse_util_chooser_set_filename  (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog,
+                                                         struct _SeahorseObject *object);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dialog</code></em> :</span></p></td>
+<td> set the dialog for this
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td> The object to use for the filename. <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+><span class="type">SeahorseObject</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_chooser_open_prompt ()">
+<a name="seahorse-util-chooser-open-prompt"></a><h3>seahorse_util_chooser_open_prompt ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              seahorse_util_chooser_open_prompt   (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog);</pre>
+<p>
+Display an open dialog</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dialog</code></em> :</span></p></td>
+<td> open dialog to display
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The uri of the file to open or NULL
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_chooser_save_prompt ()">
+<a name="seahorse-util-chooser-save-prompt"></a><h3>seahorse_util_chooser_save_prompt ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              seahorse_util_chooser_save_prompt   (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog);</pre>
+<p>
+If the selected file already exists, a confirmation dialog will be displayed</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dialog</code></em> :</span></p></td>
+<td> save dialog to show
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the uri of the chosen file or NULL
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_check_suffix ()">
+<a name="seahorse-util-check-suffix"></a><h3>seahorse_util_check_suffix ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_util_check_suffix          (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *path,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#SeahorseSuffix"
+>SeahorseSuffix</a> suffix);</pre>
+<p>
+Checks that <em class="parameter"><code>path</code></em> has a suffix specified by <em class="parameter"><code>suffix</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td> Path of file to check
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>suffix</code></em> :</span></p></td>
+<td> Suffix type to check for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if the file has a correct suffix, FALSE otherwise
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_add_suffix ()">
+<a name="seahorse-util-add-suffix"></a><h3>seahorse_util_add_suffix ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              seahorse_util_add_suffix            (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *path,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html#SeahorseSuffix"
+>SeahorseSuffix</a> suffix,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *prompt);</pre>
+<p>
+Constructs a new path for a file based on <em class="parameter"><code>path</code></em> plus a suffix determined by
+<em class="parameter"><code>suffix</code></em>. If ASCII Armor is enabled, the suffix will be '.asc'. Otherwise the 
+suffix will be '.pgp' if <em class="parameter"><code>suffix</code></em> is <code class="literal">SEAHORSE_CRYPT_SUFFIX</code> or '.sig' if 
+<em class="parameter"><code>suffix</code></em> is <code class="literal">SEAHORSE_SIG_SUFFIX</code>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td> Path of an existing file
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>suffix</code></em> :</span></p></td>
+<td> Suffix type
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prompt</code></em> :</span></p></td>
+<td> Overwrite prompt text
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new path with the suffix appended to <em class="parameter"><code>path</code></em>. NULL if prompt cancelled
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_remove_suffix ()">
+<a name="seahorse-util-remove-suffix"></a><h3>seahorse_util_remove_suffix ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              seahorse_util_remove_suffix         (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *path,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *prompt);</pre>
+<p>
+Removes a suffix from <em class="parameter"><code>path</code></em>. Does not check if <em class="parameter"><code>path</code></em> actually has a suffix.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td> Path with a suffix
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prompt</code></em> :</span></p></td>
+<td>Overwrite prompt text
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <em class="parameter"><code>path</code></em> without a suffix. NULL if prompt cancelled
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_strvec_dup ()">
+<a name="seahorse-util-strvec-dup"></a><h3>seahorse_util_strvec_dup ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>**             seahorse_util_strvec_dup            (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **vec);</pre>
+<p>
+Copy a string table</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>vec</code></em> :</span></p></td>
+<td> the string table to copy
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new char **
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_strvec_length ()">
+<a name="seahorse-util-strvec-length"></a><h3>seahorse_util_strvec_length ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               seahorse_util_strvec_length         (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **vec);</pre>
+<p>
+Calculates the length of the string table</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>vec</code></em> :</span></p></td>
+<td> The string table
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The length of the string table
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_objects_sort ()">
+<a name="seahorse-util-objects-sort"></a><h3>seahorse_util_objects_sort ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a>*              seahorse_util_objects_sort          (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects);</pre>
+<p>
+The objects are sorted by their source</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>objects</code></em> :</span></p></td>
+<td> <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+><span class="type">SeahorseObject</span></a> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+><span class="type">GList</span></a> to sort
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The sorted list
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_objects_splice ()">
+<a name="seahorse-util-objects-splice"></a><h3>seahorse_util_objects_splice ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a>*              seahorse_util_objects_splice        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects);</pre>
+<p>
+Splices the list at the source disconuity</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>objects</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+><span class="type">GList</span></a> of <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+><span class="type">SeahorseObject</span></a>. Must be sorted
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The second part of the list.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_string_equals ()">
+<a name="seahorse-util-string-equals"></a><h3>seahorse_util_string_equals ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_util_string_equals         (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *s1,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *s2);</pre>
+<p>
+Compares two string. If they are equal, it returns TRUE</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>s1</code></em> :</span></p></td>
+<td> String, can be NULL
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>s2</code></em> :</span></p></td>
+<td> String, can be NULL
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if strings are equal, FALSE else
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_string_up_first ()">
+<a name="seahorse-util-string-up-first"></a><h3>seahorse_util_string_up_first ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              seahorse_util_string_up_first       (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *orig);</pre>
+<p>
+Upper case the first char in the UTF8 string</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>orig</code></em> :</span></p></td>
+<td> The utf8 string to work with
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new string, with the first char upper cased. The returned string
+should be freed with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><span class="type">g_free</span></a> when no longer needed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_string_lower ()">
+<a name="seahorse-util-string-lower"></a><h3>seahorse_util_string_lower ()</h3>
+<pre class="programlisting">void                seahorse_util_string_lower          (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *s);</pre>
+<p>
+The whole ASCII string will be lower cased.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>s</code></em> :</span></p></td>
+<td> ASCII string to change
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_string_slist_free ()">
+<a name="seahorse-util-string-slist-free"></a><h3>seahorse_util_string_slist_free ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             seahorse_util_string_slist_free     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *slist);</pre>
+<p>
+Free a GSList along with string values</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>slist</code></em> :</span></p></td>
+<td> the <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+><span class="type">GSList</span></a> to free
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> NULL
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_string_slist_copy ()">
+<a name="seahorse-util-string-slist-copy"></a><h3>seahorse_util_string_slist_copy ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             seahorse_util_string_slist_copy     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *slist);</pre>
+<p>
+Copy a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+><span class="type">GSList</span></a> along with string values</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>slist</code></em> :</span></p></td>
+<td> The list to copy
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new list
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_string_slist_equal ()">
+<a name="seahorse-util-string-slist-equal"></a><h3>seahorse_util_string_slist_equal ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_util_string_slist_equal    (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *sl1,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *sl2);</pre>
+<p>
+Compare two string GSLists.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sl1</code></em> :</span></p></td>
+<td> the first string list
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sl2</code></em> :</span></p></td>
+<td> the second string list
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if all the string are equal
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_string_is_whitespace ()">
+<a name="seahorse-util-string-is-whitespace"></a><h3>seahorse_util_string_is_whitespace ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_util_string_is_whitespace  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *text);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td> The UTF8 string to test
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if <em class="parameter"><code>text</code></em> consists of whitespaces
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_string_trim_whitespace ()">
+<a name="seahorse-util-string-trim-whitespace"></a><h3>seahorse_util_string_trim_whitespace ()</h3>
+<pre class="programlisting">void                seahorse_util_string_trim_whitespace
+                                                        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *text);</pre>
+<p>
+Whitespaces will be removed from the start and the end of the text.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td> The text to trim (UTF8)
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_hex_encode ()">
+<a name="seahorse-util-hex-encode"></a><h3>seahorse_util_hex_encode ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              seahorse_util_hex_encode            (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"
+>gsize</a> length);</pre>
+<p>
+Creates a string contining the <em class="parameter"><code>value</code></em> in hex for printing.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> a buffer containing data
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td> The length of this buffer
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The hex encoded <em class="parameter"><code>value</code></em>. The returned string should be freed
+with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><span class="type">g_free</span></a> when no longer needed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_determine_popup_menu_position ()">
+<a name="seahorse-util-determine-popup-menu-position"></a><h3>seahorse_util_determine_popup_menu_position ()</h3>
+<pre class="programlisting">void                seahorse_util_determine_popup_menu_position
+                                                        (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkMenu.html"
+>GtkMenu</a> *menu,
+                                                         int *x,
+                                                         int *y,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> *push_in,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> gdata);</pre>
+<p>
+Callback to determine where a popup menu should be placed</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>menu</code></em> :</span></p></td>
+<td> The menu to place
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td> (out) x pos of the menu
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td> (out) y pos of the menu
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>push_in</code></em> :</span></p></td>
+<td> (out) will be set to TRUE
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gdata</code></em> :</span></p></td>
+<td> GTK_WIDGET for which the menu is
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_util_wait_until()">
+<a name="seahorse-util-wait-until"></a><h3>seahorse_util_wait_until()</h3>
+<pre class="programlisting">#define             seahorse_util_wait_until(expr)</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>expr</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="DBG_PRINT()">
+<a name="DBG-PRINT--CAPS"></a><h3>DBG_PRINT()</h3>
+<pre class="programlisting">#define             DBG_PRINT(x)</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

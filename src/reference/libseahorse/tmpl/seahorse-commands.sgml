@@ -1,0 +1,88 @@
+<!-- ##### SECTION Title ##### -->
+SeahorseCommands
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseCommandsPrivate ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT SeahorseCommands ##### -->
+<para>
+
+</para>
+
+@parent_instance: 
+@pv: 
+
+<!-- ##### FUNCTION seahorse_commands_show_properties ##### -->
+<para>
+
+</para>
+
+@self: 
+@obj: 
+
+
+<!-- ##### FUNCTION seahorse_commands_delete_objects ##### -->
+<para>
+
+</para>
+
+@self: 
+@obj: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_commands_get_view ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_commands_get_window ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_commands_get_command_actions ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_commands_get_ui_definition ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

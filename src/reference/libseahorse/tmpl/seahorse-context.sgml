@@ -1,0 +1,369 @@
+<!-- ##### SECTION Title ##### -->
+SeahorseContext
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseContextPrivate ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT SeahorseContext ##### -->
+<para>
+
+</para>
+
+@parent: 
+@is_daemon: 
+
+<!-- ##### USER_FUNCTION SeahorseObjectFunc ##### -->
+<para>
+
+</para>
+
+@obj: 
+@user_data: 
+
+
+<!-- ##### MACRO SCTX_APP ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION seahorse_context_for_app ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_new ##### -->
+<para>
+
+</para>
+
+@flags: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_destroy ##### -->
+<para>
+
+</para>
+
+@sctx: 
+
+
+<!-- ##### MACRO seahorse_context_is_daemon ##### -->
+<para>
+
+</para>
+
+@ctx: 
+
+
+<!-- ##### FUNCTION seahorse_context_add_source ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@sksrc: 
+
+
+<!-- ##### FUNCTION seahorse_context_take_source ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@sksrc: 
+
+
+<!-- ##### FUNCTION seahorse_context_remove_source ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@sksrc: 
+
+
+<!-- ##### FUNCTION seahorse_context_find_source ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@ktype: 
+@location: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_find_sources ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@ktype: 
+@location: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_remote_source ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_add_object ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@sobj: 
+
+
+<!-- ##### FUNCTION seahorse_context_take_object ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@sobj: 
+
+
+<!-- ##### FUNCTION seahorse_context_get_count ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_get_object ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@sksrc: 
+@id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_get_objects ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@sksrc: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_find_object ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@id: 
+@location: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_find_objects ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@ktype: 
+@usage: 
+@location: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_find_objects_full ##### -->
+<para>
+
+</para>
+
+@self: 
+@skpred: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_for_objects_full ##### -->
+<para>
+
+</para>
+
+@self: 
+@skpred: 
+@func: 
+@user_data: 
+
+
+<!-- ##### FUNCTION seahorse_context_verify_objects ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION seahorse_context_remove_object ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@sobj: 
+
+
+<!-- ##### FUNCTION seahorse_context_get_discovery ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_get_default_key ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_refresh_auto ##### -->
+<para>
+
+</para>
+
+@sctx: 
+
+
+<!-- ##### FUNCTION seahorse_context_search_remote ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@search: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_transfer_objects ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@objs: 
+@to: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_retrieve_objects ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@ktype: 
+@ids: 
+@to: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_discover_objects ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@ktype: 
+@ids: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_object_from_dbus ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@dbusid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_object_to_dbus ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@sobj: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_id_to_dbus ##### -->
+<para>
+
+</para>
+
+@sctx: 
+@id: 
+@Returns: 
+
+
+<!-- ##### USER_FUNCTION SeahorseCanonizeFunc ##### -->
+<para>
+
+</para>
+
+@id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_context_canonize_id ##### -->
+<para>
+
+</para>
+
+@ktype: 
+@id: 
+@Returns: 
+
+

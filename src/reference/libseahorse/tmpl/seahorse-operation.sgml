@@ -1,0 +1,367 @@
+<!-- ##### SECTION Title ##### -->
+SeahorseMultiOperation
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseOperation ##### -->
+<para>
+
+</para>
+
+@parent: 
+@message: 
+@progress: 
+@is_running: 
+@is_done: 
+@is_cancelled: 
+@error: 
+
+<!-- ##### FUNCTION seahorse_operation_new_complete ##### -->
+<para>
+
+</para>
+
+@err: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_operation_new_cancelled ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_operation_cancel ##### -->
+<para>
+
+</para>
+
+@operation: 
+
+
+<!-- ##### MACRO seahorse_operation_is_running ##### -->
+<para>
+
+</para>
+
+@operation: 
+
+
+<!-- ##### MACRO seahorse_operation_is_cancelled ##### -->
+<para>
+
+</para>
+
+@operation: 
+
+
+<!-- ##### MACRO seahorse_operation_is_successful ##### -->
+<para>
+
+</para>
+
+@operation: 
+
+
+<!-- ##### FUNCTION seahorse_operation_copy_error ##### -->
+<para>
+
+</para>
+
+@operation: 
+@err: 
+
+
+<!-- ##### FUNCTION seahorse_operation_get_error ##### -->
+<para>
+
+</para>
+
+@operation: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_operation_display_error ##### -->
+<para>
+
+</para>
+
+@operation: 
+@title: 
+@parent: 
+
+
+<!-- ##### FUNCTION seahorse_operation_wait ##### -->
+<para>
+
+</para>
+
+@operation: 
+
+
+<!-- ##### USER_FUNCTION SeahorseDoneFunc ##### -->
+<para>
+
+</para>
+
+@op: 
+@userdata: 
+
+
+<!-- ##### USER_FUNCTION SeahorseProgressFunc ##### -->
+<para>
+
+</para>
+
+@op: 
+@status: 
+@progress: 
+@userdata: 
+
+
+<!-- ##### FUNCTION seahorse_operation_watch ##### -->
+<para>
+
+</para>
+
+@operation: 
+@done_callback: 
+@donedata: 
+@progress_callback: 
+@progdata: 
+
+
+<!-- ##### MACRO seahorse_operation_get_progress ##### -->
+<para>
+
+</para>
+
+@op: 
+
+
+<!-- ##### MACRO seahorse_operation_get_message ##### -->
+<para>
+
+</para>
+
+@operation: 
+
+
+<!-- ##### FUNCTION seahorse_operation_get_result ##### -->
+<para>
+
+</para>
+
+@operation: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_operation_list_add ##### -->
+<para>
+
+</para>
+
+@list: 
+@operation: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_operation_list_remove ##### -->
+<para>
+
+</para>
+
+@list: 
+@operation: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_operation_list_cancel ##### -->
+<para>
+
+</para>
+
+@list: 
+
+
+<!-- ##### FUNCTION seahorse_operation_list_purge ##### -->
+<para>
+
+</para>
+
+@list: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_operation_list_free ##### -->
+<para>
+
+</para>
+
+@list: 
+@Returns: 
+
+
+<!-- ##### MACRO SEAHORSE_TYPE_MULTI_OPERATION ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_MULTI_OPERATION ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### MACRO SEAHORSE_MULTI_OPERATION_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
+
+
+<!-- ##### MACRO SEAHORSE_IS_MULTI_OPERATION ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### MACRO SEAHORSE_IS_MULTI_OPERATION_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
+
+
+<!-- ##### MACRO SEAHORSE_MULTI_OPERATION_GET_CLASS ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### STRUCT SeahorseMultiOperation ##### -->
+<para>
+
+</para>
+
+@parent: 
+@operations: 
+
+<!-- ##### FUNCTION seahorse_multi_operation_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_multi_operation_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_multi_operation_take ##### -->
+<para>
+
+</para>
+
+@mop: 
+@op: 
+
+
+<!-- ##### MACRO DECLARE_OPERATION ##### -->
+<para>
+
+</para>
+
+@Opx: 
+@opx: 
+
+
+<!-- ##### MACRO SEAHORSE_CALC_PROGRESS ##### -->
+<para>
+
+</para>
+
+@cur: 
+@tot: 
+
+
+<!-- ##### FUNCTION seahorse_operation_mark_start ##### -->
+<para>
+
+</para>
+
+@operation: 
+
+
+<!-- ##### FUNCTION seahorse_operation_mark_done ##### -->
+<para>
+
+</para>
+
+@operation: 
+@cancelled: 
+@error: 
+
+
+<!-- ##### FUNCTION seahorse_operation_mark_progress ##### -->
+<para>
+
+</para>
+
+@operation: 
+@message: 
+@progress: 
+
+
+<!-- ##### FUNCTION seahorse_operation_mark_progress_full ##### -->
+<para>
+
+</para>
+
+@operation: 
+@message: 
+@current: 
+@total: 
+
+
+<!-- ##### FUNCTION seahorse_operation_mark_result ##### -->
+<para>
+
+</para>
+
+@operation: 
+@result: 
+@notify_func: 
+
+

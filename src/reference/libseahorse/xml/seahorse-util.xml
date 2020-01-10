@@ -1,0 +1,965 @@
+<refentry id="libseahorse-seahorse-util">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-util.top_of_page">seahorse-util</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-util</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-util.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+const <link linkend="AvahiPoll">AvahiPoll</link>*    <link linkend="seahorse-util-dns-sd-get-poll">seahorse_util_dns_sd_get_poll</link>       ();
+enum                <link linkend="SeahorseSuffix">SeahorseSuffix</link>;
+#define             <link linkend="SEAHORSE-EXT-ASC--CAPS">SEAHORSE_EXT_ASC</link>
+#define             <link linkend="SEAHORSE-EXT-SIG--CAPS">SEAHORSE_EXT_SIG</link>
+#define             <link linkend="SEAHORSE-EXT-PGP--CAPS">SEAHORSE_EXT_PGP</link>
+#define             <link linkend="SEAHORSE-EXT-GPG--CAPS">SEAHORSE_EXT_GPG</link>
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-util-get-date-string">seahorse_util_get_date_string</link>       (const <link linkend="time-t">time_t</link> time);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-util-get-display-date-string">seahorse_util_get_display_date_string</link>
+                                                        (const <link linkend="time-t">time_t</link> time);
+#define             <link linkend="SEAHORSE-ERROR--CAPS">SEAHORSE_ERROR</link>
+<link linkend="GQuark">GQuark</link>              <link linkend="seahorse-util-error-domain">seahorse_util_error_domain</link>          ();
+<link linkend="void">void</link>                <link linkend="seahorse-util-show-error">seahorse_util_show_error</link>            (<link linkend="GtkWidget">GtkWidget</link> *parent,
+                                                         const <link linkend="gchar">gchar</link> *heading,
+                                                         const <link linkend="gchar">gchar</link> *message);
+<link linkend="void">void</link>                <link linkend="seahorse-util-handle-error">seahorse_util_handle_error</link>          (<link linkend="GError">GError</link> *err,
+                                                         const <link linkend="char">char</link> *desc,
+                                                         ...);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-util-prompt-delete">seahorse_util_prompt_delete</link>         (const <link linkend="gchar">gchar</link> *text,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *parent);
+<link linkend="guchar">guchar</link>*             <link linkend="seahorse-util-read-to-memory">seahorse_util_read_to_memory</link>        (<link linkend="GInputStream">GInputStream</link> *input,
+                                                         <link linkend="guint">guint</link> *len);
+<link linkend="guint">guint</link>               <link linkend="seahorse-util-read-data-block">seahorse_util_read_data_block</link>       (<link linkend="GString">GString</link> *buf,
+                                                         <link linkend="GInputStream">GInputStream</link> *input,
+                                                         const <link linkend="gchar">gchar</link> *start,
+                                                         const <link linkend="gchar">gchar</link> *end);
+<link linkend="GMemoryInputStream">GMemoryInputStream</link> * <link linkend="seahorse-util-memory-input-string">seahorse_util_memory_input_string</link>  (const <link linkend="gchar">gchar</link> *string,
+                                                         <link linkend="gsize">gsize</link> length);
+<link linkend="gsize">gsize</link>               <link linkend="seahorse-util-memory-output-length">seahorse_util_memory_output_length</link>  (<link linkend="GMemoryOutputStream">GMemoryOutputStream</link> *output);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-util-print-fd">seahorse_util_print_fd</link>              (<link linkend="int">int</link> fd,
+                                                         const <link linkend="char">char</link> *data);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-util-printf-fd">seahorse_util_printf_fd</link>             (<link linkend="int">int</link> fd,
+                                                         const <link linkend="char">char</link> *data,
+                                                         ...);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-util-filename-for-objects">seahorse_util_filename_for_objects</link>  (<link linkend="GList">GList</link> *objects);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-util-uri-exists">seahorse_util_uri_exists</link>            (const <link linkend="gchar">gchar</link> *uri);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-util-uri-unique">seahorse_util_uri_unique</link>            (const <link linkend="gchar">gchar</link> *uri);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-util-uri-replace-ext">seahorse_util_uri_replace_ext</link>       (const <link linkend="gchar">gchar</link> *uri,
+                                                         const <link linkend="gchar">gchar</link> *ext);
+const <link linkend="gchar">gchar</link>*        <link linkend="seahorse-util-uri-get-last">seahorse_util_uri_get_last</link>          (const <link linkend="gchar">gchar</link> *uri);
+const <link linkend="gchar">gchar</link>*        <link linkend="seahorse-util-uri-split-last">seahorse_util_uri_split_last</link>        (<link linkend="gchar">gchar</link> *uri);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-util-uris-package">seahorse_util_uris_package</link>          (const <link linkend="gchar">gchar</link> *package,
+                                                         const <link linkend="gchar">gchar</link> **uris);
+<link linkend="GQuark">GQuark</link>              <link linkend="seahorse-util-detect-mime-type">seahorse_util_detect_mime_type</link>      (const <link linkend="gchar">gchar</link> *mime);
+<link linkend="GQuark">GQuark</link>              <link linkend="seahorse-util-detect-data-type">seahorse_util_detect_data_type</link>      (const <link linkend="gchar">gchar</link> *data,
+                                                         <link linkend="guint">guint</link> length);
+<link linkend="GQuark">GQuark</link>              <link linkend="seahorse-util-detect-file-type">seahorse_util_detect_file_type</link>      (const <link linkend="gchar">gchar</link> *uri);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-util-write-file-private">seahorse_util_write_file_private</link>    (const <link linkend="gchar">gchar</link> *filename,
+                                                         const <link linkend="gchar">gchar</link> *contents,
+                                                         <link linkend="GError">GError</link> **err);
+<link linkend="GtkDialog">GtkDialog</link>*          <link linkend="seahorse-util-chooser-open-new">seahorse_util_chooser_open_new</link>      (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent);
+<link linkend="GtkDialog">GtkDialog</link>*          <link linkend="seahorse-util-chooser-save-new">seahorse_util_chooser_save_new</link>      (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent);
+<link linkend="void">void</link>                <link linkend="seahorse-util-chooser-show-key-files">seahorse_util_chooser_show_key_files</link>
+                                                        (<link linkend="GtkDialog">GtkDialog</link> *dialog);
+<link linkend="void">void</link>                <link linkend="seahorse-util-chooser-show-archive-files">seahorse_util_chooser_show_archive_files</link>
+                                                        (<link linkend="GtkDialog">GtkDialog</link> *dialog);
+<link linkend="void">void</link>                <link linkend="seahorse-util-chooser-set-filename-full">seahorse_util_chooser_set_filename_full</link>
+                                                        (<link linkend="GtkDialog">GtkDialog</link> *dialog,
+                                                         <link linkend="GList">GList</link> *objects);
+<link linkend="void">void</link>                <link linkend="seahorse-util-chooser-set-filename">seahorse_util_chooser_set_filename</link>  (<link linkend="GtkDialog">GtkDialog</link> *dialog,
+                                                         <link linkend="struct--SeahorseObject">struct _SeahorseObject</link> *object);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-util-chooser-open-prompt">seahorse_util_chooser_open_prompt</link>   (<link linkend="GtkDialog">GtkDialog</link> *dialog);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-util-chooser-save-prompt">seahorse_util_chooser_save_prompt</link>   (<link linkend="GtkDialog">GtkDialog</link> *dialog);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-util-check-suffix">seahorse_util_check_suffix</link>          (const <link linkend="gchar">gchar</link> *path,
+                                                         <link linkend="SeahorseSuffix">SeahorseSuffix</link> suffix);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-util-add-suffix">seahorse_util_add_suffix</link>            (const <link linkend="gchar">gchar</link> *path,
+                                                         <link linkend="SeahorseSuffix">SeahorseSuffix</link> suffix,
+                                                         const <link linkend="gchar">gchar</link> *prompt);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-util-remove-suffix">seahorse_util_remove_suffix</link>         (const <link linkend="gchar">gchar</link> *path,
+                                                         const <link linkend="gchar">gchar</link> *prompt);
+<link linkend="gchar">gchar</link>**             <link linkend="seahorse-util-strvec-dup">seahorse_util_strvec_dup</link>            (const <link linkend="gchar">gchar</link> **vec);
+<link linkend="guint">guint</link>               <link linkend="seahorse-util-strvec-length">seahorse_util_strvec_length</link>         (const <link linkend="gchar">gchar</link> **vec);
+<link linkend="GList">GList</link>*              <link linkend="seahorse-util-objects-sort">seahorse_util_objects_sort</link>          (<link linkend="GList">GList</link> *objects);
+<link linkend="GList">GList</link>*              <link linkend="seahorse-util-objects-splice">seahorse_util_objects_splice</link>        (<link linkend="GList">GList</link> *objects);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-util-string-equals">seahorse_util_string_equals</link>         (const <link linkend="gchar">gchar</link> *s1,
+                                                         const <link linkend="gchar">gchar</link> *s2);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-util-string-up-first">seahorse_util_string_up_first</link>       (const <link linkend="gchar">gchar</link> *orig);
+<link linkend="void">void</link>                <link linkend="seahorse-util-string-lower">seahorse_util_string_lower</link>          (<link linkend="gchar">gchar</link> *s);
+<link linkend="GSList">GSList</link>*             <link linkend="seahorse-util-string-slist-free">seahorse_util_string_slist_free</link>     (<link linkend="GSList">GSList</link> *slist);
+<link linkend="GSList">GSList</link>*             <link linkend="seahorse-util-string-slist-copy">seahorse_util_string_slist_copy</link>     (<link linkend="GSList">GSList</link> *slist);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-util-string-slist-equal">seahorse_util_string_slist_equal</link>    (<link linkend="GSList">GSList</link> *sl1,
+                                                         <link linkend="GSList">GSList</link> *sl2);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-util-string-is-whitespace">seahorse_util_string_is_whitespace</link>  (const <link linkend="gchar">gchar</link> *text);
+<link linkend="void">void</link>                <link linkend="seahorse-util-string-trim-whitespace">seahorse_util_string_trim_whitespace</link>
+                                                        (<link linkend="gchar">gchar</link> *text);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-util-hex-encode">seahorse_util_hex_encode</link>            (<link linkend="gconstpointer">gconstpointer</link> value,
+                                                         <link linkend="gsize">gsize</link> length);
+<link linkend="void">void</link>                <link linkend="seahorse-util-determine-popup-menu-position">seahorse_util_determine_popup_menu_position</link>
+                                                        (<link linkend="GtkMenu">GtkMenu</link> *menu,
+                                                         <link linkend="int">int</link> *x,
+                                                         <link linkend="int">int</link> *y,
+                                                         <link linkend="gboolean">gboolean</link> *push_in,
+                                                         <link linkend="gpointer">gpointer</link> gdata);
+#define             <link linkend="seahorse-util-wait-until">seahorse_util_wait_until</link>            (expr)
+#define             <link linkend="DBG-PRINT--CAPS">DBG_PRINT</link>                           (x)
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-util.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-util.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="seahorse-util-dns-sd-get-poll" role="function">
+<title>seahorse_util_dns_sd_get_poll ()</title>
+<indexterm zone="seahorse-util-dns-sd-get-poll"><primary sortas="util_dns_sd_get_poll">seahorse_util_dns_sd_get_poll</primary></indexterm><programlisting>const <link linkend="AvahiPoll">AvahiPoll</link>*    seahorse_util_dns_sd_get_poll       ();</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseSuffix" role="enum">
+<title>enum SeahorseSuffix</title>
+<indexterm zone="SeahorseSuffix"><primary sortas="Suffix">SeahorseSuffix</primary></indexterm><programlisting>typedef enum {
+    SEAHORSE_CRYPT_SUFFIX,
+    SEAHORSE_SIG_SUFFIX,
+} SeahorseSuffix;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-EXT-ASC--CAPS" role="macro">
+<title>SEAHORSE_EXT_ASC</title>
+<indexterm zone="SEAHORSE-EXT-ASC--CAPS"><primary sortas="EXT_ASC">SEAHORSE_EXT_ASC</primary></indexterm><programlisting>#define SEAHORSE_EXT_ASC ".asc"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-EXT-SIG--CAPS" role="macro">
+<title>SEAHORSE_EXT_SIG</title>
+<indexterm zone="SEAHORSE-EXT-SIG--CAPS"><primary sortas="EXT_SIG">SEAHORSE_EXT_SIG</primary></indexterm><programlisting>#define SEAHORSE_EXT_SIG ".sig"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-EXT-PGP--CAPS" role="macro">
+<title>SEAHORSE_EXT_PGP</title>
+<indexterm zone="SEAHORSE-EXT-PGP--CAPS"><primary sortas="EXT_PGP">SEAHORSE_EXT_PGP</primary></indexterm><programlisting>#define SEAHORSE_EXT_PGP ".pgp"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-EXT-GPG--CAPS" role="macro">
+<title>SEAHORSE_EXT_GPG</title>
+<indexterm zone="SEAHORSE-EXT-GPG--CAPS"><primary sortas="EXT_GPG">SEAHORSE_EXT_GPG</primary></indexterm><programlisting>#define SEAHORSE_EXT_GPG ".gpg"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-util-get-date-string" role="function">
+<title>seahorse_util_get_date_string ()</title>
+<indexterm zone="seahorse-util-get-date-string"><primary sortas="util_get_date_string">seahorse_util_get_date_string</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_util_get_date_string       (const <link linkend="time-t">time_t</link> time);</programlisting>
+<para>
+Creates a string representation of <parameter>time</parameter> for use with gpg.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>time</parameter>&#160;:</term>
+<listitem><simpara> Time value to parse
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A string representing <parameter>time</parameter>. The returned string should be freed
+with <link linkend="g-free"><type>g_free</type></link> when no longer needed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-get-display-date-string" role="function">
+<title>seahorse_util_get_display_date_string ()</title>
+<indexterm zone="seahorse-util-get-display-date-string"><primary sortas="util_get_display_date_string">seahorse_util_get_display_date_string</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_util_get_display_date_string
+                                                        (const <link linkend="time-t">time_t</link> time);</programlisting>
+<para>
+Creates a string representation of <parameter>time</parameter> for display in the UI.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>time</parameter>&#160;:</term>
+<listitem><simpara> Time value to parse
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A string representing <parameter>time</parameter>. The returned string should be freed 
+with <link linkend="g-free"><type>g_free</type></link> when no longer needed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SEAHORSE-ERROR--CAPS" role="macro">
+<title>SEAHORSE_ERROR</title>
+<indexterm zone="SEAHORSE-ERROR--CAPS"><primary sortas="ERROR">SEAHORSE_ERROR</primary></indexterm><programlisting>#define SEAHORSE_ERROR  (seahorse_util_error_domain ())
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-util-error-domain" role="function">
+<title>seahorse_util_error_domain ()</title>
+<indexterm zone="seahorse-util-error-domain"><primary sortas="util_error_domain">seahorse_util_error_domain</primary></indexterm><programlisting><link linkend="GQuark">GQuark</link>              seahorse_util_error_domain          ();</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The GError domain for generic seahorse errors
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-show-error" role="function">
+<title>seahorse_util_show_error ()</title>
+<indexterm zone="seahorse-util-show-error"><primary sortas="util_show_error">seahorse_util_show_error</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_util_show_error            (<link linkend="GtkWidget">GtkWidget</link> *parent,
+                                                         const <link linkend="gchar">gchar</link> *heading,
+                                                         const <link linkend="gchar">gchar</link> *message);</programlisting>
+<para>
+This displays an error dialog.
+The parent widget can be any widget. The dialog will be a child of the window
+the widget is in.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> The parent widget. Can be NULL
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>heading</parameter>&#160;:</term>
+<listitem><simpara> The heading of the dialog
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>message</parameter>&#160;:</term>
+<listitem><simpara> The message to display
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-handle-error" role="function">
+<title>seahorse_util_handle_error ()</title>
+<indexterm zone="seahorse-util-handle-error"><primary sortas="util_handle_error">seahorse_util_handle_error</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_util_handle_error          (<link linkend="GError">GError</link> *err,
+                                                         const <link linkend="char">char</link> *desc,
+                                                         ...);</programlisting>
+<para>
+Displays an error box. The message is the error message.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>err</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="GError"><type>GError</type></link> to print.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>desc</parameter>&#160;:</term>
+<listitem><simpara> The heading of the box
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara> Parameters to insert into the format string desc.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-prompt-delete" role="function">
+<title>seahorse_util_prompt_delete ()</title>
+<indexterm zone="seahorse-util-prompt-delete"><primary sortas="util_prompt_delete">seahorse_util_prompt_delete</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_util_prompt_delete         (const <link linkend="gchar">gchar</link> *text,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *parent);</programlisting>
+<para>
+Displays a modal dialog with "cancel" and "delete"</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara> The text to display in the delete-dialog
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> The widget to display the dialog for. Can be NULL
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if the user pressed "delete", FALSE else
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-read-to-memory" role="function">
+<title>seahorse_util_read_to_memory ()</title>
+<indexterm zone="seahorse-util-read-to-memory"><primary sortas="util_read_to_memory">seahorse_util_read_to_memory</primary></indexterm><programlisting><link linkend="guchar">guchar</link>*             seahorse_util_read_to_memory        (<link linkend="GInputStream">GInputStream</link> *input,
+                                                         <link linkend="guint">guint</link> *len);</programlisting>
+<para>
+Reads data from the input stream and returns them as <link linkend="guchar"><type>guchar</type></link></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>input</parameter>&#160;:</term>
+<listitem><simpara> Data to read. The <link linkend="GInputStream"><type>GInputStream</type></link> is read till the end.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara> Length of the data read (out)
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The string read from data. The returned string should be freed
+with <link linkend="g-free"><type>g_free</type></link> when no longer needed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-read-data-block" role="function">
+<title>seahorse_util_read_data_block ()</title>
+<indexterm zone="seahorse-util-read-data-block"><primary sortas="util_read_data_block">seahorse_util_read_data_block</primary></indexterm><programlisting><link linkend="guint">guint</link>               seahorse_util_read_data_block       (<link linkend="GString">GString</link> *buf,
+                                                         <link linkend="GInputStream">GInputStream</link> *input,
+                                                         const <link linkend="gchar">gchar</link> *start,
+                                                         const <link linkend="gchar">gchar</link> *end);</programlisting>
+<para>
+Breaks out one block of data (usually a key)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara> A string buffer to write the data to.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>input</parameter>&#160;:</term>
+<listitem><simpara> The input stream to read from.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>start</parameter>&#160;:</term>
+<listitem><simpara> The start signature to look for.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>end</parameter>&#160;:</term>
+<listitem><simpara> The end signature to look for.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The number of bytes copied.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-memory-input-string" role="function">
+<title>seahorse_util_memory_input_string ()</title>
+<indexterm zone="seahorse-util-memory-input-string"><primary sortas="util_memory_input_string">seahorse_util_memory_input_string</primary></indexterm><programlisting><link linkend="GMemoryInputStream">GMemoryInputStream</link> * seahorse_util_memory_input_string  (const <link linkend="gchar">gchar</link> *string,
+                                                         <link linkend="gsize">gsize</link> length);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>string</parameter>&#160;:</term>
+<listitem><simpara> The string to create the stream from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> The length of this string
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The new input stream of type <link linkend="GMemoryInputStream"><type>GMemoryInputStream</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-memory-output-length" role="function">
+<title>seahorse_util_memory_output_length ()</title>
+<indexterm zone="seahorse-util-memory-output-length"><primary sortas="util_memory_output_length">seahorse_util_memory_output_length</primary></indexterm><programlisting><link linkend="gsize">gsize</link>               seahorse_util_memory_output_length  (<link linkend="GMemoryOutputStream">GMemoryOutputStream</link> *output);</programlisting>
+<para>
+A replacement for <link linkend="g-memory-output-stream-get-data-size"><type>g_memory_output_stream_get_data_size</type></link> (since 2.18)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>output</parameter>&#160;:</term>
+<listitem><simpara> a stream
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The length of the stream
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-print-fd" role="function">
+<title>seahorse_util_print_fd ()</title>
+<indexterm zone="seahorse-util-print-fd"><primary sortas="util_print_fd">seahorse_util_print_fd</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_util_print_fd              (<link linkend="int">int</link> fd,
+                                                         const <link linkend="char">char</link> *data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>fd</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-printf-fd" role="function">
+<title>seahorse_util_printf_fd ()</title>
+<indexterm zone="seahorse-util-printf-fd"><primary sortas="util_printf_fd">seahorse_util_printf_fd</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_util_printf_fd             (<link linkend="int">int</link> fd,
+                                                         const <link linkend="char">char</link> *data,
+                                                         ...);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>fd</parameter>&#160;:</term>
+<listitem><simpara> The file descriptor to write to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> The printf format of the data to write
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara> The parameters to insert
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE on success, FALSE on error
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-filename-for-objects" role="function">
+<title>seahorse_util_filename_for_objects ()</title>
+<indexterm zone="seahorse-util-filename-for-objects"><primary sortas="util_filename_for_objects">seahorse_util_filename_for_objects</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_util_filename_for_objects  (<link linkend="GList">GList</link> *objects);</programlisting>
+<para>
+If the single object has a nickname, this will be returned (with .asc attached)
+If there are multiple objects, "Multiple Keys.asc" will be returned.
+Single objects default to "Key Data.asc".
+Results are internationalized</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>objects</parameter>&#160;:</term>
+<listitem><simpara> A list of objects
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> NULL on error, the filename else. The returned string should be
+freed with <link linkend="g-free"><type>g_free</type></link> when no longer needed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-uri-exists" role="function">
+<title>seahorse_util_uri_exists ()</title>
+<indexterm zone="seahorse-util-uri-exists"><primary sortas="util_uri_exists">seahorse_util_uri_exists</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_util_uri_exists            (const <link linkend="gchar">gchar</link> *uri);</programlisting>
+<para>
+Verify whether a given uri exists or not.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> The uri to check
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> FALSE if it does not exist, TRUE else
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-uri-unique" role="function">
+<title>seahorse_util_uri_unique ()</title>
+<indexterm zone="seahorse-util-uri-unique"><primary sortas="util_uri_unique">seahorse_util_uri_unique</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_util_uri_unique            (const <link linkend="gchar">gchar</link> *uri);</programlisting>
+<para>
+Creates a URI based on <parameter>uri</parameter> that does not exist.
+A simple numbering scheme is used to create new
+URIs. Not meant for temp file creation.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> The uri to guarantee is unique
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Newly allocated unique URI.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-uri-replace-ext" role="function">
+<title>seahorse_util_uri_replace_ext ()</title>
+<indexterm zone="seahorse-util-uri-replace-ext"><primary sortas="util_uri_replace_ext">seahorse_util_uri_replace_ext</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_util_uri_replace_ext       (const <link linkend="gchar">gchar</link> *uri,
+                                                         const <link linkend="gchar">gchar</link> *ext);</programlisting>
+<para>
+Replaces the extension on <parameter>uri</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> The uri with old extension
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ext</parameter>&#160;:</term>
+<listitem><simpara> The new extension
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Newly allocated URI string with new extension. The returned string
+should be freed with <link linkend="g-free"><type>g_free</type></link> when no longer needed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-uri-get-last" role="function">
+<title>seahorse_util_uri_get_last ()</title>
+<indexterm zone="seahorse-util-uri-get-last"><primary sortas="util_uri_get_last">seahorse_util_uri_get_last</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        seahorse_util_uri_get_last          (const <link linkend="gchar">gchar</link> *uri);</programlisting>
+<para>
+Finds the last portion of <parameter>uri</parameter>. Note that this does
+not modify <parameter>uri</parameter>. If the uri is invalid or has no 
+directories then the entire thing is returned.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> The uri to parse
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Last portion of <parameter>uri</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-uri-split-last" role="function">
+<title>seahorse_util_uri_split_last ()</title>
+<indexterm zone="seahorse-util-uri-split-last"><primary sortas="util_uri_split_last">seahorse_util_uri_split_last</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        seahorse_util_uri_split_last        (<link linkend="gchar">gchar</link> *uri);</programlisting>
+<para>
+Splits the uri in two at it's last component. The result
+is still part of the same string, so don't free it. This 
+modifies the <parameter>uri</parameter> argument.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> The uri to split
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The last component
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-uris-package" role="function">
+<title>seahorse_util_uris_package ()</title>
+<indexterm zone="seahorse-util-uris-package"><primary sortas="util_uris_package">seahorse_util_uris_package</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_util_uris_package          (const <link linkend="gchar">gchar</link> *package,
+                                                         const <link linkend="gchar">gchar</link> **uris);</programlisting>
+<para>
+Package uris into an archive. The uris must be local.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>package</parameter>&#160;:</term>
+<listitem><simpara> Package uri
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uris</parameter>&#160;:</term>
+<listitem><simpara> null-terminated array of uris to package 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE on success or FALSE on failure
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-detect-mime-type" role="function">
+<title>seahorse_util_detect_mime_type ()</title>
+<indexterm zone="seahorse-util-detect-mime-type"><primary sortas="util_detect_mime_type">seahorse_util_detect_mime_type</primary></indexterm><programlisting><link linkend="GQuark">GQuark</link>              seahorse_util_detect_mime_type      (const <link linkend="gchar">gchar</link> *mime);</programlisting>
+<para>
+Return the mime type depending on the mime string</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>mime</parameter>&#160;:</term>
+<listitem><simpara> The mime string
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> SEAHORSE_PGP, SEAHORSE_SSH or 0
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-detect-data-type" role="function">
+<title>seahorse_util_detect_data_type ()</title>
+<indexterm zone="seahorse-util-detect-data-type"><primary sortas="util_detect_data_type">seahorse_util_detect_data_type</primary></indexterm><programlisting><link linkend="GQuark">GQuark</link>              seahorse_util_detect_data_type      (const <link linkend="gchar">gchar</link> *data,
+                                                         <link linkend="guint">guint</link> length);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> The buffer to test for content type
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> The length of this buffer
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> SEAHORSE_PGP, SEAHORSE_SSH or 0
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-detect-file-type" role="function">
+<title>seahorse_util_detect_file_type ()</title>
+<indexterm zone="seahorse-util-detect-file-type"><primary sortas="util_detect_file_type">seahorse_util_detect_file_type</primary></indexterm><programlisting><link linkend="GQuark">GQuark</link>              seahorse_util_detect_file_type      (const <link linkend="gchar">gchar</link> *uri);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> The file uri to test for content type
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> SEAHORSE_PGP, SEAHORSE_SSH or 0
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-write-file-private" role="function">
+<title>seahorse_util_write_file_private ()</title>
+<indexterm zone="seahorse-util-write-file-private"><primary sortas="util_write_file_private">seahorse_util_write_file_private</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_util_write_file_private    (const <link linkend="gchar">gchar</link> *filename,
+                                                         const <link linkend="gchar">gchar</link> *contents,
+                                                         <link linkend="GError">GError</link> **err);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filename</parameter>&#160;:</term>
+<listitem><simpara> file to write to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>contents</parameter>&#160;:</term>
+<listitem><simpara> nul-terminated string to write to the file
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>err</parameter>&#160;:</term>
+<listitem><simpara> error of the write operation
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><type>TRUE</type></link> on success, <link linkend="FALSE--CAPS"><type>FALSE</type></link> if an error occured
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-chooser-open-new" role="function">
+<title>seahorse_util_chooser_open_new ()</title>
+<indexterm zone="seahorse-util-chooser-open-new"><primary sortas="util_chooser_open_new">seahorse_util_chooser_open_new</primary></indexterm><programlisting><link linkend="GtkDialog">GtkDialog</link>*          seahorse_util_chooser_open_new      (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent);</programlisting>
+<para>
+Creates a file chooser dialog to open files.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> The title of the dialog
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> The parent of the dialog
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The new open dialog
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-chooser-save-new" role="function">
+<title>seahorse_util_chooser_save_new ()</title>
+<indexterm zone="seahorse-util-chooser-save-new"><primary sortas="util_chooser_save_new">seahorse_util_chooser_save_new</primary></indexterm><programlisting><link linkend="GtkDialog">GtkDialog</link>*          seahorse_util_chooser_save_new      (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent);</programlisting>
+<para>
+Creates a file chooser dialog to save files.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> The title of the dialog
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> The parent of the dialog
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The new save dialog
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-chooser-show-key-files" role="function">
+<title>seahorse_util_chooser_show_key_files ()</title>
+<indexterm zone="seahorse-util-chooser-show-key-files"><primary sortas="util_chooser_show_key_files">seahorse_util_chooser_show_key_files</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_util_chooser_show_key_files
+                                                        (<link linkend="GtkDialog">GtkDialog</link> *dialog);</programlisting>
+<para>
+Adds a key file filter and a "All files" filter. The key filter
+is used.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara> the dialog to add the filter for
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-chooser-show-archive-files" role="function">
+<title>seahorse_util_chooser_show_archive_files ()</title>
+<indexterm zone="seahorse-util-chooser-show-archive-files"><primary sortas="util_chooser_show_archive_files">seahorse_util_chooser_show_archive_files</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_util_chooser_show_archive_files
+                                                        (<link linkend="GtkDialog">GtkDialog</link> *dialog);</programlisting>
+<para>
+Adds a archive file filter and a "All files" filter. The archive filter
+is used.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara> the dialog to add the filter for
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-chooser-set-filename-full" role="function">
+<title>seahorse_util_chooser_set_filename_full ()</title>
+<indexterm zone="seahorse-util-chooser-set-filename-full"><primary sortas="util_chooser_set_filename_full">seahorse_util_chooser_set_filename_full</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_util_chooser_set_filename_full
+                                                        (<link linkend="GtkDialog">GtkDialog</link> *dialog,
+                                                         <link linkend="GList">GList</link> *objects);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara> The dialog to pre set the name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>objects</parameter>&#160;:</term>
+<listitem><simpara> generate the file name from this object
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-chooser-set-filename" role="function">
+<title>seahorse_util_chooser_set_filename ()</title>
+<indexterm zone="seahorse-util-chooser-set-filename"><primary sortas="util_chooser_set_filename">seahorse_util_chooser_set_filename</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_util_chooser_set_filename  (<link linkend="GtkDialog">GtkDialog</link> *dialog,
+                                                         <link linkend="struct--SeahorseObject">struct _SeahorseObject</link> *object);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara> set the dialog for this
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>object</parameter>&#160;:</term>
+<listitem><simpara> The object to use for the filename. <link linkend="SeahorseObject"><type>SeahorseObject</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-chooser-open-prompt" role="function">
+<title>seahorse_util_chooser_open_prompt ()</title>
+<indexterm zone="seahorse-util-chooser-open-prompt"><primary sortas="util_chooser_open_prompt">seahorse_util_chooser_open_prompt</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_util_chooser_open_prompt   (<link linkend="GtkDialog">GtkDialog</link> *dialog);</programlisting>
+<para>
+Display an open dialog</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara> open dialog to display
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The uri of the file to open or NULL
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-chooser-save-prompt" role="function">
+<title>seahorse_util_chooser_save_prompt ()</title>
+<indexterm zone="seahorse-util-chooser-save-prompt"><primary sortas="util_chooser_save_prompt">seahorse_util_chooser_save_prompt</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_util_chooser_save_prompt   (<link linkend="GtkDialog">GtkDialog</link> *dialog);</programlisting>
+<para>
+If the selected file already exists, a confirmation dialog will be displayed</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara> save dialog to show
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the uri of the chosen file or NULL
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-check-suffix" role="function">
+<title>seahorse_util_check_suffix ()</title>
+<indexterm zone="seahorse-util-check-suffix"><primary sortas="util_check_suffix">seahorse_util_check_suffix</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_util_check_suffix          (const <link linkend="gchar">gchar</link> *path,
+                                                         <link linkend="SeahorseSuffix">SeahorseSuffix</link> suffix);</programlisting>
+<para>
+Checks that <parameter>path</parameter> has a suffix specified by <parameter>suffix</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>path</parameter>&#160;:</term>
+<listitem><simpara> Path of file to check
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>suffix</parameter>&#160;:</term>
+<listitem><simpara> Suffix type to check for.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if the file has a correct suffix, FALSE otherwise
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-add-suffix" role="function">
+<title>seahorse_util_add_suffix ()</title>
+<indexterm zone="seahorse-util-add-suffix"><primary sortas="util_add_suffix">seahorse_util_add_suffix</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_util_add_suffix            (const <link linkend="gchar">gchar</link> *path,
+                                                         <link linkend="SeahorseSuffix">SeahorseSuffix</link> suffix,
+                                                         const <link linkend="gchar">gchar</link> *prompt);</programlisting>
+<para>
+Constructs a new path for a file based on <parameter>path</parameter> plus a suffix determined by
+<parameter>suffix</parameter>. If ASCII Armor is enabled, the suffix will be '.asc'. Otherwise the 
+suffix will be '.pgp' if <parameter>suffix</parameter> is <link linkend="SEAHORSE-CRYPT-SUFFIX--CAPS"><literal>SEAHORSE_CRYPT_SUFFIX</literal></link> or '.sig' if 
+<parameter>suffix</parameter> is <link linkend="SEAHORSE-SIG-SUFFIX--CAPS"><literal>SEAHORSE_SIG_SUFFIX</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>path</parameter>&#160;:</term>
+<listitem><simpara> Path of an existing file
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>suffix</parameter>&#160;:</term>
+<listitem><simpara> Suffix type
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>prompt</parameter>&#160;:</term>
+<listitem><simpara> Overwrite prompt text
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A new path with the suffix appended to <parameter>path</parameter>. NULL if prompt cancelled
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-remove-suffix" role="function">
+<title>seahorse_util_remove_suffix ()</title>
+<indexterm zone="seahorse-util-remove-suffix"><primary sortas="util_remove_suffix">seahorse_util_remove_suffix</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_util_remove_suffix         (const <link linkend="gchar">gchar</link> *path,
+                                                         const <link linkend="gchar">gchar</link> *prompt);</programlisting>
+<para>
+Removes a suffix from <parameter>path</parameter>. Does not check if <parameter>path</parameter> actually has a suffix.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>path</parameter>&#160;:</term>
+<listitem><simpara> Path with a suffix
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>prompt</parameter>&#160;:</term>
+<listitem><simpara>Overwrite prompt text
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <parameter>path</parameter> without a suffix. NULL if prompt cancelled
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-strvec-dup" role="function">
+<title>seahorse_util_strvec_dup ()</title>
+<indexterm zone="seahorse-util-strvec-dup"><primary sortas="util_strvec_dup">seahorse_util_strvec_dup</primary></indexterm><programlisting><link linkend="gchar">gchar</link>**             seahorse_util_strvec_dup            (const <link linkend="gchar">gchar</link> **vec);</programlisting>
+<para>
+Copy a string table</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>vec</parameter>&#160;:</term>
+<listitem><simpara> the string table to copy
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new char **
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-strvec-length" role="function">
+<title>seahorse_util_strvec_length ()</title>
+<indexterm zone="seahorse-util-strvec-length"><primary sortas="util_strvec_length">seahorse_util_strvec_length</primary></indexterm><programlisting><link linkend="guint">guint</link>               seahorse_util_strvec_length         (const <link linkend="gchar">gchar</link> **vec);</programlisting>
+<para>
+Calculates the length of the string table</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>vec</parameter>&#160;:</term>
+<listitem><simpara> The string table
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The length of the string table
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-objects-sort" role="function">
+<title>seahorse_util_objects_sort ()</title>
+<indexterm zone="seahorse-util-objects-sort"><primary sortas="util_objects_sort">seahorse_util_objects_sort</primary></indexterm><programlisting><link linkend="GList">GList</link>*              seahorse_util_objects_sort          (<link linkend="GList">GList</link> *objects);</programlisting>
+<para>
+The objects are sorted by their source</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>objects</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="SeahorseObject"><type>SeahorseObject</type></link> <link linkend="GList"><type>GList</type></link> to sort
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The sorted list
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-objects-splice" role="function">
+<title>seahorse_util_objects_splice ()</title>
+<indexterm zone="seahorse-util-objects-splice"><primary sortas="util_objects_splice">seahorse_util_objects_splice</primary></indexterm><programlisting><link linkend="GList">GList</link>*              seahorse_util_objects_splice        (<link linkend="GList">GList</link> *objects);</programlisting>
+<para>
+Splices the list at the source disconuity</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>objects</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GList"><type>GList</type></link> of <link linkend="SeahorseObject"><type>SeahorseObject</type></link>. Must be sorted
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The second part of the list.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-string-equals" role="function">
+<title>seahorse_util_string_equals ()</title>
+<indexterm zone="seahorse-util-string-equals"><primary sortas="util_string_equals">seahorse_util_string_equals</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_util_string_equals         (const <link linkend="gchar">gchar</link> *s1,
+                                                         const <link linkend="gchar">gchar</link> *s2);</programlisting>
+<para>
+Compares two string. If they are equal, it returns TRUE</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>s1</parameter>&#160;:</term>
+<listitem><simpara> String, can be NULL
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>s2</parameter>&#160;:</term>
+<listitem><simpara> String, can be NULL
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if strings are equal, FALSE else
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-string-up-first" role="function">
+<title>seahorse_util_string_up_first ()</title>
+<indexterm zone="seahorse-util-string-up-first"><primary sortas="util_string_up_first">seahorse_util_string_up_first</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_util_string_up_first       (const <link linkend="gchar">gchar</link> *orig);</programlisting>
+<para>
+Upper case the first char in the UTF8 string</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>orig</parameter>&#160;:</term>
+<listitem><simpara> The utf8 string to work with
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new string, with the first char upper cased. The returned string
+should be freed with <link linkend="g-free"><type>g_free</type></link> when no longer needed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-string-lower" role="function">
+<title>seahorse_util_string_lower ()</title>
+<indexterm zone="seahorse-util-string-lower"><primary sortas="util_string_lower">seahorse_util_string_lower</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_util_string_lower          (<link linkend="gchar">gchar</link> *s);</programlisting>
+<para>
+The whole ASCII string will be lower cased.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>s</parameter>&#160;:</term>
+<listitem><simpara> ASCII string to change
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-string-slist-free" role="function">
+<title>seahorse_util_string_slist_free ()</title>
+<indexterm zone="seahorse-util-string-slist-free"><primary sortas="util_string_slist_free">seahorse_util_string_slist_free</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             seahorse_util_string_slist_free     (<link linkend="GSList">GSList</link> *slist);</programlisting>
+<para>
+Free a GSList along with string values</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>slist</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GSList"><type>GSList</type></link> to free
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> NULL
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-string-slist-copy" role="function">
+<title>seahorse_util_string_slist_copy ()</title>
+<indexterm zone="seahorse-util-string-slist-copy"><primary sortas="util_string_slist_copy">seahorse_util_string_slist_copy</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             seahorse_util_string_slist_copy     (<link linkend="GSList">GSList</link> *slist);</programlisting>
+<para>
+Copy a <link linkend="GSList"><type>GSList</type></link> along with string values</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>slist</parameter>&#160;:</term>
+<listitem><simpara> The list to copy
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new list
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-string-slist-equal" role="function">
+<title>seahorse_util_string_slist_equal ()</title>
+<indexterm zone="seahorse-util-string-slist-equal"><primary sortas="util_string_slist_equal">seahorse_util_string_slist_equal</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_util_string_slist_equal    (<link linkend="GSList">GSList</link> *sl1,
+                                                         <link linkend="GSList">GSList</link> *sl2);</programlisting>
+<para>
+Compare two string GSLists.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sl1</parameter>&#160;:</term>
+<listitem><simpara> the first string list
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sl2</parameter>&#160;:</term>
+<listitem><simpara> the second string list
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if all the string are equal
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-string-is-whitespace" role="function">
+<title>seahorse_util_string_is_whitespace ()</title>
+<indexterm zone="seahorse-util-string-is-whitespace"><primary sortas="util_string_is_whitespace">seahorse_util_string_is_whitespace</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_util_string_is_whitespace  (const <link linkend="gchar">gchar</link> *text);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara> The UTF8 string to test
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if <parameter>text</parameter> consists of whitespaces
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-string-trim-whitespace" role="function">
+<title>seahorse_util_string_trim_whitespace ()</title>
+<indexterm zone="seahorse-util-string-trim-whitespace"><primary sortas="util_string_trim_whitespace">seahorse_util_string_trim_whitespace</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_util_string_trim_whitespace
+                                                        (<link linkend="gchar">gchar</link> *text);</programlisting>
+<para>
+Whitespaces will be removed from the start and the end of the text.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara> The text to trim (UTF8)
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-hex-encode" role="function">
+<title>seahorse_util_hex_encode ()</title>
+<indexterm zone="seahorse-util-hex-encode"><primary sortas="util_hex_encode">seahorse_util_hex_encode</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_util_hex_encode            (<link linkend="gconstpointer">gconstpointer</link> value,
+                                                         <link linkend="gsize">gsize</link> length);</programlisting>
+<para>
+Creates a string contining the <parameter>value</parameter> in hex for printing.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> a buffer containing data
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> The length of this buffer
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The hex encoded <parameter>value</parameter>. The returned string should be freed
+with <link linkend="g-free"><type>g_free</type></link> when no longer needed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-determine-popup-menu-position" role="function">
+<title>seahorse_util_determine_popup_menu_position ()</title>
+<indexterm zone="seahorse-util-determine-popup-menu-position"><primary sortas="util_determine_popup_menu_position">seahorse_util_determine_popup_menu_position</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_util_determine_popup_menu_position
+                                                        (<link linkend="GtkMenu">GtkMenu</link> *menu,
+                                                         <link linkend="int">int</link> *x,
+                                                         <link linkend="int">int</link> *y,
+                                                         <link linkend="gboolean">gboolean</link> *push_in,
+                                                         <link linkend="gpointer">gpointer</link> gdata);</programlisting>
+<para>
+Callback to determine where a popup menu should be placed</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>menu</parameter>&#160;:</term>
+<listitem><simpara> The menu to place
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> (out) x pos of the menu
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> (out) y pos of the menu
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>push_in</parameter>&#160;:</term>
+<listitem><simpara> (out) will be set to TRUE
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gdata</parameter>&#160;:</term>
+<listitem><simpara> GTK_WIDGET for which the menu is
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-util-wait-until" role="macro">
+<title>seahorse_util_wait_until()</title>
+<indexterm zone="seahorse-util-wait-until"><primary sortas="util_wait_until">seahorse_util_wait_until</primary></indexterm><programlisting>#define             seahorse_util_wait_until(expr)</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expr</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="DBG-PRINT--CAPS" role="macro">
+<title>DBG_PRINT()</title>
+<indexterm zone="DBG-PRINT--CAPS"><primary>DBG_PRINT</primary></indexterm><programlisting>#define             DBG_PRINT(x)</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

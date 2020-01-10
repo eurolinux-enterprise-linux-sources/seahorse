@@ -1,0 +1,57 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-libdialogs
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### FUNCTION seahorse_notify_import ##### -->
+<para>
+
+</para>
+
+@keynum: 
+@keys: 
+
+
+<!-- ##### FUNCTION seahorse_notify_import_local ##### -->
+<para>
+
+</para>
+
+@keys: 
+@attachto: 
+
+
+<!-- ##### FUNCTION seahorse_notification_display ##### -->
+<para>
+
+</para>
+
+@summary: 
+@body: 
+@urgent: 
+@icon: 
+@attachto: 
+
+
+<!-- ##### FUNCTION seahorse_notification_have ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

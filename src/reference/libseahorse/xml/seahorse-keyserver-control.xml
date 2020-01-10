@@ -1,0 +1,85 @@
+<refentry id="libseahorse-SeahorseKeyserverControl">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-SeahorseKeyserverControl.top_of_page">SeahorseKeyserverControl</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SeahorseKeyserverControl</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-SeahorseKeyserverControl.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SeahorseKeyserverControl">SeahorseKeyserverControl</link>;
+<link linkend="SeahorseKeyserverControl">SeahorseKeyserverControl</link>* <link linkend="seahorse-keyserver-control-new">seahorse_keyserver_control_new</link>
+                                                        (const <link linkend="gchar">gchar</link> *gconf_key,
+                                                         const <link linkend="gchar">gchar</link> *none_option);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-keyserver-control-selected">seahorse_keyserver_control_selected</link> (<link linkend="SeahorseKeyserverControl">SeahorseKeyserverControl</link> *skc);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-SeahorseKeyserverControl.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-SeahorseKeyserverControl.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SeahorseKeyserverControl" role="struct">
+<title>SeahorseKeyserverControl</title>
+<indexterm zone="SeahorseKeyserverControl"><primary sortas="KeyserverControl">SeahorseKeyserverControl</primary></indexterm><programlisting>typedef struct {
+    GtkComboBox parent_instance;
+    
+    gchar *gconf_key;
+    gchar *none_option;
+} SeahorseKeyserverControl;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-keyserver-control-new" role="function">
+<title>seahorse_keyserver_control_new ()</title>
+<indexterm zone="seahorse-keyserver-control-new"><primary sortas="keyserver_control_new">seahorse_keyserver_control_new</primary></indexterm><programlisting><link linkend="SeahorseKeyserverControl">SeahorseKeyserverControl</link>* seahorse_keyserver_control_new
+                                                        (const <link linkend="gchar">gchar</link> *gconf_key,
+                                                         const <link linkend="gchar">gchar</link> *none_option);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gconf_key</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>none_option</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-keyserver-control-selected" role="function">
+<title>seahorse_keyserver_control_selected ()</title>
+<indexterm zone="seahorse-keyserver-control-selected"><primary sortas="keyserver_control_selected">seahorse_keyserver_control_selected</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_keyserver_control_selected (<link linkend="SeahorseKeyserverControl">SeahorseKeyserverControl</link> *skc);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>skc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

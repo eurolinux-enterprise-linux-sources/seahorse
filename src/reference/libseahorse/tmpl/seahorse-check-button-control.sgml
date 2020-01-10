@@ -1,0 +1,36 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-check-button-control
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### FUNCTION seahorse_check_button_gconf_attach ##### -->
+<para>
+
+</para>
+
+@button: 
+@gconf_key: 
+
+
+<!-- ##### FUNCTION seahorse_check_button_gconf_detach ##### -->
+<para>
+
+</para>
+
+@button: 
+
+

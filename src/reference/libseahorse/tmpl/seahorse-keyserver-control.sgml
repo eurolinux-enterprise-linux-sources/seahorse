@@ -1,0 +1,47 @@
+<!-- ##### SECTION Title ##### -->
+SeahorseKeyserverControl
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseKeyserverControl ##### -->
+<para>
+
+</para>
+
+@parent_instance: 
+@gconf_key: 
+@none_option: 
+
+<!-- ##### FUNCTION seahorse_keyserver_control_new ##### -->
+<para>
+
+</para>
+
+@gconf_key: 
+@none_option: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_keyserver_control_selected ##### -->
+<para>
+
+</para>
+
+@skc: 
+@Returns: 
+
+

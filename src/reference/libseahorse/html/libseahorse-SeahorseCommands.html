@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SeahorseCommands</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libseahorse-SeahorseMultiOperation.html" title="SeahorseMultiOperation">
+<link rel="next" href="libseahorse-SeahorseServiceDiscovery.html" title="SeahorseServiceDiscovery">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libseahorse-SeahorseMultiOperation.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-SeahorseServiceDiscovery.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-SeahorseCommands.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-SeahorseCommands.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="SeahorseCommands">
+<a name="libseahorse-SeahorseCommands"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-SeahorseCommands.top_of_page"></a>SeahorseCommands</span></h2>
+<p>SeahorseCommands</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-SeahorseCommands.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommandsPrivate"
+>SeahorseCommandsPrivate</a>;
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a>;
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#seahorse-commands-show-properties"
+>seahorse_commands_show_properties</a>   (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a> *obj);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> * <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#seahorse-commands-delete-objects"
+>seahorse_commands_delete_objects</a>    (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *self,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *obj);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *      <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#seahorse-commands-get-view"
+>seahorse_commands_get_view</a>          (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *self);
+<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html"
+>GtkWindow</a> *         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#seahorse-commands-get-window"
+>seahorse_commands_get_window</a>        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *self);
+<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkActionGroup.html"
+>GtkActionGroup</a> *    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#seahorse-commands-get-command-actions"
+>seahorse_commands_get_command_actions</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *self);
+const char *        <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#seahorse-commands-get-ui-definition"
+>seahorse_commands_get_ui_definition</a> (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *self);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-SeahorseCommands.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-SeahorseCommands.details"></a><h2>Details</h2>
+<div class="refsect2" title="SeahorseCommandsPrivate">
+<a name="SeahorseCommandsPrivate"></a><h3>SeahorseCommandsPrivate</h3>
+<pre class="programlisting">typedef struct _SeahorseCommandsPrivate SeahorseCommandsPrivate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SeahorseCommands">
+<a name="SeahorseCommands"></a><h3>SeahorseCommands</h3>
+<pre class="programlisting">typedef struct {
+	GObject parent_instance;
+	SeahorseCommandsPrivate *pv;
+} SeahorseCommands;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_commands_show_properties ()">
+<a name="seahorse-commands-show-properties"></a><h3>seahorse_commands_show_properties ()</h3>
+<pre class="programlisting">void                seahorse_commands_show_properties   (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a> *obj);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_commands_delete_objects ()">
+<a name="seahorse-commands-delete-objects"></a><h3>seahorse_commands_delete_objects ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> * seahorse_commands_delete_objects    (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *self,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *obj);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_commands_get_view ()">
+<a name="seahorse-commands-get-view"></a><h3>seahorse_commands_get_view ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html#SeahorseView"
+>SeahorseView</a> *      seahorse_commands_get_view          (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *self);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_commands_get_window ()">
+<a name="seahorse-commands-get-window"></a><h3>seahorse_commands_get_window ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html"
+>GtkWindow</a> *         seahorse_commands_get_window        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *self);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_commands_get_command_actions ()">
+<a name="seahorse-commands-get-command-actions"></a><h3>seahorse_commands_get_command_actions ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gtk/unstable/GtkActionGroup.html"
+>GtkActionGroup</a> *    seahorse_commands_get_command_actions
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *self);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_commands_get_ui_definition ()">
+<a name="seahorse-commands-get-ui-definition"></a><h3>seahorse_commands_get_ui_definition ()</h3>
+<pre class="programlisting">const char *        seahorse_commands_get_ui_definition (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseCommands.html#SeahorseCommands"
+>SeahorseCommands</a> *self);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

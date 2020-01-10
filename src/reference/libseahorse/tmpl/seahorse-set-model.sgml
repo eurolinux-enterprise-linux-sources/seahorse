@@ -1,0 +1,89 @@
+<!-- ##### SECTION Title ##### -->
+SeahorseSetModel
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseSetModelColumn ##### -->
+<para>
+
+</para>
+
+@property: 
+@type: 
+@data: 
+
+<!-- ##### STRUCT SeahorseSetModel ##### -->
+<para>
+
+</para>
+
+@parent: 
+@set: 
+
+<!-- ##### FUNCTION seahorse_set_model_new ##### -->
+<para>
+
+</para>
+
+@set: 
+@Varargs: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_set_model_new_full ##### -->
+<para>
+
+</para>
+
+@set: 
+@columns: 
+@n_columns: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_set_model_set_columns ##### -->
+<para>
+
+</para>
+
+@smodel: 
+@columns: 
+@n_columns: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_set_model_object_for_iter ##### -->
+<para>
+
+</para>
+
+@smodel: 
+@iter: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_set_model_iter_for_object ##### -->
+<para>
+
+</para>
+
+@smodel: 
+@object: 
+@iter: 
+@Returns: 
+
+

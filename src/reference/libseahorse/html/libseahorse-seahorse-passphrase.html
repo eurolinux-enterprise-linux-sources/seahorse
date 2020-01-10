@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>seahorse-passphrase</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libseahorse-seahorse-validity.html" title="seahorse-validity">
+<link rel="next" href="libseahorse-seahorse-gtkstock.html" title="seahorse-gtkstock">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libseahorse-seahorse-validity.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-seahorse-gtkstock.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-seahorse-passphrase.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-seahorse-passphrase.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="seahorse-passphrase">
+<a name="libseahorse-seahorse-passphrase"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-seahorse-passphrase.top_of_page"></a>seahorse-passphrase</span></h2>
+<p>seahorse-passphrase</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-seahorse-passphrase.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-passphrase.html#SEAHORSE-PASS-BAD--CAPS"
+>SEAHORSE_PASS_BAD</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-passphrase.html#SEAHORSE-PASS-NEW--CAPS"
+>SEAHORSE_PASS_NEW</a>
+<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a>*          <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-passphrase.html#seahorse-passphrase-prompt-show"
+>seahorse_passphrase_prompt_show</a>     (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *description,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *prompt,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *check,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> confirm);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-passphrase.html#seahorse-passphrase-prompt-get"
+>seahorse_passphrase_prompt_get</a>      (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-passphrase.html#seahorse-passphrase-prompt-checked"
+>seahorse_passphrase_prompt_checked</a>  (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-seahorse-passphrase.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-seahorse-passphrase.details"></a><h2>Details</h2>
+<div class="refsect2" title="SEAHORSE_PASS_BAD">
+<a name="SEAHORSE-PASS-BAD--CAPS"></a><h3>SEAHORSE_PASS_BAD</h3>
+<pre class="programlisting">#define SEAHORSE_PASS_BAD    0x00000001
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_PASS_NEW">
+<a name="SEAHORSE-PASS-NEW--CAPS"></a><h3>SEAHORSE_PASS_NEW</h3>
+<pre class="programlisting">#define SEAHORSE_PASS_NEW    0x01000000
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_passphrase_prompt_show ()">
+<a name="seahorse-passphrase-prompt-show"></a><h3>seahorse_passphrase_prompt_show ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a>*          seahorse_passphrase_prompt_show     (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *description,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *prompt,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *check,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> confirm);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>description</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prompt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>check</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>confirm</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_passphrase_prompt_get ()">
+<a name="seahorse-passphrase-prompt-get"></a><h3>seahorse_passphrase_prompt_get ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        seahorse_passphrase_prompt_get      (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dialog</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_passphrase_prompt_checked ()">
+<a name="seahorse-passphrase-prompt-checked"></a><h3>seahorse_passphrase_prompt_checked ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_passphrase_prompt_checked  (<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkDialog.html"
+>GtkDialog</a> *dialog);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dialog</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

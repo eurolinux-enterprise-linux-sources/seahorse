@@ -1,0 +1,112 @@
+<refentry id="libseahorse-seahorse-passphrase">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-passphrase.top_of_page">seahorse-passphrase</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-passphrase</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-passphrase.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+#define             <link linkend="SEAHORSE-PASS-BAD--CAPS">SEAHORSE_PASS_BAD</link>
+#define             <link linkend="SEAHORSE-PASS-NEW--CAPS">SEAHORSE_PASS_NEW</link>
+<link linkend="GtkDialog">GtkDialog</link>*          <link linkend="seahorse-passphrase-prompt-show">seahorse_passphrase_prompt_show</link>     (const <link linkend="gchar">gchar</link> *title,
+                                                         const <link linkend="gchar">gchar</link> *description,
+                                                         const <link linkend="gchar">gchar</link> *prompt,
+                                                         const <link linkend="gchar">gchar</link> *check,
+                                                         <link linkend="gboolean">gboolean</link> confirm);
+const <link linkend="gchar">gchar</link>*        <link linkend="seahorse-passphrase-prompt-get">seahorse_passphrase_prompt_get</link>      (<link linkend="GtkDialog">GtkDialog</link> *dialog);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-passphrase-prompt-checked">seahorse_passphrase_prompt_checked</link>  (<link linkend="GtkDialog">GtkDialog</link> *dialog);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-passphrase.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-passphrase.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SEAHORSE-PASS-BAD--CAPS" role="macro">
+<title>SEAHORSE_PASS_BAD</title>
+<indexterm zone="SEAHORSE-PASS-BAD--CAPS"><primary sortas="PASS_BAD">SEAHORSE_PASS_BAD</primary></indexterm><programlisting>#define SEAHORSE_PASS_BAD    0x00000001
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-PASS-NEW--CAPS" role="macro">
+<title>SEAHORSE_PASS_NEW</title>
+<indexterm zone="SEAHORSE-PASS-NEW--CAPS"><primary sortas="PASS_NEW">SEAHORSE_PASS_NEW</primary></indexterm><programlisting>#define SEAHORSE_PASS_NEW    0x01000000
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-passphrase-prompt-show" role="function">
+<title>seahorse_passphrase_prompt_show ()</title>
+<indexterm zone="seahorse-passphrase-prompt-show"><primary sortas="passphrase_prompt_show">seahorse_passphrase_prompt_show</primary></indexterm><programlisting><link linkend="GtkDialog">GtkDialog</link>*          seahorse_passphrase_prompt_show     (const <link linkend="gchar">gchar</link> *title,
+                                                         const <link linkend="gchar">gchar</link> *description,
+                                                         const <link linkend="gchar">gchar</link> *prompt,
+                                                         const <link linkend="gchar">gchar</link> *check,
+                                                         <link linkend="gboolean">gboolean</link> confirm);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>description</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>prompt</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>check</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>confirm</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-passphrase-prompt-get" role="function">
+<title>seahorse_passphrase_prompt_get ()</title>
+<indexterm zone="seahorse-passphrase-prompt-get"><primary sortas="passphrase_prompt_get">seahorse_passphrase_prompt_get</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        seahorse_passphrase_prompt_get      (<link linkend="GtkDialog">GtkDialog</link> *dialog);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-passphrase-prompt-checked" role="function">
+<title>seahorse_passphrase_prompt_checked ()</title>
+<indexterm zone="seahorse-passphrase-prompt-checked"><primary sortas="passphrase_prompt_checked">seahorse_passphrase_prompt_checked</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_passphrase_prompt_checked  (<link linkend="GtkDialog">GtkDialog</link> *dialog);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

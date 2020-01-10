@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SeahorseServiceDiscovery</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libseahorse-SeahorseCommands.html" title="SeahorseCommands">
+<link rel="next" href="libseahorse-SeahorseKeyserverControl.html" title="SeahorseKeyserverControl">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libseahorse-SeahorseCommands.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-SeahorseKeyserverControl.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-SeahorseServiceDiscovery.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-SeahorseServiceDiscovery.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="SeahorseServiceDiscovery">
+<a name="libseahorse-SeahorseServiceDiscovery"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-SeahorseServiceDiscovery.top_of_page"></a>SeahorseServiceDiscovery</span></h2>
+<p>SeahorseServiceDiscovery</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-SeahorseServiceDiscovery.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#SeahorseServiceDiscoveryPriv"
+>SeahorseServiceDiscoveryPriv</a>;
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#SeahorseServiceDiscovery"
+>SeahorseServiceDiscovery</a>;
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#SeahorseServiceDiscovery"
+>SeahorseServiceDiscovery</a>* <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#seahorse-service-discovery-new"
+>seahorse_service_discovery_new</a>
+                                                        ();
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#seahorse-service-discovery-list"
+>seahorse_service_discovery_list</a>     (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#SeahorseServiceDiscovery"
+>SeahorseServiceDiscovery</a> *ssd);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#seahorse-service-discovery-get-uri"
+>seahorse_service_discovery_get_uri</a>  (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#SeahorseServiceDiscovery"
+>SeahorseServiceDiscovery</a> *ssd,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *service);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#seahorse-service-discovery-get-uris"
+>seahorse_service_discovery_get_uris</a> (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#SeahorseServiceDiscovery"
+>SeahorseServiceDiscovery</a> *ssd,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *services);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-SeahorseServiceDiscovery.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-SeahorseServiceDiscovery.details"></a><h2>Details</h2>
+<div class="refsect2" title="SeahorseServiceDiscoveryPriv">
+<a name="SeahorseServiceDiscoveryPriv"></a><h3>SeahorseServiceDiscoveryPriv</h3>
+<pre class="programlisting">typedef struct _SeahorseServiceDiscoveryPriv SeahorseServiceDiscoveryPriv;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SeahorseServiceDiscovery">
+<a name="SeahorseServiceDiscovery"></a><h3>SeahorseServiceDiscovery</h3>
+<pre class="programlisting">typedef struct {
+    GObject parent;
+
+    GHashTable  *services;
+} SeahorseServiceDiscovery;
+</pre>
+<p>
+Listens for DNS-SD shared keys on the network and
+adds SeahorseKeySoruce objects to the SeahorseContext as necessary.
+</p>
+<p>
+Signals:
+  added: A new shared key source was found.
+  removed: A shared key source went away.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a> <em class="structfield"><code>parent</code></em>;</span></p></td>
+<td> The parent <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+><span class="type">GObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GHashTable"
+>GHashTable</a> *<em class="structfield"><code>services</code></em>;</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GHashTable"
+><span class="type">GHashTable</span></a> of known services
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_service_discovery_new ()">
+<a name="seahorse-service-discovery-new"></a><h3>seahorse_service_discovery_new ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#SeahorseServiceDiscovery"
+>SeahorseServiceDiscovery</a>* seahorse_service_discovery_new
+                                                        ();</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_service_discovery_list ()">
+<a name="seahorse-service-discovery-list"></a><h3>seahorse_service_discovery_list ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             seahorse_service_discovery_list     (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#SeahorseServiceDiscovery"
+>SeahorseServiceDiscovery</a> *ssd);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ssd</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_service_discovery_get_uri ()">
+<a name="seahorse-service-discovery-get-uri"></a><h3>seahorse_service_discovery_get_uri ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        seahorse_service_discovery_get_uri  (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#SeahorseServiceDiscovery"
+>SeahorseServiceDiscovery</a> *ssd,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *service);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ssd</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_service_discovery_get_uris ()">
+<a name="seahorse-service-discovery-get-uris"></a><h3>seahorse_service_discovery_get_uris ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             seahorse_service_discovery_get_uris (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseServiceDiscovery.html#SeahorseServiceDiscovery"
+>SeahorseServiceDiscovery</a> *ssd,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *services);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ssd</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>services</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

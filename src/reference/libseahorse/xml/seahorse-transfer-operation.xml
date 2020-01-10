@@ -1,0 +1,69 @@
+<refentry id="libseahorse-seahorse-transfer-operation">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-transfer-operation.top_of_page">seahorse-transfer-operation</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-transfer-operation</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-transfer-operation.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-transfer-operation-new">seahorse_transfer_operation_new</link>     (const <link linkend="gchar">gchar</link> *message,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *from,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *to,
+                                                         <link linkend="GSList">GSList</link> *keyids);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-transfer-operation.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-transfer-operation.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="seahorse-transfer-operation-new" role="function">
+<title>seahorse_transfer_operation_new ()</title>
+<indexterm zone="seahorse-transfer-operation-new"><primary sortas="transfer_operation_new">seahorse_transfer_operation_new</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_transfer_operation_new     (const <link linkend="gchar">gchar</link> *message,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *from,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *to,
+                                                         <link linkend="GSList">GSList</link> *keyids);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>message</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>from</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>to</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyids</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

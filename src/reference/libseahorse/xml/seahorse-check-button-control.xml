@@ -1,0 +1,67 @@
+<refentry id="libseahorse-seahorse-check-button-control">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-check-button-control.top_of_page">seahorse-check-button-control</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-check-button-control</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-check-button-control.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+<link linkend="void">void</link>                <link linkend="seahorse-check-button-gconf-attach">seahorse_check_button_gconf_attach</link>  (<link linkend="GtkCheckButton">GtkCheckButton</link> *button,
+                                                         const <link linkend="char">char</link> *gconf_key);
+<link linkend="void">void</link>                <link linkend="seahorse-check-button-gconf-detach">seahorse_check_button_gconf_detach</link>  (<link linkend="GtkCheckButton">GtkCheckButton</link> *button);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-check-button-control.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-check-button-control.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="seahorse-check-button-gconf-attach" role="function">
+<title>seahorse_check_button_gconf_attach ()</title>
+<indexterm zone="seahorse-check-button-gconf-attach"><primary sortas="check_button_gconf_attach">seahorse_check_button_gconf_attach</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_check_button_gconf_attach  (<link linkend="GtkCheckButton">GtkCheckButton</link> *button,
+                                                         const <link linkend="char">char</link> *gconf_key);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gconf_key</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-check-button-gconf-detach" role="function">
+<title>seahorse_check_button_gconf_detach ()</title>
+<indexterm zone="seahorse-check-button-gconf-detach"><primary sortas="check_button_gconf_detach">seahorse_check_button_gconf_detach</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_check_button_gconf_detach  (<link linkend="GtkCheckButton">GtkCheckButton</link> *button);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

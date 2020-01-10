@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>cryptui</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libcryptui Reference Manual">
+<link rel="up" href="ch01.html" title="libcryptui Objects and Functions">
+<link rel="prev" href="libcryptui-CryptUIKeyStore.html" title="CryptUIKeyStore">
+<link rel="next" href="libcryptui-cryptui-defines.html" title="cryptui-defines">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="libcryptui Objects and Functions">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libcryptui-CryptUIKeyStore.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libcryptui Reference Manual</th>
+<td><a accesskey="n" href="libcryptui-cryptui-defines.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libcryptui-cryptui.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libcryptui-cryptui.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="cryptui">
+<a name="libcryptui-cryptui"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libcryptui-cryptui.top_of_page"></a>cryptui</span></h2>
+<p>cryptui</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libcryptui-cryptui.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                <a class="link" href="libcryptui-cryptui.html#CryptUIEncType" title="enum CryptUIEncType">CryptUIEncType</a>;
+enum                <a class="link" href="libcryptui-cryptui.html#CryptUIKeyFlags" title="enum CryptUIKeyFlags">CryptUIKeyFlags</a>;
+enum                <a class="link" href="libcryptui-cryptui.html#CryptUILocation" title="enum CryptUILocation">CryptUILocation</a>;
+enum                <a class="link" href="libcryptui-cryptui.html#CryptUIValidity" title="enum CryptUIValidity">CryptUIValidity</a>;
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a class="link" href="libcryptui-cryptui.html#cryptui-key-get-base" title="cryptui_key_get_base ()">cryptui_key_get_base</a>                (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);
+<a class="link" href="libcryptui-cryptui.html#CryptUIEncType" title="enum CryptUIEncType">CryptUIEncType</a>      <a class="link" href="libcryptui-cryptui.html#cryptui-key-get-enctype" title="cryptui_key_get_enctype ()">cryptui_key_get_enctype</a>             (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);
+void                <a class="link" href="libcryptui-cryptui.html#cryptui-display-notification" title="cryptui_display_notification ()">cryptui_display_notification</a>        (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *body,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *icon,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> urgent);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>**             <a class="link" href="libcryptui-cryptui.html#cryptui-prompt-recipients" title="cryptui_prompt_recipients ()">cryptui_prompt_recipients</a>           (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **signer);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a class="link" href="libcryptui-cryptui.html#cryptui-prompt-signer" title="cryptui_prompt_signer ()">cryptui_prompt_signer</a>               (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title);
+void                <a class="link" href="libcryptui-cryptui.html#cryptui-need-to-get-keys" title="cryptui_need_to_get_keys ()">cryptui_need_to_get_keys</a>            ();
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libcryptui-cryptui.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libcryptui-cryptui.details"></a><h2>Details</h2>
+<div class="refsect2" title="enum CryptUIEncType">
+<a name="CryptUIEncType"></a><h3>enum CryptUIEncType</h3>
+<pre class="programlisting">typedef enum {
+    CRYPTUI_ENCTYPE_NONE =       0,
+    CRYPTUI_ENCTYPE_SYMMETRIC =  1,
+    CRYPTUI_ENCTYPE_PUBLIC =     2,
+    CRYPTUI_ENCTYPE_PRIVATE =    3,
+    
+    /* Used internally */
+    _CRYPTUI_ENCTYPE_MAXVALUE
+} CryptUIEncType;
+</pre>
+<p>
+Used in key properties to indicate what kind of key it is
+</p>
+<p>
+Never ever change a values already present. These values are used
+across applications, DBus etc...</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="CRYPTUI-ENCTYPE-NONE--CAPS"></a><span class="term"><code class="literal">CRYPTUI_ENCTYPE_NONE</code></span></p></td>
+<td> the key is none of the below types
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-ENCTYPE-SYMMETRIC--CAPS"></a><span class="term"><code class="literal">CRYPTUI_ENCTYPE_SYMMETRIC</code></span></p></td>
+<td> the key's type is symmetric
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-ENCTYPE-PUBLIC--CAPS"></a><span class="term"><code class="literal">CRYPTUI_ENCTYPE_PUBLIC</code></span></p></td>
+<td> the key's type is public
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-ENCTYPE-PRIVATE--CAPS"></a><span class="term"><code class="literal">CRYPTUI_ENCTYPE_PRIVATE</code></span></p></td>
+<td> the key's type is private
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-ENCTYPE-MAXVALUE--CAPS"></a><span class="term"><code class="literal">_CRYPTUI_ENCTYPE_MAXVALUE</code></span></p></td>
+<td> for internal use only
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum CryptUIKeyFlags">
+<a name="CryptUIKeyFlags"></a><h3>enum CryptUIKeyFlags</h3>
+<pre class="programlisting">typedef enum {
+    CRYPTUI_FLAG_IS_VALID =    0x00000001,
+    CRYPTUI_FLAG_CAN_ENCRYPT = 0x00000002,
+    CRYPTUI_FLAG_CAN_SIGN =    0x00000004,
+    CRYPTUI_FLAG_EXPIRED =     0x00000100,
+    CRYPTUI_FLAG_REVOKED =     0x00000200,
+    CRYPTUI_FLAG_DISABLED =    0x00000400,
+    CRYPTUI_FLAG_TRUSTED =     0x00001000,
+    CRYPTUI_FLAG_EXPORTABLE =  0x00100000
+} CryptUIKeyFlags;
+</pre>
+<p>
+Used in key properties to indicate a key's status.  These values are
+logically OR'd together.
+</p>
+<p>
+Never ever change a values already present. These values are used
+across applications, DBus etc...</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="CRYPTUI-FLAG-IS-VALID--CAPS"></a><span class="term"><code class="literal">CRYPTUI_FLAG_IS_VALID</code></span></p></td>
+<td> whether the key is valid
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-FLAG-CAN-ENCRYPT--CAPS"></a><span class="term"><code class="literal">CRYPTUI_FLAG_CAN_ENCRYPT</code></span></p></td>
+<td> whether the key can encrypt
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-FLAG-CAN-SIGN--CAPS"></a><span class="term"><code class="literal">CRYPTUI_FLAG_CAN_SIGN</code></span></p></td>
+<td> whether the key can sign
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-FLAG-EXPIRED--CAPS"></a><span class="term"><code class="literal">CRYPTUI_FLAG_EXPIRED</code></span></p></td>
+<td> whether the key is expired
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-FLAG-REVOKED--CAPS"></a><span class="term"><code class="literal">CRYPTUI_FLAG_REVOKED</code></span></p></td>
+<td> whether the key is revoked
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-FLAG-DISABLED--CAPS"></a><span class="term"><code class="literal">CRYPTUI_FLAG_DISABLED</code></span></p></td>
+<td> whether the key is disabled
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-FLAG-TRUSTED--CAPS"></a><span class="term"><code class="literal">CRYPTUI_FLAG_TRUSTED</code></span></p></td>
+<td> whether the key is trusted
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-FLAG-EXPORTABLE--CAPS"></a><span class="term"><code class="literal">CRYPTUI_FLAG_EXPORTABLE</code></span></p></td>
+<td> whether the key is exportable
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum CryptUILocation">
+<a name="CryptUILocation"></a><h3>enum CryptUILocation</h3>
+<pre class="programlisting">typedef enum {
+    CRYPTUI_LOC_INVALID =        0,
+    CRYPTUI_LOC_MISSING =       10,
+    CRYPTUI_LOC_SEARCHING =     20,
+    CRYPTUI_LOC_REMOTE =        50,
+    CRYPTUI_LOC_LOCAL =        100,
+} CryptUILocation;
+</pre>
+<p>
+Indicates where a key is located.
+</p>
+<p>
+Never ever change a values already present. These values are used
+across applications, DBus etc...</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="CRYPTUI-LOC-INVALID--CAPS"></a><span class="term"><code class="literal">CRYPTUI_LOC_INVALID</code></span></p></td>
+<td> An invalid key
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-LOC-MISSING--CAPS"></a><span class="term"><code class="literal">CRYPTUI_LOC_MISSING</code></span></p></td>
+<td> A key we don't know anything about
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-LOC-SEARCHING--CAPS"></a><span class="term"><code class="literal">CRYPTUI_LOC_SEARCHING</code></span></p></td>
+<td> A key we're searching for but haven't found yet
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-LOC-REMOTE--CAPS"></a><span class="term"><code class="literal">CRYPTUI_LOC_REMOTE</code></span></p></td>
+<td> A key that we've found is present remotely
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-LOC-LOCAL--CAPS"></a><span class="term"><code class="literal">CRYPTUI_LOC_LOCAL</code></span></p></td>
+<td> A key on the local machine
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum CryptUIValidity">
+<a name="CryptUIValidity"></a><h3>enum CryptUIValidity</h3>
+<pre class="programlisting">typedef enum {
+    CRYPTUI_VALIDITY_REVOKED =   -3,
+    CRYPTUI_VALIDITY_DISABLED =  -2,
+    CRYPTUI_VALIDITY_NEVER =     -1,
+    CRYPTUI_VALIDITY_UNKNOWN =    0,
+    CRYPTUI_VALIDITY_MARGINAL =   1,
+    CRYPTUI_VALIDITY_FULL =       5,
+    CRYPTUI_VALIDITY_ULTIMATE =  10
+} CryptUIValidity;
+</pre>
+<p>
+What the validity of the key is.
+</p>
+<p>
+Never ever change a values already present. These values are used
+across applications, DBus etc...</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="CRYPTUI-VALIDITY-REVOKED--CAPS"></a><span class="term"><code class="literal">CRYPTUI_VALIDITY_REVOKED</code></span></p></td>
+<td> the key is revoked
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-VALIDITY-DISABLED--CAPS"></a><span class="term"><code class="literal">CRYPTUI_VALIDITY_DISABLED</code></span></p></td>
+<td> the key is disabled
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-VALIDITY-NEVER--CAPS"></a><span class="term"><code class="literal">CRYPTUI_VALIDITY_NEVER</code></span></p></td>
+<td> the key has never been valid
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-VALIDITY-UNKNOWN--CAPS"></a><span class="term"><code class="literal">CRYPTUI_VALIDITY_UNKNOWN</code></span></p></td>
+<td> the key's validity is unknown
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-VALIDITY-MARGINAL--CAPS"></a><span class="term"><code class="literal">CRYPTUI_VALIDITY_MARGINAL</code></span></p></td>
+<td> the key's validity is marginal
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-VALIDITY-FULL--CAPS"></a><span class="term"><code class="literal">CRYPTUI_VALIDITY_FULL</code></span></p></td>
+<td> the key's validity is full
+</td>
+</tr>
+<tr>
+<td><p><a name="CRYPTUI-VALIDITY-ULTIMATE--CAPS"></a><span class="term"><code class="literal">CRYPTUI_VALIDITY_ULTIMATE</code></span></p></td>
+<td> the key's validity is ultimate
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_key_get_base ()">
+<a name="cryptui-key-get-base"></a><h3>cryptui_key_get_base ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              cryptui_key_get_base                (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);</pre>
+<p>
+This function is a utility function to get the part of the key that preceeds
+the colon.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> key for use with libcryptui. <a href="http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?query=in"><span class="acronym">in</span></a>. </td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the key base if one is found in <em class="parameter"><code>key</code></em>
+         or <em class="parameter"><code>key</code></em> if it is already a base or is invalid
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_key_get_enctype ()">
+<a name="cryptui-key-get-enctype"></a><h3>cryptui_key_get_enctype ()</h3>
+<pre class="programlisting"><a class="link" href="libcryptui-cryptui.html#CryptUIEncType" title="enum CryptUIEncType">CryptUIEncType</a>      cryptui_key_get_enctype             (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);</pre>
+<p>
+A utility function to get the type of key passed in. (public, private,
+symmetric, etc.).</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> key for use with libcryptui. <a href="http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?query=in"><span class="acronym">in</span></a>. </td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The type of key.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_display_notification ()">
+<a name="cryptui-display-notification"></a><h3>cryptui_display_notification ()</h3>
+<pre class="programlisting">void                cryptui_display_notification        (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *body,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *icon,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> urgent);</pre>
+<p>
+This function creates a notification bubble that can be updated as additional
+key details are discovered.  See http://live.gnome.org/Seahorse/DBus for a
+description of the markup syntax.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td> Headline for the notification. <a href="http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?query=in"><span class="acronym">in</span></a>. <a href="http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?query=allow-none"><span class="acronym">allow-none</span></a>. </td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>body</code></em> :</span></p></td>
+<td> Text for the body of the notification. <a href="http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?query=in"><span class="acronym">in</span></a>. <a href="http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?query=allow-none"><span class="acronym">allow-none</span></a>. </td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon</code></em> :</span></p></td>
+<td> Full path to icon to be included. <a href="http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?query=in"><span class="acronym">in</span></a>. <a href="http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?query=allow-none"><span class="acronym">allow-none</span></a>. </td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>urgent</code></em> :</span></p></td>
+<td> Whether the notification is urgent or not.. <a href="http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?query=in"><span class="acronym">in</span></a>. <a href="http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?query=allow-none"><span class="acronym">allow-none</span></a>. </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_prompt_recipients ()">
+<a name="cryptui-prompt-recipients"></a><h3>cryptui_prompt_recipients ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>**             cryptui_prompt_recipients           (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **signer);</pre>
+<p>
+This function prompts the user to select one or more keys from the keyset to
+use to encrypt to.  It also allows the user to select a private key from the
+keyset to sign with.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> CryptUIKeyset to select keys to present to the user from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td> Window title for presented GtkWindow
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signer</code></em> :</span></p></td>
+<td> Variable in which to store the key of the signer if one is selected
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the selected key
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_prompt_signer ()">
+<a name="cryptui-prompt-signer"></a><h3>cryptui_prompt_signer ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              cryptui_prompt_signer               (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *keyset,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *title);</pre>
+<p>
+This function prompts the user to select a private key from the keyset to
+use to sign something.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keyset</code></em> :</span></p></td>
+<td> CryptUIKeyset to select keys to present to the user from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td> Window title for presented GtkWindow
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the selected key
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_need_to_get_keys ()">
+<a name="cryptui-need-to-get-keys"></a><h3>cryptui_need_to_get_keys ()</h3>
+<pre class="programlisting">void                cryptui_need_to_get_keys            ();</pre>
+<p>
+This function is called when seahorse needs to be launched to generate a
+key or keys or import a key or keys to perform the requested operation.</p>
+<p>
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

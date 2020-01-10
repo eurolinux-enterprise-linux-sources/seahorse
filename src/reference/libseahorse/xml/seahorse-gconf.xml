@@ -1,0 +1,353 @@
+<refentry id="libseahorse-seahorse-gconf">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-gconf.top_of_page">seahorse-gconf</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-gconf</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-gconf.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+#define             <link linkend="ENCRYPTSELF-KEY--CAPS">ENCRYPTSELF_KEY</link>
+#define             <link linkend="MULTI-EXTENSION-KEY--CAPS">MULTI_EXTENSION_KEY</link>
+#define             <link linkend="MULTI-SEPERATE-KEY--CAPS">MULTI_SEPERATE_KEY</link>
+#define             <link linkend="KEYSERVER-KEY--CAPS">KEYSERVER_KEY</link>
+#define             <link linkend="AUTORETRIEVE-KEY--CAPS">AUTORETRIEVE_KEY</link>
+#define             <link linkend="AUTOSYNC-KEY--CAPS">AUTOSYNC_KEY</link>
+#define             <link linkend="LASTSEARCH-KEY--CAPS">LASTSEARCH_KEY</link>
+#define             <link linkend="LASTSERVERS-KEY--CAPS">LASTSERVERS_KEY</link>
+#define             <link linkend="PUBLISH-TO-KEY--CAPS">PUBLISH_TO_KEY</link>
+#define             <link linkend="SEAHORSE-SCHEMAS--CAPS">SEAHORSE_SCHEMAS</link>
+#define             <link linkend="KEYSHARING-KEY--CAPS">KEYSHARING_KEY</link>
+#define             <link linkend="WINDOW-SIZE--CAPS">WINDOW_SIZE</link>
+<link linkend="void">void</link>                <link linkend="seahorse-gconf-disconnect">seahorse_gconf_disconnect</link>           ();
+<link linkend="void">void</link>                <link linkend="seahorse-gconf-set-boolean">seahorse_gconf_set_boolean</link>          (const <link linkend="char">char</link> *key,
+                                                         <link linkend="gboolean">gboolean</link> boolean_value);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-gconf-get-boolean">seahorse_gconf_get_boolean</link>          (const <link linkend="char">char</link> *key);
+<link linkend="void">void</link>                <link linkend="seahorse-gconf-set-integer">seahorse_gconf_set_integer</link>          (const <link linkend="char">char</link> *key,
+                                                         <link linkend="int">int</link> int_value);
+<link linkend="int">int</link>                 <link linkend="seahorse-gconf-get-integer">seahorse_gconf_get_integer</link>          (const <link linkend="char">char</link> *key);
+<link linkend="void">void</link>                <link linkend="seahorse-gconf-set-string">seahorse_gconf_set_string</link>           (const <link linkend="char">char</link> *key,
+                                                         const <link linkend="char">char</link> *string_value);
+<link linkend="char">char</link>*               <link linkend="seahorse-gconf-get-string">seahorse_gconf_get_string</link>           (const <link linkend="char">char</link> *key);
+<link linkend="void">void</link>                <link linkend="seahorse-gconf-set-string-list">seahorse_gconf_set_string_list</link>      (const <link linkend="char">char</link> *key,
+                                                         const <link linkend="GSList">GSList</link> *slist);
+<link linkend="GSList">GSList</link>*             <link linkend="seahorse-gconf-get-string-list">seahorse_gconf_get_string_list</link>      (const <link linkend="char">char</link> *key);
+<link linkend="GConfEntry">GConfEntry</link>*         <link linkend="seahorse-gconf-get-entry">seahorse_gconf_get_entry</link>            (const <link linkend="char">char</link> *key);
+<link linkend="guint">guint</link>               <link linkend="seahorse-gconf-notify">seahorse_gconf_notify</link>               (const <link linkend="char">char</link> *key,
+                                                         <link linkend="GConfClientNotifyFunc">GConfClientNotifyFunc</link> notification_callback,
+                                                         <link linkend="gpointer">gpointer</link> callback_data);
+<link linkend="void">void</link>                <link linkend="seahorse-gconf-notify-lazy">seahorse_gconf_notify_lazy</link>          (const <link linkend="char">char</link> *key,
+                                                         <link linkend="GConfClientNotifyFunc">GConfClientNotifyFunc</link> notification_callback,
+                                                         <link linkend="gpointer">gpointer</link> callback_data,
+                                                         <link linkend="gpointer">gpointer</link> lifetime);
+<link linkend="void">void</link>                <link linkend="seahorse-gconf-unnotify">seahorse_gconf_unnotify</link>             (<link linkend="guint">guint</link> notification_id);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-gconf.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-gconf.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="ENCRYPTSELF-KEY--CAPS" role="macro">
+<title>ENCRYPTSELF_KEY</title>
+<indexterm zone="ENCRYPTSELF-KEY--CAPS"><primary>ENCRYPTSELF_KEY</primary></indexterm><programlisting>#define ENCRYPTSELF_KEY SEAHORSE_DESKTOP_KEYS "/encrypt_to_self"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="MULTI-EXTENSION-KEY--CAPS" role="macro">
+<title>MULTI_EXTENSION_KEY</title>
+<indexterm zone="MULTI-EXTENSION-KEY--CAPS"><primary>MULTI_EXTENSION_KEY</primary></indexterm><programlisting>#define MULTI_EXTENSION_KEY SEAHORSE_DESKTOP_KEYS "/package_extension"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="MULTI-SEPERATE-KEY--CAPS" role="macro">
+<title>MULTI_SEPERATE_KEY</title>
+<indexterm zone="MULTI-SEPERATE-KEY--CAPS"><primary>MULTI_SEPERATE_KEY</primary></indexterm><programlisting>#define MULTI_SEPERATE_KEY SEAHORSE_DESKTOP_KEYS "/multi_seperate"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="KEYSERVER-KEY--CAPS" role="macro">
+<title>KEYSERVER_KEY</title>
+<indexterm zone="KEYSERVER-KEY--CAPS"><primary>KEYSERVER_KEY</primary></indexterm><programlisting>#define KEYSERVER_KEY SEAHORSE_DESKTOP_KEYS "/keyservers/all_keyservers"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="AUTORETRIEVE-KEY--CAPS" role="macro">
+<title>AUTORETRIEVE_KEY</title>
+<indexterm zone="AUTORETRIEVE-KEY--CAPS"><primary>AUTORETRIEVE_KEY</primary></indexterm><programlisting>#define AUTORETRIEVE_KEY SEAHORSE_DESKTOP_KEYS "/keyservers/auto_retrieve"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="AUTOSYNC-KEY--CAPS" role="macro">
+<title>AUTOSYNC_KEY</title>
+<indexterm zone="AUTOSYNC-KEY--CAPS"><primary>AUTOSYNC_KEY</primary></indexterm><programlisting>#define AUTOSYNC_KEY SEAHORSE_DESKTOP_KEYS "/keyservers/auto_sync"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="LASTSEARCH-KEY--CAPS" role="macro">
+<title>LASTSEARCH_KEY</title>
+<indexterm zone="LASTSEARCH-KEY--CAPS"><primary>LASTSEARCH_KEY</primary></indexterm><programlisting>#define LASTSEARCH_KEY SEAHORSE_DESKTOP_KEYS "/keyservers/search_text"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="LASTSERVERS-KEY--CAPS" role="macro">
+<title>LASTSERVERS_KEY</title>
+<indexterm zone="LASTSERVERS-KEY--CAPS"><primary>LASTSERVERS_KEY</primary></indexterm><programlisting>#define LASTSERVERS_KEY SEAHORSE_DESKTOP_KEYS "/keyservers/search_keyservers"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="PUBLISH-TO-KEY--CAPS" role="macro">
+<title>PUBLISH_TO_KEY</title>
+<indexterm zone="PUBLISH-TO-KEY--CAPS"><primary>PUBLISH_TO_KEY</primary></indexterm><programlisting>#define PUBLISH_TO_KEY SEAHORSE_DESKTOP_KEYS "/keyservers/publish_to"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-SCHEMAS--CAPS" role="macro">
+<title>SEAHORSE_SCHEMAS</title>
+<indexterm zone="SEAHORSE-SCHEMAS--CAPS"><primary sortas="SCHEMAS">SEAHORSE_SCHEMAS</primary></indexterm><programlisting>#define SEAHORSE_SCHEMAS            "/apps/seahorse"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="KEYSHARING-KEY--CAPS" role="macro">
+<title>KEYSHARING_KEY</title>
+<indexterm zone="KEYSHARING-KEY--CAPS"><primary>KEYSHARING_KEY</primary></indexterm><programlisting>#define KEYSHARING_KEY              SEAHORSE_SCHEMAS "/sharing/sharing_enabled"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="WINDOW-SIZE--CAPS" role="macro">
+<title>WINDOW_SIZE</title>
+<indexterm zone="WINDOW-SIZE--CAPS"><primary>WINDOW_SIZE</primary></indexterm><programlisting>#define WINDOW_SIZE                SEAHORSE_SCHEMAS "/windows/"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-gconf-disconnect" role="function">
+<title>seahorse_gconf_disconnect ()</title>
+<indexterm zone="seahorse-gconf-disconnect"><primary sortas="gconf_disconnect">seahorse_gconf_disconnect</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_gconf_disconnect           ();</programlisting>
+<para>
+Remove registered dirs and free the global gconf client</para>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-gconf-set-boolean" role="function">
+<title>seahorse_gconf_set_boolean ()</title>
+<indexterm zone="seahorse-gconf-set-boolean"><primary sortas="gconf_set_boolean">seahorse_gconf_set_boolean</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_gconf_set_boolean          (const <link linkend="char">char</link> *key,
+                                                         <link linkend="gboolean">gboolean</link> boolean_value);</programlisting>
+<para>
+Set a value for a boolean key in the GConf storage
+</para>
+<para>
+Errors are handled internally and are mapped to a warning</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> The key
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>boolean_value</parameter>&#160;:</term>
+<listitem><simpara> The value to set
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-gconf-get-boolean" role="function">
+<title>seahorse_gconf_get_boolean ()</title>
+<indexterm zone="seahorse-gconf-get-boolean"><primary sortas="gconf_get_boolean">seahorse_gconf_get_boolean</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_gconf_get_boolean          (const <link linkend="char">char</link> *key);</programlisting>
+<para>
+Read a boolean key from the GConf storage</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> The key to read
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> It returns the read value. On error it returns FALSE
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-gconf-set-integer" role="function">
+<title>seahorse_gconf_set_integer ()</title>
+<indexterm zone="seahorse-gconf-set-integer"><primary sortas="gconf_set_integer">seahorse_gconf_set_integer</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_gconf_set_integer          (const <link linkend="char">char</link> *key,
+                                                         <link linkend="int">int</link> int_value);</programlisting>
+<para>
+Set a value for an integer key in the GConf storage
+</para>
+<para>
+Errors are handled internally and are mapped to a warning</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> The key
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>int_value</parameter>&#160;:</term>
+<listitem><simpara> The value to set
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-gconf-get-integer" role="function">
+<title>seahorse_gconf_get_integer ()</title>
+<indexterm zone="seahorse-gconf-get-integer"><primary sortas="gconf_get_integer">seahorse_gconf_get_integer</primary></indexterm><programlisting><link linkend="int">int</link>                 seahorse_gconf_get_integer          (const <link linkend="char">char</link> *key);</programlisting>
+<para>
+Read an integer key from the GConf storage</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> The key to read
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> It returns the read value. On error it returns 0.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-gconf-set-string" role="function">
+<title>seahorse_gconf_set_string ()</title>
+<indexterm zone="seahorse-gconf-set-string"><primary sortas="gconf_set_string">seahorse_gconf_set_string</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_gconf_set_string           (const <link linkend="char">char</link> *key,
+                                                         const <link linkend="char">char</link> *string_value);</programlisting>
+<para>
+Set a value for a string key in the GConf storage
+</para>
+<para>
+Errors are handled internally and are mapped to a warning</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> The key
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>string_value</parameter>&#160;:</term>
+<listitem><simpara> The value to set
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-gconf-get-string" role="function">
+<title>seahorse_gconf_get_string ()</title>
+<indexterm zone="seahorse-gconf-get-string"><primary sortas="gconf_get_string">seahorse_gconf_get_string</primary></indexterm><programlisting><link linkend="char">char</link>*               seahorse_gconf_get_string           (const <link linkend="char">char</link> *key);</programlisting>
+<para>
+Read a string key from the GConf storage</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> The key to read
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> It returns the read value. On error it returns "". The returned string should be 
+freed with <link linkend="g-free"><type>g_free</type></link> when no longer needed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-gconf-set-string-list" role="function">
+<title>seahorse_gconf_set_string_list ()</title>
+<indexterm zone="seahorse-gconf-set-string-list"><primary sortas="gconf_set_string_list">seahorse_gconf_set_string_list</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_gconf_set_string_list      (const <link linkend="char">char</link> *key,
+                                                         const <link linkend="GSList">GSList</link> *slist);</programlisting>
+<para>
+Set a value for a string list (linked list of strings) key in the GConf storage
+</para>
+<para>
+Errors are handled internally and are mapped to a warning</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> The key
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>slist</parameter>&#160;:</term>
+<listitem><simpara> The list to set
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-gconf-get-string-list" role="function">
+<title>seahorse_gconf_get_string_list ()</title>
+<indexterm zone="seahorse-gconf-get-string-list"><primary sortas="gconf_get_string_list">seahorse_gconf_get_string_list</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             seahorse_gconf_get_string_list      (const <link linkend="char">char</link> *key);</programlisting>
+<para>
+Read a string list (linked list of strings) key from the GConf storage</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> The key to read
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> It returns the read value. On error it returns NULL. Each returned
+string should be freed with <link linkend="g-free"><type>g_free</type></link> when no longer needed. The list must be
+freed with <link linkend="g-slist-free"><type>g_slist_free</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-gconf-get-entry" role="function">
+<title>seahorse_gconf_get_entry ()</title>
+<indexterm zone="seahorse-gconf-get-entry"><primary sortas="gconf_get_entry">seahorse_gconf_get_entry</primary></indexterm><programlisting><link linkend="GConfEntry">GConfEntry</link>*         seahorse_gconf_get_entry            (const <link linkend="char">char</link> *key);</programlisting>
+<para>
+Get an entry key from the GConf storage</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> The key to read
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> It returns the read value. On error it returns NULL. Must be freed
+with <link linkend="gconf-entry-free"><type>gconf_entry_free</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-gconf-notify" role="function">
+<title>seahorse_gconf_notify ()</title>
+<indexterm zone="seahorse-gconf-notify"><primary sortas="gconf_notify">seahorse_gconf_notify</primary></indexterm><programlisting><link linkend="guint">guint</link>               seahorse_gconf_notify               (const <link linkend="char">char</link> *key,
+                                                         <link linkend="GConfClientNotifyFunc">GConfClientNotifyFunc</link> notification_callback,
+                                                         <link linkend="gpointer">gpointer</link> callback_data);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> The key to add the notification for
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>notification_callback</parameter>&#160;:</term>
+<listitem><simpara> The callback function to add
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>callback_data</parameter>&#160;:</term>
+<listitem><simpara> user data to pass to the callback function
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The connection ID. On error it returns 0
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-gconf-notify-lazy" role="function">
+<title>seahorse_gconf_notify_lazy ()</title>
+<indexterm zone="seahorse-gconf-notify-lazy"><primary sortas="gconf_notify_lazy">seahorse_gconf_notify_lazy</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_gconf_notify_lazy          (const <link linkend="char">char</link> *key,
+                                                         <link linkend="GConfClientNotifyFunc">GConfClientNotifyFunc</link> notification_callback,
+                                                         <link linkend="gpointer">gpointer</link> callback_data,
+                                                         <link linkend="gpointer">gpointer</link> lifetime);</programlisting>
+<para>
+The callback is bound to the object (<link linkend="g-object-set-data-full"><type>g_object_set_data_full</type></link>) and
+the notification is automatically unnotified as soon as the object is
+destroyed</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> The key to add the notification for
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>notification_callback</parameter>&#160;:</term>
+<listitem><simpara> The callback function to add
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>callback_data</parameter>&#160;:</term>
+<listitem><simpara> user data to pass to the callback function
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>lifetime</parameter>&#160;:</term>
+<listitem><simpara> a GObject to bind the callback to
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-gconf-unnotify" role="function">
+<title>seahorse_gconf_unnotify ()</title>
+<indexterm zone="seahorse-gconf-unnotify"><primary sortas="gconf_unnotify">seahorse_gconf_unnotify</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_gconf_unnotify             (<link linkend="guint">guint</link> notification_id);</programlisting>
+<para>
+Removes a notification identified by the ID</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>notification_id</parameter>&#160;:</term>
+<listitem><simpara> ID to remove
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

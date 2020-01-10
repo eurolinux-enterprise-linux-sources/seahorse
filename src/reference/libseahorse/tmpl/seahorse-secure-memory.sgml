@@ -1,0 +1,40 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-secure-memory
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### VARIABLE seahorse_use_secure_mem ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### MACRO WITH_SECURE_MEM ##### -->
+<para>
+
+</para>
+
+@EXP: 
+
+
+<!-- ##### FUNCTION seahorse_secure_memory_init ##### -->
+<para>
+
+</para>
+
+
+

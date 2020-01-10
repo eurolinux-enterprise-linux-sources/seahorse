@@ -1,0 +1,225 @@
+<refentry id="libseahorse-seahorse-marshal">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-marshal.top_of_page">seahorse-marshal</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-marshal</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-marshal.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+<link linkend="void">void</link>                <link linkend="seahorse-marshal-VOID--STRING-DOUBLE">seahorse_marshal_VOID__STRING_DOUBLE</link>
+                                                        (<link linkend="GClosure">GClosure</link> *closure,
+                                                         <link linkend="GValue">GValue</link> *return_value,
+                                                         <link linkend="guint">guint</link> n_param_values,
+                                                         const <link linkend="GValue">GValue</link> *param_values,
+                                                         <link linkend="gpointer">gpointer</link> invocation_hint,
+                                                         <link linkend="gpointer">gpointer</link> marshal_data);
+<link linkend="void">void</link>                <link linkend="seahorse-marshal-VOID--OBJECT-UINT">seahorse_marshal_VOID__OBJECT_UINT</link>  (<link linkend="GClosure">GClosure</link> *closure,
+                                                         <link linkend="GValue">GValue</link> *return_value,
+                                                         <link linkend="guint">guint</link> n_param_values,
+                                                         const <link linkend="GValue">GValue</link> *param_values,
+                                                         <link linkend="gpointer">gpointer</link> invocation_hint,
+                                                         <link linkend="gpointer">gpointer</link> marshal_data);
+<link linkend="void">void</link>                <link linkend="seahorse-marshal-VOID--OBJECT-POINTER">seahorse_marshal_VOID__OBJECT_POINTER</link>
+                                                        (<link linkend="GClosure">GClosure</link> *closure,
+                                                         <link linkend="GValue">GValue</link> *return_value,
+                                                         <link linkend="guint">guint</link> n_param_values,
+                                                         const <link linkend="GValue">GValue</link> *param_values,
+                                                         <link linkend="gpointer">gpointer</link> invocation_hint,
+                                                         <link linkend="gpointer">gpointer</link> marshal_data);
+<link linkend="void">void</link>                <link linkend="seahorse-marshal-VOID--OBJECT-UINT-POINTER">seahorse_marshal_VOID__OBJECT_UINT_POINTER</link>
+                                                        (<link linkend="GClosure">GClosure</link> *closure,
+                                                         <link linkend="GValue">GValue</link> *return_value,
+                                                         <link linkend="guint">guint</link> n_param_values,
+                                                         const <link linkend="GValue">GValue</link> *param_values,
+                                                         <link linkend="gpointer">gpointer</link> invocation_hint,
+                                                         <link linkend="gpointer">gpointer</link> marshal_data);
+<link linkend="void">void</link>                <link linkend="seahorse-marshal-VOID--OBJECT-OBJECT">seahorse_marshal_VOID__OBJECT_OBJECT</link>
+                                                        (<link linkend="GClosure">GClosure</link> *closure,
+                                                         <link linkend="GValue">GValue</link> *return_value,
+                                                         <link linkend="guint">guint</link> n_param_values,
+                                                         const <link linkend="GValue">GValue</link> *param_values,
+                                                         <link linkend="gpointer">gpointer</link> invocation_hint,
+                                                         <link linkend="gpointer">gpointer</link> marshal_data);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-marshal.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-marshal.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="seahorse-marshal-VOID--STRING-DOUBLE" role="function">
+<title>seahorse_marshal_VOID__STRING_DOUBLE ()</title>
+<indexterm zone="seahorse-marshal-VOID--STRING-DOUBLE"><primary sortas="marshal_VOID__STRING_DOUBLE">seahorse_marshal_VOID__STRING_DOUBLE</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_marshal_VOID__STRING_DOUBLE
+                                                        (<link linkend="GClosure">GClosure</link> *closure,
+                                                         <link linkend="GValue">GValue</link> *return_value,
+                                                         <link linkend="guint">guint</link> n_param_values,
+                                                         const <link linkend="GValue">GValue</link> *param_values,
+                                                         <link linkend="gpointer">gpointer</link> invocation_hint,
+                                                         <link linkend="gpointer">gpointer</link> marshal_data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>closure</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>return_value</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_param_values</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>param_values</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>invocation_hint</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>marshal_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-marshal-VOID--OBJECT-UINT" role="function">
+<title>seahorse_marshal_VOID__OBJECT_UINT ()</title>
+<indexterm zone="seahorse-marshal-VOID--OBJECT-UINT"><primary sortas="marshal_VOID__OBJECT_UINT">seahorse_marshal_VOID__OBJECT_UINT</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_marshal_VOID__OBJECT_UINT  (<link linkend="GClosure">GClosure</link> *closure,
+                                                         <link linkend="GValue">GValue</link> *return_value,
+                                                         <link linkend="guint">guint</link> n_param_values,
+                                                         const <link linkend="GValue">GValue</link> *param_values,
+                                                         <link linkend="gpointer">gpointer</link> invocation_hint,
+                                                         <link linkend="gpointer">gpointer</link> marshal_data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>closure</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>return_value</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_param_values</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>param_values</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>invocation_hint</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>marshal_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-marshal-VOID--OBJECT-POINTER" role="function">
+<title>seahorse_marshal_VOID__OBJECT_POINTER ()</title>
+<indexterm zone="seahorse-marshal-VOID--OBJECT-POINTER"><primary sortas="marshal_VOID__OBJECT_POINTER">seahorse_marshal_VOID__OBJECT_POINTER</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_marshal_VOID__OBJECT_POINTER
+                                                        (<link linkend="GClosure">GClosure</link> *closure,
+                                                         <link linkend="GValue">GValue</link> *return_value,
+                                                         <link linkend="guint">guint</link> n_param_values,
+                                                         const <link linkend="GValue">GValue</link> *param_values,
+                                                         <link linkend="gpointer">gpointer</link> invocation_hint,
+                                                         <link linkend="gpointer">gpointer</link> marshal_data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>closure</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>return_value</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_param_values</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>param_values</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>invocation_hint</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>marshal_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-marshal-VOID--OBJECT-UINT-POINTER" role="function">
+<title>seahorse_marshal_VOID__OBJECT_UINT_POINTER ()</title>
+<indexterm zone="seahorse-marshal-VOID--OBJECT-UINT-POINTER"><primary sortas="marshal_VOID__OBJECT_UINT_POINTER">seahorse_marshal_VOID__OBJECT_UINT_POINTER</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_marshal_VOID__OBJECT_UINT_POINTER
+                                                        (<link linkend="GClosure">GClosure</link> *closure,
+                                                         <link linkend="GValue">GValue</link> *return_value,
+                                                         <link linkend="guint">guint</link> n_param_values,
+                                                         const <link linkend="GValue">GValue</link> *param_values,
+                                                         <link linkend="gpointer">gpointer</link> invocation_hint,
+                                                         <link linkend="gpointer">gpointer</link> marshal_data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>closure</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>return_value</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_param_values</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>param_values</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>invocation_hint</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>marshal_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-marshal-VOID--OBJECT-OBJECT" role="function">
+<title>seahorse_marshal_VOID__OBJECT_OBJECT ()</title>
+<indexterm zone="seahorse-marshal-VOID--OBJECT-OBJECT"><primary sortas="marshal_VOID__OBJECT_OBJECT">seahorse_marshal_VOID__OBJECT_OBJECT</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_marshal_VOID__OBJECT_OBJECT
+                                                        (<link linkend="GClosure">GClosure</link> *closure,
+                                                         <link linkend="GValue">GValue</link> *return_value,
+                                                         <link linkend="guint">guint</link> n_param_values,
+                                                         const <link linkend="GValue">GValue</link> *param_values,
+                                                         <link linkend="gpointer">gpointer</link> invocation_hint,
+                                                         <link linkend="gpointer">gpointer</link> marshal_data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>closure</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>return_value</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_param_values</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>param_values</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>invocation_hint</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>marshal_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

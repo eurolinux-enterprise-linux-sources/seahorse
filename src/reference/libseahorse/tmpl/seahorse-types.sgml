@@ -1,0 +1,95 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-types
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO SEAHORSE_TYPE_LOCATION ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_TYPE_USAGE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### ENUM SeahorseLocation ##### -->
+<para>
+
+</para>
+
+@SEAHORSE_LOCATION_INVALID: 
+@SEAHORSE_LOCATION_MISSING: 
+@SEAHORSE_LOCATION_SEARCHING: 
+@SEAHORSE_LOCATION_REMOTE: 
+@SEAHORSE_LOCATION_LOCAL: 
+
+<!-- ##### FUNCTION seahorse_location_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### ENUM SeahorseUsage ##### -->
+<para>
+
+</para>
+
+@SEAHORSE_USAGE_NONE: 
+@SEAHORSE_USAGE_SYMMETRIC_KEY: 
+@SEAHORSE_USAGE_PUBLIC_KEY: 
+@SEAHORSE_USAGE_PRIVATE_KEY: 
+@SEAHORSE_USAGE_CREDENTIALS: 
+@SEAHORSE_USAGE_IDENTITY: 
+@SEAHORSE_USAGE_OTHER: 
+
+<!-- ##### FUNCTION seahorse_usage_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### ENUM SeahorseKeyFlags ##### -->
+<para>
+
+</para>
+
+@SEAHORSE_FLAG_IS_VALID: 
+@SEAHORSE_FLAG_CAN_ENCRYPT: 
+@SEAHORSE_FLAG_CAN_SIGN: 
+@SEAHORSE_FLAG_EXPIRED: 
+@SEAHORSE_FLAG_REVOKED: 
+@SEAHORSE_FLAG_DISABLED: 
+@SEAHORSE_FLAG_TRUSTED: 
+@SEAHORSE_FLAG_EXPORTABLE: 
+@SEAHORSE_FLAG_DELETABLE: 
+
+<!-- ##### MACRO SEAHORSE_TAG_INVALID ##### -->
+<para>
+
+</para>
+
+
+

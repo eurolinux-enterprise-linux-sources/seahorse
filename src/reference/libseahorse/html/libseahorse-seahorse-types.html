@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>seahorse-types</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libseahorse-seahorse-check-button-control.html" title="seahorse-check-button-control">
+<link rel="next" href="libseahorse-seahorse-combo-keys.html" title="seahorse-combo-keys">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libseahorse-seahorse-check-button-control.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-seahorse-combo-keys.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-seahorse-types.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-seahorse-types.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="seahorse-types">
+<a name="libseahorse-seahorse-types"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-seahorse-types.top_of_page"></a>seahorse-types</span></h2>
+<p>seahorse-types</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-seahorse-types.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-types.html#SEAHORSE-TYPE-LOCATION--CAPS"
+>SEAHORSE_TYPE_LOCATION</a>
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-types.html#SEAHORSE-TYPE-USAGE--CAPS"
+>SEAHORSE_TYPE_USAGE</a>
+enum                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-types.html#SeahorseLocation"
+>SeahorseLocation</a>;
+<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a>               <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-types.html#seahorse-location-get-type"
+>seahorse_location_get_type</a>          (void);
+enum                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-types.html#SeahorseUsage"
+>SeahorseUsage</a>;
+<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a>               <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-types.html#seahorse-usage-get-type"
+>seahorse_usage_get_type</a>             (void);
+enum                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-types.html#SeahorseKeyFlags"
+>SeahorseKeyFlags</a>;
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-types.html#SEAHORSE-TAG-INVALID--CAPS"
+>SEAHORSE_TAG_INVALID</a>
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-seahorse-types.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-seahorse-types.details"></a><h2>Details</h2>
+<div class="refsect2" title="SEAHORSE_TYPE_LOCATION">
+<a name="SEAHORSE-TYPE-LOCATION--CAPS"></a><h3>SEAHORSE_TYPE_LOCATION</h3>
+<pre class="programlisting">#define SEAHORSE_TYPE_LOCATION (seahorse_location_get_type ())
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_TYPE_USAGE">
+<a name="SEAHORSE-TYPE-USAGE--CAPS"></a><h3>SEAHORSE_TYPE_USAGE</h3>
+<pre class="programlisting">#define SEAHORSE_TYPE_USAGE (seahorse_usage_get_type ())
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum SeahorseLocation">
+<a name="SeahorseLocation"></a><h3>enum SeahorseLocation</h3>
+<pre class="programlisting">typedef enum  {
+	SEAHORSE_LOCATION_INVALID = 0,
+	SEAHORSE_LOCATION_MISSING = 10,
+	SEAHORSE_LOCATION_SEARCHING = 20,
+	SEAHORSE_LOCATION_REMOTE = 50,
+	SEAHORSE_LOCATION_LOCAL = 100
+} SeahorseLocation;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_location_get_type ()">
+<a name="seahorse-location-get-type"></a><h3>seahorse_location_get_type ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a>               seahorse_location_get_type          (void);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum SeahorseUsage">
+<a name="SeahorseUsage"></a><h3>enum SeahorseUsage</h3>
+<pre class="programlisting">typedef enum  {
+	SEAHORSE_USAGE_NONE = 0,
+	SEAHORSE_USAGE_SYMMETRIC_KEY = 1,
+	SEAHORSE_USAGE_PUBLIC_KEY = 2,
+	SEAHORSE_USAGE_PRIVATE_KEY = 3,
+	SEAHORSE_USAGE_CREDENTIALS = 4,
+	SEAHORSE_USAGE_IDENTITY = 5,
+	SEAHORSE_USAGE_OTHER = 10
+} SeahorseUsage;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_usage_get_type ()">
+<a name="seahorse-usage-get-type"></a><h3>seahorse_usage_get_type ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a>               seahorse_usage_get_type             (void);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum SeahorseKeyFlags">
+<a name="SeahorseKeyFlags"></a><h3>enum SeahorseKeyFlags</h3>
+<pre class="programlisting">typedef enum {
+	SEAHORSE_FLAG_IS_VALID =    CRYPTUI_FLAG_IS_VALID,
+	SEAHORSE_FLAG_CAN_ENCRYPT = CRYPTUI_FLAG_CAN_ENCRYPT,
+	SEAHORSE_FLAG_CAN_SIGN =    CRYPTUI_FLAG_CAN_SIGN,
+	SEAHORSE_FLAG_EXPIRED =     CRYPTUI_FLAG_EXPIRED,
+	SEAHORSE_FLAG_REVOKED =     CRYPTUI_FLAG_REVOKED,
+	SEAHORSE_FLAG_DISABLED =    CRYPTUI_FLAG_DISABLED,
+	SEAHORSE_FLAG_TRUSTED =     CRYPTUI_FLAG_TRUSTED,
+	SEAHORSE_FLAG_EXPORTABLE =  CRYPTUI_FLAG_EXPORTABLE,
+	SEAHORSE_FLAG_DELETABLE = 0x10000000
+} SeahorseKeyFlags;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SEAHORSE_TAG_INVALID">
+<a name="SEAHORSE-TAG-INVALID--CAPS"></a><h3>SEAHORSE_TAG_INVALID</h3>
+<pre class="programlisting">#define SEAHORSE_TAG_INVALID               0
+</pre>
+<p>
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

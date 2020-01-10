@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SeahorseWidget</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libseahorse-seahorse-view.html" title="seahorse-view">
+<link rel="next" href="libseahorse-SeahorseUnknown.html" title="SeahorseUnknown">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libseahorse-seahorse-view.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-SeahorseUnknown.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-SeahorseWidget.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-SeahorseWidget.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="SeahorseWidget">
+<a name="libseahorse-SeahorseWidget"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-SeahorseWidget.top_of_page"></a>SeahorseWidget</span></h2>
+<p>SeahorseWidget</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-SeahorseWidget.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a>;
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a>*     <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#seahorse-widget-new"
+>seahorse_widget_new</a>                 (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html"
+>GtkWindow</a> *parent);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a>*     <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#seahorse-widget-new-allow-multiple"
+>seahorse_widget_new_allow_multiple</a>  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html"
+>GtkWindow</a> *parent);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a>*     <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#seahorse-widget-find"
+>seahorse_widget_find</a>                (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#seahorse-widget-get-name"
+>seahorse_widget_get_name</a>            (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget);
+<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWidget.html"
+>GtkWidget</a>*          <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#seahorse-widget-get-toplevel"
+>seahorse_widget_get_toplevel</a>        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget);
+<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWidget.html"
+>GtkWidget</a>*          <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#seahorse-widget-get-widget"
+>seahorse_widget_get_widget</a>          (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget,
+                                                         const char *identifier);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#seahorse-widget-show"
+>seahorse_widget_show</a>                (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#seahorse-widget-show-help"
+>seahorse_widget_show_help</a>           (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#seahorse-widget-set-visible"
+>seahorse_widget_set_visible</a>         (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget,
+                                                         const char *identifier,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> visible);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#seahorse-widget-set-sensitive"
+>seahorse_widget_set_sensitive</a>       (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget,
+                                                         const char *identifier,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> sensitive);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#seahorse-widget-destroy"
+>seahorse_widget_destroy</a>             (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-SeahorseWidget.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-SeahorseWidget.details"></a><h2>Details</h2>
+<div class="refsect2" title="SeahorseWidget">
+<a name="SeahorseWidget"></a><h3>SeahorseWidget</h3>
+<pre class="programlisting">typedef struct {
+    GtkObject parent;
+
+    GtkBuilder *gtkbuilder;
+    gchar *name;
+} SeahorseWidget;
+</pre>
+<p>
+A window created from a gtkbuilder file.
+</p>
+<p>
+- All SeahorseWidget objects are destroyed when the SeahorseContext
+  goes bye-bye.
+- Implements fun GtkUIManager stuff.
+</p>
+<p>
+Signals:
+  destroy: The window was destroyed.
+</p>
+<p>
+Properties:
+  name: (gchar*) The name of the gtkbuilder file to load.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/gtk/unstable/GtkObject.html"
+>GtkObject</a> <em class="structfield"><code>parent</code></em>;</span></p></td>
+<td> The parent <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkObject.html"
+><span class="type">GtkObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/gtk/unstable/GtkBuilder.html"
+>GtkBuilder</a> *<em class="structfield"><code>gtkbuilder</code></em>;</span></p></td>
+<td> The <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkBuilder.html"
+><span class="type">GtkBuilder</span></a> object for the <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+><span class="type">SeahorseWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>name</code></em>;</span></p></td>
+<td> The name of the gtkbuilder file
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_widget_new ()">
+<a name="seahorse-widget-new"></a><h3>seahorse_widget_new ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a>*     seahorse_widget_new                 (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html"
+>GtkWindow</a> *parent);</pre>
+<p>
+Creates a new <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+><span class="type">SeahorseWidget</span></a>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> Name of widget, filename part of gtkbuilder file, and name of main window
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td> GtkWindow to make the parent of the new swidget
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The new <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+><span class="type">SeahorseWidget</span></a>, or NULL if the widget already exists
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_widget_new_allow_multiple ()">
+<a name="seahorse-widget-new-allow-multiple"></a><h3>seahorse_widget_new_allow_multiple ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a>*     seahorse_widget_new_allow_multiple  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html"
+>GtkWindow</a> *parent);</pre>
+<p>
+Creates a new <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+><span class="type">SeahorseWidget</span></a> without checking if it already exists.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> Name of widget, filename part of gtkbuilder file, and name of main window
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td> GtkWindow to make the parent of the new swidget
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The new <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+><span class="type">SeahorseWidget</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_widget_find ()">
+<a name="seahorse-widget-find"></a><h3>seahorse_widget_find ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a>*     seahorse_widget_find                (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_widget_get_name ()">
+<a name="seahorse-widget-get-name"></a><h3>seahorse_widget_get_name ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        seahorse_widget_get_name            (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>swidget</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_widget_get_toplevel ()">
+<a name="seahorse-widget-get-toplevel"></a><h3>seahorse_widget_get_toplevel ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWidget.html"
+>GtkWidget</a>*          seahorse_widget_get_toplevel        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget);</pre>
+<p>
+Return the top level widget in this seahorse widget</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>swidget</code></em> :</span></p></td>
+<td> The seahorse widget
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The top level widget
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_widget_get_widget ()">
+<a name="seahorse-widget-get-widget"></a><h3>seahorse_widget_get_widget ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWidget.html"
+>GtkWidget</a>*          seahorse_widget_get_widget          (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget,
+                                                         const char *identifier);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>swidget</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+><span class="type">SeahorseWidget</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>identifier</code></em> :</span></p></td>
+<td> the name of the widget to get
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the widget named <em class="parameter"><code>identifier</code></em> in <em class="parameter"><code>swidget</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_widget_show ()">
+<a name="seahorse-widget-show"></a><h3>seahorse_widget_show ()</h3>
+<pre class="programlisting">void                seahorse_widget_show                (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget);</pre>
+<p>
+Show the toplevel widget in the gtkbuilder file.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>swidget</code></em> :</span></p></td>
+<td> <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+><span class="type">SeahorseWidget</span></a> to show
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_widget_show_help ()">
+<a name="seahorse-widget-show-help"></a><h3>seahorse_widget_show_help ()</h3>
+<pre class="programlisting">void                seahorse_widget_show_help           (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget);</pre>
+<p>
+Show help appropriate for the top level widget.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>swidget</code></em> :</span></p></td>
+<td> The <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+><span class="type">SeahorseWidget</span></a>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_widget_set_visible ()">
+<a name="seahorse-widget-set-visible"></a><h3>seahorse_widget_set_visible ()</h3>
+<pre class="programlisting">void                seahorse_widget_set_visible         (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget,
+                                                         const char *identifier,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> visible);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>swidget</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>identifier</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>visible</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_widget_set_sensitive ()">
+<a name="seahorse-widget-set-sensitive"></a><h3>seahorse_widget_set_sensitive ()</h3>
+<pre class="programlisting">void                seahorse_widget_set_sensitive       (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget,
+                                                         const char *identifier,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> sensitive);</pre>
+<p>
+Sets the widget <em class="parameter"><code>identifier</code></em> 's sensitivity to <em class="parameter"><code>sensitive</code></em></p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>swidget</code></em> :</span></p></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+><span class="type">SeahorseWidget</span></a> to find the widget <em class="parameter"><code>identifier</code></em> in
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>identifier</code></em> :</span></p></td>
+<td> the name of the widget to et sensitive
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sensitive</code></em> :</span></p></td>
+<td> TRUE if the widget should be switched to sensitive
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_widget_destroy ()">
+<a name="seahorse-widget-destroy"></a><h3>seahorse_widget_destroy ()</h3>
+<pre class="programlisting">void                seahorse_widget_destroy             (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+>SeahorseWidget</a> *swidget);</pre>
+<p>
+Unrefs <em class="parameter"><code>swidget</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>swidget</code></em> :</span></p></td>
+<td> <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html#SeahorseWidget"
+><span class="type">SeahorseWidget</span></a> to destroy
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

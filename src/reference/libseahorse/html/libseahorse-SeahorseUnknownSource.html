@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SeahorseUnknownSource</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="ch01.html" title="[Insert title here]">
+<link rel="next" href="libseahorse-SeahorseObjectModel.html" title="SeahorseObjectModel">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-SeahorseObjectModel.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-SeahorseUnknownSource.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-SeahorseUnknownSource.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="SeahorseUnknownSource">
+<a name="libseahorse-SeahorseUnknownSource"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-SeahorseUnknownSource.top_of_page"></a>SeahorseUnknownSource</span></h2>
+<p>SeahorseUnknownSource</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-SeahorseUnknownSource.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseUnknownSource.html#SeahorseUnknownSourcePrivate"
+>SeahorseUnknownSourcePrivate</a>;
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseUnknownSource.html#SeahorseUnknownSource"
+>SeahorseUnknownSource</a>;
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseUnknownSource.html#SeahorseUnknownSource"
+>SeahorseUnknownSource</a>* <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseUnknownSource.html#seahorse-unknown-source-new"
+>seahorse_unknown_source_new</a>      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a> ktype);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a>*     <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseUnknownSource.html#seahorse-unknown-source-add-object"
+>seahorse_unknown_source_add_object</a>  (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseUnknownSource.html#SeahorseUnknownSource"
+>SeahorseUnknownSource</a> *usrc,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a> id,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *search);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-SeahorseUnknownSource.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-SeahorseUnknownSource.details"></a><h2>Details</h2>
+<div class="refsect2" title="SeahorseUnknownSourcePrivate">
+<a name="SeahorseUnknownSourcePrivate"></a><h3>SeahorseUnknownSourcePrivate</h3>
+<pre class="programlisting">typedef struct _SeahorseUnknownSourcePrivate SeahorseUnknownSourcePrivate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SeahorseUnknownSource">
+<a name="SeahorseUnknownSource"></a><h3>SeahorseUnknownSource</h3>
+<pre class="programlisting">typedef struct {
+	GObject parent;
+	GQuark ktype;
+} SeahorseUnknownSource;
+</pre>
+<p>
+A  source for unknown objects
+</p>
+<p>
+- Derived from SeahorseSource
+- Is used for objects that haven't been found on a key server.
+</p>
+<p>
+Properties:
+ ktype: (GQuark) The ktype (ie: SKEY_UNKNOWN) of keys originating from this
+           key source.
+ location: (SeahorseLocation) The location of objects that come from this
+        source. (ie: SEAHORSE_LOCATION_MISSING)</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a> <em class="structfield"><code>parent</code></em>;</span></p></td>
+<td> The parent <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+><span class="type">GObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a> <em class="structfield"><code>ktype</code></em>;</span></p></td>
+<td> The <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+><span class="type">GQuark</span></a> key type for the source
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_unknown_source_new ()">
+<a name="seahorse-unknown-source-new"></a><h3>seahorse_unknown_source_new ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseUnknownSource.html#SeahorseUnknownSource"
+>SeahorseUnknownSource</a>* seahorse_unknown_source_new      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a> ktype);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ktype</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_unknown_source_add_object ()">
+<a name="seahorse-unknown-source-add-object"></a><h3>seahorse_unknown_source_add_object ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a>*     seahorse_unknown_source_add_object  (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseUnknownSource.html#SeahorseUnknownSource"
+>SeahorseUnknownSource</a> *usrc,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a> id,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a> *search);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>usrc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>search</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

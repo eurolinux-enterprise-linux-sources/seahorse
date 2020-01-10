@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SeahorseObjectModel</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libseahorse-SeahorseUnknownSource.html" title="SeahorseUnknownSource">
+<link rel="next" href="libseahorse-seahorse-source.html" title="seahorse-source">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libseahorse-SeahorseUnknownSource.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-seahorse-source.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-SeahorseObjectModel.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-SeahorseObjectModel.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="SeahorseObjectModel">
+<a name="libseahorse-SeahorseObjectModel"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-SeahorseObjectModel.top_of_page"></a>SeahorseObjectModel</span></h2>
+<p>SeahorseObjectModel</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-SeahorseObjectModel.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a>;
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a>* <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#seahorse-object-model-new"
+>seahorse_object_model_new</a>          (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> n_columns,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> *types);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#seahorse-object-model-set-column-types"
+>seahorse_object_model_set_column_types</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a> *self,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> n_columns,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> *types);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#seahorse-object-model-set-row-object"
+>seahorse_object_model_set_row_object</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a> *self,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkTreeModel.html#GtkTreeIter"
+>GtkTreeIter</a> *iter,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a> *object);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a>*     <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#seahorse-object-model-get-row-key"
+>seahorse_object_model_get_row_key</a>   (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a> *self,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkTreeModel.html#GtkTreeIter"
+>GtkTreeIter</a> *iter);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#seahorse-object-model-get-rows-for-object"
+>seahorse_object_model_get_rows_for_object</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a> *object);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#seahorse-object-model-remove-rows-for-object"
+>seahorse_object_model_remove_rows_for_object</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a> *object);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#seahorse-object-model-free-rows"
+>seahorse_object_model_free_rows</a>     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *rows);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-SeahorseObjectModel.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-SeahorseObjectModel.details"></a><h2>Details</h2>
+<div class="refsect2" title="SeahorseObjectModel">
+<a name="SeahorseObjectModel"></a><h3>SeahorseObjectModel</h3>
+<pre class="programlisting">typedef struct {
+    GtkTreeStore parent;
+} SeahorseObjectModel;
+</pre>
+<p>
+A GtkTreeModel that can assign certain rows as
+'key rows' which are updated when a key is updated.
+</p>
+<p>
+Signals:
+  update-row: A request to update a row</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/gtk/unstable/GtkTreeStore.html"
+>GtkTreeStore</a> <em class="structfield"><code>parent</code></em>;</span></p></td>
+<td> The parent <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkTreeStore.html"
+><span class="type">GtkTreeStore</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_object_model_new ()">
+<a name="seahorse-object-model-new"></a><h3>seahorse_object_model_new ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a>* seahorse_object_model_new          (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> n_columns,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> *types);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_columns</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>types</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_object_model_set_column_types ()">
+<a name="seahorse-object-model-set-column-types"></a><h3>seahorse_object_model_set_column_types ()</h3>
+<pre class="programlisting">void                seahorse_object_model_set_column_types
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a> *self,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> n_columns,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> *types);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_columns</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>types</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_object_model_set_row_object ()">
+<a name="seahorse-object-model-set-row-object"></a><h3>seahorse_object_model_set_row_object ()</h3>
+<pre class="programlisting">void                seahorse_object_model_set_row_object
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a> *self,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkTreeModel.html#GtkTreeIter"
+>GtkTreeIter</a> *iter,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a> *object);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>iter</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_object_model_get_row_key ()">
+<a name="seahorse-object-model-get-row-key"></a><h3>seahorse_object_model_get_row_key ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a>*     seahorse_object_model_get_row_key   (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a> *self,
+                                                         <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkTreeModel.html#GtkTreeIter"
+>GtkTreeIter</a> *iter);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>iter</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_object_model_get_rows_for_object ()">
+<a name="seahorse-object-model-get-rows-for-object"></a><h3>seahorse_object_model_get_rows_for_object ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             seahorse_object_model_get_rows_for_object
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a> *object);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_object_model_remove_rows_for_object ()">
+<a name="seahorse-object-model-remove-rows-for-object"></a><h3>seahorse_object_model_remove_rows_for_object ()</h3>
+<pre class="programlisting">void                seahorse_object_model_remove_rows_for_object
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html#SeahorseObjectModel"
+>SeahorseObjectModel</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseObject.html#SeahorseObject"
+>SeahorseObject</a> *object);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_object_model_free_rows ()">
+<a name="seahorse-object-model-free-rows"></a><h3>seahorse_object_model_free_rows ()</h3>
+<pre class="programlisting">void                seahorse_object_model_free_rows     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *rows);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>rows</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

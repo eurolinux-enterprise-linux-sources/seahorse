@@ -1,0 +1,67 @@
+<refentry id="libseahorse-SeahorseXxx">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-SeahorseXxx.top_of_page">SeahorseXxx</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SeahorseXxx</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-SeahorseXxx.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SeahorseXxxPrivate">SeahorseXxxPrivate</link>;
+                    <link linkend="SeahorseXxx">SeahorseXxx</link>;
+<link linkend="SeahorseXxx">SeahorseXxx</link>*        <link linkend="seahorse-xxx-new">seahorse_xxx_new</link>                    (void);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-SeahorseXxx.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-SeahorseXxx.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SeahorseXxxPrivate" role="struct">
+<title>SeahorseXxxPrivate</title>
+<indexterm zone="SeahorseXxxPrivate"><primary sortas="XxxPrivate">SeahorseXxxPrivate</primary></indexterm><programlisting>typedef struct _SeahorseXxxPrivate SeahorseXxxPrivate;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SeahorseXxx" role="struct">
+<title>SeahorseXxx</title>
+<indexterm zone="SeahorseXxx"><primary sortas="Xxx">SeahorseXxx</primary></indexterm><programlisting>typedef struct {
+	GObject parent;
+	SeahorseXxxPrivate *pv;
+} SeahorseXxx;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-xxx-new" role="function">
+<title>seahorse_xxx_new ()</title>
+<indexterm zone="seahorse-xxx-new"><primary sortas="xxx_new">seahorse_xxx_new</primary></indexterm><programlisting><link linkend="SeahorseXxx">SeahorseXxx</link>*        seahorse_xxx_new                    (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

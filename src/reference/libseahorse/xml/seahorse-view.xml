@@ -1,0 +1,245 @@
+<refentry id="libseahorse-seahorse-view">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-view.top_of_page">seahorse-view</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-view</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-view.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SeahorseCommands">SeahorseCommands</link>;
+#define             <link linkend="SEAHORSE-VIEW-GET-INTERFACE--CAPS">SEAHORSE_VIEW_GET_INTERFACE</link>         (obj)
+                    <link linkend="SeahorseView">SeahorseView</link>;
+                    <link linkend="SeahorseViewIface">SeahorseViewIface</link>;
+<link linkend="GList">GList</link>*              <link linkend="seahorse-view-get-selected-objects">seahorse_view_get_selected_objects</link>  (<link linkend="SeahorseView">SeahorseView</link> *self);
+<link linkend="void">void</link>                <link linkend="seahorse-view-set-selected-objects">seahorse_view_set_selected_objects</link>  (<link linkend="SeahorseView">SeahorseView</link> *self,
+                                                         <link linkend="GList">GList</link> *objects);
+<link linkend="GList">GList</link>*              <link linkend="seahorse-view-get-selected-matching">seahorse_view_get_selected_matching</link> (<link linkend="SeahorseView">SeahorseView</link> *self,
+                                                         <link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link> *pred);
+<link linkend="SeahorseObject">SeahorseObject</link>*     <link linkend="seahorse-view-get-selected">seahorse_view_get_selected</link>          (<link linkend="SeahorseView">SeahorseView</link> *self);
+<link linkend="void">void</link>                <link linkend="seahorse-view-set-selected">seahorse_view_set_selected</link>          (<link linkend="SeahorseView">SeahorseView</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *value);
+<link linkend="SeahorseSet">SeahorseSet</link>*        <link linkend="seahorse-view-get-current-set">seahorse_view_get_current_set</link>       (<link linkend="SeahorseView">SeahorseView</link> *self);
+<link linkend="GtkWindow">GtkWindow</link>*          <link linkend="seahorse-view-get-window">seahorse_view_get_window</link>            (<link linkend="SeahorseView">SeahorseView</link> *self);
+<link linkend="void">void</link>                <link linkend="seahorse-view-register-ui">seahorse_view_register_ui</link>           (<link linkend="SeahorseView">SeahorseView</link> *self,
+                                                         <link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link> *pred,
+                                                         const <link linkend="gchar">gchar</link> *ui_definition,
+                                                         <link linkend="GtkActionGroup">GtkActionGroup</link> *actions);
+<link linkend="void">void</link>                <link linkend="seahorse-view-register-commands">seahorse_view_register_commands</link>     (<link linkend="SeahorseView">SeahorseView</link> *self,
+                                                         <link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link> *pred,
+                                                         <link linkend="SeahorseCommands">SeahorseCommands</link> *commands);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-view.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-view.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SeahorseCommands" role="struct">
+<title>SeahorseCommands</title>
+<indexterm zone="SeahorseCommands"><primary sortas="Commands">SeahorseCommands</primary></indexterm><programlisting>typedef struct {
+	GObject parent_instance;
+	SeahorseCommandsPrivate *pv;
+} SeahorseCommands;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-VIEW-GET-INTERFACE--CAPS" role="macro">
+<title>SEAHORSE_VIEW_GET_INTERFACE()</title>
+<indexterm zone="SEAHORSE-VIEW-GET-INTERFACE--CAPS"><primary sortas="VIEW_GET_INTERFACE">SEAHORSE_VIEW_GET_INTERFACE</primary></indexterm><programlisting>#define SEAHORSE_VIEW_GET_INTERFACE(obj)   (G_TYPE_INSTANCE_GET_INTERFACE ((obj), SEAHORSE_TYPE_VIEW, SeahorseViewIface))
+</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>obj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseView" role="struct">
+<title>SeahorseView</title>
+<indexterm zone="SeahorseView"><primary sortas="View">SeahorseView</primary></indexterm><programlisting>typedef struct _SeahorseView SeahorseView;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SeahorseViewIface" role="struct">
+<title>SeahorseViewIface</title>
+<indexterm zone="SeahorseViewIface"><primary sortas="ViewIface">SeahorseViewIface</primary></indexterm><programlisting>typedef struct {
+	GTypeInterface parent_iface;
+
+	/* virtual metdods */
+	GList*          (*get_selected_objects)   (SeahorseView *self);
+	
+	void            (*set_selected_objects)   (SeahorseView *self, 
+	                                           GList *objects);
+	
+	GList*          (*get_selected_matching)  (SeahorseView *self, 
+	                                           SeahorseObjectPredicate *pred);
+	
+	SeahorseObject* (*get_selected)           (SeahorseView *self);
+	
+	void            (*set_selected)           (SeahorseView *self, 
+	                                           SeahorseObject *value);
+	
+	SeahorseSet*    (*get_current_set)        (SeahorseView *self);
+	
+	GtkWindow*      (*get_window)             (SeahorseView *self);
+	
+	void            (*register_commands)      (SeahorseView *self, 
+	                                           SeahorseObjectPredicate *pred,
+	                                           SeahorseCommands *commands);
+	
+	void            (*register_ui)            (SeahorseView *self, 
+	                                           SeahorseObjectPredicate *pred, 
+	                                           const gchar *ui_definition, 
+	                                           GtkActionGroup *actions);
+} SeahorseViewIface;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-view-get-selected-objects" role="function">
+<title>seahorse_view_get_selected_objects ()</title>
+<indexterm zone="seahorse-view-get-selected-objects"><primary sortas="view_get_selected_objects">seahorse_view_get_selected_objects</primary></indexterm><programlisting><link linkend="GList">GList</link>*              seahorse_view_get_selected_objects  (<link linkend="SeahorseView">SeahorseView</link> *self);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-view-set-selected-objects" role="function">
+<title>seahorse_view_set_selected_objects ()</title>
+<indexterm zone="seahorse-view-set-selected-objects"><primary sortas="view_set_selected_objects">seahorse_view_set_selected_objects</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_view_set_selected_objects  (<link linkend="SeahorseView">SeahorseView</link> *self,
+                                                         <link linkend="GList">GList</link> *objects);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>objects</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-view-get-selected-matching" role="function">
+<title>seahorse_view_get_selected_matching ()</title>
+<indexterm zone="seahorse-view-get-selected-matching"><primary sortas="view_get_selected_matching">seahorse_view_get_selected_matching</primary></indexterm><programlisting><link linkend="GList">GList</link>*              seahorse_view_get_selected_matching (<link linkend="SeahorseView">SeahorseView</link> *self,
+                                                         <link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link> *pred);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pred</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-view-get-selected" role="function">
+<title>seahorse_view_get_selected ()</title>
+<indexterm zone="seahorse-view-get-selected"><primary sortas="view_get_selected">seahorse_view_get_selected</primary></indexterm><programlisting><link linkend="SeahorseObject">SeahorseObject</link>*     seahorse_view_get_selected          (<link linkend="SeahorseView">SeahorseView</link> *self);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-view-set-selected" role="function">
+<title>seahorse_view_set_selected ()</title>
+<indexterm zone="seahorse-view-set-selected"><primary sortas="view_set_selected">seahorse_view_set_selected</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_view_set_selected          (<link linkend="SeahorseView">SeahorseView</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *value);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-view-get-current-set" role="function">
+<title>seahorse_view_get_current_set ()</title>
+<indexterm zone="seahorse-view-get-current-set"><primary sortas="view_get_current_set">seahorse_view_get_current_set</primary></indexterm><programlisting><link linkend="SeahorseSet">SeahorseSet</link>*        seahorse_view_get_current_set       (<link linkend="SeahorseView">SeahorseView</link> *self);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-view-get-window" role="function">
+<title>seahorse_view_get_window ()</title>
+<indexterm zone="seahorse-view-get-window"><primary sortas="view_get_window">seahorse_view_get_window</primary></indexterm><programlisting><link linkend="GtkWindow">GtkWindow</link>*          seahorse_view_get_window            (<link linkend="SeahorseView">SeahorseView</link> *self);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-view-register-ui" role="function">
+<title>seahorse_view_register_ui ()</title>
+<indexterm zone="seahorse-view-register-ui"><primary sortas="view_register_ui">seahorse_view_register_ui</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_view_register_ui           (<link linkend="SeahorseView">SeahorseView</link> *self,
+                                                         <link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link> *pred,
+                                                         const <link linkend="gchar">gchar</link> *ui_definition,
+                                                         <link linkend="GtkActionGroup">GtkActionGroup</link> *actions);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pred</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ui_definition</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>actions</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-view-register-commands" role="function">
+<title>seahorse_view_register_commands ()</title>
+<indexterm zone="seahorse-view-register-commands"><primary sortas="view_register_commands">seahorse_view_register_commands</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_view_register_commands     (<link linkend="SeahorseView">SeahorseView</link> *self,
+                                                         <link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link> *pred,
+                                                         <link linkend="SeahorseCommands">SeahorseCommands</link> *commands);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pred</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>commands</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

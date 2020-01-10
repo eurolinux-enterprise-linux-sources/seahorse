@@ -1,0 +1,258 @@
+<refentry id="libseahorse-SeahorseWidget">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-SeahorseWidget.top_of_page">SeahorseWidget</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SeahorseWidget</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-SeahorseWidget.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SeahorseWidget">SeahorseWidget</link>;
+<link linkend="SeahorseWidget">SeahorseWidget</link>*     <link linkend="seahorse-widget-new">seahorse_widget_new</link>                 (const <link linkend="gchar">gchar</link> *name,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent);
+<link linkend="SeahorseWidget">SeahorseWidget</link>*     <link linkend="seahorse-widget-new-allow-multiple">seahorse_widget_new_allow_multiple</link>  (const <link linkend="gchar">gchar</link> *name,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent);
+<link linkend="SeahorseWidget">SeahorseWidget</link>*     <link linkend="seahorse-widget-find">seahorse_widget_find</link>                (const <link linkend="gchar">gchar</link> *name);
+const <link linkend="gchar">gchar</link>*        <link linkend="seahorse-widget-get-name">seahorse_widget_get_name</link>            (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="seahorse-widget-get-toplevel">seahorse_widget_get_toplevel</link>        (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="seahorse-widget-get-widget">seahorse_widget_get_widget</link>          (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         const <link linkend="char">char</link> *identifier);
+<link linkend="void">void</link>                <link linkend="seahorse-widget-show">seahorse_widget_show</link>                (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget);
+<link linkend="void">void</link>                <link linkend="seahorse-widget-show-help">seahorse_widget_show_help</link>           (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget);
+<link linkend="void">void</link>                <link linkend="seahorse-widget-set-visible">seahorse_widget_set_visible</link>         (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         const <link linkend="char">char</link> *identifier,
+                                                         <link linkend="gboolean">gboolean</link> visible);
+<link linkend="void">void</link>                <link linkend="seahorse-widget-set-sensitive">seahorse_widget_set_sensitive</link>       (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         const <link linkend="char">char</link> *identifier,
+                                                         <link linkend="gboolean">gboolean</link> sensitive);
+<link linkend="void">void</link>                <link linkend="seahorse-widget-destroy">seahorse_widget_destroy</link>             (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-SeahorseWidget.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-SeahorseWidget.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SeahorseWidget" role="struct">
+<title>SeahorseWidget</title>
+<indexterm zone="SeahorseWidget"><primary sortas="Widget">SeahorseWidget</primary></indexterm><programlisting>typedef struct {
+    GtkObject parent;
+
+    GtkBuilder *gtkbuilder;
+    gchar *name;
+} SeahorseWidget;
+</programlisting>
+<para>
+A window created from a gtkbuilder file.
+</para>
+<para>
+- All SeahorseWidget objects are destroyed when the SeahorseContext
+  goes bye-bye.
+- Implements fun GtkUIManager stuff.
+</para>
+<para>
+Signals:
+  destroy: The window was destroyed.
+</para>
+<para>
+Properties:
+  name: (gchar*) The name of the gtkbuilder file to load.</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GtkObject">GtkObject</link>&#160;<structfield>parent</structfield>;</term>
+<listitem><simpara> The parent <link linkend="GtkObject"><type>GtkObject</type></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkBuilder">GtkBuilder</link>&#160;*<structfield>gtkbuilder</structfield>;</term>
+<listitem><simpara> The <link linkend="GtkBuilder"><type>GtkBuilder</type></link> object for the <link linkend="SeahorseWidget"><type>SeahorseWidget</type></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>name</structfield>;</term>
+<listitem><simpara> The name of the gtkbuilder file
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-widget-new" role="function">
+<title>seahorse_widget_new ()</title>
+<indexterm zone="seahorse-widget-new"><primary sortas="widget_new">seahorse_widget_new</primary></indexterm><programlisting><link linkend="SeahorseWidget">SeahorseWidget</link>*     seahorse_widget_new                 (const <link linkend="gchar">gchar</link> *name,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent);</programlisting>
+<para>
+Creates a new <link linkend="SeahorseWidget"><type>SeahorseWidget</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> Name of widget, filename part of gtkbuilder file, and name of main window
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> GtkWindow to make the parent of the new swidget
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The new <link linkend="SeahorseWidget"><type>SeahorseWidget</type></link>, or NULL if the widget already exists
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-widget-new-allow-multiple" role="function">
+<title>seahorse_widget_new_allow_multiple ()</title>
+<indexterm zone="seahorse-widget-new-allow-multiple"><primary sortas="widget_new_allow_multiple">seahorse_widget_new_allow_multiple</primary></indexterm><programlisting><link linkend="SeahorseWidget">SeahorseWidget</link>*     seahorse_widget_new_allow_multiple  (const <link linkend="gchar">gchar</link> *name,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent);</programlisting>
+<para>
+Creates a new <link linkend="SeahorseWidget"><type>SeahorseWidget</type></link> without checking if it already exists.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> Name of widget, filename part of gtkbuilder file, and name of main window
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> GtkWindow to make the parent of the new swidget
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The new <link linkend="SeahorseWidget"><type>SeahorseWidget</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-widget-find" role="function">
+<title>seahorse_widget_find ()</title>
+<indexterm zone="seahorse-widget-find"><primary sortas="widget_find">seahorse_widget_find</primary></indexterm><programlisting><link linkend="SeahorseWidget">SeahorseWidget</link>*     seahorse_widget_find                (const <link linkend="gchar">gchar</link> *name);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-widget-get-name" role="function">
+<title>seahorse_widget_get_name ()</title>
+<indexterm zone="seahorse-widget-get-name"><primary sortas="widget_get_name">seahorse_widget_get_name</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        seahorse_widget_get_name            (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>swidget</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-widget-get-toplevel" role="function">
+<title>seahorse_widget_get_toplevel ()</title>
+<indexterm zone="seahorse-widget-get-toplevel"><primary sortas="widget_get_toplevel">seahorse_widget_get_toplevel</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          seahorse_widget_get_toplevel        (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget);</programlisting>
+<para>
+Return the top level widget in this seahorse widget</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>swidget</parameter>&#160;:</term>
+<listitem><simpara> The seahorse widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The top level widget
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-widget-get-widget" role="function">
+<title>seahorse_widget_get_widget ()</title>
+<indexterm zone="seahorse-widget-get-widget"><primary sortas="widget_get_widget">seahorse_widget_get_widget</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          seahorse_widget_get_widget          (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         const <link linkend="char">char</link> *identifier);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>swidget</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SeahorseWidget"><type>SeahorseWidget</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>identifier</parameter>&#160;:</term>
+<listitem><simpara> the name of the widget to get
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the widget named <parameter>identifier</parameter> in <parameter>swidget</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-widget-show" role="function">
+<title>seahorse_widget_show ()</title>
+<indexterm zone="seahorse-widget-show"><primary sortas="widget_show">seahorse_widget_show</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_widget_show                (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget);</programlisting>
+<para>
+Show the toplevel widget in the gtkbuilder file.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>swidget</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="SeahorseWidget"><type>SeahorseWidget</type></link> to show
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-widget-show-help" role="function">
+<title>seahorse_widget_show_help ()</title>
+<indexterm zone="seahorse-widget-show-help"><primary sortas="widget_show_help">seahorse_widget_show_help</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_widget_show_help           (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget);</programlisting>
+<para>
+Show help appropriate for the top level widget.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>swidget</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="SeahorseWidget"><type>SeahorseWidget</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-widget-set-visible" role="function">
+<title>seahorse_widget_set_visible ()</title>
+<indexterm zone="seahorse-widget-set-visible"><primary sortas="widget_set_visible">seahorse_widget_set_visible</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_widget_set_visible         (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         const <link linkend="char">char</link> *identifier,
+                                                         <link linkend="gboolean">gboolean</link> visible);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>swidget</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>identifier</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>visible</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-widget-set-sensitive" role="function">
+<title>seahorse_widget_set_sensitive ()</title>
+<indexterm zone="seahorse-widget-set-sensitive"><primary sortas="widget_set_sensitive">seahorse_widget_set_sensitive</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_widget_set_sensitive       (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget,
+                                                         const <link linkend="char">char</link> *identifier,
+                                                         <link linkend="gboolean">gboolean</link> sensitive);</programlisting>
+<para>
+Sets the widget <parameter>identifier</parameter> 's sensitivity to <parameter>sensitive</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>swidget</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="SeahorseWidget"><type>SeahorseWidget</type></link> to find the widget <parameter>identifier</parameter> in
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>identifier</parameter>&#160;:</term>
+<listitem><simpara> the name of the widget to et sensitive
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sensitive</parameter>&#160;:</term>
+<listitem><simpara> TRUE if the widget should be switched to sensitive
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-widget-destroy" role="function">
+<title>seahorse_widget_destroy ()</title>
+<indexterm zone="seahorse-widget-destroy"><primary sortas="widget_destroy">seahorse_widget_destroy</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_widget_destroy             (<link linkend="SeahorseWidget">SeahorseWidget</link> *swidget);</programlisting>
+<para>
+Unrefs <parameter>swidget</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>swidget</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="SeahorseWidget"><type>SeahorseWidget</type></link> to destroy
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

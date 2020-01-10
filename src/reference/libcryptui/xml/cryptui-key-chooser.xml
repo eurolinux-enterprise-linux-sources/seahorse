@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml"> 
+]>
+<refentry id="libcryptui-CryptUIKeyChooser">
+<refmeta>
+<refentrytitle role="top_of_page" id="libcryptui-CryptUIKeyChooser.top_of_page">CryptUIKeyChooser</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBCRYPTUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>CryptUIKeyChooser</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libcryptui-CryptUIKeyChooser.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+enum                <link linkend="CryptUIKeyChooserMode">CryptUIKeyChooserMode</link>;
+                    <link linkend="CryptUIKeyChooserPriv">CryptUIKeyChooserPriv</link>;
+                    <link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link>;
+<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link>*  <link linkend="cryptui-key-chooser-new">cryptui_key_chooser_new</link>             (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *ckset,
+                                                         <link linkend="CryptUIKeyChooserMode">CryptUIKeyChooserMode</link> mode);
+<link linkend="gboolean">gboolean</link>            <link linkend="cryptui-key-chooser-get-enforce-prefs">cryptui_key_chooser_get_enforce_prefs</link>
+                                                        (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser);
+<link linkend="void">void</link>                <link linkend="cryptui-key-chooser-set-enforce-prefs">cryptui_key_chooser_set_enforce_prefs</link>
+                                                        (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser,
+                                                         <link linkend="gboolean">gboolean</link> enforce_prefs);
+<link linkend="gboolean">gboolean</link>            <link linkend="cryptui-key-chooser-have-recipients">cryptui_key_chooser_have_recipients</link> (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser);
+<link linkend="GList">GList</link>*              <link linkend="cryptui-key-chooser-get-recipients">cryptui_key_chooser_get_recipients</link>  (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser);
+<link linkend="void">void</link>                <link linkend="cryptui-key-chooser-set-recipients">cryptui_key_chooser_set_recipients</link>  (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser,
+                                                         <link linkend="GList">GList</link> *keys);
+const <link linkend="gchar">gchar</link>*        <link linkend="cryptui-key-chooser-get-signer">cryptui_key_chooser_get_signer</link>      (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser);
+<link linkend="void">void</link>                <link linkend="cryptui-key-chooser-set-signer">cryptui_key_chooser_set_signer</link>      (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser,
+                                                         const <link linkend="gchar">gchar</link> *key);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libcryptui-CryptUIKeyChooser.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libcryptui-CryptUIKeyChooser.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="CryptUIKeyChooserMode" role="enum">
+<title>enum CryptUIKeyChooserMode</title>
+<indexterm zone="CryptUIKeyChooserMode"><primary sortas="KeyChooserMode">CryptUIKeyChooserMode</primary></indexterm><programlisting>typedef enum _CryptUIKeyChooserMode {
+    CRYPTUI_KEY_CHOOSER_RECIPIENTS =    0x0001,
+    CRYPTUI_KEY_CHOOSER_SIGNER =        0x0002,
+    
+    CRYPTUI_KEY_CHOOSER_MUSTSIGN =      0x0010
+} CryptUIKeyChooserMode;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="CryptUIKeyChooserPriv" role="struct">
+<title>CryptUIKeyChooserPriv</title>
+<indexterm zone="CryptUIKeyChooserPriv"><primary sortas="KeyChooserPriv">CryptUIKeyChooserPriv</primary></indexterm><programlisting>typedef struct _CryptUIKeyChooserPriv CryptUIKeyChooserPriv;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="CryptUIKeyChooser" role="struct">
+<title>CryptUIKeyChooser</title>
+<indexterm zone="CryptUIKeyChooser"><primary sortas="KeyChooser">CryptUIKeyChooser</primary></indexterm><programlisting>typedef struct {
+    GtkVBox               parent;
+} CryptUIKeyChooser;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cryptui-key-chooser-new" role="function">
+<title>cryptui_key_chooser_new ()</title>
+<indexterm zone="cryptui-key-chooser-new"><primary sortas="key_chooser_new">cryptui_key_chooser_new</primary></indexterm><programlisting><link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link>*  cryptui_key_chooser_new             (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *ckset,
+                                                         <link linkend="CryptUIKeyChooserMode">CryptUIKeyChooserMode</link> mode);</programlisting>
+<para>
+Creates a key chooser widget from a key set.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>ckset</parameter>&#160;:</term>
+<listitem><simpara> key set to choose keys from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mode</parameter>&#160;:</term>
+<listitem><simpara> how to display the signer portion of the widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a key shooser widget
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-chooser-get-enforce-prefs" role="function">
+<title>cryptui_key_chooser_get_enforce_prefs ()</title>
+<indexterm zone="cryptui-key-chooser-get-enforce-prefs"><primary sortas="key_chooser_get_enforce_prefs">cryptui_key_chooser_get_enforce_prefs</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            cryptui_key_chooser_get_enforce_prefs
+                                                        (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser);</programlisting>
+<para>
+Gets whether or not the preference to encrypt to self will be enforced.  If
+TRUE, the default signing key will be added to the recipient list.  If FALSE,
+the selected recipients will be returned without adding the default signing
+key.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>chooser</parameter>&#160;:</term>
+<listitem><simpara> the key chooser widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether or not the default signing key will be included in the
+         recipients even if not selected
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-chooser-set-enforce-prefs" role="function">
+<title>cryptui_key_chooser_set_enforce_prefs ()</title>
+<indexterm zone="cryptui-key-chooser-set-enforce-prefs"><primary sortas="key_chooser_set_enforce_prefs">cryptui_key_chooser_set_enforce_prefs</primary></indexterm><programlisting><link linkend="void">void</link>                cryptui_key_chooser_set_enforce_prefs
+                                                        (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser,
+                                                         <link linkend="gboolean">gboolean</link> enforce_prefs);</programlisting>
+<para>
+Sets whether or not the preference to encrypt to self will be enforced.  If
+TRUE, the default signing key will be added to the recipient list.  If FALSE,
+the selected recipients will be returned without adding the default signing
+key.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>chooser</parameter>&#160;:</term>
+<listitem><simpara> the chooser widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>enforce_prefs</parameter>&#160;:</term>
+<listitem><simpara> whether or not the default signing key will be included in the
+                recipients even if not selected
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-chooser-have-recipients" role="function">
+<title>cryptui_key_chooser_have_recipients ()</title>
+<indexterm zone="cryptui-key-chooser-have-recipients"><primary sortas="key_chooser_have_recipients">cryptui_key_chooser_have_recipients</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            cryptui_key_chooser_have_recipients (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser);</programlisting>
+<para>
+Determines if recipient keys have been selected.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>chooser</parameter>&#160;:</term>
+<listitem><simpara> the chooser to check
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if recipients have been selected.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-chooser-get-recipients" role="function">
+<title>cryptui_key_chooser_get_recipients ()</title>
+<indexterm zone="cryptui-key-chooser-get-recipients"><primary sortas="key_chooser_get_recipients">cryptui_key_chooser_get_recipients</primary></indexterm><programlisting><link linkend="GList">GList</link>*              cryptui_key_chooser_get_recipients  (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser);</programlisting>
+<para>
+This function returns a list of recipients selected in the chooser widget.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>chooser</parameter>&#160;:</term>
+<listitem><simpara> the chooser to get selected recipients from
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the list of recipients
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-chooser-set-recipients" role="function">
+<title>cryptui_key_chooser_set_recipients ()</title>
+<indexterm zone="cryptui-key-chooser-set-recipients"><primary sortas="key_chooser_set_recipients">cryptui_key_chooser_set_recipients</primary></indexterm><programlisting><link linkend="void">void</link>                cryptui_key_chooser_set_recipients  (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser,
+                                                         <link linkend="GList">GList</link> *keys);</programlisting>
+<para>
+Marks the listed keys as selected in the chooser widget.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>chooser</parameter>&#160;:</term>
+<listitem><simpara> the chooser to set recipients on
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keys</parameter>&#160;:</term>
+<listitem><simpara> the list of recipients to mark selected
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-chooser-get-signer" role="function">
+<title>cryptui_key_chooser_get_signer ()</title>
+<indexterm zone="cryptui-key-chooser-get-signer"><primary sortas="key_chooser_get_signer">cryptui_key_chooser_get_signer</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        cryptui_key_chooser_get_signer      (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser);</programlisting>
+<para>
+Gets the key of the selected signer from the chooser widget.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>chooser</parameter>&#160;:</term>
+<listitem><simpara> the chooser widget to get the signer from
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the selected signer's key
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-chooser-set-signer" role="function">
+<title>cryptui_key_chooser_set_signer ()</title>
+<indexterm zone="cryptui-key-chooser-set-signer"><primary sortas="key_chooser_set_signer">cryptui_key_chooser_set_signer</primary></indexterm><programlisting><link linkend="void">void</link>                cryptui_key_chooser_set_signer      (<link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link> *chooser,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Sets the signer in the chooser to the provided key.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>chooser</parameter>&#160;:</term>
+<listitem><simpara> the chooser to set the signer on
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> the signer key to set
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

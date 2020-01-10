@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml"> 
+]>
+<refentry id="libcryptui-cryptui">
+<refmeta>
+<refentrytitle role="top_of_page" id="libcryptui-cryptui.top_of_page">cryptui</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBCRYPTUI Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>cryptui</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libcryptui-cryptui.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+enum                <link linkend="CryptUIEncType">CryptUIEncType</link>;
+enum                <link linkend="CryptUIKeyFlags">CryptUIKeyFlags</link>;
+enum                <link linkend="CryptUILocation">CryptUILocation</link>;
+enum                <link linkend="CryptUIValidity">CryptUIValidity</link>;
+<link linkend="gchar">gchar</link>*              <link linkend="cryptui-key-get-base">cryptui_key_get_base</link>                (const <link linkend="gchar">gchar</link> *key);
+<link linkend="CryptUIEncType">CryptUIEncType</link>      <link linkend="cryptui-key-get-enctype">cryptui_key_get_enctype</link>             (const <link linkend="gchar">gchar</link> *key);
+<link linkend="void">void</link>                <link linkend="cryptui-display-notification">cryptui_display_notification</link>        (const <link linkend="gchar">gchar</link> *title,
+                                                         const <link linkend="gchar">gchar</link> *body,
+                                                         const <link linkend="gchar">gchar</link> *icon,
+                                                         <link linkend="gboolean">gboolean</link> urgent);
+<link linkend="gchar">gchar</link>**             <link linkend="cryptui-prompt-recipients">cryptui_prompt_recipients</link>           (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="gchar">gchar</link> **signer);
+<link linkend="gchar">gchar</link>*              <link linkend="cryptui-prompt-signer">cryptui_prompt_signer</link>               (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *title);
+<link linkend="void">void</link>                <link linkend="cryptui-need-to-get-keys">cryptui_need_to_get_keys</link>            ();
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libcryptui-cryptui.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libcryptui-cryptui.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="CryptUIEncType" role="enum">
+<title>enum CryptUIEncType</title>
+<indexterm zone="CryptUIEncType"><primary sortas="EncType">CryptUIEncType</primary></indexterm><programlisting>typedef enum {
+    CRYPTUI_ENCTYPE_NONE =       0,
+    CRYPTUI_ENCTYPE_SYMMETRIC =  1,
+    CRYPTUI_ENCTYPE_PUBLIC =     2,
+    CRYPTUI_ENCTYPE_PRIVATE =    3,
+    
+    /* Used internally */
+    _CRYPTUI_ENCTYPE_MAXVALUE
+} CryptUIEncType;
+</programlisting>
+<para>
+Used in key properties to indicate what kind of key it is
+</para>
+<para>
+Never ever change a values already present. These values are used
+across applications, DBus etc...</para>
+<para>
+</para><variablelist role="enum">
+<varlistentry id="CRYPTUI-ENCTYPE-NONE--CAPS" role="constant">
+<term><literal>CRYPTUI_ENCTYPE_NONE</literal></term>
+<listitem><simpara> the key is none of the below types
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-ENCTYPE-SYMMETRIC--CAPS" role="constant">
+<term><literal>CRYPTUI_ENCTYPE_SYMMETRIC</literal></term>
+<listitem><simpara> the key's type is symmetric
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-ENCTYPE-PUBLIC--CAPS" role="constant">
+<term><literal>CRYPTUI_ENCTYPE_PUBLIC</literal></term>
+<listitem><simpara> the key's type is public
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-ENCTYPE-PRIVATE--CAPS" role="constant">
+<term><literal>CRYPTUI_ENCTYPE_PRIVATE</literal></term>
+<listitem><simpara> the key's type is private
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-ENCTYPE-MAXVALUE--CAPS" role="constant">
+<term><literal>_CRYPTUI_ENCTYPE_MAXVALUE</literal></term>
+<listitem><simpara> for internal use only
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="CryptUIKeyFlags" role="enum">
+<title>enum CryptUIKeyFlags</title>
+<indexterm zone="CryptUIKeyFlags"><primary sortas="KeyFlags">CryptUIKeyFlags</primary></indexterm><programlisting>typedef enum {
+    CRYPTUI_FLAG_IS_VALID =    0x00000001,
+    CRYPTUI_FLAG_CAN_ENCRYPT = 0x00000002,
+    CRYPTUI_FLAG_CAN_SIGN =    0x00000004,
+    CRYPTUI_FLAG_EXPIRED =     0x00000100,
+    CRYPTUI_FLAG_REVOKED =     0x00000200,
+    CRYPTUI_FLAG_DISABLED =    0x00000400,
+    CRYPTUI_FLAG_TRUSTED =     0x00001000,
+    CRYPTUI_FLAG_EXPORTABLE =  0x00100000
+} CryptUIKeyFlags;
+</programlisting>
+<para>
+Used in key properties to indicate a key's status.  These values are
+logically OR'd together.
+</para>
+<para>
+Never ever change a values already present. These values are used
+across applications, DBus etc...</para>
+<para>
+</para><variablelist role="enum">
+<varlistentry id="CRYPTUI-FLAG-IS-VALID--CAPS" role="constant">
+<term><literal>CRYPTUI_FLAG_IS_VALID</literal></term>
+<listitem><simpara> whether the key is valid
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-FLAG-CAN-ENCRYPT--CAPS" role="constant">
+<term><literal>CRYPTUI_FLAG_CAN_ENCRYPT</literal></term>
+<listitem><simpara> whether the key can encrypt
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-FLAG-CAN-SIGN--CAPS" role="constant">
+<term><literal>CRYPTUI_FLAG_CAN_SIGN</literal></term>
+<listitem><simpara> whether the key can sign
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-FLAG-EXPIRED--CAPS" role="constant">
+<term><literal>CRYPTUI_FLAG_EXPIRED</literal></term>
+<listitem><simpara> whether the key is expired
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-FLAG-REVOKED--CAPS" role="constant">
+<term><literal>CRYPTUI_FLAG_REVOKED</literal></term>
+<listitem><simpara> whether the key is revoked
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-FLAG-DISABLED--CAPS" role="constant">
+<term><literal>CRYPTUI_FLAG_DISABLED</literal></term>
+<listitem><simpara> whether the key is disabled
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-FLAG-TRUSTED--CAPS" role="constant">
+<term><literal>CRYPTUI_FLAG_TRUSTED</literal></term>
+<listitem><simpara> whether the key is trusted
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-FLAG-EXPORTABLE--CAPS" role="constant">
+<term><literal>CRYPTUI_FLAG_EXPORTABLE</literal></term>
+<listitem><simpara> whether the key is exportable
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="CryptUILocation" role="enum">
+<title>enum CryptUILocation</title>
+<indexterm zone="CryptUILocation"><primary sortas="Location">CryptUILocation</primary></indexterm><programlisting>typedef enum {
+    CRYPTUI_LOC_INVALID =        0,
+    CRYPTUI_LOC_MISSING =       10,
+    CRYPTUI_LOC_SEARCHING =     20,
+    CRYPTUI_LOC_REMOTE =        50,
+    CRYPTUI_LOC_LOCAL =        100,
+} CryptUILocation;
+</programlisting>
+<para>
+Indicates where a key is located.
+</para>
+<para>
+Never ever change a values already present. These values are used
+across applications, DBus etc...</para>
+<para>
+</para><variablelist role="enum">
+<varlistentry id="CRYPTUI-LOC-INVALID--CAPS" role="constant">
+<term><literal>CRYPTUI_LOC_INVALID</literal></term>
+<listitem><simpara> An invalid key
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-LOC-MISSING--CAPS" role="constant">
+<term><literal>CRYPTUI_LOC_MISSING</literal></term>
+<listitem><simpara> A key we don't know anything about
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-LOC-SEARCHING--CAPS" role="constant">
+<term><literal>CRYPTUI_LOC_SEARCHING</literal></term>
+<listitem><simpara> A key we're searching for but haven't found yet
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-LOC-REMOTE--CAPS" role="constant">
+<term><literal>CRYPTUI_LOC_REMOTE</literal></term>
+<listitem><simpara> A key that we've found is present remotely
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-LOC-LOCAL--CAPS" role="constant">
+<term><literal>CRYPTUI_LOC_LOCAL</literal></term>
+<listitem><simpara> A key on the local machine
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="CryptUIValidity" role="enum">
+<title>enum CryptUIValidity</title>
+<indexterm zone="CryptUIValidity"><primary sortas="Validity">CryptUIValidity</primary></indexterm><programlisting>typedef enum {
+    CRYPTUI_VALIDITY_REVOKED =   -3,
+    CRYPTUI_VALIDITY_DISABLED =  -2,
+    CRYPTUI_VALIDITY_NEVER =     -1,
+    CRYPTUI_VALIDITY_UNKNOWN =    0,
+    CRYPTUI_VALIDITY_MARGINAL =   1,
+    CRYPTUI_VALIDITY_FULL =       5,
+    CRYPTUI_VALIDITY_ULTIMATE =  10
+} CryptUIValidity;
+</programlisting>
+<para>
+What the validity of the key is.
+</para>
+<para>
+Never ever change a values already present. These values are used
+across applications, DBus etc...</para>
+<para>
+</para><variablelist role="enum">
+<varlistentry id="CRYPTUI-VALIDITY-REVOKED--CAPS" role="constant">
+<term><literal>CRYPTUI_VALIDITY_REVOKED</literal></term>
+<listitem><simpara> the key is revoked
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-VALIDITY-DISABLED--CAPS" role="constant">
+<term><literal>CRYPTUI_VALIDITY_DISABLED</literal></term>
+<listitem><simpara> the key is disabled
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-VALIDITY-NEVER--CAPS" role="constant">
+<term><literal>CRYPTUI_VALIDITY_NEVER</literal></term>
+<listitem><simpara> the key has never been valid
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-VALIDITY-UNKNOWN--CAPS" role="constant">
+<term><literal>CRYPTUI_VALIDITY_UNKNOWN</literal></term>
+<listitem><simpara> the key's validity is unknown
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-VALIDITY-MARGINAL--CAPS" role="constant">
+<term><literal>CRYPTUI_VALIDITY_MARGINAL</literal></term>
+<listitem><simpara> the key's validity is marginal
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-VALIDITY-FULL--CAPS" role="constant">
+<term><literal>CRYPTUI_VALIDITY_FULL</literal></term>
+<listitem><simpara> the key's validity is full
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CRYPTUI-VALIDITY-ULTIMATE--CAPS" role="constant">
+<term><literal>CRYPTUI_VALIDITY_ULTIMATE</literal></term>
+<listitem><simpara> the key's validity is ultimate
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-get-base" role="function">
+<title>cryptui_key_get_base ()</title>
+<indexterm zone="cryptui-key-get-base"><primary sortas="key_get_base">cryptui_key_get_base</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              cryptui_key_get_base                (const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+This function is a utility function to get the part of the key that preceeds
+the colon.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> key for use with libcryptui. <acronym>in</acronym>. </simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the key base if one is found in <parameter>key</parameter>
+         or <parameter>key</parameter> if it is already a base or is invalid
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-key-get-enctype" role="function">
+<title>cryptui_key_get_enctype ()</title>
+<indexterm zone="cryptui-key-get-enctype"><primary sortas="key_get_enctype">cryptui_key_get_enctype</primary></indexterm><programlisting><link linkend="CryptUIEncType">CryptUIEncType</link>      cryptui_key_get_enctype             (const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+A utility function to get the type of key passed in. (public, private,
+symmetric, etc.).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> key for use with libcryptui. <acronym>in</acronym>. </simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The type of key.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-display-notification" role="function">
+<title>cryptui_display_notification ()</title>
+<indexterm zone="cryptui-display-notification"><primary sortas="display_notification">cryptui_display_notification</primary></indexterm><programlisting><link linkend="void">void</link>                cryptui_display_notification        (const <link linkend="gchar">gchar</link> *title,
+                                                         const <link linkend="gchar">gchar</link> *body,
+                                                         const <link linkend="gchar">gchar</link> *icon,
+                                                         <link linkend="gboolean">gboolean</link> urgent);</programlisting>
+<para>
+This function creates a notification bubble that can be updated as additional
+key details are discovered.  See http://live.gnome.org/Seahorse/DBus for a
+description of the markup syntax.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> Headline for the notification. <acronym>in</acronym>. <acronym>allow-none</acronym>. </simpara></listitem></varlistentry>
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> Text for the body of the notification. <acronym>in</acronym>. <acronym>allow-none</acronym>. </simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icon</parameter>&#160;:</term>
+<listitem><simpara> Full path to icon to be included. <acronym>in</acronym>. <acronym>allow-none</acronym>. </simpara></listitem></varlistentry>
+<varlistentry><term><parameter>urgent</parameter>&#160;:</term>
+<listitem><simpara> Whether the notification is urgent or not.. <acronym>in</acronym>. <acronym>allow-none</acronym>. </simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-prompt-recipients" role="function">
+<title>cryptui_prompt_recipients ()</title>
+<indexterm zone="cryptui-prompt-recipients"><primary sortas="prompt_recipients">cryptui_prompt_recipients</primary></indexterm><programlisting><link linkend="gchar">gchar</link>**             cryptui_prompt_recipients           (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="gchar">gchar</link> **signer);</programlisting>
+<para>
+This function prompts the user to select one or more keys from the keyset to
+use to encrypt to.  It also allows the user to select a private key from the
+keyset to sign with.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> CryptUIKeyset to select keys to present to the user from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> Window title for presented GtkWindow
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>signer</parameter>&#160;:</term>
+<listitem><simpara> Variable in which to store the key of the signer if one is selected
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the selected key
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-prompt-signer" role="function">
+<title>cryptui_prompt_signer ()</title>
+<indexterm zone="cryptui-prompt-signer"><primary sortas="prompt_signer">cryptui_prompt_signer</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              cryptui_prompt_signer               (<link linkend="CryptUIKeyset">CryptUIKeyset</link> *keyset,
+                                                         const <link linkend="gchar">gchar</link> *title);</programlisting>
+<para>
+This function prompts the user to select a private key from the keyset to
+use to sign something.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>keyset</parameter>&#160;:</term>
+<listitem><simpara> CryptUIKeyset to select keys to present to the user from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> Window title for presented GtkWindow
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the selected key
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="cryptui-need-to-get-keys" role="function">
+<title>cryptui_need_to_get_keys ()</title>
+<indexterm zone="cryptui-need-to-get-keys"><primary sortas="need_to_get_keys">cryptui_need_to_get_keys</primary></indexterm><programlisting><link linkend="void">void</link>                cryptui_need_to_get_keys            ();</programlisting>
+<para>
+This function is called when seahorse needs to be launched to generate a
+key or keys or import a key or keys to perform the requested operation.</para>
+<para>
+</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

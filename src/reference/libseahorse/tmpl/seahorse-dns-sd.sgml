@@ -1,0 +1,70 @@
+<!-- ##### SECTION Title ##### -->
+SeahorseServiceDiscovery
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseServiceDiscoveryPriv ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT SeahorseServiceDiscovery ##### -->
+<para>
+
+</para>
+
+@parent: 
+@services: 
+
+<!-- ##### FUNCTION seahorse_service_discovery_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_service_discovery_list ##### -->
+<para>
+
+</para>
+
+@ssd: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_service_discovery_get_uri ##### -->
+<para>
+
+</para>
+
+@ssd: 
+@service: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_service_discovery_get_uris ##### -->
+<para>
+
+</para>
+
+@ssd: 
+@services: 
+@Returns: 
+
+

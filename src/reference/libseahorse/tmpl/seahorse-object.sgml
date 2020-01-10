@@ -1,0 +1,302 @@
+<!-- ##### SECTION Title ##### -->
+SeahorseObject
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseObjectPrivate ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT SeahorseObject ##### -->
+<para>
+
+</para>
+
+@parent: 
+@pv: 
+
+<!-- ##### FUNCTION seahorse_object_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_realize ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION seahorse_object_refresh ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION seahorse_object_delete ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_tag ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_source ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_set_source ##### -->
+<para>
+
+</para>
+
+@self: 
+@value: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_context ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_preferred ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_set_preferred ##### -->
+<para>
+
+</para>
+
+@self: 
+@value: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_parent ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_set_parent ##### -->
+<para>
+
+</para>
+
+@self: 
+@value: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_children ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_nth_child ##### -->
+<para>
+
+</para>
+
+@self: 
+@index: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_label ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_markup ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_identifier ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_description ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_nickname ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_icon ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_location ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_usage ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_get_flags ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_object_lookup_property ##### -->
+<para>
+
+</para>
+
+@self: 
+@field: 
+@value: 
+@Returns: 
+
+
+<!-- ##### USER_FUNCTION SeahorseObjectPredicateFunc ##### -->
+<para>
+
+</para>
+
+@obj: 
+@user_data: 
+@Returns: 
+
+
+<!-- ##### STRUCT SeahorseObjectPredicate ##### -->
+<para>
+
+</para>
+
+@tag: 
+@id: 
+@type: 
+@location: 
+@usage: 
+@flags: 
+@nflags: 
+@source: 
+@custom: 
+@custom_target: 
+
+<!-- ##### FUNCTION seahorse_object_predicate_clear ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION seahorse_object_predicate_match ##### -->
+<para>
+
+</para>
+
+@self: 
+@obj: 
+@Returns: 
+
+

@@ -1,0 +1,340 @@
+<refentry id="libseahorse-seahorse-source">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-source.top_of_page">seahorse-source</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-source</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-source.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+#define             <link linkend="SEAHORSE-SOURCE-GET-INTERFACE--CAPS">SEAHORSE_SOURCE_GET_INTERFACE</link>       (obj)
+                    <link linkend="SeahorseSource">SeahorseSource</link>;
+                    <link linkend="SeahorseSourceIface">SeahorseSourceIface</link>;
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-source-load">seahorse_source_load</link>                (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc);
+<link linkend="void">void</link>                <link linkend="seahorse-source-load-sync">seahorse_source_load_sync</link>           (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc);
+<link linkend="void">void</link>                <link linkend="seahorse-source-load-async">seahorse_source_load_async</link>          (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc);
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-source-search">seahorse_source_search</link>              (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc,
+                                                         const <link linkend="gchar">gchar</link> *match);
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-source-import">seahorse_source_import</link>              (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc,
+                                                         <link linkend="GInputStream">GInputStream</link> *input);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-source-import-sync">seahorse_source_import_sync</link>         (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc,
+                                                         <link linkend="GInputStream">GInputStream</link> *input,
+                                                         <link linkend="GError">GError</link> **err);
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-source-export-objects">seahorse_source_export_objects</link>      (<link linkend="GList">GList</link> *objects,
+                                                         <link linkend="GOutputStream">GOutputStream</link> *output);
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-source-delete-objects">seahorse_source_delete_objects</link>      (<link linkend="GList">GList</link> *objects);
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-source-export">seahorse_source_export</link>              (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc,
+                                                         <link linkend="GList">GList</link> *objects,
+                                                         <link linkend="GOutputStream">GOutputStream</link> *output);
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-source-export-raw">seahorse_source_export_raw</link>          (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc,
+                                                         <link linkend="GSList">GSList</link> *ids,
+                                                         <link linkend="GOutputStream">GOutputStream</link> *output);
+<link linkend="GQuark">GQuark</link>              <link linkend="seahorse-source-get-tag">seahorse_source_get_tag</link>             (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc);
+<link linkend="SeahorseLocation">SeahorseLocation</link>    <link linkend="seahorse-source-get-location">seahorse_source_get_location</link>        (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-source.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-source.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SEAHORSE-SOURCE-GET-INTERFACE--CAPS" role="macro">
+<title>SEAHORSE_SOURCE_GET_INTERFACE()</title>
+<indexterm zone="SEAHORSE-SOURCE-GET-INTERFACE--CAPS"><primary sortas="SOURCE_GET_INTERFACE">SEAHORSE_SOURCE_GET_INTERFACE</primary></indexterm><programlisting>#define SEAHORSE_SOURCE_GET_INTERFACE(obj)  (G_TYPE_INSTANCE_GET_INTERFACE ((obj), SEAHORSE_TYPE_SOURCE, SeahorseSourceIface))
+</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>obj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseSource" role="struct">
+<title>SeahorseSource</title>
+<indexterm zone="SeahorseSource"><primary sortas="Source">SeahorseSource</primary></indexterm><programlisting>typedef struct _SeahorseSource SeahorseSource;</programlisting>
+<para>
+- A generic interface for accessing sources.
+- Eventually more functionality will be merged from seahorse-op.* into 
+  this class and derived classes. 
+- Each SeahorseObject has a weak pointer to the SeahorseSource that 
+  created it.
+</para>
+<para>
+Properties base classes must implement:
+ ktype: (GQuark) The ktype (ie: SEAHORSE_PGP) of objects originating from this 
+        object source.
+ location: (SeahorseLocation) The location of objects that come from this 
+        source. (ie: SEAHORSE_LOCATION_LOCAL, SEAHORSE_LOCATION_REMOTE)
+ uri: (gchar*) Only for remote object sources. The full URI of the keyserver 
+        being used.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SeahorseSourceIface" role="struct">
+<title>SeahorseSourceIface</title>
+<indexterm zone="SeahorseSourceIface"><primary sortas="SourceIface">SeahorseSourceIface</primary></indexterm><programlisting>typedef struct {
+	GTypeInterface parent;
+    
+	/* virtual methods ------------------------------------------------- */
+
+	/**
+	 * load
+	 * @sksrc: The #SeahorseSource.
+	 * 
+	 * Loads the requested objects, and add the objects to SeahorseContext. 
+	 * 
+	 * Returns: The load operation.
+	 */
+	SeahorseOperation* (*load) (SeahorseSource *sksrc);
+
+	/**
+	 * search
+	 * @sksrc: The #SeahorseSource 
+	 * @match: Match text
+	 *
+	 * Searches for objects in the source.
+	 *
+	 * Returns: The search operation.
+	 */
+	SeahorseOperation* (*search) (SeahorseSource *sksrc, const gchar *match);
+
+    
+	/**
+	 * import
+	 * @sksrc: The #SeahorseSource to import into.
+	 * @input: The data to import.
+	 *
+	 * Import objects into the source. When operation is 'done' a GList of 
+	 * updated objects may be found as the operation result. 
+	 * 
+	 * Returns: The import operation
+	 */
+	SeahorseOperation* (*import) (SeahorseSource *sksrc, GInputStream *input);
+
+	/**
+	 * export
+	 * @sksrc: The #SeahorseSource to export from.
+	 * @objects: A list of objects to export.
+	 * @complete: Whether to export the secret objects too.
+	 * @data: Output stream to export to.
+	 *
+	 * Import objects into the object source. When operation is 'done' the result
+	 * of the operation will be a GOutputStream
+	 * 
+	 * Returns: The export operation
+	 */    
+	SeahorseOperation* (*export) (SeahorseSource *sksrc, GList *objects, GOutputStream *output);
+
+	/**
+	 * export_raw
+	 * @sksrc: The #SeahorseSource to export from.
+	 * @objects: A list of ids to export.
+	 * @data: output stream to export to.
+	 *
+	 * Import objects into the source. When operation is 'done' the result
+	 * of the operation will be a GOutputStream
+	 * 
+	 * Returns: The export operation
+	 */    
+	SeahorseOperation* (*export_raw) (SeahorseSource *sksrc, GSList *ids, 
+	                                  GOutputStream *output);
+} SeahorseSourceIface;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-source-load" role="function">
+<title>seahorse_source_load ()</title>
+<indexterm zone="seahorse-source-load"><primary sortas="source_load">seahorse_source_load</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_source_load                (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc);</programlisting>
+<para>
+Refreshes the <link linkend="SeahorseSource"><type>SeahorseSource</type></link>'s internal object listing.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="SeahorseSource"><type>SeahorseSource</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the asynchronous refresh operation.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-source-load-sync" role="function">
+<title>seahorse_source_load_sync ()</title>
+<indexterm zone="seahorse-source-load-sync"><primary sortas="source_load_sync">seahorse_source_load_sync</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_source_load_sync           (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc);</programlisting>
+<para>
+Refreshes the <link linkend="SeahorseSource"><type>SeahorseSource</type></link>'s internal object listing. Completes in the background.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="SeahorseSource"><type>SeahorseSource</type></link> object
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-source-load-async" role="function">
+<title>seahorse_source_load_async ()</title>
+<indexterm zone="seahorse-source-load-async"><primary sortas="source_load_async">seahorse_source_load_async</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_source_load_async          (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-source-search" role="function">
+<title>seahorse_source_search ()</title>
+<indexterm zone="seahorse-source-search"><primary sortas="source_search">seahorse_source_search</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_source_search              (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc,
+                                                         const <link linkend="gchar">gchar</link> *match);</programlisting>
+<para>
+Refreshes the <link linkend="SeahorseSource"><type>SeahorseSource</type></link>'s internal listing.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="SeahorseSource"><type>SeahorseSource</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>match</parameter>&#160;:</term>
+<listitem><simpara> Text to search for
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the asynchronous refresh operation.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-source-import" role="function">
+<title>seahorse_source_import ()</title>
+<indexterm zone="seahorse-source-import"><primary sortas="source_import">seahorse_source_import</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_source_import              (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc,
+                                                         <link linkend="GInputStream">GInputStream</link> *input);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>input</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-source-import-sync" role="function">
+<title>seahorse_source_import_sync ()</title>
+<indexterm zone="seahorse-source-import-sync"><primary sortas="source_import_sync">seahorse_source_import_sync</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_source_import_sync         (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc,
+                                                         <link linkend="GInputStream">GInputStream</link> *input,
+                                                         <link linkend="GError">GError</link> **err);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>input</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>err</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-source-export-objects" role="function">
+<title>seahorse_source_export_objects ()</title>
+<indexterm zone="seahorse-source-export-objects"><primary sortas="source_export_objects">seahorse_source_export_objects</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_source_export_objects      (<link linkend="GList">GList</link> *objects,
+                                                         <link linkend="GOutputStream">GOutputStream</link> *output);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>objects</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>output</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-source-delete-objects" role="function">
+<title>seahorse_source_delete_objects ()</title>
+<indexterm zone="seahorse-source-delete-objects"><primary sortas="source_delete_objects">seahorse_source_delete_objects</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_source_delete_objects      (<link linkend="GList">GList</link> *objects);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>objects</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-source-export" role="function">
+<title>seahorse_source_export ()</title>
+<indexterm zone="seahorse-source-export"><primary sortas="source_export">seahorse_source_export</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_source_export              (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc,
+                                                         <link linkend="GList">GList</link> *objects,
+                                                         <link linkend="GOutputStream">GOutputStream</link> *output);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>objects</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>output</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-source-export-raw" role="function">
+<title>seahorse_source_export_raw ()</title>
+<indexterm zone="seahorse-source-export-raw"><primary sortas="source_export_raw">seahorse_source_export_raw</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_source_export_raw          (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc,
+                                                         <link linkend="GSList">GSList</link> *ids,
+                                                         <link linkend="GOutputStream">GOutputStream</link> *output);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ids</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>output</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-source-get-tag" role="function">
+<title>seahorse_source_get_tag ()</title>
+<indexterm zone="seahorse-source-get-tag"><primary sortas="source_get_tag">seahorse_source_get_tag</primary></indexterm><programlisting><link linkend="GQuark">GQuark</link>              seahorse_source_get_tag             (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara> The seahorse source object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The source-tag property of the object. As <link linkend="GQuark"><type>GQuark</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-source-get-location" role="function">
+<title>seahorse_source_get_location ()</title>
+<indexterm zone="seahorse-source-get-location"><primary sortas="source_get_location">seahorse_source_get_location</primary></indexterm><programlisting><link linkend="SeahorseLocation">SeahorseLocation</link>    seahorse_source_get_location        (<link linkend="SeahorseSource">SeahorseSource</link> *sksrc);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

@@ -1,0 +1,65 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-prefs
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### FUNCTION seahorse_prefs_new ##### -->
+<para>
+
+</para>
+
+@parent: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_prefs_add_tab ##### -->
+<para>
+
+</para>
+
+@swidget: 
+@label: 
+@tab: 
+
+
+<!-- ##### FUNCTION seahorse_prefs_select_tab ##### -->
+<para>
+
+</para>
+
+@swidget: 
+@tab: 
+
+
+<!-- ##### FUNCTION seahorse_prefs_select_tabid ##### -->
+<para>
+
+</para>
+
+@swidget: 
+@tab: 
+
+
+<!-- ##### FUNCTION seahorse_prefs_remove_tab ##### -->
+<para>
+
+</para>
+
+@swidget: 
+@tab: 
+
+

@@ -1,0 +1,36 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-unix-signal
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### USER_FUNCTION signal_handler ##### -->
+<para>
+
+</para>
+
+@sig: 
+
+
+<!-- ##### FUNCTION seahorse_unix_signal_register ##### -->
+<para>
+
+</para>
+
+@sig: 
+@handler: 
+
+

@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CryptUIKeyChooser</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libcryptui Reference Manual">
+<link rel="up" href="ch01.html" title="libcryptui Objects and Functions">
+<link rel="prev" href="libcryptui-cryptui-key-list.html" title="cryptui-key-list">
+<link rel="next" href="libcryptui-CryptUIKeyStore.html" title="CryptUIKeyStore">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="libcryptui Objects and Functions">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libcryptui-cryptui-key-list.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libcryptui Reference Manual</th>
+<td><a accesskey="n" href="libcryptui-CryptUIKeyStore.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libcryptui-CryptUIKeyChooser.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libcryptui-CryptUIKeyChooser.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="CryptUIKeyChooser">
+<a name="libcryptui-CryptUIKeyChooser"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libcryptui-CryptUIKeyChooser.top_of_page"></a>CryptUIKeyChooser</span></h2>
+<p>CryptUIKeyChooser</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libcryptui-CryptUIKeyChooser.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                <a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooserMode" title="enum CryptUIKeyChooserMode">CryptUIKeyChooserMode</a>;
+                    <a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooserPriv" title="CryptUIKeyChooserPriv">CryptUIKeyChooserPriv</a>;
+                    <a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a>;
+<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a>*  <a class="link" href="libcryptui-CryptUIKeyChooser.html#cryptui-key-chooser-new" title="cryptui_key_chooser_new ()">cryptui_key_chooser_new</a>             (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *ckset,
+                                                         <a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooserMode" title="enum CryptUIKeyChooserMode">CryptUIKeyChooserMode</a> mode);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="libcryptui-CryptUIKeyChooser.html#cryptui-key-chooser-get-enforce-prefs" title="cryptui_key_chooser_get_enforce_prefs ()">cryptui_key_chooser_get_enforce_prefs</a>
+                                                        (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser);
+void                <a class="link" href="libcryptui-CryptUIKeyChooser.html#cryptui-key-chooser-set-enforce-prefs" title="cryptui_key_chooser_set_enforce_prefs ()">cryptui_key_chooser_set_enforce_prefs</a>
+                                                        (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> enforce_prefs);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="libcryptui-CryptUIKeyChooser.html#cryptui-key-chooser-have-recipients" title="cryptui_key_chooser_have_recipients ()">cryptui_key_chooser_have_recipients</a> (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a>*              <a class="link" href="libcryptui-CryptUIKeyChooser.html#cryptui-key-chooser-get-recipients" title="cryptui_key_chooser_get_recipients ()">cryptui_key_chooser_get_recipients</a>  (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser);
+void                <a class="link" href="libcryptui-CryptUIKeyChooser.html#cryptui-key-chooser-set-recipients" title="cryptui_key_chooser_set_recipients ()">cryptui_key_chooser_set_recipients</a>  (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *keys);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        <a class="link" href="libcryptui-CryptUIKeyChooser.html#cryptui-key-chooser-get-signer" title="cryptui_key_chooser_get_signer ()">cryptui_key_chooser_get_signer</a>      (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser);
+void                <a class="link" href="libcryptui-CryptUIKeyChooser.html#cryptui-key-chooser-set-signer" title="cryptui_key_chooser_set_signer ()">cryptui_key_chooser_set_signer</a>      (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libcryptui-CryptUIKeyChooser.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libcryptui-CryptUIKeyChooser.details"></a><h2>Details</h2>
+<div class="refsect2" title="enum CryptUIKeyChooserMode">
+<a name="CryptUIKeyChooserMode"></a><h3>enum CryptUIKeyChooserMode</h3>
+<pre class="programlisting">typedef enum _CryptUIKeyChooserMode {
+    CRYPTUI_KEY_CHOOSER_RECIPIENTS =    0x0001,
+    CRYPTUI_KEY_CHOOSER_SIGNER =        0x0002,
+    
+    CRYPTUI_KEY_CHOOSER_MUSTSIGN =      0x0010
+} CryptUIKeyChooserMode;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CryptUIKeyChooserPriv">
+<a name="CryptUIKeyChooserPriv"></a><h3>CryptUIKeyChooserPriv</h3>
+<pre class="programlisting">typedef struct _CryptUIKeyChooserPriv CryptUIKeyChooserPriv;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CryptUIKeyChooser">
+<a name="CryptUIKeyChooser"></a><h3>CryptUIKeyChooser</h3>
+<pre class="programlisting">typedef struct {
+    GtkVBox               parent;
+} CryptUIKeyChooser;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_key_chooser_new ()">
+<a name="cryptui-key-chooser-new"></a><h3>cryptui_key_chooser_new ()</h3>
+<pre class="programlisting"><a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a>*  cryptui_key_chooser_new             (<a class="link" href="libcryptui-CryptUIKeyset.html#CryptUIKeyset" title="CryptUIKeyset">CryptUIKeyset</a> *ckset,
+                                                         <a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooserMode" title="enum CryptUIKeyChooserMode">CryptUIKeyChooserMode</a> mode);</pre>
+<p>
+Creates a key chooser widget from a key set.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ckset</code></em> :</span></p></td>
+<td> key set to choose keys from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mode</code></em> :</span></p></td>
+<td> how to display the signer portion of the widget
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a key shooser widget
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_key_chooser_get_enforce_prefs ()">
+<a name="cryptui-key-chooser-get-enforce-prefs"></a><h3>cryptui_key_chooser_get_enforce_prefs ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            cryptui_key_chooser_get_enforce_prefs
+                                                        (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser);</pre>
+<p>
+Gets whether or not the preference to encrypt to self will be enforced.  If
+TRUE, the default signing key will be added to the recipient list.  If FALSE,
+the selected recipients will be returned without adding the default signing
+key.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chooser</code></em> :</span></p></td>
+<td> the key chooser widget
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> whether or not the default signing key will be included in the
+         recipients even if not selected
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_key_chooser_set_enforce_prefs ()">
+<a name="cryptui-key-chooser-set-enforce-prefs"></a><h3>cryptui_key_chooser_set_enforce_prefs ()</h3>
+<pre class="programlisting">void                cryptui_key_chooser_set_enforce_prefs
+                                                        (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> enforce_prefs);</pre>
+<p>
+Sets whether or not the preference to encrypt to self will be enforced.  If
+TRUE, the default signing key will be added to the recipient list.  If FALSE,
+the selected recipients will be returned without adding the default signing
+key.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chooser</code></em> :</span></p></td>
+<td> the chooser widget
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>enforce_prefs</code></em> :</span></p></td>
+<td> whether or not the default signing key will be included in the
+                recipients even if not selected
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_key_chooser_have_recipients ()">
+<a name="cryptui-key-chooser-have-recipients"></a><h3>cryptui_key_chooser_have_recipients ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            cryptui_key_chooser_have_recipients (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser);</pre>
+<p>
+Determines if recipient keys have been selected.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chooser</code></em> :</span></p></td>
+<td> the chooser to check
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if recipients have been selected.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_key_chooser_get_recipients ()">
+<a name="cryptui-key-chooser-get-recipients"></a><h3>cryptui_key_chooser_get_recipients ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a>*              cryptui_key_chooser_get_recipients  (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser);</pre>
+<p>
+This function returns a list of recipients selected in the chooser widget.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chooser</code></em> :</span></p></td>
+<td> the chooser to get selected recipients from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the list of recipients
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_key_chooser_set_recipients ()">
+<a name="cryptui-key-chooser-set-recipients"></a><h3>cryptui_key_chooser_set_recipients ()</h3>
+<pre class="programlisting">void                cryptui_key_chooser_set_recipients  (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *keys);</pre>
+<p>
+Marks the listed keys as selected in the chooser widget.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chooser</code></em> :</span></p></td>
+<td> the chooser to set recipients on
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>keys</code></em> :</span></p></td>
+<td> the list of recipients to mark selected
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_key_chooser_get_signer ()">
+<a name="cryptui-key-chooser-get-signer"></a><h3>cryptui_key_chooser_get_signer ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        cryptui_key_chooser_get_signer      (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser);</pre>
+<p>
+Gets the key of the selected signer from the chooser widget.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chooser</code></em> :</span></p></td>
+<td> the chooser widget to get the signer from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the selected signer's key
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="cryptui_key_chooser_set_signer ()">
+<a name="cryptui-key-chooser-set-signer"></a><h3>cryptui_key_chooser_set_signer ()</h3>
+<pre class="programlisting">void                cryptui_key_chooser_set_signer      (<a class="link" href="libcryptui-CryptUIKeyChooser.html#CryptUIKeyChooser" title="CryptUIKeyChooser">CryptUIKeyChooser</a> *chooser,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);</pre>
+<p>
+Sets the signer in the chooser to the provided key.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chooser</code></em> :</span></p></td>
+<td> the chooser to set the signer on
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> the signer key to set
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

@@ -1,0 +1,894 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SeahorseSecureEntry</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libseahorse-SeahorseUnknown.html" title="SeahorseUnknown">
+<link rel="next" href="libseahorse-seahorse-transfer-operation.html" title="seahorse-transfer-operation">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libseahorse-SeahorseUnknown.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-seahorse-transfer-operation.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-SeahorseSecureEntry.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-SeahorseSecureEntry.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="SeahorseSecureEntry">
+<a name="libseahorse-SeahorseSecureEntry"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-SeahorseSecureEntry.top_of_page"></a>SeahorseSecureEntry</span></h2>
+<p>SeahorseSecureEntry</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-SeahorseSecureEntry.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a>;
+<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWidget.html"
+>GtkWidget</a>*          <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-new"
+>seahorse_secure_entry_new</a>           (void);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-reset-changed"
+>seahorse_secure_entry_reset_changed</a> (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-changed"
+>seahorse_secure_entry_get_changed</a>   (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-visibility"
+>seahorse_secure_entry_set_visibility</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> setting);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-visibility"
+>seahorse_secure_entry_get_visibility</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-invisible-char"
+>seahorse_secure_entry_set_invisible_char</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#gunichar"
+>gunichar</a> ch);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#gunichar"
+>gunichar</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-invisible-char"
+>seahorse_secure_entry_get_invisible_char</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-has-frame"
+>seahorse_secure_entry_set_has_frame</a> (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> setting);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-has-frame"
+>seahorse_secure_entry_get_has_frame</a> (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-max-length"
+>seahorse_secure_entry_set_max_length</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> max);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-max-length"
+>seahorse_secure_entry_get_max_length</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-activates-default"
+>seahorse_secure_entry_set_activates_default</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> setting);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-activates-default"
+>seahorse_secure_entry_get_activates_default</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-width-chars"
+>seahorse_secure_entry_set_width_chars</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> n_chars);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-width-chars"
+>seahorse_secure_entry_get_width_chars</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-text"
+>seahorse_secure_entry_set_text</a>      (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *text);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-text"
+>seahorse_secure_entry_get_text</a>      (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);
+<a
+href="/usr/share/gtk-doc/html/pango/pango-Layout-Objects.html#PangoLayout"
+>PangoLayout</a>*        <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-layout"
+>seahorse_secure_entry_get_layout</a>    (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-layout-offsets"
+>seahorse_secure_entry_get_layout_offsets</a>
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> *x,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> *y);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-SeahorseSecureEntry.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-SeahorseSecureEntry.details"></a><h2>Details</h2>
+<div class="refsect2" title="SeahorseSecureEntry">
+<a name="SeahorseSecureEntry"></a><h3>SeahorseSecureEntry</h3>
+<pre class="programlisting">typedef struct {
+    GtkWidget widget;
+
+    gchar *text;
+
+    guint overwrite_mode : 1;
+
+    /* length in use, in chars */
+    guint16 text_length; 
+    guint16 text_max_length;
+} SeahorseSecureEntry;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_new ()">
+<a name="seahorse-secure-entry-new"></a><h3>seahorse_secure_entry_new ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWidget.html"
+>GtkWidget</a>*          seahorse_secure_entry_new           (void);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_reset_changed ()">
+<a name="seahorse-secure-entry-reset-changed"></a><h3>seahorse_secure_entry_reset_changed ()</h3>
+<pre class="programlisting">void                seahorse_secure_entry_reset_changed (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_get_changed ()">
+<a name="seahorse-secure-entry-get-changed"></a><h3>seahorse_secure_entry_get_changed ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_secure_entry_get_changed   (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_set_visibility ()">
+<a name="seahorse-secure-entry-set-visibility"></a><h3>seahorse_secure_entry_set_visibility ()</h3>
+<pre class="programlisting">void                seahorse_secure_entry_set_visibility
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> setting);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>setting</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_get_visibility ()">
+<a name="seahorse-secure-entry-get-visibility"></a><h3>seahorse_secure_entry_get_visibility ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_secure_entry_get_visibility
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_set_invisible_char ()">
+<a name="seahorse-secure-entry-set-invisible-char"></a><h3>seahorse_secure_entry_set_invisible_char ()</h3>
+<pre class="programlisting">void                seahorse_secure_entry_set_invisible_char
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#gunichar"
+>gunichar</a> ch);</pre>
+<p>
+Sets the character to use in place of the actual text when
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-visibility"
+><code class="function">seahorse_secure_entry_set_visibility()</code></a> has been called to set text 
+to <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE--CAPS"
+><code class="literal">FALSE</code></a>. i.e. this is the character used in "password mode" to
+show the user how many characters have been typed. The default
+invisible char is an asterisk ('*').  If you set the invisible char
+to 0, then the user will get no feedback at all; there will be
+no text on the screen as they type.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ch</code></em> :</span></p></td>
+<td> a Unicode character
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_get_invisible_char ()">
+<a name="seahorse-secure-entry-get-invisible-char"></a><h3>seahorse_secure_entry_get_invisible_char ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#gunichar"
+>gunichar</a>            seahorse_secure_entry_get_invisible_char
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);</pre>
+<p>
+Retrieves the character displayed in place of the real characters
+for entries with visisbility set to false. See <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-invisible-char"
+><code class="function">seahorse_secure_entry_set_invisible_char()</code></a>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the current invisible char, or 0, if the entry does not
+              show invisible text at all. 
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_set_has_frame ()">
+<a name="seahorse-secure-entry-set-has-frame"></a><h3>seahorse_secure_entry_set_has_frame ()</h3>
+<pre class="programlisting">void                seahorse_secure_entry_set_has_frame (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> setting);</pre>
+<p>
+Sets whether the entry has a beveled frame around it.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>setting</code></em> :</span></p></td>
+<td> new value
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_get_has_frame ()">
+<a name="seahorse-secure-entry-get-has-frame"></a><h3>seahorse_secure_entry_get_has_frame ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_secure_entry_get_has_frame (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);</pre>
+<p>
+Gets the value set by <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-has-frame"
+><code class="function">seahorse_secure_entry_set_has_frame()</code></a>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> whether the entry has a beveled frame
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_set_max_length ()">
+<a name="seahorse-secure-entry-set-max-length"></a><h3>seahorse_secure_entry_set_max_length ()</h3>
+<pre class="programlisting">void                seahorse_secure_entry_set_max_length
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> max);</pre>
+<p>
+Sets the maximum allowed length of the contents of the widget. If
+the current contents are longer than the given length, then they
+will be truncated to fit.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max</code></em> :</span></p></td>
+<td> the maximum length of the entry, or 0 for no maximum.
+  (other than the maximum length of entries.) The value passed in will
+  be clamped to the range 0-65536.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_get_max_length ()">
+<a name="seahorse-secure-entry-get-max-length"></a><h3>seahorse_secure_entry_get_max_length ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                seahorse_secure_entry_get_max_length
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);</pre>
+<p>
+Retrieves the maximum allowed length of the text in
+<em class="parameter"><code>entry</code></em>. See <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-max-length"
+><code class="function">seahorse_secure_entry_set_max_length()</code></a>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the maximum allowed number of characters
+              in <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>, or 0 if there is no maximum.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_set_activates_default ()">
+<a name="seahorse-secure-entry-set-activates-default"></a><h3>seahorse_secure_entry_set_activates_default ()</h3>
+<pre class="programlisting">void                seahorse_secure_entry_set_activates_default
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> setting);</pre>
+<p>
+If <em class="parameter"><code>setting</code></em> is <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a>, pressing Enter in the <em class="parameter"><code>entry</code></em> will activate the default
+widget for the window containing the entry. This usually means that
+the dialog box containing the entry will be closed, since the default
+widget is usually one of the dialog buttons.
+</p>
+<p>
+(For experts: if <em class="parameter"><code>setting</code></em> is <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a>, the entry calls
+<a
+href="http://library.gnome.org/devel/gtk/unstable/GtkWindow.html#gtk-window-activate-default"
+><code class="function">gtk_window_activate_default()</code></a> on the window containing the entry, in
+the default handler for the "activate" signal.)</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>setting</code></em> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> to activate window's default widget on Enter keypress
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_get_activates_default ()">
+<a name="seahorse-secure-entry-get-activates-default"></a><h3>seahorse_secure_entry_get_activates_default ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_secure_entry_get_activates_default
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);</pre>
+<p>
+Retrieves the value set by <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-activates-default"
+><code class="function">seahorse_secure_entry_set_activates_default()</code></a>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> if the entry will activate the default widget
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_set_width_chars ()">
+<a name="seahorse-secure-entry-set-width-chars"></a><h3>seahorse_secure_entry_set_width_chars ()</h3>
+<pre class="programlisting">void                seahorse_secure_entry_set_width_chars
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> n_chars);</pre>
+<p>
+Changes the size request of the entry to be about the right size
+for <em class="parameter"><code>n_chars</code></em> characters. Note that it changes the size
+<span class="emphasis"><em>request</em></span>, the size can still be affected by
+how you pack the widget into containers. If <em class="parameter"><code>n_chars</code></em> is -1, the
+size reverts to the default entry size.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_chars</code></em> :</span></p></td>
+<td> width in chars
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_get_width_chars ()">
+<a name="seahorse-secure-entry-get-width-chars"></a><h3>seahorse_secure_entry_get_width_chars ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                seahorse_secure_entry_get_width_chars
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);</pre>
+<p>
+Gets the value set by <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-set-width-chars"
+><code class="function">seahorse_secure_entry_set_width_chars()</code></a>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> number of chars to request space for, or negative if unset
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_set_text ()">
+<a name="seahorse-secure-entry-set-text"></a><h3>seahorse_secure_entry_set_text ()</h3>
+<pre class="programlisting">void                seahorse_secure_entry_set_text      (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *text);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_get_text ()">
+<a name="seahorse-secure-entry-get-text"></a><h3>seahorse_secure_entry_get_text ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        seahorse_secure_entry_get_text      (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);</pre>
+<p>
+Retrieves the contents of the entry widget.
+See also <a
+href="http://library.gnome.org/devel/gtk/unstable/GtkEditable.html#gtk-editable-get-chars"
+><code class="function">gtk_editable_get_chars()</code></a>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a pointer to the contents of the widget as a
+     string.  This string points to internally allocated
+     storage in the widget and must not be freed, modified or
+     stored.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_get_layout ()">
+<a name="seahorse-secure-entry-get-layout"></a><h3>seahorse_secure_entry_get_layout ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/pango/pango-Layout-Objects.html#PangoLayout"
+>PangoLayout</a>*        seahorse_secure_entry_get_layout    (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry);</pre>
+<p>
+Gets the <a
+href="/usr/share/gtk-doc/html/pango/pango-Layout-Objects.html#PangoLayout"
+><span class="type">PangoLayout</span></a> used to display the entry.
+The layout is useful to e.g. convert text positions to
+pixel positions, in combination with <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#seahorse-secure-entry-get-layout-offsets"
+><code class="function">seahorse_secure_entry_get_layout_offsets()</code></a>.
+The returned layout is owned by the entry so need not be
+freed by the caller.
+</p>
+<p>
+Keep in mind that the layout text may contain a preedit string, so
+<code class="function">seahorse_secure_entry_layout_index_to_text_index()</code> and
+<code class="function">seahorse_secure_entry_text_index_to_layout_index()</code> are needed to convert byte
+indices in the layout to byte indices in the entry contents.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/pango/pango-Layout-Objects.html#PangoLayout"
+><span class="type">PangoLayout</span></a> for this entry
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_secure_entry_get_layout_offsets ()">
+<a name="seahorse-secure-entry-get-layout-offsets"></a><h3>seahorse_secure_entry_get_layout_offsets ()</h3>
+<pre class="programlisting">void                seahorse_secure_entry_get_layout_offsets
+                                                        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+>SeahorseSecureEntry</a> *entry,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> *x,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> *y);</pre>
+<p>
+Obtains the position of the <a
+href="/usr/share/gtk-doc/html/pango/pango-Layout-Objects.html#PangoLayout"
+><span class="type">PangoLayout</span></a> used to render text
+in the entry, in widget coordinates. Useful if you want to line
+up the text in an entry with some other text, e.g. when using the
+entry to implement editable cells in a sheet widget.
+</p>
+<p>
+Also useful to convert mouse events into coordinates inside the
+<a
+href="/usr/share/gtk-doc/html/pango/pango-Layout-Objects.html#PangoLayout"
+><span class="type">PangoLayout</span></a>, e.g. to take some action if some part of the entry text
+is clicked.
+</p>
+<p>
+Note that as the user scrolls around in the entry the offsets will
+change; you'll need to connect to the "notify::scroll_offset"
+signal to track this. Remember when using the <a
+href="/usr/share/gtk-doc/html/pango/pango-Layout-Objects.html#PangoLayout"
+><span class="type">PangoLayout</span></a>
+functions you need to convert to and from pixels using
+<a
+href="/usr/share/gtk-doc/html/pango/pango-Glyph-Storage.html#PANGO-PIXELS--CAPS"
+><code class="function">PANGO_PIXELS()</code></a> or <a
+href="/usr/share/gtk-doc/html/pango/pango-Glyph-Storage.html#PANGO-SCALE--CAPS"
+><span class="type">PANGO_SCALE</span></a>.
+</p>
+<p>
+Keep in mind that the layout text may contain a preedit string, so
+<code class="function">seahorse_secure_entry_layout_index_to_text_index()</code> and
+<code class="function">seahorse_secure_entry_text_index_to_layout_index()</code> are needed to convert byte
+indices in the layout to byte indices in the entry contents.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html#SeahorseSecureEntry"
+><span class="type">SeahorseSecureEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td> location to store X offset of layout, or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td> location to store Y offset of layout, or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!-- ##### SECTION Title ##### -->
+SeahorseUnknownSource
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseUnknownSourcePrivate ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT SeahorseUnknownSource ##### -->
+<para>
+
+</para>
+
+@parent: 
+@ktype: 
+
+<!-- ##### FUNCTION seahorse_unknown_source_new ##### -->
+<para>
+
+</para>
+
+@ktype: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_unknown_source_add_object ##### -->
+<para>
+
+</para>
+
+@usrc: 
+@id: 
+@search: 
+@Returns: 
+
+

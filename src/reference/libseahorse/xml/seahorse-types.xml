@@ -1,0 +1,126 @@
+<refentry id="libseahorse-seahorse-types">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-types.top_of_page">seahorse-types</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-types</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-types.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+#define             <link linkend="SEAHORSE-TYPE-LOCATION--CAPS">SEAHORSE_TYPE_LOCATION</link>
+#define             <link linkend="SEAHORSE-TYPE-USAGE--CAPS">SEAHORSE_TYPE_USAGE</link>
+enum                <link linkend="SeahorseLocation">SeahorseLocation</link>;
+<link linkend="GType">GType</link>               <link linkend="seahorse-location-get-type">seahorse_location_get_type</link>          (void);
+enum                <link linkend="SeahorseUsage">SeahorseUsage</link>;
+<link linkend="GType">GType</link>               <link linkend="seahorse-usage-get-type">seahorse_usage_get_type</link>             (void);
+enum                <link linkend="SeahorseKeyFlags">SeahorseKeyFlags</link>;
+#define             <link linkend="SEAHORSE-TAG-INVALID--CAPS">SEAHORSE_TAG_INVALID</link>
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-types.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-types.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SEAHORSE-TYPE-LOCATION--CAPS" role="macro">
+<title>SEAHORSE_TYPE_LOCATION</title>
+<indexterm zone="SEAHORSE-TYPE-LOCATION--CAPS"><primary sortas="TYPE_LOCATION">SEAHORSE_TYPE_LOCATION</primary></indexterm><programlisting>#define SEAHORSE_TYPE_LOCATION (seahorse_location_get_type ())
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-TYPE-USAGE--CAPS" role="macro">
+<title>SEAHORSE_TYPE_USAGE</title>
+<indexterm zone="SEAHORSE-TYPE-USAGE--CAPS"><primary sortas="TYPE_USAGE">SEAHORSE_TYPE_USAGE</primary></indexterm><programlisting>#define SEAHORSE_TYPE_USAGE (seahorse_usage_get_type ())
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SeahorseLocation" role="enum">
+<title>enum SeahorseLocation</title>
+<indexterm zone="SeahorseLocation"><primary sortas="Location">SeahorseLocation</primary></indexterm><programlisting>typedef enum  {
+	SEAHORSE_LOCATION_INVALID = 0,
+	SEAHORSE_LOCATION_MISSING = 10,
+	SEAHORSE_LOCATION_SEARCHING = 20,
+	SEAHORSE_LOCATION_REMOTE = 50,
+	SEAHORSE_LOCATION_LOCAL = 100
+} SeahorseLocation;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-location-get-type" role="function">
+<title>seahorse_location_get_type ()</title>
+<indexterm zone="seahorse-location-get-type"><primary sortas="location_get_type">seahorse_location_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               seahorse_location_get_type          (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseUsage" role="enum">
+<title>enum SeahorseUsage</title>
+<indexterm zone="SeahorseUsage"><primary sortas="Usage">SeahorseUsage</primary></indexterm><programlisting>typedef enum  {
+	SEAHORSE_USAGE_NONE = 0,
+	SEAHORSE_USAGE_SYMMETRIC_KEY = 1,
+	SEAHORSE_USAGE_PUBLIC_KEY = 2,
+	SEAHORSE_USAGE_PRIVATE_KEY = 3,
+	SEAHORSE_USAGE_CREDENTIALS = 4,
+	SEAHORSE_USAGE_IDENTITY = 5,
+	SEAHORSE_USAGE_OTHER = 10
+} SeahorseUsage;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-usage-get-type" role="function">
+<title>seahorse_usage_get_type ()</title>
+<indexterm zone="seahorse-usage-get-type"><primary sortas="usage_get_type">seahorse_usage_get_type</primary></indexterm><programlisting><link linkend="GType">GType</link>               seahorse_usage_get_type             (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseKeyFlags" role="enum">
+<title>enum SeahorseKeyFlags</title>
+<indexterm zone="SeahorseKeyFlags"><primary sortas="KeyFlags">SeahorseKeyFlags</primary></indexterm><programlisting>typedef enum {
+	SEAHORSE_FLAG_IS_VALID =    CRYPTUI_FLAG_IS_VALID,
+	SEAHORSE_FLAG_CAN_ENCRYPT = CRYPTUI_FLAG_CAN_ENCRYPT,
+	SEAHORSE_FLAG_CAN_SIGN =    CRYPTUI_FLAG_CAN_SIGN,
+	SEAHORSE_FLAG_EXPIRED =     CRYPTUI_FLAG_EXPIRED,
+	SEAHORSE_FLAG_REVOKED =     CRYPTUI_FLAG_REVOKED,
+	SEAHORSE_FLAG_DISABLED =    CRYPTUI_FLAG_DISABLED,
+	SEAHORSE_FLAG_TRUSTED =     CRYPTUI_FLAG_TRUSTED,
+	SEAHORSE_FLAG_EXPORTABLE =  CRYPTUI_FLAG_EXPORTABLE,
+	SEAHORSE_FLAG_DELETABLE = 0x10000000
+} SeahorseKeyFlags;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SEAHORSE-TAG-INVALID--CAPS" role="macro">
+<title>SEAHORSE_TAG_INVALID</title>
+<indexterm zone="SEAHORSE-TAG-INVALID--CAPS"><primary sortas="TAG_INVALID">SEAHORSE_TAG_INVALID</primary></indexterm><programlisting>#define SEAHORSE_TAG_INVALID               0
+</programlisting>
+<para>
+</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

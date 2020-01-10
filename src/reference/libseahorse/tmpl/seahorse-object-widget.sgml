@@ -1,0 +1,38 @@
+<!-- ##### SECTION Title ##### -->
+SeahorseObjectWidget
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseObjectWidget ##### -->
+<para>
+
+</para>
+
+@parent: 
+@object: 
+
+<!-- ##### FUNCTION seahorse_object_widget_new ##### -->
+<para>
+
+</para>
+
+@name: 
+@parent: 
+@object: 
+@Returns: 
+
+

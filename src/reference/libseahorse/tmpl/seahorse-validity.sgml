@@ -1,0 +1,41 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-validity
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### ENUM SeahorseValidity ##### -->
+<para>
+
+</para>
+
+@SEAHORSE_VALIDITY_REVOKED: 
+@SEAHORSE_VALIDITY_DISABLED: 
+@SEAHORSE_VALIDITY_UNKNOWN: 
+@SEAHORSE_VALIDITY_NEVER: 
+@SEAHORSE_VALIDITY_MARGINAL: 
+@SEAHORSE_VALIDITY_FULL: 
+@SEAHORSE_VALIDITY_ULTIMATE: 
+
+<!-- ##### FUNCTION seahorse_validity_get_string ##### -->
+<para>
+
+</para>
+
+@validity: 
+@Returns: 
+
+

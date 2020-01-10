@@ -1,0 +1,489 @@
+<refentry id="libseahorse-SeahorseObject">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-SeahorseObject.top_of_page">SeahorseObject</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SeahorseObject</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-SeahorseObject.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SeahorseObjectPrivate">SeahorseObjectPrivate</link>;
+                    <link linkend="SeahorseObject">SeahorseObject</link>;
+<link linkend="SeahorseObject">SeahorseObject</link>*     <link linkend="seahorse-object-new">seahorse_object_new</link>                 (void);
+<link linkend="void">void</link>                <link linkend="seahorse-object-realize">seahorse_object_realize</link>             (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="void">void</link>                <link linkend="seahorse-object-refresh">seahorse_object_refresh</link>             (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-object-delete">seahorse_object_delete</link>              (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="GQuark">GQuark</link>              <link linkend="seahorse-object-get-id">seahorse_object_get_id</link>              (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="GQuark">GQuark</link>              <link linkend="seahorse-object-get-tag">seahorse_object_get_tag</link>             (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="SeahorseSource">SeahorseSource</link>*     <link linkend="seahorse-object-get-source">seahorse_object_get_source</link>          (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="void">void</link>                <link linkend="seahorse-object-set-source">seahorse_object_set_source</link>          (<link linkend="SeahorseObject">SeahorseObject</link> *self,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *value);
+<link linkend="SeahorseContext">SeahorseContext</link>*    <link linkend="seahorse-object-get-context">seahorse_object_get_context</link>         (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="SeahorseObject">SeahorseObject</link>*     <link linkend="seahorse-object-get-preferred">seahorse_object_get_preferred</link>       (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="void">void</link>                <link linkend="seahorse-object-set-preferred">seahorse_object_set_preferred</link>       (<link linkend="SeahorseObject">SeahorseObject</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *value);
+<link linkend="SeahorseObject">SeahorseObject</link>*     <link linkend="seahorse-object-get-parent">seahorse_object_get_parent</link>          (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="void">void</link>                <link linkend="seahorse-object-set-parent">seahorse_object_set_parent</link>          (<link linkend="SeahorseObject">SeahorseObject</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *value);
+<link linkend="GList">GList</link>*              <link linkend="seahorse-object-get-children">seahorse_object_get_children</link>        (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="SeahorseObject">SeahorseObject</link>*     <link linkend="seahorse-object-get-nth-child">seahorse_object_get_nth_child</link>       (<link linkend="SeahorseObject">SeahorseObject</link> *self,
+                                                         <link linkend="guint">guint</link> index);
+const <link linkend="gchar">gchar</link>*        <link linkend="seahorse-object-get-label">seahorse_object_get_label</link>           (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+const <link linkend="gchar">gchar</link>*        <link linkend="seahorse-object-get-markup">seahorse_object_get_markup</link>          (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+const <link linkend="gchar">gchar</link>*        <link linkend="seahorse-object-get-identifier">seahorse_object_get_identifier</link>      (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+const <link linkend="gchar">gchar</link>*        <link linkend="seahorse-object-get-description">seahorse_object_get_description</link>     (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+const <link linkend="gchar">gchar</link>*        <link linkend="seahorse-object-get-nickname">seahorse_object_get_nickname</link>        (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+const <link linkend="gchar">gchar</link>*        <link linkend="seahorse-object-get-icon">seahorse_object_get_icon</link>            (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="SeahorseLocation">SeahorseLocation</link>    <link linkend="seahorse-object-get-location">seahorse_object_get_location</link>        (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="SeahorseUsage">SeahorseUsage</link>       <link linkend="seahorse-object-get-usage">seahorse_object_get_usage</link>           (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="guint">guint</link>               <link linkend="seahorse-object-get-flags">seahorse_object_get_flags</link>           (<link linkend="SeahorseObject">SeahorseObject</link> *self);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-object-lookup-property">seahorse_object_lookup_property</link>     (<link linkend="SeahorseObject">SeahorseObject</link> *self,
+                                                         const <link linkend="gchar">gchar</link> *field,
+                                                         <link linkend="GValue">GValue</link> *value);
+<link linkend="gboolean">gboolean</link>            (<link linkend="SeahorseObjectPredicateFunc">*SeahorseObjectPredicateFunc</link>)      (<link linkend="SeahorseObject">SeahorseObject</link> *obj,
+                                                         <link linkend="void">void</link> *user_data);
+                    <link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link>;
+<link linkend="void">void</link>                <link linkend="seahorse-object-predicate-clear">seahorse_object_predicate_clear</link>     (<link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link> *self);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-object-predicate-match">seahorse_object_predicate_match</link>     (<link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *obj);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-SeahorseObject.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-SeahorseObject.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SeahorseObjectPrivate" role="struct">
+<title>SeahorseObjectPrivate</title>
+<indexterm zone="SeahorseObjectPrivate"><primary sortas="ObjectPrivate">SeahorseObjectPrivate</primary></indexterm><programlisting>typedef struct _SeahorseObjectPrivate SeahorseObjectPrivate;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SeahorseObject" role="struct">
+<title>SeahorseObject</title>
+<indexterm zone="SeahorseObject"><primary sortas="Object">SeahorseObject</primary></indexterm><programlisting>typedef struct {
+	GObject parent;
+	SeahorseObjectPrivate *pv;
+} SeahorseObject;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-object-new" role="function">
+<title>seahorse_object_new ()</title>
+<indexterm zone="seahorse-object-new"><primary sortas="object_new">seahorse_object_new</primary></indexterm><programlisting><link linkend="SeahorseObject">SeahorseObject</link>*     seahorse_object_new                 (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-realize" role="function">
+<title>seahorse_object_realize ()</title>
+<indexterm zone="seahorse-object-realize"><primary sortas="object_realize">seahorse_object_realize</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_object_realize             (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+Realizes an object. Calls the klass method</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> the object to realize
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-refresh" role="function">
+<title>seahorse_object_refresh ()</title>
+<indexterm zone="seahorse-object-refresh"><primary sortas="object_refresh">seahorse_object_refresh</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_object_refresh             (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+calls the class refresh function</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> object to refresh
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-delete" role="function">
+<title>seahorse_object_delete ()</title>
+<indexterm zone="seahorse-object-delete"><primary sortas="object_delete">seahorse_object_delete</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_object_delete              (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+calls the class delete function</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> object to delete
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> NULL on error
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-id" role="function">
+<title>seahorse_object_get_id ()</title>
+<indexterm zone="seahorse-object-get-id"><primary sortas="object_get_id">seahorse_object_get_id</primary></indexterm><programlisting><link linkend="GQuark">GQuark</link>              seahorse_object_get_id              (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the id of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-tag" role="function">
+<title>seahorse_object_get_tag ()</title>
+<indexterm zone="seahorse-object-get-tag"><primary sortas="object_get_tag">seahorse_object_get_tag</primary></indexterm><programlisting><link linkend="GQuark">GQuark</link>              seahorse_object_get_tag             (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the tag of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-source" role="function">
+<title>seahorse_object_get_source ()</title>
+<indexterm zone="seahorse-object-get-source"><primary sortas="object_get_source">seahorse_object_get_source</primary></indexterm><programlisting><link linkend="SeahorseSource">SeahorseSource</link>*     seahorse_object_get_source          (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the source of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-set-source" role="function">
+<title>seahorse_object_set_source ()</title>
+<indexterm zone="seahorse-object-set-source"><primary sortas="object_set_source">seahorse_object_set_source</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_object_set_source          (<link linkend="SeahorseObject">SeahorseObject</link> *self,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *value);</programlisting>
+<para>
+sets the source for the object</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> The object to set a new source for
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> The source to set
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-context" role="function">
+<title>seahorse_object_get_context ()</title>
+<indexterm zone="seahorse-object-get-context"><primary sortas="object_get_context">seahorse_object_get_context</primary></indexterm><programlisting><link linkend="SeahorseContext">SeahorseContext</link>*    seahorse_object_get_context         (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the context of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-preferred" role="function">
+<title>seahorse_object_get_preferred ()</title>
+<indexterm zone="seahorse-object-get-preferred"><primary sortas="object_get_preferred">seahorse_object_get_preferred</primary></indexterm><programlisting><link linkend="SeahorseObject">SeahorseObject</link>*     seahorse_object_get_preferred       (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the preferred of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-set-preferred" role="function">
+<title>seahorse_object_set_preferred ()</title>
+<indexterm zone="seahorse-object-set-preferred"><primary sortas="object_set_preferred">seahorse_object_set_preferred</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_object_set_preferred       (<link linkend="SeahorseObject">SeahorseObject</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *value);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> the object to set the preferred object for
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the preferred object
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-parent" role="function">
+<title>seahorse_object_get_parent ()</title>
+<indexterm zone="seahorse-object-get-parent"><primary sortas="object_get_parent">seahorse_object_get_parent</primary></indexterm><programlisting><link linkend="SeahorseObject">SeahorseObject</link>*     seahorse_object_get_parent          (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the parent of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-set-parent" role="function">
+<title>seahorse_object_set_parent ()</title>
+<indexterm zone="seahorse-object-set-parent"><primary sortas="object_set_parent">seahorse_object_set_parent</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_object_set_parent          (<link linkend="SeahorseObject">SeahorseObject</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *value);</programlisting>
+<para>
+register <parameter>value</parameter> as the parent of <parameter>self</parameter>:</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> the child
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the parent
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-children" role="function">
+<title>seahorse_object_get_children ()</title>
+<indexterm zone="seahorse-object-get-children"><primary sortas="object_get_children">seahorse_object_get_children</primary></indexterm><programlisting><link linkend="GList">GList</link>*              seahorse_object_get_children        (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the children of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-nth-child" role="function">
+<title>seahorse_object_get_nth_child ()</title>
+<indexterm zone="seahorse-object-get-nth-child"><primary sortas="object_get_nth_child">seahorse_object_get_nth_child</primary></indexterm><programlisting><link linkend="SeahorseObject">SeahorseObject</link>*     seahorse_object_get_nth_child       (<link linkend="SeahorseObject">SeahorseObject</link> *self,
+                                                         <link linkend="guint">guint</link> index);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>index</parameter>&#160;:</term>
+<listitem><simpara> the number of the child to return
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the child number <parameter>index</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-label" role="function">
+<title>seahorse_object_get_label ()</title>
+<indexterm zone="seahorse-object-get-label"><primary sortas="object_get_label">seahorse_object_get_label</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        seahorse_object_get_label           (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the label of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-markup" role="function">
+<title>seahorse_object_get_markup ()</title>
+<indexterm zone="seahorse-object-get-markup"><primary sortas="object_get_markup">seahorse_object_get_markup</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        seahorse_object_get_markup          (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the markup of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-identifier" role="function">
+<title>seahorse_object_get_identifier ()</title>
+<indexterm zone="seahorse-object-get-identifier"><primary sortas="object_get_identifier">seahorse_object_get_identifier</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        seahorse_object_get_identifier      (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the identifier of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-description" role="function">
+<title>seahorse_object_get_description ()</title>
+<indexterm zone="seahorse-object-get-description"><primary sortas="object_get_description">seahorse_object_get_description</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        seahorse_object_get_description     (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the description of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-nickname" role="function">
+<title>seahorse_object_get_nickname ()</title>
+<indexterm zone="seahorse-object-get-nickname"><primary sortas="object_get_nickname">seahorse_object_get_nickname</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        seahorse_object_get_nickname        (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the nickname of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-icon" role="function">
+<title>seahorse_object_get_icon ()</title>
+<indexterm zone="seahorse-object-get-icon"><primary sortas="object_get_icon">seahorse_object_get_icon</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        seahorse_object_get_icon            (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the icon of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-location" role="function">
+<title>seahorse_object_get_location ()</title>
+<indexterm zone="seahorse-object-get-location"><primary sortas="object_get_location">seahorse_object_get_location</primary></indexterm><programlisting><link linkend="SeahorseLocation">SeahorseLocation</link>    seahorse_object_get_location        (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the location of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-usage" role="function">
+<title>seahorse_object_get_usage ()</title>
+<indexterm zone="seahorse-object-get-usage"><primary sortas="object_get_usage">seahorse_object_get_usage</primary></indexterm><programlisting><link linkend="SeahorseUsage">SeahorseUsage</link>       seahorse_object_get_usage           (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the usage of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-get-flags" role="function">
+<title>seahorse_object_get_flags ()</title>
+<indexterm zone="seahorse-object-get-flags"><primary sortas="object_get_flags">seahorse_object_get_flags</primary></indexterm><programlisting><link linkend="guint">guint</link>               seahorse_object_get_flags           (<link linkend="SeahorseObject">SeahorseObject</link> *self);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> Object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the flags of the object <parameter>self</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-lookup-property" role="function">
+<title>seahorse_object_lookup_property ()</title>
+<indexterm zone="seahorse-object-lookup-property"><primary sortas="object_lookup_property">seahorse_object_lookup_property</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_object_lookup_property     (<link linkend="SeahorseObject">SeahorseObject</link> *self,
+                                                         const <link linkend="gchar">gchar</link> *field,
+                                                         <link linkend="GValue">GValue</link> *value);</programlisting>
+<para>
+Looks up the property <parameter>field</parameter> in the object <parameter>self</parameter> and returns it in <parameter>value</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> the object to look up the property
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>field</parameter>&#160;:</term>
+<listitem><simpara> the field to lookup
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the returned value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if a property was found
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseObjectPredicateFunc" role="function">
+<title>SeahorseObjectPredicateFunc ()</title>
+<indexterm zone="SeahorseObjectPredicateFunc"><primary sortas="ObjectPredicateFunc">SeahorseObjectPredicateFunc</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            (*SeahorseObjectPredicateFunc)      (<link linkend="SeahorseObject">SeahorseObject</link> *obj,
+                                                         <link linkend="void">void</link> *user_data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>obj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseObjectPredicate" role="struct">
+<title>SeahorseObjectPredicate</title>
+<indexterm zone="SeahorseObjectPredicate"><primary sortas="ObjectPredicate">SeahorseObjectPredicate</primary></indexterm><programlisting>typedef struct {
+	GQuark tag;
+	GQuark id;
+	GType type;
+	SeahorseLocation location;
+	SeahorseUsage usage;
+	guint flags;
+	guint nflags;
+	SeahorseSource *source;
+	SeahorseObjectPredicateFunc custom;
+	gpointer custom_target;
+} SeahorseObjectPredicate;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-object-predicate-clear" role="function">
+<title>seahorse_object_predicate_clear ()</title>
+<indexterm zone="seahorse-object-predicate-clear"><primary sortas="object_predicate_clear">seahorse_object_predicate_clear</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_object_predicate_clear     (<link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link> *self);</programlisting>
+<para>
+Clears a seahorse predicate (<link linkend="SeahorseObjectPredicate"><type>SeahorseObjectPredicate</type></link>)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> The predicate to clean
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-predicate-match" role="function">
+<title>seahorse_object_predicate_match ()</title>
+<indexterm zone="seahorse-object-predicate-match"><primary sortas="object_predicate_match">seahorse_object_predicate_match</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_object_predicate_match     (<link linkend="SeahorseObjectPredicate">SeahorseObjectPredicate</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *obj);</programlisting>
+<para>
+matches a seahorse object and a predicate</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> the object to test
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>obj</parameter>&#160;:</term>
+<listitem><simpara> The predicate to match
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> FALSE if predicate does not match the <link linkend="SeahorseObject"><type>SeahorseObject</type></link>, TRUE else
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

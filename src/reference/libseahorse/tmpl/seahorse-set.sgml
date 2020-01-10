@@ -1,0 +1,110 @@
+<!-- ##### SECTION Title ##### -->
+SeahorseSet
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseSetPrivate ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT SeahorseSet ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION seahorse_set_new ##### -->
+<para>
+
+</para>
+
+@ktype: 
+@usage: 
+@location: 
+@flags: 
+@nflags: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_set_new_full ##### -->
+<para>
+
+</para>
+
+@pred: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_set_has_object ##### -->
+<para>
+
+</para>
+
+@skset: 
+@sobj: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_set_get_objects ##### -->
+<para>
+
+</para>
+
+@skset: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_set_get_count ##### -->
+<para>
+
+</para>
+
+@skset: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_set_refresh ##### -->
+<para>
+
+</para>
+
+@skset: 
+
+
+<!-- ##### FUNCTION seahorse_set_get_closure ##### -->
+<para>
+
+</para>
+
+@skset: 
+@sobj: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_set_set_closure ##### -->
+<para>
+
+</para>
+
+@skset: 
+@sobj: 
+@closure: 
+
+

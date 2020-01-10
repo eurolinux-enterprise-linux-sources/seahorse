@@ -1,0 +1,140 @@
+<refentry id="libseahorse-SeahorseCommands">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-SeahorseCommands.top_of_page">SeahorseCommands</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SeahorseCommands</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-SeahorseCommands.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SeahorseCommandsPrivate">SeahorseCommandsPrivate</link>;
+                    <link linkend="SeahorseCommands">SeahorseCommands</link>;
+<link linkend="void">void</link>                <link linkend="seahorse-commands-show-properties">seahorse_commands_show_properties</link>   (<link linkend="SeahorseCommands">SeahorseCommands</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *obj);
+<link linkend="SeahorseOperation">SeahorseOperation</link> * <link linkend="seahorse-commands-delete-objects">seahorse_commands_delete_objects</link>    (<link linkend="SeahorseCommands">SeahorseCommands</link> *self,
+                                                         <link linkend="GList">GList</link> *obj);
+<link linkend="SeahorseView">SeahorseView</link> *      <link linkend="seahorse-commands-get-view">seahorse_commands_get_view</link>          (<link linkend="SeahorseCommands">SeahorseCommands</link> *self);
+<link linkend="GtkWindow">GtkWindow</link> *         <link linkend="seahorse-commands-get-window">seahorse_commands_get_window</link>        (<link linkend="SeahorseCommands">SeahorseCommands</link> *self);
+<link linkend="GtkActionGroup">GtkActionGroup</link> *    <link linkend="seahorse-commands-get-command-actions">seahorse_commands_get_command_actions</link>
+                                                        (<link linkend="SeahorseCommands">SeahorseCommands</link> *self);
+const <link linkend="char">char</link> *        <link linkend="seahorse-commands-get-ui-definition">seahorse_commands_get_ui_definition</link> (<link linkend="SeahorseCommands">SeahorseCommands</link> *self);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-SeahorseCommands.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-SeahorseCommands.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SeahorseCommandsPrivate" role="struct">
+<title>SeahorseCommandsPrivate</title>
+<indexterm zone="SeahorseCommandsPrivate"><primary sortas="CommandsPrivate">SeahorseCommandsPrivate</primary></indexterm><programlisting>typedef struct _SeahorseCommandsPrivate SeahorseCommandsPrivate;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SeahorseCommands" role="struct">
+<title>SeahorseCommands</title>
+<indexterm zone="SeahorseCommands"><primary sortas="Commands">SeahorseCommands</primary></indexterm><programlisting>typedef struct {
+	GObject parent_instance;
+	SeahorseCommandsPrivate *pv;
+} SeahorseCommands;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-commands-show-properties" role="function">
+<title>seahorse_commands_show_properties ()</title>
+<indexterm zone="seahorse-commands-show-properties"><primary sortas="commands_show_properties">seahorse_commands_show_properties</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_commands_show_properties   (<link linkend="SeahorseCommands">SeahorseCommands</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *obj);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>obj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-commands-delete-objects" role="function">
+<title>seahorse_commands_delete_objects ()</title>
+<indexterm zone="seahorse-commands-delete-objects"><primary sortas="commands_delete_objects">seahorse_commands_delete_objects</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link> * seahorse_commands_delete_objects    (<link linkend="SeahorseCommands">SeahorseCommands</link> *self,
+                                                         <link linkend="GList">GList</link> *obj);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>obj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-commands-get-view" role="function">
+<title>seahorse_commands_get_view ()</title>
+<indexterm zone="seahorse-commands-get-view"><primary sortas="commands_get_view">seahorse_commands_get_view</primary></indexterm><programlisting><link linkend="SeahorseView">SeahorseView</link> *      seahorse_commands_get_view          (<link linkend="SeahorseCommands">SeahorseCommands</link> *self);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-commands-get-window" role="function">
+<title>seahorse_commands_get_window ()</title>
+<indexterm zone="seahorse-commands-get-window"><primary sortas="commands_get_window">seahorse_commands_get_window</primary></indexterm><programlisting><link linkend="GtkWindow">GtkWindow</link> *         seahorse_commands_get_window        (<link linkend="SeahorseCommands">SeahorseCommands</link> *self);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-commands-get-command-actions" role="function">
+<title>seahorse_commands_get_command_actions ()</title>
+<indexterm zone="seahorse-commands-get-command-actions"><primary sortas="commands_get_command_actions">seahorse_commands_get_command_actions</primary></indexterm><programlisting><link linkend="GtkActionGroup">GtkActionGroup</link> *    seahorse_commands_get_command_actions
+                                                        (<link linkend="SeahorseCommands">SeahorseCommands</link> *self);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-commands-get-ui-definition" role="function">
+<title>seahorse_commands_get_ui_definition ()</title>
+<indexterm zone="seahorse-commands-get-ui-definition"><primary sortas="commands_get_ui_definition">seahorse_commands_get_ui_definition</primary></indexterm><programlisting>const <link linkend="char">char</link> *        seahorse_commands_get_ui_definition (<link linkend="SeahorseCommands">SeahorseCommands</link> *self);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

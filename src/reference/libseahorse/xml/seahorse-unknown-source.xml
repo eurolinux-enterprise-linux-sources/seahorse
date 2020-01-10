@@ -1,0 +1,116 @@
+<refentry id="libseahorse-SeahorseUnknownSource">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-SeahorseUnknownSource.top_of_page">SeahorseUnknownSource</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SeahorseUnknownSource</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-SeahorseUnknownSource.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SeahorseUnknownSourcePrivate">SeahorseUnknownSourcePrivate</link>;
+                    <link linkend="SeahorseUnknownSource">SeahorseUnknownSource</link>;
+<link linkend="SeahorseUnknownSource">SeahorseUnknownSource</link>* <link linkend="seahorse-unknown-source-new">seahorse_unknown_source_new</link>      (<link linkend="GQuark">GQuark</link> ktype);
+<link linkend="SeahorseObject">SeahorseObject</link>*     <link linkend="seahorse-unknown-source-add-object">seahorse_unknown_source_add_object</link>  (<link linkend="SeahorseUnknownSource">SeahorseUnknownSource</link> *usrc,
+                                                         <link linkend="GQuark">GQuark</link> id,
+                                                         <link linkend="SeahorseOperation">SeahorseOperation</link> *search);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-SeahorseUnknownSource.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-SeahorseUnknownSource.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SeahorseUnknownSourcePrivate" role="struct">
+<title>SeahorseUnknownSourcePrivate</title>
+<indexterm zone="SeahorseUnknownSourcePrivate"><primary sortas="UnknownSourcePrivate">SeahorseUnknownSourcePrivate</primary></indexterm><programlisting>typedef struct _SeahorseUnknownSourcePrivate SeahorseUnknownSourcePrivate;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SeahorseUnknownSource" role="struct">
+<title>SeahorseUnknownSource</title>
+<indexterm zone="SeahorseUnknownSource"><primary sortas="UnknownSource">SeahorseUnknownSource</primary></indexterm><programlisting>typedef struct {
+	GObject parent;
+	GQuark ktype;
+} SeahorseUnknownSource;
+</programlisting>
+<para>
+A  source for unknown objects
+</para>
+<para>
+- Derived from SeahorseSource
+- Is used for objects that haven't been found on a key server.
+</para>
+<para>
+Properties:
+ ktype: (GQuark) The ktype (ie: SKEY_UNKNOWN) of keys originating from this
+           key source.
+ location: (SeahorseLocation) The location of objects that come from this
+        source. (ie: SEAHORSE_LOCATION_MISSING)</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GObject">GObject</link>&#160;<structfield>parent</structfield>;</term>
+<listitem><simpara> The parent <link linkend="GObject"><type>GObject</type></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GQuark">GQuark</link>&#160;<structfield>ktype</structfield>;</term>
+<listitem><simpara> The <link linkend="GQuark"><type>GQuark</type></link> key type for the source
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-unknown-source-new" role="function">
+<title>seahorse_unknown_source_new ()</title>
+<indexterm zone="seahorse-unknown-source-new"><primary sortas="unknown_source_new">seahorse_unknown_source_new</primary></indexterm><programlisting><link linkend="SeahorseUnknownSource">SeahorseUnknownSource</link>* seahorse_unknown_source_new      (<link linkend="GQuark">GQuark</link> ktype);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>ktype</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-unknown-source-add-object" role="function">
+<title>seahorse_unknown_source_add_object ()</title>
+<indexterm zone="seahorse-unknown-source-add-object"><primary sortas="unknown_source_add_object">seahorse_unknown_source_add_object</primary></indexterm><programlisting><link linkend="SeahorseObject">SeahorseObject</link>*     seahorse_unknown_source_add_object  (<link linkend="SeahorseUnknownSource">SeahorseUnknownSource</link> *usrc,
+                                                         <link linkend="GQuark">GQuark</link> id,
+                                                         <link linkend="SeahorseOperation">SeahorseOperation</link> *search);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>usrc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>id</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>search</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

@@ -1,0 +1,47 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-progress
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### FUNCTION seahorse_progress_status_set_operation ##### -->
+<para>
+
+</para>
+
+@swidget: 
+@operation: 
+
+
+<!-- ##### FUNCTION seahorse_progress_status_get_operation ##### -->
+<para>
+
+</para>
+
+@swidget: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_progress_show ##### -->
+<para>
+
+</para>
+
+@operation: 
+@title: 
+@delayed: 
+
+

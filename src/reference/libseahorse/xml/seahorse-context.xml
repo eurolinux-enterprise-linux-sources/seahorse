@@ -1,0 +1,683 @@
+<refentry id="libseahorse-SeahorseContext">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-SeahorseContext.top_of_page">SeahorseContext</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SeahorseContext</refname>
+<refpurpose>This is where all the action in a Seahorse process comes together.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-SeahorseContext.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libseahorse/seahorse-context.h&gt;
+
+                    <link linkend="SeahorseContextPrivate">SeahorseContextPrivate</link>;
+                    <link linkend="SeahorseContext">SeahorseContext</link>;
+<link linkend="void">void</link>                (<link linkend="SeahorseObjectFunc">*SeahorseObjectFunc</link>)               (<link linkend="struct--SeahorseObject">struct _SeahorseObject</link> *obj,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+#define             <link linkend="SCTX-APP--CAPS">SCTX_APP</link>                            ()
+<link linkend="SeahorseContext">SeahorseContext</link>*    <link linkend="seahorse-context-for-app">seahorse_context_for_app</link>            (void);
+<link linkend="SeahorseContext">SeahorseContext</link>*    <link linkend="seahorse-context-new">seahorse_context_new</link>                (<link linkend="guint">guint</link> flags);
+<link linkend="void">void</link>                <link linkend="seahorse-context-destroy">seahorse_context_destroy</link>            (<link linkend="SeahorseContext">SeahorseContext</link> *sctx);
+#define             <link linkend="seahorse-context-is-daemon">seahorse_context_is_daemon</link>          (ctx)
+<link linkend="void">void</link>                <link linkend="seahorse-context-add-source">seahorse_context_add_source</link>         (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *sksrc);
+<link linkend="void">void</link>                <link linkend="seahorse-context-take-source">seahorse_context_take_source</link>        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *sksrc);
+<link linkend="void">void</link>                <link linkend="seahorse-context-remove-source">seahorse_context_remove_source</link>      (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *sksrc);
+<link linkend="SeahorseSource">SeahorseSource</link>*     <link linkend="seahorse-context-find-source">seahorse_context_find_source</link>        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> ktype,
+                                                         <link linkend="SeahorseLocation">SeahorseLocation</link> location);
+<link linkend="GSList">GSList</link>*             <link linkend="seahorse-context-find-sources">seahorse_context_find_sources</link>       (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> ktype,
+                                                         <link linkend="SeahorseLocation">SeahorseLocation</link> location);
+<link linkend="SeahorseSource">SeahorseSource</link>*     <link linkend="seahorse-context-remote-source">seahorse_context_remote_source</link>      (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         const <link linkend="gchar">gchar</link> *uri);
+<link linkend="void">void</link>                <link linkend="seahorse-context-add-object">seahorse_context_add_object</link>         (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="struct--SeahorseObject">struct _SeahorseObject</link> *sobj);
+<link linkend="void">void</link>                <link linkend="seahorse-context-take-object">seahorse_context_take_object</link>        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="struct--SeahorseObject">struct _SeahorseObject</link> *sobj);
+<link linkend="guint">guint</link>               <link linkend="seahorse-context-get-count">seahorse_context_get_count</link>          (<link linkend="SeahorseContext">SeahorseContext</link> *sctx);
+struct <link linkend="SeahorseObject">_SeahorseObject</link>* <link linkend="seahorse-context-get-object">seahorse_context_get_object</link>     (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *sksrc,
+                                                         <link linkend="GQuark">GQuark</link> id);
+<link linkend="GList">GList</link>*              <link linkend="seahorse-context-get-objects">seahorse_context_get_objects</link>        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *sksrc);
+struct <link linkend="SeahorseObject">_SeahorseObject</link>* <link linkend="seahorse-context-find-object">seahorse_context_find_object</link>    (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> id,
+                                                         <link linkend="SeahorseLocation">SeahorseLocation</link> location);
+<link linkend="GList">GList</link>*              <link linkend="seahorse-context-find-objects">seahorse_context_find_objects</link>       (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> ktype,
+                                                         <link linkend="SeahorseUsage">SeahorseUsage</link> usage,
+                                                         <link linkend="SeahorseLocation">SeahorseLocation</link> location);
+<link linkend="GList">GList</link>*              <link linkend="seahorse-context-find-objects-full">seahorse_context_find_objects_full</link>  (<link linkend="SeahorseContext">SeahorseContext</link> *self,
+                                                         <link linkend="struct--SeahorseObjectPredicate">struct _SeahorseObjectPredicate</link> *skpred);
+<link linkend="void">void</link>                <link linkend="seahorse-context-for-objects-full">seahorse_context_for_objects_full</link>   (<link linkend="SeahorseContext">SeahorseContext</link> *self,
+                                                         <link linkend="struct--SeahorseObjectPredicate">struct _SeahorseObjectPredicate</link> *skpred,
+                                                         <link linkend="SeahorseObjectFunc">SeahorseObjectFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="void">void</link>                <link linkend="seahorse-context-verify-objects">seahorse_context_verify_objects</link>     (<link linkend="SeahorseContext">SeahorseContext</link> *self);
+<link linkend="void">void</link>                <link linkend="seahorse-context-remove-object">seahorse_context_remove_object</link>      (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="struct--SeahorseObject">struct _SeahorseObject</link> *sobj);
+<link linkend="SeahorseServiceDiscovery">SeahorseServiceDiscovery</link> * <link linkend="seahorse-context-get-discovery">seahorse_context_get_discovery</link>
+                                                        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx);
+struct <link linkend="SeahorseObject">_SeahorseObject</link> * <link linkend="seahorse-context-get-default-key">seahorse_context_get_default_key</link>
+                                                        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx);
+<link linkend="void">void</link>                <link linkend="seahorse-context-refresh-auto">seahorse_context_refresh_auto</link>       (<link linkend="SeahorseContext">SeahorseContext</link> *sctx);
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-context-search-remote">seahorse_context_search_remote</link>      (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         const <link linkend="gchar">gchar</link> *search);
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-context-transfer-objects">seahorse_context_transfer_objects</link>   (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GList">GList</link> *objs,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *to);
+<link linkend="SeahorseOperation">SeahorseOperation</link>*  <link linkend="seahorse-context-retrieve-objects">seahorse_context_retrieve_objects</link>   (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> ktype,
+                                                         <link linkend="GSList">GSList</link> *ids,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *to);
+<link linkend="GList">GList</link>*              <link linkend="seahorse-context-discover-objects">seahorse_context_discover_objects</link>   (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> ktype,
+                                                         <link linkend="GSList">GSList</link> *ids);
+struct <link linkend="SeahorseObject">_SeahorseObject</link>* <link linkend="seahorse-context-object-from-dbus">seahorse_context_object_from_dbus</link>
+                                                        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         const <link linkend="gchar">gchar</link> *dbusid);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-context-object-to-dbus">seahorse_context_object_to_dbus</link>     (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="struct--SeahorseObject">struct _SeahorseObject</link> *sobj);
+<link linkend="gchar">gchar</link>*              <link linkend="seahorse-context-id-to-dbus">seahorse_context_id_to_dbus</link>         (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> id);
+<link linkend="GQuark">GQuark</link>              (<link linkend="SeahorseCanonizeFunc">*SeahorseCanonizeFunc</link>)             (const <link linkend="gchar">gchar</link> *id);
+<link linkend="GQuark">GQuark</link>              <link linkend="seahorse-context-canonize-id">seahorse_context_canonize_id</link>        (<link linkend="GQuark">GQuark</link> ktype,
+                                                         const <link linkend="gchar">gchar</link> *id);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-SeahorseContext.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-SeahorseContext.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SeahorseContextPrivate" role="struct">
+<title>SeahorseContextPrivate</title>
+<indexterm zone="SeahorseContextPrivate"><primary sortas="ContextPrivate">SeahorseContextPrivate</primary></indexterm><programlisting>typedef struct _SeahorseContextPrivate SeahorseContextPrivate;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SeahorseContext" role="struct">
+<title>SeahorseContext</title>
+<indexterm zone="SeahorseContext"><primary sortas="Context">SeahorseContext</primary></indexterm><programlisting>typedef struct {
+    GtkObject               parent;
+    
+    gboolean                is_daemon;
+} SeahorseContext;
+</programlisting>
+<para>
+This is where all the action in a Seahorse process comes together.
+</para>
+<para>
+- Usually there's only one <link linkend="SeahorseContext"><type>SeahorseContext</type></link> per process created by passing
+  <link linkend="SEAHORSE-CONTEXT-APP--CAPS"><literal>SEAHORSE_CONTEXT_APP</literal></link> to <link linkend="seahorse-context-new"><function>seahorse_context_new()</function></link>, and accessed via
+  the <link linkend="SCTX-APP--CAPS"><literal>SCTX_APP</literal></link> macro.
+- Retains the list of all valid struct _SeahorseObject objects.
+- Has a collection of <link linkend="SeahorseSource"><type>SeahorseSource</type></link> objects which add objects to the
+  <link linkend="SeahorseContext"><type>SeahorseContext</type></link>.
+</para>
+<para>
+Signals:
+  added: A object was added to the context.
+  removed: A object was removed from the context.
+  changed: A object changed.
+  destroy: The context was destroyed.</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GtkObject">GtkObject</link>&#160;<structfield>parent</structfield>;</term>
+<listitem><simpara> The parent <link linkend="GtkObject"><type>GtkObject</type></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gboolean">gboolean</link>&#160;<structfield>is_daemon</structfield>;</term>
+<listitem><simpara> a <link linkend="gboolean"><type>gboolean</type></link> indicating whether the context is being used in a
+            program that is daemonized
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseObjectFunc" role="function">
+<title>SeahorseObjectFunc ()</title>
+<indexterm zone="SeahorseObjectFunc"><primary sortas="ObjectFunc">SeahorseObjectFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*SeahorseObjectFunc)               (<link linkend="struct--SeahorseObject">struct _SeahorseObject</link> *obj,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>obj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SCTX-APP--CAPS" role="macro">
+<title>SCTX_APP()</title>
+<indexterm zone="SCTX-APP--CAPS"><primary>SCTX_APP</primary></indexterm><programlisting>#define             SCTX_APP()                          (seahorse_context_for_app ())
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-context-for-app" role="function">
+<title>seahorse_context_for_app ()</title>
+<indexterm zone="seahorse-context-for-app"><primary sortas="context_for_app">seahorse_context_for_app</primary></indexterm><programlisting><link linkend="SeahorseContext">SeahorseContext</link>*    seahorse_context_for_app            (void);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the application main context as <link linkend="SeahorseContext"><type>SeahorseContext</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-new" role="function">
+<title>seahorse_context_new ()</title>
+<indexterm zone="seahorse-context-new"><primary sortas="context_new">seahorse_context_new</primary></indexterm><programlisting><link linkend="SeahorseContext">SeahorseContext</link>*    seahorse_context_new                (<link linkend="guint">guint</link> flags);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>flags</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-destroy" role="function">
+<title>seahorse_context_destroy ()</title>
+<indexterm zone="seahorse-context-destroy"><primary sortas="context_destroy">seahorse_context_destroy</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_context_destroy            (<link linkend="SeahorseContext">SeahorseContext</link> *sctx);</programlisting>
+<para>
+Emits the destroy signal for <parameter>sctx</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="SeahorseContext"><type>SeahorseContext</type></link> to destroy
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-is-daemon" role="macro">
+<title>seahorse_context_is_daemon()</title>
+<indexterm zone="seahorse-context-is-daemon"><primary sortas="context_is_daemon">seahorse_context_is_daemon</primary></indexterm><programlisting>#define             seahorse_context_is_daemon(ctx)     ((ctx)-&gt;is_daemon)
+</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>ctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-add-source" role="function">
+<title>seahorse_context_add_source ()</title>
+<indexterm zone="seahorse-context-add-source"><primary sortas="context_add_source">seahorse_context_add_source</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_context_add_source         (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *sksrc);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-take-source" role="function">
+<title>seahorse_context_take_source ()</title>
+<indexterm zone="seahorse-context-take-source"><primary sortas="context_take_source">seahorse_context_take_source</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_context_take_source        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *sksrc);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-remove-source" role="function">
+<title>seahorse_context_remove_source ()</title>
+<indexterm zone="seahorse-context-remove-source"><primary sortas="context_remove_source">seahorse_context_remove_source</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_context_remove_source      (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *sksrc);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-find-source" role="function">
+<title>seahorse_context_find_source ()</title>
+<indexterm zone="seahorse-context-find-source"><primary sortas="context_find_source">seahorse_context_find_source</primary></indexterm><programlisting><link linkend="SeahorseSource">SeahorseSource</link>*     seahorse_context_find_source        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> ktype,
+                                                         <link linkend="SeahorseLocation">SeahorseLocation</link> location);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ktype</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>location</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-find-sources" role="function">
+<title>seahorse_context_find_sources ()</title>
+<indexterm zone="seahorse-context-find-sources"><primary sortas="context_find_sources">seahorse_context_find_sources</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             seahorse_context_find_sources       (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> ktype,
+                                                         <link linkend="SeahorseLocation">SeahorseLocation</link> location);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara> the context to work with
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ktype</parameter>&#160;:</term>
+<listitem><simpara> the type of the key to match. Or SEAHORSE_TAG_INVALID
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>location</parameter>&#160;:</term>
+<listitem><simpara> the location to match. Or SEAHORSE_LOCATION_INVALID
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A list of seahorse sources matching <parameter>ktype</parameter> and <parameter>location</parameter> as <link linkend="GSList"><type>GSList</type></link>. Must
+ be freed with <link linkend="g-slist-free"><type>g_slist_free</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-remote-source" role="function">
+<title>seahorse_context_remote_source ()</title>
+<indexterm zone="seahorse-context-remote-source"><primary sortas="context_remote_source">seahorse_context_remote_source</primary></indexterm><programlisting><link linkend="SeahorseSource">SeahorseSource</link>*     seahorse_context_remote_source      (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         const <link linkend="gchar">gchar</link> *uri);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-add-object" role="function">
+<title>seahorse_context_add_object ()</title>
+<indexterm zone="seahorse-context-add-object"><primary sortas="context_add_object">seahorse_context_add_object</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_context_add_object         (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="struct--SeahorseObject">struct _SeahorseObject</link> *sobj);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sobj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-take-object" role="function">
+<title>seahorse_context_take_object ()</title>
+<indexterm zone="seahorse-context-take-object"><primary sortas="context_take_object">seahorse_context_take_object</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_context_take_object        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="struct--SeahorseObject">struct _SeahorseObject</link> *sobj);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sobj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-get-count" role="function">
+<title>seahorse_context_get_count ()</title>
+<indexterm zone="seahorse-context-get-count"><primary sortas="context_get_count">seahorse_context_get_count</primary></indexterm><programlisting><link linkend="guint">guint</link>               seahorse_context_get_count          (<link linkend="SeahorseContext">SeahorseContext</link> *sctx);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-get-object" role="function">
+<title>seahorse_context_get_object ()</title>
+<indexterm zone="seahorse-context-get-object"><primary sortas="context_get_object">seahorse_context_get_object</primary></indexterm><programlisting>struct <link linkend="SeahorseObject">_SeahorseObject</link>* seahorse_context_get_object     (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *sksrc,
+                                                         <link linkend="GQuark">GQuark</link> id);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>id</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-get-objects" role="function">
+<title>seahorse_context_get_objects ()</title>
+<indexterm zone="seahorse-context-get-objects"><primary sortas="context_get_objects">seahorse_context_get_objects</primary></indexterm><programlisting><link linkend="GList">GList</link>*              seahorse_context_get_objects        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *sksrc);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sksrc</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-find-object" role="function">
+<title>seahorse_context_find_object ()</title>
+<indexterm zone="seahorse-context-find-object"><primary sortas="context_find_object">seahorse_context_find_object</primary></indexterm><programlisting>struct <link linkend="SeahorseObject">_SeahorseObject</link>* seahorse_context_find_object    (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> id,
+                                                         <link linkend="SeahorseLocation">SeahorseLocation</link> location);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>id</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>location</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-find-objects" role="function">
+<title>seahorse_context_find_objects ()</title>
+<indexterm zone="seahorse-context-find-objects"><primary sortas="context_find_objects">seahorse_context_find_objects</primary></indexterm><programlisting><link linkend="GList">GList</link>*              seahorse_context_find_objects       (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> ktype,
+                                                         <link linkend="SeahorseUsage">SeahorseUsage</link> usage,
+                                                         <link linkend="SeahorseLocation">SeahorseLocation</link> location);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ktype</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>usage</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>location</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-find-objects-full" role="function">
+<title>seahorse_context_find_objects_full ()</title>
+<indexterm zone="seahorse-context-find-objects-full"><primary sortas="context_find_objects_full">seahorse_context_find_objects_full</primary></indexterm><programlisting><link linkend="GList">GList</link>*              seahorse_context_find_objects_full  (<link linkend="SeahorseContext">SeahorseContext</link> *self,
+                                                         <link linkend="struct--SeahorseObjectPredicate">struct _SeahorseObjectPredicate</link> *skpred);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>skpred</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-for-objects-full" role="function">
+<title>seahorse_context_for_objects_full ()</title>
+<indexterm zone="seahorse-context-for-objects-full"><primary sortas="context_for_objects_full">seahorse_context_for_objects_full</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_context_for_objects_full   (<link linkend="SeahorseContext">SeahorseContext</link> *self,
+                                                         <link linkend="struct--SeahorseObjectPredicate">struct _SeahorseObjectPredicate</link> *skpred,
+                                                         <link linkend="SeahorseObjectFunc">SeahorseObjectFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>skpred</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-verify-objects" role="function">
+<title>seahorse_context_verify_objects ()</title>
+<indexterm zone="seahorse-context-verify-objects"><primary sortas="context_verify_objects">seahorse_context_verify_objects</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_context_verify_objects     (<link linkend="SeahorseContext">SeahorseContext</link> *self);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-remove-object" role="function">
+<title>seahorse_context_remove_object ()</title>
+<indexterm zone="seahorse-context-remove-object"><primary sortas="context_remove_object">seahorse_context_remove_object</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_context_remove_object      (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="struct--SeahorseObject">struct _SeahorseObject</link> *sobj);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sobj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-get-discovery" role="function" condition="deprecated:No replacement">
+<title>seahorse_context_get_discovery ()</title>
+<indexterm zone="seahorse-context-get-discovery" role="deprecated"><primary sortas="context_get_discovery">seahorse_context_get_discovery</primary></indexterm><programlisting><link linkend="SeahorseServiceDiscovery">SeahorseServiceDiscovery</link> * seahorse_context_get_discovery
+                                                        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx);</programlisting>
+<warning><para><literal>seahorse_context_get_discovery</literal> is deprecated and should not be used in newly-written code. No replacement</para></warning>
+<para>
+Gets the Service Discovery object for this context.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="SeahorseContext"><type>SeahorseContext</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The Service Discovery object.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-get-default-key" role="function" condition="deprecated:No replacement">
+<title>seahorse_context_get_default_key ()</title>
+<indexterm zone="seahorse-context-get-default-key" role="deprecated"><primary sortas="context_get_default_key">seahorse_context_get_default_key</primary></indexterm><programlisting>struct <link linkend="SeahorseObject">_SeahorseObject</link> * seahorse_context_get_default_key
+                                                        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx);</programlisting>
+<warning><para><literal>seahorse_context_get_default_key</literal> is deprecated and should not be used in newly-written code. No replacement</para></warning>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara> Current <link linkend="SeahorseContext"><type>SeahorseContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the secret key that's the default key
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-refresh-auto" role="function">
+<title>seahorse_context_refresh_auto ()</title>
+<indexterm zone="seahorse-context-refresh-auto"><primary sortas="context_refresh_auto">seahorse_context_refresh_auto</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_context_refresh_auto       (<link linkend="SeahorseContext">SeahorseContext</link> *sctx);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-search-remote" role="function">
+<title>seahorse_context_search_remote ()</title>
+<indexterm zone="seahorse-context-search-remote"><primary sortas="context_search_remote">seahorse_context_search_remote</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_context_search_remote      (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         const <link linkend="gchar">gchar</link> *search);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>search</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-transfer-objects" role="function">
+<title>seahorse_context_transfer_objects ()</title>
+<indexterm zone="seahorse-context-transfer-objects"><primary sortas="context_transfer_objects">seahorse_context_transfer_objects</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_context_transfer_objects   (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GList">GList</link> *objs,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *to);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>objs</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>to</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-retrieve-objects" role="function">
+<title>seahorse_context_retrieve_objects ()</title>
+<indexterm zone="seahorse-context-retrieve-objects"><primary sortas="context_retrieve_objects">seahorse_context_retrieve_objects</primary></indexterm><programlisting><link linkend="SeahorseOperation">SeahorseOperation</link>*  seahorse_context_retrieve_objects   (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> ktype,
+                                                         <link linkend="GSList">GSList</link> *ids,
+                                                         <link linkend="SeahorseSource">SeahorseSource</link> *to);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ktype</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ids</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>to</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-discover-objects" role="function">
+<title>seahorse_context_discover_objects ()</title>
+<indexterm zone="seahorse-context-discover-objects"><primary sortas="context_discover_objects">seahorse_context_discover_objects</primary></indexterm><programlisting><link linkend="GList">GList</link>*              seahorse_context_discover_objects   (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> ktype,
+                                                         <link linkend="GSList">GSList</link> *ids);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ktype</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ids</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-object-from-dbus" role="function">
+<title>seahorse_context_object_from_dbus ()</title>
+<indexterm zone="seahorse-context-object-from-dbus"><primary sortas="context_object_from_dbus">seahorse_context_object_from_dbus</primary></indexterm><programlisting>struct <link linkend="SeahorseObject">_SeahorseObject</link>* seahorse_context_object_from_dbus
+                                                        (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         const <link linkend="gchar">gchar</link> *dbusid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dbusid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-object-to-dbus" role="function">
+<title>seahorse_context_object_to_dbus ()</title>
+<indexterm zone="seahorse-context-object-to-dbus"><primary sortas="context_object_to_dbus">seahorse_context_object_to_dbus</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_context_object_to_dbus     (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="struct--SeahorseObject">struct _SeahorseObject</link> *sobj);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sobj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-id-to-dbus" role="function">
+<title>seahorse_context_id_to_dbus ()</title>
+<indexterm zone="seahorse-context-id-to-dbus"><primary sortas="context_id_to_dbus">seahorse_context_id_to_dbus</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              seahorse_context_id_to_dbus         (<link linkend="SeahorseContext">SeahorseContext</link> *sctx,
+                                                         <link linkend="GQuark">GQuark</link> id);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sctx</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>id</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseCanonizeFunc" role="function">
+<title>SeahorseCanonizeFunc ()</title>
+<indexterm zone="SeahorseCanonizeFunc"><primary sortas="CanonizeFunc">SeahorseCanonizeFunc</primary></indexterm><programlisting><link linkend="GQuark">GQuark</link>              (*SeahorseCanonizeFunc)             (const <link linkend="gchar">gchar</link> *id);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>id</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-context-canonize-id" role="function">
+<title>seahorse_context_canonize_id ()</title>
+<indexterm zone="seahorse-context-canonize-id"><primary sortas="context_canonize_id">seahorse_context_canonize_id</primary></indexterm><programlisting><link linkend="GQuark">GQuark</link>              seahorse_context_canonize_id        (<link linkend="GQuark">GQuark</link> ktype,
+                                                         const <link linkend="gchar">gchar</link> *id);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>ktype</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>id</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

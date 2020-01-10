@@ -1,0 +1,116 @@
+<refentry id="libseahorse-seahorse-combo-keys">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-combo-keys.top_of_page">seahorse-combo-keys</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-combo-keys</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-combo-keys.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+<link linkend="void">void</link>                <link linkend="seahorse-combo-keys-attach">seahorse_combo_keys_attach</link>          (<link linkend="GtkComboBox">GtkComboBox</link> *combo,
+                                                         <link linkend="SeahorseSet">SeahorseSet</link> *skset,
+                                                         const <link linkend="gchar">gchar</link> *none_option);
+<link linkend="void">void</link>                <link linkend="seahorse-combo-keys-set-active-id">seahorse_combo_keys_set_active_id</link>   (<link linkend="GtkComboBox">GtkComboBox</link> *combo,
+                                                         <link linkend="GQuark">GQuark</link> keyid);
+<link linkend="void">void</link>                <link linkend="seahorse-combo-keys-set-active">seahorse_combo_keys_set_active</link>      (<link linkend="GtkComboBox">GtkComboBox</link> *combo,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *object);
+<link linkend="SeahorseObject">SeahorseObject</link>*     <link linkend="seahorse-combo-keys-get-active">seahorse_combo_keys_get_active</link>      (<link linkend="GtkComboBox">GtkComboBox</link> *combo);
+<link linkend="GQuark">GQuark</link>              <link linkend="seahorse-combo-keys-get-active-id">seahorse_combo_keys_get_active_id</link>   (<link linkend="GtkComboBox">GtkComboBox</link> *combo);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-combo-keys.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-combo-keys.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="seahorse-combo-keys-attach" role="function">
+<title>seahorse_combo_keys_attach ()</title>
+<indexterm zone="seahorse-combo-keys-attach"><primary sortas="combo_keys_attach">seahorse_combo_keys_attach</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_combo_keys_attach          (<link linkend="GtkComboBox">GtkComboBox</link> *combo,
+                                                         <link linkend="SeahorseSet">SeahorseSet</link> *skset,
+                                                         const <link linkend="gchar">gchar</link> *none_option);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>combo</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>skset</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>none_option</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-combo-keys-set-active-id" role="function">
+<title>seahorse_combo_keys_set_active_id ()</title>
+<indexterm zone="seahorse-combo-keys-set-active-id"><primary sortas="combo_keys_set_active_id">seahorse_combo_keys_set_active_id</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_combo_keys_set_active_id   (<link linkend="GtkComboBox">GtkComboBox</link> *combo,
+                                                         <link linkend="GQuark">GQuark</link> keyid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>combo</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-combo-keys-set-active" role="function">
+<title>seahorse_combo_keys_set_active ()</title>
+<indexterm zone="seahorse-combo-keys-set-active"><primary sortas="combo_keys_set_active">seahorse_combo_keys_set_active</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_combo_keys_set_active      (<link linkend="GtkComboBox">GtkComboBox</link> *combo,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *object);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>combo</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>object</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-combo-keys-get-active" role="function">
+<title>seahorse_combo_keys_get_active ()</title>
+<indexterm zone="seahorse-combo-keys-get-active"><primary sortas="combo_keys_get_active">seahorse_combo_keys_get_active</primary></indexterm><programlisting><link linkend="SeahorseObject">SeahorseObject</link>*     seahorse_combo_keys_get_active      (<link linkend="GtkComboBox">GtkComboBox</link> *combo);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>combo</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-combo-keys-get-active-id" role="function">
+<title>seahorse_combo_keys_get_active_id ()</title>
+<indexterm zone="seahorse-combo-keys-get-active-id"><primary sortas="combo_keys_get_active_id">seahorse_combo_keys_get_active_id</primary></indexterm><programlisting><link linkend="GQuark">GQuark</link>              seahorse_combo_keys_get_active_id   (<link linkend="GtkComboBox">GtkComboBox</link> *combo);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>combo</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

@@ -1,0 +1,160 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-source
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO SEAHORSE_SOURCE_GET_INTERFACE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### STRUCT SeahorseSource ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT SeahorseSourceIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@load: 
+@search: 
+@import: 
+@export: 
+@export_raw: 
+
+<!-- ##### FUNCTION seahorse_source_load ##### -->
+<para>
+
+</para>
+
+@sksrc: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_source_load_sync ##### -->
+<para>
+
+</para>
+
+@sksrc: 
+
+
+<!-- ##### FUNCTION seahorse_source_load_async ##### -->
+<para>
+
+</para>
+
+@sksrc: 
+
+
+<!-- ##### FUNCTION seahorse_source_search ##### -->
+<para>
+
+</para>
+
+@sksrc: 
+@match: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_source_import ##### -->
+<para>
+
+</para>
+
+@sksrc: 
+@input: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_source_import_sync ##### -->
+<para>
+
+</para>
+
+@sksrc: 
+@input: 
+@err: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_source_export_objects ##### -->
+<para>
+
+</para>
+
+@objects: 
+@output: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_source_delete_objects ##### -->
+<para>
+
+</para>
+
+@objects: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_source_export ##### -->
+<para>
+
+</para>
+
+@sksrc: 
+@objects: 
+@output: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_source_export_raw ##### -->
+<para>
+
+</para>
+
+@sksrc: 
+@ids: 
+@output: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_source_get_tag ##### -->
+<para>
+
+</para>
+
+@sksrc: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_source_get_location ##### -->
+<para>
+
+</para>
+
+@sksrc: 
+@Returns: 
+
+

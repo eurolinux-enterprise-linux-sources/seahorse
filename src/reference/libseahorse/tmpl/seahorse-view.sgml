@@ -1,0 +1,142 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-view
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseCommands ##### -->
+<para>
+
+</para>
+
+@parent_instance: 
+@pv: 
+
+<!-- ##### MACRO SEAHORSE_VIEW_GET_INTERFACE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### STRUCT SeahorseView ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT SeahorseViewIface ##### -->
+<para>
+
+</para>
+
+@parent_iface: 
+@get_selected_objects: 
+@set_selected_objects: 
+@get_selected_matching: 
+@get_selected: 
+@set_selected: 
+@get_current_set: 
+@get_window: 
+@register_commands: 
+@register_ui: 
+
+<!-- ##### FUNCTION seahorse_view_get_selected_objects ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_view_set_selected_objects ##### -->
+<para>
+
+</para>
+
+@self: 
+@objects: 
+
+
+<!-- ##### FUNCTION seahorse_view_get_selected_matching ##### -->
+<para>
+
+</para>
+
+@self: 
+@pred: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_view_get_selected ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_view_set_selected ##### -->
+<para>
+
+</para>
+
+@self: 
+@value: 
+
+
+<!-- ##### FUNCTION seahorse_view_get_current_set ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_view_get_window ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_view_register_ui ##### -->
+<para>
+
+</para>
+
+@self: 
+@pred: 
+@ui_definition: 
+@actions: 
+
+
+<!-- ##### FUNCTION seahorse_view_register_commands ##### -->
+<para>
+
+</para>
+
+@self: 
+@pred: 
+@commands: 
+
+

@@ -1,0 +1,64 @@
+<!-- ##### SECTION Title ##### -->
+seahorse-passphrase
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO SEAHORSE_PASS_BAD ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO SEAHORSE_PASS_NEW ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION seahorse_passphrase_prompt_show ##### -->
+<para>
+
+</para>
+
+@title: 
+@description: 
+@prompt: 
+@check: 
+@confirm: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_passphrase_prompt_get ##### -->
+<para>
+
+</para>
+
+@dialog: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_passphrase_prompt_checked ##### -->
+<para>
+
+</para>
+
+@dialog: 
+@Returns: 
+
+

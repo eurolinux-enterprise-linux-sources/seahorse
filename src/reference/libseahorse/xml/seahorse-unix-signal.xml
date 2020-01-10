@@ -1,0 +1,67 @@
+<refentry id="libseahorse-seahorse-unix-signal">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-unix-signal.top_of_page">seahorse-unix-signal</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-unix-signal</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-unix-signal.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+<link linkend="void">void</link>                (<link linkend="signal-handler">*signal_handler</link>)                   (<link linkend="int">int</link> sig);
+<link linkend="void">void</link>                <link linkend="seahorse-unix-signal-register">seahorse_unix_signal_register</link>       (<link linkend="int">int</link> sig,
+                                                         <link linkend="signal-handler">signal_handler</link> handler);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-unix-signal.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-unix-signal.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="signal-handler" role="function">
+<title>signal_handler ()</title>
+<indexterm zone="signal-handler"><primary>signal_handler</primary></indexterm><programlisting><link linkend="void">void</link>                (*signal_handler)                   (<link linkend="int">int</link> sig);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sig</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-unix-signal-register" role="function">
+<title>seahorse_unix_signal_register ()</title>
+<indexterm zone="seahorse-unix-signal-register"><primary sortas="unix_signal_register">seahorse_unix_signal_register</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_unix_signal_register       (<link linkend="int">int</link> sig,
+                                                         <link linkend="signal-handler">signal_handler</link> handler);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sig</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>handler</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

@@ -1,0 +1,125 @@
+<refentry id="libseahorse-seahorse-servers">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-servers.top_of_page">seahorse-servers</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-servers</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-servers.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+<link linkend="GSList">GSList</link>*             <link linkend="seahorse-servers-get-types">seahorse_servers_get_types</link>          (void);
+<link linkend="GSList">GSList</link>*             <link linkend="seahorse-servers-get-names">seahorse_servers_get_names</link>          (void);
+<link linkend="char">char</link>*               <link linkend="seahorse-servers-get-description">seahorse_servers_get_description</link>    (const <link linkend="char">char</link> *type);
+<link linkend="GSList">GSList</link>*             <link linkend="seahorse-servers-get-uris">seahorse_servers_get_uris</link>           (void);
+<link linkend="gboolean">gboolean</link>            <link linkend="seahorse-servers-is-valid-uri">seahorse_servers_is_valid_uri</link>       (const <link linkend="char">char</link> *uri);
+<link linkend="gboolean">gboolean</link>            (<link linkend="SeahorseValidUriFunc">*SeahorseValidUriFunc</link>)             (const <link linkend="gchar">gchar</link> *uri);
+<link linkend="void">void</link>                <link linkend="seahorse-servers-register-type">seahorse_servers_register_type</link>      (const <link linkend="char">char</link> *type,
+                                                         const <link linkend="char">char</link> *description,
+                                                         <link linkend="SeahorseValidUriFunc">SeahorseValidUriFunc</link> validate);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-servers.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-servers.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="seahorse-servers-get-types" role="function">
+<title>seahorse_servers_get_types ()</title>
+<indexterm zone="seahorse-servers-get-types"><primary sortas="servers_get_types">seahorse_servers_get_types</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             seahorse_servers_get_types          (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-servers-get-names" role="function">
+<title>seahorse_servers_get_names ()</title>
+<indexterm zone="seahorse-servers-get-names"><primary sortas="servers_get_names">seahorse_servers_get_names</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             seahorse_servers_get_names          (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-servers-get-description" role="function">
+<title>seahorse_servers_get_description ()</title>
+<indexterm zone="seahorse-servers-get-description"><primary sortas="servers_get_description">seahorse_servers_get_description</primary></indexterm><programlisting><link linkend="char">char</link>*               seahorse_servers_get_description    (const <link linkend="char">char</link> *type);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-servers-get-uris" role="function">
+<title>seahorse_servers_get_uris ()</title>
+<indexterm zone="seahorse-servers-get-uris"><primary sortas="servers_get_uris">seahorse_servers_get_uris</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             seahorse_servers_get_uris           (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-servers-is-valid-uri" role="function">
+<title>seahorse_servers_is_valid_uri ()</title>
+<indexterm zone="seahorse-servers-is-valid-uri"><primary sortas="servers_is_valid_uri">seahorse_servers_is_valid_uri</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            seahorse_servers_is_valid_uri       (const <link linkend="char">char</link> *uri);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SeahorseValidUriFunc" role="function">
+<title>SeahorseValidUriFunc ()</title>
+<indexterm zone="SeahorseValidUriFunc"><primary sortas="ValidUriFunc">SeahorseValidUriFunc</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            (*SeahorseValidUriFunc)             (const <link linkend="gchar">gchar</link> *uri);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-servers-register-type" role="function">
+<title>seahorse_servers_register_type ()</title>
+<indexterm zone="seahorse-servers-register-type"><primary sortas="servers_register_type">seahorse_servers_register_type</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_servers_register_type      (const <link linkend="char">char</link> *type,
+                                                         const <link linkend="char">char</link> *description,
+                                                         <link linkend="SeahorseValidUriFunc">SeahorseValidUriFunc</link> validate);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>description</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>validate</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

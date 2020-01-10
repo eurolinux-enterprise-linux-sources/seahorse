@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml"> 
+]>
+<indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="cryptui-display-notification"><link linkend="cryptui-display-notification">cryptui_display_notification</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>E</title>
+<indexentry><primaryie linkends="CryptUIEncType"><link linkend="CryptUIEncType">CryptUIEncType</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>K</title>
+<indexentry><primaryie linkends="CryptUIKeyChooser"><link linkend="CryptUIKeyChooser">CryptUIKeyChooser</link></primaryie></indexentry>
+<indexentry><primaryie linkends="CryptUIKeyChooserMode"><link linkend="CryptUIKeyChooserMode">CryptUIKeyChooserMode</link></primaryie></indexentry>
+<indexentry><primaryie linkends="CryptUIKeyChooserPriv"><link linkend="CryptUIKeyChooserPriv">CryptUIKeyChooserPriv</link></primaryie></indexentry>
+<indexentry><primaryie linkends="CryptUIKeyFlags"><link linkend="CryptUIKeyFlags">CryptUIKeyFlags</link></primaryie></indexentry>
+<indexentry><primaryie linkends="CryptUIKeyset"><link linkend="CryptUIKeyset">CryptUIKeyset</link></primaryie></indexentry>
+<indexentry><primaryie linkends="CryptUIKeysetPrivate"><link linkend="CryptUIKeysetPrivate">CryptUIKeysetPrivate</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-cache-key"><link linkend="cryptui-keyset-cache-key">cryptui_keyset_cache_key</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-get-closure"><link linkend="cryptui-keyset-get-closure">cryptui_keyset_get_closure</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-get-count"><link linkend="cryptui-keyset-get-count">cryptui_keyset_get_count</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-get-expand-keys"><link linkend="cryptui-keyset-get-expand-keys">cryptui_keyset_get_expand_keys</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-get-keys"><link linkend="cryptui-keyset-get-keys">cryptui_keyset_get_keys</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-get-keytype"><link linkend="cryptui-keyset-get-keytype">cryptui_keyset_get_keytype</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-has-key"><link linkend="cryptui-keyset-has-key">cryptui_keyset_has_key</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-keys-raw-keyids"><link linkend="cryptui-keyset-keys-raw-keyids">cryptui_keyset_keys_raw_keyids</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-key-display-id"><link linkend="cryptui-keyset-key-display-id">cryptui_keyset_key_display_id</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-key-display-name"><link linkend="cryptui-keyset-key-display-name">cryptui_keyset_key_display_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-key-flags"><link linkend="cryptui-keyset-key-flags">cryptui_keyset_key_flags</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-key-get-string"><link linkend="cryptui-keyset-key-get-string">cryptui_keyset_key_get_string</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-key-get-uint"><link linkend="cryptui-keyset-key-get-uint">cryptui_keyset_key_get_uint</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-key-raw-keyid"><link linkend="cryptui-keyset-key-raw-keyid">cryptui_keyset_key_raw_keyid</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-new"><link linkend="cryptui-keyset-new">cryptui_keyset_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-refresh"><link linkend="cryptui-keyset-refresh">cryptui_keyset_refresh</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-set-closure"><link linkend="cryptui-keyset-set-closure">cryptui_keyset_set_closure</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-keyset-set-expand-keys"><link linkend="cryptui-keyset-set-expand-keys">cryptui_keyset_set_expand_keys</link></primaryie></indexentry>
+<indexentry><primaryie linkends="CryptUIKeyStore"><link linkend="CryptUIKeyStore">CryptUIKeyStore</link></primaryie></indexentry>
+<indexentry><primaryie linkends="CryptUIKeyStoreFilterFunc"><link linkend="CryptUIKeyStoreFilterFunc">CryptUIKeyStoreFilterFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="CryptUIKeyStoreMode"><link linkend="CryptUIKeyStoreMode">CryptUIKeyStoreMode</link></primaryie></indexentry>
+<indexentry><primaryie linkends="CryptUIKeyStorePriv"><link linkend="CryptUIKeyStorePriv">CryptUIKeyStorePriv</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-chooser-get-enforce-prefs"><link linkend="cryptui-key-chooser-get-enforce-prefs">cryptui_key_chooser_get_enforce_prefs</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-chooser-get-recipients"><link linkend="cryptui-key-chooser-get-recipients">cryptui_key_chooser_get_recipients</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-chooser-get-signer"><link linkend="cryptui-key-chooser-get-signer">cryptui_key_chooser_get_signer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-chooser-have-recipients"><link linkend="cryptui-key-chooser-have-recipients">cryptui_key_chooser_have_recipients</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-chooser-new"><link linkend="cryptui-key-chooser-new">cryptui_key_chooser_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-chooser-set-enforce-prefs"><link linkend="cryptui-key-chooser-set-enforce-prefs">cryptui_key_chooser_set_enforce_prefs</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-chooser-set-recipients"><link linkend="cryptui-key-chooser-set-recipients">cryptui_key_chooser_set_recipients</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-chooser-set-signer"><link linkend="cryptui-key-chooser-set-signer">cryptui_key_chooser_set_signer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-combo-get-key"><link linkend="cryptui-key-combo-get-key">cryptui_key_combo_get_key</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-combo-get-keyset"><link linkend="cryptui-key-combo-get-keyset">cryptui_key_combo_get_keyset</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-combo-get-key-store"><link linkend="cryptui-key-combo-get-key-store">cryptui_key_combo_get_key_store</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-combo-new"><link linkend="cryptui-key-combo-new">cryptui_key_combo_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-combo-setup"><link linkend="cryptui-key-combo-setup">cryptui_key_combo_setup</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-combo-set-key"><link linkend="cryptui-key-combo-set-key">cryptui_key_combo_set_key</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-get-base"><link linkend="cryptui-key-get-base">cryptui_key_get_base</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-get-enctype"><link linkend="cryptui-key-get-enctype">cryptui_key_get_enctype</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-list-get-keyset"><link linkend="cryptui-key-list-get-keyset">cryptui_key_list_get_keyset</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-list-get-key-store"><link linkend="cryptui-key-list-get-key-store">cryptui_key_list_get_key_store</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-list-get-selected-key"><link linkend="cryptui-key-list-get-selected-key">cryptui_key_list_get_selected_key</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-list-get-selected-keys"><link linkend="cryptui-key-list-get-selected-keys">cryptui_key_list_get_selected_keys</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-list-have-selected-keys"><link linkend="cryptui-key-list-have-selected-keys">cryptui_key_list_have_selected_keys</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-list-new"><link linkend="cryptui-key-list-new">cryptui_key_list_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-list-setup"><link linkend="cryptui-key-list-setup">cryptui_key_list_setup</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-list-set-selected-key"><link linkend="cryptui-key-list-set-selected-key">cryptui_key_list_set_selected_key</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-list-set-selected-keys"><link linkend="cryptui-key-list-set-selected-keys">cryptui_key_list_set_selected_keys</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-check-toggled"><link linkend="cryptui-key-store-check-toggled">cryptui_key_store_check_toggled</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-get-all-keys"><link linkend="cryptui-key-store-get-all-keys">cryptui_key_store_get_all_keys</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-get-count"><link linkend="cryptui-key-store-get-count">cryptui_key_store_get_count</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-get-iter-from-key"><link linkend="cryptui-key-store-get-iter-from-key">cryptui_key_store_get_iter_from_key</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-get-keyset"><link linkend="cryptui-key-store-get-keyset">cryptui_key_store_get_keyset</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-get-key-from-iter"><link linkend="cryptui-key-store-get-key-from-iter">cryptui_key_store_get_key_from_iter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-get-key-from-path"><link linkend="cryptui-key-store-get-key-from-path">cryptui_key_store_get_key_from_path</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-get-selected-key"><link linkend="cryptui-key-store-get-selected-key">cryptui_key_store_get_selected_key</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-get-selected-keys"><link linkend="cryptui-key-store-get-selected-keys">cryptui_key_store_get_selected_keys</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-get-sortable"><link linkend="cryptui-key-store-get-sortable">cryptui_key_store_get_sortable</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-have-selected-keys"><link linkend="cryptui-key-store-have-selected-keys">cryptui_key_store_have_selected_keys</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-new"><link linkend="cryptui-key-store-new">cryptui_key_store_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-set-filter"><link linkend="cryptui-key-store-set-filter">cryptui_key_store_set_filter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-set-search-mode"><link linkend="cryptui-key-store-set-search-mode">cryptui_key_store_set_search_mode</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-set-search-text"><link linkend="cryptui-key-store-set-search-text">cryptui_key_store_set_search_text</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-set-selected-key"><link linkend="cryptui-key-store-set-selected-key">cryptui_key_store_set_selected_key</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-set-selected-keys"><link linkend="cryptui-key-store-set-selected-keys">cryptui_key_store_set_selected_keys</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-key-store-set-sortable"><link linkend="cryptui-key-store-set-sortable">cryptui_key_store_set_sortable</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>L</title>
+<indexentry><primaryie linkends="CryptUILocation"><link linkend="CryptUILocation">CryptUILocation</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>M</title>
+<indexentry><primaryie linkends="cryptui-marshal-VOID--STRING-POINTER"><link linkend="cryptui-marshal-VOID--STRING-POINTER">cryptui_marshal_VOID__STRING_POINTER</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>N</title>
+<indexentry><primaryie linkends="cryptui-need-to-get-keys"><link linkend="cryptui-need-to-get-keys">cryptui_need_to_get_keys</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="cryptui-prompt-recipients"><link linkend="cryptui-prompt-recipients">cryptui_prompt_recipients</link></primaryie></indexentry>
+<indexentry><primaryie linkends="cryptui-prompt-signer"><link linkend="cryptui-prompt-signer">cryptui_prompt_signer</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="SEAHORSE-DEFAULT-KEY--CAPS"><link linkend="SEAHORSE-DEFAULT-KEY--CAPS">SEAHORSE_DEFAULT_KEY</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SEAHORSE-DESKTOP-KEYS--CAPS"><link linkend="SEAHORSE-DESKTOP-KEYS--CAPS">SEAHORSE_DESKTOP_KEYS</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SEAHORSE-ENCRYPTSELF-KEY--CAPS"><link linkend="SEAHORSE-ENCRYPTSELF-KEY--CAPS">SEAHORSE_ENCRYPTSELF_KEY</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SEAHORSE-LASTSIGNER-KEY--CAPS"><link linkend="SEAHORSE-LASTSIGNER-KEY--CAPS">SEAHORSE_LASTSIGNER_KEY</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SEAHORSE-RECIPIENTS-SORT-KEY--CAPS"><link linkend="SEAHORSE-RECIPIENTS-SORT-KEY--CAPS">SEAHORSE_RECIPIENTS_SORT_KEY</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>V</title>
+<indexentry><primaryie linkends="CryptUIValidity"><link linkend="CryptUIValidity">CryptUIValidity</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

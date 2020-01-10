@@ -1,0 +1,188 @@
+<refentry id="libseahorse-SeahorseObjectModel">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-SeahorseObjectModel.top_of_page">SeahorseObjectModel</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SeahorseObjectModel</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-SeahorseObjectModel.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SeahorseObjectModel">SeahorseObjectModel</link>;
+<link linkend="SeahorseObjectModel">SeahorseObjectModel</link>* <link linkend="seahorse-object-model-new">seahorse_object_model_new</link>          (<link linkend="gint">gint</link> n_columns,
+                                                         <link linkend="GType">GType</link> *types);
+<link linkend="void">void</link>                <link linkend="seahorse-object-model-set-column-types">seahorse_object_model_set_column_types</link>
+                                                        (<link linkend="SeahorseObjectModel">SeahorseObjectModel</link> *self,
+                                                         <link linkend="gint">gint</link> n_columns,
+                                                         <link linkend="GType">GType</link> *types);
+<link linkend="void">void</link>                <link linkend="seahorse-object-model-set-row-object">seahorse_object_model_set_row_object</link>
+                                                        (<link linkend="SeahorseObjectModel">SeahorseObjectModel</link> *self,
+                                                         <link linkend="GtkTreeIter">GtkTreeIter</link> *iter,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *object);
+<link linkend="SeahorseObject">SeahorseObject</link>*     <link linkend="seahorse-object-model-get-row-key">seahorse_object_model_get_row_key</link>   (<link linkend="SeahorseObjectModel">SeahorseObjectModel</link> *self,
+                                                         <link linkend="GtkTreeIter">GtkTreeIter</link> *iter);
+<link linkend="GSList">GSList</link>*             <link linkend="seahorse-object-model-get-rows-for-object">seahorse_object_model_get_rows_for_object</link>
+                                                        (<link linkend="SeahorseObjectModel">SeahorseObjectModel</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *object);
+<link linkend="void">void</link>                <link linkend="seahorse-object-model-remove-rows-for-object">seahorse_object_model_remove_rows_for_object</link>
+                                                        (<link linkend="SeahorseObjectModel">SeahorseObjectModel</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *object);
+<link linkend="void">void</link>                <link linkend="seahorse-object-model-free-rows">seahorse_object_model_free_rows</link>     (<link linkend="GSList">GSList</link> *rows);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-SeahorseObjectModel.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-SeahorseObjectModel.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SeahorseObjectModel" role="struct">
+<title>SeahorseObjectModel</title>
+<indexterm zone="SeahorseObjectModel"><primary sortas="ObjectModel">SeahorseObjectModel</primary></indexterm><programlisting>typedef struct {
+    GtkTreeStore parent;
+} SeahorseObjectModel;
+</programlisting>
+<para>
+A GtkTreeModel that can assign certain rows as
+'key rows' which are updated when a key is updated.
+</para>
+<para>
+Signals:
+  update-row: A request to update a row</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GtkTreeStore">GtkTreeStore</link>&#160;<structfield>parent</structfield>;</term>
+<listitem><simpara> The parent <link linkend="GtkTreeStore"><type>GtkTreeStore</type></link>
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-model-new" role="function">
+<title>seahorse_object_model_new ()</title>
+<indexterm zone="seahorse-object-model-new"><primary sortas="object_model_new">seahorse_object_model_new</primary></indexterm><programlisting><link linkend="SeahorseObjectModel">SeahorseObjectModel</link>* seahorse_object_model_new          (<link linkend="gint">gint</link> n_columns,
+                                                         <link linkend="GType">GType</link> *types);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>n_columns</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>types</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-model-set-column-types" role="function">
+<title>seahorse_object_model_set_column_types ()</title>
+<indexterm zone="seahorse-object-model-set-column-types"><primary sortas="object_model_set_column_types">seahorse_object_model_set_column_types</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_object_model_set_column_types
+                                                        (<link linkend="SeahorseObjectModel">SeahorseObjectModel</link> *self,
+                                                         <link linkend="gint">gint</link> n_columns,
+                                                         <link linkend="GType">GType</link> *types);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_columns</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>types</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-model-set-row-object" role="function">
+<title>seahorse_object_model_set_row_object ()</title>
+<indexterm zone="seahorse-object-model-set-row-object"><primary sortas="object_model_set_row_object">seahorse_object_model_set_row_object</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_object_model_set_row_object
+                                                        (<link linkend="SeahorseObjectModel">SeahorseObjectModel</link> *self,
+                                                         <link linkend="GtkTreeIter">GtkTreeIter</link> *iter,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *object);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>object</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-model-get-row-key" role="function">
+<title>seahorse_object_model_get_row_key ()</title>
+<indexterm zone="seahorse-object-model-get-row-key"><primary sortas="object_model_get_row_key">seahorse_object_model_get_row_key</primary></indexterm><programlisting><link linkend="SeahorseObject">SeahorseObject</link>*     seahorse_object_model_get_row_key   (<link linkend="SeahorseObjectModel">SeahorseObjectModel</link> *self,
+                                                         <link linkend="GtkTreeIter">GtkTreeIter</link> *iter);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-model-get-rows-for-object" role="function">
+<title>seahorse_object_model_get_rows_for_object ()</title>
+<indexterm zone="seahorse-object-model-get-rows-for-object"><primary sortas="object_model_get_rows_for_object">seahorse_object_model_get_rows_for_object</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             seahorse_object_model_get_rows_for_object
+                                                        (<link linkend="SeahorseObjectModel">SeahorseObjectModel</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *object);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>object</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-model-remove-rows-for-object" role="function">
+<title>seahorse_object_model_remove_rows_for_object ()</title>
+<indexterm zone="seahorse-object-model-remove-rows-for-object"><primary sortas="object_model_remove_rows_for_object">seahorse_object_model_remove_rows_for_object</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_object_model_remove_rows_for_object
+                                                        (<link linkend="SeahorseObjectModel">SeahorseObjectModel</link> *self,
+                                                         <link linkend="SeahorseObject">SeahorseObject</link> *object);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>object</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="seahorse-object-model-free-rows" role="function">
+<title>seahorse_object_model_free_rows ()</title>
+<indexterm zone="seahorse-object-model-free-rows"><primary sortas="object_model_free_rows">seahorse_object_model_free_rows</primary></indexterm><programlisting><link linkend="void">void</link>                seahorse_object_model_free_rows     (<link linkend="GSList">GSList</link> *rows);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>rows</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

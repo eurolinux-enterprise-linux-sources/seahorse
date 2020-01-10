@@ -1,0 +1,71 @@
+<refentry id="libseahorse-seahorse-validity">
+<refmeta>
+<refentrytitle role="top_of_page" id="libseahorse-seahorse-validity.top_of_page">seahorse-validity</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSEAHORSE Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>seahorse-validity</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libseahorse-seahorse-validity.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+enum                <link linkend="SeahorseValidity">SeahorseValidity</link>;
+const <link linkend="gchar">gchar</link>*        <link linkend="seahorse-validity-get-string">seahorse_validity_get_string</link>        (<link linkend="SeahorseValidity">SeahorseValidity</link> validity);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libseahorse-seahorse-validity.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libseahorse-seahorse-validity.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SeahorseValidity" role="enum">
+<title>enum SeahorseValidity</title>
+<indexterm zone="SeahorseValidity"><primary sortas="Validity">SeahorseValidity</primary></indexterm><programlisting>typedef enum {
+    SEAHORSE_VALIDITY_REVOKED =     CRYPTUI_VALIDITY_REVOKED,
+    SEAHORSE_VALIDITY_DISABLED =    CRYPTUI_VALIDITY_DISABLED,
+    SEAHORSE_VALIDITY_UNKNOWN =     CRYPTUI_VALIDITY_UNKNOWN,
+    SEAHORSE_VALIDITY_NEVER =       CRYPTUI_VALIDITY_NEVER,
+    SEAHORSE_VALIDITY_MARGINAL =    CRYPTUI_VALIDITY_MARGINAL,
+    SEAHORSE_VALIDITY_FULL =        CRYPTUI_VALIDITY_FULL,
+    SEAHORSE_VALIDITY_ULTIMATE =    CRYPTUI_VALIDITY_ULTIMATE
+} SeahorseValidity;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="seahorse-validity-get-string" role="function">
+<title>seahorse_validity_get_string ()</title>
+<indexterm zone="seahorse-validity-get-string"><primary sortas="validity_get_string">seahorse_validity_get_string</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        seahorse_validity_get_string        (<link linkend="SeahorseValidity">SeahorseValidity</link> validity);</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>validity</parameter>&#160;:</term>
+<listitem><simpara> The validity ID
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A string describing the validity. Must not be freed
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

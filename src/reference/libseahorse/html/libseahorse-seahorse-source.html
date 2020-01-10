@@ -1,0 +1,674 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>seahorse-source</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="libseahorse Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libseahorse-SeahorseObjectModel.html" title="SeahorseObjectModel">
+<link rel="next" href="libseahorse-SeahorseSet.html" title="SeahorseSet">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libseahorse-SeahorseObjectModel.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libseahorse Reference Manual</th>
+<td><a accesskey="n" href="libseahorse-SeahorseSet.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libseahorse-seahorse-source.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libseahorse-seahorse-source.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="seahorse-source">
+<a name="libseahorse-seahorse-source"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libseahorse-seahorse-source.top_of_page"></a>seahorse-source</span></h2>
+<p>seahorse-source</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libseahorse-seahorse-source.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SEAHORSE-SOURCE-GET-INTERFACE--CAPS"
+>SEAHORSE_SOURCE_GET_INTERFACE</a>       (obj)
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a>;
+                    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSourceIface"
+>SeahorseSourceIface</a>;
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#seahorse-source-load"
+>seahorse_source_load</a>                (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#seahorse-source-load-sync"
+>seahorse_source_load_sync</a>           (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc);
+void                <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#seahorse-source-load-async"
+>seahorse_source_load_async</a>          (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#seahorse-source-search"
+>seahorse_source_search</a>              (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *match);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#seahorse-source-import"
+>seahorse_source_import</a>              (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GInputStream.html"
+>GInputStream</a> *input);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#seahorse-source-import-sync"
+>seahorse_source_import_sync</a>         (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GInputStream.html"
+>GInputStream</a> *input,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#seahorse-source-export-objects"
+>seahorse_source_export_objects</a>      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GOutputStream.html"
+>GOutputStream</a> *output);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#seahorse-source-delete-objects"
+>seahorse_source_delete_objects</a>      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#seahorse-source-export"
+>seahorse_source_export</a>              (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GOutputStream.html"
+>GOutputStream</a> *output);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#seahorse-source-export-raw"
+>seahorse_source_export_raw</a>          (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *ids,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GOutputStream.html"
+>GOutputStream</a> *output);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a>              <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#seahorse-source-get-tag"
+>seahorse_source_get_tag</a>             (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc);
+<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-types.html#SeahorseLocation"
+>SeahorseLocation</a>    <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#seahorse-source-get-location"
+>seahorse_source_get_location</a>        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libseahorse-seahorse-source.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libseahorse-seahorse-source.details"></a><h2>Details</h2>
+<div class="refsect2" title="SEAHORSE_SOURCE_GET_INTERFACE()">
+<a name="SEAHORSE-SOURCE-GET-INTERFACE--CAPS"></a><h3>SEAHORSE_SOURCE_GET_INTERFACE()</h3>
+<pre class="programlisting">#define SEAHORSE_SOURCE_GET_INTERFACE(obj)  (G_TYPE_INSTANCE_GET_INTERFACE ((obj), SEAHORSE_TYPE_SOURCE, SeahorseSourceIface))
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="SeahorseSource">
+<a name="SeahorseSource"></a><h3>SeahorseSource</h3>
+<pre class="programlisting">typedef struct _SeahorseSource SeahorseSource;</pre>
+<p>
+- A generic interface for accessing sources.
+- Eventually more functionality will be merged from seahorse-op.* into 
+  this class and derived classes. 
+- Each SeahorseObject has a weak pointer to the SeahorseSource that 
+  created it.
+</p>
+<p>
+Properties base classes must implement:
+ ktype: (GQuark) The ktype (ie: SEAHORSE_PGP) of objects originating from this 
+        object source.
+ location: (SeahorseLocation) The location of objects that come from this 
+        source. (ie: SEAHORSE_LOCATION_LOCAL, SEAHORSE_LOCATION_REMOTE)
+ uri: (gchar*) Only for remote object sources. The full URI of the keyserver 
+        being used.</p>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="SeahorseSourceIface">
+<a name="SeahorseSourceIface"></a><h3>SeahorseSourceIface</h3>
+<pre class="programlisting">typedef struct {
+	GTypeInterface parent;
+    
+	/* virtual methods ------------------------------------------------- */
+
+	/**
+	 * load
+	 * @sksrc: The #SeahorseSource.
+	 * 
+	 * Loads the requested objects, and add the objects to SeahorseContext. 
+	 * 
+	 * Returns: The load operation.
+	 */
+	SeahorseOperation* (*load) (SeahorseSource *sksrc);
+
+	/**
+	 * search
+	 * @sksrc: The #SeahorseSource 
+	 * @match: Match text
+	 *
+	 * Searches for objects in the source.
+	 *
+	 * Returns: The search operation.
+	 */
+	SeahorseOperation* (*search) (SeahorseSource *sksrc, const gchar *match);
+
+    
+	/**
+	 * import
+	 * @sksrc: The #SeahorseSource to import into.
+	 * @input: The data to import.
+	 *
+	 * Import objects into the source. When operation is 'done' a GList of 
+	 * updated objects may be found as the operation result. 
+	 * 
+	 * Returns: The import operation
+	 */
+	SeahorseOperation* (*import) (SeahorseSource *sksrc, GInputStream *input);
+
+	/**
+	 * export
+	 * @sksrc: The #SeahorseSource to export from.
+	 * @objects: A list of objects to export.
+	 * @complete: Whether to export the secret objects too.
+	 * @data: Output stream to export to.
+	 *
+	 * Import objects into the object source. When operation is 'done' the result
+	 * of the operation will be a GOutputStream
+	 * 
+	 * Returns: The export operation
+	 */    
+	SeahorseOperation* (*export) (SeahorseSource *sksrc, GList *objects, GOutputStream *output);
+
+	/**
+	 * export_raw
+	 * @sksrc: The #SeahorseSource to export from.
+	 * @objects: A list of ids to export.
+	 * @data: output stream to export to.
+	 *
+	 * Import objects into the source. When operation is 'done' the result
+	 * of the operation will be a GOutputStream
+	 * 
+	 * Returns: The export operation
+	 */    
+	SeahorseOperation* (*export_raw) (SeahorseSource *sksrc, GSList *ids, 
+	                                  GOutputStream *output);
+} SeahorseSourceIface;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_source_load ()">
+<a name="seahorse-source-load"></a><h3>seahorse_source_load ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  seahorse_source_load                (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc);</pre>
+<p>
+Refreshes the <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+><span class="type">SeahorseSource</span></a>'s internal object listing.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sksrc</code></em> :</span></p></td>
+<td> A <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+><span class="type">SeahorseSource</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the asynchronous refresh operation.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_source_load_sync ()">
+<a name="seahorse-source-load-sync"></a><h3>seahorse_source_load_sync ()</h3>
+<pre class="programlisting">void                seahorse_source_load_sync           (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc);</pre>
+<p>
+Refreshes the <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+><span class="type">SeahorseSource</span></a>'s internal object listing. Completes in the background.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>sksrc</code></em> :</span></p></td>
+<td> A <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+><span class="type">SeahorseSource</span></a> object
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_source_load_async ()">
+<a name="seahorse-source-load-async"></a><h3>seahorse_source_load_async ()</h3>
+<pre class="programlisting">void                seahorse_source_load_async          (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>sksrc</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_source_search ()">
+<a name="seahorse-source-search"></a><h3>seahorse_source_search ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  seahorse_source_search              (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *match);</pre>
+<p>
+Refreshes the <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+><span class="type">SeahorseSource</span></a>'s internal listing.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sksrc</code></em> :</span></p></td>
+<td> A <a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+><span class="type">SeahorseSource</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>match</code></em> :</span></p></td>
+<td> Text to search for
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the asynchronous refresh operation.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_source_import ()">
+<a name="seahorse-source-import"></a><h3>seahorse_source_import ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  seahorse_source_import              (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GInputStream.html"
+>GInputStream</a> *input);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sksrc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_source_import_sync ()">
+<a name="seahorse-source-import-sync"></a><h3>seahorse_source_import_sync ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            seahorse_source_import_sync         (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GInputStream.html"
+>GInputStream</a> *input,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sksrc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_source_export_objects ()">
+<a name="seahorse-source-export-objects"></a><h3>seahorse_source_export_objects ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  seahorse_source_export_objects      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GOutputStream.html"
+>GOutputStream</a> *output);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>objects</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_source_delete_objects ()">
+<a name="seahorse-source-delete-objects"></a><h3>seahorse_source_delete_objects ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  seahorse_source_delete_objects      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>objects</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_source_export ()">
+<a name="seahorse-source-export"></a><h3>seahorse_source_export ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  seahorse_source_export              (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *objects,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GOutputStream.html"
+>GOutputStream</a> *output);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sksrc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>objects</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_source_export_raw ()">
+<a name="seahorse-source-export-raw"></a><h3>seahorse_source_export_raw ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-SeahorseMultiOperation.html#SeahorseOperation"
+>SeahorseOperation</a>*  seahorse_source_export_raw          (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *ids,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GOutputStream.html"
+>GOutputStream</a> *output);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sksrc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ids</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_source_get_tag ()">
+<a name="seahorse-source-get-tag"></a><h3>seahorse_source_get_tag ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a>              seahorse_source_get_tag             (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sksrc</code></em> :</span></p></td>
+<td> The seahorse source object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The source-tag property of the object. As <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+><span class="type">GQuark</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="seahorse_source_get_location ()">
+<a name="seahorse-source-get-location"></a><h3>seahorse_source_get_location ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-types.html#SeahorseLocation"
+>SeahorseLocation</a>    seahorse_source_get_location        (<a
+href="/usr/share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html#SeahorseSource"
+>SeahorseSource</a> *sksrc);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sksrc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

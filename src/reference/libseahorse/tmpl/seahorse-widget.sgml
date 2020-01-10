@@ -1,0 +1,129 @@
+<!-- ##### SECTION Title ##### -->
+SeahorseWidget
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT SeahorseWidget ##### -->
+<para>
+
+</para>
+
+@parent: 
+@gtkbuilder: 
+@name: 
+
+<!-- ##### FUNCTION seahorse_widget_new ##### -->
+<para>
+
+</para>
+
+@name: 
+@parent: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_widget_new_allow_multiple ##### -->
+<para>
+
+</para>
+
+@name: 
+@parent: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_widget_find ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_widget_get_name ##### -->
+<para>
+
+</para>
+
+@swidget: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_widget_get_toplevel ##### -->
+<para>
+
+</para>
+
+@swidget: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_widget_get_widget ##### -->
+<para>
+
+</para>
+
+@swidget: 
+@identifier: 
+@Returns: 
+
+
+<!-- ##### FUNCTION seahorse_widget_show ##### -->
+<para>
+
+</para>
+
+@swidget: 
+
+
+<!-- ##### FUNCTION seahorse_widget_show_help ##### -->
+<para>
+
+</para>
+
+@swidget: 
+
+
+<!-- ##### FUNCTION seahorse_widget_set_visible ##### -->
+<para>
+
+</para>
+
+@swidget: 
+@identifier: 
+@visible: 
+
+
+<!-- ##### FUNCTION seahorse_widget_set_sensitive ##### -->
+<para>
+
+</para>
+
+@swidget: 
+@identifier: 
+@sensitive: 
+
+
+<!-- ##### FUNCTION seahorse_widget_destroy ##### -->
+<para>
+
+</para>
+
+@swidget: 
+
+
