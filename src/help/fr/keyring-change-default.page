@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="keyring-change-default" xml:lang="fr">
 
   <info>
-    <link type="guide" xref="keyring"/>
+    <link type="guide" xref="index#passwords"/>
 
     <revision pkgversion="3.10" date="2013-08-25" status="review"/>
 
@@ -21,11 +21,22 @@
       <mal:email>jhardlin@orange.fr</mal:email>
       <mal:years>2014</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Myriam Economou</mal:name>
+      <mal:email>myriam.economou@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Changement de trousseau de clés par défaut</title>
 
-  <p>Lorsque vous <link xref="passwords-stored-create">ajoutez un nouveau mot de passe</link>, il est normalement ajouté au trousseau de clés par défaut. Si vous souhaitez l'ajouter à un autre trousseau, vous pouvez en choisir un autre quand vous ajoutez le nouveau mot de passe, mais vous pouvez aussi changer de trousseau de clés par défaut. Le trousseau par défaut est habituellement celui de votre <gui>identifiant</gui>.</p>
+  <p>When you
+  <link xref="passwords-stored-create">add a new password</link>, it is
+  normally added to the default keyring. If you want to add it to a different
+  keyring, you can choose another one while adding the new password, but you
+  can also change the default keyring. The default keyring is normally the
+  <gui>Login</gui> keyring.</p>
 
   <steps>
     <title>Changement de trousseau de clés par défaut :</title>

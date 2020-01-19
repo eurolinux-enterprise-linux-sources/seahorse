@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="pgp-sign" xml:lang="de">
 
   <info>
-    <link type="guide" xref="pgp"/>
+    <link type="guide" xref="index#pgp-keys"/>
 
     <revision pkgversion="3.9" date="2013-08-29" status="review"/>
 
@@ -19,7 +19,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -27,11 +27,17 @@
       <mal:email>b@stbe.at</mal:email>
       <mal:years>2014</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
   <title>Schlüssel signieren</title>
 
-  <p>Signieren Sie den Schlüssel einer Person, um damit zu zeigen, dass Sie der Echtheit des Schlüssels trauen und dafür einstehen. Der Schlüssel einer Person darf nur nach dem Vergleich der <link xref="pgp-userid">Benutzerkennung</link> mit einem gültigen Nachweis der Identität (Pass, Führerschein etc.) signiert werden. Wenn die beiden Kennungen überein stimmen spricht man von einem vertrauenswürdigen Schlüssel.</p>
+  <p>Signieren Sie den Schlüssel einer Person, um damit zu zeigen, dass Sie der Echtheit des Schlüssels trauen und dafür einstehen. Der Schlüssel einer Person darf nur nach dem Vergleich der <link xref="pgp-userid">Benutzerkennung</link> mit einem gültigen Nachweis der Identität (Pass, Führerschein etc.) signiert werden. Wenn die beiden Kennungen übereinstimmen spricht man von einem vertrauenswürdigen Schlüssel.</p>
 
   <steps>
     <title>So signieren Sie einen Schlüssel:</title>
@@ -54,7 +60,7 @@
       <p>Entscheiden Sie, ob Sie Ihre Signatur zu einem späteren Zeitpunkt zurückziehen wollen, und ob Sie Ihre Signatur veröffentlichen wollen, indem Sie die entsprechenden Ankreuzfelder anwählen.</p>
     </item>
     <item>
-      <p>Wenn Sie mehr als einen PGP-Schlüssel besitzen, so wählen Sie den Schüssel aus der Liste neben <gui>Signierer</gui>, mit dem Sie signieren wollen.</p>
+      <p>Wenn Sie mehr als einen PGP-Schlüssel besitzen, so wählen Sie den Schlüssel aus der Liste neben <gui>Signierer</gui>, mit dem Sie signieren wollen.</p>
     </item>
     <item>
       <p>Klicken Sie zum Abschließen auf <gui style="button">Signieren</gui>.</p>

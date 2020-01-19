@@ -2,11 +2,9 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="misc-key-fingerprint" xml:lang="es">
 
   <info>
-    <link type="guide" xref="pgp"/>
-    <link type="guide" xref="ssh"/>
+    <link type="guide" xref="concepts"/>
 
-    <revision version="0.1" date="2011-10-23" status="stub"/>
-    <revision pkgversion="3.9" version="0.1" date="2013-06-23" status="review"/>
+    <revision pkgversion="3.14" date="2014-10-06" status="review"/>
 
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
@@ -21,7 +19,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014 - 2016</mal:years>
     </mal:credit>
   </info>
 
@@ -31,7 +29,7 @@
 
   <p>Una clave tiene varias propiedades, como el nombre o la dirección de correo-e del propietario, el tipo de clave, su fecha de caducidad y similares. Cuando está buscando una clave pública y encuentra varias claves con las mismas propiedades, la única manera de identificar la clave que está buscando es comparar las huellas de las dos claves con la huella de la clave que necesita.</p>
 
-  <p>Es la huella de la clave lo que se verifica cuando intenta iniciar sesión en un equipo remoto usando <link xref="ssh">SSH</link>. Al firmar una clave <link xref="pgp">PGP</link> siempre debe comprobar la huella y verificar la identidad del propietario para asegurarse de que está firmando la clave correcta.</p>
+  <p>Es la huella de la clave lo que se verifica cuando intenta iniciar sesión en un equipo remoto usando <link xref="index#ssh-keys">SSH</link>. Al firmar una clave <link xref="index#pgp-keys">PGP</link> siempre debe comprobar la huella y verificar la identidad del propietario para asegurarse de que está firmando la clave correcta.</p>
 
 <section id="fingerprint-ui">
   <title>Huellas en <app>Contraseñas y claves</app></title>

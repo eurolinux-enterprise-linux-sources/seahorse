@@ -3,10 +3,9 @@
 
   <info>
     <link type="seealso" xref="keyring-update-password"/>
-    <link type="guide" xref="keyring"/>
+    <link type="guide" xref="index#passwords" group="#first"/>
 
-    <revision version="0.1" date="2011-10-23" status="draft"/>
-    <revision pkgversion="3.10" date="2013-08-25" status="candidate"/>
+    <revision pkgversion="3.14" date="2014-10-26" status="candidate"/>
 
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
@@ -20,19 +19,30 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
       <years>2013</years>
     </credit>
+    <credit type="editor">
+      <name>Jim Campbell</name>
+      <email its:translate="no">jcampbell@gnome.org</email>
+      <years>2014</years>
+    </credit>
 
     <desc>Nutzen Sie Passwort-Schlüsselbunde, um gespeicherte Passwörter zu gruppieren.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Benjamin Steinwender</mal:name>
       <mal:email>b@stbe.at</mal:email>
       <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
     </mal:credit>
   </info>
 

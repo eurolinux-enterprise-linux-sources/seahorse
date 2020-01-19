@@ -2,6 +2,9 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="key-servers-add" xml:lang="de">
 
   <info>
+    <link type="guide" xref="index#pgp-keys"/>
+    <link type="seealso" xref="pgp-sync"/>
+
     <revision version="0.1" date="2011-10-23" status="stub"/>
     <revision pkgversion="3.9" date="2013-08-18" status="draft"/>
 
@@ -23,13 +26,19 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Benjamin Steinwender</mal:name>
       <mal:email>b@stbe.at</mal:email>
       <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
     </mal:credit>
   </info>
 

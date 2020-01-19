@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="glossary" xml:lang="el">
 
   <info>
-    <link type="guide" xref="index"/>
+    <link type="guide" xref="concepts"/>
 
     <revision pkgversion="3.8" date="2013-02-26" status="stub"/>
     <revision pkgversion="3.9" version="0.1" date="2013-06-13" status="review"/>
@@ -26,7 +26,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name> Δημήτρης Σπίγγος</mal:name>
       <mal:email>dmtrs32@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014, 2015</mal:years>
     </mal:credit>
   </info>
 
@@ -53,7 +53,7 @@
     </item>
     <item>
       <title>Κλειδί</title>
-      <p>Ένα κλειδί χρησιμοποιείται για κρυπτογράφηση και αποκρυπτογράφηση αρχείων και επικοινωνιών. Ένα κλειδί μπορεί επίσης να χρησιμοποιηθεί για να συνδεθεί με έναν απομακρυσμένο υπολογιστή. Κάποιοι τύποι κλειδιών είναι <link xref="pgp">κλειδιά PGP</link> και <link xref="ssh">κλειδιά SSH</link>.</p>
+      <p>Ένα κλειδί χρησιμοποιείται για κρυπτογράφηση και αποκρυπτογράφηση αρχείων και επικοινωνιών. Ένα κλειδί μπορεί επίσης να χρησιμοποιηθεί για να συνδεθεί με έναν απομακρυσμένο υπολογιστή. Κάποιοι τύποι κλειδιών είναι <link xref="index#pgp-keys">κλειδιά PGP</link> και <link xref="index#ssh-keys">κλειδιά SSH</link>.</p>
     </item>
     <item>
     <title>Κλειδοθήκη</title>

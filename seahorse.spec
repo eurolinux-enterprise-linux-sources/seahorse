@@ -1,17 +1,18 @@
 Name:		seahorse
-Version:	3.14.1
+Version:	3.20.0
 Release:	1%{?dist}
 Summary:	A GNOME application for managing encryption keys
-Group:		User Interface/Desktops
+
 # seahorse is GPLv2+
 # libcryptui is LGPLv2+
 License:        GPLv2+ and LGPLv2+
 URL:            https://wiki.gnome.org/Apps/Seahorse
 #VCS: git:git://git.gnome.org/seahorse
-Source:         https://download.gnome.org/sources/%{name}/3.14/%{name}-%{version}.tar.xz
 
 # Use GnuPG 1.4.x instead of 2.0.x
 Patch0:         set-gnupg-engine.patch
+
+Source:         https://download.gnome.org/sources/%{name}/3.20/%{name}-%{version}.tar.xz
 
 BuildRequires:  pkgconfig(avahi-client)
 BuildRequires:  pkgconfig(avahi-glib)
@@ -24,7 +25,7 @@ BuildRequires:  pkgconfig(libsoup-2.4)
 BuildRequires:  desktop-file-utils
 BuildRequires:  gettext
 BuildRequires:  gpgme-devel >= 1.0
-BuildRequires:  gnupg
+BuildRequires:  gnupg2
 BuildRequires:  itstool
 BuildRequires:  libSM-devel
 BuildRequires:  openldap-devel
@@ -37,7 +38,6 @@ BuildRequires:  /usr/bin/appstream-util
 # https://bugzilla.redhat.com/show_bug.cgi?id=587328
 Requires:       pinentry-gui
 
-Obsoletes: gnome-keyring-manager
 Obsoletes: seahorse-devel < 3.1.4-2
 Obsoletes: seahorse-plugins < 2.91.6-0.8
 # Self-obsoletes to assist with seahorse-sharing package split
@@ -51,10 +51,10 @@ operations.  It is a keyring manager.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch0 -p1 -b .gpg14
 
 %build
-GNUPG=/usr/bin/gpg ; export GNUPG ; %configure
+%configure
 
 make %{?_smp_mflags}
 # cleanup permissions for files that go into debuginfo
@@ -117,6 +117,7 @@ update-mime-database -n %{_datadir}/mime &> /dev/null || :
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/apps/seahorse.png
 %{_datadir}/icons/hicolor/*/apps/seahorse-preferences.png
+%{_datadir}/icons/hicolor/symbolic/apps/seahorse-symbolic.svg
 %{_mandir}/man1/*.1*
 %dir %{_libdir}/seahorse
 %{_libdir}/seahorse/*
@@ -128,6 +129,10 @@ update-mime-database -n %{_datadir}/mime &> /dev/null || :
 %{_datadir}/gnome-shell/search-providers/seahorse-search-provider.ini
 
 %changelog
+* Fri Feb 24 2017 Matthias Clasen <mclasen@redhat.com> - 3.20.0-1
+- Rebase to 3.20.0
+  Resolves: rhbz#1387044
+
 * Thu May 14 2015 David King <dking@redhat.com> - 3.14.1-1
 - Rebase to 3.14.1 (#1193148)
 

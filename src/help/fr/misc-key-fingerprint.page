@@ -2,11 +2,9 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="misc-key-fingerprint" xml:lang="fr">
 
   <info>
-    <link type="guide" xref="pgp"/>
-    <link type="guide" xref="ssh"/>
+    <link type="guide" xref="concepts"/>
 
-    <revision version="0.1" date="2011-10-23" status="stub"/>
-    <revision pkgversion="3.9" version="0.1" date="2013-06-23" status="review"/>
+    <revision pkgversion="3.14" date="2014-10-06" status="review"/>
 
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
@@ -23,6 +21,12 @@
       <mal:email>jhardlin@orange.fr</mal:email>
       <mal:years>2014</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Myriam Economou</mal:name>
+      <mal:email>myriam.economou@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Définition de l'empreinte d'une clé</title>
@@ -31,7 +35,7 @@
 
   <p>Une clé comporte plusieurs caractéristiques comme le nom et l'adresse électronique du propriétaire, le type de clé, la date d'expiration de la clé, etc. Quand vous recherchez une clé publique et que vous en trouvez plusieurs avec les mêmes propriétés, la seule façon d'identifier la clé que vous recherchez est de comparer leurs empreintes.</p>
 
-  <p>C'est l'empreinte d'une clé qui est vérifiée quand vous vous connectez à un ordinateur distant en utilisant <link xref="ssh">SSH</link>. Lors de la signature d'une clé <link xref="pgp">PGP</link>, vous devez toujours vérifier l'empreinte et l'identité du propriétaire de la clé pour être certain que vous signez la bonne clé.</p>
+  <p>C'est l'empreinte d'une clé qui est vérifiée quand vous vous connectez à un ordinateur distant en utilisant <link xref="index#ssh-keys">SSH</link>. Lors de la signature d'une clé <link xref="index#pgp-keys">PGP</link>, vous devez toujours vérifier l'empreinte et l'identité du propriétaire de la clé pour être certain que vous signez la bonne clé.</p>
 
 <section id="fingerprint-ui">
   <title>Les empreintes dans <app>Mots de passe et clés</app></title>

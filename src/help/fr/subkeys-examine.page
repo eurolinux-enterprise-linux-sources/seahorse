@@ -22,6 +22,12 @@
       <mal:email>jhardlin@orange.fr</mal:email>
       <mal:years>2014</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Myriam Economou</mal:name>
+      <mal:email>myriam.economou@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Localisation de la liste des sous-clés</title>

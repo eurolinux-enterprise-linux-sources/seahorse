@@ -7,15 +7,15 @@
 # Tommi Vainikainen <thv@iki.fi>, 2008-2011.
 # Ilkka Tuohela <hile@iki.fi>, 2004-2009.
 # Jani Välimaa <jani.valimaa@gmail.com>, 2009.
-# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2012, 2013.
+# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2012, 2013, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: seahorse\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=seahorse&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-11-07 11:32+0000\n"
-"PO-Revision-Date: 2013-09-24 20:18+0300\n"
+"POT-Creation-Date: 2015-10-18 12:30+0000\n"
+"PO-Revision-Date: 2015-10-18 17:21+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-POT-Import-Date: 2012-02-19 15:25:28+0000\n"
 
 #: ../data/seahorse.appdata.xml.in.h:1
@@ -31,6 +31,9 @@ msgid ""
 "Seahorse is a GNOME application for managing encryption keys. It also "
 "integrates with nautilus, gedit and other places for encryption operations."
 msgstr ""
+"Seahorse on Gnome-sovellus salausavainten hallintaan. Se integroituu "
+"tiedostonhallintaan, tekstimuokkaimeen ja monien muiden sovellusten "
+"salaustoimintoihin."
 
 #: ../data/seahorse.appdata.xml.in.h:2
 msgid ""
@@ -38,6 +41,8 @@ msgid ""
 "keys, publish and retrieve keys from key servers, cache your passphrase so "
 "you don't have to keep typing it and backup your keys and keyring."
 msgstr ""
+"Voit luoda ja hallita PGP- ja SSH-avaimia, julkaista ja noutaa avaimia "
+"avainpalvelimilta sekä varmuuskopioida avaimet ja avainnipun."
 
 #: ../data/seahorse.desktop.in.in.h:1 ../common/catalog.vala:285
 #: ../src/seahorse-key-manager.c:660
@@ -77,7 +82,7 @@ msgstr "Seahorse-projektin verkkosivusto"
 msgid "Cannot delete"
 msgstr "Poistaminen ei onnistunut"
 
-#: ../common/catalog.vala:331 ../libseahorse/seahorse-key-manager-store.c:440
+#: ../common/catalog.vala:331 ../libseahorse/seahorse-key-manager-store.c:443
 msgid "Couldn't export keys"
 msgstr "Avaimia ei voitu viedä"
 
@@ -85,7 +90,7 @@ msgstr "Avaimia ei voitu viedä"
 msgid "Couldn't export data"
 msgstr "Tietojen vienti ei onnistunut"
 
-#: ../common/catalog.vala:358 ../libseahorse/seahorse-widget.c:459
+#: ../common/catalog.vala:358 ../libseahorse/seahorse-widget.c:460
 #, c-format
 msgid "Could not display help: %s"
 msgstr "Ohjetta ei voitu näyttää: %s"
@@ -169,27 +174,27 @@ msgstr "Salasanat"
 msgid "Stored personal passwords, credentials and secrets"
 msgstr "Tallennetut henkilökohtaiset salasanat, pääsyoikeudet ja salaisuudet"
 
-#: ../gkr/gkr-backend.vala:241
+#: ../gkr/gkr-backend.vala:251
 msgid "New password keyring"
 msgstr "Uusi salasana-avainnippu"
 
-#: ../gkr/gkr-backend.vala:242 ../gkr/gkr-backend.vala:249
+#: ../gkr/gkr-backend.vala:252 ../gkr/gkr-backend.vala:259
 msgid "Used to store application and network passwords"
 msgstr "Käytetään tallentamaan ohjelmien ja verkon salasanoja"
 
-#: ../gkr/gkr-backend.vala:243
+#: ../gkr/gkr-backend.vala:253
 msgid "New password..."
 msgstr "Uusi salasana..."
 
-#: ../gkr/gkr-backend.vala:244 ../gkr/gkr-backend.vala:251
+#: ../gkr/gkr-backend.vala:254 ../gkr/gkr-backend.vala:261
 msgid "Safely store a password or secret."
 msgstr "Tallenna salasana tai salaisuus turvallisesti."
 
-#: ../gkr/gkr-backend.vala:248
+#: ../gkr/gkr-backend.vala:258
 msgid "Password Keyring"
 msgstr "Salasanojen avainnippu"
 
-#: ../gkr/gkr-backend.vala:250
+#: ../gkr/gkr-backend.vala:260
 msgid "Stored Password"
 msgstr "Tallennettu salasana"
 
@@ -725,16 +730,16 @@ msgstr ":"
 msgid "The port to access the server on."
 msgstr "Portti, jossa palvelin on."
 
-#: ../libseahorse/seahorse-application.c:114
+#: ../libseahorse/seahorse-application.c:108
 msgid "Version of this application"
 msgstr "Tämän ohjelman versio"
 
-#: ../libseahorse/seahorse-application.c:120
-#: ../libseahorse/seahorse-application.c:164
+#: ../libseahorse/seahorse-application.c:114
+#: ../libseahorse/seahorse-application.c:158
 msgid "- System Settings"
 msgstr "- Järjestelmän asetukset"
 
-#: ../libseahorse/seahorse-application.c:160
+#: ../libseahorse/seahorse-application.c:154
 msgid "Don't display a window"
 msgstr "Älä näytä ikkunaa"
 
@@ -753,8 +758,11 @@ msgid "Not a valid Key Server address."
 msgstr "Arvo ei ole kelvollinen avainpalvelimen osoite."
 
 #: ../libseahorse/seahorse-prefs.c:66
+#| msgid ""
+#| "For help contact your system adminstrator or the administrator of the key "
+#| "server."
 msgid ""
-"For help contact your system adminstrator or the administrator of the key "
+"For help contact your system administrator or the administrator of the key "
 "server."
 msgstr ""
 "Pyydä apua järjestelmäsi ylläpitäjältä tai avainpalvelimen ylläpitäjältä."
@@ -794,6 +802,10 @@ msgstr "Synkronoi _muokatut avaimet automaattisesti avainpalvelimille"
 #: ../libseahorse/seahorse-prefs.xml.h:6
 msgid "Key Servers"
 msgstr "Avainpalvelimet"
+
+#: ../libseahorse/seahorse-search-provider.c:186
+msgid "The search provider is not loaded yet"
+msgstr ""
 
 #: ../libseahorse/seahorse-validity.c:38
 #: ../pgp/seahorse-pgp-key-properties.c:1251
@@ -1446,11 +1458,11 @@ msgstr "_Synkronoi ja julkaise avaimia…"
 msgid "Publish and/or synchronize your keys with those online."
 msgstr "Julkaise ja jaa avaimia muiden linjoilla olevien kanssa."
 
-#: ../pgp/seahorse-pgp-backend.c:167
+#: ../pgp/seahorse-pgp-backend.c:193
 msgid "PGP Keys"
 msgstr "PGP-avaimet"
 
-#: ../pgp/seahorse-pgp-backend.c:173
+#: ../pgp/seahorse-pgp-backend.c:199
 msgid "PGP keys are for encrypting email or files"
 msgstr "PGP-avaimia käytetään sähköpostiviestien ja tiedostojen salaukseen"
 
@@ -1886,7 +1898,7 @@ msgstr "Sormenjälki:"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:41
 msgid "Dates:"
-msgstr "Päiväyskset:"
+msgstr "Päiväykset:"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:44
 msgid "Indicate Trust:"
@@ -2072,11 +2084,11 @@ msgstr "Henkilökohtainen varmenne ja avain"
 msgid "Personal certificate"
 msgstr "Henkilökohtainen varmenne"
 
-#: ../pkcs11/seahorse-pkcs11-backend.c:184
+#: ../pkcs11/seahorse-pkcs11-backend.c:189
 msgid "Certificates"
 msgstr "Varmenteet"
 
-#: ../pkcs11/seahorse-pkcs11-backend.c:190
+#: ../pkcs11/seahorse-pkcs11-backend.c:195
 msgid "X.509 certificates and related keys"
 msgstr "X.509-varmenteet ja liittyvät avaimet"
 
@@ -2388,11 +2400,11 @@ msgstr "Syötä uusi tunnuslause: %s"
 msgid "Enter the new passphrase again: %s"
 msgstr "Syötä uusi tunnuslause uudelleen: %s"
 
-#: ../ssh/seahorse-ssh-backend.c:88
+#: ../ssh/seahorse-ssh-backend.c:115
 msgid "Secure Shell"
 msgstr "Secure Shell"
 
-#: ../ssh/seahorse-ssh-backend.c:94
+#: ../ssh/seahorse-ssh-backend.c:121
 msgid "Keys used to connect securely to other computers"
 msgstr "Muihin tietokoneisiin yhteyttä otettaessa käytettävät avaimet"
 

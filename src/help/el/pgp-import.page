@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="pgp-import" xml:lang="el">
 
   <info>
-    <link type="guide" xref="pgp"/>
+    <link type="guide" xref="index#pgp-keys"/>
 
     <revision version="0.1" date="2011-06-17" status="stub"/>
     <revision pkgversion="3.9" version="0.1" date="2013-06-20" status="draft"/>
@@ -31,7 +31,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name> Δημήτρης Σπίγγος</mal:name>
       <mal:email>dmtrs32@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014, 2015</mal:years>
     </mal:credit>
   </info>
 

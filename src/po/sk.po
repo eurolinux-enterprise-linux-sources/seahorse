@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: seahorse\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=seahorse&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-15 10:30+0000\n"
-"PO-Revision-Date: 2014-09-15 21:05+0100\n"
+"POT-Creation-Date: 2016-02-07 02:35+0000\n"
+"PO-Revision-Date: 2016-02-07 12:41+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -19,9 +19,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.6\n"
 
 #: ../data/seahorse.appdata.xml.in.h:1
+#| msgid "Show Seahorse help"
+msgid "Seahorse"
+msgstr "Seahorse"
+
+#: ../data/seahorse.appdata.xml.in.h:2 ../data/seahorse.desktop.in.in.h:2
+msgid "Manage your passwords and encryption keys"
+msgstr "Spravuje vaše heslá a šifrovacie kľúče"
+
+#: ../data/seahorse.appdata.xml.in.h:3
 msgid ""
 "Seahorse is a GNOME application for managing encryption keys. It also "
 "integrates with nautilus, gedit and other places for encryption operations."
@@ -30,7 +39,7 @@ msgstr ""
 "kľúčov. Taktiež je integrovaný v programoch nautilus, gedit a na iných "
 "miestach, kde sa vykonávajú šifrovacie operácie."
 
-#: ../data/seahorse.appdata.xml.in.h:2
+#: ../data/seahorse.appdata.xml.in.h:4
 msgid ""
 "With seahorse you can create and manage PGP keys, create and manage SSH "
 "keys, publish and retrieve keys from key servers, cache your passphrase so "
@@ -45,10 +54,6 @@ msgstr ""
 #: ../src/seahorse-key-manager.c:660
 msgid "Passwords and Keys"
 msgstr "Heslá a kľúče"
-
-#: ../data/seahorse.desktop.in.in.h:2
-msgid "Manage your passwords and encryption keys"
-msgstr "Spravuje vaše heslá a šifrovacie kľúče"
 
 #: ../data/seahorse.desktop.in.in.h:3
 msgid "keyring;encryption;security;sign;ssh;"
@@ -73,7 +78,7 @@ msgstr "Domovská stránka projektu Seahorse"
 msgid "Cannot delete"
 msgstr "Nedá sa odstrániť"
 
-#: ../common/catalog.vala:331 ../libseahorse/seahorse-key-manager-store.c:440
+#: ../common/catalog.vala:331 ../libseahorse/seahorse-key-manager-store.c:443
 msgid "Couldn't export keys"
 msgstr "Nepodarilo sa exportovať kľúče"
 
@@ -81,7 +86,7 @@ msgstr "Nepodarilo sa exportovať kľúče"
 msgid "Couldn't export data"
 msgstr "Nepodarilo sa exportovať údaje"
 
-#: ../common/catalog.vala:358 ../libseahorse/seahorse-widget.c:459
+#: ../common/catalog.vala:358 ../libseahorse/seahorse-widget.c:460
 #, c-format
 msgid "Could not display help: %s"
 msgstr "Nebolo možné zobraziť pomocníka: %s"
@@ -171,27 +176,27 @@ msgstr "Heslá"
 msgid "Stored personal passwords, credentials and secrets"
 msgstr "Uložené osobné heslá, poverenia a tajomstvá"
 
-#: ../gkr/gkr-backend.vala:241
+#: ../gkr/gkr-backend.vala:251
 msgid "New password keyring"
 msgstr "Nový zväzok kľúčov pre heslá"
 
-#: ../gkr/gkr-backend.vala:242 ../gkr/gkr-backend.vala:249
+#: ../gkr/gkr-backend.vala:252 ../gkr/gkr-backend.vala:259
 msgid "Used to store application and network passwords"
 msgstr "Používaný na ukladanie aplikačných a sieťových hesiel"
 
-#: ../gkr/gkr-backend.vala:243
+#: ../gkr/gkr-backend.vala:253
 msgid "New password..."
 msgstr "Nové heslo…"
 
-#: ../gkr/gkr-backend.vala:244 ../gkr/gkr-backend.vala:251
+#: ../gkr/gkr-backend.vala:254 ../gkr/gkr-backend.vala:261
 msgid "Safely store a password or secret."
 msgstr "Bezpečne uložiť heslo alebo tajomstvo."
 
-#: ../gkr/gkr-backend.vala:248
+#: ../gkr/gkr-backend.vala:258
 msgid "Password Keyring"
 msgstr "Zväzok kľúčov pre heslá"
 
-#: ../gkr/gkr-backend.vala:250
+#: ../gkr/gkr-backend.vala:260
 msgid "Stored Password"
 msgstr "Uložené heslo"
 
@@ -415,8 +420,7 @@ msgstr "Zobraziť hes_lo"
 msgid "Password:"
 msgstr "Heslo:"
 
-#: ../gkr/seahorse-gkr-item-properties.xml.h:9
-#: ../pgp/seahorse-pgp-subkey.c:402
+#: ../gkr/seahorse-gkr-item-properties.xml.h:9 ../pgp/seahorse-pgp-subkey.c:402
 #: ../ssh/seahorse-ssh-key-properties.xml.h:15
 msgid "Key"
 msgstr "Kľúč"
@@ -735,17 +739,17 @@ msgstr ":"
 msgid "The port to access the server on."
 msgstr "Port, na ktorom je server prístupný."
 
-#: ../libseahorse/seahorse-application.c:114
+#: ../libseahorse/seahorse-application.c:108
 msgid "Version of this application"
 msgstr "Verzia tejto aplikácie"
 
-#: ../libseahorse/seahorse-application.c:120
-#: ../libseahorse/seahorse-application.c:164
+#: ../libseahorse/seahorse-application.c:114
+#: ../libseahorse/seahorse-application.c:158
 msgid "- System Settings"
 msgstr "- Systémové nastavenia"
 
 # cmd desc
-#: ../libseahorse/seahorse-application.c:160
+#: ../libseahorse/seahorse-application.c:154
 msgid "Don't display a window"
 msgstr "Nezobrazí okno"
 
@@ -765,7 +769,7 @@ msgstr "Nie je platná adresa servera kľúčov."
 
 #: ../libseahorse/seahorse-prefs.c:66
 msgid ""
-"For help contact your system adminstrator or the administrator of the key "
+"For help contact your system administrator or the administrator of the key "
 "server."
 msgstr ""
 "Ak potrebujete pomôcť, kontaktujte správcu systému alebo správcu servera "
@@ -807,6 +811,10 @@ msgstr "Automaticky synchronizovať _upravené kľúče so serverom kľúčov"
 #: ../libseahorse/seahorse-prefs.xml.h:6
 msgid "Key Servers"
 msgstr "Servery kľúčov"
+
+#: ../libseahorse/seahorse-search-provider.c:186
+msgid "The search provider is not loaded yet"
+msgstr "Poskytovateľ vyhľadávania zatiaľ nie je načítaný"
 
 #: ../libseahorse/seahorse-validity.c:38
 #: ../pgp/seahorse-pgp-key-properties.c:1251
@@ -1015,8 +1023,7 @@ msgstr "PGP kľúč"
 msgid "Used to encrypt email and files"
 msgstr "Používaný na šifrovanie emailu a súborov"
 
-#: ../pgp/seahorse-gpgme-generate.c:130
-#: ../pkcs11/seahorse-pkcs11-generate.c:90
+#: ../pgp/seahorse-gpgme-generate.c:130 ../pkcs11/seahorse-pkcs11-generate.c:90
 #: ../ssh/seahorse-ssh-generate.xml.h:9
 msgid "RSA"
 msgstr "RSA"
@@ -1095,8 +1102,7 @@ msgstr "Zadajte nové heslo pre „%s“"
 msgid "Enter passphrase for '%s'"
 msgstr "Zadajte heslo pre „%s“"
 
-#: ../pgp/seahorse-gpgme-keyring.c:98
-#: ../src/seahorse-change-passphrase.xml.h:2
+#: ../pgp/seahorse-gpgme-keyring.c:98 ../src/seahorse-change-passphrase.xml.h:2
 msgid "Enter new passphrase"
 msgstr "Zadajte nové heslo"
 
@@ -1477,11 +1483,11 @@ msgstr ""
 "Otvorí okno na zverejnenie a/alebo synchronizovanie vašich kľúčov s tými, "
 "ktoré sú online."
 
-#: ../pgp/seahorse-pgp-backend.c:167
+#: ../pgp/seahorse-pgp-backend.c:193
 msgid "PGP Keys"
 msgstr "PGP kľúče"
 
-#: ../pgp/seahorse-pgp-backend.c:173
+#: ../pgp/seahorse-pgp-backend.c:199
 msgid "PGP keys are for encrypting email or files"
 msgstr "PGP kľúče slúžia na šifrovanie emailu alebo súborov"
 
@@ -1944,12 +1950,10 @@ msgid "Encrypt"
 msgstr "Zašifrovať"
 
 #: ../pgp/seahorse-pgp-subkey.c:293
-#| msgid "Certificate"
 msgid "Certify"
 msgstr "Certifikovať"
 
 #: ../pgp/seahorse-pgp-subkey.c:294
-#| msgid "Certificate"
 msgid "Authenticate"
 msgstr "Overiť totožnosť"
 
@@ -2113,11 +2117,11 @@ msgstr "Osobný certifikát a kľúč"
 msgid "Personal certificate"
 msgstr "Osobný certifikát"
 
-#: ../pkcs11/seahorse-pkcs11-backend.c:184
+#: ../pkcs11/seahorse-pkcs11-backend.c:189
 msgid "Certificates"
 msgstr "Certifikáty"
 
-#: ../pkcs11/seahorse-pkcs11-backend.c:190
+#: ../pkcs11/seahorse-pkcs11-backend.c:195
 msgid "X.509 certificates and related keys"
 msgstr "X.509 certifikáty a súvisiace kľúče"
 
@@ -2432,11 +2436,11 @@ msgstr "Zadajte nové heslo pre: %s"
 msgid "Enter the new passphrase again: %s"
 msgstr "Znovu zadajte nové heslo pre: %s"
 
-#: ../ssh/seahorse-ssh-backend.c:88
+#: ../ssh/seahorse-ssh-backend.c:115
 msgid "Secure Shell"
 msgstr "SSH"
 
-#: ../ssh/seahorse-ssh-backend.c:94
+#: ../ssh/seahorse-ssh-backend.c:121
 msgid "Keys used to connect securely to other computers"
 msgstr "Kľúče používané na zabezpečené pripojenie k iným počítačom."
 

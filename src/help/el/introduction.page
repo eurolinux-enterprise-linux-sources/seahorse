@@ -32,7 +32,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name> Δημήτρης Σπίγγος</mal:name>
       <mal:email>dmtrs32@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014, 2015</mal:years>
     </mal:credit>
   </info>
 
@@ -46,10 +46,10 @@
       <p>Να αντιγράψετε και να <link xref="passwords-stored-create">αποθηκεύσετε</link> κωδικούς πρόσβασης που είναι δύσκολοι να θυμόσαστε. Για να ομαδοποιήσετε σχετικούς κωδικούς πρόσβασης, <link xref="keyring-create">δημιουργήστε κλειδοθήκες</link>.</p>
     </item>
     <item>
-      <p><link xref="pgp-create">Δημιουργήστε</link> και <link xref="pgp">διαχειριστείτε</link> κλειδιά PGP.</p>
+      <p><link xref="pgp-create">Δημιουργία</link> και <link xref="index#pgp-keys">διαχείριση</link> κλειδιών PGP.</p>
     </item>
     <item>
-      <p><link xref="ssh-create">Δημιουργήστε</link> και <link xref="ssh">διαχειριστείτε</link> κλειδιά SSH.</p>
+      <p><link xref="ssh-create">Δημιουργία</link> και <link xref="index#ssh-keys">διαχείριση</link> κλειδιών SSH.</p>
     </item>
   </list>
 

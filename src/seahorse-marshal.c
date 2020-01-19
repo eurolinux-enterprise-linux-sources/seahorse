@@ -63,9 +63,9 @@ seahorse_marshal_VOID__STRING_DOUBLE (GClosure     *closure,
                                                     gpointer     arg_1,
                                                     gdouble      arg_2,
                                                     gpointer     data2);
-  register GMarshalFunc_VOID__STRING_DOUBLE callback;
-  register GCClosure *cc = (GCClosure*) closure;
-  register gpointer data1, data2;
+  GMarshalFunc_VOID__STRING_DOUBLE callback;
+  GCClosure *cc = (GCClosure*) closure;
+  gpointer data1, data2;
 
   g_return_if_fail (n_param_values == 3);
 
@@ -100,9 +100,9 @@ seahorse_marshal_VOID__OBJECT_UINT (GClosure     *closure,
                                                   gpointer     arg_1,
                                                   guint        arg_2,
                                                   gpointer     data2);
-  register GMarshalFunc_VOID__OBJECT_UINT callback;
-  register GCClosure *cc = (GCClosure*) closure;
-  register gpointer data1, data2;
+  GMarshalFunc_VOID__OBJECT_UINT callback;
+  GCClosure *cc = (GCClosure*) closure;
+  gpointer data1, data2;
 
   g_return_if_fail (n_param_values == 3);
 
@@ -137,9 +137,9 @@ seahorse_marshal_VOID__OBJECT_POINTER (GClosure     *closure,
                                                      gpointer     arg_1,
                                                      gpointer     arg_2,
                                                      gpointer     data2);
-  register GMarshalFunc_VOID__OBJECT_POINTER callback;
-  register GCClosure *cc = (GCClosure*) closure;
-  register gpointer data1, data2;
+  GMarshalFunc_VOID__OBJECT_POINTER callback;
+  GCClosure *cc = (GCClosure*) closure;
+  gpointer data1, data2;
 
   g_return_if_fail (n_param_values == 3);
 
@@ -175,9 +175,9 @@ seahorse_marshal_VOID__OBJECT_UINT_POINTER (GClosure     *closure,
                                                           guint        arg_2,
                                                           gpointer     arg_3,
                                                           gpointer     data2);
-  register GMarshalFunc_VOID__OBJECT_UINT_POINTER callback;
-  register GCClosure *cc = (GCClosure*) closure;
-  register gpointer data1, data2;
+  GMarshalFunc_VOID__OBJECT_UINT_POINTER callback;
+  GCClosure *cc = (GCClosure*) closure;
+  gpointer data1, data2;
 
   g_return_if_fail (n_param_values == 4);
 
@@ -213,9 +213,9 @@ seahorse_marshal_VOID__OBJECT_OBJECT (GClosure     *closure,
                                                     gpointer     arg_1,
                                                     gpointer     arg_2,
                                                     gpointer     data2);
-  register GMarshalFunc_VOID__OBJECT_OBJECT callback;
-  register GCClosure *cc = (GCClosure*) closure;
-  register gpointer data1, data2;
+  GMarshalFunc_VOID__OBJECT_OBJECT callback;
+  GCClosure *cc = (GCClosure*) closure;
+  gpointer data1, data2;
 
   g_return_if_fail (n_param_values == 3);
 

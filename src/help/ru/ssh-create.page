@@ -2,10 +2,9 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:ui="http://projectmallard.org/ui/1.0/" type="topic" style="task" id="ssh-create" xml:lang="ru">
 
   <info>
-    <link type="guide" xref="ssh"/>
+    <link type="guide" xref="index#ssh-keys" group="first"/>
 
-    <revision version="0.8" date="2013-08-12" status="incomplete"/>
-    <revision pkgversion="3.14" date="2014-09-10" status="incomplete"/>
+    <revision pkgversion="3.14" date="2014-10-06" status="incomplete"/>
 
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 

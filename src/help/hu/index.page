@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="index" xml:lang="hu">
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="2column" id="index" xml:lang="hu">
 
   <info>
     <title type="link">Jelszavak és kulcsok</title>
@@ -30,16 +30,19 @@
 
   <title><media its:translate="no" type="image" mime="image/png" src="media/seahorse.png"/> Jelszavak és kulcsok</title>
 
-  <section id="passwords">
-    <title>Tárolt jelszavak és jelszókulcstartók</title>
+  <section id="ssh-keys">
+    <title>SSH-kulcsok</title>
+    <links type="topic" style="2column" groups="first second"/>
   </section>
 
   <section id="pgp-keys">
     <title>PGP-kulcsok</title>
+    <links type="topic" style="2column" groups="first second third"/>
   </section>
 
-  <section id="ssh-keys">
-    <title>SSH-kulcsok</title>
+  <section id="passwords">
+    <title>Tárolt jelszavak és jelszókulcstartók</title>
+    <links type="topic" style="2column" groups="first second"/>
   </section>
 
   <!--

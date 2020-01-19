@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="pgp-expired" xml:lang="de">
 
   <info>
-    <link type="guide" xref="pgp"/>
+    <link type="guide" xref="index#pgp-keys"/>
 
     <revision version="0.1" date="2011-10-23" status="stub"/>
     <revision pkgversion="3.9" version="0.1" date="2013-07-03" status="review"/>
@@ -20,7 +20,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -28,9 +28,15 @@
       <mal:email>b@stbe.at</mal:email>
       <mal:years>2014</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Was passiert, wenn mein Schüssel zeitlich verfällt?</title>
+  <title>Was passiert, wenn mein Schlüssel zeitlich verfällt?</title>
 
   <p>Wenn Ihr Schlüssel abläuft wird er ungültig. Dies hat zur Folge:</p>
 
@@ -39,7 +45,7 @@
       <p>Er kann nicht länger zum Ver- und Entschlüsseln von Nachrichten eingesetzt werden.</p>
     </item>
     <item>
-      <p>Er kann keine anderen Schüssel signieren oder Signaturen von anderen Schlüsseln bekommen.</p>
+      <p>Er kann keine anderen Schlüssel signieren oder Signaturen von anderen Schlüsseln bekommen.</p>
     </item>
   </list>
 

@@ -2,11 +2,9 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="misc-key-fingerprint" xml:lang="de">
 
   <info>
-    <link type="guide" xref="pgp"/>
-    <link type="guide" xref="ssh"/>
+    <link type="guide" xref="concepts"/>
 
-    <revision version="0.1" date="2011-10-23" status="stub"/>
-    <revision pkgversion="3.9" version="0.1" date="2013-06-23" status="review"/>
+    <revision pkgversion="3.14" date="2014-10-06" status="review"/>
 
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
@@ -16,18 +14,24 @@
       <years>2013</years>
     </credit>
 
-    <desc>Der Fingerabdruck eines Schlüssels ist eine einzigartige Zeichenkette jedes Schlüssels, die oft eingesetzt wird, den Eigentümer eines Schlüssel zu identifizieren.</desc>
+    <desc>Der Fingerabdruck eines Schlüssels ist eine einzigartige Zeichenkette jedes Schlüssels, die oft eingesetzt wird, den Eigentümer eines Schlüssels zu identifizieren.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Benjamin Steinwender</mal:name>
       <mal:email>b@stbe.at</mal:email>
       <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
     </mal:credit>
   </info>
 
@@ -37,7 +41,7 @@
 
   <p>Ein Schlüssel hat mehrere Eigenschaften wie Name und E-Mail des Eigentümers, den Schlüsseltyp, das Ablaufdatum usw. Wenn Sie nach einem öffentlichen Schlüssel suchen und mehrere Schlüssel mit den gleichen Eigenschaften finden, dann ist der einzige Weg den gesuchten Schlüssel zu identifizieren, die Fingerabdrücke der Schlüssel mit dem Fingerabdruck des gesuchten Schlüssel zu vergleichen.</p>
 
-  <p>Der Fingerabdruck eines (kryptografischen) Schlüssels wird überprüft, wenn Sie sich an einem entfernten Rechner per <link xref="ssh">SSH</link> anmelden. Beim Signieren eines <link xref="pgp">PGP</link>-Schlüssels müssen Sie immer den Fingerabdruck des Schlüssels kontrollieren und die Identität des Schlüsselbesitzers überprüfen, um sicherzustellen, dass Sie den richtigen Schlüssel signieren.</p>
+  <p>Der Fingerabdruck eines kryptografischen Schlüssels wird überprüft, wenn Sie sich an einem entfernten Rechner per<link xref="index#ssh-keys">SSH</link> anmelden. Beim Signieren eines <link xref="index#pgp-keys">PGP</link>-Schlüssels müssen Sie immer den Fingerabdruck des Schlüssels kontrollieren und die Identität des Schlüsselbesitzers überprüfen, um sicherzustellen, dass Sie den richtigen Schlüssel signieren.</p>
 
 <section id="fingerprint-ui">
   <title>Fingerabdrücke in <app>Passwörter und Schlüssel</app></title>

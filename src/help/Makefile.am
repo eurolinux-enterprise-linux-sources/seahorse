@@ -3,6 +3,10 @@
 HELP_ID = seahorse
 
 HELP_FILES = \
+	about-diff-private-public.page \
+	about-pgp.page \
+	about-ssh.page \
+	concepts.page \
 	glossary.page \
 	index.page \
 	introduction.page \
@@ -18,7 +22,6 @@ HELP_FILES = \
 	misc-key-fingerprint.page \
 	passwords-stored-create.page \
 	passwords-view.page \
-	passwords.page \
 	pgp-create.page \
 	pgp-delete.page \
 	pgp-expiration-change.page \
@@ -35,12 +38,10 @@ HELP_FILES = \
 	pgp-userid-primary.page \
 	pgp-userid-remove.page \
 	pgp-userid.page \
-	pgp.page \
 	ssh-connect-remote.page \
 	ssh-create.page \
 	ssh-export.page \
 	ssh-import.page \
-	ssh.page \
 	subkeys-add.page \
 	subkeys-examine.page \
 	subkeys-revoke.page
@@ -48,4 +49,4 @@ HELP_FILES = \
 HELP_MEDIA = \
 	media/seahorse.png
 
-HELP_LINGUAS = de el es fr hu ru
+HELP_LINGUAS = cs de el es fr hu ru

@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="glossary" xml:lang="hu">
 
   <info>
-    <link type="guide" xref="index"/>
+    <link type="guide" xref="concepts"/>
 
     <revision pkgversion="3.8" date="2013-02-26" status="stub"/>
     <revision pkgversion="3.9" version="0.1" date="2013-06-13" status="review"/>
@@ -41,7 +41,7 @@
     </item>
     <item>
       <title>Kulcs</title>
-      <p>A kulcs a fájlok és a kommunikáció titkosítására és visszafejtésére használható. A kulcs használható egy távoli számítógépre való bejelentkezésre is. A különböző típusú kulcsok közé tartoznak például a <link xref="pgp">PGP-kulcsok</link> és az <link xref="ssh">SSH-kulcsok</link>.</p>
+      <p>A kulcs a fájlok és a kommunikáció titkosítására és visszafejtésére használható. A kulcs használható egy távoli számítógépre való bejelentkezésre is. A különböző típusú kulcsok közé tartoznak például a <link xref="index#pgp-keys">PGP-kulcsok</link> és az <link xref="index#ssh-keys">SSH-kulcsok</link>.</p>
     </item>
     <item>
     <title>Kulcstartó</title>

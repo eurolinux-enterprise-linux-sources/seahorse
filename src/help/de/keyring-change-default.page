@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="keyring-change-default" xml:lang="de">
 
   <info>
-    <link type="guide" xref="keyring"/>
+    <link type="guide" xref="index#passwords"/>
 
     <revision pkgversion="3.10" date="2013-08-25" status="review"/>
 
@@ -19,7 +19,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -27,11 +27,17 @@
       <mal:email>b@stbe.at</mal:email>
       <mal:years>2014</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
   <title>Den voreingestellten Schlüsselbund ändern</title>
 
-  <p>Wenn Sie <link xref="passwords-stored-create">ein neues Passwort hinzufügen</link>, so wird es normalerweise in den voreingestellten Schlüsselbund gespeichert. Wenn Sie es einem anderen Schlüsselbund hinzufügen wollen, so können Sie während dem Hinzufügen einen anderen wählen, aber Sie können auch den Vorgabe-Schlüsselbund ändern. Der voreingestellte Schlüsselbund ist normalerweise der Schlüsselbund <gui>Anmeldedaten</gui>.</p>
+  <p>Wenn Sie <link xref="passwords-stored-create">ein neues Passwort hinzufügen</link>, so wird es normalerweise im voreingestellten Schlüsselbund gespeichert. Wenn Sie es einem anderen Schlüsselbund hinzufügen wollen, so können Sie während des Hinzufügens einen anderen wählen, aber Sie können auch den Vorgabe-Schlüsselbund ändern. Der voreingestellte Schlüsselbund ist normalerweise der Schlüsselbund <gui>Anmeldedaten</gui>.</p>
 
   <steps>
     <title>So wechseln Sie den voreingestellten Schlüsselbund:</title>

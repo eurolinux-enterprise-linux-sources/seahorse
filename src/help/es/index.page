@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="index" xml:lang="es">
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="2column" id="index" xml:lang="es">
 
   <info>
     <title type="link">Contraseñas y claves</title>
@@ -30,22 +30,25 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014 - 2016</mal:years>
     </mal:credit>
   </info>
 
   <title><media its:translate="no" type="image" mime="image/png" src="media/seahorse.png"/> Contraseñas y claves</title>
 
-  <section id="passwords">
-    <title>Contraseñas guardadas y depósitos de contraseñas</title>
+  <section id="ssh-keys">
+    <title>Claves SSH</title>
+    <links type="topic" style="2column" groups="first second"/>
   </section>
 
   <section id="pgp-keys">
     <title>Claves PGP</title>
+    <links type="topic" style="2column" groups="first second third"/>
   </section>
 
-  <section id="ssh-keys">
-    <title>Claves SSH</title>
+  <section id="passwords">
+    <title>Contraseñas guardadas y depósitos de contraseñas</title>
+    <links type="topic" style="2column" groups="first second"/>
   </section>
 
   <!--

@@ -2,11 +2,9 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="misc-key-fingerprint" xml:lang="hu">
 
   <info>
-    <link type="guide" xref="pgp"/>
-    <link type="guide" xref="ssh"/>
+    <link type="guide" xref="concepts"/>
 
-    <revision version="0.1" date="2011-10-23" status="stub"/>
-    <revision pkgversion="3.9" version="0.1" date="2013-06-23" status="review"/>
+    <revision pkgversion="3.14" date="2014-10-06" status="review"/>
 
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
@@ -25,7 +23,7 @@
 
   <p>Egy kulcs többféle tulajdonsággal rendelkezik, mint pl. a kulcs tulajdonosának neve és e-mail címe, a kulcs típusa, vagy a kulcs lejárati ideje. Ha egy nyilvános kulcs keresése több, azonos tulajdonságokkal rendelkező kulcsot eredményez, az Ön által keresett kulcsot kizárólag az ujjlenyomatok összehasonlításával lehet azonosítani.</p>
 
-  <p>Egy távoli gépre <link xref="ssh">SSH</link> segítségével való bejelentkezés során is a kulcs ujjlenyomata kerül ellenőrzésre. Egy <link xref="pgp">PGP</link> kulcs aláírásakor mindig ellenőriznie kell a kulcs ujjlenyomatát és a kulcs tulajdonosának az azonosságát annak érdekében, hogy a helyes kulcsot írja alá.</p>
+  <p>Egy távoli gépre <link xref="index#ssh-keys">SSH</link> segítségével való bejelentkezés során is a kulcs ujjlenyomata kerül ellenőrzésre. Egy <link xref="index#pgp-keys">PGP</link> kulcs aláírásakor mindig ellenőriznie kell a kulcs ujjlenyomatát és a kulcs tulajdonosának az azonosságát annak érdekében, hogy a helyes kulcsot írja alá.</p>
 
 <section id="fingerprint-ui">
   <title>Ujjlenyomatok a <app>Jelszavak és kulcsok</app> alkalmazásban.</title>

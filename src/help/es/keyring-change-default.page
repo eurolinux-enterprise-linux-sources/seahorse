@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="keyring-change-default" xml:lang="es">
 
   <info>
-    <link type="guide" xref="keyring"/>
+    <link type="guide" xref="index#passwords"/>
 
     <revision pkgversion="3.10" date="2013-08-25" status="review"/>
 
@@ -19,13 +19,13 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014 - 2016</mal:years>
     </mal:credit>
   </info>
 
   <title>Cambiar el depósito de claves predeterminado</title>
 
-  <p>Cuando <link xref="passwords-stored-create">añade una contraseña nueva</link>, normalmente se añade al depósito de claves predeterminado. Si quiere añadirla a un depósito diferente, puede elegir otro al añadir la contraseña, y también puede cambiar el depósito predeterminado. Normalmente, el depósito predeterminado es el de <gui>Inicio de sesión</gui>.</p>
+  <p>Cuando <link xref="passwords-stored-create">añade una contraseña nueva</link>, normalmente se añade al depósito de claves predeterminado. Si quiere añadirla a un depósito diferente, puede elegir otro al añadir la contraseña nueva, y también puede cambiar el depósito predeterminado. Normalmente, el depósito predeterminado es el de <gui>Inicio de sesión</gui>.</p>
 
   <steps>
     <title>Para cambiar el depósito de claves predeterminado:</title>

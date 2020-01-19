@@ -7,15 +7,16 @@
 # This file is distributed under the same license as the Seahorse package.
 # 
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010, 2011., 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011., 2012, 2013, 2014.
+# 
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011., 2012, 2013, 2014, 2015., 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: seahorse.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=seahorse&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-06 22:26+0000\n"
-"PO-Revision-Date: 2014-08-07 13:50+0200\n"
+"POT-Creation-Date: 2015-11-16 02:15+0000\n"
+"PO-Revision-Date: 2015-11-16 16:50+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -26,6 +27,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/seahorse.appdata.xml.in.h:1
+#| msgid "Seahorse Daemon"
+msgid "Seahorse"
+msgstr "Seahorse"
+
+#: ../data/seahorse.appdata.xml.in.h:2 ../data/seahorse.desktop.in.in.h:2
+msgid "Manage your passwords and encryption keys"
+msgstr "Administre sus claves y contraseñas de cifrado"
+
+#: ../data/seahorse.appdata.xml.in.h:3
 msgid ""
 "Seahorse is a GNOME application for managing encryption keys. It also "
 "integrates with nautilus, gedit and other places for encryption operations."
@@ -34,7 +44,7 @@ msgstr ""
 "cifrado. También se integra con Nautilus, gedit y otros lugares para "
 "operaciones de cifrado."
 
-#: ../data/seahorse.appdata.xml.in.h:2
+#: ../data/seahorse.appdata.xml.in.h:4
 msgid ""
 "With seahorse you can create and manage PGP keys, create and manage SSH "
 "keys, publish and retrieve keys from key servers, cache your passphrase so "
@@ -50,10 +60,6 @@ msgstr ""
 msgid "Passwords and Keys"
 msgstr "Contraseñas y claves"
 
-#: ../data/seahorse.desktop.in.in.h:2
-msgid "Manage your passwords and encryption keys"
-msgstr "Administre sus claves y contraseñas de cifrado"
-
 #: ../data/seahorse.desktop.in.in.h:3
 msgid "keyring;encryption;security;sign;ssh;"
 msgstr "depósito de claves;cifrado;seguridad;firma;ssh;"
@@ -65,7 +71,7 @@ msgstr "Contribuciones:"
 #: ../common/catalog.vala:287
 msgid "translator-credits"
 msgstr ""
-"Daniel Mustieles <daniel.mustieles@gmail.com>, 2013\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com>, 2013 - 2015\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2010\n"
 "Francisco F. Serrador <serrador@cvs.gnome.org>, 2004, 2005, 2006\n"
 "Germán Poo-Caamaño <gpoo@ubiobio.cl>, 2003\n"
@@ -79,7 +85,7 @@ msgstr "Página web de Seahorse"
 msgid "Cannot delete"
 msgstr "No se puede eliminar"
 
-#: ../common/catalog.vala:331 ../libseahorse/seahorse-key-manager-store.c:440
+#: ../common/catalog.vala:331 ../libseahorse/seahorse-key-manager-store.c:443
 msgid "Couldn't export keys"
 msgstr "No se pudo exportar las claves"
 
@@ -87,7 +93,7 @@ msgstr "No se pudo exportar las claves"
 msgid "Couldn't export data"
 msgstr "No se pudieron exportar los datos"
 
-#: ../common/catalog.vala:358 ../libseahorse/seahorse-widget.c:459
+#: ../common/catalog.vala:358 ../libseahorse/seahorse-widget.c:460
 #, c-format
 msgid "Could not display help: %s"
 msgstr "No se pudo mostrar la ayuda: %s"
@@ -171,27 +177,27 @@ msgstr "Contraseñas"
 msgid "Stored personal passwords, credentials and secrets"
 msgstr "Contraseñas personales, credenciales y secretos almacenados"
 
-#: ../gkr/gkr-backend.vala:241
+#: ../gkr/gkr-backend.vala:251
 msgid "New password keyring"
 msgstr "Contraseña nueva del depósito de contraseñas"
 
-#: ../gkr/gkr-backend.vala:242 ../gkr/gkr-backend.vala:249
+#: ../gkr/gkr-backend.vala:252 ../gkr/gkr-backend.vala:259
 msgid "Used to store application and network passwords"
 msgstr "Ubicación para las contraseñas de aplicaciones"
 
-#: ../gkr/gkr-backend.vala:243
+#: ../gkr/gkr-backend.vala:253
 msgid "New password..."
 msgstr "Contraseña nueva…"
 
-#: ../gkr/gkr-backend.vala:244 ../gkr/gkr-backend.vala:251
+#: ../gkr/gkr-backend.vala:254 ../gkr/gkr-backend.vala:261
 msgid "Safely store a password or secret."
 msgstr "Almacenar una contraseña o un secreto de forma segura"
 
-#: ../gkr/gkr-backend.vala:248
+#: ../gkr/gkr-backend.vala:258
 msgid "Password Keyring"
 msgstr "Depósitos de contraseñas"
 
-#: ../gkr/gkr-backend.vala:250
+#: ../gkr/gkr-backend.vala:260
 msgid "Stored Password"
 msgstr "Contraseña almacenada"
 
@@ -735,16 +741,16 @@ msgstr ":"
 msgid "The port to access the server on."
 msgstr "El puerto por el que acceder al servidor."
 
-#: ../libseahorse/seahorse-application.c:114
+#: ../libseahorse/seahorse-application.c:108
 msgid "Version of this application"
 msgstr "Versión de esta aplicación"
 
-#: ../libseahorse/seahorse-application.c:120
-#: ../libseahorse/seahorse-application.c:164
+#: ../libseahorse/seahorse-application.c:114
+#: ../libseahorse/seahorse-application.c:158
 msgid "- System Settings"
 msgstr ": configuración del sistema"
 
-#: ../libseahorse/seahorse-application.c:160
+#: ../libseahorse/seahorse-application.c:154
 msgid "Don't display a window"
 msgstr "No mostrar una ventana"
 
@@ -764,11 +770,11 @@ msgstr "La dirección del servidor de claves no es válida."
 
 #: ../libseahorse/seahorse-prefs.c:66
 msgid ""
-"For help contact your system adminstrator or the administrator of the key "
+"For help contact your system administrator or the administrator of the key "
 "server."
 msgstr ""
-"Para ayuda, contacte con su administrador de sistemas o el administrador del "
-"servidor de claves."
+"Para obtener ayuda, contacte con su administrador de sistemas o el "
+"administrador del servidor de claves."
 
 #: ../libseahorse/seahorse-prefs.c:179
 msgid "URL"
@@ -807,6 +813,10 @@ msgstr ""
 #: ../libseahorse/seahorse-prefs.xml.h:6
 msgid "Key Servers"
 msgstr "Servidores de claves"
+
+#: ../libseahorse/seahorse-search-provider.c:186
+msgid "The search provider is not loaded yet"
+msgstr "Todavía no se ha cargado el proveedor de búsqueda"
 
 #: ../libseahorse/seahorse-validity.c:38
 #: ../pgp/seahorse-pgp-key-properties.c:1251
@@ -1462,11 +1472,11 @@ msgstr "_Sincronizar y publicar claves…"
 msgid "Publish and/or synchronize your keys with those online."
 msgstr "Publicar y/o sincronizar sus claves con las que estén en línea."
 
-#: ../pgp/seahorse-pgp-backend.c:167
+#: ../pgp/seahorse-pgp-backend.c:193
 msgid "PGP Keys"
 msgstr "Claves PGP"
 
-#: ../pgp/seahorse-pgp-backend.c:173
+#: ../pgp/seahorse-pgp-backend.c:199
 msgid "PGP keys are for encrypting email or files"
 msgstr "Las claves PGP se usan para cifrar correos electrónicos o archivos"
 
@@ -1917,12 +1927,10 @@ msgid "Encrypt"
 msgstr "Cifrar"
 
 #: ../pgp/seahorse-pgp-subkey.c:293
-#| msgid "Certificate"
 msgid "Certify"
 msgstr "Certificar"
 
 #: ../pgp/seahorse-pgp-subkey.c:294
-#| msgid "Certificate"
 msgid "Authenticate"
 msgstr "Autenticar"
 
@@ -2085,11 +2093,11 @@ msgstr "Certificado personal y clave"
 msgid "Personal certificate"
 msgstr "Certificado personal"
 
-#: ../pkcs11/seahorse-pkcs11-backend.c:184
+#: ../pkcs11/seahorse-pkcs11-backend.c:189
 msgid "Certificates"
 msgstr "Certificados"
 
-#: ../pkcs11/seahorse-pkcs11-backend.c:190
+#: ../pkcs11/seahorse-pkcs11-backend.c:195
 msgid "X.509 certificates and related keys"
 msgstr "Certificados X.509 y claves relacionadas"
 
@@ -2402,11 +2410,11 @@ msgstr "Introduzca la frase de paso nueva para: %s"
 msgid "Enter the new passphrase again: %s"
 msgstr "Introduzca la frase de paso otra vez: %s"
 
-#: ../ssh/seahorse-ssh-backend.c:88
+#: ../ssh/seahorse-ssh-backend.c:115
 msgid "Secure Shell"
 msgstr "Shell segura"
 
-#: ../ssh/seahorse-ssh-backend.c:94
+#: ../ssh/seahorse-ssh-backend.c:121
 msgid "Keys used to connect securely to other computers"
 msgstr "Claves usadas para conectar de manera segura a otros equipos"
 
@@ -3430,9 +3438,6 @@ msgstr "Co_nfigurar"
 
 #~ msgid "_Share my keys with others on my network"
 #~ msgstr "Co_mpartir mis claves con otros en mi red"
-
-#~ msgid "Seahorse Daemon"
-#~ msgstr "Demonio de Seahorse"
 
 #~ msgid "<b>X keys are selected for synchronizing</b>"
 #~ msgstr "<b>X claves están seleccionadas para sincronizar</b>"

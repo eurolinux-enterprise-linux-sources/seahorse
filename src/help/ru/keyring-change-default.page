@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="keyring-change-default" xml:lang="ru">
 
   <info>
-    <link type="guide" xref="keyring"/>
+    <link type="guide" xref="index#passwords"/>
 
     <revision pkgversion="3.10" date="2013-08-25" status="review"/>
 
@@ -34,8 +34,8 @@
   <p>When you
   <link xref="passwords-stored-create">add a new password</link>, it is
   normally added to the default keyring. If you want to add it to a different
-  keyring, you can chose another one while adding the new password, but you can
-  also change the default keyring. The default keyring is normally the
+  keyring, you can choose another one while adding the new password, but you
+  can also change the default keyring. The default keyring is normally the
   <gui>Login</gui> keyring.</p>
 
   <steps>

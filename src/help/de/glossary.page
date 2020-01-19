@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="glossary" xml:lang="de">
 
   <info>
-    <link type="guide" xref="index"/>
+    <link type="guide" xref="concepts"/>
 
     <revision pkgversion="3.8" date="2013-02-26" status="stub"/>
     <revision pkgversion="3.9" version="0.1" date="2013-06-13" status="review"/>
@@ -20,13 +20,19 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Benjamin Steinwender</mal:name>
       <mal:email>b@stbe.at</mal:email>
       <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
     </mal:credit>
   </info>
 
@@ -53,7 +59,7 @@
     </item>
     <item>
       <title>Schlüssel</title>
-      <p>Mit einem (kryptographischen) Schlüssel werden Dateien und Unterhaltungen ver- und entschlüsselt. Ein Schlüssel kann z.B. auch dazu eingesetzt werden, sich an einem entfernten Rechner anzumelden. Bekannte Schlüssel-Typen sind z.B. <link xref="pgp">PGP-Schlüssel</link> und <link xref="ssh">SSH-Schlüssel</link>.</p>
+      <p>Mit einem kryptographischen Schlüssel werden Dateien und Unterhaltungen ver- und entschlüsselt. Ein Schlüssel kann z.B. auch dazu eingesetzt werden, sich an einem entfernten Rechner anzumelden. Bekannte Schlüsseltypen sind z.B. <link xref="index#pgp-keys">PGP-Schlüssel</link> und <link xref="index#ssh-keys">SSH-Schlüssel</link>.</p>
     </item>
     <item>
     <title>Schlüsselbund</title>

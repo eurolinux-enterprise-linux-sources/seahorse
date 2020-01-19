@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="glossary" xml:lang="fr">
 
   <info>
-    <link type="guide" xref="index"/>
+    <link type="guide" xref="concepts"/>
 
     <revision pkgversion="3.8" date="2013-02-26" status="stub"/>
     <revision pkgversion="3.9" version="0.1" date="2013-06-13" status="review"/>
@@ -21,6 +21,12 @@
       <mal:name>Julien Hardelin</mal:name>
       <mal:email>jhardlin@orange.fr</mal:email>
       <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Myriam Economou</mal:name>
+      <mal:email>myriam.economou@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
     </mal:credit>
   </info>
 
@@ -47,7 +53,7 @@
     </item>
     <item>
       <title>Clé</title>
-      <p>Une clé est utilisée pour chiffrer et déchiffrer fichiers et communications. Une clé peut aussi être utilisée pour ouvrir une connexion avec un ordinateur distant. Les types de clés communs sont les <link xref="pgp">clés PGP</link> et les <link xref="ssh">clés SSH</link>.</p>
+      <p>Une clé est utilisée pour chiffrer et déchiffrer fichiers et communications. Une clé peut aussi être utilisée pour ouvrir une connexion avec un ordinateur distant. Les types de clés communs sont les <link xref="index#pgp-keys">clés PGP</link> et les <link xref="index#ssh-keys">clés SSH</link>.</p>
     </item>
     <item>
     <title>Trousseau de clés</title>

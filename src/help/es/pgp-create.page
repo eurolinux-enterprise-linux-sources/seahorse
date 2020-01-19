@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:ui="http://projectmallard.org/ui/1.0/" type="topic" style="task" id="pgp-create" xml:lang="es">
 
   <info>
-    <link type="guide" xref="pgp" group="#first"/>
+    <link type="guide" xref="index#pgp-keys" group="#first"/>
 
     <revision version="0.5" date="2013-02-16" status="review"/>
 
@@ -31,7 +31,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014 - 2016</mal:years>
     </mal:credit>
   </info>
 

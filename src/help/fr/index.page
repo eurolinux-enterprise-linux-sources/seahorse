@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="index" xml:lang="fr">
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="2column" id="index" xml:lang="fr">
 
   <info>
     <title type="link">Mots de passe et clés</title>
@@ -32,20 +32,29 @@
       <mal:email>jhardlin@orange.fr</mal:email>
       <mal:years>2014</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Myriam Economou</mal:name>
+      <mal:email>myriam.economou@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title><media its:translate="no" type="image" mime="image/png" src="media/seahorse.png"/> Mots de passe et clés</title>
 
-  <section id="passwords">
-    <title>Mots de passe enregistrés et trousseau de mots de passe</title>
+  <section id="ssh-keys">
+    <title>Clés SSH</title>
+    <links type="topic" style="2column" groups="first second"/>
   </section>
 
   <section id="pgp-keys">
     <title>Clés PGP</title>
+    <links type="topic" style="2column" groups="first second third"/>
   </section>
 
-  <section id="ssh-keys">
-    <title>Clés SSH</title>
+  <section id="passwords">
+    <title>Mots de passe enregistrés et trousseau de mots de passe</title>
+    <links type="topic" style="2column" groups="first second"/>
   </section>
 
   <!--

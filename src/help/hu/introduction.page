@@ -34,10 +34,10 @@
       <p>A nehezen megjegyezhető jelszavakat másolhatja és <link xref="passwords-stored-create">tárolhatja</link>. Egymással összefüggő jelszavak csoportosításához <link xref="keyring-create">kulcstartókat</link> hozhat létre.</p>
     </item>
     <item>
-      <p>PGP-kulcsok <link xref="pgp-create">létrehozása</link> és <link xref="pgp">kezelése</link>.</p>
+      <p>PGP-kulcsok <link xref="pgp-create">létrehozása</link> és <link xref="index#pgp-keys">kezelése</link>.</p>
     </item>
     <item>
-      <p>SSH-kulcsok <link xref="ssh-create">létrehozása</link> és <link xref="ssh">kezelése</link>.</p>
+      <p>SSH-kulcsok <link xref="ssh-create">létrehozása</link> és <link xref="index#ssh-keys">kezelése</link>.</p>
     </item>
   </list>
 

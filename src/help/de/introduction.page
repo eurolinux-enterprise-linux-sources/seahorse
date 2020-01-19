@@ -26,13 +26,19 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
+      <mal:years>2014, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Benjamin Steinwender</mal:name>
       <mal:email>b@stbe.at</mal:email>
       <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
     </mal:credit>
   </info>
 
@@ -46,10 +52,10 @@
       <p>Schwierig zu merkende Passwörter <link xref="passwords-stored-create">speichern</link>. <link xref="keyring-create">Erstellen Sie Schlüsselbunde</link> zum Gruppieren verwandter Passwörter.</p>
     </item>
     <item>
-      <p>PGP-Schlüssel <link xref="pgp-create">erstellen</link> und <link xref="pgp">verwalten</link>.</p>
+      <p>PGP-Schlüssel <link xref="pgp-create">erstellen</link> und <link xref="index#pgp-keys">verwalten</link>.</p>
     </item>
     <item>
-      <p>SSH-Schlüssel <link xref="ssh-create">erstellen</link> und <link xref="ssh">verwalten</link>.</p>
+      <p>SSH-Schlüssel <link xref="ssh-create">erstellen</link> und <link xref="index#ssh-keys">verwalten</link>.</p>
     </item>
   </list>
 

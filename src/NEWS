@@ -1,8 +1,47 @@
-seahorse 3.14.1
+seahorse 3.20.0
+---------------
+ * Updated translations
+ * Update AppData spec file
+
+seahorse 3.19.4
+---------------
+ * Build fixes [#758472]
+ * Updated translations
+
+seahorse 3.18.0
+---------------
+ * Use the application name in the software center
+ * Updated translations
+
+seahorse 3.17.4
 ---------------
 
+ * Avoid binding seahorse to the build-time version of GnuPG [#750468]
+ * Fix seahorse shell search provider [#704619]
+ * Use GResource to load UI resources [#752516]
+ * Build fixes [#744503] [#752990]
  * Updated translations
+
+seahorse 3.16.0
+---------------
+
+ * Provide a symbolic variant of the app icon [#747244]
+ * Updated translations
+
+seahorse 3.15.92
+----------------
+
+ * Don't use deprecated GtkArrow [#744195]
+ * Updated translations
+
+seahorse 3.15.90
+----------------
+
+ * Refactoring and revamping help files
+ * Work around for breakage with gnupg2
+ * Fix invalid UI files [#740138]
  * Don't hide GtkBuilder errors [#740138]
+ * Updated translations
 
 seahorse 3.14.0
 ---------------

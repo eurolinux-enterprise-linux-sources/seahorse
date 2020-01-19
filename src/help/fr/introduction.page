@@ -28,6 +28,12 @@
       <mal:email>jhardlin@orange.fr</mal:email>
       <mal:years>2014</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Myriam Economou</mal:name>
+      <mal:email>myriam.economou@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Introduction</title>
@@ -40,10 +46,10 @@
       <p>Copier et <link xref="passwords-stored-create">enregistrer</link> les mots de passe difficiles à retenir. Pour regrouper les mots de passe ayant un rapport entre eux, <link xref="keyring-create">créez des trousseaux de clés</link>.</p>
     </item>
     <item>
-      <p><link xref="pgp-create">Créer</link> et <link xref="pgp">gérer</link> les clés PGP.</p>
+      <p><link xref="pgp-create">Créer</link> et <link xref="index#pgp-keys">gérer</link> les clés PGP.</p>
     </item>
     <item>
-      <p><link xref="ssh-create">Créer</link> et <link xref="ssh">gérer</link> les clés SSH.</p>
+      <p><link xref="ssh-create">Créer</link> et <link xref="index#ssh-keys">gérer</link> les clés SSH.</p>
     </item>
   </list>
 

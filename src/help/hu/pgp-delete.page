@@ -2,7 +2,7 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="pgp-delete" xml:lang="hu">
 
   <info>
-    <link type="guide" xref="pgp"/>
+    <link type="guide" xref="index#pgp-keys"/>
 
     <revision version="0.1" date="2011-10-23" status="stub"/>
     <revision pkgversion="3.9" version="0.1" date="2013-06-24" status="review"/>
@@ -26,7 +26,7 @@
 
   <title>Meglévő kulcs törlése</title>
 
-  <p>Ha valakivel már nincs kapcsolatban, akkor törölheti az illető GnuPG kulcsát a számítógépéről a <app>Jelszavak és kulcsok</app> segítségével. Saját kulcsot véglegesen is tud törölni, ha még nem tette közzé kulcskiszolgálón. A GnuPG kulcs törlése egyaránt törli a nyilvános és a titkos kulcsot.</p>
+  <p>Ha valakivel már nincs kapcsolatban, akkor törölheti az illető GnuPG kulcsát a számítógépéről a <app>Jelszavak és kulcsok</app> segítségével. Saját kulcsot véglegesen is tud törölni, ha még nem tette közzé kulcskiszolgálón. A GnuPG kulcs törlése egyaránt törli a nyilvános és a személyes kulcsot.</p>
 
   <steps>
     <title>Kulcs törléséhez:</title>
@@ -43,7 +43,7 @@
       </note>
     </item>
     <item>
-      <p>A megjelenő ablakban aktiválja a <gui style="checkbox">Megértettem, hogy ez a titkos kulcs véglegesen törlésre kerül</gui> jelölőnégyzetet, majd a befejezéshez kattintson a <gui style="button">Törlés</gui> gombra.</p>
+      <p>A megjelenő ablakban aktiválja a <gui style="checkbox">Megértettem, hogy ez a személyes kulcs véglegesen törlésre kerül</gui> jelölőnégyzetet, majd a befejezéshez kattintson a <gui style="button">Törlés</gui> gombra.</p>
     </item>
   </steps>
 

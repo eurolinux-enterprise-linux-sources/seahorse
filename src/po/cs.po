@@ -10,15 +10,15 @@
 # Petr Kovar <pknbe@volny.cz>, 2008.
 # Lucas Lommer <llommer@svn.gnome.org>, 2008.
 # Marketa Nykrynova <m.nykrynova@gmail.com>, 2011, 2012.
-# Marek Černocký <marek@manet.cz>, 2012, 2013, 2014.
+# Marek Černocký <marek@manet.cz>, 2012, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: seahorse\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=seahorse&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-23 22:29+0000\n"
-"PO-Revision-Date: 2014-08-24 07:49+0200\n"
+"POT-Creation-Date: 2015-10-24 13:14+0000\n"
+"PO-Revision-Date: 2015-10-24 22:44+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -30,6 +30,14 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: ../data/seahorse.appdata.xml.in.h:1
+msgid "Seahorse"
+msgstr "Seahorse"
+
+#: ../data/seahorse.appdata.xml.in.h:2 ../data/seahorse.desktop.in.in.h:2
+msgid "Manage your passwords and encryption keys"
+msgstr "Spravujte svá hesla a šifrovací klíče"
+
+#: ../data/seahorse.appdata.xml.in.h:3
 msgid ""
 "Seahorse is a GNOME application for managing encryption keys. It also "
 "integrates with nautilus, gedit and other places for encryption operations."
@@ -37,7 +45,7 @@ msgstr ""
 "Seahorse je aplikace GNOME pro správu šifrovacích klíčů. Je integrovaná s "
 "aplikacemi nautilus, gedit a dalšími, které využívají šifrovací funkce."
 
-#: ../data/seahorse.appdata.xml.in.h:2
+#: ../data/seahorse.appdata.xml.in.h:4
 msgid ""
 "With seahorse you can create and manage PGP keys, create and manage SSH "
 "keys, publish and retrieve keys from key servers, cache your passphrase so "
@@ -52,10 +60,6 @@ msgstr ""
 #: ../src/seahorse-key-manager.c:660
 msgid "Passwords and Keys"
 msgstr "Hesla a klíče"
-
-#: ../data/seahorse.desktop.in.in.h:2
-msgid "Manage your passwords and encryption keys"
-msgstr "Spravujte svá hesla a šifrovací klíče"
 
 #: ../data/seahorse.desktop.in.in.h:3
 msgid "keyring;encryption;security;sign;ssh;"
@@ -84,7 +88,7 @@ msgstr "Domovská stránka projektu Seahorse"
 msgid "Cannot delete"
 msgstr "Nelze smazat"
 
-#: ../common/catalog.vala:331 ../libseahorse/seahorse-key-manager-store.c:440
+#: ../common/catalog.vala:331 ../libseahorse/seahorse-key-manager-store.c:443
 msgid "Couldn't export keys"
 msgstr "Nelze exportovat klíče"
 
@@ -92,7 +96,7 @@ msgstr "Nelze exportovat klíče"
 msgid "Couldn't export data"
 msgstr "Nelze exportovat data"
 
-#: ../common/catalog.vala:358 ../libseahorse/seahorse-widget.c:459
+#: ../common/catalog.vala:358 ../libseahorse/seahorse-widget.c:460
 #, c-format
 msgid "Could not display help: %s"
 msgstr "Nebylo možno zobrazit nápovědu: %s"
@@ -176,27 +180,27 @@ msgstr "Hesla"
 msgid "Stored personal passwords, credentials and secrets"
 msgstr "Uložená osobní hesla a přístupové údaje"
 
-#: ../gkr/gkr-backend.vala:241
+#: ../gkr/gkr-backend.vala:251
 msgid "New password keyring"
-msgstr "Nová klíčenka hesel"
+msgstr "Nová klíčenka s hesly"
 
-#: ../gkr/gkr-backend.vala:242 ../gkr/gkr-backend.vala:249
+#: ../gkr/gkr-backend.vala:252 ../gkr/gkr-backend.vala:259
 msgid "Used to store application and network passwords"
 msgstr "Používá se pro ukládání aplikačních a síťových hesel"
 
-#: ../gkr/gkr-backend.vala:243
+#: ../gkr/gkr-backend.vala:253
 msgid "New password..."
 msgstr "Nové heslo…"
 
-#: ../gkr/gkr-backend.vala:244 ../gkr/gkr-backend.vala:251
+#: ../gkr/gkr-backend.vala:254 ../gkr/gkr-backend.vala:261
 msgid "Safely store a password or secret."
 msgstr "Bezpečně uložit heslo."
 
-#: ../gkr/gkr-backend.vala:248
+#: ../gkr/gkr-backend.vala:258
 msgid "Password Keyring"
-msgstr "Klíčenka hesel"
+msgstr "Klíčenka s hesly"
 
-#: ../gkr/gkr-backend.vala:250
+#: ../gkr/gkr-backend.vala:260
 msgid "Stored Password"
 msgstr "Uložené heslo"
 
@@ -416,8 +420,7 @@ msgstr "Zobrazit _heslo"
 msgid "Password:"
 msgstr "Heslo:"
 
-#: ../gkr/seahorse-gkr-item-properties.xml.h:9
-#: ../pgp/seahorse-pgp-subkey.c:402
+#: ../gkr/seahorse-gkr-item-properties.xml.h:9 ../pgp/seahorse-pgp-subkey.c:402
 #: ../ssh/seahorse-ssh-key-properties.xml.h:15
 msgid "Key"
 msgstr "Klíč"
@@ -711,11 +714,11 @@ msgstr "počáteční dočasná položka"
 
 #: ../libseahorse/seahorse-add-keyserver.xml.h:2
 msgid "Add Key Server"
-msgstr "Přidat server klíčů"
+msgstr "Přidání serveru s klíči"
 
 #: ../libseahorse/seahorse-add-keyserver.xml.h:3
 msgid "Key Server Type:"
-msgstr "Typ serveru klíčů:"
+msgstr "Typ serveru s klíči:"
 
 #: ../libseahorse/seahorse-add-keyserver.xml.h:4
 msgid "Host:"
@@ -734,16 +737,16 @@ msgstr ":"
 msgid "The port to access the server on."
 msgstr "Port, na kterém se má přistupovat k serveru."
 
-#: ../libseahorse/seahorse-application.c:114
+#: ../libseahorse/seahorse-application.c:108
 msgid "Version of this application"
 msgstr "Verze této aplikace"
 
-#: ../libseahorse/seahorse-application.c:120
-#: ../libseahorse/seahorse-application.c:164
+#: ../libseahorse/seahorse-application.c:114
+#: ../libseahorse/seahorse-application.c:158
 msgid "- System Settings"
 msgstr "– Systémová nastavení"
 
-#: ../libseahorse/seahorse-application.c:160
+#: ../libseahorse/seahorse-application.c:154
 msgid "Don't display a window"
 msgstr "Nezobrazovat okno"
 
@@ -763,9 +766,9 @@ msgstr "Chybná adresa serveru klíčů."
 
 #: ../libseahorse/seahorse-prefs.c:66
 msgid ""
-"For help contact your system adminstrator or the administrator of the key "
+"For help contact your system administrator or the administrator of the key "
 "server."
-msgstr "Požádejte o pomoc správce systému nebo správce serveru klíčů."
+msgstr "Požádejte o pomoc správce systému nebo správce serveru s klíči."
 
 #: ../libseahorse/seahorse-prefs.c:179
 msgid "URL"
@@ -802,6 +805,10 @@ msgstr "Automaticky _synchronizovat změněné klíče se servery klíčů"
 #: ../libseahorse/seahorse-prefs.xml.h:6
 msgid "Key Servers"
 msgstr "Servery klíčů"
+
+#: ../libseahorse/seahorse-search-provider.c:186
+msgid "The search provider is not loaded yet"
+msgstr "Poskytovatel hledání zatím není načten"
 
 #: ../libseahorse/seahorse-validity.c:38
 #: ../pgp/seahorse-pgp-key-properties.c:1251
@@ -991,7 +998,7 @@ msgstr "Data klíče"
 
 #: ../pgp/seahorse-gpgme-exporter.c:116
 msgid "Armored PGP keys"
-msgstr "Armored klíče PGP"
+msgstr "Chráněné klíče PGP"
 
 #: ../pgp/seahorse-gpgme-exporter.c:120
 msgid "PGP keys"
@@ -1005,8 +1012,7 @@ msgstr "Klíč PGP"
 msgid "Used to encrypt email and files"
 msgstr "Pro šifrování souborů a elektronické pošty"
 
-#: ../pgp/seahorse-gpgme-generate.c:130
-#: ../pkcs11/seahorse-pkcs11-generate.c:90
+#: ../pgp/seahorse-gpgme-generate.c:130 ../pkcs11/seahorse-pkcs11-generate.c:90
 #: ../ssh/seahorse-ssh-generate.xml.h:9
 msgid "RSA"
 msgstr "RSA"
@@ -1086,8 +1092,7 @@ msgstr "Zadejte nové heslo pro „%s“"
 msgid "Enter passphrase for '%s'"
 msgstr "Zadejte heslo pro „%s“"
 
-#: ../pgp/seahorse-gpgme-keyring.c:98
-#: ../src/seahorse-change-passphrase.xml.h:2
+#: ../pgp/seahorse-gpgme-keyring.c:98 ../src/seahorse-change-passphrase.xml.h:2
 msgid "Enter new passphrase"
 msgstr "Zadejte nové heslo"
 
@@ -1403,7 +1408,7 @@ msgid ""
 "to use. You'll also get any changes others have made since you received "
 "their keys."
 msgstr ""
-"Tato akce zveřejní klíče ve vaší klíčence, aby je mohli používat i ostatní. "
+"Timto se zveřejní klíče ve vaší klíčence, aby je mohli používat i ostatní. "
 "Také získáte změny, které druzí provedli od té doby, co jste přijali jejich "
 "klíče."
 
@@ -1413,13 +1418,13 @@ msgid ""
 "keys. No key server has been chosen for publishing, so your keys will not be "
 "made available to others."
 msgstr ""
-"Tato akce získá všechny změny klíčů, které ostatní provedli od doby, kdy "
-"jste jejich klíče získali. Ke zveřejnění nebyl zvolen server klíčů, takže "
+"Tímto se získají všechny změny klíčů, které ostatní provedli od doby, kdy "
+"jste jejich klíče získali. Ke zveřejnění nebyl zvolen server s klíči, takže "
 "vaše klíče ostatním zpřístupněny nebudou."
 
 #: ../pgp/seahorse-keyserver-sync.xml.h:4
 msgid "_Key Servers"
-msgstr "_Servery klíčů"
+msgstr "_Servery s klíči"
 
 #: ../pgp/seahorse-keyserver-sync.xml.h:5
 msgid "_Sync"
@@ -1457,11 +1462,11 @@ msgstr "_Synchronizovat a zveřejnit klíče…"
 msgid "Publish and/or synchronize your keys with those online."
 msgstr "Zveřejnit a/nebo synchronizovat vaše klíče s klíči online."
 
-#: ../pgp/seahorse-pgp-backend.c:167
+#: ../pgp/seahorse-pgp-backend.c:193
 msgid "PGP Keys"
 msgstr "Klíče PGP"
 
-#: ../pgp/seahorse-pgp-backend.c:173
+#: ../pgp/seahorse-pgp-backend.c:199
 msgid "PGP keys are for encrypting email or files"
 msgstr "Klíče PGP jsou pro zašifrování elektronické pošty nebo souborů"
 
@@ -1517,7 +1522,7 @@ msgstr "Klíč PGP"
 
 #: ../pgp/seahorse-pgp-key-properties.c:317
 msgid "Couldn't change primary user ID"
-msgstr "Nebylo možno změnit primární ID uživatele"
+msgstr "Nebylo možno změnit hlavní ID uživatele"
 
 #: ../pgp/seahorse-pgp-key-properties.c:336
 #, c-format
@@ -1544,7 +1549,7 @@ msgstr "ID podpisu"
 
 #: ../pgp/seahorse-pgp-key-properties.c:670
 msgid "Couldn't change primary photo"
-msgstr "Nebylo možno změnit primární fotografii"
+msgstr "Nebylo možno změnit hlavní fotografii"
 
 #. TRANSLATORS: (unknown) expiry date
 #: ../pgp/seahorse-pgp-key-properties.c:904
@@ -1676,7 +1681,7 @@ msgstr "Odstranit z klíče tuto fotografii"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:12
 msgid "Make this photo the primary photo"
-msgstr "Nastavit jako primární fotografii"
+msgstr "Nastavit jako hlavní fotografii"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:13
 msgid "Go to previous photo"
@@ -1738,7 +1743,7 @@ msgstr "Jména a podpisy"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:30
 msgid "Primary"
-msgstr "Primární"
+msgstr "Hlavní"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:31
 #: ../pgp/seahorse-pgp-subkey.c:292
@@ -2078,11 +2083,11 @@ msgstr "Osobní certifikát a klíč"
 msgid "Personal certificate"
 msgstr "Osobní certifikát"
 
-#: ../pkcs11/seahorse-pkcs11-backend.c:184
+#: ../pkcs11/seahorse-pkcs11-backend.c:189
 msgid "Certificates"
 msgstr "Certifikáty"
 
-#: ../pkcs11/seahorse-pkcs11-backend.c:190
+#: ../pkcs11/seahorse-pkcs11-backend.c:195
 msgid "X.509 certificates and related keys"
 msgstr "X.509 certifikáty a příslušné klíče"
 
@@ -2358,7 +2363,7 @@ msgstr "_Vlastnosti"
 
 #: ../ssh/seahorse-ssh-actions.c:97
 msgid "Configure Key for _Secure Shell..."
-msgstr "Nastavit klíče pro _SSH…"
+msgstr "Nastavit klíč pro _SSH…"
 
 #: ../ssh/seahorse-ssh-actions.c:98
 msgid ""
@@ -2394,11 +2399,11 @@ msgstr "Zadejte nové heslo pro: %s"
 msgid "Enter the new passphrase again: %s"
 msgstr "Zadejte znovu nové heslo pro: %s"
 
-#: ../ssh/seahorse-ssh-backend.c:88
+#: ../ssh/seahorse-ssh-backend.c:115
 msgid "Secure Shell"
 msgstr "Secure Shell"
 
-#: ../ssh/seahorse-ssh-backend.c:94
+#: ../ssh/seahorse-ssh-backend.c:121
 msgid "Keys used to connect securely to other computers"
 msgstr "Klíče používané k bezpečnému připojení k jiným počítačům"
 

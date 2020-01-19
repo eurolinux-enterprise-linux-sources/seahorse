@@ -6,16 +6,15 @@
 # Fatih Demir <kabalak@gmx.net>, 2000.
 # Sertaç Ö. Yıldız <sertacyildiz@gmail.com>, 2007.
 # Baris Cicek <baris@teamforce.name.tr>, 2004, 2007, 2008, 2009.
-# Necdet Yücel <necdetyucel@gmail.com>, 2014.
-# Muhammet Kara <muhammetk@gmail.com>, 2011, 2012, 2014.
+# Muhammet Kara <muhammetk@gmail.com>, 2011, 2012, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: seahorse\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=seahorse&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-12-20 23:35+0000\n"
-"PO-Revision-Date: 2014-12-21 10:41+0200\n"
+"POT-Creation-Date: 2016-03-13 02:31+0000\n"
+"PO-Revision-Date: 2016-03-13 11:26+0200\n"
 "Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -23,36 +22,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.6\n"
-"X-POOTLE-MTIME: 1419087867.000000\n"
+"X-Generator: Poedit 1.8.6\n"
 
 #: ../data/seahorse.appdata.xml.in.h:1
+msgid "Seahorse"
+msgstr "Seahorse"
+
+#: ../data/seahorse.appdata.xml.in.h:2 ../data/seahorse.desktop.in.in.h:2
+msgid "Manage your passwords and encryption keys"
+msgstr "Parolalarınızı ve şifreleme anahtarlarınızı yönetin"
+
+#: ../data/seahorse.appdata.xml.in.h:3
 msgid ""
 "Seahorse is a GNOME application for managing encryption keys. It also "
 "integrates with nautilus, gedit and other places for encryption operations."
 msgstr ""
-"Seahorse şifreleme anahtarlarını yönetmek için bir GNOME uygulamasıdır. "
-"Nautilus, gedit ve diğer şifreleme işlemleri yapan uygulamalarla tümleşik "
-"çalışır."
+"Seahorse, şifreleme anahtarlarını yönetmek için kullanabileceğiniz bir GNOME "
+"uygulamasıdır. Ayrıca şifreleme işlemleri için nautilus, gedit ve diğer "
+"uygulamalarla bütünleşir."
 
-#: ../data/seahorse.appdata.xml.in.h:2
+#: ../data/seahorse.appdata.xml.in.h:4
 msgid ""
 "With seahorse you can create and manage PGP keys, create and manage SSH "
 "keys, publish and retrieve keys from key servers, cache your passphrase so "
 "you don't have to keep typing it and backup your keys and keyring."
 msgstr ""
 "Seahorse ile PGP ve SSH anahtarlarını oluşturabilir ve yönetebilirsiniz, "
-"anahtar sunucularına anahtar gönderip alabilirsiniz, parolanızı ön belleğe "
-"alır ve yeniden girmeniz veya yedeklemeniz gerekmez."
+"anahtar sunucularına anahtar gönderip alabilirsiniz, yeniden girmenize gerek "
+"kalmaması için parolanızı ön belleğe alabilir ve anahtarlarınızı ve "
+"anahtarlığınızı yedekleyebilirsiniz."
 
 #: ../data/seahorse.desktop.in.in.h:1 ../common/catalog.vala:285
 #: ../src/seahorse-key-manager.c:660
 msgid "Passwords and Keys"
 msgstr "Parolalar ve Anahtarlar"
-
-#: ../data/seahorse.desktop.in.in.h:2
-msgid "Manage your passwords and encryption keys"
-msgstr "Parolalarınızı ve şifreleme anahtarlarınızı yönetin"
 
 #: ../data/seahorse.desktop.in.in.h:3
 msgid "keyring;encryption;security;sign;ssh;"
@@ -67,7 +70,7 @@ msgid "translator-credits"
 msgstr ""
 "Barış Çiçek <baris@teamforce.name.tr>\n"
 "Sertaç Ö. Yıldız <sertacyildiz@gmail.com>\n"
-"Muhammet Kara <muhammet.k@gmail.com>"
+"Muhammet Kara <muhammetk@gmail.com>"
 
 #: ../common/catalog.vala:290
 msgid "Seahorse Project Homepage"
@@ -77,7 +80,7 @@ msgstr "Seahorse Web Safyası"
 msgid "Cannot delete"
 msgstr "Silinemiyor"
 
-#: ../common/catalog.vala:331 ../libseahorse/seahorse-key-manager-store.c:440
+#: ../common/catalog.vala:331 ../libseahorse/seahorse-key-manager-store.c:443
 msgid "Couldn't export keys"
 msgstr "Anahtarlar aktarılamadı"
 
@@ -85,7 +88,7 @@ msgstr "Anahtarlar aktarılamadı"
 msgid "Couldn't export data"
 msgstr "Veri dışa aktarılamadı"
 
-#: ../common/catalog.vala:358 ../libseahorse/seahorse-widget.c:465
+#: ../common/catalog.vala:358 ../libseahorse/seahorse-widget.c:460
 #, c-format
 msgid "Could not display help: %s"
 msgstr "Yardım görüntülenemedi: %s"
@@ -169,27 +172,27 @@ msgstr "Parolalar"
 msgid "Stored personal passwords, credentials and secrets"
 msgstr "Saklanan kişisel parolalar, kimlik bilgileri ve gizli anahtarlar"
 
-#: ../gkr/gkr-backend.vala:241
+#: ../gkr/gkr-backend.vala:251
 msgid "New password keyring"
 msgstr "Yeni parola anahtarlığı"
 
-#: ../gkr/gkr-backend.vala:242 ../gkr/gkr-backend.vala:249
+#: ../gkr/gkr-backend.vala:252 ../gkr/gkr-backend.vala:259
 msgid "Used to store application and network passwords"
 msgstr "Uygulama ve ağ parolalarını saklamak için kullanılır"
 
-#: ../gkr/gkr-backend.vala:243
+#: ../gkr/gkr-backend.vala:253
 msgid "New password..."
 msgstr "Yeni parola..."
 
-#: ../gkr/gkr-backend.vala:244 ../gkr/gkr-backend.vala:251
+#: ../gkr/gkr-backend.vala:254 ../gkr/gkr-backend.vala:261
 msgid "Safely store a password or secret."
 msgstr "Parolayı ya da gizliyi güvenle kaydet."
 
-#: ../gkr/gkr-backend.vala:248
+#: ../gkr/gkr-backend.vala:258
 msgid "Password Keyring"
 msgstr "Parola Anahtarlığı"
 
-#: ../gkr/gkr-backend.vala:250
+#: ../gkr/gkr-backend.vala:260
 msgid "Stored Password"
 msgstr "Saklı Parola"
 
@@ -409,8 +412,7 @@ msgstr "Parolayı _göster"
 msgid "Password:"
 msgstr "Parola:"
 
-#: ../gkr/seahorse-gkr-item-properties.xml.h:9
-#: ../pgp/seahorse-pgp-subkey.c:402
+#: ../gkr/seahorse-gkr-item-properties.xml.h:9 ../pgp/seahorse-pgp-subkey.c:402
 #: ../ssh/seahorse-ssh-key-properties.xml.h:15
 msgid "Key"
 msgstr "Anahtar"
@@ -727,18 +729,18 @@ msgstr ":"
 msgid "The port to access the server on."
 msgstr "Sunucuya erişilecek port."
 
-#: ../libseahorse/seahorse-application.c:114
+#: ../libseahorse/seahorse-application.c:108
 msgid "Version of this application"
 msgstr "Bu uygulamanın sürümü"
 
-#: ../libseahorse/seahorse-application.c:120
-#: ../libseahorse/seahorse-application.c:164
+#: ../libseahorse/seahorse-application.c:114
+#: ../libseahorse/seahorse-application.c:158
 msgid "- System Settings"
 msgstr "- Sistem Ayarları"
 
-#: ../libseahorse/seahorse-application.c:160
+#: ../libseahorse/seahorse-application.c:154
 msgid "Don't display a window"
-msgstr "Bir pencere gösterme"
+msgstr "Pencere gösterme"
 
 #: ../libseahorse/seahorse-interaction.c:98
 #, c-format
@@ -756,7 +758,7 @@ msgstr "Anahtar Sunucusu adresi geçersiz."
 
 #: ../libseahorse/seahorse-prefs.c:66
 msgid ""
-"For help contact your system adminstrator or the administrator of the key "
+"For help contact your system administrator or the administrator of the key "
 "server."
 msgstr ""
 "Yardım için sistem yöneticiniz veya anahtar sunucusunun yöneticisi ile "
@@ -798,13 +800,17 @@ msgstr "_Değişmiş anahtarları sunucu ile otomatik olarak eş zamanlandır"
 msgid "Key Servers"
 msgstr "Anahtar Sunucuları"
 
+#: ../libseahorse/seahorse-search-provider.c:186
+msgid "The search provider is not loaded yet"
+msgstr "Arama sağlayıcısı henüz yüklenmedi"
+
 #: ../libseahorse/seahorse-validity.c:38
 #: ../pgp/seahorse-pgp-key-properties.c:1251
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:1
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:1
 msgctxt "Validity"
 msgid "Unknown"
-msgstr "Bilinmeyen"
+msgstr "Bilinmiyor"
 
 #: ../libseahorse/seahorse-validity.c:40
 #: ../pgp/seahorse-pgp-key-properties.c:1257
@@ -818,7 +824,7 @@ msgstr "Asla"
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:3
 msgctxt "Validity"
 msgid "Marginal"
-msgstr "Değişken"
+msgstr "Düşük"
 
 #: ../libseahorse/seahorse-validity.c:44
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:4
@@ -840,7 +846,7 @@ msgstr "Devre Dışı"
 #: ../libseahorse/seahorse-validity.c:50
 msgctxt "Validity"
 msgid "Revoked"
-msgstr "İptal edilmiş"
+msgstr "Feshedilmiş"
 
 #: ../pgp/seahorse-add-subkey.xml.h:1
 msgid "Never E_xpires"
@@ -1002,8 +1008,7 @@ msgstr "PGP Anahtarı"
 msgid "Used to encrypt email and files"
 msgstr "E-postaların ve dosyaların şifresini çözmek için kullanılır"
 
-#: ../pgp/seahorse-gpgme-generate.c:130
-#: ../pkcs11/seahorse-pkcs11-generate.c:90
+#: ../pgp/seahorse-gpgme-generate.c:130 ../pkcs11/seahorse-pkcs11-generate.c:90
 #: ../ssh/seahorse-ssh-generate.xml.h:9
 msgid "RSA"
 msgstr "RSA"
@@ -1081,8 +1086,7 @@ msgstr "'%s' için yeni parola metni girin"
 msgid "Enter passphrase for '%s'"
 msgstr "'%s' için parola metni girin"
 
-#: ../pgp/seahorse-gpgme-keyring.c:98
-#: ../src/seahorse-change-passphrase.xml.h:2
+#: ../pgp/seahorse-gpgme-keyring.c:98 ../src/seahorse-change-passphrase.xml.h:2
 msgid "Enter new passphrase"
 msgstr "Yeni parola metni gir"
 
@@ -1266,7 +1270,7 @@ msgstr ""
 #: ../pgp/seahorse-gpgme-subkey.c:195
 msgctxt "Algorithm"
 msgid "Unknown"
-msgstr "Bilinmeyen"
+msgstr "Bilinmiyor"
 
 #: ../pgp/seahorse-gpgme-subkey.c:197
 msgid "ElGamal"
@@ -1449,11 +1453,11 @@ msgstr "Anahtarları Güncelle ve _Yayımla..."
 msgid "Publish and/or synchronize your keys with those online."
 msgstr "Anahtarlarınızı sunucuda yayımla ve/veya oradakilerle güncelle."
 
-#: ../pgp/seahorse-pgp-backend.c:167
+#: ../pgp/seahorse-pgp-backend.c:193
 msgid "PGP Keys"
 msgstr "PGP Anahtarları"
 
-#: ../pgp/seahorse-pgp-backend.c:173
+#: ../pgp/seahorse-pgp-backend.c:199
 msgid "PGP keys are for encrypting email or files"
 msgstr "PGP anahtarları e-posta ya da dosyaların şifrelenmesi içindir"
 
@@ -1647,7 +1651,7 @@ msgstr "Anahtar Özellikleri"
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:7
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:7
 msgid "This key has been revoked"
-msgstr "Bu anahtar iptal edildi"
+msgstr "Bu anahtar feshedilmiş"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:8
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:8
@@ -1657,7 +1661,7 @@ msgstr "Sahibi anahtarı feshetti. Artık kullanılamaz."
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:9
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:9
 msgid "This key has expired"
-msgstr "Anahtar zaman aşımına uğramış"
+msgstr "Bu anahtarın süresi dolmuş"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:10
 msgid "Add a photo to this key"
@@ -1705,7 +1709,7 @@ msgstr "E-posta:"
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:21
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:19
 msgid "Comment:"
-msgstr "Açıklama:"
+msgstr "Yorum:"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:25
 msgid "Decrypt files and email sent to you."
@@ -1727,7 +1731,7 @@ msgstr "Sahibi"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:29
 msgid "Key Names and Signatures"
-msgstr "Anahtar İsimleri ve İmzaları"
+msgstr "Anahtar İsimleri ve İmzalar"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:30
 msgid "Primary"
@@ -1768,7 +1772,7 @@ msgstr "Teknik Ayrıntılar"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:40
 msgid "Fingerprint"
-msgstr "Parmak izi"
+msgstr "Parmak İzi"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:42
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:43
@@ -1785,7 +1789,7 @@ msgstr "Sahibine _Güven Derecenizi Değiştirin:"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:45
 msgid "_Export Secret Key:"
-msgstr "_Gizli Anahtarı Dışarıya Aktar:"
+msgstr "Gizli Anahtarı _Dışa Aktar:"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:47
 msgid "Actions"
@@ -1812,7 +1816,7 @@ msgstr "Değişken"
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:4
 msgctxt "Validity"
 msgid "Fully"
-msgstr "Tamamiyle"
+msgstr "Tamamen"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:5
 msgctxt "Validity"
@@ -1834,7 +1838,7 @@ msgstr "_Diğer İsimler:"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:25
 msgid "Your trust of this key"
-msgstr "Bu anahtara güven dereceniz"
+msgstr "Bu anahtara olan güveniniz"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:26
 msgid "Your trust is manually specified on the <i>Details</i> tab."
@@ -1872,7 +1876,7 @@ msgstr "İmzayı _Feshet"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:35
 msgid "_People who have signed this key:"
-msgstr "_Bu anahtarı imzalayan diğerleri:"
+msgstr "_Bu anahtarı imzalayan kişiler:"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:36
 msgid "_Only display the signatures of people I trust"
@@ -1886,7 +1890,7 @@ msgstr "Güven"
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:40
 #: ../ssh/seahorse-ssh-key-properties.xml.h:19
 msgid "Fingerprint:"
-msgstr "Parmak izi:"
+msgstr "Parmak İzi:"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:41
 msgid "Dates:"
@@ -1906,11 +1910,11 @@ msgstr "Şifrele"
 
 #: ../pgp/seahorse-pgp-subkey.c:293
 msgid "Certify"
-msgstr "Onayla"
+msgstr "Sertifikalandır"
 
 #: ../pgp/seahorse-pgp-subkey.c:294
 msgid "Authenticate"
-msgstr "Doğrula"
+msgstr "Kimlik Doğrula"
 
 #: ../pgp/seahorse-pgp-subkey.c:407
 #, c-format
@@ -2011,7 +2015,7 @@ msgstr ""
 
 #: ../pgp/seahorse-sign.xml.h:12
 msgid "How others will see this signature:"
-msgstr "Başkaları imzanızı nasıl görecek:"
+msgstr "Başkaları bu imzayı nasıl görecek:"
 
 #: ../pgp/seahorse-sign.xml.h:13
 msgid "_Others may not see this signature"
@@ -2070,11 +2074,11 @@ msgstr "Kişisel sertifika ve anahtar"
 msgid "Personal certificate"
 msgstr "Kişisel sertifika"
 
-#: ../pkcs11/seahorse-pkcs11-backend.c:184
+#: ../pkcs11/seahorse-pkcs11-backend.c:189
 msgid "Certificates"
 msgstr "Sertifikalar"
 
-#: ../pkcs11/seahorse-pkcs11-backend.c:190
+#: ../pkcs11/seahorse-pkcs11-backend.c:195
 msgid "X.509 certificates and related keys"
 msgstr "X.509 sertifikaları ve ilişkili anahtarlar"
 
@@ -2188,7 +2192,7 @@ msgstr "Adsız özel anahtar"
 #: ../pkcs11/pkcs11-token.vala:74
 msgctxt "Label"
 msgid "Unknown"
-msgstr "Bilinmeyen"
+msgstr "Bilinmiyor"
 
 #: ../src/seahorse-change-passphrase.xml.h:1
 msgid "Change Passphrase"
@@ -2276,7 +2280,7 @@ msgstr "Panodan içe aktar"
 
 #: ../src/seahorse-key-manager.c:516
 msgid "By _Keyring"
-msgstr "_Anahtarlığa göre"
+msgstr "_Anahtarlığa Göre"
 
 #: ../src/seahorse-key-manager.c:517
 msgid "Show sidebar listing keyrings"
@@ -2385,11 +2389,11 @@ msgstr "%s için yeni parola metnini girin"
 msgid "Enter the new passphrase again: %s"
 msgstr "Yeni parola metnini tekrar girin: %s"
 
-#: ../ssh/seahorse-ssh-backend.c:88
+#: ../ssh/seahorse-ssh-backend.c:115
 msgid "Secure Shell"
 msgstr "Güvenli Kabuk"
 
-#: ../ssh/seahorse-ssh-backend.c:94
+#: ../ssh/seahorse-ssh-backend.c:121
 msgid "Keys used to connect securely to other computers"
 msgstr ""
 "Diğer bilgisayarlara güvenli bir şekilde bağlanmak için kullanılan anahtarlar"
@@ -3347,9 +3351,6 @@ msgstr "_Ayarla"
 
 #~ msgid "Enter a passphrase for your new Secure Shell key."
 #~ msgstr "Yeni Güvenli Kabuk Anahtarınız için bir parola metni girin."
-
-#~ msgid "Seahorse Daemon"
-#~ msgstr "Seahorse Servisi"
 
 #~ msgid "Couldn't share keys"
 #~ msgstr "Anahtarlar paylaşılamadı"

@@ -23,6 +23,7 @@
 #include "seahorse-key-manager.h"
 
 #include "seahorse-common.h"
+#include "seahorse-resources.h"
 
 #include "libseahorse/seahorse-application.h"
 #include "libseahorse/seahorse-servers.h"
@@ -64,6 +65,9 @@ on_application_startup (GApplication *application,
 	seahorse_pkcs11_backend_initialize ();
 #endif
 	seahorse_gkr_backend_initialize ();
+
+	/* Initialize the search provider now that backends are registered */
+	seahorse_application_initialize_search (SEAHORSE_APPLICATION (application));
 }
 
 /* Initializes context and preferences, then loads key manager */
@@ -82,6 +86,8 @@ main (int argc, char **argv)
 #if !GLIB_CHECK_VERSION(2,35,0)
 	g_type_init ();
 #endif
+
+	seahorse_register_resource ();
 
 	application = seahorse_application_new ();
 	g_signal_connect (application, "activate", G_CALLBACK (on_application_activate), NULL);

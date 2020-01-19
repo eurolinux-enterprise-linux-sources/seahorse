@@ -2,10 +2,9 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:ui="http://projectmallard.org/ui/1.0/" type="topic" style="task" id="ssh-create" xml:lang="fr">
 
   <info>
-    <link type="guide" xref="ssh"/>
+    <link type="guide" xref="index#ssh-keys" group="first"/>
 
-    <revision version="0.8" date="2013-08-12" status="incomplete"/>
-    <revision pkgversion="3.14" date="2014-09-10" status="incomplete"/>
+    <revision pkgversion="3.14" date="2014-10-06" status="incomplete"/>
 
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
@@ -31,6 +30,12 @@
       <mal:name>Julien Hardelin</mal:name>
       <mal:email>jhardlin@orange.fr</mal:email>
       <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Myriam Economou</mal:name>
+      <mal:email>myriam.economou@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
     </mal:credit>
   </info>
 
