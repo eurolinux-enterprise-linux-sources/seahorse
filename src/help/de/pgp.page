@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task 2column" id="pgp" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#pgp-keys" group="#first"/>
+
+    <revision pkgversion="3.9" date="2013-08-20" status="review"/>
+
+    <title type="link" role="topic"/>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <credit type="author copyright">
+      <name>Aruna Sankaranarayanan</name>
+      <email its:translate="no">aruna.evam@gmail.com</email>
+      <years>2013</years>
+    </credit>
+
+    <desc>Ein PGP-Schlüssel ist ein öffentlicher kryptografischer Schlüssel, der zum Signieren und Verschlüssen von E-Mails und Dateien verwendet wird. Wenn Sie einen PGP-Schlüssel erzeugen wird ein Schlüsselpaar bestehend aus einem öffentlichen und einem privaten Schlüssel erstellt. Sie dürfen den öffentlichen Schlüssel jedem geben, der Ihnen eine verschlüsselte Nachricht oder Datei senden will. Der private Schlüssel hingegen muss unbedingt bei Ihnen verbleiben und wird zum Entschlüsseln empfangener Nachrichten verwendet.</desc> 
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  </info>
+
+    <title>PGP-Schlüssel erzeugen und verwalten</title>
+
+</page>

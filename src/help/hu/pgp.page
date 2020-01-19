@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task 2column" id="pgp" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="index#pgp-keys" group="#first"/>
+
+    <revision pkgversion="3.9" date="2013-08-20" status="review"/>
+
+    <title type="link" role="topic"/>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <credit type="author copyright">
+      <name>Aruna Sankaranarayanan</name>
+      <email its:translate="no">aruna.evam@gmail.com</email>
+      <years>2013</years>
+    </credit>
+
+    <desc>A PGP-kulcs egy üzenetek és fájlok aláírására és titkosítására használható nyilvános kulcs. A PGP-kulcs létrehozásakor egy nyilvános és egy titkos kulcsból álló kulcspár jön létre. A nyilvános kulcsot bárkivel megoszthatja, aki Önnek aláírt vagy titkosított üzeneteket vagy fájlokat szeretne küldeni. A visszafejtésre használható titkos kulcshoz viszont Önön kívül senkinek sem szabad hozzáférnie.</desc> </info>
+
+    <title>PGP-kulcsok létrehozása és kezelése</title>
+
+</page>
