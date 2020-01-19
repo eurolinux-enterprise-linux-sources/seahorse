@@ -14,8 +14,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 /*
@@ -54,8 +56,7 @@ void            seahorse_gpgme_generate_key         (SeahorseGpgmeKeyring *keyri
                                                      const gchar *comment,
                                                      guint type,
                                                      guint bits,
-                                                     time_t expires,
-                                                     GtkWindow *parent);
+                                                     time_t expires);
 
 void            seahorse_gpgme_add_revoker_new      (SeahorseGpgmeKey *pkey,
                                                      GtkWindow *parent);

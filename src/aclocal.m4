@@ -1,6 +1,6 @@
-# generated automatically by aclocal 1.14.1 -*- Autoconf -*-
+# generated automatically by aclocal 1.13.1 -*- Autoconf -*-
 
-# Copyright (C) 1996-2013 Free Software Foundation, Inc.
+# Copyright (C) 1996-2012 Free Software Foundation, Inc.
 
 # This file is free software; the Free Software Foundation
 # gives unlimited permission to copy and/or distribute it,
@@ -19,187 +19,6 @@ m4_if(m4_defn([AC_AUTOCONF_VERSION]), [2.69],,
 You have another version of autoconf.  It may work, but is not guaranteed to.
 If you have problems, you may need to regenerate the build system entirely.
 To do so, use the procedure documented by the package, typically 'autoreconf'.])])
-
-# SYNOPSIS
-#
-#   AX_CODE_COVERAGE()
-#
-# DESCRIPTION
-#
-#   Defines CODE_COVERAGE_CFLAGS and CODE_COVERAGE_LDFLAGS which should be
-#   included in the CFLAGS and LIBS/LDFLAGS variables of every build target
-#   (program or library) which should be built with code coverage support.
-#   Also defines CODE_COVERAGE_RULES which should be substituted in your
-#   Makefile; and $enable_code_coverage which can be used in subsequent
-#   configure output. CODE_COVERAGE_ENABLED is defined and substituted, and
-#   corresponds to the value of the --enable-code-coverage option, which
-#   defaults to being disabled.
-#
-#   Note that all optimisation flags in CFLAGS must be disabled when code
-#   coverage is enabled.
-#
-#   Usage example:
-#   configure.ac:
-#      AX_CODE_COVERAGE
-#
-#   Makefile.am:
-#      @CODE_COVERAGE_RULES@
-#      my_program_LIBS = … $(CODE_COVERAGE_LDFLAGS) …
-#      my_program_CFLAGS = … $(CODE_COVERAGE_CFLAGS) …
-#
-#   This results in a “check-code-coverage” rule being added to any Makefile.am
-#   which includes “@CODE_COVERAGE_RULES@” (assuming the module has been
-#   configured with --enable-code-coverage). Running `make check-code-coverage`
-#   in that directory will run the module’s test suite (`make check`) and build
-#   a code coverage report detailing the code which was touched, then print the
-#   URI for the report.
-#
-# LICENSE
-#
-#   Copyright © 2012, 2014 Philip Withnall
-#   Copyright © 2012 Xan Lopez
-#   Copyright © 2012 Christian Persch
-#   Copyright © 2012 Paolo Borelli
-#   Copyright © 2012 Dan Winship
-#
-#   Derived from Makefile.decl in GLib, originally licenced under LGPLv2.1+.
-#   This file is licenced under LGPLv2.1+.
-
-#serial 1
-
-AC_DEFUN([AX_CODE_COVERAGE],[
-	dnl Check for --enable-code-coverage
-	AC_MSG_CHECKING([whether to build with code coverage support])
-	AC_ARG_ENABLE([code-coverage], AS_HELP_STRING([--enable-code-coverage], [Whether to enable code coverage support]),, enable_code_coverage=no)
-	AM_CONDITIONAL([CODE_COVERAGE_ENABLED], [test x$enable_code_coverage = xyes])
-	AC_SUBST([CODE_COVERAGE_ENABLED], [$enable_code_coverage])
-	AC_MSG_RESULT($enable_code_coverage)
-
-	AS_IF([ test "$enable_code_coverage" = "yes" ], [
-		dnl Check if gcc is being used
-		AS_IF([ test "$GCC" = "no" ], [
-			AC_MSG_ERROR([not compiling with gcc, which is required for gcov code coverage])
-		])
-
-		# List of supported lcov versions.
-		lcov_version_list="1.6 1.7 1.8 1.9 1.10 1.11"
-
-		AC_CHECK_PROG([LCOV], [lcov], [lcov])
-		AC_CHECK_PROG([GENHTML], [genhtml], [genhtml])
-
-		AS_IF([ test "$LCOV" ], [
-			AC_CACHE_CHECK([for lcov version], ax_cv_lcov_version, [
-				ax_cv_lcov_version=invalid
-				lcov_version=`$LCOV -v 2>/dev/null | $SED -e 's/^.* //'`
-				for lcov_check_version in $lcov_version_list; do
-					if test "$lcov_version" = "$lcov_check_version"; then
-						ax_cv_lcov_version="$lcov_check_version (ok)"
-					fi
-				done
-			])
-		], [
-			lcov_msg="To enable code coverage reporting you must have one of the following lcov versions installed: $lcov_version_list"
-			AC_MSG_ERROR([$lcov_msg])
-		])
-
-		case $ax_cv_lcov_version in
-			""|invalid[)]
-				lcov_msg="You must have one of the following versions of lcov: $lcov_version_list (found: $lcov_version)."
-				AC_MSG_ERROR([$lcov_msg])
-				LCOV="exit 0;"
-			;;
-		esac
-
-		AS_IF([ test -z "$GENHTML" ], [
-			AC_MSG_ERROR([Could not find genhtml from the lcov package])
-		])
-
-		dnl Build the code coverage flags
-		CODE_COVERAGE_CFLAGS="-O0 -g -fprofile-arcs -ftest-coverage"
-		CODE_COVERAGE_LDFLAGS="-lgcov"
-
-		AC_SUBST([CODE_COVERAGE_CFLAGS])
-		AC_SUBST([CODE_COVERAGE_LDFLAGS])
-	])
-
-CODE_COVERAGE_RULES='
-# Code coverage
-#
-# Optional:
-#  - CODE_COVERAGE_DIRECTORY: Top-level directory for code coverage reporting.
-#    (Default: $(top_builddir))
-#  - CODE_COVERAGE_OUTPUT_FILE: Filename and path for the .info file generated
-#    by lcov for code coverage. (Default:
-#    $(PACKAGE_NAME)-$(PACKAGE_VERSION)-coverage.info)
-#  - CODE_COVERAGE_OUTPUT_DIRECTORY: Directory for generated code coverage
-#    reports to be created. (Default:
-#    $(PACKAGE_NAME)-$(PACKAGE_VERSION)-coverage)
-#  - CODE_COVERAGE_LCOV_OPTIONS: Extra options to pass to the lcov instance.
-#    (Default: empty)
-#  - CODE_COVERAGE_GENHTML_OPTIONS: Extra options to pass to the genhtml
-#    instance. (Default: empty)
-#  - CODE_COVERAGE_IGNORE_PATTERN: Extra glob pattern of files to ignore
-#
-# The generated report will be titled using the $(PACKAGE_NAME) and
-# $(PACKAGE_VERSION). In order to add the current git hash to the title,
-# use the git-version-gen script, available online.
-
-# Optional variables
-CODE_COVERAGE_DIRECTORY ?= $(top_builddir)
-CODE_COVERAGE_OUTPUT_FILE ?= $(PACKAGE_NAME)-$(PACKAGE_VERSION)-coverage.info
-CODE_COVERAGE_OUTPUT_DIRECTORY ?= $(PACKAGE_NAME)-$(PACKAGE_VERSION)-coverage
-CODE_COVERAGE_LCOV_OPTIONS ?=
-CODE_COVERAGE_GENHTML_OPTIONS ?=
-CODE_COVERAGE_IGNORE_PATTERN ?=
-
-code_coverage_quiet = $(code_coverage_quiet_$(V))
-code_coverage_quiet_ = $(code_coverage_quiet_$(AM_DEFAULT_VERBOSITY))
-code_coverage_quiet_0 = --quiet
-
-# Use recursive makes in order to ignore errors during check
-check-code-coverage:
-ifeq ($(CODE_COVERAGE_ENABLED),yes)
-	-$(MAKE) $(AM_MAKEFLAGS) -k check
-	$(MAKE) $(AM_MAKEFLAGS) code-coverage-capture
-else
-	@echo "Need to reconfigure with --enable-code-coverage"
-endif
-
-# Capture code coverage data
-code-coverage-capture: code-coverage-capture-hook
-ifeq ($(CODE_COVERAGE_ENABLED),yes)
-	$(LCOV) $(code_coverage_quiet) --directory $(CODE_COVERAGE_DIRECTORY) --capture --output-file "$(CODE_COVERAGE_OUTPUT_FILE).tmp" --test-name "$(PACKAGE_NAME)-$(PACKAGE_VERSION)" --no-checksum --compat-libtool $(CODE_COVERAGE_LCOV_OPTIONS)
-	$(LCOV) $(code_coverage_quiet) --directory $(CODE_COVERAGE_DIRECTORY) --remove "$(CODE_COVERAGE_OUTPUT_FILE).tmp" "/tmp/*" $(CODE_COVERAGE_IGNORE_PATTERN) --output-file "$(CODE_COVERAGE_OUTPUT_FILE)"
-	-@rm -f $(CODE_COVERAGE_OUTPUT_FILE).tmp
-	LANG=C $(GENHTML) $(code_coverage_quiet) --prefix $(CODE_COVERAGE_DIRECTORY) --output-directory "$(CODE_COVERAGE_OUTPUT_DIRECTORY)" --title "$(PACKAGE_NAME)-$(PACKAGE_VERSION) Code Coverage" --legend --show-details "$(CODE_COVERAGE_OUTPUT_FILE)" $(CODE_COVERAGE_GENHTML_OPTIONS)
-	@echo "file://$(abs_builddir)/$(CODE_COVERAGE_OUTPUT_DIRECTORY)/index.html"
-else
-	@echo "Need to reconfigure with --enable-code-coverage"
-endif
-
-# Hook rule executed before code-coverage-capture, overridable by the user
-code-coverage-capture-hook:
-
-ifeq ($(CODE_COVERAGE_ENABLED),yes)
-clean: code-coverage-clean
-code-coverage-clean:
-	-$(LCOV) --directory $(top_builddir) -z
-	-rm -rf $(CODE_COVERAGE_OUTPUT_FILE) $(CODE_COVERAGE_OUTPUT_FILE).tmp $(CODE_COVERAGE_OUTPUT_DIRECTORY)
-	-find . -name "*.gcda" -o -name "*.gcov" -delete
-endif
-
-GITIGNOREFILES ?=
-GITIGNOREFILES += $(CODE_COVERAGE_OUTPUT_FILE) $(CODE_COVERAGE_OUTPUT_DIRECTORY)
-
-DISTCHECK_CONFIGURE_FLAGS ?=
-DISTCHECK_CONFIGURE_FLAGS += --disable-code-coverage
-
-.PHONY: check-code-coverage code-coverage-capture code-coverage-capture-hook code-coverage-clean
-'
-
-	AC_SUBST([CODE_COVERAGE_RULES])
-	m4_ifdef([_AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE([CODE_COVERAGE_RULES])])
-])
 
 # Copyright (C) 1995-2002 Free Software Foundation, Inc.
 # Copyright (C) 2001-2003,2004 Red Hat, Inc.
@@ -518,6 +337,7 @@ msgstr ""
 dnl
 glib_DEFUN([GLIB_GNU_GETTEXT],
   [AC_REQUIRE([AC_PROG_CC])dnl
+   AC_REQUIRE([AC_HEADER_STDC])dnl
    
    GLIB_LC_MESSAGES
    GLIB_WITH_NLS
@@ -668,16 +488,137 @@ dnl in that directory will run the module’s test suite (`make check`) and buil
 dnl a code coverage report detailing the code which was touched, then print the
 dnl URI for the report.
 
-AU_DEFUN([GNOME_CODE_COVERAGE],[
-	AX_CODE_COVERAGE
-	GNOME_CODE_COVERAGE_RULES=$CODE_COVERAGE_RULES
+AC_DEFUN([GNOME_CODE_COVERAGE],[
+	dnl Check for --enable-code-coverage
+	AC_MSG_CHECKING([whether to build with code coverage support])
+	AC_ARG_ENABLE([code-coverage], AS_HELP_STRING([--enable-code-coverage], [Whether to enable code coverage support]),, enable_code_coverage=no)
+	AM_CONDITIONAL([CODE_COVERAGE_ENABLED], [test x$enable_code_coverage = xyes])
+	AC_SUBST([CODE_COVERAGE_ENABLED], [$enable_code_coverage])
+	AC_MSG_RESULT($enable_code_coverage)
+
+	AS_IF([ test "$enable_code_coverage" = "yes" ], [
+		dnl Check if gcc is being used
+		AS_IF([ test "$GCC" = "no" ], [
+			AC_MSG_ERROR([not compiling with gcc, which is required for gcov code coverage])
+		])
+
+		# List of supported lcov versions.
+		lcov_version_list="1.6 1.7 1.8 1.9"
+
+		AC_CHECK_PROG([LCOV], [lcov], [lcov])
+		AC_CHECK_PROG([GENHTML], [genhtml], [genhtml])
+
+		AS_IF([ test "$LCOV" ], [
+			AC_CACHE_CHECK([for lcov version], gnome_cv_lcov_version, [
+				gnome_cv_lcov_version=invalid
+				lcov_version=`$LCOV -v 2>/dev/null | $SED -e 's/^.* //'`
+				for lcov_check_version in $lcov_version_list; do
+					if test "$lcov_version" = "$lcov_check_version"; then
+						gnome_cv_lcov_version="$lcov_check_version (ok)"
+					fi
+				done
+			])
+		], [
+			lcov_msg="To enable code coverage reporting you must have one of the following lcov versions installed: $lcov_version_list"
+			AC_MSG_ERROR([$lcov_msg])
+		])
+
+		case $gnome_cv_lcov_version in
+			""|invalid[)]
+				lcov_msg="You must have one of the following versions of lcov: $lcov_version_list (found: $lcov_version)."
+				AC_MSG_ERROR([$lcov_msg])
+				LCOV="exit 0;"
+			;;
+		esac
+
+		AS_IF([ test -z "$GENHTML" ], [
+			AC_MSG_ERROR([Could not find genhtml from the lcov package])
+		])
+
+		dnl Build the code coverage flags
+		CODE_COVERAGE_CFLAGS="-O0 -g -fprofile-arcs -ftest-coverage"
+		CODE_COVERAGE_LDFLAGS="-lgcov"
+
+		AC_SUBST([CODE_COVERAGE_CFLAGS])
+		AC_SUBST([CODE_COVERAGE_LDFLAGS])
+	])
+
+GNOME_CODE_COVERAGE_RULES='
+# Code coverage
+#
+# Optional:
+#  - CODE_COVERAGE_DIRECTORY: Top-level directory for code coverage reporting.
+#    (Default: $(top_builddir))
+#  - CODE_COVERAGE_OUTPUT_FILE: Filename and path for the .info file generated
+#    by lcov for code coverage. (Default:
+#    $(PACKAGE_NAME)-$(PACKAGE_VERSION)-coverage.info)
+#  - CODE_COVERAGE_OUTPUT_DIRECTORY: Directory for generated code coverage
+#    reports to be created. (Default:
+#    $(PACKAGE_NAME)-$(PACKAGE_VERSION)-coverage)
+#  - CODE_COVERAGE_LCOV_OPTIONS: Extra options to pass to the lcov instance.
+#    (Default: empty)
+#  - CODE_COVERAGE_GENHTML_OPTIONS: Extra options to pass to the genhtml
+#    instance. (Default: empty)
+#  - CODE_COVERAGE_IGNORE_PATTERN: Extra glob pattern of files to ignore
+#
+# The generated report will be titled using the $(PACKAGE_NAME) and
+# $(PACKAGE_VERSION). In order to add the current git hash to the title,
+# use the git-version-gen script, available online.
+
+# Optional variables
+CODE_COVERAGE_DIRECTORY ?= $(top_builddir)
+CODE_COVERAGE_OUTPUT_FILE ?= $(PACKAGE_NAME)-$(PACKAGE_VERSION)-coverage.info
+CODE_COVERAGE_OUTPUT_DIRECTORY ?= $(PACKAGE_NAME)-$(PACKAGE_VERSION)-coverage
+CODE_COVERAGE_LCOV_OPTIONS ?=
+CODE_COVERAGE_GENHTML_OPTIONS ?=
+CODE_COVERAGE_IGNORE_PATTERN ?=
+
+code_coverage_quiet = $(code_coverage_quiet_$(V))
+code_coverage_quiet_ = $(code_coverage_quiet_$(AM_DEFAULT_VERBOSITY))
+code_coverage_quiet_0 = --quiet
+
+# Use recursive makes in order to ignore errors during check
+check-code-coverage:
+ifdef CODE_COVERAGE_ENABLED
+	-$(MAKE) $(AM_MAKEFLAGS) -k check
+	$(MAKE) $(AM_MAKEFLAGS) code-coverage-capture
+else
+	@echo "Need to reconfigure with --enable-code-coverage"
+endif
+
+# Capture code coverage data
+code-coverage-capture: code-coverage-capture-hook
+ifdef CODE_COVERAGE_ENABLED
+	$(LCOV) $(code_coverage_quiet) --directory $(CODE_COVERAGE_DIRECTORY) --capture --output-file "$(CODE_COVERAGE_OUTPUT_FILE).tmp" --test-name "$(PACKAGE_NAME)-$(PACKAGE_VERSION)" --no-checksum --compat-libtool $(CODE_COVERAGE_LCOV_OPTIONS)
+	$(LCOV) $(code_coverage_quiet) --directory $(CODE_COVERAGE_DIRECTORY) --remove "$(CODE_COVERAGE_OUTPUT_FILE).tmp" "/tmp/*" $(CODE_COVERAGE_IGNORE_PATTERN) --output-file "$(CODE_COVERAGE_OUTPUT_FILE)"
+	-@rm -f $(CODE_COVERAGE_OUTPUT_FILE).tmp
+	LANG=C $(GENHTML) $(code_coverage_quiet) --prefix $(CODE_COVERAGE_DIRECTORY) --output-directory "$(CODE_COVERAGE_OUTPUT_DIRECTORY)" --title "$(PACKAGE_NAME)-$(PACKAGE_VERSION) Code Coverage" --legend --show-details "$(CODE_COVERAGE_OUTPUT_FILE)" $(CODE_COVERAGE_GENHTML_OPTIONS)
+	@echo "file://$(abs_builddir)/$(CODE_COVERAGE_OUTPUT_DIRECTORY)/index.html"
+else
+	@echo "Need to reconfigure with --enable-code-coverage"
+endif
+
+# Hook rule executed before code-coverage-capture, overridable by the user
+code-coverage-capture-hook:
+
+clean: code-coverage-clean
+code-coverage-clean:
+	-$(LCOV) --directory $(top_builddir) -z
+	-rm -rf $(CODE_COVERAGE_OUTPUT_FILE) $(CODE_COVERAGE_OUTPUT_FILE).tmp $(CODE_COVERAGE_OUTPUT_DIRECTORY)
+	-find . -name "*.gcda" -o -name "*.gcov" -delete
+
+GITIGNOREFILES ?=
+GITIGNOREFILES += $(CODE_COVERAGE_OUTPUT_FILE) $(CODE_COVERAGE_OUTPUT_DIRECTORY)
+
+DISTCHECK_CONFIGURE_FLAGS ?=
+DISTCHECK_CONFIGURE_FLAGS += --disable-code-coverage
+
+.PHONY: check-code-coverage code-coverage-capture code-coverage-capture-hook code-coverage-clean
+'
 
 	AC_SUBST([GNOME_CODE_COVERAGE_RULES])
 	m4_ifdef([_AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE([GNOME_CODE_COVERAGE_RULES])])
-],
-[[$0: This macro is deprecated. You should use AX_CODE_COVERAGE instead and
-replace uses of GNOME_CODE_COVERAGE_RULES with CODE_COVERAGE_RULES.
-See: http://www.gnu.org/software/autoconf-archive/ax_code_coverage.html#ax_code_coverage]])
+])
 
 dnl GLIB_GSETTINGS
 dnl Defines GSETTINGS_SCHEMAS_INSTALL which controls whether
@@ -718,7 +659,7 @@ mostlyclean-am: clean-gsettings-schemas
 gsettings__enum_file = $(addsuffix .enums.xml,$(gsettings_ENUM_NAMESPACE))
 
 %.gschema.valid: %.gschema.xml $(gsettings__enum_file)
-	$(AM_V_GEN) $(GLIB_COMPILE_SCHEMAS) --strict --dry-run $(addprefix --schema-file=,$(gsettings__enum_file)) --schema-file=$< && mkdir -p [$](@D) && touch [$]@
+	$(AM_V_GEN) if test -f "$<"; then d=; else d="$(srcdir)/"; fi; $(GLIB_COMPILE_SCHEMAS) --strict --dry-run $(addprefix --schema-file=,$(gsettings__enum_file)) --schema-file=$${d}$< && touch [$]@
 
 all-am: $(gsettings_SCHEMAS:.xml=.valid)
 uninstall-am: uninstall-gsettings-schemas
@@ -764,7 +705,7 @@ m4_ifdef([_AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE([$1])])
 )
 
 # nls.m4 serial 5 (gettext-0.18)
-dnl Copyright (C) 1995-2003, 2005-2006, 2008-2014 Free Software Foundation,
+dnl Copyright (C) 1995-2003, 2005-2006, 2008-2013 Free Software Foundation,
 dnl Inc.
 dnl This file is free software; the Free Software Foundation
 dnl gives unlimited permission to copy and/or distribute it,
@@ -996,45 +937,14 @@ m4_popdef([pkg_default])
 m4_popdef([pkg_description])
 ]) dnl PKG_NOARCH_INSTALLDIR
 
-
-# PKG_CHECK_VAR(VARIABLE, MODULE, CONFIG-VARIABLE,
-# [ACTION-IF-FOUND], [ACTION-IF-NOT-FOUND])
-# -------------------------------------------
-# Retrieves the value of the pkg-config variable for the given module.
-AC_DEFUN([PKG_CHECK_VAR],
-[AC_REQUIRE([PKG_PROG_PKG_CONFIG])dnl
-AC_ARG_VAR([$1], [value of $3 for $2, overriding pkg-config])dnl
-
-_PKG_CONFIG([$1], [variable="][$3]["], [$2])
-AS_VAR_COPY([$1], [pkg_cv_][$1])
-
-AS_VAR_IF([$1], [""], [$5], [$4])dnl
-])# PKG_CHECK_VAR
-
 AC_DEFUN([YELP_HELP_INIT],
 [
 AC_REQUIRE([AC_PROG_LN_S])
 m4_pattern_allow([AM_V_at])
 m4_pattern_allow([AM_V_GEN])
 m4_pattern_allow([AM_DEFAULT_VERBOSITY])
-
-YELP_LC_MEDIA_LINKS=true
-YELP_LC_DIST=true
-
-for yelpopt in [$1]; do
-  case $yelpopt in
-    lc-media-links)    YELP_LC_MEDIA_LINKS=true ;;
-    no-lc-media-links) YELP_LC_MEDIA_LINKS= ;;
-    lc-dist)           YELP_LC_DIST=true ;;
-    no-lc-dist)        YELP_LC_DIST= ;;
-    *) AC_MSG_ERROR([Unrecognized [YELP_HELP_INIT] option $yelpopt"]) ;;
-  esac
-done;
-AC_SUBST([YELP_LC_MEDIA_LINKS])
-AC_SUBST([YELP_LC_DIST])
-
 AC_ARG_WITH([help-dir],
-            AS_HELP_STRING([--with-help-dir=DIR],
+            AC_HELP_STRING([--with-help-dir=DIR],
                            [path where help files are installed]),,
             [with_help_dir='${datadir}/help'])
 HELP_DIR="$with_help_dir"
@@ -1081,8 +991,7 @@ all: $(_HELP_C_FILES) $(_HELP_C_EXTRA) $(_HELP_C_MEDIA) $(_HELP_LC_FILES) $(_HEL
 .PHONY: pot
 pot: $(_HELP_POTFILE)
 $(_HELP_POTFILE): $(_HELP_C_FILES) $(_HELP_C_EXTRA) $(_HELP_C_MEDIA)
-	$(AM_V_GEN)if test -d "C"; then d=; else d="$(srcdir)/"; fi; \
-	$(ITSTOOL) -o "[$]@" $(foreach f,$(_HELP_C_FILES),"$${d}$(f)")
+	$(AM_V_GEN)$(ITSTOOL) -o "[$]@" $(_HELP_C_FILES)
 
 .PHONY: repo
 repo: $(_HELP_POTFILE)
@@ -1127,13 +1036,13 @@ clean-help:
 
 EXTRA_DIST ?=
 EXTRA_DIST += $(_HELP_C_EXTRA) $(_HELP_C_MEDIA)
-EXTRA_DIST += $(if $(YELP_LC_DIST),$(foreach lc,$(HELP_LINGUAS),$(lc)/$(lc).stamp))
+EXTRA_DIST += $(foreach lc,$(HELP_LINGUAS),$(lc)/$(lc).stamp)
 EXTRA_DIST += $(foreach lc,$(HELP_LINGUAS),$(lc)/$(lc).po)
 EXTRA_DIST += $(foreach f,$(HELP_MEDIA),$(foreach lc,$(HELP_LINGUAS),$(wildcard $(lc)/$(f))))
 
 distdir: distdir-help-files
-distdir-help-files: $(_HELP_LC_FILES)
-	@for lc in C $(if $(YELP_LC_DIST),$(HELP_LINGUAS)) ; do \
+distdir-help-files:
+	@for lc in C $(HELP_LINGUAS); do \
 	  $(MKDIR_P) "$(distdir)/$$lc"; \
 	  for file in $(HELP_FILES); do \
 	    if test -f "$$lc/$$file"; then d=./; else d=$(srcdir)/; fi; \
@@ -1161,7 +1070,7 @@ check-help:
 
 .PHONY: install-help
 install-data-am: $(if $(HELP_ID),install-help)
-install-help: $(_HELP_LC_FILES)
+install-help:
 	@for lc in C $(_HELP_LINGUAS); do \
 	  $(mkinstalldirs) "$(DESTDIR)$(HELP_DIR)/$$lc/$(HELP_ID)" || exit 1; \
 	done
@@ -1191,10 +1100,8 @@ install-help: $(_HELP_LC_FILES)
 	      echo "$(INSTALL_DATA) $$d$$lc/$$f $$helpdir$$f"; \
 	      $(INSTALL_DATA) "$$d$$lc/$$f" "$$helpdir$$f" || exit 1; \
 	    elif test "x$$lc" != "xC"; then \
-	      if test "x$(YELP_LC_MEDIA_LINKS)" != "x"; then \
-	        echo "$(LN_S) -f $(HELP_DIR)/C/$(HELP_ID)/$$f $$helpdir$$f"; \
-	        $(LN_S) -f "$(HELP_DIR)/C/$(HELP_ID)/$$f" "$$helpdir$$f" || exit 1; \
-	      fi; \
+	      echo "$(LN_S) -f $(HELP_DIR)/C/$(HELP_ID)/$$f $$helpdir$$f"; \
+	      $(LN_S) -f "$(HELP_DIR)/C/$(HELP_ID)/$$f" "$$helpdir$$f" || exit 1; \
 	    fi; \
 	  done; \
 	done
@@ -1237,10 +1144,10 @@ m4_ifdef([_AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE([YELP_HELP_RULES])])
 # generated from the m4 files accompanying Automake X.Y.
 # (This private macro should not be called outside this file.)
 AC_DEFUN([AM_AUTOMAKE_VERSION],
-[am__api_version='1.14'
+[am__api_version='1.13'
 dnl Some users find AM_AUTOMAKE_VERSION and mistake it for a way to
 dnl require some minimum version.  Point them to the right macro.
-m4_if([$1], [1.14.1], [],
+m4_if([$1], [1.13.1], [],
       [AC_FATAL([Do not call $0, use AM_INIT_AUTOMAKE([$1]).])])dnl
 ])
 
@@ -1256,7 +1163,7 @@ m4_define([_AM_AUTOCONF_VERSION], [])
 # Call AM_AUTOMAKE_VERSION and AM_AUTOMAKE_VERSION so they can be traced.
 # This function is AC_REQUIREd by AM_INIT_AUTOMAKE.
 AC_DEFUN([AM_SET_CURRENT_AUTOMAKE_VERSION],
-[AM_AUTOMAKE_VERSION([1.14.1])dnl
+[AM_AUTOMAKE_VERSION([1.13.1])dnl
 m4_ifndef([AC_AUTOCONF_VERSION],
   [m4_copy([m4_PACKAGE_VERSION], [AC_AUTOCONF_VERSION])])dnl
 _AM_AUTOCONF_VERSION(m4_defn([AC_AUTOCONF_VERSION]))])
@@ -1578,7 +1485,7 @@ AC_DEFUN([_AM_OUTPUT_DEPENDENCY_COMMANDS],
     DEPDIR=`sed -n 's/^DEPDIR = //p' < "$mf"`
     test -z "$DEPDIR" && continue
     am__include=`sed -n 's/^am__include = //p' < "$mf"`
-    test -z "$am__include" && continue
+    test -z "am__include" && continue
     am__quote=`sed -n 's/^am__quote = //p' < "$mf"`
     # Find all dependency output files, they are included files with
     # $(DEPDIR) in their names.  We invoke sed twice because it is the
@@ -1622,12 +1529,6 @@ AC_DEFUN([AM_OUTPUT_DEPENDENCY_COMMANDS],
 
 # This macro actually does too much.  Some checks are only needed if
 # your package does certain things.  But this isn't really a big deal.
-
-dnl Redefine AC_PROG_CC to automatically invoke _AM_PROG_CC_C_O.
-m4_define([AC_PROG_CC],
-m4_defn([AC_PROG_CC])
-[_AM_PROG_CC_C_O
-])
 
 # AM_INIT_AUTOMAKE(PACKAGE, VERSION, [NO-DEFINE])
 # AM_INIT_AUTOMAKE([OPTIONS])
@@ -1737,54 +1638,14 @@ dnl macro is hooked onto _AC_COMPILER_EXEEXT early, see below.
 AC_CONFIG_COMMANDS_PRE(dnl
 [m4_provide_if([_AM_COMPILER_EXEEXT],
   [AM_CONDITIONAL([am__EXEEXT], [test -n "$EXEEXT"])])])dnl
-
-# POSIX will say in a future version that running "rm -f" with no argument
-# is OK; and we want to be able to make that assumption in our Makefile
-# recipes.  So use an aggressive probe to check that the usage we want is
-# actually supported "in the wild" to an acceptable degree.
-# See automake bug#10828.
-# To make any issue more visible, cause the running configure to be aborted
-# by default if the 'rm' program in use doesn't match our expectations; the
-# user can still override this though.
-if rm -f && rm -fr && rm -rf; then : OK; else
-  cat >&2 <<'END'
-Oops!
-
-Your 'rm' program seems unable to run without file operands specified
-on the command line, even when the '-f' option is present.  This is contrary
-to the behaviour of most rm programs out there, and not conforming with
-the upcoming POSIX standard: <http://austingroupbugs.net/view.php?id=542>
-
-Please tell bug-automake@gnu.org about your system, including the value
-of your $PATH and any error possibly output before this message.  This
-can help us improve future automake versions.
-
-END
-  if test x"$ACCEPT_INFERIOR_RM_PROGRAM" = x"yes"; then
-    echo 'Configuration will proceed anyway, since you have set the' >&2
-    echo 'ACCEPT_INFERIOR_RM_PROGRAM variable to "yes"' >&2
-    echo >&2
-  else
-    cat >&2 <<'END'
-Aborting the configuration process, to ensure you take notice of the issue.
-
-You can download and install GNU coreutils to get an 'rm' implementation
-that behaves properly: <http://www.gnu.org/software/coreutils/>.
-
-If you want to complete the configuration process using your problematic
-'rm' anyway, export the environment variable ACCEPT_INFERIOR_RM_PROGRAM
-to "yes", and re-run configure.
-
-END
-    AC_MSG_ERROR([Your 'rm' program is bad, sorry.])
-  fi
-fi])
+])
 
 dnl Hook into '_AC_COMPILER_EXEEXT' early to learn its expansion.  Do not
 dnl add the conditional right here, as _AC_COMPILER_EXEEXT may be further
 dnl mangled by Autoconf and run in a shell conditional statement.
 m4_define([_AC_COMPILER_EXEEXT],
 m4_defn([_AC_COMPILER_EXEEXT])[m4_provide([_AM_COMPILER_EXEEXT])])
+
 
 # When config.status generates a header, we must update the stamp-h file.
 # This file resides in the same directory as the config header
@@ -2002,53 +1863,6 @@ AC_DEFUN([_AM_SET_OPTIONS],
 # Execute IF-SET if OPTION is set, IF-NOT-SET otherwise.
 AC_DEFUN([_AM_IF_OPTION],
 [m4_ifset(_AM_MANGLE_OPTION([$1]), [$2], [$3])])
-
-# Copyright (C) 1999-2013 Free Software Foundation, Inc.
-#
-# This file is free software; the Free Software Foundation
-# gives unlimited permission to copy and/or distribute it,
-# with or without modifications, as long as this notice is preserved.
-
-# _AM_PROG_CC_C_O
-# ---------------
-# Like AC_PROG_CC_C_O, but changed for automake.  We rewrite AC_PROG_CC
-# to automatically call this.
-AC_DEFUN([_AM_PROG_CC_C_O],
-[AC_REQUIRE([AM_AUX_DIR_EXPAND])dnl
-AC_REQUIRE_AUX_FILE([compile])dnl
-AC_LANG_PUSH([C])dnl
-AC_CACHE_CHECK(
-  [whether $CC understands -c and -o together],
-  [am_cv_prog_cc_c_o],
-  [AC_LANG_CONFTEST([AC_LANG_PROGRAM([])])
-  # Make sure it works both with $CC and with simple cc.
-  # Following AC_PROG_CC_C_O, we do the test twice because some
-  # compilers refuse to overwrite an existing .o file with -o,
-  # though they will create one.
-  am_cv_prog_cc_c_o=yes
-  for am_i in 1 2; do
-    if AM_RUN_LOG([$CC -c conftest.$ac_ext -o conftest2.$ac_objext]) \
-         && test -f conftest2.$ac_objext; then
-      : OK
-    else
-      am_cv_prog_cc_c_o=no
-      break
-    fi
-  done
-  rm -f core conftest*
-  unset am_i])
-if test "$am_cv_prog_cc_c_o" != yes; then
-   # Losing compiler, so override with the script.
-   # FIXME: It is wrong to rewrite CC.
-   # But if we don't then we get into trouble of one sort or another.
-   # A longer-term fix would be to have automake use am__CC in this case,
-   # and then we could set am__CC="\$(top_srcdir)/compile \$(CC)"
-   CC="$am_aux_dir/compile $CC"
-fi
-AC_LANG_POP([C])])
-
-# For backward compatibility.
-AC_DEFUN_ONCE([AM_PROG_CC_C_O], [AC_REQUIRE([AC_PROG_CC])])
 
 # Copyright (C) 2001-2013 Free Software Foundation, Inc.
 #
@@ -2276,155 +2090,84 @@ AC_DEFUN([AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE($@)])
 # Substitute a variable $(am__untar) that extract such
 # a tarball read from stdin.
 #     $(am__untar) < result.tar
-#
 AC_DEFUN([_AM_PROG_TAR],
 [# Always define AMTAR for backward compatibility.  Yes, it's still used
 # in the wild :-(  We should find a proper way to deprecate it ...
 AC_SUBST([AMTAR], ['$${TAR-tar}'])
-
-# We'll loop over all known methods to create a tar archive until one works.
-_am_tools='gnutar m4_if([$1], [ustar], [plaintar]) pax cpio none'
-
 m4_if([$1], [v7],
-  [am__tar='$${TAR-tar} chof - "$$tardir"' am__untar='$${TAR-tar} xf -'],
+     [am__tar='$${TAR-tar} chof - "$$tardir"' am__untar='$${TAR-tar} xf -'],
+     [m4_case([$1], [ustar],, [pax],,
+              [m4_fatal([Unknown tar format])])
+AC_MSG_CHECKING([how to create a $1 tar archive])
+# Loop over all known methods to create a tar archive until one works.
+_am_tools='gnutar m4_if([$1], [ustar], [plaintar]) pax cpio none'
+_am_tools=${am_cv_prog_tar_$1-$_am_tools}
+# Do not fold the above two line into one, because Tru64 sh and
+# Solaris sh will not grok spaces in the rhs of '-'.
+for _am_tool in $_am_tools
+do
+  case $_am_tool in
+  gnutar)
+    for _am_tar in tar gnutar gtar;
+    do
+      AM_RUN_LOG([$_am_tar --version]) && break
+    done
+    am__tar="$_am_tar --format=m4_if([$1], [pax], [posix], [$1]) -chf - "'"$$tardir"'
+    am__tar_="$_am_tar --format=m4_if([$1], [pax], [posix], [$1]) -chf - "'"$tardir"'
+    am__untar="$_am_tar -xf -"
+    ;;
+  plaintar)
+    # Must skip GNU tar: if it does not support --format= it doesn't create
+    # ustar tarball either.
+    (tar --version) >/dev/null 2>&1 && continue
+    am__tar='tar chf - "$$tardir"'
+    am__tar_='tar chf - "$tardir"'
+    am__untar='tar xf -'
+    ;;
+  pax)
+    am__tar='pax -L -x $1 -w "$$tardir"'
+    am__tar_='pax -L -x $1 -w "$tardir"'
+    am__untar='pax -r'
+    ;;
+  cpio)
+    am__tar='find "$$tardir" -print | cpio -o -H $1 -L'
+    am__tar_='find "$tardir" -print | cpio -o -H $1 -L'
+    am__untar='cpio -i -H $1 -d'
+    ;;
+  none)
+    am__tar=false
+    am__tar_=false
+    am__untar=false
+    ;;
+  esac
 
-  [m4_case([$1],
-    [ustar],
-     [# The POSIX 1988 'ustar' format is defined with fixed-size fields.
-      # There is notably a 21 bits limit for the UID and the GID.  In fact,
-      # the 'pax' utility can hang on bigger UID/GID (see automake bug#8343
-      # and bug#13588).
-      am_max_uid=2097151 # 2^21 - 1
-      am_max_gid=$am_max_uid
-      # The $UID and $GID variables are not portable, so we need to resort
-      # to the POSIX-mandated id(1) utility.  Errors in the 'id' calls
-      # below are definitely unexpected, so allow the users to see them
-      # (that is, avoid stderr redirection).
-      am_uid=`id -u || echo unknown`
-      am_gid=`id -g || echo unknown`
-      AC_MSG_CHECKING([whether UID '$am_uid' is supported by ustar format])
-      if test $am_uid -le $am_max_uid; then
-         AC_MSG_RESULT([yes])
-      else
-         AC_MSG_RESULT([no])
-         _am_tools=none
-      fi
-      AC_MSG_CHECKING([whether GID '$am_gid' is supported by ustar format])
-      if test $am_gid -le $am_max_gid; then
-         AC_MSG_RESULT([yes])
-      else
-        AC_MSG_RESULT([no])
-        _am_tools=none
-      fi],
+  # If the value was cached, stop now.  We just wanted to have am__tar
+  # and am__untar set.
+  test -n "${am_cv_prog_tar_$1}" && break
 
-  [pax],
-    [],
-
-  [m4_fatal([Unknown tar format])])
-
-  AC_MSG_CHECKING([how to create a $1 tar archive])
-
-  # Go ahead even if we have the value already cached.  We do so because we
-  # need to set the values for the 'am__tar' and 'am__untar' variables.
-  _am_tools=${am_cv_prog_tar_$1-$_am_tools}
-
-  for _am_tool in $_am_tools; do
-    case $_am_tool in
-    gnutar)
-      for _am_tar in tar gnutar gtar; do
-        AM_RUN_LOG([$_am_tar --version]) && break
-      done
-      am__tar="$_am_tar --format=m4_if([$1], [pax], [posix], [$1]) -chf - "'"$$tardir"'
-      am__tar_="$_am_tar --format=m4_if([$1], [pax], [posix], [$1]) -chf - "'"$tardir"'
-      am__untar="$_am_tar -xf -"
-      ;;
-    plaintar)
-      # Must skip GNU tar: if it does not support --format= it doesn't create
-      # ustar tarball either.
-      (tar --version) >/dev/null 2>&1 && continue
-      am__tar='tar chf - "$$tardir"'
-      am__tar_='tar chf - "$tardir"'
-      am__untar='tar xf -'
-      ;;
-    pax)
-      am__tar='pax -L -x $1 -w "$$tardir"'
-      am__tar_='pax -L -x $1 -w "$tardir"'
-      am__untar='pax -r'
-      ;;
-    cpio)
-      am__tar='find "$$tardir" -print | cpio -o -H $1 -L'
-      am__tar_='find "$tardir" -print | cpio -o -H $1 -L'
-      am__untar='cpio -i -H $1 -d'
-      ;;
-    none)
-      am__tar=false
-      am__tar_=false
-      am__untar=false
-      ;;
-    esac
-
-    # If the value was cached, stop now.  We just wanted to have am__tar
-    # and am__untar set.
-    test -n "${am_cv_prog_tar_$1}" && break
-
-    # tar/untar a dummy directory, and stop if the command works.
-    rm -rf conftest.dir
-    mkdir conftest.dir
-    echo GrepMe > conftest.dir/file
-    AM_RUN_LOG([tardir=conftest.dir && eval $am__tar_ >conftest.tar])
-    rm -rf conftest.dir
-    if test -s conftest.tar; then
-      AM_RUN_LOG([$am__untar <conftest.tar])
-      AM_RUN_LOG([cat conftest.dir/file])
-      grep GrepMe conftest.dir/file >/dev/null 2>&1 && break
-    fi
-  done
+  # tar/untar a dummy directory, and stop if the command works
   rm -rf conftest.dir
+  mkdir conftest.dir
+  echo GrepMe > conftest.dir/file
+  AM_RUN_LOG([tardir=conftest.dir && eval $am__tar_ >conftest.tar])
+  rm -rf conftest.dir
+  if test -s conftest.tar; then
+    AM_RUN_LOG([$am__untar <conftest.tar])
+    grep GrepMe conftest.dir/file >/dev/null 2>&1 && break
+  fi
+done
+rm -rf conftest.dir
 
-  AC_CACHE_VAL([am_cv_prog_tar_$1], [am_cv_prog_tar_$1=$_am_tool])
-  AC_MSG_RESULT([$am_cv_prog_tar_$1])])
-
+AC_CACHE_VAL([am_cv_prog_tar_$1], [am_cv_prog_tar_$1=$_am_tool])
+AC_MSG_RESULT([$am_cv_prog_tar_$1])])
 AC_SUBST([am__tar])
 AC_SUBST([am__untar])
 ]) # _AM_PROG_TAR
 
-# Autoconf support for the Vala compiler
-
-# Copyright (C) 2008-2013 Free Software Foundation, Inc.
-#
-# This file is free software; the Free Software Foundation
-# gives unlimited permission to copy and/or distribute it,
-# with or without modifications, as long as this notice is preserved.
-
-# Check whether the Vala compiler exists in $PATH.  If it is found, the
-# variable VALAC is set pointing to its absolute path.  Otherwise, it is
-# simply set to 'valac'.
-# Optionally a minimum release number of the compiler can be requested.
-# If the ACTION-IF-FOUND parameter is given, it will be run if a proper
-# Vala compiler is found.
-# Similarly, if the ACTION-IF-FOUND is given, it will be run if no proper
-# Vala compiler is found.  It defaults to simply print a warning about the
-# situation, but otherwise proceeding with the configuration.
-#
-# AM_PROG_VALAC([MINIMUM-VERSION], [ACTION-IF-FOUND], [ACTION-IF-NOT-FOUND])
-# --------------------------------------------------------------------------
-AC_DEFUN([AM_PROG_VALAC],
-  [AC_PATH_PROG([VALAC], [valac], [valac])
-   AS_IF([test "$VALAC" != valac && test -n "$1"],
-      [AC_MSG_CHECKING([whether $VALAC is at least version $1])
-       am__vala_version=`$VALAC --version | sed 's/Vala  *//'`
-       AS_VERSION_COMPARE([$1], ["$am__vala_version"],
-         [AC_MSG_RESULT([yes])],
-         [AC_MSG_RESULT([yes])],
-         [AC_MSG_RESULT([no])
-          VALAC=valac])])
-    if test "$VALAC" = valac; then
-      m4_default([$3],
-        [AC_MSG_WARN([no proper vala compiler found])
-         AC_MSG_WARN([you will not be able to compile vala source files])])
-    else
-      m4_default([$2], [:])
-    fi])
-
-m4_include([build/m4/intltool.m4])
+m4_include([m4/intltool.m4])
+m4_include([m4/libtool.m4])
+m4_include([m4/ltoptions.m4])
+m4_include([m4/ltsugar.m4])
+m4_include([m4/ltversion.m4])
+m4_include([m4/lt~obsolete.m4])
 m4_include([acinclude.m4])

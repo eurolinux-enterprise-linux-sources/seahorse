@@ -13,8 +13,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
  
 #include "config.h"
@@ -39,7 +41,7 @@ static guint signals[LAST_SIGNAL] = { 0 };
 
 typedef struct _SeahorseObjectModelPrivate {
     GHashTable *rows;
-    gint data_column;
+    guint data_column;
 } SeahorseObjectModelPrivate;
 
 G_DEFINE_TYPE (SeahorseObjectModel, seahorse_object_model, GTK_TYPE_TREE_STORE);
@@ -69,7 +71,7 @@ key_notify (GObject *object,
     SeahorseObjectRow *skrow;
     GtkTreeIter iter;
     GtkTreePath *path;
-    guint i;
+    int i;
 
     skrow = g_hash_table_lookup (pv->rows, object);
     if (!skrow)
@@ -309,7 +311,7 @@ seahorse_object_model_set_row_object (SeahorseObjectModel *self,
     SeahorseObjectRow *skrow;
     GtkTreePath *path;
     GtkTreePath *ipath;
-    guint i;
+    int i;
     
     g_return_if_fail (SEAHORSE_IS_OBJECT_MODEL (self));
     g_return_if_fail (G_IS_OBJECT (object) || object == NULL);
@@ -392,7 +394,7 @@ seahorse_object_model_remove_rows_for_object (SeahorseObjectModel *self,
     SeahorseObjectRow *skrow;
     GtkTreeIter iter;
     GtkTreePath *path;
-    guint i;
+    int i;
     
     g_return_if_fail (SEAHORSE_IS_OBJECT_MODEL (self));
     g_return_if_fail (G_IS_OBJECT (object));
@@ -425,7 +427,7 @@ seahorse_object_model_get_rows_for_object (SeahorseObjectModel *self,
     SeahorseObjectRow *skrow;
     GtkTreeIter *iter;
     GtkTreePath *path;
-    guint i;
+    int i;
     
     g_return_val_if_fail (SEAHORSE_IS_OBJECT_MODEL (self), NULL);
     g_return_val_if_fail (G_IS_OBJECT (object), NULL);

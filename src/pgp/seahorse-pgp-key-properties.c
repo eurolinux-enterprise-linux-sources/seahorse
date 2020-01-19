@@ -16,13 +16,29 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 /* TODO: Make sure to free when getting text from seahorse_pgp_key_* */
 
 #include "config.h"
+
+#include <string.h>
+  
+#include <glib/gi18n.h>
+
+#include "seahorse-bind.h"
+#include "seahorse-delete-dialog.h"
+#include "seahorse-exportable.h"
+#include "seahorse-exporter.h"
+#include "seahorse-icons.h"
+#include "seahorse-object.h"
+#include "seahorse-object-model.h"
+#include "seahorse-object-widget.h"
+#include "seahorse-util.h"
 
 #include "seahorse-gpgme-dialogs.h"
 #include "seahorse-gpgme-exporter.h"
@@ -36,17 +52,9 @@
 #include "seahorse-pgp-signature.h"
 #include "seahorse-pgp-subkey.h"
 
-#include "seahorse-common.h"
+#define DEBUG_FLAG SEAHORSE_DEBUG_KEYS
+#include "seahorse-debug.h"
 
-#include "libseahorse/seahorse-bind.h"
-#include "libseahorse/seahorse-object.h"
-#include "libseahorse/seahorse-object-model.h"
-#include "libseahorse/seahorse-object-widget.h"
-#include "libseahorse/seahorse-util.h"
-
-#include <glib/gi18n.h>
-
-#include <string.h>
 #include <time.h>
 
 #define NOTEBOOK "notebook"
@@ -254,7 +262,7 @@ on_pgp_signature_row_activated (GtkTreeView *treeview,
 static void
 unique_strings (GPtrArray *keyids)
 {
-	guint i;
+	gint i;
 
 	g_ptr_array_sort (keyids, (GCompareFunc)g_ascii_strcasecmp);
 	for (i = 0; i + 1 < keyids->len; ) {
@@ -998,7 +1006,6 @@ enum {
 	SUBKEY_OBJECT,
 	SUBKEY_ID,
 	SUBKEY_TYPE,
-	SUBKEY_USAGE,
 	SUBKEY_CREATED,
 	SUBKEY_EXPIRES,
 	SUBKEY_STATUS,
@@ -1007,14 +1014,13 @@ enum {
 };
 
 const GType subkey_columns[] = {
-    G_TYPE_OBJECT,  /* SUBKEY_OBJECT */
-    G_TYPE_STRING,  /* SUBKEY_ID */
-    G_TYPE_STRING,  /* SUBKEY_TYPE */
-    G_TYPE_STRING,  /* SUBKEY_USAGE */
-    G_TYPE_STRING,  /* SUBKEY_CREATED */
-    G_TYPE_STRING,  /* SUBKEY_EXPIRES  */
-    G_TYPE_STRING,  /* SUBKEY_STATUS */
-    G_TYPE_UINT     /* SUBKEY_LENGTH */
+    G_TYPE_OBJECT,  /* index */
+    G_TYPE_STRING,  /* id */
+    G_TYPE_STRING,  /* created */
+    G_TYPE_STRING,  /* expires */
+    G_TYPE_STRING,  /* status  */
+    G_TYPE_STRING,  /* type */
+    G_TYPE_UINT     /* length*/
 };
 
 /* trust combo box list */
@@ -1143,8 +1149,7 @@ on_export_complete (GObject *source,
 	GtkWindow *parent = GTK_WINDOW (user_data);
 	GError *error = NULL;
 
-	seahorse_exporter_export_to_file_finish (SEAHORSE_EXPORTER (source), result, &error);
-	if (error != NULL)
+	if (!seahorse_exporter_export_to_file_finish (SEAHORSE_EXPORTER (source), result, &error))
 		seahorse_util_handle_error (&error, parent, _("Couldn't export key"));
 
 	g_object_unref (parent);
@@ -1159,7 +1164,6 @@ on_pgp_details_export_button (GtkWidget *widget,
 	GList *exporters = NULL;
 	GtkWindow *window;
 	GObject *object;
-	gchar *directory = NULL;
 	GFile *file;
 
 	object = SEAHORSE_OBJECT_WIDGET (swidget)->object;
@@ -1167,10 +1171,9 @@ on_pgp_details_export_button (GtkWidget *widget,
 	exporters = g_list_append (exporters, seahorse_gpgme_exporter_new (object, TRUE, TRUE));
 
 	window = GTK_WINDOW (seahorse_widget_get_toplevel (swidget));
-	if (seahorse_exportable_prompt (exporters, window, &directory, &file, &exporter)) {
-		seahorse_exporter_export_to_file (exporter, file, TRUE, NULL,
-		                                  on_export_complete, g_object_ref (window));
-		g_free (directory);
+	if (seahorse_exportable_prompt (exporters, window, NULL, &file, &exporter)) {
+		seahorse_exporter_export_to_file_async (exporter, file, TRUE, NULL,
+		                                        on_export_complete, g_object_ref (window));
 		g_object_unref (file);
 		g_object_unref (exporter);
 	}
@@ -1228,7 +1231,7 @@ setup_details_trust (SeahorseWidget *swidget)
     GtkTreeIter iter;
     GtkCellRenderer *text_cell = gtk_cell_renderer_text_new ();
 
-    g_debug ("KeyProperties: Setting up Trust Combo Box Store");
+    seahorse_debug ("KeyProperties: Setting up Trust Combo Box Store");
 
     object = SEAHORSE_OBJECT (SEAHORSE_OBJECT_WIDGET (swidget)->object);
     etype = seahorse_object_get_usage (object);
@@ -1280,7 +1283,7 @@ setup_details_trust (SeahorseWidget *swidget)
     
     gtk_combo_box_set_model (GTK_COMBO_BOX (widget), GTK_TREE_MODEL (model));                                        
 
-    g_debug ("KeyProperties: Finished Setting up Trust Combo Box Store");
+    seahorse_debug ("KeyProperties: Finished Setting up Trust Combo Box Store");
 }
 
 static void
@@ -1348,7 +1351,7 @@ do_details (SeahorseWidget *swidget)
     widget = GTK_WIDGET (gtk_builder_get_object (swidget->gtkbuilder, "details-fingerprint-label"));
     if (widget) {
         fp_label = g_strdup (seahorse_pgp_key_get_fingerprint (pkey)); 
-        if (strlen (fp_label) > 24 && g_ascii_isspace (fp_label[24]))
+        if (strlen (fp_label) > 24)
             fp_label[24] = '\n';
         gtk_label_set_text (GTK_LABEL (widget), fp_label);
         g_free (fp_label);
@@ -1432,9 +1435,6 @@ do_details (SeahorseWidget *swidget)
                                                      -1, _("Type"), gtk_cell_renderer_text_new (), 
                                                      "text", SUBKEY_TYPE, NULL);
         gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (widget),
-                                                     -1, _("Usage"), gtk_cell_renderer_text_new (),
-                                                     "text", SUBKEY_USAGE, NULL);
-        gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (widget),
                                                      -1, _("Created"), gtk_cell_renderer_text_new (), 
                                                      "text", SUBKEY_CREATED, NULL);
         gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (widget),
@@ -1453,7 +1453,6 @@ do_details (SeahorseWidget *swidget)
 		const gchar *status = NULL;
 		gchar *expiration_date;
 		gchar *created_date;
-		gchar *usage;
 		gulong expires;
 		guint flags;
 		
@@ -1477,24 +1476,20 @@ do_details (SeahorseWidget *swidget)
 			expiration_date = seahorse_util_get_display_date_string (expires);
 
 		created_date = seahorse_util_get_display_date_string (seahorse_pgp_subkey_get_created (subkey));
-
-		usage = seahorse_pgp_subkey_get_usage (subkey);
-
+        
 		gtk_list_store_append (store, &iter);
-		gtk_list_store_set (store, &iter,
-		                    SUBKEY_OBJECT, subkey,
-		                    SUBKEY_ID, seahorse_pgp_subkey_get_keyid (subkey),
-		                    SUBKEY_TYPE, seahorse_pgp_subkey_get_algorithm (subkey),
-				    SUBKEY_USAGE, usage,
+		gtk_list_store_set (store, &iter,  
+		                    SUBKEY_OBJECT, l->data,
+		                    SUBKEY_ID, seahorse_pgp_subkey_get_keyid (l->data),
+		                    SUBKEY_TYPE, seahorse_pgp_subkey_get_algorithm (l->data),
 		                    SUBKEY_CREATED, created_date,
 		                    SUBKEY_EXPIRES, expiration_date,
-		                    SUBKEY_STATUS, status,
+		                    SUBKEY_STATUS,  status, 
 		                    SUBKEY_LENGTH, seahorse_pgp_subkey_get_length (subkey),
 		                    -1);
-
+        
 		g_free (expiration_date);
 		g_free (created_date);
-		g_free (usage);
 	} 
 }
 
@@ -1535,7 +1530,7 @@ on_pgp_trust_marginal_toggled (GtkToggleButton *toggle,
 {
     SeahorseWidget *swidget = SEAHORSE_WIDGET (user_data);
     GObject *object;
-    SeahorseValidity trust;
+    guint trust;
     gpgme_error_t err;
 
     object = SEAHORSE_OBJECT_WIDGET (swidget)->object;
@@ -1966,7 +1961,7 @@ setup_private_properties (SeahorsePgpKey *pkey, GtkWindow *parent)
     return swidget;
 }
 
-GtkWindow *
+void
 seahorse_pgp_key_properties_show (SeahorsePgpKey *pkey, GtkWindow *parent)
 {
 	SeahorseWidget *swidget;
@@ -1981,10 +1976,6 @@ seahorse_pgp_key_properties_show (SeahorsePgpKey *pkey, GtkWindow *parent)
 		swidget = setup_public_properties (pkey, parent);
 	else
 		swidget = setup_private_properties (pkey, parent);
-	if (swidget) {
+	if (swidget)
 		seahorse_widget_show (swidget);
-		return g_object_ref (seahorse_widget_get_toplevel (swidget));
-	}
-
-	return NULL;
 }

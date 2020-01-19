@@ -15,8 +15,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
@@ -44,6 +46,58 @@
 #include <glib/gi18n.h>
 
 #include <sys/types.h>
+
+/**
+ * seahorse_util_show_error:
+ * @parent: The parent widget. Can be NULL
+ * @heading: The heading of the dialog
+ * @message: The message to display
+ *
+ * This displays an error dialog.
+ * The parent widget can be any widget. The dialog will be a child of the window
+ * the widget is in.
+ *
+ */
+void
+seahorse_util_show_error (gpointer parent,
+                          const gchar *heading,
+                          const gchar *message)
+{
+	GtkWidget *dialog;
+
+	g_return_if_fail (message || heading);
+	if (!message)
+		message = "";
+
+	if (parent) {
+		if (!GTK_IS_WIDGET (parent)) {
+			g_warn_if_reached ();
+			parent = NULL;
+		} else {
+			if (!GTK_IS_WINDOW (parent)) 
+				parent = gtk_widget_get_toplevel (parent);
+			if (!GTK_IS_WINDOW (parent) && gtk_widget_is_toplevel (parent))
+				parent = NULL;
+		}
+	}
+	
+	dialog = gtk_message_dialog_new (GTK_WINDOW (parent), 
+	                                GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR,
+	                                GTK_BUTTONS_CLOSE, NULL);
+	if (heading)
+	    g_object_set (G_OBJECT (dialog),
+	                  "text", heading,
+	                  "secondary-text", message,
+	                  NULL);
+    else
+        g_object_set (G_OBJECT (dialog),
+	                  "text", message,
+	                  NULL);
+	
+	
+	gtk_dialog_run (GTK_DIALOG (dialog));
+	gtk_widget_destroy (dialog);
+}
 
 /**
  * seahorse_util_handle_error:
@@ -132,6 +186,31 @@ seahorse_util_get_date_string (const time_t time)
 	return created_string;
 }
 
+/** 
+ * seahorse_util_get_display_date_string:
+ * @time: Time value to parse
+ *
+ * Creates a string representation of @time for display in the UI.
+ *
+ * Returns: A string representing @time. The returned string should be freed 
+ * with #g_free when no longer needed.
+ **/
+gchar*
+seahorse_util_get_display_date_string (const time_t time)
+{
+	GDate *created_date;
+	gchar *created_string;
+	
+	if (time == 0)
+		return g_strdup ("");
+	
+	created_date = g_date_new ();
+	g_date_set_time_t (created_date, time);
+	created_string = g_new (gchar, 11);
+	g_date_strftime (created_string, 11, _("%Y-%m-%d"), created_date);
+	return created_string;
+}
+
 /**
  * seahorse_util_read_to_memory:
  * @input: Data to read. The #GInputStream is read till the end.
@@ -145,7 +224,7 @@ seahorse_util_get_date_string (const time_t time)
 guchar*
 seahorse_util_read_to_memory (GInputStream *input, guint *len)
 {
-	gsize size = 128;
+	gint size = 128;
 	gchar *buffer, *text;
 	gsize nread = 0;
 	GString *string;
@@ -285,6 +364,50 @@ seahorse_util_printf_fd (int fd, const char* fmt, ...)
     ret = seahorse_util_print_fd (fd, t);
     g_free (t);
     return ret;
+}
+
+GFile *
+seahorse_util_file_increment_unique (GFile *file,
+                                     guint *state)
+{
+	GFile *result;
+	gchar *suffix;
+	gchar *prefix;
+	gchar *uri_try;
+	gchar *x;
+	guint len;
+
+	g_return_val_if_fail (G_IS_FILE (file), NULL);
+	g_return_val_if_fail (state != NULL, NULL);
+
+	prefix = g_file_get_uri (file);
+	len = strlen (prefix);
+
+	g_return_val_if_fail (len > 0, NULL);
+
+	/* Always take off a slash at end */
+	if (prefix[len - 1] == '/')
+		prefix[len - 1] = 0;
+
+	/* Split into prefix and suffix */
+	suffix = strrchr (prefix, '.');
+	x = strrchr (prefix, '/');
+	if (suffix == NULL || (x != NULL && suffix < x)) {
+		suffix = g_strdup ("");
+	} else {
+		x = suffix;
+		suffix = g_strdup (suffix);
+		*x = 0;
+	}
+
+	++(*state);
+	uri_try = g_strdup_printf ("%s-%u%s", prefix, *state, suffix);
+	g_free (suffix);
+	g_free (prefix);
+
+	result = g_file_new_for_uri (uri_try);
+	g_free (uri_try);
+	return result;
 }
 
 /**
@@ -569,23 +692,4 @@ seahorse_util_parse_version (const char *version)
 	}
 	g_strfreev(tokens);
 	return ret;
-}
-
-guint
-seahorse_ulong_hash (gconstpointer v)
-{
-	const signed char *p = v;
-	guint32 i, h = *p;
-
-	for(i = 0; i < sizeof (gulong); ++i)
-		h = (h << 5) - h + *(p++);
-
-	return h;
-}
-
-gboolean
-seahorse_ulong_equal (gconstpointer v1,
-                             gconstpointer v2)
-{
-	return *((const gulong*)v1) == *((const gulong*)v2);
 }

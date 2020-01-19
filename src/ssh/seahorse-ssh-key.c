@@ -14,8 +14,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
@@ -28,9 +30,12 @@
 #include "seahorse-ssh-operation.h"
 #include "seahorse-ssh-source.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-validity.h"
+#include "seahorse-deletable.h"
+#include "seahorse-exportable.h"
+#include "seahorse-icons.h"
+#include "seahorse-place.h"
+#include "seahorse-validity.h"
+#include "seahorse-viewable.h"
 
 #include <gcr/gcr.h>
 
@@ -312,19 +317,10 @@ seahorse_ssh_key_create_exporters (SeahorseExportable *exportable,
 	return g_list_append (NULL, seahorse_ssh_exporter_new (G_OBJECT (exportable), FALSE));
 }
 
-static gboolean
-seahorse_ssh_key_get_exportable (SeahorseExportable *exportable)
-{
-	gboolean can;
-	g_object_get (exportable, "exportable", &can, NULL);
-	return can;
-}
-
 static void
 seahorse_ssh_key_exportable_iface (SeahorseExportableIface *iface)
 {
 	iface->create_exporters = seahorse_ssh_key_create_exporters;
-	iface->get_exportable = seahorse_ssh_key_get_exportable;
 }
 
 static SeahorseDeleter *
@@ -334,32 +330,23 @@ seahorse_ssh_key_create_deleter (SeahorseDeletable *deletable)
 	return seahorse_ssh_deleter_new (self);
 }
 
-static gboolean
-seahorse_ssh_key_get_deletable (SeahorseDeletable *deletable)
-{
-	gboolean can;
-	g_object_get (deletable, "deletable", &can, NULL);
-	return can;
-}
-
 static void
 seahorse_ssh_key_deletable_iface (SeahorseDeletableIface *iface)
 {
 	iface->create_deleter = seahorse_ssh_key_create_deleter;
-	iface->get_deletable = seahorse_ssh_key_get_deletable;
 }
 
-static GtkWindow *
-seahorse_ssh_key_create_viewer (SeahorseViewable *viewable,
-                                GtkWindow *parent)
+static void
+seahorse_ssh_key_show_viewer (SeahorseViewable *viewable,
+                              GtkWindow *parent)
 {
-	return seahorse_ssh_key_properties_show (SEAHORSE_SSH_KEY (viewable), parent);
+	seahorse_ssh_key_properties_show (SEAHORSE_SSH_KEY (viewable), parent);
 }
 
 static void
 seahorse_ssh_key_viewable_iface (SeahorseViewableIface *iface)
 {
-	iface->create_viewer = seahorse_ssh_key_create_viewer;
+	iface->show_viewer = seahorse_ssh_key_show_viewer;
 }
 
 SeahorseSSHKey* 

@@ -1,23 +1,24 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
-data/seahorse.appdata.xml.in
-data/seahorse.desktop.in.in
-common/catalog.vala
-common/exportable.vala
-gkr/gkr-backend.vala
-gkr/gkr-item-add.vala
-gkr/gkr-item-properties.vala
-gkr/gkr-item.vala
-gkr/gkr-keyring-add.vala
-gkr/gkr-keyring-properties.vala
-gkr/gkr-keyring.vala
 [type: gettext/glade]gkr/seahorse-add-keyring.xml
+gkr/seahorse-gkr-actions.c
+gkr/seahorse-gkr-add-item.c
 [type: gettext/glade]gkr/seahorse-gkr-add-item.xml
+gkr/seahorse-gkr-add-keyring.c
+gkr/seahorse-gkr-backend.c
+gkr/seahorse-gkr-item.c
+gkr/seahorse-gkr-item-deleter.c
+gkr/seahorse-gkr-item-properties.c
 [type: gettext/glade]gkr/seahorse-gkr-item-properties.xml
+gkr/seahorse-gkr-keyring.c
+gkr/seahorse-gkr-keyring-deleter.c
+gkr/seahorse-gkr-keyring-properties.c
 [type: gettext/glade]gkr/seahorse-gkr-keyring.xml
 libegg/egg-datetime.c
 [type: gettext/glade]libseahorse/seahorse-add-keyserver.xml
 libseahorse/seahorse-application.c
+libseahorse/seahorse-catalog.c
+libseahorse/seahorse-exportable.c
 libseahorse/seahorse-interaction.c
 libseahorse/seahorse-key-manager-store.c
 libseahorse/seahorse-object.c
@@ -71,19 +72,20 @@ pgp/seahorse-signer.c
 pgp/seahorse-transfer.c
 pgp/seahorse-unknown.c
 pgp/seahorse-unknown-source.c
-pkcs11/certificate-der-exporter.vala
-pkcs11/pkcs11-certificate.vala
+pkcs11/seahorse-certificate.c
+pkcs11/seahorse-certificate-der-exporter.c
 pkcs11/seahorse-pkcs11-backend.c
-pkcs11/pkcs11-deleter.vala
+pkcs11/seahorse-pkcs11-deleter.c
 pkcs11/seahorse-pkcs11-generate.c
 [type: gettext/glade]pkcs11/seahorse-pkcs11-generate.xml
-pkcs11/pkcs11-key-deleter.vala
-pkcs11/pkcs11-properties.vala
-pkcs11/pkcs11-request.vala
+pkcs11/seahorse-pkcs11-key-deleter.c
+pkcs11/seahorse-pkcs11-properties.c
+pkcs11/seahorse-pkcs11-request.c
 [type: gettext/glade]pkcs11/seahorse-pkcs11-request.xml
-pkcs11/pkcs11-private-key.vala
-pkcs11/pkcs11-token.vala
+pkcs11/seahorse-private-key.c
+pkcs11/seahorse-token.c
 [type: gettext/glade]src/seahorse-change-passphrase.xml
+src/seahorse.desktop.in.in
 src/seahorse-generate-select.c
 [type: gettext/glade]src/seahorse-generate-select.xml
 src/seahorse-import-dialog.c

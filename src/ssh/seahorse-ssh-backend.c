@@ -14,8 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -24,7 +25,7 @@
 #include "seahorse-ssh-dialogs.h"
 #include "seahorse-ssh-source.h"
 
-#include "seahorse-common.h"
+#include "seahorse-backend.h"
 
 #include <glib/gi18n.h>
 
@@ -73,31 +74,7 @@ seahorse_ssh_backend_constructed (GObject *obj)
 	G_OBJECT_CLASS (seahorse_ssh_backend_parent_class)->constructed (obj);
 
 	self->dot_ssh = seahorse_ssh_source_new ();
-	seahorse_place_load (SEAHORSE_PLACE (self->dot_ssh), NULL, NULL, NULL);
-}
-
-static const gchar *
-seahorse_ssh_backend_get_name (SeahorseBackend *backend)
-{
-	return SEAHORSE_SSH_NAME;
-}
-
-static const gchar *
-seahorse_ssh_backend_get_label (SeahorseBackend *backend)
-{
-	return _("Secure Shell");
-}
-
-static const gchar *
-seahorse_ssh_backend_get_description (SeahorseBackend *backend)
-{
-	return _("Keys used to connect securely to other computers");
-}
-
-static GtkActionGroup *
-seahorse_ssh_backend_get_actions (SeahorseBackend *backend)
-{
-	return NULL;
+	seahorse_place_load_async (SEAHORSE_PLACE (self->dot_ssh), NULL, NULL, NULL);
 }
 
 static void
@@ -106,20 +83,18 @@ seahorse_ssh_backend_get_property (GObject *obj,
                                    GValue *value,
                                    GParamSpec *pspec)
 {
-	SeahorseBackend *backend = SEAHORSE_BACKEND (obj);
-
 	switch (prop_id) {
 	case PROP_NAME:
-		g_value_set_string (value, seahorse_ssh_backend_get_name (backend));
+		g_value_set_string (value, SEAHORSE_SSH_NAME);
 		break;
 	case PROP_LABEL:
-		g_value_set_string (value, seahorse_ssh_backend_get_label (backend));
+		g_value_set_string (value, _("Secure Shell"));
 		break;
 	case PROP_DESCRIPTION:
-		g_value_set_string (value, seahorse_ssh_backend_get_description (backend));
+		g_value_set_string (value, _("Keys used to connect securely to other computers"));
 		break;
 	case PROP_ACTIONS:
-		g_value_take_object (value, seahorse_ssh_backend_get_actions (backend));
+		g_value_set_object (value, NULL);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (obj, prop_id, pspec);
@@ -205,10 +180,6 @@ static void
 seahorse_ssh_backend_iface (SeahorseBackendIface *iface)
 {
 	iface->lookup_place = seahorse_ssh_backend_lookup_place;
-	iface->get_actions = seahorse_ssh_backend_get_actions;
-	iface->get_description = seahorse_ssh_backend_get_description;
-	iface->get_label = seahorse_ssh_backend_get_label;
-	iface->get_name = seahorse_ssh_backend_get_name;
 }
 
 void

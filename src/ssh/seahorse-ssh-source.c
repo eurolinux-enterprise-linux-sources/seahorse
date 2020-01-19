@@ -14,8 +14,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
@@ -25,9 +27,9 @@
 #include "seahorse-ssh-operation.h"
 #include "seahorse-ssh-source.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-util.h"
+#include "seahorse-place.h"
+#include "seahorse-registry.h"
+#include "seahorse-util.h"
 
 #include <gcr/gcr.h>
 
@@ -38,6 +40,9 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
+
+#define DEBUG_FLAG SEAHORSE_DEBUG_LOAD
+#include "seahorse-debug.h"
 
 enum {
 	PROP_0,
@@ -120,7 +125,7 @@ static void
 cancel_scheduled_refresh (SeahorseSSHSource *ssrc)
 {
     if (ssrc->priv->scheduled_refresh != 0) {
-        g_debug ("cancelling scheduled refresh event");
+        seahorse_debug ("cancelling scheduled refresh event");
         g_source_remove (ssrc->priv->scheduled_refresh);
         ssrc->priv->scheduled_refresh = 0;
     }
@@ -142,16 +147,16 @@ remove_key_from_context (gpointer key,
 static gboolean
 scheduled_refresh (SeahorseSSHSource *ssrc)
 {
-    g_debug ("scheduled refresh event ocurring now");
+    seahorse_debug ("scheduled refresh event ocurring now");
     cancel_scheduled_refresh (ssrc);
-    seahorse_place_load (SEAHORSE_PLACE (ssrc), NULL, NULL, NULL);
+    seahorse_place_load_async (SEAHORSE_PLACE (ssrc), NULL, NULL, NULL);
     return FALSE; /* don't run again */    
 }
 
 static gboolean
 scheduled_dummy (SeahorseSSHSource *ssrc)
 {
-    g_debug ("dummy refresh event occurring now");
+    seahorse_debug ("dummy refresh event occurring now");
     ssrc->priv->scheduled_refresh = 0;
     return FALSE; /* don't run again */    
 }
@@ -194,7 +199,7 @@ monitor_ssh_homedir (GFileMonitor *handle, GFile *file, GFile *other_file,
 	}
 
 	g_free (path);
-	g_debug ("scheduling refresh event due to file changes");
+	seahorse_debug ("scheduling refresh event due to file changes");
 	ssrc->priv->scheduled_refresh = g_timeout_add (500, (GSourceFunc)scheduled_refresh, ssrc);
 }
 
@@ -213,38 +218,6 @@ merge_keydata (SeahorseSSHKey *prev, SeahorseSSHKeyData *keydata)
         
 }
 
-static gchar *
-seahorse_ssh_source_get_label (SeahorsePlace *place)
-{
-	return g_strdup (_("OpenSSH keys"));
-}
-
-static gchar *
-seahorse_ssh_source_get_description (SeahorsePlace *place)
-{
-	SeahorseSSHSource *self = SEAHORSE_SSH_SOURCE (place);
-	return g_strdup_printf (_("OpenSSH: %s"), self->priv->ssh_homedir);
-}
-
-static gchar *
-seahorse_ssh_source_get_uri (SeahorsePlace *place)
-{
-	SeahorseSSHSource *self = SEAHORSE_SSH_SOURCE (place);
-	return g_strdup_printf ("openssh://%s", self->priv->ssh_homedir);
-}
-
-static GIcon *
-seahorse_ssh_source_get_icon (SeahorsePlace *place)
-{
-	return g_themed_icon_new (GCR_ICON_HOME_DIRECTORY);
-}
-
-static GtkActionGroup *
-seahorse_ssh_source_get_actions (SeahorsePlace* self)
-{
-	return NULL;
-}
-
 static void 
 seahorse_ssh_source_get_property (GObject *obj,
                                   guint prop_id,
@@ -252,26 +225,28 @@ seahorse_ssh_source_get_property (GObject *obj,
                                   GParamSpec *pspec)
 {
 	SeahorseSSHSource *self = SEAHORSE_SSH_SOURCE (obj);
-	SeahorsePlace *place = SEAHORSE_PLACE (obj);
+	gchar *text;
 
 	switch (prop_id) {
 	case PROP_LABEL:
-		g_value_take_string (value, seahorse_ssh_source_get_label (place));
+		g_value_set_string (value, _("OpenSSH keys"));
 		break;
 	case PROP_DESCRIPTION:
-		g_value_take_string (value, seahorse_ssh_source_get_description (place));
+		text = g_strdup_printf (_("OpenSSH: %s"), self->priv->ssh_homedir);
+		g_value_take_string (value, text);
 		break;
 	case PROP_ICON:
-		g_value_take_object (value, seahorse_ssh_source_get_icon (place));
+		g_value_take_object (value, g_themed_icon_new (GCR_ICON_HOME_DIRECTORY));
 		break;
 	case PROP_BASE_DIRECTORY:
 		g_value_set_string (value, self->priv->ssh_homedir);
 		break;
 	case PROP_URI:
-		g_value_take_string (value, seahorse_ssh_source_get_uri (place));
+		g_value_take_string (value, g_strdup_printf ("openssh://%s",
+		                                             self->priv->ssh_homedir));
 		break;
 	case PROP_ACTIONS:
-		g_value_take_object (value, seahorse_ssh_source_get_actions (place));
+		g_value_set_object (value, NULL);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (obj, prop_id, pspec);
@@ -629,7 +604,7 @@ seahorse_ssh_source_load_async (SeahorsePlace *place,
 	/* Schedule a dummy refresh. This blocks all monitoring for a while */
 	cancel_scheduled_refresh (self);
 	self->priv->scheduled_refresh = g_timeout_add (500, (GSourceFunc)scheduled_dummy, self);
-	g_debug ("scheduled a dummy refresh");
+	seahorse_debug ("scheduled a dummy refresh");
 
 	/* List the .ssh directory for private keys */
 	dir = g_dir_open (self->priv->ssh_homedir, 0, &error);
@@ -710,7 +685,6 @@ seahorse_ssh_source_load_finish (SeahorsePlace *place,
 typedef struct {
 	SeahorseSSHSource *source;
 	GCancellable *cancellable;
-	GtkWindow *transient_for;
 	gint imports;
 } source_import_closure;
 
@@ -719,7 +693,6 @@ source_import_free (gpointer data)
 {
 	source_import_closure *closure = data;
 	g_object_unref (closure->source);
-	g_clear_object (&closure->transient_for);
 	g_clear_object (&closure->cancellable);
 	g_free (closure);
 }
@@ -758,8 +731,8 @@ on_import_found_public_key (SeahorseSSHKeyData *data,
 
 	fullpath = seahorse_ssh_source_file_for_public (closure->source, FALSE);
 	seahorse_ssh_op_import_public_async (closure->source, data, fullpath,
-	                                     closure->transient_for, closure->cancellable,
-	                                     on_import_public_complete, g_object_ref (res));
+	                                     closure->cancellable, on_import_public_complete,
+	                                     g_object_ref (res));
 	closure->imports++;
 	g_free (fullpath);
 	seahorse_ssh_key_data_free (data);
@@ -799,8 +772,8 @@ on_import_found_private_key (SeahorseSSHSecData *data,
 	source_import_closure *closure = g_simple_async_result_get_op_res_gpointer (res);
 
 	seahorse_ssh_op_import_private_async (closure->source, data, NULL,
-	                                      closure->transient_for, closure->cancellable,
-	                                      on_import_private_complete, g_object_ref (res));
+	                                      closure->cancellable, on_import_private_complete,
+	                                      g_object_ref (res));
 
 	seahorse_ssh_sec_data_free (data);
 	return TRUE;
@@ -809,7 +782,6 @@ on_import_found_private_key (SeahorseSSHSecData *data,
 void
 seahorse_ssh_source_import_async (SeahorseSSHSource *self,
                                   GInputStream *input,
-                                  GtkWindow *transient_for,
                                   GCancellable *cancellable,
                                   GAsyncReadyCallback callback,
                                   gpointer user_data)
@@ -817,14 +789,13 @@ seahorse_ssh_source_import_async (SeahorseSSHSource *self,
 	source_import_closure *closure;
 	gchar *contents;
 	GSimpleAsyncResult *res;
-	gint count;
+	guint count;
 
 	res = g_simple_async_result_new (G_OBJECT (self), callback, user_data,
 	                                 seahorse_ssh_source_import_async);
 	closure = g_new0 (source_import_closure, 1);
 	closure->cancellable = cancellable ? g_object_ref (cancellable) : NULL;
 	closure->source = g_object_ref (self);
-	closure->transient_for = transient_for ? g_object_ref (transient_for) : NULL;
 	g_simple_async_result_set_op_res_gpointer (res, closure, source_import_free);
 
 	contents = (gchar*)seahorse_util_read_to_memory (input, NULL);
@@ -856,13 +827,8 @@ seahorse_ssh_source_import_finish (SeahorseSSHSource *self,
 static void 
 seahorse_ssh_source_place_iface (SeahorsePlaceIface *iface)
 {
-	iface->load = seahorse_ssh_source_load_async;
+	iface->load_async = seahorse_ssh_source_load_async;
 	iface->load_finish = seahorse_ssh_source_load_finish;
-	iface->get_actions = seahorse_ssh_source_get_actions;
-	iface->get_description = seahorse_ssh_source_get_description;
-	iface->get_icon = seahorse_ssh_source_get_icon;
-	iface->get_label = seahorse_ssh_source_get_label;
-	iface->get_uri = seahorse_ssh_source_get_uri;
 }
 
 /* -----------------------------------------------------------------------------
@@ -896,7 +862,7 @@ seahorse_ssh_source_file_for_algorithm (SeahorseSSHSource *ssrc, guint algo)
 {
     const gchar *pref;
     gchar *filename, *t;
-    gint i = 0;
+    guint i = 0;
     
     switch (algo) {
     case SSH_ALGO_DSA:
@@ -913,7 +879,7 @@ seahorse_ssh_source_file_for_algorithm (SeahorseSSHSource *ssrc, guint algo)
         break;
     }
     
-    for (i = 0; i < G_MAXINT; i++) {
+    for (i = 0; i < ~0; i++) {
         t = (i == 0) ? g_strdup (pref) : g_strdup_printf ("%s.%d", pref, i);
         filename = g_build_filename (ssrc->priv->ssh_homedir, t, NULL);
         g_free (t);

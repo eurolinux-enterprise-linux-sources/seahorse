@@ -14,8 +14,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
@@ -30,11 +32,12 @@
 #include "seahorse-ssh-key.h"
 #include "seahorse-ssh-operation.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-progress.h"
-#include "libseahorse/seahorse-util.h"
-#include "libseahorse/seahorse-widget.h"
+#include "seahorse-action.h"
+#include "seahorse-icons.h"
+#include "seahorse-progress.h"
+#include "seahorse-registry.h"
+#include "seahorse-util.h"
+#include "seahorse-widget.h"
 
 
 /* --------------------------------------------------------------------------
@@ -64,7 +67,7 @@ seahorse_ssh_generate_register (void)
 	gtk_action_group_add_actions (actions, ACTION_ENTRIES, G_N_ELEMENTS (ACTION_ENTRIES), NULL);
 	
 	/* Register this as a generator */
-	seahorse_registry_register_object (G_OBJECT (actions), "generator");
+	seahorse_registry_register_object (NULL, G_OBJECT (actions), SEAHORSE_SSH_TYPE_STR, "generator", NULL);
 }
 
 /* --------------------------------------------------------------------
@@ -130,7 +133,7 @@ on_generate_complete_and_upload (GObject *source,
 }
 
 static void
-on_response (GtkDialog *dialog, gint response, SeahorseWidget *swidget)
+on_response (GtkDialog *dialog, guint response, SeahorseWidget *swidget)
 {
     SeahorseSSHSource *src;
     GCancellable *cancellable;
@@ -183,8 +186,7 @@ on_response (GtkDialog *dialog, gint response, SeahorseWidget *swidget)
 
     /* We start creation */
     cancellable = g_cancellable_new ();
-    seahorse_ssh_op_generate_async (src, email, type, bits,
-                                    gtk_window_get_transient_for (GTK_WINDOW (dialog)), cancellable,
+    seahorse_ssh_op_generate_async (src, email, type, bits, cancellable,
                                     upload ? on_generate_complete_and_upload : on_generate_complete,
                                     NULL);
     seahorse_progress_show (cancellable, _("Creating Secure Shell Key"), FALSE);

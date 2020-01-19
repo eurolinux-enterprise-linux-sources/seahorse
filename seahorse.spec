@@ -1,37 +1,42 @@
 Name:		seahorse
-Version:	3.14.1
+Version:	3.8.2
 Release:	1%{?dist}
 Summary:	A GNOME application for managing encryption keys
 Group:		User Interface/Desktops
 # seahorse is GPLv2+
 # libcryptui is LGPLv2+
 License:        GPLv2+ and LGPLv2+
-URL:            https://wiki.gnome.org/Apps/Seahorse
+URL:            http://projects.gnome.org/seahorse/
 #VCS: git:git://git.gnome.org/seahorse
-Source:         https://download.gnome.org/sources/%{name}/3.14/%{name}-%{version}.tar.xz
+Source:         http://download.gnome.org/sources/seahorse/3.8/%{name}-%{version}.tar.xz
 
-# Use GnuPG 1.4.x instead of 2.0.x
-Patch0:         set-gnupg-engine.patch
-
-BuildRequires:  pkgconfig(avahi-client)
-BuildRequires:  pkgconfig(avahi-glib)
-BuildRequires:  pkgconfig(gio-2.0)
-BuildRequires:  pkgconfig(gck-1)
-BuildRequires:  pkgconfig(gcr-3)
-BuildRequires:  pkgconfig(gtk+-3.0)
-BuildRequires:  pkgconfig(libsecret-unstable)
-BuildRequires:  pkgconfig(libsoup-2.4)
+BuildRequires:  glib2-devel
+BuildRequires:  gtk3-devel
+BuildRequires:  gcr-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  gettext
 BuildRequires:  gpgme-devel >= 1.0
-BuildRequires:  gnupg
+BuildRequires:  gnupg2
 BuildRequires:  itstool
-BuildRequires:  libSM-devel
+BuildRequires:  libsoup-devel
 BuildRequires:  openldap-devel
+BuildRequires:  libnotify-devel
 BuildRequires:  openssh-clients
+BuildRequires:  libsecret-devel
+BuildRequires:  avahi-devel
+BuildRequires:  avahi-glib-devel
 BuildRequires:  intltool
-BuildRequires:  vala
-BuildRequires:  /usr/bin/appstream-util
+BuildRequires:  dbus-glib-devel
+BuildRequires:  gobject-introspection-devel >= 0.6.4
+BuildRequires:  libSM-devel
+BuildRequires:  GConf2-devel
+# for g-ir-scanner
+BuildRequires:  libtool
+Requires(post): desktop-file-utils
+Requires(post): /usr/bin/gtk-update-icon-cache
+Requires(postun): desktop-file-utils
+Requires(postun): shared-mime-info
+Requires(postun): /usr/bin/gtk-update-icon-cache
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=474419
 # https://bugzilla.redhat.com/show_bug.cgi?id=587328
@@ -39,7 +44,6 @@ Requires:       pinentry-gui
 
 Obsoletes: gnome-keyring-manager
 Obsoletes: seahorse-devel < 3.1.4-2
-Obsoletes: seahorse-plugins < 2.91.6-0.8
 # Self-obsoletes to assist with seahorse-sharing package split
 Obsoletes: seahorse < 3.1.4
 
@@ -51,10 +55,14 @@ operations.  It is a keyring manager.
 
 %prep
 %setup -q
-%patch0 -p1
+
 
 %build
-GNUPG=/usr/bin/gpg ; export GNUPG ; %configure
+GNUPG=/usr/bin/gpg2 ; export GNUPG ; %configure
+
+# drop unneeded direct library deps with --as-needed
+# libtool doesn't make this easy, so we do it the hard way
+sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0 /g' -e 's/    if test "$export_dynamic" = yes && test -n "$export_dynamic_flag_spec"; then/      func_append compile_command " -Wl,-O1,--as-needed"\n      func_append finalize_command " -Wl,-O1,--as-needed"\n\0/' libtool
 
 make %{?_smp_mflags}
 # cleanup permissions for files that go into debuginfo
@@ -80,63 +88,46 @@ rm -f ${RPM_BUILD_ROOT}/usr/share/icons/hicolor/icon-theme.cache
 find ${RPM_BUILD_ROOT} -type f -name "*.la" -exec rm -f {} ';'
 find ${RPM_BUILD_ROOT} -type f -name "*.a" -exec rm -f {} ';'
 
-
-%check
-appstream-util validate-relax --nonet $RPM_BUILD_ROOT/%{_datadir}/appdata/*.appdata.xml
-
+%pre
+%gconf_schema_obsolete seahorse
 
 %post
 /sbin/ldconfig
+update-mime-database %{_datadir}/mime/ > /dev/null
 update-desktop-database %{_datadir}/applications > /dev/null 2>&1 || :
 touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
-touch --no-create %{_datadir}/mime/packages &>/dev/null || :
+
 
 %postun
 /sbin/ldconfig
+update-mime-database %{_datadir}/mime/ > /dev/null
 update-desktop-database %{_datadir}/applications > /dev/null 2>&1 || :
 if [ $1 -eq 0 ]; then
   touch --no-create %{_datadir}/icons/hicolor >&/dev/null|| :
   gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
   glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
-  update-mime-database %{_datadir}/mime &> /dev/null || :
 fi
 
 %posttrans
 gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
-update-mime-database -n %{_datadir}/mime &> /dev/null || :
 
 
 %files -f %{name}.lang
-%doc AUTHORS NEWS README TODO
-%license COPYING COPYING.LIB
+%doc AUTHORS COPYING NEWS README TODO
 %{_bindir}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
-%{_datadir}/appdata/*.appdata.xml
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/apps/seahorse.png
 %{_datadir}/icons/hicolor/*/apps/seahorse-preferences.png
-%{_mandir}/man1/*.1*
+%{_mandir}/man1/*.gz
 %dir %{_libdir}/seahorse
 %{_libdir}/seahorse/*
-%{_datadir}/dbus-1/services/org.gnome.seahorse.Application.service
 %{_datadir}/GConf/gsettings/*.convert
 %{_datadir}/glib-2.0/schemas/*.gschema.xml
-%dir %{_datadir}/gnome-shell/
-%dir %{_datadir}/gnome-shell/search-providers/
-%{_datadir}/gnome-shell/search-providers/seahorse-search-provider.ini
 
 %changelog
-* Thu May 14 2015 David King <dking@redhat.com> - 3.14.1-1
-- Rebase to 3.14.1 (#1193148)
-
-* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 3.8.2-3
-- Mass rebuild 2014-01-24
-
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 3.8.2-2
-- Mass rebuild 2013-12-27
-
 * Tue May 14 2013 Richard Hughes <rhughes@redhat.com> - 3.8.2-1
 - Update to 3.8.2
 

@@ -15,8 +15,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #ifndef __SEAHORSE_KEYSERVER_RESULTS_H__
@@ -26,8 +27,8 @@
 #include <glib-object.h>
 #include <gtk/gtk.h>
 
-#include "seahorse-common.h"
-#include "libseahorse/seahorse-object.h"
+#include "seahorse-catalog.h"
+#include "seahorse-object.h"
 
 G_BEGIN_DECLS
 
@@ -54,7 +55,7 @@ struct _SeahorseKeyserverResultsClass {
 
 GType            seahorse_keyserver_results_get_type         (void);
 
-void             seahorse_keyserver_results_show             (const gchar *search_text, GtkWindow *parent);
+void             seahorse_keyserver_results_show             (const gchar *search_text);
 
 const gchar*     seahorse_keyserver_results_get_search       (SeahorseKeyserverResults* self);
 

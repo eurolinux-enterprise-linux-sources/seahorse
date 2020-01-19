@@ -15,8 +15,9 @@
  * Lesser General Public License for more details.
  *  
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.  
  */
 
 #ifndef __SEAHORSE_OBJECT_H__
@@ -40,7 +41,7 @@
  * flags: guint: Flags from the SEAHORSE_FLAG_ set. 
  */
 
-#include "seahorse-common.h"
+#include "seahorse-types.h"
 
 #include <glib-object.h>
 
@@ -51,6 +52,7 @@
 #define SEAHORSE_IS_OBJECT_CLASS(klass)    (G_TYPE_CHECK_CLASS_TYPE ((klass), SEAHORSE_TYPE_OBJECT))
 #define SEAHORSE_OBJECT_GET_CLASS(obj)     (G_TYPE_INSTANCE_GET_CLASS ((obj), SEAHORSE_TYPE_OBJECT, SeahorseObjectClass))
 
+typedef struct _SeahorsePlace SeahorsePlace;
 typedef struct _SeahorseObject SeahorseObject;
 typedef struct _SeahorseObjectClass SeahorseObjectClass;
 typedef struct _SeahorseObjectPrivate SeahorseObjectPrivate;

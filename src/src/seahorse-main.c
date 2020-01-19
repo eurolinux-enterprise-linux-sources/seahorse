@@ -14,22 +14,20 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
 
+#include "seahorse-application.h"
+#include "seahorse-cleanup.h"
+#include "seahorse-registry.h"
+#include "seahorse-util.h"
+
 #include "seahorse-key-manager.h"
-
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-application.h"
-#include "libseahorse/seahorse-servers.h"
-#include "libseahorse/seahorse-util.h"
-
-#include "pgp/seahorse-pgp.h"
-#include "ssh/seahorse-ssh.h"
 
 #include <glib/gi18n.h>
 
@@ -40,30 +38,7 @@ static void
 on_application_activate (GApplication *application,
                          gpointer user_data)
 {
-	seahorse_key_manager_show (GDK_CURRENT_TIME);
-}
-
-#ifdef WITH_PKCS11
-void seahorse_pkcs11_backend_initialize (void);
-#endif
-
-void seahorse_gkr_backend_initialize (void);
-
-static void
-on_application_startup (GApplication *application,
-                        gpointer user_data)
-{
-	/* Initialize the various components */
-#ifdef WITH_PGP
-	seahorse_pgp_backend_initialize ();
-#endif
-#ifdef WITH_SSH
-	seahorse_ssh_backend_initialize ();
-#endif
-#ifdef WITH_PKCS11
-	seahorse_pkcs11_backend_initialize ();
-#endif
-	seahorse_gkr_backend_initialize ();
+	seahorse_key_manager_show ();
 }
 
 /* Initializes context and preferences, then loads key manager */
@@ -85,11 +60,9 @@ main (int argc, char **argv)
 
 	application = seahorse_application_new ();
 	g_signal_connect (application, "activate", G_CALLBACK (on_application_activate), NULL);
-	g_signal_connect (application, "startup", G_CALLBACK (on_application_startup), NULL);
 	status = g_application_run (G_APPLICATION (application), argc, argv);
 
-	seahorse_registry_cleanup ();
-	seahorse_servers_cleanup ();
+	seahorse_cleanup_perform ();
 	g_object_unref (application);
 
 	return status;

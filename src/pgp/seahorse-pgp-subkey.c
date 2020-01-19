@@ -13,8 +13,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
@@ -279,44 +281,6 @@ seahorse_pgp_subkey_set_length (SeahorsePgpSubkey *self, guint length)
 	g_object_notify (G_OBJECT (self), "length");
 }
 
-gchar *
-seahorse_pgp_subkey_get_usage (SeahorsePgpSubkey *self)
-{
-	typedef struct {
-		unsigned int flag;
-		const char *name;
-	} FlagNames;
-
-	const FlagNames const flag_names[] = {
-		{ SEAHORSE_FLAG_CAN_ENCRYPT,      N_("Encrypt") },
-		{ SEAHORSE_FLAG_CAN_SIGN,         N_("Sign") },
-		{ SEAHORSE_FLAG_CAN_CERTIFY,      N_("Certify") },
-		{ SEAHORSE_FLAG_CAN_AUTHENTICATE, N_("Authenticate") }
-	};
-
-	GString *str;
-	gboolean previous;
-	int i;
-
-	g_return_val_if_fail (SEAHORSE_IS_PGP_SUBKEY (self), NULL);
-
-	str = g_string_new (NULL);
-
-	previous = FALSE;
-
-	for (i = 0; i < G_N_ELEMENTS (flag_names); i++) {
-		if (self->pv->flags & flag_names[i].flag) {
-			if (previous)
-				g_string_append (str, ", ");
-
-			previous = TRUE;
-			g_string_append (str, _(flag_names[i].name));
-		}
-	}
-
-	return g_string_free (str, FALSE);
-}
-
 const gchar*
 seahorse_pgp_subkey_get_algorithm (SeahorsePgpSubkey *self)
 {
@@ -407,16 +371,12 @@ seahorse_pgp_subkey_calc_description (const gchar *name, guint index)
 	return g_strdup_printf (_("Subkey %d of %s"), index, name);
 }
 
-/* Takes runs of hexadecimal digits, possibly with whitespace among them, and
- * formats them nicely in groups of four digits.
- */
 gchar*
 seahorse_pgp_subkey_calc_fingerprint (const gchar *raw_fingerprint)
 {
 	const gchar *raw;
 	GString *string;
-	guint i, len;
-	guint num_digits;
+	guint index, len;
 	gchar *fpr;
 	    
 	raw = raw_fingerprint;
@@ -424,22 +384,15 @@ seahorse_pgp_subkey_calc_fingerprint (const gchar *raw_fingerprint)
 
 	string = g_string_new ("");
 	len = strlen (raw);
-
-	num_digits = 0;
-	for (i = 0; i < len; i++) {
-		if (g_ascii_isxdigit (raw[i])) {
-			g_string_append_c (string, g_ascii_toupper (raw[i]));
-			num_digits++;
-
-			if (num_digits > 0 && num_digits % 4 == 0)
-				g_string_append (string, " ");
-		}
+	    
+	for (index = 0; index < len; index++) {
+		if (index > 0 && index % 4 == 0)
+			g_string_append (string, " ");
+		g_string_append_c (string, raw[index]);
 	}
-
+	    
 	fpr = string->str;
 	g_string_free (string, FALSE);
-
-	g_strchomp (fpr);
-
+	    
 	return fpr;
 }

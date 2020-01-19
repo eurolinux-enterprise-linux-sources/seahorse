@@ -13,8 +13,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
@@ -230,10 +232,6 @@ seahorse_gpgme_subkey_set_subkey (SeahorseGpgmeSubkey *self, gpgme_subkey_t subk
 		flags |= SEAHORSE_FLAG_CAN_ENCRYPT;
 	if (subkey->can_sign)
 		flags |= SEAHORSE_FLAG_CAN_SIGN;
-	if (subkey->can_certify)
-		flags |= SEAHORSE_FLAG_CAN_CERTIFY;
-	if (subkey->can_authenticate)
-		flags |= SEAHORSE_FLAG_CAN_AUTHENTICATE;
 	
 	seahorse_pgp_subkey_set_flags (base, flags);
 	

@@ -13,8 +13,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
@@ -31,7 +33,10 @@
 #include <avahi-glib/glib-malloc.h>
 #endif /* WITH_SHARING */
 
-#include "libseahorse/seahorse-util.h"
+#include "seahorse-util.h"
+
+#define DEBUG_FLAG SEAHORSE_DEBUG_DNSSD
+#include "seahorse-debug.h"
 
 #define HKP_SERVICE_TYPE "_pgpkey-hkp._tcp."
 
@@ -164,7 +169,7 @@ resolve_callback (AvahiServiceResolver *resolver, AvahiIfIndex iface, AvahiProto
 			g_object_unref (ssrc);
 		}
 
-		g_debug ("added: %s %s\n", service_name, service_uri);
+		seahorse_debug ("added: %s %s\n", service_name, service_uri);
 		break;
 
 	default:
@@ -229,7 +234,7 @@ browse_callback(AvahiServiceBrowser *browser, AvahiIfIndex iface, AvahiProtocol 
 		/* And remove it from our tables */
 		g_hash_table_remove (self->services, name);
 		g_signal_emit (self, signals[REMOVED], 0, name);
-		g_debug ("removed: %s\n", name);
+		seahorse_debug ("removed: %s\n", name);
 		break;
 
 	default:

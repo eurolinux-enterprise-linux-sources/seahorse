@@ -14,8 +14,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include <config.h>
@@ -24,10 +26,10 @@
 
 #include <glib/gi18n.h>
 
-#include "seahorse-common.h"
-#include "libseahorse/seahorse-widget.h"
-#include "libseahorse/seahorse-util.h"
-#include "libseahorse/seahorse-progress.h"
+#include "seahorse-icons.h"
+#include "seahorse-widget.h"
+#include "seahorse-util.h"
+#include "seahorse-progress.h"
 
 #include "ssh/seahorse-ssh-dialogs.h"
 #include "ssh/seahorse-ssh-source.h"
@@ -123,7 +125,7 @@ upload_keys (SeahorseWidget *swidget)
 
     /* Start an upload process */
     seahorse_ssh_op_upload_async (SEAHORSE_SSH_SOURCE (seahorse_object_get_place (keys->data)),
-                                  keys, user, host, port, NULL, cancellable, on_upload_complete, NULL);
+                                  keys, user, host, port, cancellable, on_upload_complete, NULL);
 
     g_free (host);
     g_free (user);

@@ -14,18 +14,20 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
 
+#include "seahorse-pgp-key.h"
 #include "seahorse-unknown-source.h"
 
-#include "seahorse-pgp-key.h"
+#include "seahorse-place.h"
+#include "seahorse-registry.h"
 #include "seahorse-unknown.h"
-
-#include "seahorse-common.h"
 
 #include <gcr/gcr-base.h>
 
@@ -67,75 +69,24 @@ seahorse_unknown_source_init (SeahorseUnknownSource *self)
 }
 
 static void
-seahorse_unknown_source_load (SeahorsePlace *self,
-                              GCancellable *cancellable,
-                              GAsyncReadyCallback callback,
-                              gpointer user_data)
-{
-	g_return_if_reached ();
-}
-
-static gboolean
-seahorse_unknown_source_load_finish (SeahorsePlace *self,
-                                     GAsyncResult *res,
-                                     GError **error)
-{
-	g_return_val_if_reached (FALSE);
-}
-
-static gchar *
-seahorse_unknown_source_get_label (SeahorsePlace* self)
-{
-	return g_strdup ("");
-}
-
-static gchar *
-seahorse_unknown_source_get_description (SeahorsePlace* self)
-{
-	return NULL;
-}
-
-static gchar *
-seahorse_unknown_source_get_uri (SeahorsePlace* self)
-{
-	return NULL;
-}
-
-static GIcon *
-seahorse_unknown_source_get_icon (SeahorsePlace* self)
-{
-	return NULL;
-}
-
-static GtkActionGroup *
-seahorse_unknown_source_get_actions (SeahorsePlace* self)
-{
-	return NULL;
-}
-
-static void
 seahorse_unknown_source_get_property (GObject *obj,
                                       guint prop_id,
                                       GValue *value,
                                       GParamSpec *pspec)
 {
-	SeahorsePlace *place = SEAHORSE_PLACE (obj);
-
 	switch (prop_id) {
 	case PROP_LABEL:
-		g_value_take_string (value, seahorse_unknown_source_get_label (place));
+		g_value_set_string (value, "");
 		break;
 	case PROP_DESCRIPTION:
-		g_value_take_string (value, seahorse_unknown_source_get_description (place));
-		break;
 	case PROP_URI:
-		g_value_take_string (value, seahorse_unknown_source_get_uri (place));
+		g_value_set_string (value, NULL);
 		break;
 	case PROP_ICON:
-		g_value_take_object (value, seahorse_unknown_source_get_icon (place));
+		g_value_set_object (value, NULL);
 		break;
 	case PROP_ACTIONS:
-		g_value_take_object (value, seahorse_unknown_source_get_actions (place));
+		g_value_set_object (value, NULL);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (obj, prop_id, pspec);
@@ -202,13 +153,7 @@ seahorse_unknown_source_collection_iface (GcrCollectionIface *iface)
 static void
 seahorse_unknown_source_place_iface (SeahorsePlaceIface *iface)
 {
-	iface->load = seahorse_unknown_source_load;
-	iface->load_finish = seahorse_unknown_source_load_finish;
-	iface->get_actions = seahorse_unknown_source_get_actions;
-	iface->get_description = seahorse_unknown_source_get_description;
-	iface->get_icon = seahorse_unknown_source_get_icon;
-	iface->get_label = seahorse_unknown_source_get_label;
-	iface->get_uri = seahorse_unknown_source_get_uri;
+	/* no implementation */
 }
 
 SeahorseUnknownSource*

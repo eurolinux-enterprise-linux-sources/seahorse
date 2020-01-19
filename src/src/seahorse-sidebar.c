@@ -13,18 +13,30 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
 
 #include "seahorse-sidebar.h"
 
-#include "seahorse-common.h"
+#include "seahorse-action.h"
+#include "seahorse-actions.h"
+#include "seahorse-backend.h"
+#include "seahorse-deletable.h"
+#include "seahorse-interaction.h"
+#include "seahorse-lockable.h"
+#include "seahorse-place.h"
+#include "seahorse-util.h"
+#include "seahorse-viewable.h"
 
-#include "libseahorse/seahorse-interaction.h"
-#include "libseahorse/seahorse-util.h"
+#include "gkr/seahorse-gkr.h"
+#include "pgp/seahorse-pgp.h"
+#include "pkcs11/seahorse-pkcs11.h"
+#include "ssh/seahorse-ssh.h"
 
 #include <glib/gi18n.h>
 
@@ -569,8 +581,8 @@ on_cell_renderer_action_icon (GtkTreeViewColumn *column,
 	lockable = lookup_lockable_for_iter (model, iter);
 
 	if (lockable) {
-		can_lock = seahorse_lockable_can_lock (G_OBJECT (lockable));
-		can_unlock = seahorse_lockable_can_unlock (G_OBJECT (lockable));
+		can_lock = seahorse_lockable_can_lock (lockable);
+		can_unlock = seahorse_lockable_can_unlock (lockable);
 	}
 
 	if (can_lock || can_unlock) {
@@ -739,13 +751,13 @@ order_from_backend (GObject *backend)
 
 	if (name == NULL)
 		order = 10;
-	else if (g_str_equal (name, "gkr"))
+	else if (g_str_equal (name, SEAHORSE_GKR_NAME))
 		order = 0;
-	else if (g_str_equal (name, "pgp"))
+	else if (g_str_equal (name, SEAHORSE_PGP_NAME))
 		order = 1;
-	else if (g_str_equal (name, "pkcs11"))
+	else if (g_str_equal (name, SEAHORSE_PKCS11_NAME))
 		order = 2;
-	else if (g_str_equal (name, "ssh"))
+	else if (g_str_equal (name, SEAHORSE_SSH_NAME))
 		order = 3;
 	else
 		order = 10;
@@ -806,8 +818,8 @@ place_lock (SeahorseLockable *lockable,
 	GCancellable *cancellable = g_cancellable_new ();
 	GTlsInteraction *interaction = seahorse_interaction_new (window);
 
-	seahorse_lockable_lock (lockable, interaction, cancellable,
-	                        on_place_locked, g_object_ref (window));
+	seahorse_lockable_lock_async (lockable, interaction, cancellable,
+	                              on_place_locked, g_object_ref (window));
 
 	g_object_unref (cancellable);
 	g_object_unref (interaction);
@@ -845,8 +857,8 @@ place_unlock (SeahorseLockable *lockable,
 	GCancellable *cancellable = g_cancellable_new ();
 	GTlsInteraction *interaction = seahorse_interaction_new (window);
 
-	seahorse_lockable_unlock (lockable, interaction, cancellable,
-	                          on_place_unlocked, g_object_ref (window));
+	seahorse_lockable_unlock_async (lockable, interaction, cancellable,
+	                                on_place_unlocked, g_object_ref (window));
 
 	g_object_unref (cancellable);
 	g_object_unref (interaction);
@@ -886,8 +898,8 @@ on_place_delete (GtkMenuItem *item,
 	deleter = seahorse_deletable_create_deleter (deletable);
 
 	if (seahorse_deleter_prompt (deleter, GTK_WINDOW (window)))
-		seahorse_deleter_delete (deleter, NULL, on_place_deleted,
-		                         g_object_ref (window));
+		seahorse_deleter_delete_async (deleter, NULL, on_place_deleted,
+		                               g_object_ref (window));
 
 	g_object_unref (deleter);
 }
@@ -896,8 +908,9 @@ static void
 on_place_properties (GtkMenuItem *item,
                      gpointer user_data)
 {
+	SeahorseViewable *viewable = SEAHORSE_VIEWABLE (user_data);
 	GtkWidget *window = gtk_widget_get_toplevel (GTK_WIDGET (item));
-	seahorse_viewable_view (user_data, GTK_WINDOW (window));
+	seahorse_viewable_show_viewer (viewable, GTK_WINDOW (window));
 }
 
 static void
@@ -1176,9 +1189,9 @@ on_tree_view_button_release_event (GtkWidget *widget,
 
 	lockable = lookup_lockable_for_iter (model, &iter);
 	if (lockable) {
-		if (seahorse_lockable_can_lock (G_OBJECT (lockable)))
+		if (seahorse_lockable_can_lock (lockable))
 			place_lock (lockable, GTK_WINDOW (window));
-		else if (seahorse_lockable_can_unlock (G_OBJECT (lockable)))
+		else if (seahorse_lockable_can_unlock (lockable))
 			place_unlock (lockable, GTK_WINDOW (window));
 	}
 
@@ -1355,7 +1368,7 @@ seahorse_sidebar_dispose (GObject *obj)
 {
 	SeahorseSidebar *self = SEAHORSE_SIDEBAR (obj);
 	GList *places, *l;
-	guint i;
+	gint i;
 
 	for (i = 0; i < self->backends->len; i++) {
 		g_signal_handlers_disconnect_by_func (self->backends->pdata[i], on_place_added, self);

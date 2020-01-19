@@ -1,58 +1,72 @@
+include $(top_srcdir)/Makefile.decl
+
+uidir = $(datadir)/seahorse/ui/
+localedir = $(datadir)/locale
+
+INCLUDES = -I$(top_builddir) \
+	-I$(top_srcdir) \
+	-I$(top_srcdir)/libseahorse \
+	$(SEAHORSE_CFLAGS) \
+	-DSEAHORSE_UIDIR=\""$(uidir)"\" \
+	-DLOCALEDIR=\"$(localedir)\" \
+	-DGETTEXT_PACKAGE=\""seahorse\""
 
 if WITH_PGP
-PGP_LDADD = libseahorse-pgp.a
+PGP_LDADD = $(top_builddir)/pgp/libseahorse-pgp.la
 else
 PGP_LDADD = 
 endif
 
 if WITH_SSH
-SSH_LDADD = libseahorse-ssh.a
+SSH_LDADD = $(top_builddir)/ssh/libseahorse-ssh.la
 else
 SSH_LDADD = 
 endif
 
 if WITH_PKCS11
-PKCS11_LDADD = libseahorse-pkcs11.a
+PKCS11_LDADD = $(top_builddir)/pkcs11/libseahorse-pkcs11.la
 else
 PKCS11_LDADD = 
 endif
 
-bin_PROGRAMS += seahorse
+bin_PROGRAMS = seahorse
 
 seahorse_SOURCES = \
-	src/seahorse-generate-select.c src/seahorse-generate-select.h \
-	src/seahorse-import-dialog.c src/seahorse-import-dialog.h \
-	src/seahorse-key-manager.c src/seahorse-key-manager.h \
-	src/seahorse-main.c \
-	src/seahorse-sidebar.c src/seahorse-sidebar.h
-
-# HACK: One day libcommon.a and libseahorse.a will be one and
-# the same. Until then specify libseahorse.a twice when linking
+	seahorse-generate-select.c seahorse-generate-select.h \
+	seahorse-import-dialog.c seahorse-import-dialog.h \
+	seahorse-key-manager.c seahorse-key-manager.h \
+	seahorse-main.c \
+	seahorse-sidebar.c seahorse-sidebar.h \
+	$(KEYSERVER_SRCS)
 
 seahorse_LDADD = \
+	$(top_builddir)/libseahorse/libseahorse.la \
 	$(PGP_LDADD) \
 	$(SSH_LDADD) \
 	$(PKCS11_LDADD) \
-	libseahorse-gkr.a \
-	libseahorse.a \
-	libcommon.a \
-	libseahorse.a \
-	libeggdatetime.a \
-	libeggtreemultidnd.a \
+	$(top_builddir)/gkr/libseahorse-gkr.la \
+	$(top_builddir)/libegg/libeggdatetime.la \
+	$(top_builddir)/libegg/libeggtreemultidnd.la \
 	$(SEAHORSE_LIBS)
 
-ui_DATA += \
-	src/seahorse-key-manager.ui \
-	src/seahorse-key-manager.xml \
-	src/seahorse-change-passphrase.xml \
-	src/seahorse-generate-select.xml
+ui_DATA = \
+	seahorse-key-manager.ui \
+	seahorse-key-manager.xml \
+	seahorse-change-passphrase.xml \
+	seahorse-generate-select.xml
 
-man_MANS += src/seahorse.1
+desktopdir = $(datadir)/applications
+desktop_in_files = seahorse.desktop.in 
+desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
 
-EXTRA_DIST += \
+man_MANS = seahorse.1
+
+EXTRA_DIST = \
 	$(man_MANS) \
 	$(ui_DATA) \
-	$(NULL)
+	seahorse.desktop.in.in
 
-CLEANFILES += *.xmlp* *.bak \
-	$(NULL)
+CLEANFILES = *.xmlp* *.bak \
+	$(desktop_DATA) \
+	$(desktop_in_files)

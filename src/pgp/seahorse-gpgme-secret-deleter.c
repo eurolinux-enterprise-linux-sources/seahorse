@@ -14,8 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
@@ -26,7 +27,7 @@
 #include "seahorse-gpgme-key-op.h"
 #include "seahorse-gpgme-secret-deleter.h"
 
-#include "seahorse-common.h"
+#include "seahorse-delete-dialog.h"
 
 #include <glib/gi18n.h>
 
@@ -82,7 +83,7 @@ seahorse_gpgme_secret_deleter_create_confirm (SeahorseDeleter *deleter,
 	seahorse_delete_dialog_set_check_require (SEAHORSE_DELETE_DIALOG (dialog), TRUE);
 
 	g_free (prompt);
-	return g_object_ref (dialog);
+	return dialog;
 }
 
 static GList *
@@ -158,7 +159,7 @@ seahorse_gpgme_secret_deleter_class_init (SeahorseGpgmeSecretDeleterClass *klass
 
 	deleter_class->add_object = seahorse_gpgme_secret_deleter_add_object;
 	deleter_class->create_confirm = seahorse_gpgme_secret_deleter_create_confirm;
-	deleter_class->delete = seahorse_gpgme_secret_deleter_delete_async;
+	deleter_class->delete_async = seahorse_gpgme_secret_deleter_delete_async;
 	deleter_class->delete_finish = seahorse_gpgme_secret_deleter_delete_finish;
 	deleter_class->get_objects = seahorse_gpgme_secret_deleter_get_objects;
 }

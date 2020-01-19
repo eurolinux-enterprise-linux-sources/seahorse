@@ -14,8 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -27,11 +28,11 @@
 #include "seahorse-transfer.h"
 #include "seahorse-unknown-source.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-progress.h"
-#include "libseahorse/seahorse-servers.h"
-#include "libseahorse/seahorse-util.h"
+#include "seahorse-backend.h"
+#include "seahorse-progress.h"
+#include "seahorse-registry.h"
+#include "seahorse-servers.h"
+#include "seahorse-util.h"
 
 #include <glib/gi18n.h>
 
@@ -141,7 +142,7 @@ seahorse_pgp_backend_constructed (GObject *obj)
 	G_OBJECT_CLASS (seahorse_pgp_backend_parent_class)->constructed (obj);
 
 	self->keyring = seahorse_gpgme_keyring_new ();
-	seahorse_place_load (SEAHORSE_PLACE (self->keyring), NULL, NULL, NULL);
+	seahorse_place_load_async (SEAHORSE_PLACE (self->keyring), NULL, NULL, NULL);
 
 	self->discovery = seahorse_discovery_new ();
 	self->unknown = seahorse_unknown_source_new ();
@@ -155,51 +156,26 @@ seahorse_pgp_backend_constructed (GObject *obj)
 #endif
 }
 
-static const gchar *
-seahorse_pgp_backend_get_name (SeahorseBackend *backend)
-{
-	return SEAHORSE_PGP_NAME;
-}
-
-static const gchar *
-seahorse_pgp_backend_get_label (SeahorseBackend *backend)
-{
-	return _("PGP Keys");
-}
-
-static const gchar *
-seahorse_pgp_backend_get_description (SeahorseBackend *backend)
-{
-	return _("PGP keys are for encrypting email or files");
-}
-
-static GtkActionGroup *
-seahorse_pgp_backend_get_actions (SeahorseBackend *backend)
-{
-	SeahorsePgpBackend *self = SEAHORSE_PGP_BACKEND (backend);
-	return g_object_ref (self->actions);
-}
-
 static void
 seahorse_pgp_backend_get_property (GObject *obj,
                                    guint prop_id,
                                    GValue *value,
                                    GParamSpec *pspec)
 {
-	SeahorseBackend *backend = SEAHORSE_BACKEND (obj);
+	SeahorsePgpBackend *self = SEAHORSE_PGP_BACKEND (obj);
 
 	switch (prop_id) {
 	case PROP_NAME:
-		g_value_set_string (value,  seahorse_pgp_backend_get_name (backend));
+		g_value_set_string (value, SEAHORSE_PGP_NAME);
 		break;
 	case PROP_LABEL:
-		g_value_set_string (value,  seahorse_pgp_backend_get_label (backend));
+		g_value_set_string (value, _("PGP Keys"));
 		break;
 	case PROP_DESCRIPTION:
-		g_value_set_string (value,  seahorse_pgp_backend_get_description (backend));
+		g_value_set_string (value, _("PGP keys are for encrypting email or files"));
 		break;
 	case PROP_ACTIONS:
-		g_value_take_object (value, seahorse_pgp_backend_get_actions (backend));
+		g_value_set_object (value, self->actions);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (obj, prop_id, pspec);
@@ -285,10 +261,6 @@ static void
 seahorse_pgp_backend_iface (SeahorseBackendIface *iface)
 {
 	iface->lookup_place = seahorse_pgp_backend_lookup_place;
-	iface->get_actions = seahorse_pgp_backend_get_actions;
-	iface->get_description = seahorse_pgp_backend_get_description;
-	iface->get_label = seahorse_pgp_backend_get_label;
-	iface->get_name = seahorse_pgp_backend_get_name;
 }
 
 SeahorsePgpBackend *

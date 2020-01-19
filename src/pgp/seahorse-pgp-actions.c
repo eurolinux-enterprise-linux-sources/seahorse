@@ -15,8 +15,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -33,11 +34,13 @@
 #include "seahorse-keyserver-search.h"
 #include "seahorse-keyserver-sync.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-object.h"
-#include "libseahorse/seahorse-object-list.h"
-#include "libseahorse/seahorse-util.h"
+#include "seahorse-action.h"
+#include "seahorse-actions.h"
+#include "seahorse-delete-dialog.h"
+#include "seahorse-object.h"
+#include "seahorse-object-list.h"
+#include "seahorse-registry.h"
+#include "seahorse-util.h"
 
 GType   seahorse_pgp_backend_actions_get_type         (void) G_GNUC_CONST;
 #define SEAHORSE_TYPE_PGP_BACKEND_ACTIONS             (seahorse_pgp_backend_actions_get_type ())
@@ -98,7 +101,6 @@ on_remote_sync (GtkAction* action,
 		}
 		g_list_free (objects);
 	}
-	g_object_unref (catalog);
 
 	if (keys == NULL) {
 		keyring = seahorse_pgp_backend_get_default_keyring (NULL);

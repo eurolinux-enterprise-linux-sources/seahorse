@@ -14,20 +14,20 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
 
-#undef G_LOG_DOMAIN
-#define G_LOG_DOMAIN "operation"
-
 #include "seahorse-ssh-operation.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-util.h"
+#define DEBUG_FLAG SEAHORSE_DEBUG_OPERATION
+#include "seahorse-debug.h"
+#include "seahorse-exporter.h"
+#include "seahorse-util.h"
 
 #include <sys/wait.h>
 #include <signal.h>
@@ -40,10 +40,6 @@
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
 
-#ifdef GDK_WINDOWING_X11
-#include <gdk/gdkx.h>
-#endif
-
 #define COMMAND_PASSWORD "PASSWORD "
 #define COMMAND_PASSWORD_LEN   9
 
@@ -52,7 +48,6 @@ typedef struct {
 	const gchar *message;
 	const gchar *argument;
 	const gchar *flags;
-	gulong transient_for;
 } SeahorseSshPromptInfo;
 
 typedef struct {
@@ -186,7 +181,7 @@ on_watch_ssh_process (GPid pid,
 	ssh_operation_closure *closure = g_simple_async_result_get_op_res_gpointer (res);
 	const gchar *message;
 
-	g_debug ("SSHOP: SSH process done");
+	seahorse_debug ("SSHOP: SSH process done");
 
 	/* Already have an error? */
 	if (closure->previous_error) {
@@ -252,10 +247,10 @@ on_io_ssh_read (GIOChannel *source,
 	/* Figure out which buffer we're writing into */
 	if (source == closure->iout) {
 		str = closure->sout;
-		g_debug ("SSHOP: SSH output: ");
+		seahorse_debug ("SSHOP: SSH output: ");
 	} else if(source == closure->ierr) {
 		str = closure->serr;
-		g_debug ("SSHOP: SSH errout: ");
+		seahorse_debug ("SSHOP: SSH errout: ");
 	} else
 		g_assert_not_reached ();
 
@@ -276,7 +271,7 @@ on_io_ssh_read (GIOChannel *source,
 			break;
 		default:
 			g_string_append_len (str, buf, read);
-			g_debug ("%s", str->str + (str->len - read));
+			seahorse_debug ("%s", str->str + (str->len - read));
 			break;
 		}
 	} while (read == sizeof (buf));
@@ -297,7 +292,7 @@ on_io_ssh_write (GIOChannel *source,
 	gboolean ret = TRUE;
 
 	if (closure->sin) {
-		g_debug ("SSHOP: SSH ready for input");
+		seahorse_debug ("SSHOP: SSH ready for input");
 
 		if (!closure->previous_error)
 			error = &closure->previous_error;
@@ -312,20 +307,20 @@ on_io_ssh_write (GIOChannel *source,
 		case G_IO_STATUS_AGAIN:
 			break;
 		default:
-			g_debug ("SSHOP: Wrote %d bytes to SSH", (gint)written);
+			seahorse_debug ("SSHOP: Wrote %d bytes to SSH", (gint)written);
 			g_string_erase (closure->sin, 0, written);
 			break;
 		}
 	}
 
 	if (closure->sin && !closure->sin->len) {
-		g_debug ("SSHOP: Finished writing SSH input");
+		seahorse_debug ("SSHOP: Finished writing SSH input");
 		g_string_free (closure->sin, TRUE);
 		closure->sin = NULL;
 	}
 
 	if (!closure->sin) {
-		g_debug ("SSHOP: Closing SSH input channel");
+		seahorse_debug ("SSHOP: Closing SSH input channel");
 		g_io_channel_unref (closure->iin);
 		closure->iin = NULL;
 		g_source_remove (closure->win);
@@ -340,7 +335,6 @@ static void
 on_spawn_setup_child (gpointer user_data)
 {
 	SeahorseSshPromptInfo *prompt = user_data;
-	gchar *parent;
 
 	/* No terminal for this process */
 	setsid ();
@@ -353,11 +347,6 @@ on_spawn_setup_child (gpointer user_data)
 	g_setenv ("LANG", "C", TRUE);
 
 	if (prompt != NULL) {
-		if (prompt->transient_for) {
-			parent = g_strdup_printf ("%lu", prompt->transient_for);
-			g_setenv ("SEAHORSE_SSH_ASKPASS_PARENT", parent, TRUE);
-			g_free (parent);
-		}
 		if (prompt->title)
 			g_setenv ("SEAHORSE_SSH_ASKPASS_TITLE", prompt->title, TRUE);
 		if (prompt->message)
@@ -372,7 +361,6 @@ seahorse_ssh_operation_async (SeahorseSSHSource *source,
                               const gchar *command,
                               const gchar *input,
                               gssize length,
-                              GtkWindow *parent,
                               GCancellable *cancellable,
                               GAsyncReadyCallback callback,
                               SeahorseSshPromptInfo *prompt,
@@ -393,14 +381,6 @@ seahorse_ssh_operation_async (SeahorseSSHSource *source,
 		g_return_if_reached ();
 	}
 
-#ifdef GDK_WINDOWING_X11
-	if (parent) {
-		GdkWindow *window = gtk_widget_get_window (GTK_WIDGET (parent));
-		if (window != NULL)
-			prompt->transient_for = gdk_x11_window_get_xid (window);
-	}
-#endif
-
 	res = g_simple_async_result_new (G_OBJECT (source), callback, user_data,
 	                                 seahorse_ssh_operation_async);
 	closure = g_new0 (ssh_operation_closure, 1);
@@ -410,7 +390,7 @@ seahorse_ssh_operation_async (SeahorseSSHSource *source,
 
 	g_simple_async_result_set_op_res_gpointer (res, closure, ssh_operation_free);
 
-	g_debug ("SSHOP: Executing SSH command: %s", command);
+	seahorse_debug ("SSHOP: Executing SSH command: %s", command);
 
 	/* And off we go to run the program */
 	r = g_spawn_async_with_pipes (NULL, argv, NULL,
@@ -428,8 +408,8 @@ seahorse_ssh_operation_async (SeahorseSSHSource *source,
 
 	/* Copy the input for later writing */
 	if (input) {
-                closure->sin = g_string_new_len (input, length < 0 ? (gssize) strlen (input) : length);
-		g_debug ("SSHOP: Will send SSH input: %s", closure->sin->str);
+		closure->sin = g_string_new_len (input, length == -1 ? strlen (input) : length);
+		seahorse_debug ("SSHOP: Will send SSH input: %s", closure->sin->str);
 
 		fcntl (fin, F_SETFL, O_NONBLOCK | fcntl (fin, F_GETFL));
 		closure->iin = g_io_channel_unix_new (fin);
@@ -515,7 +495,6 @@ seahorse_ssh_op_upload_async (SeahorseSSHSource *source,
                               const gchar *username,
                               const gchar *hostname,
                               const gchar *port,
-                              GtkWindow *transient_for,
                               GCancellable *cancellable,
                               GAsyncReadyCallback callback,
                               gpointer user_data)
@@ -556,7 +535,7 @@ seahorse_ssh_op_upload_async (SeahorseSSHSource *source,
 	                       username, hostname, port ? "-p" : "", port ? port : "");
 
 	seahorse_ssh_operation_async (SEAHORSE_SSH_SOURCE (source), cmd, data->str, data->len,
-	                              transient_for, cancellable, on_upload_send_complete,
+	                              cancellable, on_upload_send_complete,
 	                              &prompt, g_object_ref (res));
 
 	g_string_free (data, TRUE);
@@ -602,7 +581,6 @@ on_change_passphrase_complete (GObject *source,
 
 void
 seahorse_ssh_op_change_passphrase_async  (SeahorseSSHKey *key,
-                                          GtkWindow *transient_for,
                                           GCancellable *cancellable,
                                           GAsyncReadyCallback callback,
                                           gpointer user_data)
@@ -625,7 +603,7 @@ seahorse_ssh_op_change_passphrase_async  (SeahorseSSHKey *key,
 	g_simple_async_result_set_op_res_gpointer (res, g_object_ref (key), g_object_unref);
 
 	cmd = g_strdup_printf (SSH_KEYGEN_PATH " -p -f '%s'", key->keydata->privfile);
-	seahorse_ssh_operation_async (SEAHORSE_SSH_SOURCE (place), cmd, NULL, 0, transient_for, cancellable,
+	seahorse_ssh_operation_async (SEAHORSE_SSH_SOURCE (place), cmd, NULL, 0, cancellable,
 	                              on_change_passphrase_complete, &prompt, g_object_ref (res));
 
 	g_free (cmd);
@@ -693,7 +671,6 @@ seahorse_ssh_op_generate_async (SeahorseSSHSource *source,
                                 const gchar *email,
                                 guint type,
                                 guint bits,
-                                GtkWindow *transient_for,
                                 GCancellable *cancellable,
                                 GAsyncReadyCallback callback,
                                 gpointer user_data)
@@ -724,7 +701,7 @@ seahorse_ssh_op_generate_async (SeahorseSSHSource *source,
 	                       bits, algo, comment, closure->filename);
 	g_free (comment);
 
-	seahorse_ssh_operation_async (source, cmd, NULL, 0, transient_for, cancellable,
+	seahorse_ssh_operation_async (source, cmd, NULL, 0, cancellable,
 	                              on_generate_complete, &prompt, g_object_ref (res));
 
 	g_free (cmd);
@@ -756,7 +733,6 @@ void
 seahorse_ssh_op_import_public_async (SeahorseSSHSource *source,
                                      SeahorseSSHKeyData *data,
                                      const gchar* filename,
-                                     GtkWindow *transient_for,
                                      GCancellable *cancellable,
                                      GAsyncReadyCallback callback,
                                      gpointer user_data)
@@ -861,7 +837,6 @@ void
 seahorse_ssh_op_import_private_async (SeahorseSSHSource *source,
                                       SeahorseSSHSecData *data,
                                       const gchar *filename,
-                                      GtkWindow *transient_for,
                                       GCancellable *cancellable,
                                       GAsyncReadyCallback callback,
                                       gpointer user_data)
@@ -907,7 +882,7 @@ seahorse_ssh_op_import_private_async (SeahorseSSHSource *source,
 
 	/* Start command to generate public key */
 	cmd = g_strdup_printf (SSH_KEYGEN_PATH " -y -f '%s'", privfile);
-	seahorse_ssh_operation_async (source, cmd, NULL, 0, transient_for, cancellable,
+	seahorse_ssh_operation_async (source, cmd, NULL, 0, cancellable,
 	                              on_import_private_complete, &prompt,
 	                              g_object_ref (res));
 
@@ -948,7 +923,6 @@ void
 seahorse_ssh_op_authorize_async (SeahorseSSHSource *source,
                                  SeahorseSSHKey *key,
                                  gboolean authorize,
-                                 GtkWindow *transient_for,
                                  GCancellable *cancellable,
                                  GAsyncReadyCallback callback,
                                  gpointer user_data)
@@ -1036,7 +1010,6 @@ void
 seahorse_ssh_op_rename_async (SeahorseSSHSource *source,
                               SeahorseSSHKey *key,
                               const gchar *newcomment,
-                              GtkWindow *transient_for,
                               GCancellable *cancellable,
                               GAsyncReadyCallback callback,
                               gpointer user_data)
@@ -1056,7 +1029,7 @@ seahorse_ssh_op_rename_async (SeahorseSSHSource *source,
 	if (!change_raw_comment (keydata, newcomment ? newcomment : ""))
 		g_return_if_reached ();
 
-	g_debug ("renaming key to: %s", newcomment);
+	seahorse_debug ("renaming key to: %s", newcomment);
 
 	/* Just part of a file for this key */
 	if (keydata->partial) {

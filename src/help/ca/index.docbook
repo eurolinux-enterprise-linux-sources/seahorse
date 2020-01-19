@@ -1,0 +1,1254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "2.28.x">
+<!ENTITY manrevision "3.1">
+<!ENTITY date "July 2005">
+<!ENTITY app "Passwords and Keys">
+<!ENTITY daemon "<application>seahorse-daemon</application>">
+<!ENTITY project "Seahorse">
+<!ENTITY key "<glossterm>key</glossterm>">
+<!ENTITY website "http://www.gnome.org/projects/seahorse/">
+]>
+<article id="index" lang="ca">
+	<articleinfo>
+		<title lang="en">Passwords and Keys Manual</title>
+		<copyright lang="en">
+			<year>2005, 2006, 2007, 2008, 2009</year>
+			<holder>Jacob Perkins and Adam Schreiber</holder>
+		</copyright>
+		<publisher role="maintainer">
+			<publishername>Projecte Seahorse</publishername>
+		</publisher>
+		<!-- link to document containig the legal notice of GNU FDL  -->
+		  <legalnotice id="legalnotice">
+	<para lang="en">
+	  Permission is granted to copy, distribute and/or modify this
+	  document under the terms of the GNU Free Documentation
+	  License (GFDL), Version 1.1 or any later version published
+	  by the Free Software Foundation with no Invariant Sections,
+	  no Front-Cover Texts, and no Back-Cover Texts.  You can find
+	  a copy of the GFDL at this <ulink type="help" url="help:fdl">link</ulink> or in the file COPYING-DOCS
+	  distributed with this manual.
+         </para>
+         <para>Aquest manual forma part d'una col·lecció de manuals del GNOME distribuïts sota la GFDL. Si voleu distribuir aquest manual independentment de la col·lecció, podeu fer-ho afegint una còpia de la llicència al manual, tal com es descriu a la secció 6 de la llicència.</para>
+
+	<para>Molts dels noms que les empreses utilitzen per a distingir els seus productes i serveis es consideren marques comercials. Quan aquests noms apareguin en qualsevol documentació del GNOME, si els membres del Projecte de documentació del GNOME han estat avisats pel que fa a les marques, els noms apareixeran en majúscules o amb les inicials en majúscules.</para>
+
+	<para lang="en">
+	  DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED
+	  UNDER  THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE
+	  WITH THE FURTHER UNDERSTANDING THAT:
+
+	  <orderedlist>
+		<listitem>
+		  <para lang="en">DOCUMENT IS PROVIDED ON AN "AS IS" BASIS,
+                    WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+                    IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES
+                    THAT THE DOCUMENT OR MODIFIED VERSION OF THE
+                    DOCUMENT IS FREE OF DEFECTS MERCHANTABLE, FIT FOR
+                    A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE
+                    RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE
+                    OF THE DOCUMENT OR MODIFIED VERSION OF THE
+                    DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR
+                    MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT,
+                    YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY
+                    CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY
+                    SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER
+                    OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS
+                    LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED
+                    VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER
+                    EXCEPT UNDER THIS DISCLAIMER; AND
+		  </para>
+		</listitem>
+		<listitem>
+		  <para lang="en">UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL
+                       THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE),
+                       CONTRACT, OR OTHERWISE, SHALL THE AUTHOR,
+                       INITIAL WRITER, ANY CONTRIBUTOR, OR ANY
+                       DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION
+                       OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH
+                       PARTIES, BE LIABLE TO ANY PERSON FOR ANY
+                       DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR
+                       CONSEQUENTIAL DAMAGES OF ANY CHARACTER
+                       INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS
+                       OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR
+                       MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR
+                       LOSSES ARISING OUT OF OR RELATING TO USE OF THE
+                       DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT,
+                       EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF
+                       THE POSSIBILITY OF SUCH DAMAGES.
+		  </para>
+		</listitem>
+	  </orderedlist>
+	</para>
+  </legalnotice>
+
+
+		<authorgroup>
+			<author lang="en">
+				<firstname>Jacob</firstname>
+				<surname>Perkins</surname>
+				<affiliation>
+					<orgname>Seahorse Project</orgname>
+					<!--
+					<address>
+						<email>jap1@users.sourceforge.net</email>
+					</address>
+					-->
+				</affiliation>
+			</author>
+			<author lang="en">
+				<firstname>Adam</firstname>
+				<surname>Schreiber</surname>
+				<affiliation>
+					<orgname>Seahorse Project</orgname>
+					<address>
+						<email>sadam@clemson.edu</email>
+					</address>
+				</affiliation>
+			</author>
+			<author lang="en">
+				<firstname>Paul</firstname>
+				<surname>Cutler</surname>
+				<affiliation>
+					<orgname>GNOME Documentation Project</orgname>
+					<address>
+						<email>pcutler@foresightlinux.org</email>
+					</address>
+				</affiliation>
+			</author>
+		</authorgroup>
+		<releaseinfo revision="2.28" role="draft">
+		</releaseinfo>
+		<publisher role="maintainer">
+			<publishername>Projecte Seahorse</publishername>
+		</publisher>
+		<publisher role="maintainer">
+			<publishername lang="en">GNOME Documentation Project</publishername>
+		</publisher>
+		<revhistory>
+			<revision lang="en">
+				<revnumber>Passwords and Keys Manual V2.11.0</revnumber>
+				<date>May 2009</date>
+				<revdescription>
+					<para role="author" lang="en">
+						Paul Cutler
+						<email>pcutler@foresightlinux.org</email>
+					</para>
+				</revdescription>	
+			</revision>
+			<revision lang="en">
+				<revnumber>Passwords and Keys Manual V0.10.1</revnumber>
+				<date>August 2008</date>
+				<revdescription>
+					<para role="author" lang="en">
+						Adam Schreiber
+						<email>sadam@clemson.edu</email>
+					</para>
+				</revdescription>	
+			</revision>
+			<revision lang="en">
+				<revnumber>Passwords and Keys Manual V0.9.1</revnumber>
+				<date>November 2006</date>
+				<revdescription>
+					<para role="author" lang="en">
+						Milo Casagrande
+						<email>milo_casagrande@yahoo.it</email>
+					</para>
+				</revdescription>	
+			</revision>
+			<revision lang="en">
+				<revnumber>Passwords and Keys Manual V0.9.0</revnumber>
+				<date>July 2005</date>
+				<revdescription>
+					<para role="author" lang="en">Adam Schreiber
+						<email>sadam@clemson.edu</email>
+					</para>
+					<para role="publisher" lang="en">Seahorse Project</para>
+				</revdescription>
+			</revision>
+			<revision lang="en">
+				<revnumber>Passwords and Keys Manual V0.7.0</revnumber>
+				<date>February 2003</date>
+				<revdescription>
+					<para role="author" lang="en">Jacob Perkins
+					<!--
+					<email>jap1@users.sourceforge.net</email>
+					-->
+					</para>
+					<para role="publisher" lang="en">Seahorse Project</para>
+				</revdescription>
+			</revision>
+		</revhistory>
+		<releaseinfo lang="en">This manual describes version 2.28.x of Passwords and Keys</releaseinfo>
+		<legalnotice>
+			<title>Comentaris</title>
+			<para lang="en">To report a bug or make a suggestion regarding the
+				<application>Passwords and Keys</application> application or this manual, follow the directions in the
+				<ulink url="help:gnome-feedback" type="help">Gnome Feedback Page</ulink>.
+			</para>
+		</legalnotice>
+
+		<abstract role="description">
+			<para lang="en">
+				<application>Passwords and Keys</application> is the application for managing encryption keys for the GNOME Desktop
+			</para>
+		</abstract> 		
+
+	</articleinfo>
+
+	<indexterm zone="index" lang="en">
+		<primary>Seahorse</primary>
+	</indexterm>
+
+	<indexterm zone="index" lang="en">
+		<primary>seahorse</primary>	
+	</indexterm>
+
+	<indexterm zone="index" lang="en">
+		<primary>Encryption Keys</primary>
+	</indexterm>
+	
+	<!-- ============= Introduction ============================== -->
+
+  <sect1 id="introduction">
+    <title>Introducció</title>
+    <para lang="en">
+      You can use <application>Passwords and Keys</application> to create and  manage <acronym>PGP</acronym> and <acronym>SSH</acronym> keys.
+    </para>
+    <para lang="en">
+      <application>Passwords and Keys</application> provides a front end to many of the features of 
+      <ulink url="http://www.gnupg.org" type="http">Gnu Privacy Guard (GPG)</ulink> and 
+      integrates with multiple components of the <ulink url="http://www.gnome.org">GNOME</ulink> desktop. 
+    </para>
+			<para lang="en">
+				With <application>Passwords and Keys</application> you can:
+				<itemizedlist>
+				
+				<listitem>
+					<para lang="en">Create and manage PGP and SSH keys,</para>
+				</listitem>
+				<listitem>
+					<para lang="en">Export and import PGP and SSH keys,</para>
+				</listitem>
+				<listitem>
+					<para lang="en">Share your keys with others,</para>
+				</listitem>
+				</itemizedlist>
+			</para>
+	</sect1>
+
+	<!-- ============= Getting Started ============================== -->
+	  
+	<sect1 id="seahorse-getting-started">
+		<title>Primers passos</title>
+		<sect2 id="seahorse-start">
+			<title lang="en">Starting <application>Passwords and Keys</application></title>
+			<para lang="en">
+				You can start <application>Passwords and Keys</application> 
+				in the following ways:
+			</para>
+			<variablelist>
+				<varlistentry>
+					<term>Menú <guimenu>Aplicacions</guimenu></term>
+					<listitem>
+						<para lang="en">Choose
+						<menuchoice>
+							<guimenu>Accessories</guimenu>
+							<guimenuitem>Password and Keys</guimenuitem>
+						</menuchoice>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Línia d'ordres</term>
+					<listitem>
+						<para>Introduïu <command>seahorse</command> i premeu <keycap>Retorn</keycap>.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</sect2>
+
+		<sect2 id="seahorse-when-start">
+			<title lang="en">When You Start <application>Passwords and Keys</application></title>
+			<para lang="en">
+				When you start <application>Passwords and Keys</application>, the <guilabel>Password and Keys</guilabel>
+				window is displayed.
+			</para>
+			
+			<figure id="seahorse-window">
+			<title lang="en">The <application>Passwords and Keys</application> Window</title>
+			<screenshot>
+				<mediaobject lang="en">
+					<imageobject>
+					<imagedata fileref="figures/seahorse-window.png" format="PNG"/>
+					</imageobject>
+					<textobject>
+						<phrase>
+							Show the <application>Passwords and Keys</application> window.
+						</phrase>
+					</textobject>
+				</mediaobject>
+			</screenshot>
+			</figure>
+			
+			<para lang="en">
+				The <application>Passwords and Keys</application> window contains the following elements:
+			</para>
+			
+	    <variablelist>
+		<varlistentry><term>Barra de menú</term>
+		    <listitem>
+			<para lang="en">The menus on the menubar contain all of the commands that you need to perform tasks in <application>Passwords and Keys</application>.</para>
+		    </listitem>
+		</varlistentry>
+		<varlistentry><term>Barra d'eines</term>
+		    <listitem>
+			<para>Utilitzeu la barra d'eines per a accedir ràpidament a les ordres més utilitzades.</para>
+		    </listitem>	
+		</varlistentry> 		
+		<varlistentry><term>Pestanyes de claus i contrasenyes</term>
+  		    <listitem>
+			<para>Proporciona accés a les claus i contrasenyes de l'anell de claus.</para>
+  		    </listitem>
+		</varlistentry>
+		<varlistentry><term>Opcions de primer cop</term>
+  		    <listitem>
+			<para>Proporciona un accés ràpid a les accions útils per als usuaris principiants. Des d'aquí podeu:</para>
+			<itemizedlist>
+			    <listitem>
+				<para>Navegar pel sistema d'ajuda.</para>
+			    </listitem>
+			    <listitem>
+				<para>Importar claus a l'anell de claus,</para>
+			    </listitem>
+			    <listitem>
+				<para>Crear claus noves.</para>
+			    </listitem>
+			</itemizedlist>
+		    </listitem>
+		</varlistentry>
+	    </variablelist>
+	</sect2>
+    </sect1>
+	
+	<!-- ============= Creating OpenPGP Keys ============================== -->	
+
+  <sect1 id="pgp-generate">
+    <title>Creació de claus OpenPGP</title>
+    <para>L'OpenPGP és un protocol no propietari per a xifrar correus electrònics amb la utilització de claus criptogràfiques públiques basades amb el <acronym>PGP</acronym>. Aquest defineix formats estàndard per als missatges xifrats, signatures, claus privades i certificats per a intercanviar claus públiques.</para>
+    <para>La criptografia amb clau pública és un concepte que involucra la utilització de dues claus: una <emphasis>clau pública</emphasis>, que podeu donar a qualsevol amb qui us voleu comunicar, i una <emphasis>clau privada</emphasis> que és privada i s'ha de mantenir en secret.</para>
+    <para lang="en">
+      To create OpenPGP keys:
+      <orderedlist>
+	<listitem>
+	  <para lang="en">
+	    Choose <menuchoice><guimenu>File</guimenu><guimenuitem>New...</guimenuitem></menuchoice>
+	  </para>
+	</listitem>
+	<listitem>
+	  <para lang="en">
+	    Select <guilabel>PGP Key</guilabel> and click <guibutton>Continue</guibutton>
+	  </para>
+	</listitem>
+	<listitem>
+	  <para lang="en">
+	    Enter your full name (first - last), your e-mail address and any additional information. 
+	    You can also specify advanced options for the key: see below. 
+	  </para>
+	</listitem>
+	<listitem>
+	  <para lang="en">
+	    Click <guibutton>Create</guibutton> to create the new key pair.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para lang="en">
+	    The <guilabel>Passphrase for New PGP Key</guilabel> dialog will open. 
+	    Enter the passphrase twice for your new key.
+	  </para>
+	</listitem>
+      </orderedlist>
+    </para>
+    <tip>
+      <para>Utilitzeu procediments similars per a generar una contrasenya robusta quan trieu una contrasenya. La principal diferència entre aquesta contrasenya respecte les altres contrasenyes és que en aquesta els espais són caràcters vàlids.</para>				
+    </tip>
+    
+    <sect2 id="seahorse-pgp-advanced-mode">
+      <title>Opcions avançades</title>
+      <para>Expandiu la secció <guibutton>Opcions avançades de la clau</guibutton> per a especificar les opcions següents de la clau nova:</para>
+      <variablelist>
+	<varlistentry>
+	  <term lang="en"><guilabel>Encryption Type</guilabel></term>
+	  <listitem>
+	    <para>Aquest camp especifica els algoritmes de xifratge que s'utilitzen per a generar les vostres claus.</para>
+	    <variablelist>
+	      <varlistentry>
+		<term><acronym>DSA</acronym> ElGamal</term>
+		<listitem>
+		  <para>Aquesta és l'opció suggerida ja que us permet xifrar, desxifrar, signar i verificar quan sigui necessari.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term lang="en"><acronym>DSA</acronym></term>
+		<listitem>
+		  <para>Només us permetrà signar.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term lang="en"><acronym>RSA</acronym></term>
+		<listitem>
+		  <para>Només us permetrà signar.</para>
+		</listitem>
+	      </varlistentry>
+	    </variablelist>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>
+	  <term lang="en"><guilabel>Key Strength (bits)</guilabel></term>
+	  <listitem>
+	    <para>Aquesta és la longitud de la clau en bits. Com més llarga la clau, més segura serà, proporcionant una contrasenya robusta. No obstant, realitzar qualsevol operació amb una clau llarga necessitarà més temps que si utilitzeu una clau més curta. Els valors acceptables estan entre 1024 i 4096 bits. Com a mínim es recomana 2048 bits.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>
+	  <term lang="en"><guilabel>Expiration Date</guilabel></term>
+	  <listitem>
+	    <para lang="en">
+	      This is the date at which the key will cease to be usable for 
+	      performing encryption or signing operations. 6 months is a reasonable time 
+	      to set it to. You will have to either change the 
+	      expiration date or generate a new key or subkey after this amount 
+	      of time passes.  
+	      <note>
+		<para lang="en">
+		  Sign your new key with your old one before it expires 
+		  to preserve your trust status.
+		</para>
+	      </note>
+	    </para>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </sect2>
+  </sect1>
+	
+	<!-- ============= Creating SSH Keys ============================== -->	
+	
+	<sect1 id="ssh-generate">
+	<title>Creació de claus de l'intèrpret d'ordres segur</title>
+	<para>L'intèrpret d'ordres segur (<acronym>SSH</acronym>) és una manera d'entrar a un ordinador remot per a executar-hi ordres. Les claus SSH s'utilitzen en sistemes d'autenticació basats en claus, com una alternativa al sistema d'autenticació predeterminat basat en contrasenya. Amb el sistema d'autenticació basat en clau no hi ha cap necessitat d'introduir manualment una contrasenya per a autenticar-se.</para>
+	<para>Les claus de l'intèrpret d'ordres segur es componen de dues claus: una <emphasis>clau privada</emphasis>, que s'ha de mantenir en secret, i una <emphasis>clau pública</emphasis> que es pot pujar a qualsevol ordinador on necessiteu accedir.</para>
+    <para>Per a crear una clau de l'intèrpret d'ordres segur:</para>
+    <orderedlist>
+      <listitem>
+        <para lang="en">Choose <menuchoice><guimenu>File</guimenu><guimenuitem>New...</guimenuitem></menuchoice></para>
+      </listitem>
+      <listitem>
+        <para>Seleccioneu <guilabel>Clau d'intèrpret d'ordres segur</guilabel> i feu clic a <guibutton>Continua</guibutton></para>
+      </listitem>
+      <listitem>
+        <para>Introduïu una descripció per a la utilitat de la clau. Podeu utilitzar el vostre correu electrònic o qualsevol altre recordatori. També podeu especificar opcions avançades per a la clau, vegeu a sota.</para>
+      </listitem>
+      <listitem>
+        <para>Feu clic a <guibutton>Només crea la clau</guibutton> per a crear la clau nova o a <guibutton>Crea i configura</guibutton> per a crear la clau i configurar un altre ordinador per a utilitzar-la com a autenticació.</para>
+      </listitem>
+      <listitem>
+        <para>S'obrirà el diàleg <guilabel>Contrasenya per a la clau nova de l'intèrpret d'ordres segur</guilabel>. Introduïu dos cops la contrasenya per a la clau nova.</para>
+			<tip>
+				<para>Utilitzeu procediments similars per a generar una contrasenya robusta quan trieu una contrasenya. La principal diferència entre aquesta contrasenya respecte les altres contrasenyes és que en aquesta els espais són caràcters vàlids.</para>				
+			</tip>
+      </listitem>
+    </orderedlist>
+    
+
+		
+		<sect2 id="seahorse-ssh-advanced-options">
+		<title>Opcions avançades</title>
+			<para>Expandiu la secció <guilabel>Opcions avançades de la clau</guilabel> per a especificar les opcions següents per a una clau nova:</para>
+		
+			<variablelist>
+			<varlistentry>
+				<term lang="en"><guilabel>Encryption Type</guilabel></term>
+				<listitem>
+				<para>Aquest camp especifica els algorismes de xifrat utilitzats per a generar la vostra clau.</para>
+				<variablelist>
+					<varlistentry>
+						<term lang="en"><acronym>RSA</acronym></term>
+						<listitem>
+							<para>Utilitzeu l'algorisme <emphasis>Rivest-ShamirAdleman</emphasis> (<acronym>RSA</acronym>) per a crear la clau SSH. Aquesta és l'opció preferida i més segura.</para>
+						</listitem>
+					</varlistentry>
+					<varlistentry>
+						<term lang="en"><acronym>DSA</acronym></term>
+						<listitem>
+							<para>Utilitzeu el <emphasis>Digital Signature Algorithm</emphasis> (<acronym>DSA</acronym>) per a crear la clau SSH.</para>
+						</listitem>
+					</varlistentry>
+				</variablelist>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term lang="en"><guilabel>Key Strength (bits)</guilabel></term>
+				<listitem>
+				<para>Aquesta és la longitud de la clau en bits. Com més llarga la clau, més segura serà, proporcionant una contrasenya robusta. No obstant, realitzar qualsevol operació amb una clau llarga necessitarà més temps que si utilitzeu una clau més curta. Els valors acceptables estan entre 1024 i 4096 bits. Com a mínim es recomana 2048 bits.</para>
+				</listitem>
+			</varlistentry>
+			</variablelist>
+		</sect2>
+	</sect1>
+	
+	<!-- ============= OpenPGP Key Properties ============================== -->	
+
+	<sect1 id="seahorse-key-properties">
+		<title>Propietats de la clau OpenPGP</title>
+		<para>Les descripcions d'aquesta secció s'apliquen a totes les claus OpenPGP.</para>
+		
+		<para lang="en">
+			To view properties of a <acronym>PGP</acronym> key:
+		<itemizedlist>
+			<listitem>
+				<para lang="en">
+					Select the <acronym>PGP</acronym> key 
+					from the main window,
+				</para>
+			</listitem>
+			<listitem>
+				<para lang="en">
+					Double click on it or choose <guilabel>Properties</guilabel> 
+					from the toolbar,
+				</para> 
+			</listitem>
+			<listitem>
+				<para lang="en">
+					Select the <guilabel>Details</guilabel> tab.
+				</para>
+			</listitem>
+		</itemizedlist>
+		</para>
+
+	<sect2 id="pgp-public-key-properties">
+		<title id="pgp-private-key-properties">Propietats</title>
+		<para>
+		<variablelist>
+			<varlistentry>
+				<term lang="en"><guilabel>Fingerprint</guilabel></term>
+				<listitem>
+					<para>L'empremta digital és una cadena de caràcters única que identifica exactament una clau.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term lang="en"><guilabel>KeyID</guilabel></term>
+				<listitem>
+					<para>L'identificador de la clau és semblant a l'empremta digital. Tanmateix l'identificador de la clau només conté els últims 8 caràcters de l'empremta digital. La majoria de cops és possible identificar una clau amb només l'identificador de la clau, però a vegades dues claus poden tenir el mateix identificador.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term lang="en"><guilabel>Type</guilabel></term>
+				<listitem>
+					<para>Especifica l'algorisme de xifrat utilitzat per a generar una clau. Les claus DSA només poden signar. Les claus ElGamal s'utilitzen per a xifrar.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term lang="en"><guilabel>Created</guilabel></term>
+				<listitem>
+					<para>Indica la data en què es va crear la clau.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term lang="en"><guilabel>Expires</guilabel></term>
+				<listitem>
+				<para>Indica la data en què la clau ja no es podrà utilitzar més.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term lang="en"><guilabel>Strength</guilabel></term>
+				<listitem>
+					<para lang="en">
+						Indicates the length in bits of a key.  In general the longer the key, the more security it 
+						provides.
+						<note>
+							<para lang="en">
+								A long key is not enough to make up for the use of a weak passphrase.
+							</para>
+						</note>  
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="change-owner-trust">
+		<title>Confiança</title>
+		<para>La confiança és un indicador de com de segur esteu sobre l'habilitat d'una persona per a estendre correctament la xarxa de confiança. Quan us trobeu amb una clau que no heu signat, la validesa de la clau d'aquesta persona es determinarà en base a les signatures que ha obtingut i quin grau de confiança teniu amb la gent que ha fet aquestes signatures. Per defecte, una clau desconeguda necessitarà tres signatures marginals o una signatura de completa confiança.</para>
+		<itemizedlist>
+			<listitem><para><guilabel>Desconegut</guilabel>: no sabeu amb certesa l'habilitat de la persona per a signar correctament claus.</para></listitem>
+			<listitem><para><guilabel>Mai</guilabel>: aquesta persona no pot signar correctament claus.</para></listitem>
+			<listitem><para><guilabel>Marginal</guilabel>: aquesta persona comprova un identificador fotogràfic abans de signar una clau, però no necessàriament comprova els identificadors.</para></listitem>
+			<listitem><para><guilabel>Completa</guilabel>: aquesta persona comprova cada un dels identificadors fotogràfics abans de signar-les (ex. només signen claus que realment pertanyen a la persona que sol·licita la signatura).</para></listitem>
+			<listitem><para><guilabel>Absoluta</guilabel>: aquest nivell de confiança només s'hauria d'assignar a les vostres claus.</para></listitem>
+		</itemizedlist>
+	</sect2>
+
+	<sect2 id="disable-key">
+		<title>Com habilitar i inhabilitar claus</title>
+		<para>Quan una clau està habilitada, aquesta es pot utilitzar per a realitzar operacions de xifrat. Quan una clau està inhabilitada, no es pot utilitzar per a xifrar o verificar signatures realitzades amb ella.</para>
+	</sect2>
+
+	<sect2 id="change-expires">
+		<title>Data de venciment</title>
+		<para>Una clau no es pot utilitzar més per a realitzar operacions de clau després que hagi vençut. Canviar la data de venciment d'una clau a una data del futur la torna a habilitar. Una bona pràctica general seria tenir una clau mestra que mai venç i diverses subclaus que estiguessin signades per la clau mestra.</para>
+	</sect2>
+
+	<sect2 id="userid-properties">
+		<title>Identificadors d'usuari</title>
+		<para>Els identificadors d'usuari permeten que una sola clau s'utilitzi per a diverses identitats i adreces de correu electrònic.</para>
+		<para lang="en">
+			They usually take the form of: 
+			<programlisting lang="en">Name (comment) &lt;email address&gt;</programlisting>
+		</para>
+			
+		<sect3 id="add-uid">
+			<title>Com afegir un identificador d'usuari</title>
+				<para>Afegir un identificador d'usuari és útil quan voleu tenir un identificador per a la feina i un altre per als amics.</para>
+				<para lang="en">
+					To add a user ID to a key:
+					<itemizedlist>
+						<listitem>
+							<para lang="en">
+								Select the key from the main window,
+							</para>
+						</listitem>
+						<listitem>
+							<para lang="en">
+								Double click on it or choose <guibutton>Properties</guibutton> from the toolbar,
+							</para>
+						</listitem>
+						<listitem>
+							<para lang="en">
+								Select the <guilabel>Names and Signatures</guilabel> tab,
+							</para>
+						</listitem>
+						<listitem>
+							<para lang="en">
+								Click on <guibutton>Add Name</guibutton>.
+							</para>
+						</listitem>
+					</itemizedlist>
+				</para>
+				<para>Després de seguir les instruccions de sobre, es mostrarà un diàleg per a omplir. Els camps estan detallats a sota.</para>
+				<variablelist>
+					<varlistentry>
+						<term lang="en"><guilabel>Full Name</guilabel></term>
+						<listitem>
+							<para lang="en">
+								Enter your full name in the form
+								<programlisting lang="en">&lt;first&gt; &lt;last&gt;</programlisting>
+								A middle name or initial is optional.
+							</para>
+							<para>
+								<note>
+									<para>Com a mínim heu d'introduir 5 caràcters en aquest camp.</para>
+								</note> 
+							</para>
+						</listitem>
+					</varlistentry>
+					<varlistentry>
+						<term lang="en"><guilabel>Email Address</guilabel></term>
+						<listitem>
+							<para>L'adreça de correu electrònic és com la majoria de gent trobaran la vostra clau a un servidor de claus o un altre proveïdor de claus. Assegureu-vos que és correcte abans de continuar.</para>
+							<para>
+								<note>
+									<para lang="en">
+										It should be of the form 
+										<programlisting lang="en"><replaceable>&lt;username&gt;</replaceable>@<replaceable>&lt;domainname&gt;</replaceable></programlisting>
+									</para>
+								</note>
+							</para>
+						</listitem>
+					</varlistentry>
+					<varlistentry>
+						<term lang="en"><guilabel>Key Comment</guilabel></term>
+						<listitem>
+							<para>El camp de comentari es pot utilitzar per a afegir qualsevol informació addicional al nom mostrat de l'identificador nou. Aquesta informació es pot cercar als servidors de claus.</para>
+						</listitem>
+					</varlistentry>
+				</variablelist>
+			</sect3>
+		</sect2>
+
+    <sect2 id="photoid-properties">
+      <title>Identificadors fotogràfics</title>
+      <para>Els identificadors fotogràfics permeten al propietari d'una clau incrustar una o més fotografies d'un mateix a una clau. Aquestes identitats es poden signar de la mateixa manera que els identificadors d'usuari. Un identificador fotogràfic ha de ser en format JPEG i es recomana que no sigui més gran de 240x288 píxels.</para>
+      <para lang="en">
+	  If the chosen image is not of the required file type or size <application>Passwords and Keys</application> 
+	  can resize and convert it on the fly from 
+	  any image format supported by the <acronym>GDK</acronym> library.
+      </para>
+    </sect2>
+		
+		<sect2 id="change-passphrase">
+			<title>Com canviar la contrasenya</title>
+			<para lang="en">
+				To change the passphrase assigned to a key:
+				<itemizedlist>
+					<listitem>
+						<para lang="en">
+							Select the key from the main window,
+						</para>
+					</listitem>
+					<listitem>
+						<para lang="en">
+							Double click on it or choose <guilabel>Properties</guilabel> from the toolbar,
+						</para>
+					</listitem>
+					<listitem>
+						<para lang="en">
+							Click on <guibutton>Change Passphrase</guibutton>.
+						</para>
+					</listitem>
+				</itemizedlist>
+			</para>
+			<para>Introduïu la contrasenya nova i feu clic a <guibutton>D'acord</guibutton>.</para>
+		</sect2>
+
+		<sect2 id="delete">
+			<title>Com suprimir una clau</title>
+			<para lang="en">
+				To delete a key from your keyring:
+				<itemizedlist>
+				<listitem>
+					<para lang="en">
+						Select the key from the main window,
+					</para>
+				</listitem>
+				<listitem>
+					<para lang="en">
+						Right click on it and choose <guilabel>Delete Key</guilabel> 
+						or choose 
+						<menuchoice>
+							<guimenu>Edit</guimenu>
+							<guimenuitem>Delete Key</guimenuitem>
+						</menuchoice>.
+					</para>
+				</listitem>
+				</itemizedlist>
+			</para>
+			<note>
+				<para>Podeu suprimir les claus personals, les claus de confiança i les claus obtingudes.</para>		
+			</note> 
+		</sect2>
+	</sect1>
+	
+	<!-- ============= OpenPGP Properties ============================== -->	
+		
+	<sect1 id="subkey-properties">
+		<title>Propietats de les subclaus OpenPGP</title>
+		<para>Cada clau OpenPGP té una sola clau mestra que només s'utilitza per a signar. Les subclaus s'utilitzen tant per a xifrar com per a signar. D'aquesta manera, si la vostra subclau s'ha compromès, no necessitareu revocar la vostra clau mestra.</para>
+		<variablelist>
+		<varlistentry>
+			<term lang="en"><guilabel>ID</guilabel></term>
+			<listitem>
+				<para>Aquest és l'identificador de la subclau.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Type</guilabel></term>
+			<listitem>
+				<para>Especifica l'algorisme de xifrat utilitzat per a generar una subclau. Les claus <acronym>DSA</acronym> només poden signar, les claus ElGamal s'utilitzen per a xifrar mentre que les claus <acronym>RSA</acronym> s'utilitzen per a signar o xifrar.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Created</guilabel></term>
+			<listitem>
+				<para>Indica la data en què es va crear la clau.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Expires</guilabel></term>
+			<listitem>
+				<para>Indica la data en què la clau ja no es podrà utilitzar més.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Status</guilabel></term>
+			<listitem>
+				<para>Indica l'estat de la clau.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Strength</guilabel></term>
+			<listitem>
+				<para lang="en">
+					Indicates the length in bits of the key. In general the longer the key, the more security it 
+					provides.
+					<note>
+						<para lang="en">
+							A long key is not enough to make up for the use of a weak passphrase.
+						</para>
+					</note>
+				</para>
+			</listitem>
+		</varlistentry>
+		</variablelist>
+		
+		<sect2 id="add-subkey">
+			<title>Com afegir una subclau</title>
+			<para>Per a afegir una subclau a una clau, des de la secció <guilabel>Subclaus</guilabel> feu clic al botó <guibutton>Afegeix</guibutton>.</para>
+			<para>Després de seguir les instruccions de sobre, es mostrarà un diàleg per a omplir. Els camps estan detallats a sota.</para>
+			<variablelist>
+			<varlistentry>
+				<term>Tipus de clau</term>
+				<listitem>
+					<para>Especifica l'algorisme de xifrat utilitzat per a generar una subclau.</para>
+				<variablelist>
+				<varlistentry>
+					<term lang="en"><acronym>DSA</acronym></term>
+					<listitem>
+						<para>Utilitza el <emphasis>Digital Signature Algorithm</emphasis> (<acronym>DSA</acronym>) per a crear la subclau. Aquesta subclau només pot signar.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>ElGamal</term>
+					<listitem>
+						<para>Utilitza l'algorisme <emphasis>ElGamal</emphasis> per a crear la subclau. Aquesta subclau només pot xifrar.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>RSA</term>
+					<listitem>
+						<para>Utilitza l'algorisme <emphasis>Rivest-Shamir Adleman</emphasis> (<acronym>RSA</acronym>) per a crear la subclau. Aquesta subclau es pot utilitzar per a signar o xifrar, però heu de crear dues subclaus diferents.</para>
+					</listitem>
+				</varlistentry>
+				</variablelist>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Longitud de la clau</term>
+				<listitem>
+					<para>Indica la longitud de la subclau en bits. En general com més llarga sigui la clau, proporciona més seguretat.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Data de venciment</term>
+				<listitem>
+					<para>Indica la data en què la subclau no es podrà utilitzar més.</para>
+				</listitem>
+			</varlistentry>
+			</variablelist>
+		</sect2>
+
+		<sect2 id="change-subkey-expires">
+			<title>Com canviar la data de venciment d'una subclau</title>
+			<para lang="en">
+				To change a subkey expiration date, select 
+				the subkey from the <guilabel>Subkeys</guilabel> 
+				section, then:
+				<itemizedlist>
+				<listitem>
+					<para lang="en">
+						Click on the <guibutton>Expire</guibutton> button on the left,
+					</para>
+				</listitem>
+				<listitem>
+					<para lang="en">
+						From the date dialog choose the new expiration date or select
+						<guilabel>Never expires</guilabel> for no expiration date.
+					</para>
+				</listitem>
+				</itemizedlist>
+			</para>
+		</sect2>
+
+		<sect2 id="revoke-subkey">
+			<title>Revocar una subclau</title>
+			<para lang="en">
+				To revoke a subkey, select the subkey from the <guilabel>Subkeys</guilabel>
+				section, then:
+				<itemizedlist>
+				<listitem>
+					<para lang="en">
+						Click on the <guibutton>Revoke</guibutton> button on the left,
+					</para>
+				</listitem>
+				<listitem>
+					<para lang="en">	
+						Choose a reason why to revoke the subkey:
+					</para>
+					<para>
+					<variablelist>
+						<varlistentry>
+							<term lang="en">No Reason</term>
+							<listitem>
+								<para lang="en">
+									There isn't a specific reason to revoke the key. 
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term lang="en">Compromised</term>
+							<listitem>
+								<para lang="en">
+									The key has been compromised.
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term lang="en">Superseded</term>
+							<listitem>
+								<para lang="en">
+									The key has been superseded by another one.
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term lang="en">Not Used</term>
+							<listitem>
+								<para lang="en">
+									The key is not used anymore.
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>
+					</para>
+				</listitem>
+				<listitem>
+					<para lang="en">
+						Enter a description of why you are revoking the key,
+					</para>
+				</listitem>
+				<listitem>
+					<para lang="en">
+						Click on <guibutton>Revoke</guibutton>.
+					</para>
+				</listitem>
+				</itemizedlist>
+			</para>
+			<note>
+				<para>L'efecte de revocar una subclau és immediat.</para>
+			</note>
+		</sect2>
+
+		<sect2 id="delete-subkey">
+			<title>Suprimir una subclau</title>
+			<para lang="en">
+				To delete a subkey, select the subkey from the <guilabel>Subkeys</guilabel> 
+				section, then:
+				<itemizedlist>
+				<listitem>
+					<para lang="en">
+						Click on the <guibutton>Delete</guibutton> button on the left.
+					</para>
+				</listitem>
+				</itemizedlist>
+			</para>
+		</sect2>
+	</sect1>
+
+	<!-- ============= SSH Key Properties ============================== -->
+
+	<sect1 id="ssh-key-properties">
+	    <title>Propietats de la clau de l'intèrpret d'ordres segur</title>
+	    <para>Les descripcions d'aquesta secció s'apliquen a totes les claus <acronym>SSH</acronym>.</para>
+	    <para lang="en">
+	    	    To view properties of a <acronym>SSH</acronym> key:
+		<itemizedlist>
+			<listitem>
+				<para lang="en">
+					Select the Secure Shell key 
+					from the main window,
+				</para>
+			</listitem>
+			<listitem>
+				<para lang="en">
+					Double click on it or choose <guilabel>Properties</guilabel> 
+					from the toolbar,
+				</para> 
+			</listitem>
+			<listitem>
+				<para lang="en">
+					Select the <guilabel>Details</guilabel> tab.
+				</para>
+			</listitem>
+		</itemizedlist>
+	</para>
+
+	<sect2 id="properties">
+		<title>Propietats</title>
+		<para>
+		<variablelist>
+		<varlistentry>
+			<term lang="en"><guilabel>Fingerprint</guilabel></term>
+			<listitem>
+				<para>L'empremta digital és una cadena de caràcters única que identifica exactament una clau.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Algorithm</guilabel></term>
+			<listitem>
+				<para>Especifica l'algorisme de xifrat utilitzat per a generar una clau.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Location</guilabel></term>
+			<listitem>
+				<para>Aquesta és la ubicació on s'ha emmagatzemat la <emphasis>clau privada</emphasis>.</para>
+		</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Strength</guilabel></term>
+			<listitem>
+				<para lang="en">
+					Indicates the length in bits of a key. 
+					In general the longer the key, the more 
+					security it provides.
+				<note>
+					<para lang="en">
+						A long key is not enough to make up 
+						for the use of a weak passphrase.
+					</para>
+				</note>
+				</para>
+			</listitem>
+		</varlistentry>
+		</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="delete-ssh-key">
+		<title>Com suprimir una clau de l'intèrpret d'ordres segur</title>
+		<para lang="en">
+			To delete a Secure Shell key: 
+			<itemizedlist>
+				<listitem>
+				<para lang="en">
+					Select the <acronym>SSH</acronym> key from the main window,
+				</para>
+			</listitem>
+			<listitem>
+				<para lang="en">
+					Right click on it and choose <guilabel>Delete key</guilabel> or choose 
+					<menuchoice>
+						<guimenu>Edit</guimenu>
+						<guimenuitem>Delete Key</guimenuitem>
+					</menuchoice>.
+				</para>
+			</listitem>
+			</itemizedlist>
+		</para>
+	</sect2>
+	</sect1>
+	
+	<!-- ============= Importing Keys ============================== -->	
+
+        <sect1 id="import">
+		<title>Importació de claus</title>
+		<para lang="en">
+			To import keys choose
+			<menuchoice>
+				<guimenu>File</guimenu>
+				<guimenuitem>Import</guimenuitem>
+			</menuchoice> and select, from the file chooser, a file containing at least one ASCII armored public key. 
+		</para>
+		<para lang="en">
+			Importing can also be performed by pasting the keys inside <application>Passwords and Keys</application>:
+		<itemizedlist>
+		<listitem>
+			<para lang="en">
+				Select an ASCII armored public block of text,
+			</para>
+		</listitem>
+		<listitem>
+			<para lang="en">
+				Copy it to the clipboard,			
+			</para>
+		</listitem>
+		<listitem>
+			<para lang="en">
+				Choose 
+				<menuchoice>
+					<guimenu>Edit</guimenu>
+					<guimenuitem>Paste Keys</guimenuitem>
+				</menuchoice>.
+			</para>
+		</listitem>
+		</itemizedlist>
+		</para>
+	</sect1>
+	
+	<!-- ============= Exporting Keys ============================== -->	
+
+	<sect1 id="export">
+		<title>Exportació de claus</title>
+		<para lang="en">
+			To export keys, select the keys in the main window 
+			and choose
+			<menuchoice>
+				<guimenu>File</guimenu>
+				<guimenuitem>Export</guimenuitem>
+			</menuchoice>. 
+		</para>
+		<para lang="en">
+			You can also export keys to the clipboard in an 
+			ASCII armored block of text:
+		<itemizedlist>
+			<listitem>
+				<para lang="en">
+					Select the keys in the main window,
+				</para>
+			</listitem>
+			<listitem>
+				<para lang="en">
+					Choose 
+						<menuchoice>
+							<guimenu>Edit</guimenu>
+							<guimenuitem>Copy Keys</guimenuitem>
+						</menuchoice>.
+				</para>
+			</listitem>
+		</itemizedlist>
+		</para>
+	</sect1>
+
+	
+	<!-- ============= Signing a Key ============================== -->	
+
+	<sect1 id="sign">
+		<title>Com signar una clau</title>
+		<para>Signar la clau d'una altra persona significa que esteu donant confiança a aquesta persona. Abans de signar una clau, hauríeu de comprovar detingudament l'empremta digital de la clau per a assegurar-vos que la clau realment pertany a aquella persona.</para>
+		<para lang="en">
+			To sign a key in your keyring:
+			<itemizedlist>
+				<listitem>
+				<para lang="en">
+					Select the key you want to sign from the 
+					<guilabel>Trusted Keys</guilabel> or 
+					<guilabel>Other Collected Keys</guilabel> tabs,
+				</para>
+				</listitem>
+				<listitem>
+				<para lang="en">
+					Choose <guibutton>Sign</guibutton> from the toolbar 
+					or <menuchoice>
+						<guimenu>File</guimenu>
+						<guimenuitem>Sign</guimenuitem>
+					</menuchoice>,
+				</para>
+				</listitem>
+				<listitem>
+				<para lang="en">
+					Select how carefully the key has been checked,
+				</para>
+				</listitem>
+				<listitem>
+				<para lang="en">
+					Indicate if the signature should be local to your keyring, 
+					and if your signature can be revoked,
+				</para>
+				</listitem>
+				<listitem>
+				<para lang="en">
+					Click on <guibutton>Sign</guibutton>.
+				</para>
+				</listitem>
+			</itemizedlist>		
+		</para>
+	</sect1>
+	
+	<!-- ============= Preferences ============================== -->	
+  
+  <sect1 id="prefs">
+    <title>Preferències</title>
+    <para lang="en">
+      This section describes the preferences settable in <application>Passwords and Keys</application> by choosing 
+	<menuchoice>
+	  <guimenu>Edit</guimenu>
+	  <guimenuitem>Preferences</guimenuitem>
+	</menuchoice> from within <application>Passwords and Keys</application>.
+      </para>
+
+        <sect2 id="keyring">
+        	<title>Anells de claus de contrasenyes</title>
+        	<sect3>
+        	    <title>Com crear anells de claus</title>
+            	<para lang="en">
+            	    To create a new keyring, from the menu choose <menuchoice><guimenu>File</guimenu><guimenuitem>New</guimenuitem></menuchoice> and choose <guibutton>Password Keyring</guibutton>.  Enter a name for the new keyring, and press enter. 
+            	</para>
+        	</sect3>
+        	<sect3>
+        	    <title>Com canviar les contrasenyes dels anells de claus.</title>
+            	<para>Per a canviar la contrasenya de desblocat de l'anell de claus, primer seleccioneu l'anell de claus apropiat i després premeu el botó <guibutton>Canvia la contrasenya de desbloquejat</guibutton>. Se us sol·licitarà que introduïu la contrasenya antiga al quadre de text <guilabel>Contrasenya antiga</guilabel>, la contrasenya nova al quadre de text <guilabel>Contrasenya nova</guilabel> i confirmeu-la al quadre de text <guilabel>Confirmeu la contrasenya</guilabel>. Per a aplicar els paràmetres, premeu <guibutton>Canvia</guibutton>. Si la contrasenya antiga és correcte, obtindreu un missatge d'estat indicant que s'ha realitzat l'operació correctament. Si la contrasenya antiga no és correcte se us sol·licitarà que la comproveu.</para>
+        	</sect3>
+        	<sect3>
+        	    <title>Com suprimir anells de claus</title>
+        	    <para lang="en">
+        	        To remove a keyring, first select the appropriate keyring and then 
+            	  from the menu choose <menuchoice><guimenu>Edit</guimenu> <guimenuitem>Delete</guimenuitem></menuchoice>.
+        	    </para>
+        	</sect3>
+        </sect2>
+
+    <sect2 id="key-servers">
+	<title>Servidors de claus</title>
+	<para>Mantingueu les vostres claus i les dels altres actualitzades sincronitzant les claus periòdicament amb servidors de clau remots. En sincronitzar us assegurareu que teniu les últimes signatures de totes les vostres claus de manera que la xarxa de confiança serà més útil.</para>
+	<para lang="en">
+      	  <application>Passwords and Keys</application> provides support for HKP and LDAP keyservers.
+	</para>
+	<variablelist>
+	  <varlistentry>
+	    <term lang="en"><emphasis>HKP Servers</emphasis></term>
+	    <listitem>
+	      <para lang="en">
+		HKP keyservers are ordinary web based keyservers such as the 
+		popular <ulink url="hkp://pool.sks-keyservers.net" type="hkp">hkp://pool.sks-keyservers.net</ulink>, also accessible at
+		<ulink url="http://sks-keyservers.net" type="http">http://sks-keyservers.net</ulink>.
+	      </para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term lang="en"><emphasis><acronym>LDAP</acronym> Keyservers</emphasis></term>
+	    <listitem>
+	      <para>Els servidors de claus <acronym>LDAP</acronym> són menys comuns, però utilitzen el protocol estàndard LDAP per a servir les claus. El <ulink url="ldap://keyserver.pgp.com" type="ldap">ldap://keyserver.pgp.com</ulink> és un bon servidor LDAP.</para>
+	    </listitem>
+	  </varlistentry>
+	</variablelist>
+      </sect2>
+
+      <sect2 id="key-sharing">
+	<title>Compartició de claus</title>
+	<para lang="en">
+	  Key Sharing is provided by DNS-SD, also known as Bonjour or Rendevous.  
+	  Enabling key sharing will add the local <application>Passwords and Keys</application> users' public key rings 
+	  to the remote search dialog. Using these local "key servers" will most 
+	  likely be faster than accessing remote servers.
+	</para>
+      </sect2>
+  </sect1>
+  
+	<!-- ============= About ============================== -->  
+      
+    <sect1 id="about">
+    <title lang="en">About Passwords and Keys</title>
+    <para lang="en"> 
+      <application>Passwords and Keys</application>, its associated plugins, the preferences applet and the panel 
+      applet are known collectively as Seahorse. Seahorse was written by Jacob Perkins. The current 
+      maintainers are Stef Walter and Adam Schreiber. This manual is by Adam Schreiber. The project's web 
+      site was designed by Jim Pharis. To find more information about Seahorse, the project , please visit 
+      the <ulink url="http://www.gnome.org/projects/seahorse/" type="http">Seahorse web page</ulink>.
+    </para>
+    <para lang="en">
+      To report a bug or make a suggestion regarding this application or
+      this manual, follow the directions in the
+      <ulink url="help:user-guide?feedback-bugs" type="help">Feedback section of the GNOME User Guide</ulink>.
+    </para>
+    <para lang="en">
+      This program is distributed under the terms of the GNU
+      General Public license as published by the Free Software
+      Foundation; either version 2 of the License, or (at your option)
+      any later version. A 
+      <ulink url="help:gpl" type="help">copy of this license</ulink>
+      is included with this documentation; another can be found in the file
+      COPYING included with the source code of this program.
+    </para>
+  </sect1>
+</article>

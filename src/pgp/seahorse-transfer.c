@@ -14,26 +14,25 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
-
-#undef G_LOG_DOMAIN
-#define G_LOG_DOMAIN "operation"
-
-#include "seahorse-transfer.h"
 
 #include "seahorse-server-source.h"
 #include "seahorse-gpgme-exporter.h"
 #include "seahorse-gpgme-keyring.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-object-list.h"
-#include "libseahorse/seahorse-progress.h"
-#include "libseahorse/seahorse-util.h"
+#define DEBUG_FLAG SEAHORSE_DEBUG_OPERATION
+#include "seahorse-debug.h"
+#include "seahorse-exporter.h"
+#include "seahorse-object-list.h"
+#include "seahorse-progress.h"
+#include "seahorse-transfer.h"
+#include "seahorse-util.h"
 
 #include <glib/gi18n.h>
 
@@ -69,7 +68,7 @@ on_source_import_ready (GObject *object,
 	GError *error = NULL;
 	GList *results;
 
-	g_debug ("[transfer] import done");
+	seahorse_debug ("[transfer] import done");
 	seahorse_progress_end (closure->cancellable, &closure->to);
 
 	if (SEAHORSE_IS_GPGME_KEYRING (closure->to)) {
@@ -104,7 +103,7 @@ on_source_export_ready (GObject *object,
 	gsize stream_size;
 	GInputStream *input;
 
-	g_debug ("[transfer] export done");
+	seahorse_debug ("[transfer] export done");
 	seahorse_progress_end (closure->cancellable, &closure->from);
 
 	if (SEAHORSE_IS_SERVER_SOURCE (closure->from)) {
@@ -126,7 +125,7 @@ on_source_export_ready (GObject *object,
 		seahorse_progress_begin (closure->cancellable, &closure->to);
 
 		if (!stream_size) {
-			g_debug ("[transfer] nothing to import");
+			seahorse_debug ("[transfer] nothing to import");
 			seahorse_progress_end (closure->cancellable, &closure->to);
 			g_simple_async_result_complete (res);
 
@@ -135,7 +134,7 @@ on_source_export_ready (GObject *object,
 			stream_data = NULL;
 			stream_size = 0;
 
-			g_debug ("[transfer] starting import");
+			seahorse_debug ("[transfer] starting import");
 			if (SEAHORSE_IS_GPGME_KEYRING (closure->to)) {
 				seahorse_gpgme_keyring_import_async (SEAHORSE_GPGME_KEYRING (closure->to),
 				                                     input, closure->cancellable,
@@ -151,7 +150,7 @@ on_source_export_ready (GObject *object,
 		}
 
 	} else {
-		g_debug ("[transfer] stopped after export");
+		seahorse_debug ("[transfer] stopped after export");
 		g_simple_async_result_take_error (res, error);
 		g_simple_async_result_complete (res);
 	}
@@ -180,8 +179,8 @@ on_timeout_start_transfer (gpointer user_data)
 	} else if (SEAHORSE_IS_GPGME_KEYRING (closure->from)) {
 		g_assert (closure->keys != NULL);
 		exporter = seahorse_gpgme_exporter_new_multiple (closure->keys, TRUE);
-		seahorse_exporter_export (exporter, closure->cancellable,
-		                          on_source_export_ready, g_object_ref (res));
+		seahorse_exporter_export_async (exporter, closure->cancellable,
+		                                on_source_export_ready, g_object_ref (res));
 		g_object_unref (exporter);
 
 	} else {
@@ -240,7 +239,7 @@ seahorse_transfer_keys_async (SeahorsePlace *from,
 	                        SEAHORSE_IS_GPGME_KEYRING (closure->to) ?
 	                        _("Importing data") : _("Sending data"));
 
-	g_debug ("starting export");
+	seahorse_debug ("starting export");
 
 	/* We delay and continue from a callback */
 	g_timeout_add_seconds_full (G_PRIORITY_DEFAULT, 0,
@@ -287,7 +286,7 @@ seahorse_transfer_keyids_async (SeahorseServerSource *from,
 	                        SEAHORSE_IS_GPGME_KEYRING (closure->to) ?
 	                        _("Importing data") : _("Sending data"));
 
-	g_debug ("starting export");
+	seahorse_debug ("starting export");
 
 	/* We delay and continue from a callback */
 	g_timeout_add_seconds_full (G_PRIORITY_DEFAULT, 0,

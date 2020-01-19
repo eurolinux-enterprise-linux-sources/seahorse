@@ -13,17 +13,13 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
-
-#include "seahorse-gpg-options.h"
-
-#include "seahorse-gpgme.h"
-
-#include "libseahorse/seahorse-util.h"
 
 #include <sys/param.h>
 #include <sys/wait.h>
@@ -36,6 +32,11 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/stat.h>
+
+#include "seahorse-util.h"
+
+#include "pgp/seahorse-gpgme.h"
+#include "pgp/seahorse-gpg-options.h"
 
 #define  GPG_CONF_HEADER    "# FILE CREATED BY SEAHORSE\n\n"
 #define  GPG_VERSION_PREFIX1   "1."

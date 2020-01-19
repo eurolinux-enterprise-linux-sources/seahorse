@@ -16,29 +16,33 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
-
-#include "seahorse-gpgme-key-op.h"
-
-#include "seahorse-gpgme.h"
-#include "seahorse-gpgme-data.h"
-#include "seahorse-gpg-op.h"
-
-#include "libseahorse/seahorse-object-list.h"
-#include "libseahorse/seahorse-progress.h"
-#include "libseahorse/seahorse-util.h"
-
-#include <glib/gstdio.h>
-#include <glib/gi18n.h>
 
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+
+#include <glib/gstdio.h>
+#include <glib/gi18n.h>
+
+#include "seahorse-object-list.h"
+#include "seahorse-progress.h"
+#include "seahorse-util.h"
+
+#include "pgp/seahorse-gpgme.h"
+#include "pgp/seahorse-gpgme-data.h"
+#include "pgp/seahorse-gpg-op.h"
+#include "pgp/seahorse-gpgme-key-op.h"
+
+#define DEBUG_FLAG SEAHORSE_DEBUG_KEYS
+#include "seahorse-debug.h"
 
 #define PROMPT "keyedit.prompt"
 #define QUIT "quit"
@@ -333,8 +337,8 @@ seahorse_gpgme_key_op_edit (gpointer data, gpgme_status_code_t status,
 	    status == GPGME_STATUS_ALREADY_SIGNED || status == GPGME_STATUS_MISSING_PASSPHRASE)		
 		return parms->err;
 
-	g_debug ("[edit key] state: %d / status: %d / args: %s",
-	         parms->state, status, args);
+	seahorse_debug ("[edit key] state: %d / status: %d / args: %s",
+	                parms->state, status, args);
 
 	/* Choose the next state based on the current one and the input */
 	parms->state = parms->transit (parms->state, status, args, parms->data, &parms->err);
@@ -914,7 +918,7 @@ seahorse_gpgme_key_op_set_trust (SeahorseGpgmeKey *pkey, SeahorseValidity trust)
 	SeahorseEditParm *parms;
 	gint menu_choice;
 
-	g_debug ("[GPGME_KEY_OP] set_trust: trust = %i", trust);
+	seahorse_debug ("[GPGME_KEY_OP] set_trust: trust = %i", trust);
 
 	g_return_val_if_fail (SEAHORSE_IS_GPGME_KEY (pkey), GPG_E (GPG_ERR_WRONG_KEY_USAGE));
 	g_return_val_if_fail (trust >= SEAHORSE_VALIDITY_NEVER, GPG_E (GPG_ERR_INV_VALUE));
@@ -1176,7 +1180,7 @@ seahorse_gpgme_key_op_set_expires (SeahorseGpgmeSubkey *subkey, const time_t exp
 	gpgme_key_t key;
 	
 	g_return_val_if_fail (SEAHORSE_IS_GPGME_SUBKEY (subkey), GPG_E (GPG_ERR_WRONG_KEY_USAGE));
-	g_return_val_if_fail (expires != (time_t)seahorse_pgp_subkey_get_expires (SEAHORSE_PGP_SUBKEY (subkey)), GPG_E (GPG_ERR_INV_VALUE));
+	g_return_val_if_fail (expires != seahorse_pgp_subkey_get_expires (SEAHORSE_PGP_SUBKEY (subkey)), GPG_E (GPG_ERR_INV_VALUE));
 	
 	key = seahorse_gpgme_subkey_get_pubkey (subkey);
 	g_return_val_if_fail (key, GPG_E (GPG_ERR_INV_VALUE));
@@ -2355,7 +2359,7 @@ seahorse_gpgme_key_op_photo_delete (SeahorseGpgmePhoto *photo)
 
 typedef struct {
 	GList *photos;
-	guint uid;
+	gint uid;
 	guint num_uids;
 	char *output_file;
 	gpgme_key_t key;
@@ -2473,7 +2477,7 @@ photoid_load_transit (guint current_state, gpgme_status_code_t status,
 	case PHOTO_ID_LOAD_DESELECT:
 		if (parm->uid < parm->num_uids) {
 			parm->uid = parm->uid + 1;
-			g_debug ("PhotoIDLoad Next UID %i", parm->uid);
+			seahorse_debug ("PhotoIDLoad Next UID %i", parm->uid);
 			if (status == GPGME_STATUS_GET_LINE && g_str_equal (args, PROMPT)) {
 				next_state = PHOTO_ID_LOAD_SELECT;
 			} else {
@@ -2483,7 +2487,7 @@ photoid_load_transit (guint current_state, gpgme_status_code_t status,
 		} else {
 			if (status == GPGME_STATUS_GET_LINE && g_str_equal (args, PROMPT)) {
 				next_state = PHOTO_ID_LOAD_QUIT;
-				g_debug ("PhotoIDLoad Quiting Load");
+				seahorse_debug ("PhotoIDLoad Quiting Load");
 			} else {
 				*err = GPG_E (GPG_ERR_GENERAL);
 				g_return_val_if_reached (PHOTO_ID_LOAD_ERROR);
@@ -2494,7 +2498,7 @@ photoid_load_transit (guint current_state, gpgme_status_code_t status,
 	case PHOTO_ID_LOAD_QUIT:
 		/* Shouldn't be reached */
 		*err = GPG_E (GPG_ERR_GENERAL);
-		g_debug ("PhotoIDLoad Reached Quit");
+		seahorse_debug ("PhotoIDLoad Reached Quit");
 		g_return_val_if_reached (PHOTO_ID_LOAD_ERROR);
 		break;
 		
@@ -2520,7 +2524,7 @@ seahorse_gpgme_key_op_photos_load (SeahorseGpgmeKey *pkey)
 	const gchar *oldpath;
 	const gchar *keyid;
 	gchar *path;
-	gint fd;
+	guint fd;
 
 	g_return_val_if_fail (SEAHORSE_IS_GPGME_KEY (pkey), GPG_E (GPG_ERR_WRONG_KEY_USAGE));
 	
@@ -2529,7 +2533,7 @@ seahorse_gpgme_key_op_photos_load (SeahorseGpgmeKey *pkey)
 	g_return_val_if_fail (key->subkeys && key->subkeys->keyid, GPG_E (GPG_ERR_INV_VALUE));
 	keyid = key->subkeys->keyid;
 
-	g_debug ("PhotoIDLoad Start");
+	seahorse_debug ("PhotoIDLoad Start");
 
 	fd = g_mkstemp (image_path);
 	if(fd == -1) { 
@@ -2547,9 +2551,9 @@ seahorse_gpgme_key_op_photos_load (SeahorseGpgmeKey *pkey)
 		photoid_load_parm.output_file = image_path;
 		photoid_load_parm.key = key;
 
-		g_debug ("PhotoIdLoad KeyID %s", keyid);
+		seahorse_debug ("PhotoIdLoad KeyID %s", keyid);
 		gerr = seahorse_gpg_op_num_uids (NULL, keyid, &(photoid_load_parm.num_uids));
-		g_debug ("PhotoIDLoad Number of UIDs %i", photoid_load_parm.num_uids);
+		seahorse_debug ("PhotoIDLoad Number of UIDs %i", photoid_load_parm.num_uids);
 
 		if (GPG_IS_OK (gerr)) {
             
@@ -2574,7 +2578,7 @@ seahorse_gpgme_key_op_photos_load (SeahorseGpgmeKey *pkey)
 		seahorse_object_list_free (photoid_load_parm.photos);
 	}
 
-	g_debug ("PhotoIDLoad Done");
+	seahorse_debug ("PhotoIDLoad Done");
 
 	return gerr;
 }

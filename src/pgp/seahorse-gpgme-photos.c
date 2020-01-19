@@ -13,26 +13,27 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
 
-#include "seahorse-gpgme-dialogs.h"
-
-#include "seahorse-gpgme-key-op.h"
-
-#include "libseahorse/seahorse-widget.h"
-#include "libseahorse/seahorse-util.h"
-
-#include <gdk-pixbuf/gdk-pixbuf.h>
-
-#include <glib/gi18n.h>
-
 #include <sys/stat.h>
 #include <errno.h>
 #include <unistd.h>
+
+#include <glib/gi18n.h>
+
+#include <gdk-pixbuf/gdk-pixbuf.h>
+
+#include "seahorse-widget.h"
+#include "seahorse-util.h"
+
+#include "seahorse-gpgme-dialogs.h"
+#include "seahorse-gpgme-key-op.h"
 
 #define DEFAULT_WIDTH    120
 #define DEFAULT_HEIGHT   150
@@ -88,10 +89,10 @@ static gboolean
 save_to_fd (const gchar *buf, gsize count, GError **error, gpointer data)
 {
     int fd = GPOINTER_TO_INT (data);
-    gssize written;
+    int written;
     
     written = write (fd, buf, count);
-    if (written != (gssize) count) {
+    if (written != count) {
         g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), 
                      "%s", g_strerror (errno));
         return FALSE;

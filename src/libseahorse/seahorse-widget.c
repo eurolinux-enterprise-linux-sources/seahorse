@@ -14,19 +14,20 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
-#include "config.h"
+#include <config.h>
 
-#include "seahorse-widget.h"
-
-#include "seahorse-common.h"
+#include <string.h>
 
 #include <glib/gi18n.h>
 
-#include <string.h>
+#include "seahorse-icons.h"
+#include "seahorse-widget.h"
 
 /**
  * SECTION:seahorse-widget
@@ -259,7 +260,6 @@ object_set_property (GObject *object, guint prop_id, const GValue *value, GParam
     SeahorseWidget *swidget;
     GtkWidget *w;
     char *path;
-    GError *error = NULL;
     
     swidget = SEAHORSE_WIDGET (object);
     
@@ -271,12 +271,7 @@ object_set_property (GObject *object, guint prop_id, const GValue *value, GParam
         path = g_strdup_printf ("%sseahorse-%s.xml",
                                 SEAHORSE_UIDIR, swidget->name);
         swidget->gtkbuilder = gtk_builder_new ();
-        gtk_builder_add_from_file (swidget->gtkbuilder, path, &error);
-        if (error)
-          {
-            g_warning ("Error parsing %s: %s\n", path, error->message);
-            g_error_free (error);
-          }
+        gtk_builder_add_from_file (swidget->gtkbuilder, path, NULL);
         g_free (path);
         g_return_if_fail (swidget->gtkbuilder != NULL);
         

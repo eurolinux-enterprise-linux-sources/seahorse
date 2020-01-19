@@ -14,26 +14,26 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include <config.h>
 
-#include "seahorse-server-source.h"
+#include <stdlib.h>
+#include <string.h>
+
+#include <glib/gi18n.h>
 
 #include "seahorse-hkp-source.h"
 #include "seahorse-ldap-source.h"
 #include "seahorse-pgp-key.h"
+#include "seahorse-server-source.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-util.h"
-
-#include <glib/gi18n.h>
-
-#include <stdlib.h>
-#include <string.h>
+#include "seahorse-registry.h"
+#include "seahorse-util.h"
 
 /**
  * SECTION:seahorse-server-source
@@ -63,11 +63,8 @@ struct _SeahorseServerSourcePrivate {
 
 static void      seahorse_server_source_collection_init    (GcrCollectionIface *iface);
 
-static void      seahorse_server_source_place_iface        (SeahorsePlaceIface *iface);
-
 G_DEFINE_TYPE_WITH_CODE (SeahorseServerSource, seahorse_server_source, G_TYPE_OBJECT,
                          G_IMPLEMENT_INTERFACE (GCR_TYPE_COLLECTION, seahorse_server_source_collection_init);
-                         G_IMPLEMENT_INTERFACE (SEAHORSE_TYPE_PLACE, seahorse_server_source_place_iface);
 );
 
 /* GObject handlers */
@@ -151,65 +148,6 @@ seahorse_server_source_finalize (GObject *gobject)
     G_OBJECT_CLASS (seahorse_server_source_parent_class)->finalize (gobject);
 }
 
-static void
-seahorse_server_source_load (SeahorsePlace *self,
-                              GCancellable *cancellable,
-                              GAsyncReadyCallback callback,
-                              gpointer user_data)
-{
-	g_return_if_reached ();
-}
-
-static gboolean
-seahorse_server_source_load_finish (SeahorsePlace *self,
-                                     GAsyncResult *res,
-                                     GError **error)
-{
-	g_return_val_if_reached (FALSE);
-}
-
-static gchar *
-seahorse_server_source_get_label (SeahorsePlace* self)
-{
-	return g_strdup (SEAHORSE_SERVER_SOURCE (self)->priv->server);
-}
-
-static gchar *
-seahorse_server_source_get_description (SeahorsePlace* self)
-{
-	return g_strdup (SEAHORSE_SERVER_SOURCE (self)->priv->uri);
-}
-
-static gchar *
-seahorse_server_source_get_uri (SeahorsePlace* self)
-{
-	return g_strdup (SEAHORSE_SERVER_SOURCE (self)->priv->uri);
-}
-
-static GIcon *
-seahorse_server_source_get_icon (SeahorsePlace* self)
-{
-	return g_themed_icon_new (GTK_STOCK_DIALOG_QUESTION);
-}
-
-static GtkActionGroup *
-seahorse_server_source_get_actions (SeahorsePlace* self)
-{
-	return NULL;
-}
-
-static void
-seahorse_server_source_place_iface (SeahorsePlaceIface *iface)
-{
-	iface->load = seahorse_server_source_load;
-	iface->load_finish = seahorse_server_source_load_finish;
-	iface->get_actions = seahorse_server_source_get_actions;
-	iface->get_description = seahorse_server_source_get_description;
-	iface->get_icon = seahorse_server_source_get_icon;
-	iface->get_label = seahorse_server_source_get_label;
-	iface->get_uri = seahorse_server_source_get_uri;
-}
-
 /**
 * object: A SeahorseServerSource object
 * prop_id: The ID of the property to set
@@ -259,26 +197,21 @@ seahorse_server_get_property (GObject *obj,
                               GParamSpec *pspec)
 {
 	SeahorseServerSource *self = SEAHORSE_SERVER_SOURCE (obj);
-	SeahorsePlace *place = SEAHORSE_PLACE (self);
 
 	switch (prop_id) {
 	case PROP_LABEL:
-		g_value_take_string (value, seahorse_server_source_get_label (place));
-		break;
 	case PROP_KEY_SERVER:
 		g_value_set_string (value, self->priv->server);
 		break;
 	case PROP_DESCRIPTION:
-		g_value_take_string (value, seahorse_server_source_get_description (place));
-		break;
 	case PROP_URI:
-		g_value_take_string (value, seahorse_server_source_get_uri (place));
+		g_value_set_string (value, self->priv->uri);
 		break;
 	case PROP_ICON:
-		g_value_take_object (value, seahorse_server_source_get_icon (place));
+		g_value_take_object (value, g_themed_icon_new (GTK_STOCK_DIALOG_QUESTION));
 		break;
 	case PROP_ACTIONS:
-		g_value_set_object (value, seahorse_server_source_get_actions (place));
+		g_value_set_object (value, NULL);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (obj, prop_id, pspec);

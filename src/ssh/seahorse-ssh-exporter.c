@@ -13,8 +13,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
@@ -26,10 +28,9 @@
 #include "seahorse-ssh-exporter.h"
 #include "seahorse-ssh-source.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-object.h"
-#include "libseahorse/seahorse-util.h"
+#include "seahorse-exporter.h"
+#include "seahorse-object.h"
+#include "seahorse-util.h"
 
 #include <glib/gi18n.h>
 
@@ -67,9 +68,8 @@ G_DEFINE_TYPE_WITH_CODE (SeahorseSshExporter, seahorse_ssh_exporter, G_TYPE_OBJE
 );
 
 static gchar *
-seahorse_ssh_exporter_get_filename (SeahorseExporter *exporter)
+calc_filename (SeahorseSshExporter *self)
 {
-	SeahorseSshExporter *self = SEAHORSE_SSH_EXPORTER (exporter);
 	SeahorseSSHKeyData *data;
 	const gchar *location = NULL;
 	const gchar *basename = NULL;
@@ -89,7 +89,7 @@ seahorse_ssh_exporter_get_filename (SeahorseExporter *exporter)
 
 	basename = seahorse_object_get_nickname (SEAHORSE_OBJECT (self->key));
 	if (basename == NULL)
-		basename = _("SSH Key");
+		basename = _("Ssh Key");
 
 	if (self->secret) {
 		filename = g_strdup_printf ("id_%s", basename);
@@ -105,9 +105,8 @@ seahorse_ssh_exporter_get_filename (SeahorseExporter *exporter)
 }
 
 static const gchar *
-seahorse_ssh_exporter_get_content_type (SeahorseExporter *exporter)
+calc_content_type (SeahorseSshExporter *self)
 {
-	SeahorseSshExporter *self = SEAHORSE_SSH_EXPORTER (exporter);
 	if (self->secret)
 		return "application/x-pem-key";
 	else
@@ -115,9 +114,8 @@ seahorse_ssh_exporter_get_content_type (SeahorseExporter *exporter)
 }
 
 static GtkFileFilter *
-seahorse_ssh_exporter_get_file_filter (SeahorseExporter *exporter)
+calc_file_filter (SeahorseSshExporter *self)
 {
-	SeahorseSshExporter *self = SEAHORSE_SSH_EXPORTER (exporter);
 	GtkFileFilter *filter = gtk_file_filter_new ();
 
 	if (self->secret) {
@@ -146,17 +144,16 @@ seahorse_ssh_exporter_get_property (GObject *object,
                                       GParamSpec *pspec)
 {
 	SeahorseSshExporter *self = SEAHORSE_SSH_EXPORTER (object);
-	SeahorseExporter *exporter = SEAHORSE_EXPORTER (object);
 
 	switch (prop_id) {
 	case PROP_FILENAME:
-		g_value_take_string (value, seahorse_ssh_exporter_get_filename (exporter));
+		g_value_take_string (value, calc_filename (self));
 		break;
 	case PROP_CONTENT_TYPE:
-		g_value_set_string (value, seahorse_ssh_exporter_get_content_type (exporter));
+		g_value_set_string (value, calc_content_type (self));
 		break;
 	case PROP_FILE_FILTER:
-		g_value_take_object (value, seahorse_ssh_exporter_get_file_filter (exporter));
+		g_value_take_object (value, calc_file_filter (self));
 		break;
 	case PROP_SECRET:
 		g_value_set_boolean (value, self->secret);
@@ -178,9 +175,6 @@ seahorse_ssh_exporter_set_property (GObject *object,
 	switch (prop_id) {
 	case PROP_SECRET:
 		self->secret = g_value_get_boolean (value);
-		g_object_notify (G_OBJECT (self), "filename");
-		g_object_notify (G_OBJECT (self), "filter");
-		g_object_notify (G_OBJECT (self), "content-type");
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -240,7 +234,6 @@ seahorse_ssh_exporter_add_object (SeahorseExporter *exporter,
 		}
 		self->key = g_object_ref (key);
 		self->objects = g_list_append (self->objects, self->key);
-		g_object_notify (G_OBJECT (self), "filename");
 		return TRUE;
 	}
 
@@ -263,7 +256,7 @@ seahorse_ssh_exporter_export_async (SeahorseExporter *exporter,
 	g_object_unref (res);
  }
 
-static guchar *
+static gpointer
 seahorse_ssh_exporter_export_finish (SeahorseExporter *exporter,
                                      GAsyncResult *result,
                                      gsize *size,
@@ -306,12 +299,9 @@ static void
 seahorse_ssh_exporter_iface_init (SeahorseExporterIface *iface)
 {
 	iface->add_object = seahorse_ssh_exporter_add_object;
-	iface->export = seahorse_ssh_exporter_export_async;
+	iface->export_async = seahorse_ssh_exporter_export_async;
 	iface->export_finish = seahorse_ssh_exporter_export_finish;
 	iface->get_objects = seahorse_ssh_exporter_get_objects;
-	iface->get_filename = seahorse_ssh_exporter_get_filename;
-	iface->get_content_type = seahorse_ssh_exporter_get_content_type;
-	iface->get_file_filter = seahorse_ssh_exporter_get_file_filter;
 }
 
 SeahorseExporter *

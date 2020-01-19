@@ -14,21 +14,24 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
-#include "config.h"
-
-#include "seahorse-keyserver-search.h"
+#include <config.h>
 
 #include "seahorse-discovery.h"
+#include "seahorse-keyserver-search.h"
 #include "seahorse-keyserver-results.h"
 #include "seahorse-pgp-backend.h"
 
-#include "libseahorse/seahorse-servers.h"
-#include "libseahorse/seahorse-util.h"
-#include "libseahorse/seahorse-widget.h"
+#include "seahorse-servers.h"
+#include "seahorse-util.h"
+#include "seahorse-widget.h"
+
+#include "seahorse-keyserver-results.h"
 
 /**
  * SECTION:seahorse-keyserver-search
@@ -407,7 +410,6 @@ on_keyserver_search_ok_clicked (GtkButton *button, SeahorseWidget *swidget)
 	KeyserverSelection *selection;
 	const gchar *search;
 	GtkWidget *widget;
-	GtkWindow *parent;
 
 	widget = seahorse_widget_get_widget (swidget, "search-text");
 	g_return_if_fail (widget != NULL);
@@ -423,12 +425,8 @@ on_keyserver_search_ok_clicked (GtkButton *button, SeahorseWidget *swidget)
 	g_settings_set_strv (seahorse_application_settings (NULL), "last-search-servers",
 	                     selection->all ? NULL : (const gchar * const*)selection->uris->pdata);
 
-	/* Open the new result window; its transient parent is *our* transient
-	 * parent (Seahorse's primary window), not ourselves, as *we* will
-	 * disappear when "OK" is clicked.
-	 */
-	parent = gtk_window_get_transient_for (GTK_WINDOW (seahorse_widget_get_widget (swidget, swidget->name)));
-	seahorse_keyserver_results_show (search, parent);
+	/* Open the new result window */
+	seahorse_keyserver_results_show (search);
 
 	free_keyserver_selection (selection);
 	seahorse_widget_destroy (swidget);

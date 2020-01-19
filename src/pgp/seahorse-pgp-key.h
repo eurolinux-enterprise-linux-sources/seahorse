@@ -13,8 +13,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #ifndef __SEAHORSE_PGP_KEY_H__
@@ -22,8 +24,8 @@
 
 #include <glib-object.h>
 
-#include "libseahorse/seahorse-object.h"
-#include "libseahorse/seahorse-validity.h"
+#include "seahorse-object.h"
+#include "seahorse-validity.h"
 
 enum {
     SKEY_PGPSIG_TRUSTED = 0x0001,

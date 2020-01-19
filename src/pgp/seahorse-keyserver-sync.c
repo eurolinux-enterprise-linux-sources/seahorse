@@ -14,25 +14,26 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
-#include "config.h"
-
-#include "seahorse-keyserver-sync.h"
-
-#include "seahorse-pgp-backend.h"
-#include "seahorse-transfer.h"
-
-#include "libseahorse/seahorse-object.h"
-#include "libseahorse/seahorse-prefs.h"
-#include "libseahorse/seahorse-progress.h"
-#include "libseahorse/seahorse-servers.h"
-#include "libseahorse/seahorse-util.h"
-#include "libseahorse/seahorse-widget.h"
+#include <config.h>
 
 #include <glib/gi18n.h>
+
+#include "seahorse-object.h"
+#include "seahorse-progress.h"
+#include "seahorse-servers.h"
+#include "seahorse-util.h"
+#include "seahorse-widget.h"
+
+#include "seahorse-prefs.h"
+#include "seahorse-keyserver-sync.h"
+#include "seahorse-pgp-backend.h"
+#include "seahorse-transfer.h"
 
 void            on_sync_ok_clicked                (GtkButton *button,
                                                    SeahorseWidget *swidget);

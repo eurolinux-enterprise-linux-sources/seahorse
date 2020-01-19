@@ -13,8 +13,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #ifndef __SEAHORSE_PGP_SUBKEY_H__
@@ -22,7 +24,7 @@
 
 #include <glib-object.h>
 
-#include "libseahorse/seahorse-object.h"
+#include "seahorse-object.h"
 
 #define SEAHORSE_TYPE_PGP_SUBKEY            (seahorse_pgp_subkey_get_type ())
 
@@ -73,8 +75,6 @@ guint               seahorse_pgp_subkey_get_length        (SeahorsePgpSubkey *se
 
 void                seahorse_pgp_subkey_set_length        (SeahorsePgpSubkey *self,
                                                            guint index);
-
-gchar *             seahorse_pgp_subkey_get_usage         (SeahorsePgpSubkey *self);
 
 gulong              seahorse_pgp_subkey_get_created       (SeahorsePgpSubkey *self);
 

@@ -14,34 +14,36 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
 
-#include "seahorse-gpgme-dialogs.h"
+#include <time.h>
+#include <string.h>
+ 
+#include <glib/gi18n.h>
+ 
+#include "egg-datetime.h"
+
+#include "seahorse-action.h"
+#include "seahorse-icons.h"
+#include "seahorse-registry.h"
+#include "seahorse-passphrase.h"
+#include "seahorse-progress.h"
+#include "seahorse-util.h"
+#include "seahorse-widget.h"
 
 #include "seahorse-pgp.h"
 #include "seahorse-pgp-backend.h"
 #include "seahorse-gpgme.h"
+#include "seahorse-gpgme-dialogs.h"
 #include "seahorse-gpgme-key.h"
 #include "seahorse-gpgme-key-op.h"
 #include "seahorse-gpgme-keyring.h"
-
-#include "seahorse-common.h"
-
-#include "libegg/egg-datetime.h"
-
-#include "libseahorse/seahorse-passphrase.h"
-#include "libseahorse/seahorse-progress.h"
-#include "libseahorse/seahorse-util.h"
-#include "libseahorse/seahorse-widget.h"
-
-#include <glib/gi18n.h>
-
-#include <string.h>
-#include <time.h>
 
 /**
  * SECTION:seahorse-gpgme-generate
@@ -50,7 +52,7 @@
  **/
 
 void           on_gpgme_generate_response                    (GtkDialog *dialog,
-                                                              gint response,
+                                                              guint response,
                                                               gpointer user_data);
 
 void           on_gpgme_generate_entry_changed               (GtkEditable *editable,
@@ -111,7 +113,7 @@ seahorse_gpgme_generate_register (void)
 	gtk_action_group_add_actions (actions, ACTION_ENTRIES, G_N_ELEMENTS (ACTION_ENTRIES), NULL);
 	
 	/* Register this as a generator */
-	seahorse_registry_register_object (G_OBJECT (actions), "generator");
+	seahorse_registry_register_object (NULL, G_OBJECT (actions), SEAHORSE_PGP_TYPE_STR, "generator", NULL);
 }
 
 /* --------------------------------------------------------------------------
@@ -202,8 +204,7 @@ seahorse_gpgme_generate_key (SeahorseGpgmeKeyring *keyring,
                              const gchar *comment,
                              guint type,
                              guint bits,
-                             time_t expires,
-                             GtkWindow *parent)
+                             time_t expires)
 {
 	GCancellable *cancellable;
 	const gchar *pass;
@@ -213,7 +214,6 @@ seahorse_gpgme_generate_key (SeahorseGpgmeKeyring *keyring,
 	dialog = seahorse_passphrase_prompt_show (_("Passphrase for New PGP Key"),
 	                                          _("Enter the passphrase for your new key twice."),
 	                                          NULL, NULL, TRUE);
-	gtk_window_set_transient_for (GTK_WINDOW (dialog), parent);
 	if (gtk_dialog_run (dialog) == GTK_RESPONSE_ACCEPT) {
 		pass = seahorse_passphrase_prompt_get (dialog);
 		cancellable = g_cancellable_new ();
@@ -248,7 +248,7 @@ seahorse_gpgme_generate_key (SeahorseGpgmeKeyring *keyring,
  */
 G_MODULE_EXPORT void
 on_gpgme_generate_response (GtkDialog *dialog,
-                            gint response,
+                            guint response,
                             gpointer user_data)
 {
     SeahorseWidget *swidget = SEAHORSE_WIDGET (user_data);
@@ -296,7 +296,7 @@ on_gpgme_generate_response (GtkDialog *dialog,
     widget = seahorse_widget_get_widget (swidget, "algorithm-choice");
     g_return_if_fail (widget != NULL);
     sel = gtk_combo_box_get_active (GTK_COMBO_BOX (widget));
-    g_assert (sel <= (gint) G_N_ELEMENTS(available_algorithms));
+    g_assert (sel <= G_N_ELEMENTS(available_algorithms));
     type = available_algorithms[sel].type;
 
     /* The number of bits */
@@ -326,8 +326,8 @@ on_gpgme_generate_response (GtkDialog *dialog,
     /* Less confusing with less on the screen */
     gtk_widget_hide (seahorse_widget_get_toplevel (swidget));
 
-    seahorse_gpgme_generate_key (keyring, name, email, comment, type, bits, expires,
-                                 gtk_window_get_transient_for (GTK_WINDOW (dialog)));
+    seahorse_gpgme_generate_key (keyring, name, email, comment, type, bits, expires);
+
 
     seahorse_widget_destroy (swidget);
     g_free (name);

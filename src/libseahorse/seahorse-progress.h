@@ -14,8 +14,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 /* Parts from evolution-data-server */
@@ -24,7 +26,8 @@
 #define __SEAHORSE_PROGRESS_H__
 
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+
+#include "seahorse-widget.h"
 
 void          seahorse_progress_prep            (GCancellable *cancellable,
                                                  gconstpointer progress_tag,
@@ -56,7 +59,7 @@ void          seahorse_progress_show_with_notice (GCancellable *cancellable,
                                                  const gchar *notice,
                                                  gboolean delayed);
 
-void          seahorse_progress_attach           (GCancellable *cancellable,
-                                                  GtkBuilder *builder);
+void          seahorse_progress_attach          (GCancellable *cancellable,
+                                                 SeahorseWidget *swidget);
 
 #endif /* __SEAHORSE_PROGRESS_H__ */

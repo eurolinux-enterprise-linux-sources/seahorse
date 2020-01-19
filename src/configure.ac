@@ -1,35 +1,30 @@
 AC_PREREQ([2.63])
-AC_INIT([seahorse], [3.14.1],
+AC_INIT([seahorse], [3.8.2],
         [http://bugzilla.gnome.org/enter_bug.cgi?product=seahorse],
         [seahorse])
 
-GCK_REQUIRED=3.11.91
-GCR_REQUIRED=3.11.91
-
-GTK_REQ=3.4.0
-GTK_MAX=GTK_VERSION_3_4
-
+GCK_REQUIRED=3.3.4
+GCR_REQUIRED=3.3.4
+GTK_REQUIRED=3.4.0
 GNUPG_ACCEPTED="1.2 1.4 2.0"
 GPGME_REQUIRED=1.0.0
-LIBSECRET_REQUIRED=0.16
+LIBSECRET_REQUIRED=0.5
 AVAHI_GLIB_REQUIRED=0.6
 
 # -----------------------------------------------------------------------------
 # Basic tools
 
-AC_CONFIG_AUX_DIR([build/aux])
 AM_INIT_AUTOMAKE([1.11 tar-ustar foreign -Wno-portability])
 AM_SANITY_CHECK
-AC_CONFIG_HEADERS([build/config.h])
+AC_CONFIG_HEADERS([config.h])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 AM_MAINTAINER_MODE([enable])
-AC_CONFIG_MACRO_DIR([build/m4])
+AC_CONFIG_MACRO_DIR([m4])
 
 AC_PROG_CC
 AC_PROG_CXX
-AM_PROG_CC_C_O
 AC_PROG_INTLTOOL([0.35.0])
-AC_PROG_RANLIB
+AM_PROG_LIBTOOL
 AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
 
 GETTEXT_PACKAGE=seahorse
@@ -60,19 +55,12 @@ esac
 AC_MSG_RESULT([$os_win32])
 AM_CONDITIONAL(OS_WIN32, test "$os_win32" = "yes")
 
-AC_MSG_CHECKING(whether to build with valac)
-AC_ARG_ENABLE(valac,
-              AC_HELP_STRING([--disable-valac],
-                             [Build without invoking valac]))
-if test "$enable_valac" = "no"; then
-	VALAC="/bin/false/without-valac"
-	AC_SUBST(VALAC)
+if test "$platform_win32" = "yes" ; then
+	PLUGIN_LIBTOOL_FLAGS="-module -avoid-version -no-undefined"
 else
-	enable_valac="yes"
-	AM_PROG_VALAC([0.22.0])
+	PLUGIN_LIBTOOL_FLAGS="-module -avoid-version"
 fi
-AM_CONDITIONAL(WITH_VALAC, test "$enable_valac" = "yes")
-AC_MSG_RESULT($enable_valac)
+AC_SUBST(PLUGIN_LIBTOOL_FLAGS)
 
 GNOME_CODE_COVERAGE
 CFLAGS="$CFLAGS $CODE_COVERAGE_CFLAGS"
@@ -81,13 +69,12 @@ LDFLAGS="$LDFLAGS $CODE_COVERAGE_LDFLAGS"
 # -----------------------------------------------------------------------------
 # Basic Dependencies
 
-PKG_CHECK_MODULES(GTK, gtk+-3.0 >= $GTK_REQ)
+PKG_CHECK_MODULES(GTK, gtk+-3.0 >= $GTK_REQUIRED)
 AC_SUBST(GTK_CFLAGS)
 AC_SUBST(GTK_LIBS)
 
-PKG_CHECK_MODULES(SEAHORSE, gmodule-2.0 gio-2.0 gthread-2.0 gtk+-3.0 >= $GTK_REQ gcr-3 >= $GCR_REQUIRED)
+PKG_CHECK_MODULES(SEAHORSE, gmodule-2.0 gio-2.0 gthread-2.0 gtk+-3.0 >= $GTK_REQUIRED gcr-3 >= $GCR_REQUIRED)
 SEAHORSE_CFLAGS="$SEAHORSE_CFLAGS -DGCR_API_SUBJECT_TO_CHANGE -DGCK_API_SUBJECT_TO_CHANGE"
-SEAHORSE_CFLAGS="$SEAHORSE_CFLAGS -DGTK_VERSION_MAX_ALLOWED=$GTK_MAX"
 
 # User documentation
 YELP_HELP_INIT
@@ -96,7 +83,7 @@ GLIB_GSETTINGS
 AM_GLIB_GNU_GETTEXT
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
-PKG_CHECK_MODULES(EGG, gtk+-3.0 >= $GTK_REQ)
+PKG_CHECK_MODULES(EGG, gtk+-3.0 >= $GTK_REQUIRED)
 AC_SUBST(EGG_LIBS)
 AC_SUBST(EGG_CFLAGS)
 
@@ -315,7 +302,7 @@ else
     
     echo "checking for supported versions of libsoup..."
 
-    PKG_CHECK_MODULES(SOUP, libsoup-2.4 >= 2.33.92,
+    PKG_CHECK_MODULES(SOUP, libsoup-2.4 >= 2.24.0, 
         [enable_hkp=yes],  
         [enable_hkp=no])
 
@@ -449,8 +436,6 @@ AM_CONDITIONAL(WITH_SSH, test "$enable_ssh" = "yes")
 # Compilation and linking options
 #
 
-CFLAGS="$CFLAGS -I\$(top_srcdir)/build"
-
 AC_MSG_CHECKING([for debug mode])
 AC_ARG_ENABLE(debug,
               AC_HELP_STRING([--enable-debug=no/default/yes],
@@ -465,7 +450,6 @@ fi
 if test "$enable_debug" = "yes"; then
 	debug_status="yes (-g, -O0, debug output, testable)"
 	CFLAGS="$CFLAGS -O0"
-	VALA_FLAGS="$VALA_FLAGS --debug"
 elif test "$enable_debug" = "no"; then
 	debug_status="no (no debug output, not testable, G_DISABLE_ASSERT)"
 	AC_DEFINE_UNQUOTED(G_DISABLE_ASSERT, 1, [Disable glib assertions])
@@ -482,7 +466,7 @@ if test "$GCC" = "yes"; then
 	-Wall \
 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes \
 	-Wnested-externs -Wpointer-arith \
-	-Wcast-align -Wsign-compare -Wno-deprecated-declarations \
+	-Wcast-align -Wsign-compare \
 	$CFLAGS"
 
 	for option in -Wno-strict-aliasing -Wno-sign-compare; do
@@ -524,46 +508,24 @@ fi
 
 AC_MSG_RESULT($strict_status)
 
-AC_MSG_CHECKING([whether to build with gcov testing])
-AC_ARG_ENABLE([coverage],
-		[AS_HELP_STRING([--enable-coverage], [Whether to enable coverage testing ])],
-		[],
-		[enable_coverage=no])
-
-AC_MSG_RESULT([$enable_coverage])
-
-AC_MSG_CHECKING([code coverage])
-
-if test "$enable_coverage" = "yes"; then
-	if test "$GCC" != "yes"; then
-		AC_MSG_ERROR(Coverage testing requires GCC)
-	fi
-
-	AC_PATH_PROG(GCOV, gcov, no)
-	if test "$GCOV" = "no" ; then
-		AC_MSG_ERROR(gcov tool is not available)
-	fi
-
-	CFLAGS="$CFLAGS -O0 -g --coverage"
-	LDFLAGS="$LDFLAGS --coverage"
-fi
-
-AM_CONDITIONAL([WITH_COVERAGE], [test "$enable_coverage" = "yes"])
-
-AC_MSG_RESULT($enable_coverage)
-
 # -----------------------------------------------------------------------------
 
 AC_SUBST(SEAHORSE_CFLAGS)
 AC_SUBST(SEAHORSE_LIBS)
-AC_SUBST(VALA_FLAGS)
 
 AC_OUTPUT([
 Makefile
+gkr/Makefile
+libegg/Makefile
+libseahorse/Makefile
+pgp/Makefile
 po/Makefile.in
 help/Makefile
 data/Makefile
 data/icons/Makefile
+pkcs11/Makefile
+src/Makefile
+ssh/Makefile
 ])
 
 echo "
@@ -578,6 +540,4 @@ Keyserver Support:          $with_keyserver
   Key Sharing:              $enable_sharing
 Debug:                      $debug_status
 Strict:                     $strict_status
-Vala build:                 $enable_valac
-Coverage:                   $enable_coverage
 "

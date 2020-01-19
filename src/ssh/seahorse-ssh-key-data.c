@@ -13,8 +13,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
@@ -22,8 +24,7 @@
 
 #include "seahorse-ssh-key-data.h"
 #include "seahorse-ssh-source.h"
-
-#include "libseahorse/seahorse-util.h"
+#include "seahorse-util.h"
 
 #define SSH_PRIVATE_BEGIN "-----BEGIN "
 #define SSH_PRIVATE_END   "-----END "
@@ -306,7 +307,7 @@ seahorse_ssh_key_data_parse_file (const gchar *filename,  SeahorseSSHPublicKeyPa
 }
 
 SeahorseSSHKeyData*
-seahorse_ssh_key_data_parse_line (const gchar *line, gssize length)
+seahorse_ssh_key_data_parse_line (const gchar *line, guint length)
 {
     SeahorseSSHKeyData *keydata = NULL;
     gchar *x;
@@ -322,7 +323,7 @@ seahorse_ssh_key_data_parse_line (const gchar *line, gssize length)
     if (!*line || *line == '#')
         return NULL;
     
-    x = g_strndup (line, length < 0 ? strlen (line) : (gsize) length);
+    x = g_strndup (line, length == -1 ? strlen (line) : length);
     
     keydata = g_new0 (SeahorseSSHKeyData, 1);
     if (!parse_key_data (x, keydata)) {

@@ -14,32 +14,28 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
  
 #include "config.h"
 
-#include "libseahorse/seahorse-passphrase.h"
+#include "seahorse-passphrase.h"
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#ifdef GDK_WINDOWING_X11
-#include <gdk/gdkx.h>
-#endif
-
 int
 main (int argc, char* argv[])
 {
-	GdkWindow *transient_for = NULL;
 	GtkDialog *dialog;
 	const gchar *title;
 	const gchar *argument;
@@ -47,8 +43,7 @@ main (int argc, char* argv[])
 	const gchar *flags;
 	gint result;
 	const gchar *pass;
-	gulong xid;
-	gssize len;
+	gsize len;
 
 	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -59,20 +54,7 @@ main (int argc, char* argv[])
 	/* Non buffered stdout */
 	setvbuf (stdout, 0, _IONBF, 0);
 
-#ifdef GDK_WINDOWING_X11
-	argument = g_getenv ("SEAHORSE_SSH_ASKPASS_PARENT");
-	if (argument) {
-		GdkDisplay *display = gdk_display_get_default ();
-		if (GDK_IS_X11_DISPLAY (display)) {
-			xid = strtoul (argument, NULL, 10);
-			if (xid != 0)
-				transient_for = gdk_x11_window_foreign_new_for_display (display, xid);
-			if (transient_for == NULL)
-				g_warning ("Couldn't find window to be transient for: %s", argument);
-		}
-	}
-#endif
-
+	/* TODO: Change lousy default, rarely used, and string freeze right now */
 	title = g_getenv ("SEAHORSE_SSH_ASKPASS_TITLE");
 	if (!title || !title[0])
 		title = _("Enter your Secure Shell passphrase:");
@@ -119,11 +101,6 @@ main (int argc, char* argv[])
 
 	g_free (message);
 
-	if (transient_for) {
-		gdk_window_set_transient_for (gtk_widget_get_window (GTK_WIDGET (dialog)),
-		                              transient_for);
-	}
-
 	result = 1;
 	if (gtk_dialog_run (dialog) == GTK_RESPONSE_ACCEPT) {
 		pass = seahorse_passphrase_prompt_get (dialog);
@@ -136,8 +113,6 @@ main (int argc, char* argv[])
 		}
 	}
 
-	if (transient_for)
-		g_object_unref (transient_for);
 	gtk_widget_destroy (GTK_WIDGET (dialog));
 	return result;
 }

@@ -14,15 +14,17 @@
  * Lesser General Public License for more details.
  *  
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.  
  */
 
 #include "config.h"
 
 #include "seahorse-generate-select.h"
 
-#include "seahorse-common.h"
+#include "seahorse-action.h"
+#include "seahorse-registry.h"
 
 #include <glib/gi18n.h>
 
@@ -176,7 +178,7 @@ seahorse_generate_select_constructed (GObject *obj)
 	gtk_tree_sortable_set_default_sort_func (GTK_TREE_SORTABLE (self->store), on_list_sort, NULL, NULL);
 	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (self->store), GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID, GTK_SORT_ASCENDING);
 
-	self->action_groups = seahorse_registry_object_instances ("generator");
+	self->action_groups = seahorse_registry_object_instances (NULL, "generator", NULL);
 	for (l = self->action_groups; l != NULL; l = g_list_next (l)) {
 		actions = gtk_action_group_list_actions (l->data);
 		for (k = actions; k != NULL; k = g_list_next (k)) {
@@ -220,9 +222,8 @@ seahorse_generate_select_constructed (GObject *obj)
 	/* Setup the dialog */
 	gtk_window_set_modal (GTK_WINDOW (self), TRUE);
 	gtk_window_set_default_size (GTK_WINDOW (self), -1, 410);
-	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))),
-	                    GTK_WIDGET (gtk_builder_get_object (builder, "generate-select")),
-	                    TRUE, TRUE, 0);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (self))),
+	                   GTK_WIDGET (gtk_builder_get_object (builder, "generate-select")));
 	gtk_dialog_add_buttons (GTK_DIALOG (self),
 	                        GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 	                        _("Continue"), GTK_RESPONSE_OK,

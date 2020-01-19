@@ -14,8 +14,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
@@ -43,7 +45,7 @@ typedef struct {
 	GCancellable *cancellable;
 	gulong cancelled_sig;
 
-	GtkBuilder *builder;
+	SeahorseWidget *swidget;
 	gchar *title;
 	gchar *notice;
 	gboolean showing;
@@ -133,8 +135,8 @@ tracked_task_free (gpointer data)
 	g_queue_free (task->parts);
 	g_free (task->title);
 	g_free (task->notice);
-	if (task->builder)
-		g_object_unref (task->builder);
+	if (task->swidget)
+		g_object_unref (task->swidget);
 	g_free (task);
 }
 
@@ -189,20 +191,21 @@ progress_update_display (TrackedTask *task)
 	gdouble fraction;
 	guint id;
 
-	if (task->builder == NULL)
+	if (task->swidget == NULL)
 		return;
 
 	/* Dig out our progress display stuff */
-	widget = GTK_WIDGET (gtk_builder_get_object (task->builder, "progress-bar"));
+	widget = seahorse_widget_get_widget (task->swidget, "progress-bar");
 	if (widget == NULL)
-		g_warning ("cannot display progress because seahorse window has no progress widget");
+		g_warning ("cannot display progress because seahorse window '%s' has no progress widget",
+		           task->swidget->name);
 	else
 		progress = GTK_PROGRESS_BAR (widget);
-	widget = GTK_WIDGET (gtk_builder_get_object (task->builder, "status"));
+	widget = GTK_WIDGET (gtk_builder_get_object (task->swidget->gtkbuilder, "status"));
 	if (GTK_IS_STATUSBAR (widget)) {
 		status = GTK_STATUSBAR (widget);
 	} else {
-		widget = GTK_WIDGET (gtk_builder_get_object (task->builder, "progress-details"));
+		widget = GTK_WIDGET (gtk_builder_get_object (task->swidget->gtkbuilder, "progress-details"));
 		if (GTK_IS_LABEL (widget))
 			label = GTK_LABEL (widget);
 	}
@@ -560,7 +563,7 @@ on_timeout_show_progress (gpointer user_data)
 
 	/* Allow attach to work */
 	task->showing = FALSE;
-	seahorse_progress_attach (task->cancellable, swidget->gtkbuilder);
+	seahorse_progress_attach (task->cancellable, swidget);
 	gtk_widget_show (GTK_WIDGET (window));
 	g_object_unref (swidget);
 
@@ -614,7 +617,7 @@ seahorse_progress_show_with_notice (GCancellable *cancellable,
 
 void
 seahorse_progress_attach (GCancellable *cancellable,
-                          GtkBuilder *builder)
+                          SeahorseWidget *swidget)
 {
 	TrackedTask *task;
 
@@ -635,7 +638,7 @@ seahorse_progress_attach (GCancellable *cancellable,
 	}
 
 	task->showing = TRUE;
-	task->builder = g_object_ref (builder);
+	task->swidget = g_object_ref (swidget);
 
 	progress_update_display (task);
 }

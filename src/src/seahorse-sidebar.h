@@ -13,14 +13,16 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #ifndef __SEAHORSE_SIDEBAR_H__
 #define __SEAHORSE_SIDEBAR_H__
 
-#include "seahorse-common.h"
+#include "seahorse-place.h"
 
 #include <gcr/gcr.h>
 

@@ -13,8 +13,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 /**
@@ -80,7 +82,7 @@ guint                   seahorse_ssh_key_data_parse_file      (const gchar *file
                                                                GError **error);
 
 SeahorseSSHKeyData*     seahorse_ssh_key_data_parse_line      (const gchar *line,
-                                                               gssize length);
+                                                               guint length);
 
 gboolean                seahorse_ssh_key_data_match           (const gchar *line,
                                                                gint length,

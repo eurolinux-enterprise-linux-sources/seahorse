@@ -13,8 +13,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
@@ -24,7 +26,7 @@
 
 #include <glib-object.h>
 
-#include "seahorse-common.h"
+#include "seahorse-exporter.h"
 
 #define SEAHORSE_TYPE_GPGME_EXPORTER            (seahorse_gpgme_exporter_get_type ())
 #define SEAHORSE_GPGME_EXPORTER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), SEAHORSE_TYPE_GPGME_EXPORTER, SeahorseGpgmeExporter))

@@ -13,21 +13,23 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 #include "config.h"
 
+#include <glib/gi18n.h>
+
 #include "seahorse-application.h"
+#include "seahorse-icons.h"
 #include "seahorse-keyserver-control.h"
 #include "seahorse-prefs.h"
+#include "seahorse-registry.h"
 #include "seahorse-servers.h"
 #include "seahorse-util.h"
 #include "seahorse-widget.h"
-
-#include "seahorse-common.h"
-
-#include <glib/gi18n.h>
 
 G_MODULE_EXPORT
 void           on_prefs_keyserver_add_clicked           (GtkButton *button,
@@ -232,7 +234,7 @@ calculate_keyserver_uri (SeahorseWidget *swidget)
     gchar **types;
     gint active;
     gchar *uri;
-    gint i;
+    guint i;
 
     /* Figure out the scheme */
     widget = GTK_WIDGET (seahorse_widget_get_widget (swidget, "keyserver-type"));

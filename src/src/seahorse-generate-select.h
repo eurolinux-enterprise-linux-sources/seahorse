@@ -14,8 +14,9 @@
  * Lesser General Public License for more details.
  *  
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.  
  */
 
 #ifndef __SEAHORSE_GENERATE_SELECT_H__
@@ -24,7 +25,7 @@
 #include <glib.h>
 #include <glib-object.h>
 
-#include <gtk/gtk.h>
+#include "seahorse-widget.h"
 
 void               seahorse_generate_select_show       (GtkWindow *parent);
 

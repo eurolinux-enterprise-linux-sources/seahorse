@@ -14,8 +14,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 #include "config.h"
 
@@ -31,11 +33,13 @@
 #include "seahorse-pgp-backend.h"
 #include "seahorse-pgp-key.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-predicate.h"
-#include "libseahorse/seahorse-object-list.h"
-#include "libseahorse/seahorse-util.h"
+#include "seahorse-deletable.h"
+#include "seahorse-exportable.h"
+#include "seahorse-icons.h"
+#include "seahorse-predicate.h"
+#include "seahorse-object-list.h"
+#include "seahorse-place.h"
+#include "seahorse-util.h"
 
 #include <glib/gi18n.h>
 
@@ -562,19 +566,10 @@ seahorse_gpgme_key_create_deleter (SeahorseDeletable *deletable)
 		return seahorse_gpgme_key_deleter_new (self);
 }
 
-static gboolean
-seahorse_gpgme_key_get_deletable (SeahorseDeletable *deletable)
-{
-	gboolean can;
-	g_object_get (deletable, "deletable", &can, NULL);
-	return can;
-}
-
 static void
 seahorse_gpgme_key_deletable_iface (SeahorseDeletableIface *iface)
 {
 	iface->create_deleter = seahorse_gpgme_key_create_deleter;
-	iface->get_deletable = seahorse_gpgme_key_get_deletable;
 }
 
 static GList *
@@ -583,26 +578,17 @@ seahorse_gpgme_key_create_exporters (SeahorseExportable *exportable,
 {
 	GList *result = NULL;
 
-	if (type != SEAHORSE_EXPORTER_TYPE_TEXTUAL)
+	if (type != SEAHORSE_EXPORTER_TEXTUAL)
 		result = g_list_append (result, seahorse_gpgme_exporter_new (G_OBJECT (exportable), FALSE, FALSE));
 	result = g_list_append (result, seahorse_gpgme_exporter_new (G_OBJECT (exportable), TRUE, FALSE));
 
 	return result;
 }
 
-static gboolean
-seahorse_gpgme_key_get_exportable (SeahorseExportable *exportable)
-{
-	gboolean can;
-	g_object_get (exportable, "exportable", &can, NULL);
-	return can;
-}
-
 static void
 seahorse_gpgme_key_exportable_iface (SeahorseExportableIface *iface)
 {
 	iface->create_exporters = seahorse_gpgme_key_create_exporters;
-	iface->get_exportable = seahorse_gpgme_key_get_exportable;
 }
 
 /* -----------------------------------------------------------------------------

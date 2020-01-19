@@ -14,8 +14,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
  
 #include "config.h"
@@ -30,13 +32,18 @@
 #include "seahorse-pgp-key.h"
 #include "seahorse-pgp-subkey.h"
 #include "seahorse-pgp-uid.h"
+#include "seahorse-servers.h"
 
-#include "libseahorse/seahorse-object-list.h"
-#include "libseahorse/seahorse-progress.h"
-#include "libseahorse/seahorse-servers.h"
-#include "libseahorse/seahorse-util.h"
+#include "seahorse-object-list.h"
+#include "seahorse-place.h"
+#include "seahorse-progress.h"
+#include "seahorse-registry.h"
+#include "seahorse-util.h"
 
 #include <libsoup/soup.h>
+
+#define DEBUG_FLAG SEAHORSE_DEBUG_HKP
+#include "seahorse-debug.h"
 
 /**
  * SECTION: seahorse-hkp-source
@@ -109,23 +116,90 @@ get_http_server_uri (SeahorseHKPSource *self, const char *path)
     return uri;
 }
 
+static gboolean
+check_for_http_proxy_schema__with_love_to_ryan ()
+{
+	const gchar * const* schemas;
+	guint i;
+
+	/*
+	 * This isn't very efficient, but it's the only way to use this schema
+	 * without our GSettings killing our process if the schema doesn't exist.
+	 *
+	 * Groan.
+	 */
+
+	schemas = g_settings_list_schemas ();
+	for (i = 0; schemas[i] != NULL; i++) {
+		if (g_str_equal (schemas[i], "org.gnome.system.proxy.http"))
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+static SoupSession *
+create_proxy_session (void)
+{
+	SoupSession *session = NULL;
+	SoupURI *uri;
+	GSettings *settings;
+	gchar *host;
+	gchar *user;
+	gchar *password;
+
+	if (!check_for_http_proxy_schema__with_love_to_ryan ())
+		return NULL;
+
+	settings = g_settings_new ("org.gnome.system.proxy.http");
+	if (g_settings_get_boolean (settings, "enabled")) {
+		host = g_settings_get_string (settings, "host");
+		if (host) {
+			uri = soup_uri_new (NULL);
+			if (!uri) {
+				g_warning ("creation of SoupURI from '%s' failed", host);
+			} else {
+				soup_uri_set_scheme (uri, SOUP_URI_SCHEME_HTTP);
+				soup_uri_set_host (uri, host);
+			}
+			g_free (host);
+			soup_uri_set_port (uri, g_settings_get_int (settings, "port"));
+
+			if (g_settings_get_boolean (settings, "use-authentication")) {
+				user = g_settings_get_string (settings, "authentication-user");
+				soup_uri_set_user (uri, user);
+				g_free (user);
+
+				password = g_settings_get_string (settings, "authentication-password");
+				soup_uri_set_password (uri, password);
+				g_free (password);
+			}
+
+			session = soup_session_async_new_with_options (SOUP_SESSION_PROXY_URI, uri, NULL);
+			soup_uri_free (uri);
+		}
+	}
+
+	g_object_unref (settings);
+	return session;
+}
+
 static SoupSession *
 create_hkp_soup_session (void)
 {
 	SoupSession *session;
 #if WITH_DEBUG
 	SoupLogger *logger;
-	const gchar *env;
 #endif
 
-        session = soup_session_async_new_with_options (SOUP_SESSION_ADD_FEATURE_BY_TYPE,
-                                                       SOUP_TYPE_PROXY_RESOLVER_DEFAULT,
-                                                       NULL);
+	session = create_proxy_session ();
 
+	/* Without a proxy */
+	if (session == NULL)
+		session = soup_session_async_new ();
 
 #if WITH_DEBUG
-        env = g_getenv ("G_MESSAGES_DEBUG");
-        if (env && strstr (env, "seahorse")) {
+	if (seahorse_debugging) {
 		logger = soup_logger_new (SOUP_LOGGER_LOG_BODY, -1);
 		soup_session_add_feature (session, SOUP_SESSION_FEATURE (logger));
 		g_object_unref (logger);
@@ -244,21 +318,6 @@ parse_hkp_date (const gchar *text)
     return stamp == (time_t)-1 ? 0 : stamp;
 }
 
-static const gchar *
-get_fingerprint_string (const gchar *line)
-{
-	const gchar *p;
-
-	p = line;
-	while (*p && g_ascii_isspace (*p))
-		p++;
-
-	if (g_ascii_strncasecmp (p, "fingerprint=", 12) == 0)
-		return p + 12;
-	else
-		return NULL;
-}
-
 /**
 * response: The HKP server response to parse
 *
@@ -282,7 +341,6 @@ parse_hkp_index (const gchar *response)
 	gchar *line, *t;
     
 	SeahorsePgpKey *key = NULL;
-	SeahorsePgpSubkey *subkey_with_id = NULL;
 	GList *keys = NULL;
 	GList *subkeys = NULL;
 	GList *uids = NULL;
@@ -291,10 +349,11 @@ parse_hkp_index (const gchar *response)
 	lines = g_strsplit (response, "\n", 0);
     
 	for (l = lines; *l; l++) {
+
 		line = *l;	
 		dehtmlize (line);
 
-		g_debug ("%s", line);
+		seahorse_debug ("%s", line);
 
 		/* Start a new key */
 		if (g_ascii_strncasecmp (line, "pub ", 4) == 0) {
@@ -355,7 +414,6 @@ parse_hkp_index (const gchar *response)
 					seahorse_object_list_free (subkeys);
 					seahorse_pgp_key_realize (SEAHORSE_PGP_KEY (key));
 					uids = subkeys = NULL;
-					subkey_with_id = NULL;
 					key = NULL;
 				}
 
@@ -366,12 +424,9 @@ parse_hkp_index (const gchar *response)
 				/* Add all the info to the key */
 				subkey = seahorse_pgp_subkey_new ();
 				seahorse_pgp_subkey_set_keyid (subkey, fpr);
-				subkey_with_id = subkey;
-
 				fingerprint = seahorse_pgp_subkey_calc_fingerprint (fpr);
 				seahorse_pgp_subkey_set_fingerprint (subkey, fingerprint);
 				g_free (fingerprint);
-
 				seahorse_pgp_subkey_set_flags (subkey, flags);
 				seahorse_pgp_subkey_set_created (subkey, parse_hkp_date (v[1]));
 				seahorse_pgp_subkey_set_length (subkey, strtol (v[0], NULL, 10));
@@ -401,29 +456,9 @@ parse_hkp_index (const gchar *response)
             
 			/* TODO: Implement signatures */
             
-		} else if (key && subkey_with_id) {
-			const char *fingerprint_str;
-
-			fingerprint_str = get_fingerprint_string (line);
-
-			if (fingerprint_str != NULL) {
-				char *pretty_fingerprint;
-
-				pretty_fingerprint = seahorse_pgp_subkey_calc_fingerprint (fingerprint_str);
-
-				/* FIXME: we don't check that the fingerprint actually matches the key's ID.
-				 * We also don't validate the fingerprint at all; the keyserver may have returned
-				 * some garbage and we don't notice.
-				 */
-
-				if (pretty_fingerprint[0] != 0)
-					seahorse_pgp_subkey_set_fingerprint (subkey_with_id, pretty_fingerprint);
-
-				g_free (pretty_fingerprint);
-			}
-		}
+		} 
 	}
-
+    
 	g_strfreev (lines);
 
 	if (key) {
@@ -525,7 +560,10 @@ detect_key (const gchar *text, gint len, const gchar **start, const gchar **end)
  *  SEAHORSE HKP SOURCE
  */
 
-G_DEFINE_TYPE (SeahorseHKPSource, seahorse_hkp_source, SEAHORSE_TYPE_SERVER_SOURCE);
+static void seahorse_place_iface (SeahorsePlaceIface *iface);
+
+G_DEFINE_TYPE_EXTENDED (SeahorseHKPSource, seahorse_hkp_source, SEAHORSE_TYPE_SERVER_SOURCE, 0,
+                        G_IMPLEMENT_INTERFACE (SEAHORSE_TYPE_PLACE, seahorse_place_iface));
 
 static void 
 seahorse_hkp_source_init (SeahorseHKPSource *hsrc)
@@ -687,8 +725,6 @@ seahorse_hkp_source_search_async (SeahorseServerSource *source,
 	} else {
 		g_hash_table_insert (form, "search", (char *)match);
 	}
-
-	g_hash_table_insert (form, "fingerprint", "on");
 
 	soup_uri_set_query_from_form (uri, form);
 	g_hash_table_destroy (form);
@@ -1056,6 +1092,18 @@ seahorse_hkp_source_export_finish (SeahorseServerSource *source,
 	output = g_string_free (closure->data, FALSE);
 	closure->data = NULL;
 	return output;
+}
+
+/**
+* iface: The interface to set
+*
+* Set up the default SeahorseSourceIface
+*
+**/
+static void 
+seahorse_place_iface (SeahorsePlaceIface *iface)
+{
+
 }
 
 /**

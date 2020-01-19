@@ -14,8 +14,9 @@
  * Lesser General Public License for more details.
  *  
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.  
  */
 
 #ifndef __SEAHORSE_KEY_MANAGER_H__
@@ -27,7 +28,7 @@
 
 #include <gcr/gcr.h>
 
-#include "seahorse-common.h"
+#include "seahorse-catalog.h"
 
 G_BEGIN_DECLS
 
@@ -53,7 +54,7 @@ struct _SeahorseKeyManagerClass {
 
 GType            seahorse_key_manager_get_type     (void) G_GNUC_CONST;
 
-SeahorseKeyManager * seahorse_key_manager_show     (guint32 timestamp);
+void             seahorse_key_manager_show         (void);
 
 
 G_END_DECLS

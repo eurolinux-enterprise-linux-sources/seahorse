@@ -13,8 +13,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 #include "config.h"
 
@@ -24,10 +26,10 @@
 #include "seahorse-pgp-uid.h"
 #include "seahorse-pgp-subkey.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-object-list.h"
-#include "libseahorse/seahorse-util.h"
+#include "seahorse-icons.h"
+#include "seahorse-object-list.h"
+#include "seahorse-util.h"
+#include "seahorse-viewable.h"
 
 #include <gcr/gcr.h>
 
@@ -481,17 +483,17 @@ seahorse_pgp_key_class_init (SeahorsePgpKeyClass *klass)
  	                             "", G_PARAM_READABLE));
 }
 
-static GtkWindow *
-seahorse_pgp_key_create_viewer (SeahorseViewable *viewable,
-                                GtkWindow *parent)
+static void
+seahorse_pgp_key_show_viewer (SeahorseViewable *viewable,
+                              GtkWindow *parent)
 {
-	return seahorse_pgp_key_properties_show (SEAHORSE_PGP_KEY (viewable), parent);
+	seahorse_pgp_key_properties_show (SEAHORSE_PGP_KEY (viewable), parent);
 }
 
 static void
 seahorse_pgp_key_viewable_iface (SeahorseViewableIface *iface)
 {
-	iface->create_viewer = seahorse_pgp_key_create_viewer;
+	iface->show_viewer = seahorse_pgp_key_show_viewer;
 }
 
 gchar*

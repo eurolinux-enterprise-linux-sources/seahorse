@@ -15,8 +15,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
  
 /**
@@ -31,12 +33,19 @@
 
 typedef guint64 SeahorseVersion;
 
+#define SEAHORSE_BAD_FILENAME_CHARS  "/\\<>|:?;"
+
 gchar*      seahorse_util_get_date_string           (const time_t time);
+gchar*      seahorse_util_get_display_date_string   (const time_t time);
 
 
 #define     SEAHORSE_ERROR                      (seahorse_util_error_domain ())
 
 GQuark      seahorse_util_error_domain          (void);
+
+void        seahorse_util_show_error            (gpointer parent,
+                                                 const gchar *heading,
+                                                 const gchar *message);
 
 void        seahorse_util_handle_error          (GError **error,
                                                  gpointer parent,
@@ -56,6 +65,9 @@ gboolean    seahorse_util_print_fd          (int fd,
 
 gboolean    seahorse_util_printf_fd         (int fd, 
                                              const char* data, ...);
+
+GFile *     seahorse_util_file_increment_unique     (GFile *file,
+                                                     guint *state);
 
 gboolean    seahorse_util_write_file_private            (const gchar* filename,
                                                          const gchar* contents,
@@ -82,11 +94,6 @@ void        seahorse_util_determine_popup_menu_position  (GtkMenu *menu,
                                                            gpointer gdata);
 
 SeahorseVersion seahorse_util_parse_version   (const char *version);
-
-guint       seahorse_ulong_hash    (gconstpointer v);
-
-gboolean    seahorse_ulong_equal   (gconstpointer v1,
-                                    gconstpointer v2);
 
 #define seahorse_util_version(a,b,c,d) ((SeahorseVersion)a << 48) + ((SeahorseVersion)b << 32) \
                                      + ((SeahorseVersion)c << 16) +  (SeahorseVersion)d

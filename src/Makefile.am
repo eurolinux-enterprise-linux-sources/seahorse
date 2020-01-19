@@ -1,9 +1,32 @@
-include Makefile.decl
+## Process this file with automake to produce Makefile.in
 
-ACLOCAL_AMFLAGS = -I build/m4 ${ACLOCAL_FLAGS}
+ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-SUBDIRS = \
-	. \
+if WITH_PKCS11
+PKCS11_DIR = pkcs11
+else
+PKCS11_DIR = 
+endif
+
+if WITH_SSH
+SSH_DIR = ssh
+else
+SSH_DIR = 
+endif
+
+if WITH_PGP
+PGP_DIR = pgp
+else
+PGP_DIR = 
+endif
+
+SUBDIRS = libegg \
+	libseahorse \
+	gkr \
+	$(PGP_DIR) \
+	$(PKCS11_DIR) \
+	$(SSH_DIR) \
+	src \
 	po \
 	data \
 	help
@@ -36,10 +59,8 @@ DISTCHECK_CONFIGURE_FLAGS = \
     --disable-scrollkeeper \
     --disable-update-mime-database \
     --disable-debug \
-    --disable-strict \
-    --disable-valac \
-    --enable-pgp
-
+    --disable-strict
+    
 CHANGELOG_START = \
 	d2f8367dc600080b6cf3edbe4e2fc204f929471e
 
@@ -59,62 +80,3 @@ dist-hook:
 
 distuninstallcheck:
 	@:
-
-upload-release: $(DIST_ARCHIVES)
-	scp $(DIST_ARCHIVES) master.gnome.org:
-	ssh master.gnome.org ftpadmin install $(DIST_ARCHIVES)
-
-noinst_LIBRARIES =
-bin_PROGRAMS =
-man_MANS =
-
-pkgdatadir = $(datadir)/seahorse
-localedir = $(datadir)/locale
-
-uidir = $(datadir)/seahorse/ui/
-ui_DATA =
-
-seahorselibexecbindir = $(libdir)/seahorse/
-seahorselibexecbin_PROGRAMS =
-
-BUILT_SOURCES =
-CLEANFILES = *.c */*.c *.h */*.h $(BUILT_SOURCES)
-EXTRA_DIST += $(ui_DATA)
-DISTCLEANFILES +=
-
-AM_CPPFLAGS = \
-	-I$(top_builddir) \
-	-I$(top_srcdir) \
-	-I$(top_builddir)/common \
-	-I$(top_srcdir)/common \
-	-DPKGDATADIR=\""$(pkgdatadir)/"\" \
-	-DUIDIR=\""$(uidir)"\" \
-	-DSEAHORSE_UIDIR=\""$(uidir)/"\" \
-	-DLOCALEDIR=\"$(localedir)\" \
-	-DGETTEXT_PACKAGE=\""seahorse\"" \
-	-DEXECDIR=\""$(seahorselibexecbindir)"\" \
-	-DG_LOG_DOMAIN=\"seahorse\" \
-	$(SEAHORSE_CFLAGS) \
-	$(NULL)
-
-V_VALAC = $(V_VALAC_$(V))
-V_VALAC_ = $(V_VALAC_$(AM_DEFAULT_VERBOSITY))
-V_VALAC_0 = @echo "  VALAC   " $@;
-
-include common/Makefile.am
-include libegg/Makefile.am
-include libseahorse/Makefile.am
-include gkr/Makefile.am
-include src/Makefile.am
-
-if WITH_PGP
-include pgp/Makefile.am
-endif
-
-if WITH_SSH
-include ssh/Makefile.am
-endif
-
-if WITH_PKCS11
-include pkcs11/Makefile.am
-endif

@@ -15,20 +15,18 @@
  * Lesser General Public License for more details.
  *  
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.  
  */
 
 #include "config.h"
 
-#undef G_LOG_DOMAIN
-#define G_LOG_DOMAIN "operation"
-
 #include "seahorse-gpgme.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-util.h"
+#define DEBUG_FLAG SEAHORSE_DEBUG_OPERATION
+#include "seahorse-debug.h"
+#include "seahorse-util.h"
 
 #include <glib/gi18n.h>
 
@@ -319,7 +317,7 @@ seahorse_gpgme_gsource_dispatch (GSource *gsource,
 	for (l = watches; l != NULL; l = g_list_next (l)) {
 		watch = l->data;
 		if (watch->registered && watch->poll_fd.revents) {
-			g_debug ("GPGME OP: io for GPGME on %d", watch->poll_fd.fd);
+			seahorse_debug ("GPGME OP: io for GPGME on %d", watch->poll_fd.fd);
 			g_assert (watch->fnc);
 			watch->poll_fd.revents = 0;
 			(watch->fnc) (watch->fnc_data, watch->poll_fd.fd);
@@ -356,7 +354,7 @@ register_watch (WatchData *watch)
 	if (watch->registered)
 		return;
 
-	g_debug ("GPGME OP: registering watch %d", watch->poll_fd.fd);
+	seahorse_debug ("GPGME OP: registering watch %d", watch->poll_fd.fd);
 
 	watch->registered = TRUE;
 	g_source_add_poll (watch->gsource, &watch->poll_fd);
@@ -368,7 +366,7 @@ unregister_watch (WatchData *watch)
 	if (!watch->registered)
 		return;
 
-	g_debug ("GPGME OP: unregistering watch %d", watch->poll_fd.fd);
+	seahorse_debug ("GPGME OP: unregistering watch %d", watch->poll_fd.fd);
 
 	watch->registered = FALSE;
 	g_source_remove_poll (watch->gsource, &watch->poll_fd);
@@ -386,7 +384,7 @@ on_gpgme_add_watch (void *user_data,
 	SeahorseGpgmeGSource *gpgme_gsource = user_data;
 	WatchData *watch;
 
-	g_debug ("PGPOP: request to register watch %d", fd);
+	seahorse_debug ("PGPOP: request to register watch %d", fd);
 
 	watch = g_new0 (WatchData, 1);
 	watch->registered = FALSE;
@@ -438,7 +436,7 @@ on_gpgme_event (void *user_data,
 	case GPGME_EVENT_START:
 		gpgme_gsource->busy = TRUE;
 		gpgme_gsource->finished = FALSE;
-		g_debug ("PGPOP: start event");
+		seahorse_debug ("PGPOP: start event");
 
 		/* Since we weren't supposed to register these before, do it now */
 		for (l = gpgme_gsource->watches; l != NULL; l= g_list_next (l))
@@ -449,7 +447,7 @@ on_gpgme_event (void *user_data,
 	case GPGME_EVENT_DONE:
 		gpgme_gsource->busy = FALSE;
 		gerr = (gpgme_error_t *)type_data;
-		g_debug ("PGPOP: done event (err: %d)", *gerr);
+		seahorse_debug ("PGPOP: done event (err: %d)", *gerr);
 
 		/* Make sure we have no extra watches left over */
 		for (l = gpgme_gsource->watches; l != NULL; l = g_list_next (l))

@@ -14,14 +14,13 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
-
-#undef G_LOG_DOMAIN
-#define G_LOG_DOMAIN "operation"
 
 #include "seahorse-gpgme-keyring.h"
 
@@ -32,11 +31,11 @@
 #include "seahorse-pgp-actions.h"
 #include "seahorse-pgp-key.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-progress.h"
-#include "libseahorse/seahorse-util.h"
-#include "libseahorse/seahorse-passphrase.h"
+#include "seahorse-place.h"
+#include "seahorse-progress.h"
+#include "seahorse-registry.h"
+#include "seahorse-util.h"
+#include "seahorse-passphrase.h"
 
 #include <gcr/gcr.h>
 
@@ -47,6 +46,9 @@
 #include <string.h>
 #include <libintl.h>
 #include <locale.h>
+
+#define DEBUG_FLAG SEAHORSE_DEBUG_OPERATION
+#include "seahorse-debug.h"
 
 enum {
 	PROP_0,
@@ -412,7 +414,7 @@ static void
 cancel_scheduled_refresh (SeahorseGpgmeKeyring *self)
 {
 	if (self->pv->scheduled_refresh != 0) {
-		g_debug ("cancelling scheduled refresh event");
+		seahorse_debug ("cancelling scheduled refresh event");
 		g_source_remove (self->pv->scheduled_refresh);
 		self->pv->scheduled_refresh = 0;
 	}
@@ -422,7 +424,7 @@ static gboolean
 scheduled_dummy (gpointer user_data)
 {
 	SeahorseGpgmeKeyring *self = SEAHORSE_GPGME_KEYRING (user_data);
-	g_debug ("dummy refresh event occurring now");
+	seahorse_debug ("dummy refresh event occurring now");
 	self->pv->scheduled_refresh = 0;
 	return FALSE; /* don't run again */
 }
@@ -486,9 +488,9 @@ seahorse_gpgme_keyring_load_full_async (SeahorseGpgmeKeyring *self,
 	/* Schedule a dummy refresh. This blocks all monitoring for a while */
 	cancel_scheduled_refresh (self);
 	self->pv->scheduled_refresh = g_timeout_add (500, scheduled_dummy, self);
-	g_debug ("scheduled a dummy refresh");
+	seahorse_debug ("scheduled a dummy refresh");
 
-	g_debug ("refreshing keys...");
+	seahorse_debug ("refreshing keys...");
 
 	res = g_simple_async_result_new (G_OBJECT (self), callback, user_data,
 	                                 seahorse_gpgme_keyring_load_full_async);
@@ -621,7 +623,7 @@ on_keyring_import_complete (gpgme_error_t gerr,
 	gpgme_import_status_t import;
 	GError *error = NULL;
 	const gchar *msg;
-	gint i;
+	guint i;
 
 	if (seahorse_gpgme_propagate_error (gerr, &error)) {
 		g_simple_async_result_take_error (res, error);
@@ -733,7 +735,7 @@ scheduled_refresh (gpointer user_data)
 {
 	SeahorseGpgmeKeyring *self = SEAHORSE_GPGME_KEYRING (user_data);
 
-	g_debug ("scheduled refresh event ocurring now");
+	seahorse_debug ("scheduled refresh event ocurring now");
 	cancel_scheduled_refresh (self);
 	seahorse_gpgme_keyring_load_async (SEAHORSE_PLACE (self), NULL, NULL, NULL);
 
@@ -754,7 +756,7 @@ monitor_gpg_homedir (GFileMonitor *handle, GFile *file, GFile *other_file,
 		name = g_file_get_basename (file);
 		if (g_str_has_suffix (name, ".gpg")) {
 			if (self->pv->scheduled_refresh == 0) {
-				g_debug ("scheduling refresh event due to file changes");
+				seahorse_debug ("scheduling refresh event due to file changes");
 				self->pv->scheduled_refresh = g_timeout_add (500, scheduled_refresh, self);
 			}
 		}
@@ -800,62 +802,29 @@ seahorse_gpgme_keyring_init (SeahorseGpgmeKeyring *self)
 	}
 }
 
-static gchar *
-seahorse_gpgme_keyring_get_label (SeahorsePlace *place)
-{
-	return g_strdup (_("GnuPG keys"));
-}
-
-static gchar *
-seahorse_gpgme_keyring_get_description (SeahorsePlace *place)
-{
-	return g_strdup (_("GnuPG: default keyring directory"));
-}
-
-static GIcon *
-seahorse_gpgme_keyring_get_icon (SeahorsePlace *place)
-{
-	return g_themed_icon_new (GCR_ICON_GNUPG);
-}
-
-static GtkActionGroup *
-seahorse_gpgme_keyring_get_actions (SeahorsePlace *place)
-{
-	SeahorseGpgmeKeyring *self = SEAHORSE_GPGME_KEYRING (place);
-	if (self->pv->actions)
-		return g_object_ref (self->pv->actions);
-	return NULL;
-}
-
-static gchar *
-seahorse_gpgme_keyring_get_uri (SeahorsePlace *place)
-{
-	return g_strdup ("gnupg://");
-}
-
 static void
 seahorse_gpgme_keyring_get_property (GObject *obj,
                                      guint prop_id,
                                      GValue *value,
                                      GParamSpec *pspec)
 {
-	SeahorsePlace *place = SEAHORSE_PLACE (obj);
+	SeahorseGpgmeKeyring *self = SEAHORSE_GPGME_KEYRING (obj);
 
 	switch (prop_id) {
 	case PROP_LABEL:
-		g_value_take_string (value, seahorse_gpgme_keyring_get_label (place));
+		g_value_set_string (value, _("GnuPG keys"));
 		break;
 	case PROP_DESCRIPTION:
-		g_value_take_string (value, seahorse_gpgme_keyring_get_description (place));
+		g_value_set_string (value, _("GnuPG: default keyring directory"));
 		break;
 	case PROP_ICON:
-		g_value_take_object (value, seahorse_gpgme_keyring_get_icon (place));
+		g_value_take_object (value, g_themed_icon_new (GCR_ICON_GNUPG));
 		break;
 	case PROP_URI:
-		g_value_take_string (value, seahorse_gpgme_keyring_get_uri (place));
+		g_value_set_string (value, "gnupg://");
 		break;
 	case PROP_ACTIONS:
-		g_value_take_object (value, seahorse_gpgme_keyring_get_actions (place));
+		g_value_set_object (value, self->pv->actions);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (obj, prop_id, pspec);
@@ -907,7 +876,7 @@ seahorse_gpgme_keyring_class_init (SeahorseGpgmeKeyringClass *klass)
 {
 	GObjectClass *gobject_class;
 
-	g_debug ("init gpgme version %s", gpgme_check_version (NULL));
+	g_message ("init gpgme version %s", gpgme_check_version (NULL));
 
 #ifdef ENABLE_NLS
 	gpgme_set_locale (NULL, LC_CTYPE, setlocale (LC_CTYPE, NULL));
@@ -931,13 +900,8 @@ seahorse_gpgme_keyring_class_init (SeahorseGpgmeKeyringClass *klass)
 static void
 seahorse_gpgme_keyring_place_iface (SeahorsePlaceIface *iface)
 {
-	iface->load = seahorse_gpgme_keyring_load_async;
+	iface->load_async = seahorse_gpgme_keyring_load_async;
 	iface->load_finish = seahorse_gpgme_keyring_load_finish;
-	iface->get_actions = seahorse_gpgme_keyring_get_actions;
-	iface->get_description = seahorse_gpgme_keyring_get_description;
-	iface->get_icon = seahorse_gpgme_keyring_get_icon;
-	iface->get_label = seahorse_gpgme_keyring_get_label;
-	iface->get_uri = seahorse_gpgme_keyring_get_uri;
 }
 
 static guint
@@ -1012,7 +976,5 @@ seahorse_gpgme_keyring_new_context (gpgme_error_t *gerr)
 
 	gpgme_set_passphrase_cb (ctx, (gpgme_passphrase_cb_t)passphrase_get, NULL);
 	gpgme_set_keylist_mode (ctx, GPGME_KEYLIST_MODE_LOCAL);
-	if (gerr)
-		*gerr = 0;
 	return ctx;
 }

@@ -14,8 +14,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330,
+ * Boston, MA 02111-1307, USA.
  */
 
 #include "config.h"
@@ -32,12 +34,12 @@
 #include "seahorse-pgp-subkey.h"
 #include "seahorse-pgp-uid.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-object-list.h"
-#include "libseahorse/seahorse-progress.h"
-#include "libseahorse/seahorse-servers.h"
-#include "libseahorse/seahorse-util.h"
+#include "seahorse-object-list.h"
+#include "seahorse-place.h"
+#include "seahorse-progress.h"
+#include "seahorse-registry.h"
+#include "seahorse-servers.h"
+#include "seahorse-util.h"
 
 #include <ldap.h>
 
@@ -46,6 +48,9 @@
 #endif
 
 #ifdef WITH_LDAP
+
+#define DEBUG_FLAG SEAHORSE_DEBUG_LDAP
+#include "seahorse-debug.h"
 
 /* Amount of keys to load in a batch */
 #define DEFAULT_LOAD_BATCH 30
@@ -137,7 +142,7 @@ dump_ldap_entry (LDAP *ld, LDAPMessage *res)
     char *t;
     
     t = ldap_get_dn (ld, res);
-    g_debug ("dn: %s\n", t);
+    g_printerr ("dn: %s\n", t);
     ldap_memfree (t);
     
     for (t = ldap_first_attribute (ld, res, &pos); t; 
@@ -145,8 +150,8 @@ dump_ldap_entry (LDAP *ld, LDAPMessage *res)
              
         values = get_ldap_values (ld, res, t);
         for (v = values; *v; v++) 
-            g_debug ("%s: %s\n", t, *v);
-
+            g_printerr ("%s: %s\n", t, *v);
+             
         g_strfreev (values);
         ldap_memfree (t);
     }
@@ -474,9 +479,10 @@ on_connect_server_info_completed (LDAPMessage *result,
 	/* If we have results then fill in the server info */
 	if (type == LDAP_RES_SEARCH_ENTRY) {
 
-		g_debug ("Server Info Result");
+		seahorse_debug ("Server Info Result:");
 #ifdef WITH_DEBUG
-		dump_ldap_entry (closure->ldap, result);
+		if (seahorse_debugging)
+			dump_ldap_entry (closure->ldap, result);
 #endif
 
 		/* NOTE: When adding attributes here make sure to add them to kServerAttributes */
@@ -730,7 +736,10 @@ seahorse_ldap_source_connect_finish (SeahorseLDAPSource *source,
 	return ldap;
 }
 
-G_DEFINE_TYPE (SeahorseLDAPSource, seahorse_ldap_source, SEAHORSE_TYPE_SERVER_SOURCE);
+static void seahorse_place_iface (SeahorsePlaceIface *iface);
+
+G_DEFINE_TYPE_EXTENDED (SeahorseLDAPSource, seahorse_ldap_source, SEAHORSE_TYPE_SERVER_SOURCE, 0,
+                        G_IMPLEMENT_INTERFACE (SEAHORSE_TYPE_PLACE, seahorse_place_iface));
 
 static void 
 seahorse_ldap_source_init (SeahorseLDAPSource *self)
@@ -867,9 +876,10 @@ on_search_search_completed (LDAPMessage *result,
 
 	/* An LDAP entry */
 	if (type == LDAP_RES_SEARCH_ENTRY) {
-		g_debug ("Retrieved Key Entry");
+		seahorse_debug ("Retrieved Key Entry:");
 #ifdef WITH_DEBUG
-		dump_ldap_entry (closure->ldap, result);
+		if (seahorse_debugging)
+			dump_ldap_entry (closure->ldap, result);
 #endif
 
 		search_parse_key_from_ldap_entry (self, closure->results,
@@ -927,8 +937,8 @@ on_search_connect_completed (GObject *source,
 
 	sinfo = get_ldap_server_info (self, TRUE);
 
-	g_debug ("Searching Server ... base: %s, filter: %s",
-	         sinfo->base_dn, closure->filter);
+	seahorse_debug ("Searching Server ... base: %s, filter: %s",
+	                sinfo->base_dn, closure->filter);
 
 	rc = ldap_search_ext (closure->ldap, sinfo->base_dn, LDAP_SCOPE_SUBTREE,
 	                      closure->filter, (char **)PGP_ATTRIBUTES, 0,
@@ -1238,9 +1248,10 @@ on_export_search_completed (LDAPMessage *result,
 	/* An LDAP Entry */
 	if (type == LDAP_RES_SEARCH_ENTRY) {
 
-		g_debug ("Server Info Result");
+		seahorse_debug ("Server Info Result:");
 #ifdef WITH_DEBUG
-		dump_ldap_entry (closure->ldap, result);
+		if (seahorse_debugging)
+			dump_ldap_entry (closure->ldap, result);
 #endif
 
 		key = get_string_attribute (closure->ldap, result, sinfo->key_attr);
@@ -1413,6 +1424,11 @@ seahorse_ldap_source_export_finish (SeahorseServerSource *source,
 	output = g_string_free (closure->data, FALSE);
 	closure->data = NULL;
 	return output;
+}
+
+static void 
+seahorse_place_iface (SeahorsePlaceIface *iface)
+{
 }
 
 /* Initialize the basic class stuff */

@@ -7,15 +7,15 @@
 # Vasiliy Faronov <qvvx@yandex.ru>, 2008.
 # Anisimov Victor <vicanis@gmail.com>, 2009.
 # Yuri Kozlov <yuray@komyakino.ru>, 2010.
-# Yuri Myasoedov <ymyasoedov@yandex.ru>, 2012-2014.
+# Yuri Myasoedov <omerta13@yandex.ru>, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: seahorse trunk\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=seahorse&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-06 22:34+0000\n"
-"PO-Revision-Date: 2014-09-07 10:47+0300\n"
+"POT-Creation-Date: 2013-01-22 08:46+0000\n"
+"PO-Revision-Date: 2013-02-26 14:02+0400\n"
 "Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
 "Language-Team: русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -23,334 +23,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.4\n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
-#: ../data/seahorse.appdata.xml.in.h:1
-msgid ""
-"Seahorse is a GNOME application for managing encryption keys. It also "
-"integrates with nautilus, gedit and other places for encryption operations."
-msgstr ""
-"Seahorse — приложение GNOME для управления ключами шифрования. Приложение "
-"интегрируется с nautilus, gedit и прочими приложениями, где требуется "
-"шифрование."
-
-#: ../data/seahorse.appdata.xml.in.h:2
-msgid ""
-"With seahorse you can create and manage PGP keys, create and manage SSH "
-"keys, publish and retrieve keys from key servers, cache your passphrase so "
-"you don't have to keep typing it and backup your keys and keyring."
-msgstr ""
-"С помощью seahorse можно создавать и управлять ключами PGP, создавать и "
-"управлять ключами SSH, публиковать и получать ключи с серверов, кэшировать "
-"парольные фразы, создавать резервные копии ключей и связок с ключами."
-
-#: ../data/seahorse.desktop.in.in.h:1 ../common/catalog.vala:285
-#: ../src/seahorse-key-manager.c:660
-msgid "Passwords and Keys"
-msgstr "Пароли и ключи"
-
-#: ../data/seahorse.desktop.in.in.h:2
-msgid "Manage your passwords and encryption keys"
-msgstr "Управление паролями и ключами шифрования"
-
-#: ../data/seahorse.desktop.in.in.h:3
-msgid "keyring;encryption;security;sign;ssh;"
-msgstr "связка;шифрование;безопасность;подпись;ssh;"
-
-#: ../common/catalog.vala:257
-msgid "Contributions:"
-msgstr "Помощники:"
-
-#: ../common/catalog.vala:287
-msgid "translator-credits"
-msgstr ""
-"Valek Filippov <frob@df.ru>, 2000-2003\n"
-"Yuri Kozlov <kozlov.y@gmail.com>, 2008\n"
-"Vasiliy Faronov <qvvx@yandex.ru>, 2008\n"
-"Yuri Myasoedov <ymyasoedov@yandex.ru>, 2012-2014"
-
-#: ../common/catalog.vala:290
-msgid "Seahorse Project Homepage"
-msgstr "Домашняя страница проекта Seahorse"
-
-#: ../common/catalog.vala:308
-msgid "Cannot delete"
-msgstr "Не удалось удалить"
-
-#: ../common/catalog.vala:331 ../libseahorse/seahorse-key-manager-store.c:440
-msgid "Couldn't export keys"
-msgstr "Не удалось экспортировать ключи"
-
-#: ../common/catalog.vala:342
-msgid "Couldn't export data"
-msgstr "Не удалось экспортировать данные"
-
-#: ../common/catalog.vala:358 ../libseahorse/seahorse-widget.c:459
-#, c-format
-msgid "Could not display help: %s"
-msgstr "Не удалось показать справку: %s"
-
-#. Top menu items
-#: ../common/catalog.vala:364
-msgid "_File"
-msgstr "_Файл"
-
-#: ../common/catalog.vala:365
-msgid "E_xport..."
-msgstr "_Экспортировать…"
-
-#: ../common/catalog.vala:366
-msgid "Export to a file"
-msgstr "Экспортировать в файл"
-
-#: ../common/catalog.vala:367
-msgid "_Edit"
-msgstr "_Правка"
-
-#: ../common/catalog.vala:370
-msgid "Copy to the clipboard"
-msgstr "Скопировать в буфер обмена"
-
-#: ../common/catalog.vala:371 ../pkcs11/pkcs11-properties.vala:201
-#: ../src/seahorse-sidebar.c:954
-msgid "_Delete"
-msgstr "_Удалить"
-
-#: ../common/catalog.vala:372
-msgid "Delete selected items"
-msgstr "Удалить выделенные элементы"
-
-#: ../common/catalog.vala:374
-msgid "Show the properties of this item"
-msgstr "Показать свойства этого элемента"
-
-#: ../common/catalog.vala:376
-msgid "Show the properties of this keyring"
-msgstr "Показать свойства этой связки ключей"
-
-#: ../common/catalog.vala:377
-msgid "Prefere_nces"
-msgstr "_Параметры"
-
-#: ../common/catalog.vala:378
-msgid "Change preferences for this program"
-msgstr "Настроить параметры приложения"
-
-#: ../common/catalog.vala:379
-msgid "_View"
-msgstr "_Вид"
-
-#: ../common/catalog.vala:380
-msgid "_Help"
-msgstr "_Справка"
-
-#: ../common/catalog.vala:382
-msgid "About this program"
-msgstr "О приложении"
-
-#: ../common/catalog.vala:383
-msgid "_Contents"
-msgstr "_Содержание"
-
-#: ../common/catalog.vala:384
-msgid "Show Seahorse help"
-msgstr "Показать справку по Seahorse"
-
-#: ../common/exportable.vala:192
-#: ../pgp/seahorse-pgp-private-key-properties.xml.h:46
-msgid "Export"
-msgstr "Экспортировать"
-
-#: ../gkr/gkr-backend.vala:39
-msgid "Passwords"
-msgstr "Пароли"
-
-#: ../gkr/gkr-backend.vala:43
-msgid "Stored personal passwords, credentials and secrets"
-msgstr "Хранящиеся личные пароли, мандаты и секреты"
-
-#: ../gkr/gkr-backend.vala:241
-msgid "New password keyring"
-msgstr "Новая связка ключей для паролей"
-
-#: ../gkr/gkr-backend.vala:242 ../gkr/gkr-backend.vala:249
-msgid "Used to store application and network passwords"
-msgstr "Используется для хранения паролей приложений и сетевых узлов"
-
-#: ../gkr/gkr-backend.vala:243
-msgid "New password..."
-msgstr "Создать пароль…"
-
-#: ../gkr/gkr-backend.vala:244 ../gkr/gkr-backend.vala:251
-msgid "Safely store a password or secret."
-msgstr "Безопасно хранит пароль или секрет."
-
-#: ../gkr/gkr-backend.vala:248
-msgid "Password Keyring"
-msgstr "Связка ключей для паролей"
-
-#: ../gkr/gkr-backend.vala:250
-msgid "Stored Password"
-msgstr "Сохраненный пароль"
-
-#: ../gkr/gkr-item-add.vala:24
-msgid "Add Password"
-msgstr "Добавить пароль"
-
-#: ../gkr/gkr-item-add.vala:101
-msgid "Couldn't add item"
-msgstr "Не удалось удалить элемент"
-
-#: ../gkr/gkr-item-properties.vala:136
-msgid "Access a network share or resource"
-msgstr "Даёт доступ к сетевому хранилищу или ресурсу"
-
-#: ../gkr/gkr-item-properties.vala:139
-msgid "Access a website"
-msgstr "Даёт доступ к веб-сайту"
-
-#: ../gkr/gkr-item-properties.vala:142
-msgid "Unlocks a PGP key"
-msgstr "Разблокирует ключ PGP"
-
-#: ../gkr/gkr-item-properties.vala:145
-msgid "Unlocks a Secure Shell key"
-msgstr "Разблокирует ключ SSH"
-
-#: ../gkr/gkr-item-properties.vala:148
-msgid "Saved password or login"
-msgstr "Сохранённый пароль или учётное имя"
-
-#: ../gkr/gkr-item-properties.vala:161
-msgid "Network Credentials"
-msgstr "Сетевые учётные сведения"
-
-#: ../gkr/gkr-item-properties.vala:166
-msgid "Password"
-msgstr "Пароль"
-
-#: ../gkr/gkr-item-properties.vala:235
-msgid "Couldn't change password."
-msgstr "Не удалось изменить пароль."
-
-#: ../gkr/gkr-item-properties.vala:273
-msgid "Couldn't set description."
-msgstr "Не удалось установить описание."
-
-#. Translators: This should be the same as the string in empathy
-#: ../gkr/gkr-item.vala:388
-msgid "IM account password for "
-msgstr "Пароль для уч. записи мессенджера"
-
-#: ../gkr/gkr-item.vala:444
-msgid "Password or secret"
-msgstr "Пароль или секрет"
-
-#: ../gkr/gkr-item.vala:445
-msgid "Network password"
-msgstr "Пароль для сети"
-
-#: ../gkr/gkr-item.vala:446
-msgid "Stored note"
-msgstr "Хранящееся примечание"
-
-#: ../gkr/gkr-item.vala:447
-msgid "Keyring password"
-msgstr "Пароль для связки ключей"
-
-#: ../gkr/gkr-item.vala:448
-msgid "Encryption key password"
-msgstr "Пароль для ключа шифрования"
-
-#: ../gkr/gkr-item.vala:449
-msgid "Key storage password"
-msgstr "Пароль для ключа хранилища"
-
-#: ../gkr/gkr-item.vala:450
-msgid "Google Chrome password"
-msgstr "Пароль для Google Chrome"
-
-#: ../gkr/gkr-item.vala:451
-msgid "Gnome Online Accounts password"
-msgstr "Пароль для сетевых уч. записей Gnome"
-
-#: ../gkr/gkr-item.vala:452
-msgid "Telepathy password"
-msgstr "Пароль для Telepathy"
-
-#: ../gkr/gkr-item.vala:453
-msgid "Instant messaging password"
-msgstr "Пароль для обмена мгновенными сообщениями"
-
-#: ../gkr/gkr-item.vala:454
-msgid "Network Manager secret"
-msgstr "Секрет NetworkManager"
-
-#: ../gkr/gkr-item.vala:504
-#, c-format
-msgid "Are you sure you want to delete the password '%s'?"
-msgstr "Уверены, что хотите безвозвратно удалить пароль «%s»?"
-
-#: ../gkr/gkr-item.vala:506
-#, c-format
-msgid "Are you sure you want to delete %d password?"
-msgid_plural "Are you sure you want to delete %d passwords?"
-msgstr[0] "Уверены, что хотите безвозвратно удалить %d пароль?"
-msgstr[1] "Уверены, что хотите безвозвратно удалить %d пароля?"
-msgstr[2] "Уверены, что хотите безвозвратно удалить %d паролей?"
-
-#: ../gkr/gkr-keyring-add.vala:25
+#: ../gkr/seahorse-add-keyring.xml.h:1
 msgid "Add Password Keyring"
 msgstr "Добавить связку ключей для паролей"
 
-#: ../gkr/gkr-keyring-add.vala:55
-msgid "Couldn't add keyring"
-msgstr "Не удалось добавить связку ключей"
-
-#: ../gkr/gkr-keyring.vala:28
-msgid "A keyring that is automatically unlocked on login"
-msgstr ""
-"Связка ключей, которая автоматически разблокируется при входе в систему"
-
-#: ../gkr/gkr-keyring.vala:29
-msgid "A keyring used to store passwords"
-msgstr "Связка ключей, используемая для хранения паролей"
-
-#: ../gkr/gkr-keyring.vala:174
-msgid "Couldn't set default keyring"
-msgstr "Не удалось назначить связку ключей по умолчанию"
-
-#: ../gkr/gkr-keyring.vala:198 ../gkr/gkr-keyring.vala:203
-msgid "Couldn't change keyring password"
-msgstr "Не удалось изменить пароль к связке ключей"
-
-#: ../gkr/gkr-keyring.vala:209
-msgid "_Set as default"
-msgstr "_Установить по умолчанию"
-
-#: ../gkr/gkr-keyring.vala:210
-msgid "Applications usually store new passwords in the default keyring."
-msgstr "Приложения хранят свои пароли в связке ключей по умолчанию."
-
-#: ../gkr/gkr-keyring.vala:211
-msgid "Change _Password"
-msgstr "Изменить _пароль"
-
-#: ../gkr/gkr-keyring.vala:212
-msgid "Change the unlock password of the password storage keyring"
-msgstr "Изменить пароль, разблокирующий связку ключей для паролей"
-
-#: ../gkr/gkr-keyring.vala:237
-#, c-format
-msgid "Are you sure you want to delete the password keyring '%s'?"
-msgstr "Уверены, что хотите удалить связку ключей для паролей «%s»?"
-
-#: ../gkr/gkr-keyring.vala:240
-msgid "I understand that all items will be permanently deleted."
-msgstr "Я понимаю, что все элементы будут безвозвратно удалены."
-
-#: ../gkr/seahorse-add-keyring.xml.h:1
+#: ../gkr/seahorse-add-keyring.xml.h:2
 msgid ""
 "Please choose a name for the new keyring. You will be prompted for an unlock "
 "password."
@@ -358,251 +38,458 @@ msgstr ""
 "Введите название новой связки ключей. Далее вас попросят ввести пароль для "
 "разблокировки."
 
-#: ../gkr/seahorse-add-keyring.xml.h:2
+#: ../gkr/seahorse-add-keyring.xml.h:3
 msgid "New Keyring Name:"
 msgstr "Имя новой связки ключей:"
 
+#: ../gkr/seahorse-add-keyring.xml.h:4
+#: ../libseahorse/seahorse-add-keyserver.xml.h:5
+#: ../ssh/seahorse-ssh-upload.xml.h:3
+msgid "The host name or address of the server."
+msgstr "Имя узла или адрес сервера."
+
+#: ../gkr/seahorse-gkr-actions.c:81
+msgid "New password keyring"
+msgstr "Новая связка ключей для паролей"
+
+#: ../gkr/seahorse-gkr-actions.c:82 ../gkr/seahorse-gkr-actions.c:89
+msgid "Used to store application and network passwords"
+msgstr "Используется для хранения паролей приложений и сетевых узлов"
+
+#: ../gkr/seahorse-gkr-actions.c:83
+msgid "New password..."
+msgstr "Создать пароль…"
+
+#: ../gkr/seahorse-gkr-actions.c:84 ../gkr/seahorse-gkr-actions.c:91
+msgid "Safely store a password or secret."
+msgstr "Безопасно хранит пароль или секрет."
+
+#: ../gkr/seahorse-gkr-actions.c:88
+msgid "Password Keyring"
+msgstr "Связка ключей для паролей"
+
+#: ../gkr/seahorse-gkr-actions.c:90
+msgid "Stored Password"
+msgstr "Сохраненный пароль"
+
+#: ../gkr/seahorse-gkr-actions.c:174
+msgid "Couldn't set default keyring"
+msgstr "Не удалось назначить связку ключей по умолчанию"
+
+#: ../gkr/seahorse-gkr-actions.c:225 ../gkr/seahorse-gkr-actions.c:248
+msgid "Couldn't change keyring password"
+msgstr "Не удалось изменить пароль к связке ключей"
+
+#: ../gkr/seahorse-gkr-actions.c:281
+msgid "_Set as default"
+msgstr "_Установить по умолчанию"
+
+#: ../gkr/seahorse-gkr-actions.c:282
+msgid "Applications usually store new passwords in the default keyring."
+msgstr "Приложения хранят свои пароли в связке ключей по умолчанию."
+
+#: ../gkr/seahorse-gkr-actions.c:283
+msgid "Change _Password"
+msgstr "Изменить _пароль"
+
+#: ../gkr/seahorse-gkr-actions.c:284
+msgid "Change the unlock password of the password storage keyring"
+msgstr "Изменить пароль, разблокирующий связку ключей для паролей"
+
+#: ../gkr/seahorse-gkr-add-item.c:60
+msgid "Couldn't add item"
+msgstr "Не удалось удалить элемент"
+
 #: ../gkr/seahorse-gkr-add-item.xml.h:1
-#: ../gkr/seahorse-gkr-item-properties.xml.h:1 ../pgp/seahorse-revoke.xml.h:3
+msgid "Add Password"
+msgstr "Добавить пароль"
+
+#: ../gkr/seahorse-gkr-add-item.xml.h:2
+#: ../gkr/seahorse-gkr-item-properties.xml.h:2 ../pgp/seahorse-revoke.xml.h:3
 #: ../ssh/seahorse-ssh-generate.xml.h:5
 msgid "_Description:"
 msgstr "_Описание:"
 
-#: ../gkr/seahorse-gkr-add-item.xml.h:2
+#: ../gkr/seahorse-gkr-add-item.xml.h:3
 msgid "_Password:"
 msgstr "_Пароль:"
 
-#: ../gkr/seahorse-gkr-add-item.xml.h:3
+#: ../gkr/seahorse-gkr-add-item.xml.h:4
 msgid "_Show Password"
 msgstr "По_казывать пароль"
 
-#: ../gkr/seahorse-gkr-add-item.xml.h:4
+#: ../gkr/seahorse-gkr-add-item.xml.h:5
 msgid "_Keyring:"
 msgstr "_Связка ключей:"
 
+#: ../gkr/seahorse-gkr-add-keyring.c:72
+msgid "Couldn't add keyring"
+msgstr "Не удалось добавить связку ключей"
+
+#: ../gkr/seahorse-gkr-backend.c:205
+msgid "Passwords"
+msgstr "Пароли"
+
+#: ../gkr/seahorse-gkr-backend.c:208
+msgid "Stored personal passwords, credentials and secrets"
+msgstr "Хранящиеся личные пароли, мандаты и секреты"
+
+#. Translators: This should be the same as the string in empathy
+#: ../gkr/seahorse-gkr-item.c:293
+msgid "IM account password for "
+msgstr "Пароль для уч. записи мессенджера"
+
+#: ../gkr/seahorse-gkr-item.c:353
+msgid "Password or secret"
+msgstr "Пароль или секрет"
+
+#: ../gkr/seahorse-gkr-item.c:354
+msgid "Network password"
+msgstr "Пароль для сети"
+
+#: ../gkr/seahorse-gkr-item.c:355
+msgid "Stored note"
+msgstr "Хранящееся примечание"
+
+#: ../gkr/seahorse-gkr-item.c:356
+msgid "Keyring password"
+msgstr "Пароль для связки ключей"
+
+#: ../gkr/seahorse-gkr-item.c:357
+msgid "Encryption key password"
+msgstr "Пароль для ключа шифрования"
+
+#: ../gkr/seahorse-gkr-item.c:358
+msgid "Key storage password"
+msgstr "Пароль для ключа хранилища"
+
+#: ../gkr/seahorse-gkr-item.c:359
+msgid "Google Chrome password"
+msgstr "Пароль для Google Chrome"
+
+#: ../gkr/seahorse-gkr-item.c:360
+msgid "Gnome Online Accounts password"
+msgstr "Пароль для сетевых уч. записей Gnome"
+
+#: ../gkr/seahorse-gkr-item.c:361
+msgid "Telepathy password"
+msgstr "Пароль для Telepathy"
+
+#: ../gkr/seahorse-gkr-item.c:362
+msgid "Instant messaging password"
+msgstr "Пароль для обмена мгновенными сообщениями"
+
+#: ../gkr/seahorse-gkr-item.c:363
+msgid "Network Manager secret"
+msgstr "Секрет NetworkManager"
+
+#: ../gkr/seahorse-gkr-item-deleter.c:80
+#, c-format
+msgid "Are you sure you want to delete the password '%s'?"
+msgstr "Уверены, что хотите безвозвратно удалить пароль «%s»?"
+
+#: ../gkr/seahorse-gkr-item-deleter.c:83
+#, c-format
+msgid "Are you sure you want to delete %d password?"
+msgid_plural "Are you sure you want to delete %d passwords?"
+msgstr[0] "Уверены, что хотите безвозвратно удалить %d пароль?"
+msgstr[1] "Уверены, что хотите безвозвратно удалить %d пароля?"
+msgstr[2] "Уверены, что хотите безвозвратно удалить %d паролей?"
+
+#: ../gkr/seahorse-gkr-item-properties.c:66
+msgid "Access a network share or resource"
+msgstr "Даёт доступ к сетевому хранилищу или ресурсу"
+
+#: ../gkr/seahorse-gkr-item-properties.c:69
+msgid "Access a website"
+msgstr "Даёт доступ к веб-сайту"
+
+#: ../gkr/seahorse-gkr-item-properties.c:72
+msgid "Unlocks a PGP key"
+msgstr "Разблокирует ключ PGP"
+
+#: ../gkr/seahorse-gkr-item-properties.c:75
+msgid "Unlocks a Secure Shell key"
+msgstr "Разблокирует ключ SSH"
+
+#: ../gkr/seahorse-gkr-item-properties.c:78
+msgid "Saved password or login"
+msgstr "Сохранённый пароль или учётное имя"
+
+#: ../gkr/seahorse-gkr-item-properties.c:102
+msgid "Network Credentials"
+msgstr "Сетевые учётные сведения"
+
+#: ../gkr/seahorse-gkr-item-properties.c:107
+msgid "Password"
+msgstr "Пароль"
+
+#: ../gkr/seahorse-gkr-item-properties.c:216
+msgid "Couldn't change password."
+msgstr "Не удалось изменить пароль."
+
+#: ../gkr/seahorse-gkr-item-properties.c:263
+#: ../gkr/seahorse-gkr-item-properties.c:385
+msgid "Updating password"
+msgstr "Обновление пароля"
+
+#: ../gkr/seahorse-gkr-item-properties.c:346
+msgid "Couldn't set description."
+msgstr "Не удалось установить описание."
+
+#: ../gkr/seahorse-gkr-item-properties.xml.h:1
+#: ../pgp/seahorse-pgp-private-key-properties.xml.h:6
+#: ../pgp/seahorse-pgp-public-key-properties.xml.h:6
+#: ../ssh/seahorse-ssh-key-properties.xml.h:1
+msgid "Key Properties"
+msgstr "Свойства ключа"
+
 #. To translators: This is the noun not the verb.
-#: ../gkr/seahorse-gkr-item-properties.xml.h:3
+#: ../gkr/seahorse-gkr-item-properties.xml.h:4
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:23
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:13
 #: ../ssh/seahorse-ssh-key-properties.xml.h:9
 msgid "Use:"
 msgstr "Назначение:"
 
-#: ../gkr/seahorse-gkr-item-properties.xml.h:4
+#: ../gkr/seahorse-gkr-item-properties.xml.h:5
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:24
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:20
 #: ../ssh/seahorse-ssh-key-properties.xml.h:3
 msgid "Type:"
 msgstr "Тип:"
 
-#: ../gkr/seahorse-gkr-item-properties.xml.h:5
+#: ../gkr/seahorse-gkr-item-properties.xml.h:6
 msgid "Server:"
 msgstr "Сервер:"
 
-#: ../gkr/seahorse-gkr-item-properties.xml.h:6
+#: ../gkr/seahorse-gkr-item-properties.xml.h:7
 msgid "Login:"
 msgstr "Учётное имя:"
 
-#: ../gkr/seahorse-gkr-item-properties.xml.h:7
+#: ../gkr/seahorse-gkr-item-properties.xml.h:8
 msgid "Show pass_word"
 msgstr "Показать _пароль"
 
-#: ../gkr/seahorse-gkr-item-properties.xml.h:8
-#: ../libseahorse/seahorse-passphrase.c:179 ../ssh/seahorse-ssh-askpass.c:117
+#: ../gkr/seahorse-gkr-item-properties.xml.h:9
+#: ../libseahorse/seahorse-passphrase.c:183 ../ssh/seahorse-ssh-askpass.c:99
 msgid "Password:"
 msgstr "Пароль:"
 
-#: ../gkr/seahorse-gkr-item-properties.xml.h:9
-#: ../pgp/seahorse-pgp-subkey.c:402
+#: ../gkr/seahorse-gkr-item-properties.xml.h:10
+#: ../pgp/seahorse-pgp-subkey.c:366
 #: ../ssh/seahorse-ssh-key-properties.xml.h:15
 msgid "Key"
 msgstr "Ключ"
 
-#: ../gkr/seahorse-gkr-item-properties.xml.h:10
+#: ../gkr/seahorse-gkr-item-properties.xml.h:11
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:38
 #: ../ssh/seahorse-ssh-key-properties.xml.h:20
+#| msgid "<b>Technical Details:</b>"
 msgid "Technical Details:"
 msgstr "Технические подробности:"
 
-#: ../gkr/seahorse-gkr-item-properties.xml.h:11
+#: ../gkr/seahorse-gkr-item-properties.xml.h:12
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:51
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:47
 #: ../ssh/seahorse-ssh-key-properties.xml.h:22
 msgid "Details"
 msgstr "Подробности"
 
+#: ../gkr/seahorse-gkr-keyring.c:466
+msgid "A keyring that is automatically unlocked on login"
+msgstr ""
+"Связка ключей, которая автоматически разблокируется при входе в систему"
+
+#: ../gkr/seahorse-gkr-keyring.c:467
+msgid "A keyring used to store passwords"
+msgstr "Связка ключей, используемая для хранения паролей"
+
+#: ../gkr/seahorse-gkr-keyring-deleter.c:76
+#, c-format
+msgid "Are you sure you want to delete the password keyring '%s'?"
+msgstr "Уверены, что хотите удалить связку ключей для паролей «%s»?"
+
+#: ../gkr/seahorse-gkr-keyring-deleter.c:79
+msgid "I understand that all items will be permanently deleted."
+msgstr "Я понимаю, что все элементы будут безвозвратно удалены."
+
 #: ../gkr/seahorse-gkr-keyring.xml.h:1
+msgid "Keyring Properties"
+msgstr "Свойства связки ключей"
+
+#: ../gkr/seahorse-gkr-keyring.xml.h:2
 msgid "Name:"
 msgstr "Имя:"
 
 #. To translators: This is the noun not the verb.
-#: ../gkr/seahorse-gkr-keyring.xml.h:3
+#: ../gkr/seahorse-gkr-keyring.xml.h:4
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:41
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:42
 msgid "Created:"
 msgstr "Создан:"
 
-#: ../gkr/seahorse-gkr-keyring.xml.h:4
+#: ../gkr/seahorse-gkr-keyring.xml.h:5
 msgid "Keyring"
 msgstr "Связка ключей"
 
-#: ../libegg/egg-datetime.c:316
+#: ../libegg/egg-datetime.c:317
 msgid "Display flags"
 msgstr "Флаги отображения"
 
-#: ../libegg/egg-datetime.c:317
+#: ../libegg/egg-datetime.c:318
 msgid "Displayed date and/or time properties"
 msgstr "Свойства отображения даты и/или времени"
 
-#: ../libegg/egg-datetime.c:322
+#: ../libegg/egg-datetime.c:323
 msgid "Lazy mode"
 msgstr "Упрощённый режим"
 
-#: ../libegg/egg-datetime.c:323
+#: ../libegg/egg-datetime.c:324
 msgid "Lazy mode doesn't normalize entered date and time values"
 msgstr "В этом режиме дата и время не приводятся к стандартному виду"
 
-#: ../libegg/egg-datetime.c:328
+#: ../libegg/egg-datetime.c:329
 msgid "Year"
 msgstr "Год"
 
-#: ../libegg/egg-datetime.c:329
+#: ../libegg/egg-datetime.c:330
 msgid "Displayed year"
 msgstr "Отображаемый год"
 
-#: ../libegg/egg-datetime.c:334
+#: ../libegg/egg-datetime.c:335
 msgid "Month"
 msgstr "Месяц"
 
-#: ../libegg/egg-datetime.c:335
+#: ../libegg/egg-datetime.c:336
 msgid "Displayed month"
 msgstr "Отображаемый месяц"
 
-#: ../libegg/egg-datetime.c:340
+#: ../libegg/egg-datetime.c:341
 msgid "Day"
 msgstr "День"
 
-#: ../libegg/egg-datetime.c:341
+#: ../libegg/egg-datetime.c:342
 msgid "Displayed day of month"
 msgstr "Отображаемый день месяца"
 
-#: ../libegg/egg-datetime.c:346
+#: ../libegg/egg-datetime.c:347
 msgid "Hour"
 msgstr "Час"
 
-#: ../libegg/egg-datetime.c:347
+#: ../libegg/egg-datetime.c:348
 msgid "Displayed hour"
 msgstr "Отображаемый час"
 
-#: ../libegg/egg-datetime.c:352
+#: ../libegg/egg-datetime.c:353
 msgid "Minute"
 msgstr "Минуты"
 
-#: ../libegg/egg-datetime.c:353
+#: ../libegg/egg-datetime.c:354
 msgid "Displayed minute"
 msgstr "Отображаемые минуты"
 
-#: ../libegg/egg-datetime.c:358
+#: ../libegg/egg-datetime.c:359
 msgid "Second"
 msgstr "Секунды"
 
-#: ../libegg/egg-datetime.c:359
+#: ../libegg/egg-datetime.c:360
 msgid "Displayed second"
 msgstr "Отображаемые секунды"
 
-#: ../libegg/egg-datetime.c:364
+#: ../libegg/egg-datetime.c:365
 msgid "Lower limit year"
 msgstr "Год нижней границы"
 
-#: ../libegg/egg-datetime.c:365
+#: ../libegg/egg-datetime.c:366
 msgid "Year part of the lower date limit"
 msgstr "Год нижней границы временного интервала"
 
-#: ../libegg/egg-datetime.c:370
+#: ../libegg/egg-datetime.c:371
 msgid "Upper limit year"
 msgstr "Год верхней границы"
 
-#: ../libegg/egg-datetime.c:371
+#: ../libegg/egg-datetime.c:372
 msgid "Year part of the upper date limit"
 msgstr "Год верхней границы временного интервала"
 
-#: ../libegg/egg-datetime.c:376
+#: ../libegg/egg-datetime.c:377
 msgid "Lower limit month"
 msgstr "Месяц нижней границы"
 
-#: ../libegg/egg-datetime.c:377
+#: ../libegg/egg-datetime.c:378
 msgid "Month part of the lower date limit"
 msgstr "Месяц нижней границы временного интервала"
 
-#: ../libegg/egg-datetime.c:382
+#: ../libegg/egg-datetime.c:383
 msgid "Upper limit month"
 msgstr "Месяц верхней границы"
 
-#: ../libegg/egg-datetime.c:383
+#: ../libegg/egg-datetime.c:384
 msgid "Month part of the upper date limit"
 msgstr "Месяц верхней границы временного интервала"
 
-#: ../libegg/egg-datetime.c:388
+#: ../libegg/egg-datetime.c:389
 msgid "Lower limit day"
 msgstr "День нижней границы"
 
-#: ../libegg/egg-datetime.c:389
+#: ../libegg/egg-datetime.c:390
 msgid "Day of month part of the lower date limit"
 msgstr "День нижней границы временного интервала"
 
-#: ../libegg/egg-datetime.c:394
+#: ../libegg/egg-datetime.c:395
 msgid "Upper limit day"
 msgstr "День верхней границы"
 
-#: ../libegg/egg-datetime.c:395
+#: ../libegg/egg-datetime.c:396
 msgid "Day of month part of the upper date limit"
 msgstr "День верхней границы временного интервала"
 
-#: ../libegg/egg-datetime.c:400
+#: ../libegg/egg-datetime.c:401
 msgid "Lower limit hour"
 msgstr "Час нижней границы"
 
-#: ../libegg/egg-datetime.c:401
+#: ../libegg/egg-datetime.c:402
 msgid "Hour part of the lower time limit"
 msgstr "Час нижней границы временного интервала"
 
-#: ../libegg/egg-datetime.c:406
+#: ../libegg/egg-datetime.c:407
 msgid "Upper limit hour"
 msgstr "Час верхней границы"
 
-#: ../libegg/egg-datetime.c:407
+#: ../libegg/egg-datetime.c:408
 msgid "Hour part of the upper time limit"
 msgstr "Час верхней границы временного интервала"
 
-#: ../libegg/egg-datetime.c:412
+#: ../libegg/egg-datetime.c:413
 msgid "Lower limit minute"
 msgstr "Минуты нижней границы"
 
-#: ../libegg/egg-datetime.c:413
+#: ../libegg/egg-datetime.c:414
 msgid "Minute part of the lower time limit"
 msgstr "Минуты нижней границы временного интервала"
 
-#: ../libegg/egg-datetime.c:418
+#: ../libegg/egg-datetime.c:419
 msgid "Upper limit minute"
 msgstr "Минуты верхней границы"
 
-#: ../libegg/egg-datetime.c:419
+#: ../libegg/egg-datetime.c:420
 msgid "Minute part of the upper time limit"
 msgstr "Минуты верхней границы временного интервала"
 
-#: ../libegg/egg-datetime.c:424
+#: ../libegg/egg-datetime.c:425
 msgid "Lower limit second"
 msgstr "Секунды нижней границы"
 
-#: ../libegg/egg-datetime.c:425
+#: ../libegg/egg-datetime.c:426
 msgid "Second part of the lower time limit"
 msgstr "Секунды нижней границы временного интервала"
 
-#: ../libegg/egg-datetime.c:430
+#: ../libegg/egg-datetime.c:431
 msgid "Upper limit second"
 msgstr "Секунды верхней границы"
 
-#: ../libegg/egg-datetime.c:431
+#: ../libegg/egg-datetime.c:432
 msgid "Second part of the upper time limit"
 msgstr "Секунды верхней границы временного интервала"
 
@@ -611,92 +498,92 @@ msgstr "Секунды верхней границы временного инт
 #. * Do *not* translate it to anything else, if it isn't calendar:week_start:1
 #. * or calendar:week_start:0 it will not work.
 #.
-#: ../libegg/egg-datetime.c:473
+#: ../libegg/egg-datetime.c:474
 msgid "calendar:week_start:0"
 msgstr "calendar:week_start:1"
 
-#: ../libegg/egg-datetime.c:495
+#: ../libegg/egg-datetime.c:496
 msgid "Date"
 msgstr "Дата"
 
-#: ../libegg/egg-datetime.c:495
+#: ../libegg/egg-datetime.c:496
 msgid "Enter the date directly"
 msgstr "Введите дату"
 
-#: ../libegg/egg-datetime.c:502
+#: ../libegg/egg-datetime.c:503
 msgid "Select Date"
 msgstr "Выберите дату"
 
-#: ../libegg/egg-datetime.c:502
+#: ../libegg/egg-datetime.c:503
 msgid "Select the date from a calendar"
 msgstr "Выберите дату с помощью календаря"
 
-#: ../libegg/egg-datetime.c:520 ../libegg/egg-datetime.c:2198
+#: ../libegg/egg-datetime.c:521 ../libegg/egg-datetime.c:2199
 msgid "Time"
 msgstr "Время"
 
-#: ../libegg/egg-datetime.c:520
+#: ../libegg/egg-datetime.c:521
 msgid "Enter the time directly"
 msgstr "Введите время"
 
-#: ../libegg/egg-datetime.c:527
+#: ../libegg/egg-datetime.c:528
 msgid "Select Time"
 msgstr "Выберите время"
 
-#: ../libegg/egg-datetime.c:527
+#: ../libegg/egg-datetime.c:528
 msgid "Select the time from a list"
 msgstr "Выберите время из списка"
 
 #. Translators: set this to anything else if you want to use a
 #. * 24 hour clock.
 #.
-#: ../libegg/egg-datetime.c:792
+#: ../libegg/egg-datetime.c:793
 msgid "24hr: no"
 msgstr "24hr: yes"
 
-#: ../libegg/egg-datetime.c:796 ../libegg/egg-datetime.c:1259
-#: ../libegg/egg-datetime.c:1263
+#: ../libegg/egg-datetime.c:797 ../libegg/egg-datetime.c:1260
+#: ../libegg/egg-datetime.c:1264
 msgid "AM"
 msgstr "AM"
 
-#: ../libegg/egg-datetime.c:798 ../libegg/egg-datetime.c:1260
-#: ../libegg/egg-datetime.c:1267
+#: ../libegg/egg-datetime.c:799 ../libegg/egg-datetime.c:1261
+#: ../libegg/egg-datetime.c:1268
 msgid "PM"
 msgstr "PM"
 
 #. Translators: This is hh:mm:ss AM/PM.
-#: ../libegg/egg-datetime.c:806
+#: ../libegg/egg-datetime.c:807
 #, c-format
 msgid "%02d:%02d:%02d %s"
 msgstr "%02d:%02d:%02d %s"
 
 #. Translators: This is hh:mm AM/PM.
-#: ../libegg/egg-datetime.c:809
+#: ../libegg/egg-datetime.c:810
 #, c-format
 msgid "%02d:%02d %s"
 msgstr "%02d:%02d %s"
 
 #. Translators: This is hh:mm:ss.
-#: ../libegg/egg-datetime.c:813
+#: ../libegg/egg-datetime.c:814
 #, c-format
 msgid "%02d:%02d:%02d"
 msgstr "%02d:%02d:%02d"
 
 #. Translators: This is hh:mm.
-#: ../libegg/egg-datetime.c:816
+#: ../libegg/egg-datetime.c:817
 #, c-format
 msgid "%02d:%02d"
 msgstr "%02d:%02d"
 
 #. TODO: should handle other display modes as well...
 #. Translators: This is YYYY-MM-DD
-#: ../libegg/egg-datetime.c:1175
+#: ../libegg/egg-datetime.c:1176
 #, c-format
 msgid "%04d-%02d-%02d"
 msgstr "%04d-%02d-%02d"
 
 #. Translators: This is hh:mm:ss.
-#: ../libegg/egg-datetime.c:1240
+#: ../libegg/egg-datetime.c:1241
 #, c-format
 msgid "%u:%u:%u"
 msgstr "%u:%u:%u"
@@ -717,11 +604,6 @@ msgstr "Тип сервера ключей:"
 msgid "Host:"
 msgstr "Узел:"
 
-#: ../libseahorse/seahorse-add-keyserver.xml.h:5
-#: ../ssh/seahorse-ssh-upload.xml.h:3
-msgid "The host name or address of the server."
-msgstr "Имя узла или адрес сервера."
-
 #: ../libseahorse/seahorse-add-keyserver.xml.h:6
 msgid ":"
 msgstr ":"
@@ -730,34 +612,133 @@ msgstr ":"
 msgid "The port to access the server on."
 msgstr "Порт для доступа к серверу."
 
-#: ../libseahorse/seahorse-application.c:114
+#: ../libseahorse/seahorse-application.c:118
 msgid "Version of this application"
 msgstr "Версия этого приложения"
 
-#: ../libseahorse/seahorse-application.c:120
-#: ../libseahorse/seahorse-application.c:164
+#: ../libseahorse/seahorse-application.c:124
 msgid "- System Settings"
 msgstr "— системные параметры"
 
-#: ../libseahorse/seahorse-application.c:160
-msgid "Don't display a window"
-msgstr "Не показывать окно"
+#: ../libseahorse/seahorse-catalog.c:88
+msgid "Contributions:"
+msgstr "Помощники:"
 
-#: ../libseahorse/seahorse-interaction.c:98
+#: ../libseahorse/seahorse-catalog.c:112 ../src/seahorse.desktop.in.in.h:1
+#: ../src/seahorse-key-manager.c:659
+msgid "Passwords and Keys"
+msgstr "Пароли и ключи"
+
+#: ../libseahorse/seahorse-catalog.c:114
+msgid "translator-credits"
+msgstr ""
+"Valek Filippov <frob@df.ru>, 2000-2003\n"
+"Yuri Kozlov <kozlov.y@gmail.com>, 2008\n"
+"Vasiliy Faronov <qvvx@yandex.ru>, 2008"
+
+#: ../libseahorse/seahorse-catalog.c:117
+msgid "Seahorse Project Homepage"
+msgstr "Домашняя страница проекта Seahorse"
+
+#: ../libseahorse/seahorse-catalog.c:191
+msgid "Cannot delete"
+msgstr "Не удалось удалить"
+
+#: ../libseahorse/seahorse-catalog.c:239
+#: ../libseahorse/seahorse-key-manager-store.c:443
+msgid "Couldn't export keys"
+msgstr "Не удалось экспортировать ключи"
+
+#: ../libseahorse/seahorse-catalog.c:268
+msgid "Couldn't export data"
+msgstr "Не удалось экспортировать данные"
+
+#. Top menu items
+#: ../libseahorse/seahorse-catalog.c:277
+msgid "_File"
+msgstr "_Файл"
+
+#: ../libseahorse/seahorse-catalog.c:278
+msgid "E_xport..."
+msgstr "_Экспортировать…"
+
+#: ../libseahorse/seahorse-catalog.c:279
+msgid "Export to a file"
+msgstr "Экспортировать в файл"
+
+#: ../libseahorse/seahorse-catalog.c:280
+msgid "_Edit"
+msgstr "_Правка"
+
+#: ../libseahorse/seahorse-catalog.c:283
+msgid "Copy to the clipboard"
+msgstr "Скопировать в буфер обмена"
+
+#: ../libseahorse/seahorse-catalog.c:284
+#: ../pkcs11/seahorse-pkcs11-properties.c:233 ../src/seahorse-sidebar.c:959
+msgid "_Delete"
+msgstr "_Удалить"
+
+#: ../libseahorse/seahorse-catalog.c:285
+msgid "Delete selected items"
+msgstr "Удалить выделенные элементы"
+
+#: ../libseahorse/seahorse-catalog.c:287
+msgid "Show the properties of this item"
+msgstr "Показать свойства этого элемента"
+
+#: ../libseahorse/seahorse-catalog.c:289
+msgid "Show the properties of this keyring"
+msgstr "Показать свойства этой связки ключей"
+
+#: ../libseahorse/seahorse-catalog.c:290
+msgid "Prefere_nces"
+msgstr "_Параметры"
+
+#: ../libseahorse/seahorse-catalog.c:291
+msgid "Change preferences for this program"
+msgstr "Настроить параметры приложения"
+
+#: ../libseahorse/seahorse-catalog.c:292
+msgid "_View"
+msgstr "_Вид"
+
+#: ../libseahorse/seahorse-catalog.c:293
+msgid "_Help"
+msgstr "_Справка"
+
+#: ../libseahorse/seahorse-catalog.c:295
+msgid "About this program"
+msgstr "О программе"
+
+#: ../libseahorse/seahorse-catalog.c:296
+msgid "_Contents"
+msgstr "_Содержание"
+
+#: ../libseahorse/seahorse-catalog.c:297
+msgid "Show Seahorse help"
+msgstr "Показать справку по Seahorse"
+
+#: ../libseahorse/seahorse-exportable.c:407
+#: ../pgp/seahorse-pgp-private-key-properties.xml.h:46
+msgid "Export"
+msgstr "Экспортировать"
+
+#: ../libseahorse/seahorse-interaction.c:99
 #, c-format
 msgid "Enter PIN or password for: %s"
 msgstr "Введите PIN-код или пароль: %s"
 
 #. The second and main entry
-#: ../libseahorse/seahorse-passphrase.c:241
+#: ../libseahorse/seahorse-passphrase.c:245
 msgid "Confirm:"
 msgstr "Подтверждение:"
 
-#: ../libseahorse/seahorse-prefs.c:65
+#: ../libseahorse/seahorse-prefs.c:67
 msgid "Not a valid Key Server address."
 msgstr "Недопустимый адрес сервера ключей."
 
-#: ../libseahorse/seahorse-prefs.c:66
+#: ../libseahorse/seahorse-prefs.c:68
 msgid ""
 "For help contact your system adminstrator or the administrator of the key "
 "server."
@@ -765,15 +746,15 @@ msgstr ""
 "Для получения помощи обратитесь к вашему системному администратору или "
 "администратору сервера ключей."
 
-#: ../libseahorse/seahorse-prefs.c:179
+#: ../libseahorse/seahorse-prefs.c:181
 msgid "URL"
 msgstr "URL"
 
-#: ../libseahorse/seahorse-prefs.c:349
+#: ../libseahorse/seahorse-prefs.c:351
 msgid "Custom"
 msgstr "Другой"
 
-#: ../libseahorse/seahorse-prefs.c:402
+#: ../libseahorse/seahorse-prefs.c:404
 msgid "None: Don't publish keys"
 msgstr "Нет: не публиковать ключи"
 
@@ -801,53 +782,68 @@ msgstr "Автоматически син_хронизировать измен�
 msgid "Key Servers"
 msgstr "Серверы ключей"
 
-#: ../libseahorse/seahorse-validity.c:38
-#: ../pgp/seahorse-pgp-key-properties.c:1251
+#: ../libseahorse/seahorse-util.c:210
+msgid "%Y-%m-%d"
+msgstr "%d.%m.%Y"
+
+#: ../libseahorse/seahorse-validity.c:40
+#: ../pgp/seahorse-pgp-key-properties.c:1254
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:1
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:1
+#| msgid "Unknown"
 msgctxt "Validity"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: ../libseahorse/seahorse-validity.c:40
-#: ../pgp/seahorse-pgp-key-properties.c:1257
+#: ../libseahorse/seahorse-validity.c:42
+#: ../pgp/seahorse-pgp-key-properties.c:1260
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:2
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:2
 msgctxt "Validity"
 msgid "Never"
 msgstr "Не доверяю"
 
-#: ../libseahorse/seahorse-validity.c:42
+#: ../libseahorse/seahorse-validity.c:44
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:3
+#| msgid "Marginal"
 msgctxt "Validity"
 msgid "Marginal"
 msgstr "Слабо"
 
-#: ../libseahorse/seahorse-validity.c:44
+#: ../libseahorse/seahorse-validity.c:46
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:4
+#| msgid "Full"
 msgctxt "Validity"
 msgid "Full"
 msgstr "Полностью"
 
-#: ../libseahorse/seahorse-validity.c:46
+#: ../libseahorse/seahorse-validity.c:48
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:5
+#| msgid "Ultimate"
 msgctxt "Validity"
 msgid "Ultimate"
 msgstr "Безоговорочно"
 
-#: ../libseahorse/seahorse-validity.c:48
+#: ../libseahorse/seahorse-validity.c:50
+#| msgid "Disabled"
 msgctxt "Validity"
 msgid "Disabled"
-msgstr "Отключён"
+msgstr "Отключено"
 
-#: ../libseahorse/seahorse-validity.c:50
+#: ../libseahorse/seahorse-validity.c:52
+#| msgid "Revoked"
 msgctxt "Validity"
 msgid "Revoked"
-msgstr "Отозван"
+msgstr "Отозвано"
+
+#: ../libseahorse/seahorse-widget.c:460
+#, c-format
+msgid "Could not display help: %s"
+msgstr "Не удалось показать справку: %s"
 
 #: ../pgp/seahorse-add-subkey.xml.h:1
 msgid "Never E_xpires"
-msgstr "Никогда не _истекает"
+msgstr "Никогда не истекает"
 
 #: ../pgp/seahorse-add-subkey.xml.h:2
 msgid "If key never expires"
@@ -880,15 +876,15 @@ msgstr "Добавить идентификатор пользователя"
 
 #: ../pgp/seahorse-add-uid.xml.h:2
 msgid "Must be at least 5 characters long"
-msgstr "Должен быть не менее 5 символов"
+msgstr "Должно быть не меньше 5 символов в длину"
 
 #: ../pgp/seahorse-add-uid.xml.h:3
 msgid "Optional email address"
-msgstr "Необязательный адрес эл. почты"
+msgstr "Необязательный электронный адрес"
 
 #: ../pgp/seahorse-add-uid.xml.h:4
 msgid "Optional comment describing key"
-msgstr "Необязательный комментарий с описанием ключа"
+msgstr "Необязательный комментарий, описывающий ключ"
 
 #. Full name of the key, usually the name of the user.
 #: ../pgp/seahorse-add-uid.xml.h:6 ../pgp/seahorse-pgp-generate.xml.h:5
@@ -897,7 +893,7 @@ msgstr "_Полное имя:"
 
 #: ../pgp/seahorse-add-uid.xml.h:7 ../pgp/seahorse-pgp-generate.xml.h:6
 msgid "_Email Address:"
-msgstr "_Адрес эл. почты:"
+msgstr "_Электронный адрес:"
 
 #: ../pgp/seahorse-add-uid.xml.h:8
 msgid "Key Co_mment:"
@@ -919,65 +915,65 @@ msgstr "Отозвать ключ"
 msgid "C_hange"
 msgstr "_Изменить"
 
-#: ../pgp/seahorse-gpgme-add-subkey.c:161
+#: ../pgp/seahorse-gpgme-add-subkey.c:162
 msgid "Couldn't add subkey"
 msgstr "Не удалось добавить подключ"
 
-#: ../pgp/seahorse-gpgme-add-subkey.c:180
+#: ../pgp/seahorse-gpgme-add-subkey.c:181
 #, c-format
 msgid "Add subkey to %s"
 msgstr "Добавить подключ к %s"
 
-#: ../pgp/seahorse-gpgme-add-subkey.c:196 ../pgp/seahorse-gpgme-generate.c:132
+#: ../pgp/seahorse-gpgme-add-subkey.c:197 ../pgp/seahorse-gpgme-generate.c:134
 msgid "DSA (sign only)"
-msgstr "DSA (только подпись)"
+msgstr "DSA (только подписывание)"
 
-#: ../pgp/seahorse-gpgme-add-subkey.c:204
+#: ../pgp/seahorse-gpgme-add-subkey.c:205
 msgid "ElGamal (encrypt only)"
 msgstr "ElGamal (только шифрование)"
 
-#: ../pgp/seahorse-gpgme-add-subkey.c:210 ../pgp/seahorse-gpgme-generate.c:133
+#: ../pgp/seahorse-gpgme-add-subkey.c:211 ../pgp/seahorse-gpgme-generate.c:135
 msgid "RSA (sign only)"
-msgstr "RSA (только подпись)"
+msgstr "RSA (только подписывание)"
 
-#: ../pgp/seahorse-gpgme-add-subkey.c:216
+#: ../pgp/seahorse-gpgme-add-subkey.c:217
 msgid "RSA (encrypt only)"
 msgstr "RSA (только шифрование)"
 
-#: ../pgp/seahorse-gpgme-add-uid.c:99
+#: ../pgp/seahorse-gpgme-add-uid.c:100
 msgid "Couldn't add user id"
 msgstr "Не удалось добавить идентификатор пользователя"
 
-#: ../pgp/seahorse-gpgme-add-uid.c:121
+#: ../pgp/seahorse-gpgme-add-uid.c:122
 #, c-format
 msgid "Add user ID to %s"
 msgstr "Добавить идентификатор пользователя к %s"
 
-#: ../pgp/seahorse-gpgme.c:71
+#: ../pgp/seahorse-gpgme.c:69
 msgid "Decryption failed. You probably do not have the decryption key."
-msgstr "Не удалось расшифровать. Возможно, у вас нет ключа для расшифровки."
+msgstr "Не удалось расшифровать. Вероятно, у вас нет ключа для расшифровки."
 
-#: ../pgp/seahorse-gpgme.c:75 ../pgp/seahorse-hkp-source.c:548
-#: ../ssh/seahorse-ssh-operation.c:199
+#: ../pgp/seahorse-gpgme.c:73 ../pgp/seahorse-hkp-source.c:586
+#: ../ssh/seahorse-ssh-operation.c:194
 msgid "The operation was cancelled"
 msgstr "Действие было отменено"
 
-#: ../pgp/seahorse-gpgme-expires.c:63
+#: ../pgp/seahorse-gpgme-expires.c:65
 msgid "Invalid expiry date"
 msgstr "Недопустимый срок действия"
 
-#: ../pgp/seahorse-gpgme-expires.c:64
+#: ../pgp/seahorse-gpgme-expires.c:66
 msgid "The expiry date must be in the future"
 msgstr "Срок действия должен заканчиваться в будущем"
 
-#: ../pgp/seahorse-gpgme-expires.c:77
+#: ../pgp/seahorse-gpgme-expires.c:79
 msgid "Couldn't change expiry date"
 msgstr "Не удалось изменить срок действия"
 
-#: ../pgp/seahorse-gpgme-expires.c:138
+#: ../pgp/seahorse-gpgme-expires.c:140
 #, c-format
 msgid "Expiry: %s"
-msgstr "Срок действия: %s"
+msgstr "Годен до: %s"
 
 #: ../pgp/seahorse-gpgme-exporter.c:84
 msgid "Multiple Keys"
@@ -987,43 +983,44 @@ msgstr "Несколько ключей"
 msgid "Key Data"
 msgstr "Данные ключа"
 
-#: ../pgp/seahorse-gpgme-exporter.c:116
+#: ../pgp/seahorse-gpgme-exporter.c:114
 msgid "Armored PGP keys"
 msgstr "Защищённые ключи PGP"
 
-#: ../pgp/seahorse-gpgme-exporter.c:120
+#: ../pgp/seahorse-gpgme-exporter.c:118
 msgid "PGP keys"
 msgstr "Ключи PGP"
 
-#: ../pgp/seahorse-gpgme-generate.c:93
+#: ../pgp/seahorse-gpgme-generate.c:95
 msgid "PGP Key"
 msgstr "Ключ PGP"
 
-#: ../pgp/seahorse-gpgme-generate.c:94
+#: ../pgp/seahorse-gpgme-generate.c:96
 msgid "Used to encrypt email and files"
 msgstr "Используется для шифрования почты и файлов"
 
-#: ../pgp/seahorse-gpgme-generate.c:130
-#: ../pkcs11/seahorse-pkcs11-generate.c:90
+#: ../pgp/seahorse-gpgme-generate.c:132
+#: ../pkcs11/seahorse-pkcs11-generate.c:91
 #: ../ssh/seahorse-ssh-generate.xml.h:9
 msgid "RSA"
 msgstr "RSA"
 
-#: ../pgp/seahorse-gpgme-generate.c:131
+#: ../pgp/seahorse-gpgme-generate.c:133
+#| msgid "DSA Elgamal"
 msgid "DSA ElGamal"
 msgstr "DSA ElGamal"
 
-#: ../pgp/seahorse-gpgme-generate.c:180
+#: ../pgp/seahorse-gpgme-generate.c:182
 msgid "Couldn't generate PGP key"
 msgstr "Не удалось создать ключ PGP"
 
-#: ../pgp/seahorse-gpgme-generate.c:213
+#: ../pgp/seahorse-gpgme-generate.c:214
 msgid "Passphrase for New PGP Key"
 msgstr "Пароль для нового ключа PGP"
 
-#: ../pgp/seahorse-gpgme-generate.c:214
+#: ../pgp/seahorse-gpgme-generate.c:215
 msgid "Enter the passphrase for your new key twice."
-msgstr "Введите дважды пароль для нового ключа."
+msgstr "Введите пароль для нового ключа два раза."
 
 #. Has line breaks because GtkLabel is completely broken WRT wrapping
 #: ../pgp/seahorse-gpgme-generate.c:226
@@ -1041,18 +1038,19 @@ msgstr ""
 "Эти действия обеспечат случайные данные, необходимые системе."
 
 #: ../pgp/seahorse-gpgme-generate.c:231
-#: ../pkcs11/seahorse-pkcs11-generate.c:458
+#: ../pkcs11/seahorse-pkcs11-generate.c:459
 msgid "Generating key"
 msgstr "Создание ключа"
 
-#: ../pgp/seahorse-gpgme-key-deleter.c:77
-#: ../pgp/seahorse-gpgme-secret-deleter.c:76 ../pkcs11/pkcs11-deleter.vala:35
-#: ../pkcs11/pkcs11-key-deleter.vala:33
+#: ../pgp/seahorse-gpgme-key-deleter.c:78
+#: ../pgp/seahorse-gpgme-secret-deleter.c:77
+#: ../pkcs11/seahorse-pkcs11-deleter.c:66
+#: ../pkcs11/seahorse-pkcs11-key-deleter.c:81
 #, c-format
 msgid "Are you sure you want to permanently delete %s?"
 msgstr "Уверены, что хотите безвозвратно удалить %s?"
 
-#: ../pgp/seahorse-gpgme-key-deleter.c:80
+#: ../pgp/seahorse-gpgme-key-deleter.c:81
 #, c-format
 msgid "Are you sure you want to permanently delete %d keys?"
 msgid_plural "Are you sure you want to permanently delete %d keys?"
@@ -1060,43 +1058,43 @@ msgstr[0] "Действительно безвозвратно удалить %d
 msgstr[1] "Действительно безвозвратно удалить %d ключа?"
 msgstr[2] "Действительно безвозвратно удалить %d ключей?"
 
-#: ../pgp/seahorse-gpgme-key-op.c:377
+#: ../pgp/seahorse-gpgme-key-op.c:381
 msgid "Wrong password"
 msgstr "Неправильный пароль"
 
-#: ../pgp/seahorse-gpgme-key-op.c:377
+#: ../pgp/seahorse-gpgme-key-op.c:381
 msgid "This was the third time you entered a wrong password. Please try again."
 msgstr "Вы уже третий раз ввели неправильный пароль. Попробуйте ещё раз."
 
-#: ../pgp/seahorse-gpgme-keyring.c:89
+#: ../pgp/seahorse-gpgme-keyring.c:91
 #, c-format
 msgid "Wrong passphrase."
 msgstr "Неправильный пароль."
 
-#: ../pgp/seahorse-gpgme-keyring.c:93
+#: ../pgp/seahorse-gpgme-keyring.c:95
 #, c-format
 msgid "Enter new passphrase for '%s'"
 msgstr "Введите новый пароль для «%s»"
 
-#: ../pgp/seahorse-gpgme-keyring.c:95
+#: ../pgp/seahorse-gpgme-keyring.c:97
 #, c-format
 msgid "Enter passphrase for '%s'"
 msgstr "Введите пароль для «%s»"
 
-#: ../pgp/seahorse-gpgme-keyring.c:98
+#: ../pgp/seahorse-gpgme-keyring.c:100
 #: ../src/seahorse-change-passphrase.xml.h:2
 msgid "Enter new passphrase"
 msgstr "Введите новый пароль"
 
-#: ../pgp/seahorse-gpgme-keyring.c:100
+#: ../pgp/seahorse-gpgme-keyring.c:102
 msgid "Enter passphrase"
 msgstr "Введите пароль"
 
-#: ../pgp/seahorse-gpgme-keyring.c:105
+#: ../pgp/seahorse-gpgme-keyring.c:107
 msgid "Passphrase"
 msgstr "Пароль"
 
-#: ../pgp/seahorse-gpgme-keyring.c:306
+#: ../pgp/seahorse-gpgme-keyring.c:308
 #, c-format
 msgid "Loaded %d key"
 msgid_plural "Loaded %d keys"
@@ -1104,7 +1102,7 @@ msgstr[0] "Загружен %d ключ"
 msgstr[1] "Загружено %d ключа"
 msgstr[2] "Загружено %d ключей"
 
-#: ../pgp/seahorse-gpgme-keyring.c:653
+#: ../pgp/seahorse-gpgme-keyring.c:655
 msgid ""
 "Invalid key data (missing UIDs). This may be due to a computer with a date "
 "set in the future or a missing self-signature."
@@ -1113,15 +1111,15 @@ msgstr ""
 "Причиной может быть неправильно установленное на компьютере время (время в "
 "будущем) или отсутствие собственной подписи."
 
-#: ../pgp/seahorse-gpgme-keyring.c:806
+#: ../pgp/seahorse-gpgme-keyring.c:815
 msgid "GnuPG keys"
 msgstr "Ключи GnuPG"
 
-#: ../pgp/seahorse-gpgme-keyring.c:812
+#: ../pgp/seahorse-gpgme-keyring.c:818
 msgid "GnuPG: default keyring directory"
 msgstr "GnuPG: каталог по умолчанию для связки ключей"
 
-#: ../pgp/seahorse-gpgme-photos.c:72
+#: ../pgp/seahorse-gpgme-photos.c:73
 #, c-format
 msgid ""
 "<big><b>The photo is too large</b></big>\n"
@@ -1130,15 +1128,15 @@ msgstr ""
 "<big><b>Фотография слишком велика</b></big>\n"
 "Рекомендуемый размер фотографии на ключе — %d × %d точек."
 
-#: ../pgp/seahorse-gpgme-photos.c:77
+#: ../pgp/seahorse-gpgme-photos.c:78
 msgid "_Don't Resize"
 msgstr "_Не менять размер"
 
-#: ../pgp/seahorse-gpgme-photos.c:78
+#: ../pgp/seahorse-gpgme-photos.c:79
 msgid "_Resize"
 msgstr "Из_менить размер"
 
-#: ../pgp/seahorse-gpgme-photos.c:127
+#: ../pgp/seahorse-gpgme-photos.c:128
 #, c-format
 msgid ""
 "This is not a image file, or an unrecognized kind of image file. Try to use "
@@ -1147,84 +1145,84 @@ msgstr ""
 "Этот файл не содержит изображение, или содержит неизвестный тип изображения. "
 "Попробуйте использовать изображение в формате JPEG."
 
-#: ../pgp/seahorse-gpgme-photos.c:223
+#: ../pgp/seahorse-gpgme-photos.c:224
 msgid "All image files"
 msgstr "Все файлы изображений"
 
-#: ../pgp/seahorse-gpgme-photos.c:236
+#: ../pgp/seahorse-gpgme-photos.c:237
 msgid "All JPEG files"
 msgstr "Все файлы формата JPEG"
 
-#: ../pgp/seahorse-gpgme-photos.c:241 ../src/seahorse-key-manager.c:288
+#: ../pgp/seahorse-gpgme-photos.c:242 ../src/seahorse-key-manager.c:308
 msgid "All files"
 msgstr "Все файлы"
 
-#: ../pgp/seahorse-gpgme-photos.c:262
+#: ../pgp/seahorse-gpgme-photos.c:263
 msgid "Choose Photo to Add to Key"
 msgstr "Выберите фотографию для добавления к ключу"
 
-#: ../pgp/seahorse-gpgme-photos.c:284
+#: ../pgp/seahorse-gpgme-photos.c:285
 msgid "Couldn't prepare photo"
 msgstr "Не удалось подготовить фотоснимок"
 
-#: ../pgp/seahorse-gpgme-photos.c:294 ../pgp/seahorse-gpgme-photos.c:297
+#: ../pgp/seahorse-gpgme-photos.c:295 ../pgp/seahorse-gpgme-photos.c:298
 msgid "Couldn't add photo"
 msgstr "Не удалось добавить фотографию"
 
-#: ../pgp/seahorse-gpgme-photos.c:295
+#: ../pgp/seahorse-gpgme-photos.c:296
 msgid "The file could not be loaded. It may be in an invalid format"
 msgstr "Не удалось загрузить файл. Может быть, он имеет недопустимый формат"
 
-#: ../pgp/seahorse-gpgme-photos.c:321
+#: ../pgp/seahorse-gpgme-photos.c:322
 msgid "Are you sure you want to remove the current photo from your key?"
 msgstr "Уверены, что хотите удалить текущую фотографию из вашего ключа?"
 
-#: ../pgp/seahorse-gpgme-photos.c:334
+#: ../pgp/seahorse-gpgme-photos.c:335
 msgid "Couldn't delete photo"
 msgstr "Не удалось удалить фотографию"
 
-#: ../pgp/seahorse-gpgme-revoke.c:73
+#: ../pgp/seahorse-gpgme-revoke.c:75
 msgid "Couldn't revoke subkey"
 msgstr "Не удалось отозвать подключ"
 
-#: ../pgp/seahorse-gpgme-revoke.c:94
+#: ../pgp/seahorse-gpgme-revoke.c:96
 #, c-format
 msgid "Revoke: %s"
 msgstr "Отозвать: %s"
 
-#: ../pgp/seahorse-gpgme-revoke.c:105
+#: ../pgp/seahorse-gpgme-revoke.c:107
 msgid "No reason"
 msgstr "Нет причины"
 
-#: ../pgp/seahorse-gpgme-revoke.c:106
+#: ../pgp/seahorse-gpgme-revoke.c:108
 msgid "No reason for revoking key"
 msgstr "Нет причины для отзыва ключа"
 
-#: ../pgp/seahorse-gpgme-revoke.c:112
+#: ../pgp/seahorse-gpgme-revoke.c:114
 msgid "Compromised"
 msgstr "Скомпрометирован"
 
-#: ../pgp/seahorse-gpgme-revoke.c:113
+#: ../pgp/seahorse-gpgme-revoke.c:115
 msgid "Key has been compromised"
 msgstr "Ключ скомпрометирован"
 
-#: ../pgp/seahorse-gpgme-revoke.c:119
+#: ../pgp/seahorse-gpgme-revoke.c:121
 msgid "Superseded"
 msgstr "Заменён"
 
-#: ../pgp/seahorse-gpgme-revoke.c:120
+#: ../pgp/seahorse-gpgme-revoke.c:122
 msgid "Key has been superseded"
 msgstr "Ключ заменён"
 
-#: ../pgp/seahorse-gpgme-revoke.c:126
+#: ../pgp/seahorse-gpgme-revoke.c:128
 msgid "Not Used"
 msgstr "Не используется"
 
-#: ../pgp/seahorse-gpgme-revoke.c:127
+#: ../pgp/seahorse-gpgme-revoke.c:129
 msgid "Key is no longer used"
 msgstr "Ключ больше не используется"
 
-#: ../pgp/seahorse-gpgme-revoke.c:164
+#: ../pgp/seahorse-gpgme-revoke.c:166
 #, c-format
 msgid ""
 "You are about to add %s as a revoker for %s. This operation cannot be "
@@ -1233,15 +1231,15 @@ msgstr ""
 "Вы собираетесь добавить %s в качестве отзывающего для %s. Это действие "
 "нельзя будет отменить! Вы хотите продолжить?"
 
-#: ../pgp/seahorse-gpgme-revoke.c:176
+#: ../pgp/seahorse-gpgme-revoke.c:178
 msgid "Couldn't add revoker"
 msgstr "Не удалось добавить отзывающего"
 
-#: ../pgp/seahorse-gpgme-secret-deleter.c:81 ../ssh/seahorse-ssh-deleter.c:82
+#: ../pgp/seahorse-gpgme-secret-deleter.c:82 ../ssh/seahorse-ssh-deleter.c:83
 msgid "I understand that this secret key will be permanently deleted."
 msgstr "Я понимаю, что этот секретный ключ будет безвозвратно удалён."
 
-#: ../pgp/seahorse-gpgme-sign.c:99
+#: ../pgp/seahorse-gpgme-sign.c:100
 #, c-format
 msgid ""
 "This key was already signed by\n"
@@ -1250,17 +1248,17 @@ msgstr ""
 "Этот ключ уже был подписан\n"
 "«%s»"
 
-#: ../pgp/seahorse-gpgme-sign.c:104
+#: ../pgp/seahorse-gpgme-sign.c:105
 msgid "Couldn't sign key"
 msgstr "Не удалось подписать ключ"
 
 #. TODO: We should be giving an error message that allows them to
 #. generate or import a key
-#: ../pgp/seahorse-gpgme-sign.c:163 ../pgp/seahorse-signer.c:61
+#: ../pgp/seahorse-gpgme-sign.c:164 ../pgp/seahorse-signer.c:62
 msgid "No keys usable for signing"
 msgstr "Нет ключей, которыми можно подписать"
 
-#: ../pgp/seahorse-gpgme-sign.c:164
+#: ../pgp/seahorse-gpgme-sign.c:165
 msgid ""
 "You have no personal PGP keys that can be used to indicate your trust of "
 "this key."
@@ -1268,74 +1266,75 @@ msgstr ""
 "У вас нет личных ключей PGP, с помощью которых можно было бы выразить "
 "доверие этому ключу."
 
-#: ../pgp/seahorse-gpgme-subkey.c:195
+#: ../pgp/seahorse-gpgme-subkey.c:197
+#| msgid "Unknown"
 msgctxt "Algorithm"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: ../pgp/seahorse-gpgme-subkey.c:197
+#: ../pgp/seahorse-gpgme-subkey.c:199
 msgid "ElGamal"
 msgstr "ElGamal"
 
-#: ../pgp/seahorse-hkp-source.c:566
+#: ../pgp/seahorse-hkp-source.c:604
 #, c-format
 msgid "Search was not specific enough. Server '%s' found too many keys."
 msgstr ""
 "Параметры поиска были недостаточно определёнными. Сервер «%s» нашёл по ним "
 "слишком много ключей."
 
-#: ../pgp/seahorse-hkp-source.c:569
+#: ../pgp/seahorse-hkp-source.c:607
 #, c-format
 msgid "Couldn't communicate with server '%s': %s"
 msgstr "Не удалось связаться с сервером «%s»: %s"
 
-#: ../pgp/seahorse-hkp-source.c:1079
+#: ../pgp/seahorse-hkp-source.c:1127
 msgid "HTTP Key Server"
 msgstr "Сервер ключей HTTP"
 
-#: ../pgp/seahorse-keyserver-results.c:168
+#: ../pgp/seahorse-keyserver-results.c:175
 msgid "Couldn't import keys"
 msgstr "Не удалось импортировать ключи"
 
-#: ../pgp/seahorse-keyserver-results.c:211
+#: ../pgp/seahorse-keyserver-results.c:218
 msgid "Importing keys from key servers"
 msgstr "Идёт импорт ключей с сервера"
 
 #. TRANSLATORS: The "Remote" menu contains key operations on remote systems.
-#: ../pgp/seahorse-keyserver-results.c:237 ../src/seahorse-key-manager.c:501
+#: ../pgp/seahorse-keyserver-results.c:244 ../src/seahorse-key-manager.c:508
 msgid "_Remote"
 msgstr "_Сеть"
 
-#: ../pgp/seahorse-keyserver-results.c:239
+#: ../pgp/seahorse-keyserver-results.c:246
 msgid "Close this window"
 msgstr "Закрыть это окно"
 
-#: ../pgp/seahorse-keyserver-results.c:243 ../pgp/seahorse-pgp-actions.c:113
+#: ../pgp/seahorse-keyserver-results.c:250 ../pgp/seahorse-pgp-actions.c:113
 msgid "_Find Remote Keys..."
 msgstr "_Найти удалённые ключи…"
 
-#: ../pgp/seahorse-keyserver-results.c:244 ../pgp/seahorse-pgp-actions.c:114
+#: ../pgp/seahorse-keyserver-results.c:251 ../pgp/seahorse-pgp-actions.c:114
 msgid "Search for keys on a key server"
 msgstr "Искать ключи на сервере ключей"
 
-#: ../pgp/seahorse-keyserver-results.c:248 ../src/seahorse-key-manager.xml.h:3
+#: ../pgp/seahorse-keyserver-results.c:255 ../src/seahorse-key-manager.xml.h:3
 msgid "_Import"
 msgstr "_Импортировать"
 
-#: ../pgp/seahorse-keyserver-results.c:249
+#: ../pgp/seahorse-keyserver-results.c:256
 msgid "Import selected keys to local key ring"
 msgstr "Импортировать выделенные ключи в локальную связку ключей"
 
-#: ../pgp/seahorse-keyserver-results.c:280
+#: ../pgp/seahorse-keyserver-results.c:286
 msgid "Remote Keys"
 msgstr "Ключи из сети"
 
-#: ../pgp/seahorse-keyserver-results.c:282
+#: ../pgp/seahorse-keyserver-results.c:288
 #, c-format
 msgid "Remote Keys Containing '%s'"
 msgstr "Ключи из сети, содержащие «%s»"
 
-#: ../pgp/seahorse-keyserver-results.c:485
+#: ../pgp/seahorse-keyserver-results.c:486
 msgid "The search for keys failed."
 msgstr "Сбой при поиске ключей."
 
@@ -1356,10 +1355,12 @@ msgid "_Search for keys containing: "
 msgstr "Иск_ать ключи, содержащие: "
 
 #: ../pgp/seahorse-keyserver-search.xml.h:4
+#| msgid "Key Servers"
 msgid "Key Servers:"
 msgstr "Серверы ключей:"
 
 #: ../pgp/seahorse-keyserver-search.xml.h:5
+#| msgid "<b>Shared Keys Near Me:</b>"
 msgid "Shared Keys Near Me:"
 msgstr "Опубликованные ключи в моей сети:"
 
@@ -1371,16 +1372,16 @@ msgstr "Где искать:"
 msgid "_Search"
 msgstr "_Искать"
 
-#: ../pgp/seahorse-keyserver-sync.c:56
+#: ../pgp/seahorse-keyserver-sync.c:57
 msgid "Couldn't publish keys to server"
 msgstr "Не удалось опубликовать ключи на сервере"
 
-#: ../pgp/seahorse-keyserver-sync.c:75
+#: ../pgp/seahorse-keyserver-sync.c:76
 #, c-format
 msgid "Couldn't retrieve keys from server: %s"
 msgstr "Не удалось получить ключи с сервера: %s"
 
-#: ../pgp/seahorse-keyserver-sync.c:159
+#: ../pgp/seahorse-keyserver-sync.c:160
 #, c-format
 msgid "<b>%d key is selected for synchronizing</b>"
 msgid_plural "<b>%d keys are selected for synchronizing</b>"
@@ -1388,7 +1389,7 @@ msgstr[0] "<b>%d ключ выбран для синхронизации</b>"
 msgstr[1] "<b>%d ключа выбрано для синхронизации</b>"
 msgstr[2] "<b>%d ключей выбрано для синхронизации</b>"
 
-#: ../pgp/seahorse-keyserver-sync.c:239
+#: ../pgp/seahorse-keyserver-sync.c:240
 msgid "Synchronizing keys..."
 msgstr "Синхронизация ключей…"
 
@@ -1424,27 +1425,27 @@ msgstr "_Серверы ключей"
 msgid "_Sync"
 msgstr "_Синхронизировать"
 
-#: ../pgp/seahorse-ldap-source.c:436
+#: ../pgp/seahorse-ldap-source.c:441
 #, c-format
 msgid "Couldn't communicate with '%s': %s"
 msgstr "Не удалось связаться с «%s»: %s"
 
-#: ../pgp/seahorse-ldap-source.c:646
+#: ../pgp/seahorse-ldap-source.c:652
 #, c-format
 msgid "Connecting to: %s"
 msgstr "Устанавливается соединение с: %s"
 
-#: ../pgp/seahorse-ldap-source.c:652
+#: ../pgp/seahorse-ldap-source.c:658
 #, c-format
 msgid "Couldn't resolve address: %s"
 msgstr "Не удалось определить адрес: %s"
 
-#: ../pgp/seahorse-ldap-source.c:696
+#: ../pgp/seahorse-ldap-source.c:702
 #, c-format
 msgid "Resolving server address: %s"
 msgstr "Идёт определение адреса сервера: %s"
 
-#: ../pgp/seahorse-ldap-source.c:1431
+#: ../pgp/seahorse-ldap-source.c:1447
 msgid "LDAP Key Server"
 msgstr "Сервер ключей LDAP"
 
@@ -1456,11 +1457,11 @@ msgstr "_Синхронизировать и опубликовать ключи
 msgid "Publish and/or synchronize your keys with those online."
 msgstr "Опубликовать ключи и синхронизироваться с серверами в сети."
 
-#: ../pgp/seahorse-pgp-backend.c:167
+#: ../pgp/seahorse-pgp-backend.c:172
 msgid "PGP Keys"
 msgstr "Ключи PGP"
 
-#: ../pgp/seahorse-pgp-backend.c:173
+#: ../pgp/seahorse-pgp-backend.c:175
 msgid "PGP keys are for encrypting email or files"
 msgstr "Ключи PGP используются для шифрования почты и файлов"
 
@@ -1477,12 +1478,12 @@ msgid "A PGP key allows you to encrypt email or files to other people."
 msgstr "Ключ PGP позволяет шифровать почту и файлы для других людей."
 
 #: ../pgp/seahorse-pgp-generate.xml.h:7
-msgid "Ne_ver Expires"
-msgstr "Н_икогда не истекает"
-
-#: ../pgp/seahorse-pgp-generate.xml.h:8
 msgid "_Comment:"
 msgstr "_Комментарий:"
+
+#: ../pgp/seahorse-pgp-generate.xml.h:8
+msgid "Ne_ver Expires"
+msgstr "Н_икогда не истекает"
 
 #: ../pgp/seahorse-pgp-generate.xml.h:9 ../ssh/seahorse-ssh-generate.xml.h:7
 msgid "Encryption _Type:"
@@ -1492,7 +1493,7 @@ msgstr "_Тип шифрования:"
 #: ../pkcs11/seahorse-pkcs11-generate.xml.h:5
 #: ../ssh/seahorse-ssh-generate.xml.h:8
 msgid "Key _Strength (bits):"
-msgstr "_Стойкость ключа (в битах):"
+msgstr "_Прочность ключа (в битах):"
 
 #: ../pgp/seahorse-pgp-generate.xml.h:11
 msgid "E_xpiration Date:"
@@ -1501,111 +1502,108 @@ msgstr "Ср_ок истечения:"
 #: ../pgp/seahorse-pgp-generate.xml.h:12
 #: ../pkcs11/seahorse-pkcs11-generate.xml.h:6
 #: ../ssh/seahorse-ssh-generate.xml.h:11
+#| msgid "<b>_Advanced key options</b>"
 msgid "_Advanced key options"
 msgstr "_Дополнительные параметры ключа"
 
-#: ../pgp/seahorse-pgp-key.c:351
+#: ../pgp/seahorse-pgp-key.c:353
 msgid "Personal PGP key"
 msgstr "Личный ключ PGP"
 
-#: ../pgp/seahorse-pgp-key.c:353
+#: ../pgp/seahorse-pgp-key.c:355
 msgid "PGP key"
 msgstr "Ключ PGP"
 
-#: ../pgp/seahorse-pgp-key-properties.c:317
+#: ../pgp/seahorse-pgp-key-properties.c:325
 msgid "Couldn't change primary user ID"
 msgstr "Не удалось изменить главный идентификатор пользователя"
 
-#: ../pgp/seahorse-pgp-key-properties.c:336
+#: ../pgp/seahorse-pgp-key-properties.c:344
 #, c-format
 msgid "Are you sure you want to permanently delete the '%s' user ID?"
 msgstr ""
 "Уверены, что хотите безвозвратно удалить идентификатор пользователя «%s»?"
 
-#: ../pgp/seahorse-pgp-key-properties.c:346
+#: ../pgp/seahorse-pgp-key-properties.c:354
 msgid "Couldn't delete user ID"
 msgstr "Не удалось удалить идентификатор пользователя"
 
-#: ../pgp/seahorse-pgp-key-properties.c:421
-#: ../pgp/seahorse-pgp-key-properties.c:1576
+#: ../pgp/seahorse-pgp-key-properties.c:429
+#: ../pgp/seahorse-pgp-key-properties.c:1571
 msgid "[Unknown]"
 msgstr "[Неизвестно]"
 
-#: ../pgp/seahorse-pgp-key-properties.c:530
-#: ../pgp/seahorse-pgp-key-properties.c:1859
+#: ../pgp/seahorse-pgp-key-properties.c:538
+#: ../pgp/seahorse-pgp-key-properties.c:1854
 msgid "Name/Email"
-msgstr "Имя/Эл.почта"
+msgstr "Имя/Электропочта"
 
-#: ../pgp/seahorse-pgp-key-properties.c:537
+#: ../pgp/seahorse-pgp-key-properties.c:545
 msgid "Signature ID"
 msgstr "Идентификатор подписи"
 
-#: ../pgp/seahorse-pgp-key-properties.c:670
+#: ../pgp/seahorse-pgp-key-properties.c:678
 msgid "Couldn't change primary photo"
 msgstr "Не удалось изменить главную фотографию"
 
 #. TRANSLATORS: (unknown) expiry date
-#: ../pgp/seahorse-pgp-key-properties.c:904
+#: ../pgp/seahorse-pgp-key-properties.c:912
 msgid "(unknown)"
 msgstr "(неизвестно)"
 
-#: ../pgp/seahorse-pgp-key-properties.c:907
+#: ../pgp/seahorse-pgp-key-properties.c:915
 #, c-format
 msgid "This key expired on: %s"
 msgstr "Этот ключ истёк %s"
 
-#: ../pgp/seahorse-pgp-key-properties.c:970
+#: ../pgp/seahorse-pgp-key-properties.c:978
 msgid "Name"
 msgstr "Имя"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1085
+#: ../pgp/seahorse-pgp-key-properties.c:1091
 #, c-format
 msgid "Are you sure you want to permanently delete subkey %d of %s?"
 msgstr "Уверены, что хотите безвозвратно удалить подключ %d ключа %s?"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1094
+#: ../pgp/seahorse-pgp-key-properties.c:1100
 msgid "Couldn't delete subkey"
 msgstr "Не удалось удалить подключ"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1134
-#: ../pgp/seahorse-pgp-key-properties.c:1550
+#: ../pgp/seahorse-pgp-key-properties.c:1140
+#: ../pgp/seahorse-pgp-key-properties.c:1545
 msgid "Unable to change trust"
-msgstr "Не удалось изменить уровень доверия"
+msgstr "Не удалось сменить уровень доверия"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1148
-#: ../ssh/seahorse-ssh-key-properties.c:205
+#: ../pgp/seahorse-pgp-key-properties.c:1153
+#: ../ssh/seahorse-ssh-key-properties.c:202
 msgid "Couldn't export key"
 msgstr "Не удалось экспортировать ключ"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1264
+#: ../pgp/seahorse-pgp-key-properties.c:1267
 msgid "Marginal"
 msgstr "Слабо"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1270
+#: ../pgp/seahorse-pgp-key-properties.c:1273
 msgid "Full"
 msgstr "Полностью"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1276
+#: ../pgp/seahorse-pgp-key-properties.c:1279
 msgid "Ultimate"
 msgstr "Безоговорочно"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1382
-#: ../pgp/seahorse-pgp-key-properties.c:1475
+#: ../pgp/seahorse-pgp-key-properties.c:1385
+#: ../pgp/seahorse-pgp-key-properties.c:1474
 msgctxt "Expires"
 msgid "Never"
 msgstr "Никогда"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1429
+#: ../pgp/seahorse-pgp-key-properties.c:1432
 msgid "ID"
 msgstr "Идентификатор"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1432
+#: ../pgp/seahorse-pgp-key-properties.c:1435
 msgid "Type"
 msgstr "Тип"
-
-#: ../pgp/seahorse-pgp-key-properties.c:1435
-msgid "Usage"
-msgstr "Использование"
 
 #: ../pgp/seahorse-pgp-key-properties.c:1438
 msgid "Created"
@@ -1621,36 +1619,31 @@ msgstr "Состояние"
 
 #: ../pgp/seahorse-pgp-key-properties.c:1447
 msgid "Strength"
-msgstr "Стойкость"
+msgstr "Прочность"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1466
+#: ../pgp/seahorse-pgp-key-properties.c:1465
 msgid "Revoked"
-msgstr "Отозван"
+msgstr "Отозвано"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1468
+#: ../pgp/seahorse-pgp-key-properties.c:1467
 msgid "Expired"
-msgstr "Просрочен"
+msgstr "Истёк"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1470
+#: ../pgp/seahorse-pgp-key-properties.c:1469
 msgid "Disabled"
-msgstr "Отключён"
+msgstr "Отключено"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1472
+#: ../pgp/seahorse-pgp-key-properties.c:1471
 msgid "Good"
-msgstr "Действителен"
+msgstr "Хорошее"
 
-#: ../pgp/seahorse-pgp-key-properties.c:1862
+#: ../pgp/seahorse-pgp-key-properties.c:1857
 msgid "Key ID"
 msgstr "Идентификатор ключа"
 
-#: ../pgp/seahorse-pgp-private-key-properties.xml.h:6
-#: ../pgp/seahorse-pgp-public-key-properties.xml.h:6
-#: ../ssh/seahorse-ssh-key-properties.xml.h:1
-msgid "Key Properties"
-msgstr "Свойства ключа"
-
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:7
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:7
+#| msgid "<b>This key has been revoked</b>"
 msgid "This key has been revoked"
 msgstr "Этот ключ был отозван"
 
@@ -1661,6 +1654,7 @@ msgstr "Владелец отозвал ключ. Его больше нельз
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:9
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:9
+#| msgid "<b>This key has expired</b>"
 msgid "This key has expired"
 msgstr "Срок действия этого ключа истёк"
 
@@ -1687,6 +1681,7 @@ msgstr "Перейти к следующей фотографии"
 #. A photograph
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:16
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:11
+#| msgid "<b>Photo </b>"
 msgid "Photo "
 msgstr "Фотография"
 
@@ -1698,17 +1693,20 @@ msgstr "Идентификатор ключа:"
 #. Name of key, usually a persons name
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:19
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:17
+#| msgid "Name:"
 msgctxt "name-of-key"
 msgid "Name:"
 msgstr "Имя:"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:20
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:18
+#| msgid "<b>Email:</b>"
 msgid "Email:"
 msgstr "Электронная почта:"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:21
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:19
+#| msgid "_Comment:"
 msgid "Comment:"
 msgstr "Комментарий:"
 
@@ -1731,6 +1729,7 @@ msgid "Owner"
 msgstr "Владелец"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:29
+#| msgid "Names and Signatures"
 msgid "Key Names and Signatures"
 msgstr "Имена и подписи"
 
@@ -1739,7 +1738,6 @@ msgid "Primary"
 msgstr "Главный"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:31
-#: ../pgp/seahorse-pgp-subkey.c:292
 msgid "Sign"
 msgstr "Подписать"
 
@@ -1765,13 +1763,15 @@ msgstr "Имена и подписи"
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:39
 #: ../ssh/seahorse-ssh-key-properties.xml.h:17
 msgid "Strength:"
-msgstr "Стойкость:"
+msgstr "Прочность:"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:39
+#| msgid "<b>Technical Details</b>"
 msgid "Technical Details"
 msgstr "Технические подробности"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:40
+#| msgid "<b>Fingerprint</b>"
 msgid "Fingerprint"
 msgstr "Отпечаток"
 
@@ -1781,6 +1781,7 @@ msgid "Expires:"
 msgstr "Истекает:"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:43
+#| msgid "Date"
 msgid "Dates"
 msgstr "Даты"
 
@@ -1789,10 +1790,11 @@ msgid "Override Owner _Trust:"
 msgstr "Указать _доверие владельцу:"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:45
-msgid "_Export Secret Key:"
-msgstr "Экспортировать _секретный ключ:"
+msgid "_Export Complete Key:"
+msgstr "Экспортировать _полный ключ:"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:47
+#| msgid "<b>Actions</b>"
 msgid "Actions"
 msgstr "Действия"
 
@@ -1806,20 +1808,24 @@ msgstr "Истекает"
 
 #: ../pgp/seahorse-pgp-private-key-properties.xml.h:50
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:46
+#| msgid "<b>_Subkeys</b>"
 msgid "_Subkeys"
 msgstr "_Подчинённые ключи"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:3
+#| msgid "Marginally"
 msgctxt "Validity"
 msgid "Marginally"
 msgstr "Слабо"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:4
+#| msgid "Fully"
 msgctxt "Validity"
 msgid "Fully"
 msgstr "Полностью"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:5
+#| msgid "Ultimately"
 msgctxt "Validity"
 msgid "Ultimately"
 msgstr "Безоговорочно"
@@ -1834,10 +1840,12 @@ msgstr "Открытый ключ PGP"
 
 #. Names set on the PGP key.
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:23
+#| msgid "<b>_Other Names:</b>"
 msgid "_Other Names:"
 msgstr "_Другие имена:"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:25
+#| msgid "<b>Your trust of this key</b>"
 msgid "Your trust of this key"
 msgstr "Ваше доверие этому ключу"
 
@@ -1874,6 +1882,7 @@ msgid "_Revoke Signature"
 msgstr "_Отозвать подпись"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:35
+#| msgid "<b>_People who have signed this key:</b>"
 msgid "_People who have signed this key:"
 msgstr "_Люди, подписавшие этот ключ:"
 
@@ -1888,14 +1897,17 @@ msgstr "Доверие"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:40
 #: ../ssh/seahorse-ssh-key-properties.xml.h:19
+#| msgid "<b>Fingerprint:</b>"
 msgid "Fingerprint:"
 msgstr "Отпечаток:"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:41
+#| msgid "Date"
 msgid "Dates:"
 msgstr "Даты:"
 
 #: ../pgp/seahorse-pgp-public-key-properties.xml.h:44
+#| msgid "<b>Indicate Trust:</b>"
 msgid "Indicate Trust:"
 msgstr "Уровень доверия:"
 
@@ -1903,21 +1915,7 @@ msgstr "Уровень доверия:"
 msgid "You _Trust the Owner:"
 msgstr "Вы д_оверяете владельцу:"
 
-#: ../pgp/seahorse-pgp-subkey.c:291
-msgid "Encrypt"
-msgstr "Зашифровать"
-
-#: ../pgp/seahorse-pgp-subkey.c:293
-#| msgid "Certificate"
-msgid "Certify"
-msgstr "Сертифицировать"
-
-#: ../pgp/seahorse-pgp-subkey.c:294
-#| msgid "Certificate"
-msgid "Authenticate"
-msgstr "Подтвердить подлинность"
-
-#: ../pgp/seahorse-pgp-subkey.c:407
+#: ../pgp/seahorse-pgp-subkey.c:371
 #, c-format
 msgid "Subkey %d of %s"
 msgstr "Подключ %d ключа %s"
@@ -1938,7 +1936,7 @@ msgstr "Необязательное описание отзыва"
 msgid "Re_voke"
 msgstr "Отозвать"
 
-#: ../pgp/seahorse-signer.c:62
+#: ../pgp/seahorse-signer.c:63
 msgid ""
 "You have no personal PGP keys that can be used to sign a document or message."
 msgstr ""
@@ -1960,10 +1958,12 @@ msgstr ""
 "ключа:"
 
 #: ../pgp/seahorse-sign.xml.h:3
+#| msgid "<i>Key Name</i>"
 msgid "Key Name"
 msgstr "Имя ключа"
 
 #: ../pgp/seahorse-sign.xml.h:4
+#| msgid "<b>How carefully have you checked this key?</b>"
 msgid "How carefully have you checked this key?"
 msgstr "Насколько тщательно вы проверили этот ключ?"
 
@@ -2017,6 +2017,7 @@ msgstr ""
 "владельцу, послав на него письмо."
 
 #: ../pgp/seahorse-sign.xml.h:12
+#| msgid "<b>How others will see this signature:</b>"
 msgid "How others will see this signature:"
 msgstr "Другие увидят эту подпись как:"
 
@@ -2029,6 +2030,7 @@ msgid "I can _revoke this signature at a later date."
 msgstr "Я могу _отозвать эту подпись позднее."
 
 #: ../pgp/seahorse-sign.xml.h:15
+#| msgid "<b>Sign key as:</b>"
 msgid "Sign key as:"
 msgstr "Подписать ключ как:"
 
@@ -2040,52 +2042,52 @@ msgstr "_Автор подписи:"
 msgid "_Sign"
 msgstr "_Подписать"
 
-#: ../pgp/seahorse-transfer.c:238 ../pgp/seahorse-transfer.c:285
+#: ../pgp/seahorse-transfer.c:237 ../pgp/seahorse-transfer.c:284
 msgid "Exporting data"
 msgstr "Экспортирование данных"
 
-#: ../pgp/seahorse-transfer.c:238 ../pgp/seahorse-transfer.c:285
+#: ../pgp/seahorse-transfer.c:237 ../pgp/seahorse-transfer.c:284
 msgid "Retrieving data"
 msgstr "Получение данных"
 
-#: ../pgp/seahorse-transfer.c:241 ../pgp/seahorse-transfer.c:288
+#: ../pgp/seahorse-transfer.c:240 ../pgp/seahorse-transfer.c:287
 msgid "Importing data"
 msgstr "Импортирование данных"
 
-#: ../pgp/seahorse-transfer.c:241 ../pgp/seahorse-transfer.c:288
+#: ../pgp/seahorse-transfer.c:240 ../pgp/seahorse-transfer.c:287
 msgid "Sending data"
 msgstr "Отправка данных"
 
-#: ../pgp/seahorse-unknown.c:59
+#: ../pgp/seahorse-unknown.c:61
 msgid "Unavailable"
 msgstr "Недоступно"
 
-#: ../pkcs11/certificate-der-exporter.vala:43
-#: ../pkcs11/pkcs11-certificate.vala:98
-msgid "Certificate"
-msgstr "Сертификат"
-
-#: ../pkcs11/certificate-der-exporter.vala:57
-msgid "Certificates (DER encoded)"
-msgstr "Сертификаты (закодировано DER)"
-
-#: ../pkcs11/pkcs11-certificate.vala:94
+#: ../pkcs11/seahorse-certificate.c:434
 msgid "Personal certificate and key"
 msgstr "Личный сертификат и ключ"
 
-#: ../pkcs11/pkcs11-certificate.vala:96
+#: ../pkcs11/seahorse-certificate.c:437
 msgid "Personal certificate"
 msgstr "Личный сертификат"
 
-#: ../pkcs11/seahorse-pkcs11-backend.c:184
+#: ../pkcs11/seahorse-certificate.c:439
+#: ../pkcs11/seahorse-certificate-der-exporter.c:77
+msgid "Certificate"
+msgstr "Сертификат"
+
+#: ../pkcs11/seahorse-certificate-der-exporter.c:99
+msgid "Certificates (DER encoded)"
+msgstr "Сертификаты (закодировано DER)"
+
+#: ../pkcs11/seahorse-pkcs11-backend.c:183
 msgid "Certificates"
 msgstr "Сертификаты"
 
-#: ../pkcs11/seahorse-pkcs11-backend.c:190
+#: ../pkcs11/seahorse-pkcs11-backend.c:186
 msgid "X.509 certificates and related keys"
 msgstr "Ключи и сертификаты X.509"
 
-#: ../pkcs11/pkcs11-deleter.vala:37
+#: ../pkcs11/seahorse-pkcs11-deleter.c:69
 #, c-format
 msgid "Are you sure you want to permanently delete %d certificate?"
 msgid_plural "Are you sure you want to permanently delete %d certificates?"
@@ -2093,20 +2095,21 @@ msgstr[0] "Действительно безвозвратно удалить %d
 msgstr[1] "Действительно безвозвратно удалить %d сертификата?"
 msgstr[2] "Действительно безвозвратно удалить %d сертификатов?"
 
-#: ../pkcs11/seahorse-pkcs11-generate.c:113
+#: ../pkcs11/seahorse-pkcs11-generate.c:114
 msgid "Couldn't generate private key"
 msgstr "Не удалось сгенерировать закрытый ключ"
 
-#: ../pkcs11/seahorse-pkcs11-generate.c:412 ../pkcs11/pkcs11-request.vala:56
+#: ../pkcs11/seahorse-pkcs11-generate.c:413
+#: ../pkcs11/seahorse-pkcs11-request.c:255
 msgid "Create"
 msgstr "Создать"
 
-#: ../pkcs11/seahorse-pkcs11-generate.c:505
-#: ../pkcs11/pkcs11-private-key.vala:70
+#: ../pkcs11/seahorse-pkcs11-generate.c:506
+#: ../pkcs11/seahorse-private-key.c:178
 msgid "Private key"
 msgstr "Секретный ключ"
 
-#: ../pkcs11/seahorse-pkcs11-generate.c:506
+#: ../pkcs11/seahorse-pkcs11-generate.c:507
 msgid "Used to request a certificate"
 msgstr "Используется для запроса сертификата"
 
@@ -2122,61 +2125,62 @@ msgstr "Метка:"
 msgid "Stored at:"
 msgstr "Расположение:"
 
-#: ../pkcs11/pkcs11-key-deleter.vala:34
+#: ../pkcs11/seahorse-pkcs11-key-deleter.c:85
 msgid "I understand that this key will be permanently deleted."
 msgstr "Я понимаю, что этот ключ будет безвозвратно удалён."
 
-#: ../pkcs11/pkcs11-properties.vala:134
+#: ../pkcs11/seahorse-pkcs11-properties.c:147
+#: ../pkcs11/seahorse-pkcs11-properties.c:151
 msgid "Unnamed"
 msgstr "Безымянный"
 
-#: ../pkcs11/pkcs11-properties.vala:165
+#: ../pkcs11/seahorse-pkcs11-properties.c:175
 msgid "Failed to export certificate"
 msgstr "Не удалось экспортировать сертификат"
 
-#: ../pkcs11/pkcs11-properties.vala:188 ../src/seahorse-sidebar.c:873
+#: ../pkcs11/seahorse-pkcs11-properties.c:190 ../src/seahorse-sidebar.c:877
 msgid "Couldn't delete"
 msgstr "Не удалось удалить"
 
-#: ../pkcs11/pkcs11-properties.vala:199
+#: ../pkcs11/seahorse-pkcs11-properties.c:231
 msgid "_Export"
 msgstr "_Экспортировать"
 
-#: ../pkcs11/pkcs11-properties.vala:200
+#: ../pkcs11/seahorse-pkcs11-properties.c:232
 msgid "Export the certificate"
 msgstr "Экспортировать сертификат"
 
-#: ../pkcs11/pkcs11-properties.vala:202
+#: ../pkcs11/seahorse-pkcs11-properties.c:234
 msgid "Delete this certificate or key"
 msgstr "Удалить этот сертификат или ключ"
 
-#: ../pkcs11/pkcs11-properties.vala:203
+#: ../pkcs11/seahorse-pkcs11-properties.c:235
 msgid "Request _Certificate"
 msgstr "Запрос _сертификата"
 
-#: ../pkcs11/pkcs11-properties.vala:204
+#: ../pkcs11/seahorse-pkcs11-properties.c:236
 msgid "Create a certificate request file for this key"
 msgstr "Создать файл с запросом сертификата для этого ключа"
 
-#: ../pkcs11/pkcs11-request.vala:87
-msgid "Couldn't create certificate request"
-msgstr "Не удалось создать запрос сертификата"
+#: ../pkcs11/seahorse-pkcs11-request.c:103
+msgid "Couldn't save certificate request"
+msgstr "Не удалось сохранить запрос сертификата"
 
-#: ../pkcs11/pkcs11-request.vala:104
+#: ../pkcs11/seahorse-pkcs11-request.c:126
 msgid "Save certificate request"
 msgstr "Сохранить запрос сертификата"
 
-#: ../pkcs11/pkcs11-request.vala:113
+#: ../pkcs11/seahorse-pkcs11-request.c:137
 msgid "Certificate request"
 msgstr "Запрос сертификата"
 
-#: ../pkcs11/pkcs11-request.vala:121
+#: ../pkcs11/seahorse-pkcs11-request.c:145
 msgid "PEM encoded request"
 msgstr "Запрос, закодированный PEM"
 
-#: ../pkcs11/pkcs11-request.vala:149
-msgid "Couldn't save certificate request"
-msgstr "Не удалось сохранить запрос сертификата"
+#: ../pkcs11/seahorse-pkcs11-request.c:193
+msgid "Couldn't create certificate request"
+msgstr "Не удалось создать запрос сертификата"
 
 #: ../pkcs11/seahorse-pkcs11-request.xml.h:1
 msgid "Create a certificate request file."
@@ -2190,11 +2194,12 @@ msgstr "Имя сертификата (CN), помещённое в запрос
 msgid "Name (CN):"
 msgstr "Имя (сертификата):"
 
-#: ../pkcs11/pkcs11-private-key.vala:61
+#: ../pkcs11/seahorse-private-key.c:131
 msgid "Unnamed private key"
 msgstr "Безымянный закрытый ключ"
 
-#: ../pkcs11/pkcs11-token.vala:74
+#: ../pkcs11/seahorse-token.c:576
+#| msgid "Unknown"
 msgctxt "Label"
 msgid "Unknown"
 msgstr "Неизвестно"
@@ -2215,111 +2220,121 @@ msgstr "Подтвердить новый пароль"
 msgid "Con_firm Passphrase:"
 msgstr "Подтверждение п_ароля:"
 
-#: ../src/seahorse-generate-select.c:228
+#: ../src/seahorse.desktop.in.in.h:2
+msgid "Manage your passwords and encryption keys"
+msgstr "Управление паролями и ключами шифрования"
+
+#: ../src/seahorse.desktop.in.in.h:3
+msgid "keyring;encryption;security;sign;ssh;"
+msgstr "связка;шифрование;безопасность;подпись;ssh;"
+
+#: ../src/seahorse-generate-select.c:229
 msgid "Continue"
 msgstr "Продолжить"
 
 #: ../src/seahorse-generate-select.xml.h:1
+#| msgid "<b>_Select the type of item to create:</b>"
 msgid "_Select the type of item to create:"
 msgstr "_Выберите тип создаваемого элемента:"
 
-#: ../src/seahorse-import-dialog.c:95
+#: ../src/seahorse-import-dialog.c:98
 msgid "Import failed"
 msgstr "Сбой импортирования"
 
-#: ../src/seahorse-import-dialog.c:113
+#: ../src/seahorse-import-dialog.c:116
 msgid "Import"
 msgstr "Импортировать"
 
-#: ../src/seahorse-import-dialog.c:126
+#: ../src/seahorse-import-dialog.c:129
 msgid "<b>Data to be imported:</b>"
 msgstr "<b>Импортируемые данные:</b>"
 
-#: ../src/seahorse-key-manager.c:242 ../ssh/seahorse-ssh-operation.c:870
+#: ../src/seahorse-key-manager.c:262 ../ssh/seahorse-ssh-operation.c:845
 msgid "Import Key"
 msgstr "Импортировать ключ"
 
-#: ../src/seahorse-key-manager.c:254
+#: ../src/seahorse-key-manager.c:274
 msgid "All key files"
 msgstr "Все файлы ключей"
 
-#: ../src/seahorse-key-manager.c:355
+#: ../src/seahorse-key-manager.c:375
 msgid "Dropped text"
 msgstr "Перетащенный текст"
 
-#: ../src/seahorse-key-manager.c:391
+#: ../src/seahorse-key-manager.c:398
 msgid "Clipboard text"
 msgstr "Текст буфера обмена"
 
-#: ../src/seahorse-key-manager.c:502
+#: ../src/seahorse-key-manager.c:509
 msgid "_New"
 msgstr "_Создать"
 
-#: ../src/seahorse-key-manager.c:504
+#: ../src/seahorse-key-manager.c:511
 msgid "Close this program"
 msgstr "Закрыть программу"
 
-#: ../src/seahorse-key-manager.c:505 ../src/seahorse-key-manager.c:507
+#: ../src/seahorse-key-manager.c:512 ../src/seahorse-key-manager.c:514
 msgid "_New..."
 msgstr "_Создать…"
 
-#: ../src/seahorse-key-manager.c:506
+#: ../src/seahorse-key-manager.c:513
 msgid "Create a new key or item"
 msgstr "Создать новый ключ или элементы"
 
-#: ../src/seahorse-key-manager.c:508
+#: ../src/seahorse-key-manager.c:515
 msgid "Add a new key or item"
 msgstr "Добавить новый ключ или элемент"
 
-#: ../src/seahorse-key-manager.c:509
+#: ../src/seahorse-key-manager.c:516
 msgid "_Import..."
 msgstr "_Импортировать…"
 
-#: ../src/seahorse-key-manager.c:510
+#: ../src/seahorse-key-manager.c:517
 msgid "Import from a file"
 msgstr "Импортировать из файла"
 
-#: ../src/seahorse-key-manager.c:512
+#: ../src/seahorse-key-manager.c:519
 msgid "Import from the clipboard"
 msgstr "Импортировать из буфера обмена"
 
-#: ../src/seahorse-key-manager.c:516
-msgid "By _Keyring"
-msgstr "По с_вязке ключей"
+#: ../src/seahorse-key-manager.c:523
+msgid "By _keyring"
+msgstr "По _связке ключей"
 
-#: ../src/seahorse-key-manager.c:517
+#: ../src/seahorse-key-manager.c:524
 msgid "Show sidebar listing keyrings"
 msgstr "Показывать боковую панель со связками ключей"
 
-#: ../src/seahorse-key-manager.c:521
-msgid "Show _Personal"
+#: ../src/seahorse-key-manager.c:528
+msgid "Show _personal"
 msgstr "Показывать _личные"
 
-#: ../src/seahorse-key-manager.c:522
+#: ../src/seahorse-key-manager.c:529
 msgid "Only show personal keys, certificates and passwords"
 msgstr "Показывать только личные ключи, сертификаты и пароли"
 
-#: ../src/seahorse-key-manager.c:523
-msgid "Show _Trusted"
+#: ../src/seahorse-key-manager.c:530
+msgid "Show _trusted"
 msgstr "Показывать _доверенные"
 
-#: ../src/seahorse-key-manager.c:524
+#: ../src/seahorse-key-manager.c:531
 msgid "Only show trusted keys, certificates and passwords"
 msgstr "Показывать только доверенные ключи, сертификаты и пароли"
 
-#: ../src/seahorse-key-manager.c:525
-msgid "Show _Any"
+#: ../src/seahorse-key-manager.c:532
+msgid "Show _any"
 msgstr "Показывать _все"
 
-#: ../src/seahorse-key-manager.c:526
+#: ../src/seahorse-key-manager.c:533
 msgid "Show all keys, certificates and passwords"
 msgstr "Показывать все ключи, сертификаты и пароли"
 
-#: ../src/seahorse-key-manager.c:745
+#: ../src/seahorse-key-manager.c:737
 msgid "Filter"
 msgstr "Фильтр"
 
 #: ../src/seahorse-key-manager.xml.h:1
+#| msgid "<big><b>First time options:</b></big>"
 msgid "First time options:"
 msgstr "Первоначальные параметры:"
 
@@ -2335,31 +2350,31 @@ msgstr "Импортировать имеющиеся ключи из файла
 msgid "To get started with encryption you will need keys."
 msgstr "Чтобы работать с шифрованием, нужны ключи."
 
-#: ../src/seahorse-sidebar.c:797
+#: ../src/seahorse-sidebar.c:801
 msgid "Couldn't lock"
 msgstr "Не удалось заблокировать"
 
-#: ../src/seahorse-sidebar.c:834
+#: ../src/seahorse-sidebar.c:838
 msgid "Couldn't unlock"
 msgstr "Не удалось разблокировать"
 
-#: ../src/seahorse-sidebar.c:941
+#: ../src/seahorse-sidebar.c:946
 msgid "_Lock"
 msgstr "_Заблокировать"
 
-#: ../src/seahorse-sidebar.c:946
+#: ../src/seahorse-sidebar.c:951
 msgid "_Unlock"
 msgstr "_Разблокировать"
 
-#: ../src/seahorse-sidebar.c:965
+#: ../src/seahorse-sidebar.c:970
 msgid "_Properties"
 msgstr "_Свойства"
 
-#: ../ssh/seahorse-ssh-actions.c:97
+#: ../ssh/seahorse-ssh-actions.c:100
 msgid "Configure Key for _Secure Shell..."
 msgstr "Настроить ключ для _SSH…"
 
-#: ../ssh/seahorse-ssh-actions.c:98
+#: ../ssh/seahorse-ssh-actions.c:101
 msgid ""
 "Send public Secure Shell key to another machine, and enable logins using "
 "that key."
@@ -2367,34 +2382,34 @@ msgstr ""
 "Послать открытый ключ SSH на другую машину и настроить на ней вход с "
 "использованием этого ключа."
 
-#: ../ssh/seahorse-ssh-askpass.c:78 ../ssh/seahorse-ssh-askpass.c:86
+#: ../ssh/seahorse-ssh-askpass.c:60 ../ssh/seahorse-ssh-askpass.c:68
 msgid "Enter your Secure Shell passphrase:"
 msgstr "Введите ваш пароль SSH:"
 
-#: ../ssh/seahorse-ssh-askpass.c:100
+#: ../ssh/seahorse-ssh-askpass.c:82
 msgid "Old Key Passphrase"
 msgstr "Старый пароль ключа"
 
-#: ../ssh/seahorse-ssh-askpass.c:101
+#: ../ssh/seahorse-ssh-askpass.c:83
 #, c-format
 msgid "Enter the old passphrase for: %s"
 msgstr "Введите старый пароль для: %s"
 
-#: ../ssh/seahorse-ssh-askpass.c:105 ../ssh/seahorse-ssh-askpass.c:110
+#: ../ssh/seahorse-ssh-askpass.c:87 ../ssh/seahorse-ssh-askpass.c:92
 msgid "New Key Passphrase"
 msgstr "Новый пароль ключа"
 
-#: ../ssh/seahorse-ssh-askpass.c:106
+#: ../ssh/seahorse-ssh-askpass.c:88
 #, c-format
 msgid "Enter the new passphrase for: %s"
 msgstr "Введите новый пароль для: %s"
 
-#: ../ssh/seahorse-ssh-askpass.c:111
+#: ../ssh/seahorse-ssh-askpass.c:93
 #, c-format
 msgid "Enter the new passphrase again: %s"
 msgstr "Введите новый пароль ещё раз: %s"
 
-#: ../ssh/seahorse-ssh-backend.c:88
+#: ../ssh/seahorse-ssh-backend.c:91
 msgid "Secure Shell"
 msgstr "Безопасная оболочка"
 
@@ -2403,12 +2418,12 @@ msgid "Keys used to connect securely to other computers"
 msgstr ""
 "Ключи, использующиеся для безопасного подключения к другим компьютерам."
 
-#: ../ssh/seahorse-ssh-deleter.c:80 ../ssh/seahorse-ssh-deleter.c:85
+#: ../ssh/seahorse-ssh-deleter.c:81 ../ssh/seahorse-ssh-deleter.c:86
 #, c-format
 msgid "Are you sure you want to delete the secure shell key '%s'?"
 msgstr "Уверены, что хотите безвозвратно удалить ключ SSH «%s»?"
 
-#: ../ssh/seahorse-ssh-deleter.c:90
+#: ../ssh/seahorse-ssh-deleter.c:91
 #, c-format
 msgid "Are you sure you want to delete %d secure shell key?"
 msgid_plural "Are you sure you want to delete %d secure shell keys?"
@@ -2417,36 +2432,36 @@ msgstr[1] "Уверены, что хотите безвозвратно удал
 msgstr[2] "Уверены, что хотите безвозвратно удалить %d ключей SSH?"
 
 #: ../ssh/seahorse-ssh-exporter.c:92
-msgid "SSH Key"
+msgid "Ssh Key"
 msgstr "Ключ SSH"
 
-#: ../ssh/seahorse-ssh-exporter.c:124
+#: ../ssh/seahorse-ssh-exporter.c:122
 msgid "Secret SSH keys"
 msgstr "Секретные ключи SSH"
 
-#: ../ssh/seahorse-ssh-exporter.c:128
+#: ../ssh/seahorse-ssh-exporter.c:126
 msgid "Public SSH keys"
 msgstr "Открытые ключи SSH"
 
-#: ../ssh/seahorse-ssh-exporter.c:297
+#: ../ssh/seahorse-ssh-exporter.c:290
 msgid "No public key file is available for this key."
 msgstr "Для этого ключа нет ни одного доступного файла открытого ключа."
 
-#: ../ssh/seahorse-ssh-generate.c:52 ../ssh/seahorse-ssh-key.c:109
-#: ../ssh/seahorse-ssh-key.c:113 ../ssh/seahorse-ssh-key-properties.xml.h:4
+#: ../ssh/seahorse-ssh-generate.c:55 ../ssh/seahorse-ssh-key.c:114
+#: ../ssh/seahorse-ssh-key.c:118 ../ssh/seahorse-ssh-key-properties.xml.h:4
 msgid "Secure Shell Key"
 msgstr "Ключ SSH"
 
-#: ../ssh/seahorse-ssh-generate.c:53
+#: ../ssh/seahorse-ssh-generate.c:56
 msgid "Used to access other computers (eg: via a terminal)"
 msgstr ""
 "Используется для доступа к другим компьютерам (например, через терминал)"
 
-#: ../ssh/seahorse-ssh-generate.c:107 ../ssh/seahorse-ssh-generate.c:123
+#: ../ssh/seahorse-ssh-generate.c:110 ../ssh/seahorse-ssh-generate.c:126
 msgid "Couldn't generate Secure Shell key"
 msgstr "Не удалось создать ключ SSH"
 
-#: ../ssh/seahorse-ssh-generate.c:190
+#: ../ssh/seahorse-ssh-generate.c:192
 msgid "Creating Secure Shell Key"
 msgstr "Создание ключа SSH"
 
@@ -2469,6 +2484,7 @@ msgstr ""
 "компьютерам."
 
 #: ../ssh/seahorse-ssh-generate.xml.h:6
+#| msgid "<i>Your email address, or a reminder of what this key is for.</i>"
 msgid "Your email address, or a reminder of what this key is for."
 msgstr "Адрес эл. почты или другое напоминание для назначения ключа."
 
@@ -2484,36 +2500,38 @@ msgstr ""
 "Если есть компьютер, для которого вы хотите использовать этот ключ, вы "
 "можете настроить удалённый компьютер для использования вашего нового ключа."
 
-#: ../ssh/seahorse-ssh-key.c:105
+#: ../ssh/seahorse-ssh-key.c:110
 msgid "(Unreadable Secure Shell Key)"
 msgstr "(нечитаемый ключ SSH)"
 
-#: ../ssh/seahorse-ssh-key.c:213
+#: ../ssh/seahorse-ssh-key.c:218
 msgid "Personal SSH key"
 msgstr "Личный ключ SSH"
 
-#: ../ssh/seahorse-ssh-key.c:215
+#: ../ssh/seahorse-ssh-key.c:220
 msgid "SSH key"
 msgstr "Ключ SSH"
 
-#: ../ssh/seahorse-ssh-key-properties.c:79
+#: ../ssh/seahorse-ssh-key-properties.c:82
 msgid "Couldn't rename key."
 msgstr "Не удалось переименовать ключ."
 
-#: ../ssh/seahorse-ssh-key-properties.c:134
+#: ../ssh/seahorse-ssh-key-properties.c:135
 msgid "Couldn't change authorization for key."
 msgstr "Не удалось изменить параметры авторизации для этого ключа."
 
-#: ../ssh/seahorse-ssh-key-properties.c:171
+#: ../ssh/seahorse-ssh-key-properties.c:170
 msgid "Couldn't change passphrase for key."
 msgstr "Не удалось изменить пароль для этого ключа."
 
 #: ../ssh/seahorse-ssh-key-properties.xml.h:2
+#| msgid "<b>Identifier:</b>"
 msgid "Identifier:"
 msgstr "Идентификатор:"
 
 #. Name of key, often a persons name
 #: ../ssh/seahorse-ssh-key-properties.xml.h:6
+#| msgid "Name:"
 msgctxt "name-of-ssh-key"
 msgid "Name:"
 msgstr "Имя:"
@@ -2532,10 +2550,12 @@ msgid "This only applies to the <i>%s</i> account."
 msgstr "Это применимо только к учётной записи %s."
 
 #: ../ssh/seahorse-ssh-key-properties.xml.h:16
+#| msgid "<b>Algorithm:</b>"
 msgid "Algorithm:"
 msgstr "Алгоритм:"
 
 #: ../ssh/seahorse-ssh-key-properties.xml.h:18
+#| msgid "<b>Location:</b>"
 msgid "Location:"
 msgstr "Местоположение:"
 
@@ -2543,53 +2563,53 @@ msgstr "Местоположение:"
 msgid "E_xport Complete Key"
 msgstr "_Экспортировать полный ключ"
 
-#: ../ssh/seahorse-ssh-operation.c:204
+#: ../ssh/seahorse-ssh-operation.c:199
 msgid "The SSH command was terminated unexpectedly."
 msgstr "Команда SSH неожиданно завершилась."
 
-#: ../ssh/seahorse-ssh-operation.c:214
+#: ../ssh/seahorse-ssh-operation.c:209
 msgid "The SSH command failed."
 msgstr "Команда SSH завершилась с ошибкой."
 
-#: ../ssh/seahorse-ssh-operation.c:523
+#: ../ssh/seahorse-ssh-operation.c:502
 msgid "Remote Host Password"
 msgstr "Пароль удалённого сервера"
 
-#: ../ssh/seahorse-ssh-operation.c:610
+#: ../ssh/seahorse-ssh-operation.c:588
 msgid "Enter Key Passphrase"
 msgstr "Введите пароль ключа"
 
-#: ../ssh/seahorse-ssh-operation.c:701
+#: ../ssh/seahorse-ssh-operation.c:678
 msgid "Passphrase for New Secure Shell Key"
 msgstr "Пароль для нового ключа SSH"
 
-#: ../ssh/seahorse-ssh-operation.c:887
+#: ../ssh/seahorse-ssh-operation.c:862
 #, c-format
 msgid "Importing key: %s"
-msgstr "Импортирование ключа: %s"
+msgstr "Импорт ключа: %s"
 
-#: ../ssh/seahorse-ssh-operation.c:889
+#: ../ssh/seahorse-ssh-operation.c:864
 msgid "Importing key. Enter passphrase"
-msgstr "Импортирование ключа. Введите пароль"
+msgstr "Импорт ключа. Введите пароль"
 
-#: ../ssh/seahorse-ssh-source.c:219
+#: ../ssh/seahorse-ssh-source.c:232
 msgid "OpenSSH keys"
 msgstr "Ключи OpenSSH"
 
-#: ../ssh/seahorse-ssh-source.c:226
+#: ../ssh/seahorse-ssh-source.c:235
 #, c-format
 msgid "OpenSSH: %s"
 msgstr "OpenSSH: %s"
 
-#: ../ssh/seahorse-ssh-source.c:974
+#: ../ssh/seahorse-ssh-source.c:940
 msgid "No private key file is available for this key."
 msgstr "Не удалось найти секретного ключа для этого публичного ключа."
 
-#: ../ssh/seahorse-ssh-upload.c:48
+#: ../ssh/seahorse-ssh-upload.c:50
 msgid "Couldn't configure Secure Shell keys on remote computer."
 msgstr "Не удалось настроить ключи SSH на удалённом компьютере."
 
-#: ../ssh/seahorse-ssh-upload.c:131
+#: ../ssh/seahorse-ssh-upload.c:133
 msgid "Configuring Secure Shell Keys..."
 msgstr "Настройка ключей SSH…"
 
@@ -2606,17 +2626,252 @@ msgstr ""
 "вас уже должна быть учётная запись на том компьютере."
 
 #: ../ssh/seahorse-ssh-upload.xml.h:4
+#| msgid "<i>eg: fileserver.example.com:port</i>"
 msgid "eg: fileserver.example.com:port"
 msgstr "например: fileserver.example.com:порт"
 
 #: ../ssh/seahorse-ssh-upload.xml.h:5
-msgid "_Server address:"
-msgstr "_Адрес сервера:"
+msgid "_Computer Name:"
+msgstr "_Имя компьютера:"
 
 #: ../ssh/seahorse-ssh-upload.xml.h:6
-msgid "_Login name:"
+msgid "_Login Name:"
 msgstr "_Учётная запись:"
 
 #: ../ssh/seahorse-ssh-upload.xml.h:7
 msgid "_Set Up"
 msgstr "_Установить"
+
+#~ msgid "<b>Password:</b>"
+#~ msgstr "<b>Пароль:</b>"
+
+#~ msgid "<b>Key Servers:</b>"
+#~ msgstr "<b>Серверы ключей:</b>"
+
+#~ msgid "Never"
+#~ msgstr "Никогда"
+
+#~ msgid "<b>Key ID:</b>"
+#~ msgstr "<b>Идентификатор ключа:</b>"
+
+#~ msgctxt "name-of-key"
+#~ msgid "<b>Name:</b>"
+#~ msgstr "<b>Имя:</b>"
+
+#~ msgid "<b>Comment:</b>"
+#~ msgstr "<b>Комментарий:</b>"
+
+#~ msgid "<b>Use:</b>"
+#~ msgstr "<b>Назначение:</b>"
+
+#~ msgid "<b>Type:</b>"
+#~ msgstr "<b>Тип:</b>"
+
+#~ msgid "<b>Key Names and Signatures</b>"
+#~ msgstr "<b>Имена и подписи ключа</b>"
+
+#~ msgid "<b>Dates</b>"
+#~ msgstr "<b>Даты</b>"
+
+#~ msgid "<b>Dates:</b>"
+#~ msgstr "<b>Даты:</b>"
+
+#~| msgid "<b>Name:</b>"
+#~ msgctxt "name-of-ssh-key"
+#~ msgid "<b>Name:</b>"
+#~ msgstr "<b>Имя:</b>"
+
+#~ msgid "<b>Trust</b>"
+#~ msgstr "<b>Доверие</b>"
+
+#~ msgid "<b>Strength:</b>"
+#~ msgstr "<b>Прочность:</b>"
+
+#~ msgid "Login keyring"
+#~ msgstr "Связка ключей уч. записи"
+
+#~ msgid "Access to the key ring was denied"
+#~ msgstr "Доступ к связке ключей запрещён"
+
+#~ msgid "The gnome-keyring daemon is not running"
+#~ msgstr "Демон gnome-keyring не запущен"
+
+#~ msgid "The key ring has already been unlocked"
+#~ msgstr "Связка ключей уже разблокирована"
+
+#~ msgid "No such key ring exists"
+#~ msgstr "Нет такой связки ключей"
+
+#~ msgid "Couldn't communicate with key ring daemon"
+#~ msgstr "Не удалось связаться со службой управления связками ключей"
+
+#~ msgid "The item already exists"
+#~ msgstr "Элемент уже существует"
+
+#~ msgid "Internal error accessing gnome-keyring"
+#~ msgstr "Произошла внутренняя ошибка при обращении к gnome-keyring"
+
+#~ msgid "Algorithms here"
+#~ msgstr "Алгоритмы"
+
+#~ msgid "Deleting item"
+#~ msgid_plural "Deleting items"
+#~ msgstr[0] "Удаление элемента"
+#~ msgstr[1] "Удаление элементов"
+#~ msgstr[2] "Удаление элементов"
+
+#~ msgid "Passwords: %s"
+#~ msgstr "Пароли: %s"
+
+#~ msgid "<b>Passwords:</b> %s"
+#~ msgstr "<b>Пароли:</b> %s"
+
+#~ msgid ""
+#~ "Lock the password storage keyring so a master password is required to "
+#~ "unlock it."
+#~ msgstr ""
+#~ "Заблокировать связку ключей для хранения паролей. Для разблокирования "
+#~ "связки ключей нужно будет ввести главный пароль."
+
+#~ msgid ""
+#~ "Unlock the password storage keyring with a master password so it is "
+#~ "available for use."
+#~ msgstr ""
+#~ "Разблокировать связку ключей для хранения паролей с помощью главного "
+#~ "пароля."
+
+#~ msgid "Couldn't delete keyring"
+#~ msgstr "Не удалось удалить связку ключей"
+
+#~ msgid "Archive files"
+#~ msgstr "Архивные файлы"
+
+#~ msgid ""
+#~ "<b>A file already exists with this name.</b>\n"
+#~ "\n"
+#~ "Do you want to replace it with a new file?"
+#~ msgstr ""
+#~ "<b>Файл с таким именем уже существует.</b>\n"
+#~ "\n"
+#~ "Заменить его новым файлом?"
+
+#~ msgid "_Replace"
+#~ msgstr "_Заменить"
+
+#~ msgid "_Sign Key..."
+#~ msgstr "Подписать _ключ…"
+
+#~ msgid "Sign public key"
+#~ msgstr "Подписать открытый ключ"
+
+#~ msgid "Are you sure you want to permanently delete %d keys and identities?"
+#~ msgstr ""
+#~ "Уверены, что хотите безвозвратно удалить %d ключей и идентификаторов??"
+
+#~ msgid "Couldn't delete public key"
+#~ msgstr "Не удалось удалить открытый ключ"
+
+#~ msgid "New PGP Key"
+#~ msgstr "Новый ключ PGP"
+
+#~ msgid "Couldn't export key to \"%s\""
+#~ msgstr "Не удалось экспортировать ключ в «%s»"
+
+#~ msgid "Export Complete Key"
+#~ msgstr "Экспортировать ключ полностью"
+
+#~ msgid "Are you sure you want to delete the certificate '%s'?"
+#~ msgstr "Уверены, что хотите безвозвратно удалить сертификат «%s»?"
+
+#~ msgid "Are you sure you want to delete %d certificate?"
+#~ msgid_plural "Are you sure you want to delete %d certificates?"
+#~ msgstr[0] "Уверены, что хотите безвозвратно удалить %d сертификат?"
+#~ msgstr[1] "Уверены, что хотите безвозвратно удалить %d сертификата?"
+#~ msgstr[2] "Уверены, что хотите безвозвратно удалить %d сертификатов?"
+
+#~ msgid "Deleting"
+#~ msgstr "Удаление"
+
+#~ msgid "Create New ..."
+#~ msgstr "Создать…"
+
+#~ msgid "Selected %d key"
+#~ msgid_plural "Selected %d keys"
+#~ msgstr[0] "Выбран %d ключ"
+#~ msgstr[1] "Выбрано %d ключа"
+#~ msgstr[2] "Выбрано %d ключей"
+
+#~ msgid "Importing keys"
+#~ msgstr "Импорт ключей"
+
+#~ msgid "Unrecognized key type, or invalid data format"
+#~ msgstr "Неизвестный тип ключа или недопустимый формат данных"
+
+#~ msgid "Importing Keys"
+#~ msgstr "Импорт ключей"
+
+#~ msgid "T_ypes"
+#~ msgstr "_Тип"
+
+#~ msgid "Show type column"
+#~ msgstr "Показать столбец типа ключа"
+
+#~ msgid "_Expiry"
+#~ msgstr "_Истекает"
+
+#~ msgid "Show expiry column"
+#~ msgstr "Показать столбец срока действия"
+
+#~ msgid "_Trust"
+#~ msgstr "_Доверие"
+
+#~ msgid "Show owner trust column"
+#~ msgstr "Показать столбец доверия владельцу"
+
+#~ msgid "_Validity"
+#~ msgstr "_Достоверность"
+
+#~ msgid "Show validity column"
+#~ msgstr "Показать столбец достоверности"
+
+#~ msgid "Other _Keys"
+#~ msgstr "Другие _ключи"
+
+#~ msgid "Validity"
+#~ msgstr "Достоверность"
+
+#~ msgid "Expiration Date"
+#~ msgstr "Истекает"
+
+#~ msgid "_Expand All"
+#~ msgstr "_Раскрыть всё"
+
+#~ msgid "Expand all listings"
+#~ msgstr "Раскрыть все списки"
+
+#~ msgid "_Collapse All"
+#~ msgstr "_Свернуть всё"
+
+#~ msgid "Collapse all listings"
+#~ msgstr "Свернуть все списки"
+
+#~ msgid "Export public key"
+#~ msgstr "Экспортировать открытый ключ"
+
+#~ msgid "Exporting keys"
+#~ msgstr "Экспорт ключей"
+
+#~ msgid "Couldn't retrieve data from key server"
+#~ msgstr "Не удалось получить данные с сервера ключей"
+
+#~ msgid "Retrieving keys"
+#~ msgstr "Получение ключей"
+
+#~ msgid "%s is a private key. Are you sure you want to proceed?"
+#~ msgstr "%s является секретным ключом. Всё равно продолжить?"
+
+#~ msgid "Couldn't delete key"
+#~ msgstr "Не удалось удалить ключ"
+
+#~ msgid "_Key Description:"
+#~ msgstr "_Описание ключа:"

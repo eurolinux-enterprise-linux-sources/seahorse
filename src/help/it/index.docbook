@@ -1,0 +1,1254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "2.28.x">
+<!ENTITY manrevision "3.1">
+<!ENTITY date "July 2005">
+<!ENTITY app "Passwords and Keys">
+<!ENTITY daemon "<application>seahorse-daemon</application>">
+<!ENTITY project "Seahorse">
+<!ENTITY key "<glossterm>key</glossterm>">
+<!ENTITY website "http://www.gnome.org/projects/seahorse/">
+]>
+<article id="index" lang="it">
+	<articleinfo>
+		<title lang="en">Passwords and Keys Manual</title>
+		<copyright lang="en">
+			<year>2005, 2006, 2007, 2008, 2009</year>
+			<holder>Jacob Perkins and Adam Schreiber</holder>
+		</copyright>
+		<publisher role="maintainer">
+			<publishername>Progetto Seahorse</publishername>
+		</publisher>
+		<!-- link to document containig the legal notice of GNU FDL  -->
+		  <legalnotice id="legalnotice">
+	<para lang="en">
+	  Permission is granted to copy, distribute and/or modify this
+	  document under the terms of the GNU Free Documentation
+	  License (GFDL), Version 1.1 or any later version published
+	  by the Free Software Foundation with no Invariant Sections,
+	  no Front-Cover Texts, and no Back-Cover Texts.  You can find
+	  a copy of the GFDL at this <ulink type="help" url="help:fdl">link</ulink> or in the file COPYING-DOCS
+	  distributed with this manual.
+         </para>
+         <para>Questo manuale fa parte di una raccolta di manuali GNOME distribuita in conformità con la GFDL. Per poter distribuire questo manuale separatamente, è necessario inserirvi una copia della licenza, come descritto nella sezione 6 della licenza.</para>
+
+	<para>Molti dei nomi usati dalle aziende per distinguere i propri prodotti e servizi sono rivendicati come marchi. Quando questi nomi compaiono nella documentazione di GNOME, e i partecipanti al GNOME Documentation Project sono consapevoli del loro utilizzo, essi vengono scritti in lettere maiuscole o con l'iniziale maiuscola.</para>
+
+	<para lang="en">
+	  DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED
+	  UNDER  THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE
+	  WITH THE FURTHER UNDERSTANDING THAT:
+
+	  <orderedlist>
+		<listitem>
+		  <para lang="en">DOCUMENT IS PROVIDED ON AN "AS IS" BASIS,
+                    WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+                    IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES
+                    THAT THE DOCUMENT OR MODIFIED VERSION OF THE
+                    DOCUMENT IS FREE OF DEFECTS MERCHANTABLE, FIT FOR
+                    A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE
+                    RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE
+                    OF THE DOCUMENT OR MODIFIED VERSION OF THE
+                    DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR
+                    MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT,
+                    YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY
+                    CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY
+                    SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER
+                    OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS
+                    LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED
+                    VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER
+                    EXCEPT UNDER THIS DISCLAIMER; AND
+		  </para>
+		</listitem>
+		<listitem>
+		  <para lang="en">UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL
+                       THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE),
+                       CONTRACT, OR OTHERWISE, SHALL THE AUTHOR,
+                       INITIAL WRITER, ANY CONTRIBUTOR, OR ANY
+                       DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION
+                       OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH
+                       PARTIES, BE LIABLE TO ANY PERSON FOR ANY
+                       DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR
+                       CONSEQUENTIAL DAMAGES OF ANY CHARACTER
+                       INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS
+                       OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR
+                       MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR
+                       LOSSES ARISING OUT OF OR RELATING TO USE OF THE
+                       DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT,
+                       EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF
+                       THE POSSIBILITY OF SUCH DAMAGES.
+		  </para>
+		</listitem>
+	  </orderedlist>
+	</para>
+  </legalnotice>
+
+
+		<authorgroup>
+			<author lang="en">
+				<firstname>Jacob</firstname>
+				<surname>Perkins</surname>
+				<affiliation>
+					<orgname>Seahorse Project</orgname>
+					<!--
+					<address>
+						<email>jap1@users.sourceforge.net</email>
+					</address>
+					-->
+				</affiliation>
+			</author>
+			<author lang="en">
+				<firstname>Adam</firstname>
+				<surname>Schreiber</surname>
+				<affiliation>
+					<orgname>Seahorse Project</orgname>
+					<address>
+						<email>sadam@clemson.edu</email>
+					</address>
+				</affiliation>
+			</author>
+			<author lang="en">
+				<firstname>Paul</firstname>
+				<surname>Cutler</surname>
+				<affiliation>
+					<orgname>GNOME Documentation Project</orgname>
+					<address>
+						<email>pcutler@foresightlinux.org</email>
+					</address>
+				</affiliation>
+			</author>
+		</authorgroup>
+		<releaseinfo revision="2.28" role="draft">
+		</releaseinfo>
+		<publisher role="maintainer">
+			<publishername>Progetto Seahorse</publishername>
+		</publisher>
+		<publisher role="maintainer">
+			<publishername lang="en">GNOME Documentation Project</publishername>
+		</publisher>
+		<revhistory>
+			<revision lang="en">
+				<revnumber>Passwords and Keys Manual V2.11.0</revnumber>
+				<date>May 2009</date>
+				<revdescription>
+					<para role="author" lang="en">
+						Paul Cutler
+						<email>pcutler@foresightlinux.org</email>
+					</para>
+				</revdescription>	
+			</revision>
+			<revision lang="en">
+				<revnumber>Passwords and Keys Manual V0.10.1</revnumber>
+				<date>August 2008</date>
+				<revdescription>
+					<para role="author" lang="en">
+						Adam Schreiber
+						<email>sadam@clemson.edu</email>
+					</para>
+				</revdescription>	
+			</revision>
+			<revision lang="en">
+				<revnumber>Passwords and Keys Manual V0.9.1</revnumber>
+				<date>November 2006</date>
+				<revdescription>
+					<para role="author" lang="en">
+						Milo Casagrande
+						<email>milo_casagrande@yahoo.it</email>
+					</para>
+				</revdescription>	
+			</revision>
+			<revision lang="en">
+				<revnumber>Passwords and Keys Manual V0.9.0</revnumber>
+				<date>July 2005</date>
+				<revdescription>
+					<para role="author" lang="en">Adam Schreiber
+						<email>sadam@clemson.edu</email>
+					</para>
+					<para role="publisher" lang="en">Seahorse Project</para>
+				</revdescription>
+			</revision>
+			<revision lang="en">
+				<revnumber>Passwords and Keys Manual V0.7.0</revnumber>
+				<date>February 2003</date>
+				<revdescription>
+					<para role="author" lang="en">Jacob Perkins
+					<!--
+					<email>jap1@users.sourceforge.net</email>
+					-->
+					</para>
+					<para role="publisher" lang="en">Seahorse Project</para>
+				</revdescription>
+			</revision>
+		</revhistory>
+		<releaseinfo lang="en">This manual describes version 2.28.x of Passwords and Keys</releaseinfo>
+		<legalnotice>
+			<title>Commenti</title>
+			<para lang="en">To report a bug or make a suggestion regarding the
+				<application>Passwords and Keys</application> application or this manual, follow the directions in the
+				<ulink url="help:gnome-feedback" type="help">Gnome Feedback Page</ulink>.
+			</para>
+		</legalnotice>
+
+		<abstract role="description">
+			<para lang="en">
+				<application>Passwords and Keys</application> is the application for managing encryption keys for the GNOME Desktop
+			</para>
+		</abstract> 		
+
+	</articleinfo>
+
+	<indexterm zone="index" lang="en">
+		<primary>Seahorse</primary>
+	</indexterm>
+
+	<indexterm zone="index" lang="en">
+		<primary>seahorse</primary>	
+	</indexterm>
+
+	<indexterm zone="index" lang="en">
+		<primary>Encryption Keys</primary>
+	</indexterm>
+	
+	<!-- ============= Introduction ============================== -->
+
+  <sect1 id="introduction">
+    <title>Introduzione</title>
+    <para lang="en">
+      You can use <application>Passwords and Keys</application> to create and  manage <acronym>PGP</acronym> and <acronym>SSH</acronym> keys.
+    </para>
+    <para lang="en">
+      <application>Passwords and Keys</application> provides a front end to many of the features of 
+      <ulink url="http://www.gnupg.org" type="http">Gnu Privacy Guard (GPG)</ulink> and 
+      integrates with multiple components of the <ulink url="http://www.gnome.org">GNOME</ulink> desktop. 
+    </para>
+			<para lang="en">
+				With <application>Passwords and Keys</application> you can:
+				<itemizedlist>
+				
+				<listitem>
+					<para lang="en">Create and manage PGP and SSH keys,</para>
+				</listitem>
+				<listitem>
+					<para lang="en">Export and import PGP and SSH keys,</para>
+				</listitem>
+				<listitem>
+					<para lang="en">Share your keys with others,</para>
+				</listitem>
+				</itemizedlist>
+			</para>
+	</sect1>
+
+	<!-- ============= Getting Started ============================== -->
+	  
+	<sect1 id="seahorse-getting-started">
+		<title>Per iniziare</title>
+		<sect2 id="seahorse-start">
+			<title lang="en">Starting <application>Passwords and Keys</application></title>
+			<para lang="en">
+				You can start <application>Passwords and Keys</application> 
+				in the following ways:
+			</para>
+			<variablelist>
+				<varlistentry>
+					<term>Menù <guimenu>Applicazioni</guimenu></term>
+					<listitem>
+						<para lang="en">Choose
+						<menuchoice>
+							<guimenu>Accessories</guimenu>
+							<guimenuitem>Password and Keys</guimenuitem>
+						</menuchoice>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Riga di comando</term>
+					<listitem>
+						<para>Digitare <command>seahorse</command> e premere <keycap>Invio</keycap>.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</sect2>
+
+		<sect2 id="seahorse-when-start">
+			<title lang="en">When You Start <application>Passwords and Keys</application></title>
+			<para lang="en">
+				When you start <application>Passwords and Keys</application>, the <guilabel>Password and Keys</guilabel>
+				window is displayed.
+			</para>
+			
+			<figure id="seahorse-window">
+			<title lang="en">The <application>Passwords and Keys</application> Window</title>
+			<screenshot>
+				<mediaobject lang="en">
+					<imageobject>
+					<imagedata fileref="figures/seahorse-window.png" format="PNG"/>
+					</imageobject>
+					<textobject>
+						<phrase>
+							Show the <application>Passwords and Keys</application> window.
+						</phrase>
+					</textobject>
+				</mediaobject>
+			</screenshot>
+			</figure>
+			
+			<para lang="en">
+				The <application>Passwords and Keys</application> window contains the following elements:
+			</para>
+			
+	    <variablelist>
+		<varlistentry><term>Barra dei menù</term>
+		    <listitem>
+			<para lang="en">The menus on the menubar contain all of the commands that you need to perform tasks in <application>Passwords and Keys</application>.</para>
+		    </listitem>
+		</varlistentry>
+		<varlistentry><term>Barra degli strumenti</term>
+		    <listitem>
+			<para>La barra degli strumenti fornisce un accesso rapido ai comandi più utilizzati.</para>
+		    </listitem>	
+		</varlistentry> 		
+		<varlistentry><term>Le schede delle chiavi e delle password</term>
+  		    <listitem>
+			<para>Consentono l'accesso alle chiavi e alle password presenti nel portachiavi.</para>
+  		    </listitem>
+		</varlistentry>
+		<varlistentry><term>Opzioni iniziali</term>
+  		    <listitem>
+			<para>Fornisce un accesso rapido ad alcune azioni per i nuovi utenti. Da qui è possibile:</para>
+			<itemizedlist>
+			    <listitem>
+				<para>sfogliare il manuale dell'applicazione,</para>
+			    </listitem>
+			    <listitem>
+				<para>importare chiavi nel portachiavi,</para>
+			    </listitem>
+			    <listitem>
+				<para>creare nuove chiavi.</para>
+			    </listitem>
+			</itemizedlist>
+		    </listitem>
+		</varlistentry>
+	    </variablelist>
+	</sect2>
+    </sect1>
+	
+	<!-- ============= Creating OpenPGP Keys ============================== -->	
+
+  <sect1 id="pgp-generate">
+    <title>Creare chiavi OpenPGP</title>
+    <para>OpenPGP è un protocollo, libero, basato su <acronym>PGP</acronym>, per la cifratura di email, che sfrutta la crittografia a chiave pubblica. OpenPGP definisce uno standard per messaggi cifrati, firme, chiavi private e certificati per lo scambio di chiavi pubbliche.</para>
+    <para>La crittografia a chiave pubblica è un concetto che implica l'uso di due chiavi: una <emphasis>chiave pubblica</emphasis>, che è possibile condividere con tutti quelli con cui si desidera comunicare, e una <emphasis>chiave privata</emphasis> che è appunto privata e deve essere tenuta segreta.</para>
+    <para lang="en">
+      To create OpenPGP keys:
+      <orderedlist>
+	<listitem>
+	  <para lang="en">
+	    Choose <menuchoice><guimenu>File</guimenu><guimenuitem>New...</guimenuitem></menuchoice>
+	  </para>
+	</listitem>
+	<listitem>
+	  <para lang="en">
+	    Select <guilabel>PGP Key</guilabel> and click <guibutton>Continue</guibutton>
+	  </para>
+	</listitem>
+	<listitem>
+	  <para lang="en">
+	    Enter your full name (first - last), your e-mail address and any additional information. 
+	    You can also specify advanced options for the key: see below. 
+	  </para>
+	</listitem>
+	<listitem>
+	  <para lang="en">
+	    Click <guibutton>Create</guibutton> to create the new key pair.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para lang="en">
+	    The <guilabel>Passphrase for New PGP Key</guilabel> dialog will open. 
+	    Enter the passphrase twice for your new key.
+	  </para>
+	</listitem>
+      </orderedlist>
+    </para>
+    <tip>
+      <para>Nello scegliere una passphrase, utilizzare le stesse tecniche per scegliere una password robusta. La differenza tra una password e una passphrase è che, in una passphrase, gli spazi sono caratteri validi.</para>				
+    </tip>
+    
+    <sect2 id="seahorse-pgp-advanced-mode">
+      <title>Opzioni avanzate</title>
+      <para>Espandere la sezione <guibutton>Opzioni avanzate</guibutton> per specificare le seguenti opzioni per una nuova chiave:</para>
+      <variablelist>
+	<varlistentry>
+	  <term lang="en"><guilabel>Encryption Type</guilabel></term>
+	  <listitem>
+	    <para>Questo campo specifica l'algoritmo di cifratura usato per generare le chiavi.</para>
+	    <variablelist>
+	      <varlistentry>
+		<term><acronym>DSA</acronym> ELGamal</term>
+		<listitem>
+		  <para>Questa è la scelta ottimale dato che consente di cifrare, decifrare, firmare e verificare come necessario.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term lang="en"><acronym>DSA</acronym></term>
+		<listitem>
+		  <para>Consente solo di firmare.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term lang="en"><acronym>RSA</acronym></term>
+		<listitem>
+		  <para>Consente solo di firmare.</para>
+		</listitem>
+	      </varlistentry>
+	    </variablelist>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>
+	  <term lang="en"><guilabel>Key Strength (bits)</guilabel></term>
+	  <listitem>
+	    <para>Questa è la lunghezza della chiave in bit. Più lunga la chiave, più sicura sarà, a patto che venga usata una passphrase robusta. Svolgere una qualsiasi azione con una chiave molto lunga richiede più tempo. Valori validi vanno da 1024 a 4096 bit. Sono raccomandati almeno 2048 bit.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>
+	  <term lang="en"><guilabel>Expiration Date</guilabel></term>
+	  <listitem>
+	    <para lang="en">
+	      This is the date at which the key will cease to be usable for 
+	      performing encryption or signing operations. 6 months is a reasonable time 
+	      to set it to. You will have to either change the 
+	      expiration date or generate a new key or subkey after this amount 
+	      of time passes.  
+	      <note>
+		<para lang="en">
+		  Sign your new key with your old one before it expires 
+		  to preserve your trust status.
+		</para>
+	      </note>
+	    </para>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </sect2>
+  </sect1>
+	
+	<!-- ============= Creating SSH Keys ============================== -->	
+	
+	<sect1 id="ssh-generate">
+	<title>Creare chiavi Secure Shell</title>
+	<para>Secure Shell (<acronym>SSH</acronym>) è un metodo con cui eseguire il login su macchine remote per eseguire dei comandi su tali macchine. Le chiavi SSH vengono utilizzate in un sistema di autenticazione basato sulle chiavi, come alternativa al sistema basato sulle password. Con tale sistema non c'è la necessità di digitare la password per l'autenticazione.</para>
+	<para>Le chiavi Secure Shell sono composte da: una <emphasis>chiave privata</emphasis>, che deve essere tenuta segreta, e una <emphasis>chiave pubblica</emphasis> che può essere caricata su qualsiasi computer sia necessario accedere.</para>
+    <para>Per creare una chiave Secure Shell:</para>
+    <orderedlist>
+      <listitem>
+        <para lang="en">Choose <menuchoice><guimenu>File</guimenu><guimenuitem>New...</guimenuitem></menuchoice></para>
+      </listitem>
+      <listitem>
+        <para>Selezionare <guilabel>Chiave Secure Shell</guilabel> e fare clic su <guibutton>Continua</guibutton></para>
+      </listitem>
+      <listitem>
+        <para>Inserire una descrizione per l'utilizzo della chiave. È possibile utilizzare il proprio indirizzo email o qualsiasi altra informazione. È anche possibile specificare delle opzioni avanzate: consultare più sotto.</para>
+      </listitem>
+      <listitem>
+        <para>Fare clic su <guibutton>Crea</guibutton> per creare la nuova chiave o <guibutton>Crea e configura</guibutton> per creare la chiave e configurare un altro computer per l'autenticazione. </para>
+      </listitem>
+      <listitem>
+        <para>Il dialogo <guilabel>Passphrase per la nuova chiave Secure Shell</guilabel> si apre. Inserire la passphrase per la nuova chiave due volte.</para>
+			<tip>
+				<para>Nello scegliere una passphrase, utilizzare le stesse tecniche per scegliere una password robusta. La differenza tra una password e una passphrase è che, in una passphrase, gli spazi sono caratteri validi.</para>				
+			</tip>
+      </listitem>
+    </orderedlist>
+    
+
+		
+		<sect2 id="seahorse-ssh-advanced-options">
+		<title>Opzioni avanzate</title>
+			<para>Espandere la sezione <guibutton>Opzioni avanzate</guibutton> per specificare le seguenti opzioni per una nuova chiave:</para>
+		
+			<variablelist>
+			<varlistentry>
+				<term lang="en"><guilabel>Encryption Type</guilabel></term>
+				<listitem>
+				<para>Questo campo indica l'algoritmo di cifratura usato per generare la chiave.</para>
+				<variablelist>
+					<varlistentry>
+						<term lang="en"><acronym>RSA</acronym></term>
+						<listitem>
+							<para>Utilizza l'algoritmo <emphasis>Rivest-ShamirAdleman</emphasis> (<acronym>RSA</acronym>) per creare la chiave SSH. È la scelta predefinita e la più sicura.</para>
+						</listitem>
+					</varlistentry>
+					<varlistentry>
+						<term lang="en"><acronym>DSA</acronym></term>
+						<listitem>
+							<para>Utilizza l'algoritmo <emphasis>Digital Signature Algorithm</emphasis> (<acronym>DSA</acronym>) per creare la chiave SSH.</para>
+						</listitem>
+					</varlistentry>
+				</variablelist>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term lang="en"><guilabel>Key Strength (bits)</guilabel></term>
+				<listitem>
+				<para>Questa è la lunghezza della chiave in bit. Più lunga la chiave, più sicura sarà, a patto che venga usata una passphrase robusta. Svolgere una qualsiasi azione con una chiave molto lunga richiede più tempo. Valori validi vanno da 1024 a 4096 bit. Sono raccomandati almeno 2048 bit.</para>
+				</listitem>
+			</varlistentry>
+			</variablelist>
+		</sect2>
+	</sect1>
+	
+	<!-- ============= OpenPGP Key Properties ============================== -->	
+
+	<sect1 id="seahorse-key-properties">
+		<title>Proprietà delle chiavi OpenPGP</title>
+		<para>Le descrizioni riportate in questa sezione si applicano a tutte le chiavi OpenPGP.</para>
+		
+		<para lang="en">
+			To view properties of a <acronym>PGP</acronym> key:
+		<itemizedlist>
+			<listitem>
+				<para lang="en">
+					Select the <acronym>PGP</acronym> key 
+					from the main window,
+				</para>
+			</listitem>
+			<listitem>
+				<para lang="en">
+					Double click on it or choose <guilabel>Properties</guilabel> 
+					from the toolbar,
+				</para> 
+			</listitem>
+			<listitem>
+				<para lang="en">
+					Select the <guilabel>Details</guilabel> tab.
+				</para>
+			</listitem>
+		</itemizedlist>
+		</para>
+
+	<sect2 id="pgp-public-key-properties">
+		<title id="pgp-private-key-properties">Proprietà</title>
+		<para>
+		<variablelist>
+			<varlistentry>
+				<term lang="en"><guilabel>Fingerprint</guilabel></term>
+				<listitem>
+					<para>L'impronta è una stringa di caratteri che identifica univocamente una chiave.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term lang="en"><guilabel>KeyID</guilabel></term>
+				<listitem>
+					<para>L'ID della chiave è simile all'impronta, ma contiene solamente gli ultimi otto caratteri dell'impronta. La maggior parte delle volte è possibile identificare una chiave solo con l'«ID chiave», ma può accadere che due chiavi abbiano lo stesso ID.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term lang="en"><guilabel>Type</guilabel></term>
+				<listitem>
+					<para>Specifica l'algoritmo di cifratura utilizzato per generare una chiave. Le chiavi generate con DSA possono solo firmare, quelle generate con ElGamal sono utilizzate per cifrare.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term lang="en"><guilabel>Created</guilabel></term>
+				<listitem>
+					<para>Indica la data in cui la chiave è stata creata.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term lang="en"><guilabel>Expires</guilabel></term>
+				<listitem>
+				<para>Indica la data in cui la chiave non può più essere usata.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term lang="en"><guilabel>Strength</guilabel></term>
+				<listitem>
+					<para lang="en">
+						Indicates the length in bits of a key.  In general the longer the key, the more security it 
+						provides.
+						<note>
+							<para lang="en">
+								A long key is not enough to make up for the use of a weak passphrase.
+							</para>
+						</note>  
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="change-owner-trust">
+		<title>Fiducia</title>
+		<para>La fiducia è un indice di quanto sicuri si è riguardo l'abilità di un'altra persona di estendere la propria rete della fiducia. Quando si incontra una chiave che non riporta la propria firma, la validità di quella chiave sarà basata sulle firme presenti su di essa e sulla fiducia riposta nelle persone che l'hanno firmata. In modo predefinito, una chiave sconosciuta necessita di tre firme con una fiducia marginale o di una firma con piena fiducia.</para>
+		<itemizedlist>
+			<listitem><para><guilabel>Sconosciuta</guilabel>: non si è a conoscenza delle capacità di firmare altre chiavi di questa persona.</para></listitem>
+			<listitem><para><guilabel>Nessuna</guilabel>: questa persona non può firmare correttamente alcuna chiave.</para></listitem>
+			<listitem><para><guilabel>Marginale</guilabel>: questa persona controlla almeno le fotografie dei documenti di identificazione, ma non controlla a fondo il documento.</para></listitem>
+			<listitem><para><guilabel>Piena</guilabel>: questa persona controlla approfonditamente i documenti di ogni persona prima di apporre la propria firma (firma solo le chiavi che appartengono alla persona che ne fa richiesta).</para></listitem>
+			<listitem><para><guilabel>Completa</guilabel>: questo livello di fiducia dovrebbe essere posto solo alle proprie chiavi.</para></listitem>
+		</itemizedlist>
+	</sect2>
+
+	<sect2 id="disable-key">
+		<title>Abilitare e disabilitare le chiavi</title>
+		<para>Quando una chiave è abilitata, è possibile utilizzarla per cifrare; quando è disabilitata non è possibile né cifrare né verificare le firme poste con essa.</para>
+	</sect2>
+
+	<sect2 id="change-expires">
+		<title>Data di scadenza</title>
+		<para>Una chiave non può essere utilizzata per svolgere nessun tipo di operazione una volta scaduta. Spostare la data di scadenza di una chiave più avanti nel tempo la riabilita. Potrebbe essere molto utile avere una chiave principale che non scade mai e molte sottochiavi, firmate dalla chiave principale, che invece scadono.</para>
+	</sect2>
+
+	<sect2 id="userid-properties">
+		<title>ID utente</title>
+		<para>Gli ID utente consentono di utilizzare più identificativi e indirizzi email con la stessa chiave.</para>
+		<para lang="en">
+			They usually take the form of: 
+			<programlisting lang="en">Name (comment) &lt;email address&gt;</programlisting>
+		</para>
+			
+		<sect3 id="add-uid">
+			<title>Aggiungere un ID utente</title>
+				<para>Aggiungere un ID utente è utile quando si desidera avere un'identità per il proprio lavoro e una per i propri conoscenti.</para>
+				<para lang="en">
+					To add a user ID to a key:
+					<itemizedlist>
+						<listitem>
+							<para lang="en">
+								Select the key from the main window,
+							</para>
+						</listitem>
+						<listitem>
+							<para lang="en">
+								Double click on it or choose <guibutton>Properties</guibutton> from the toolbar,
+							</para>
+						</listitem>
+						<listitem>
+							<para lang="en">
+								Select the <guilabel>Names and Signatures</guilabel> tab,
+							</para>
+						</listitem>
+						<listitem>
+							<para lang="en">
+								Click on <guibutton>Add Name</guibutton>.
+							</para>
+						</listitem>
+					</itemizedlist>
+				</para>
+				<para>Dopo aver seguito le istruzioni precedenti, viene presentato un dialogo con alcuni campi da completare. I campi sono descritti più sotto.</para>
+				<variablelist>
+					<varlistentry>
+						<term lang="en"><guilabel>Full Name</guilabel></term>
+						<listitem>
+							<para lang="en">
+								Enter your full name in the form
+								<programlisting lang="en">&lt;first&gt; &lt;last&gt;</programlisting>
+								A middle name or initial is optional.
+							</para>
+							<para>
+								<note>
+									<para>È necessario inserire almeno cinque caratteri in questo campo.</para>
+								</note> 
+							</para>
+						</listitem>
+					</varlistentry>
+					<varlistentry>
+						<term lang="en"><guilabel>Email Address</guilabel></term>
+						<listitem>
+							<para>Solitamente, l'indirizzo email è il metodo di ricerca più usato all'interno di un server di chiavi. Assicurarsi che sia corretto prima di continuare.</para>
+							<para>
+								<note>
+									<para lang="en">
+										It should be of the form 
+										<programlisting lang="en"><replaceable>&lt;username&gt;</replaceable>@<replaceable>&lt;domainname&gt;</replaceable></programlisting>
+									</para>
+								</note>
+							</para>
+						</listitem>
+					</varlistentry>
+					<varlistentry>
+						<term lang="en"><guilabel>Key Comment</guilabel></term>
+						<listitem>
+							<para>Il campo del commento può essere utilizzato per inserire qualsiasi altra informazione all'interno della nuova ID. Questa informazione può essere utilizzata per la ricerca nei server.</para>
+						</listitem>
+					</varlistentry>
+				</variablelist>
+			</sect3>
+		</sect2>
+
+    <sect2 id="photoid-properties">
+      <title>ID fotografici</title>
+      <para>Gli ID fotografici consentono al proprietario di una chiave di inserire una o più immagini all'interno di una chiave. Queste identità possono essere firmate come dei normali ID utente. Un ID fotografico deve essere nel formato JPEG e non più grande di 240x288 pixel.</para>
+      <para lang="en">
+	  If the chosen image is not of the required file type or size <application>Passwords and Keys</application> 
+	  can resize and convert it on the fly from 
+	  any image format supported by the <acronym>GDK</acronym> library.
+      </para>
+    </sect2>
+		
+		<sect2 id="change-passphrase">
+			<title>Cambiare la passphrase</title>
+			<para lang="en">
+				To change the passphrase assigned to a key:
+				<itemizedlist>
+					<listitem>
+						<para lang="en">
+							Select the key from the main window,
+						</para>
+					</listitem>
+					<listitem>
+						<para lang="en">
+							Double click on it or choose <guilabel>Properties</guilabel> from the toolbar,
+						</para>
+					</listitem>
+					<listitem>
+						<para lang="en">
+							Click on <guibutton>Change Passphrase</guibutton>.
+						</para>
+					</listitem>
+				</itemizedlist>
+			</para>
+			<para>Inserire la nuova passphrase e fare clic su <guibutton>Ok</guibutton>.</para>
+		</sect2>
+
+		<sect2 id="delete">
+			<title>Cancellare una chiave</title>
+			<para lang="en">
+				To delete a key from your keyring:
+				<itemizedlist>
+				<listitem>
+					<para lang="en">
+						Select the key from the main window,
+					</para>
+				</listitem>
+				<listitem>
+					<para lang="en">
+						Right click on it and choose <guilabel>Delete Key</guilabel> 
+						or choose 
+						<menuchoice>
+							<guimenu>Edit</guimenu>
+							<guimenuitem>Delete Key</guimenuitem>
+						</menuchoice>.
+					</para>
+				</listitem>
+				</itemizedlist>
+			</para>
+			<note>
+				<para>È possibile cancellare le proprie chiavi, le chiavi fidate e le chiavi collezionate.</para>		
+			</note> 
+		</sect2>
+	</sect1>
+	
+	<!-- ============= OpenPGP Properties ============================== -->	
+		
+	<sect1 id="subkey-properties">
+		<title>Proprietà delle sottochiavi OpenPGP</title>
+		<para>Ogni chiave OpenPGP possiede una chiave principale che viene utilizzata solo per firmare. Le sottochiavi sono usate per cifrare e anche per firmare. In questo modo, se la propria sottochiave viene compromessa, non è necessario revocare la chiave principale.</para>
+		<variablelist>
+		<varlistentry>
+			<term lang="en"><guilabel>ID</guilabel></term>
+			<listitem>
+				<para>Questo è l'identificativo della sottochiave.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Type</guilabel></term>
+			<listitem>
+				<para>Indica l'algoritmo di cifratura usato per generare la sottochiave. Le chiavi <acronym>DSA</acronym> possono solamente firmare, quelle ElGamal sono utilizzare per cifrare mentre quelle <acronym>RSA</acronym> sia per firmare che per cifrare.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Created</guilabel></term>
+			<listitem>
+				<para>Indica la data in cui la chiave è stata creata.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Expires</guilabel></term>
+			<listitem>
+				<para>Indica la data in cui la chiave non può più essere usata.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Status</guilabel></term>
+			<listitem>
+				<para>Indica lo stato della chiave.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Strength</guilabel></term>
+			<listitem>
+				<para lang="en">
+					Indicates the length in bits of the key. In general the longer the key, the more security it 
+					provides.
+					<note>
+						<para lang="en">
+							A long key is not enough to make up for the use of a weak passphrase.
+						</para>
+					</note>
+				</para>
+			</listitem>
+		</varlistentry>
+		</variablelist>
+		
+		<sect2 id="add-subkey">
+			<title>Aggiungere una sottochiave</title>
+			<para>Per aggiungere una sottochiave a una chiave, nella sezione <guilabel>Sottochiavi</guilabel> fare clic sul pulsante <guibutton>Aggiungi</guibutton>.</para>
+			<para>Dopo aver seguito le istruzioni precedenti, viene presentato un dialogo con alcuni campi da completare. I campi sono descritti più sotto.</para>
+			<variablelist>
+			<varlistentry>
+				<term>Tipo chiave</term>
+				<listitem>
+					<para>Indica l'algoritmo di cifratura utilizzato nel generare la sottochiave.</para>
+				<variablelist>
+				<varlistentry>
+					<term lang="en"><acronym>DSA</acronym></term>
+					<listitem>
+						<para>Utilizza l'algoritmo <emphasis>Digital Signature Algorithm</emphasis> (<acronym>DSA</acronym>) per creare la sottochiave. Questa può essere usata solo per firmare.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>ElGamal</term>
+					<listitem>
+						<para>Utilizza l'algoritmo <emphasis>ElGamal</emphasis> per creare la sottochiave. Questa può essere usata solo per cifrare.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>RSA</term>
+					<listitem>
+						<para>Utilizza l'algoritmo <emphasis>Rivest-Shamir Adleman</emphasis> (<acronym>RSA</acronym>) per creare la sottochiave. Questa può essere usata sia per firmare che per cifrare, ma è necessario creare due sottochiavi differenti.</para>
+					</listitem>
+				</varlistentry>
+				</variablelist>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Lunghezza chiave</term>
+				<listitem>
+					<para>Indica la lunghezza in bit della sottochiave. Solitamente, più lunga la chiave, più sicurezza fornisce.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Data di scadenza</term>
+				<listitem>
+					<para>Indica la data in cui la sottochiave non può più essere usata.</para>
+				</listitem>
+			</varlistentry>
+			</variablelist>
+		</sect2>
+
+		<sect2 id="change-subkey-expires">
+			<title>Cambiare la data di scadenza di un sottochiave</title>
+			<para lang="en">
+				To change a subkey expiration date, select 
+				the subkey from the <guilabel>Subkeys</guilabel> 
+				section, then:
+				<itemizedlist>
+				<listitem>
+					<para lang="en">
+						Click on the <guibutton>Expire</guibutton> button on the left,
+					</para>
+				</listitem>
+				<listitem>
+					<para lang="en">
+						From the date dialog choose the new expiration date or select
+						<guilabel>Never expires</guilabel> for no expiration date.
+					</para>
+				</listitem>
+				</itemizedlist>
+			</para>
+		</sect2>
+
+		<sect2 id="revoke-subkey">
+			<title>Revocare una sottochiave</title>
+			<para lang="en">
+				To revoke a subkey, select the subkey from the <guilabel>Subkeys</guilabel>
+				section, then:
+				<itemizedlist>
+				<listitem>
+					<para lang="en">
+						Click on the <guibutton>Revoke</guibutton> button on the left,
+					</para>
+				</listitem>
+				<listitem>
+					<para lang="en">	
+						Choose a reason why to revoke the subkey:
+					</para>
+					<para>
+					<variablelist>
+						<varlistentry>
+							<term lang="en">No Reason</term>
+							<listitem>
+								<para lang="en">
+									There isn't a specific reason to revoke the key. 
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term lang="en">Compromised</term>
+							<listitem>
+								<para lang="en">
+									The key has been compromised.
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term lang="en">Superseded</term>
+							<listitem>
+								<para lang="en">
+									The key has been superseded by another one.
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term lang="en">Not Used</term>
+							<listitem>
+								<para lang="en">
+									The key is not used anymore.
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>
+					</para>
+				</listitem>
+				<listitem>
+					<para lang="en">
+						Enter a description of why you are revoking the key,
+					</para>
+				</listitem>
+				<listitem>
+					<para lang="en">
+						Click on <guibutton>Revoke</guibutton>.
+					</para>
+				</listitem>
+				</itemizedlist>
+			</para>
+			<note>
+				<para>La revoca di una sottochiave è immediata.</para>
+			</note>
+		</sect2>
+
+		<sect2 id="delete-subkey">
+			<title>Cancellare una sottochiave</title>
+			<para lang="en">
+				To delete a subkey, select the subkey from the <guilabel>Subkeys</guilabel> 
+				section, then:
+				<itemizedlist>
+				<listitem>
+					<para lang="en">
+						Click on the <guibutton>Delete</guibutton> button on the left.
+					</para>
+				</listitem>
+				</itemizedlist>
+			</para>
+		</sect2>
+	</sect1>
+
+	<!-- ============= SSH Key Properties ============================== -->
+
+	<sect1 id="ssh-key-properties">
+	    <title>Proprietà delle chiavi Secure Shell</title>
+	    <para>Le descrizioni all'interno di questa sezione si applicano a tutte le chiavi <acronym>SSH</acronym>.</para>
+	    <para lang="en">
+	    	    To view properties of a <acronym>SSH</acronym> key:
+		<itemizedlist>
+			<listitem>
+				<para lang="en">
+					Select the Secure Shell key 
+					from the main window,
+				</para>
+			</listitem>
+			<listitem>
+				<para lang="en">
+					Double click on it or choose <guilabel>Properties</guilabel> 
+					from the toolbar,
+				</para> 
+			</listitem>
+			<listitem>
+				<para lang="en">
+					Select the <guilabel>Details</guilabel> tab.
+				</para>
+			</listitem>
+		</itemizedlist>
+	</para>
+
+	<sect2 id="properties">
+		<title>Proprietà</title>
+		<para>
+		<variablelist>
+		<varlistentry>
+			<term lang="en"><guilabel>Fingerprint</guilabel></term>
+			<listitem>
+				<para>L'impronta è una stringa di caratteri che identifica univocamente una chiave.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Algorithm</guilabel></term>
+			<listitem>
+				<para>Indica l'algoritmo di cifratura usato per generare la chiave.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Location</guilabel></term>
+			<listitem>
+				<para>Questa è la posizione in cui la <emphasis>chiave privata</emphasis> è stata salvata.</para>
+		</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term lang="en"><guilabel>Strength</guilabel></term>
+			<listitem>
+				<para lang="en">
+					Indicates the length in bits of a key. 
+					In general the longer the key, the more 
+					security it provides.
+				<note>
+					<para lang="en">
+						A long key is not enough to make up 
+						for the use of a weak passphrase.
+					</para>
+				</note>
+				</para>
+			</listitem>
+		</varlistentry>
+		</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="delete-ssh-key">
+		<title>Cancellare una chiave Secure Shell</title>
+		<para lang="en">
+			To delete a Secure Shell key: 
+			<itemizedlist>
+				<listitem>
+				<para lang="en">
+					Select the <acronym>SSH</acronym> key from the main window,
+				</para>
+			</listitem>
+			<listitem>
+				<para lang="en">
+					Right click on it and choose <guilabel>Delete key</guilabel> or choose 
+					<menuchoice>
+						<guimenu>Edit</guimenu>
+						<guimenuitem>Delete Key</guimenuitem>
+					</menuchoice>.
+				</para>
+			</listitem>
+			</itemizedlist>
+		</para>
+	</sect2>
+	</sect1>
+	
+	<!-- ============= Importing Keys ============================== -->	
+
+        <sect1 id="import">
+		<title>Importare chiavi</title>
+		<para lang="en">
+			To import keys choose
+			<menuchoice>
+				<guimenu>File</guimenu>
+				<guimenuitem>Import</guimenuitem>
+			</menuchoice> and select, from the file chooser, a file containing at least one ASCII armored public key. 
+		</para>
+		<para lang="en">
+			Importing can also be performed by pasting the keys inside <application>Passwords and Keys</application>:
+		<itemizedlist>
+		<listitem>
+			<para lang="en">
+				Select an ASCII armored public block of text,
+			</para>
+		</listitem>
+		<listitem>
+			<para lang="en">
+				Copy it to the clipboard,			
+			</para>
+		</listitem>
+		<listitem>
+			<para lang="en">
+				Choose 
+				<menuchoice>
+					<guimenu>Edit</guimenu>
+					<guimenuitem>Paste Keys</guimenuitem>
+				</menuchoice>.
+			</para>
+		</listitem>
+		</itemizedlist>
+		</para>
+	</sect1>
+	
+	<!-- ============= Exporting Keys ============================== -->	
+
+	<sect1 id="export">
+		<title>Esportare chiavi</title>
+		<para lang="en">
+			To export keys, select the keys in the main window 
+			and choose
+			<menuchoice>
+				<guimenu>File</guimenu>
+				<guimenuitem>Export</guimenuitem>
+			</menuchoice>. 
+		</para>
+		<para lang="en">
+			You can also export keys to the clipboard in an 
+			ASCII armored block of text:
+		<itemizedlist>
+			<listitem>
+				<para lang="en">
+					Select the keys in the main window,
+				</para>
+			</listitem>
+			<listitem>
+				<para lang="en">
+					Choose 
+						<menuchoice>
+							<guimenu>Edit</guimenu>
+							<guimenuitem>Copy Keys</guimenuitem>
+						</menuchoice>.
+				</para>
+			</listitem>
+		</itemizedlist>
+		</para>
+	</sect1>
+
+	
+	<!-- ============= Signing a Key ============================== -->	
+
+	<sect1 id="sign">
+		<title>Firmare una chiave</title>
+		<para>Firmare la chiave di un'altra persona significa porre della fiducia in tale persona. Prima di firmare una chiave, è necessario controllare attentamente l'impronta della chiave per accertarsi che appartenga proprio a quella persona.</para>
+		<para lang="en">
+			To sign a key in your keyring:
+			<itemizedlist>
+				<listitem>
+				<para lang="en">
+					Select the key you want to sign from the 
+					<guilabel>Trusted Keys</guilabel> or 
+					<guilabel>Other Collected Keys</guilabel> tabs,
+				</para>
+				</listitem>
+				<listitem>
+				<para lang="en">
+					Choose <guibutton>Sign</guibutton> from the toolbar 
+					or <menuchoice>
+						<guimenu>File</guimenu>
+						<guimenuitem>Sign</guimenuitem>
+					</menuchoice>,
+				</para>
+				</listitem>
+				<listitem>
+				<para lang="en">
+					Select how carefully the key has been checked,
+				</para>
+				</listitem>
+				<listitem>
+				<para lang="en">
+					Indicate if the signature should be local to your keyring, 
+					and if your signature can be revoked,
+				</para>
+				</listitem>
+				<listitem>
+				<para lang="en">
+					Click on <guibutton>Sign</guibutton>.
+				</para>
+				</listitem>
+			</itemizedlist>		
+		</para>
+	</sect1>
+	
+	<!-- ============= Preferences ============================== -->	
+  
+  <sect1 id="prefs">
+    <title>Preferenze di cifratura</title>
+    <para lang="en">
+      This section describes the preferences settable in <application>Passwords and Keys</application> by choosing 
+	<menuchoice>
+	  <guimenu>Edit</guimenu>
+	  <guimenuitem>Preferences</guimenuitem>
+	</menuchoice> from within <application>Passwords and Keys</application>.
+      </para>
+
+        <sect2 id="keyring">
+        	<title>Portachiavi</title>
+        	<sect3>
+        	    <title>Creare portachiavi</title>
+            	<para lang="en">
+            	    To create a new keyring, from the menu choose <menuchoice><guimenu>File</guimenu><guimenuitem>New</guimenuitem></menuchoice> and choose <guibutton>Password Keyring</guibutton>.  Enter a name for the new keyring, and press enter. 
+            	</para>
+        	</sect3>
+        	<sect3>
+        	    <title>Cambiare la password del portachiavi</title>
+            	<para>Per modificare la password di sblocco del portachiavi, selezionare il portachiavi desiderato e fare clic sul pulsante <guibutton>Cambia password di sblocco</guibutton>. Digitare nella casella di testo <guilabel>Vecchia password</guilabel> la vecchia password, digitare la nuova password nella casella di testo <guilabel>Password</guilabel> e confermarla in <guilabel>Conferma password</guilabel>. Per applicare le impostazioni, fare clic su <guibutton>Cambia</guibutton>. Se la vecchia password è corretta, viene visualizzato un messaggio indicante il successo dell'operazione, se la password non è corretta viene chiesto di controllarne la correttezza.</para>
+        	</sect3>
+        	<sect3>
+        	    <title>Eliminare un portachiavi</title>
+        	    <para lang="en">
+        	        To remove a keyring, first select the appropriate keyring and then 
+            	  from the menu choose <menuchoice><guimenu>Edit</guimenu> <guimenuitem>Delete</guimenuitem></menuchoice>.
+        	    </para>
+        	</sect3>
+        </sect2>
+
+    <sect2 id="key-servers">
+	<title>Server di chiavi</title>
+	<para>È utile mantenere le proprie chiavi aggiornate sincronizzandole periodicamente con un server di chiavi. In questo modo, le firme presenti sulle proprie chiavi e il web della fiducia saranno sempre aggiornati.</para>
+	<para lang="en">
+      	  <application>Passwords and Keys</application> provides support for HKP and LDAP keyservers.
+	</para>
+	<variablelist>
+	  <varlistentry>
+	    <term lang="en"><emphasis>HKP Servers</emphasis></term>
+	    <listitem>
+	      <para lang="en">
+		HKP keyservers are ordinary web based keyservers such as the 
+		popular <ulink url="hkp://pool.sks-keyservers.net" type="hkp">hkp://pool.sks-keyservers.net</ulink>, also accessible at
+		<ulink url="http://sks-keyservers.net" type="http">http://sks-keyservers.net</ulink>.
+	      </para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term lang="en"><emphasis><acronym>LDAP</acronym> Keyservers</emphasis></term>
+	    <listitem>
+	      <para>I server di chiavi <acronym>LDAP</acronym> sono meno comuni, ma utilizzano il protocollo standard LDAP. <ulink url="ldap://keyserver.pgp.com" type="ldap">ldap://keyserver.pgp.com</ulink> è un server LDAP valido.</para>
+	    </listitem>
+	  </varlistentry>
+	</variablelist>
+      </sect2>
+
+      <sect2 id="key-sharing">
+	<title>Condivisione chiavi</title>
+	<para lang="en">
+	  Key Sharing is provided by DNS-SD, also known as Bonjour or Rendevous.  
+	  Enabling key sharing will add the local <application>Passwords and Keys</application> users' public key rings 
+	  to the remote search dialog. Using these local "key servers" will most 
+	  likely be faster than accessing remote servers.
+	</para>
+      </sect2>
+  </sect1>
+  
+	<!-- ============= About ============================== -->  
+      
+    <sect1 id="about">
+    <title lang="en">About Passwords and Keys</title>
+    <para lang="en"> 
+      <application>Passwords and Keys</application>, its associated plugins, the preferences applet and the panel 
+      applet are known collectively as Seahorse. Seahorse was written by Jacob Perkins. The current 
+      maintainers are Stef Walter and Adam Schreiber. This manual is by Adam Schreiber. The project's web 
+      site was designed by Jim Pharis. To find more information about Seahorse, the project , please visit 
+      the <ulink url="http://www.gnome.org/projects/seahorse/" type="http">Seahorse web page</ulink>.
+    </para>
+    <para lang="en">
+      To report a bug or make a suggestion regarding this application or
+      this manual, follow the directions in the
+      <ulink url="help:user-guide?feedback-bugs" type="help">Feedback section of the GNOME User Guide</ulink>.
+    </para>
+    <para lang="en">
+      This program is distributed under the terms of the GNU
+      General Public license as published by the Free Software
+      Foundation; either version 2 of the License, or (at your option)
+      any later version. A 
+      <ulink url="help:gpl" type="help">copy of this license</ulink>
+      is included with this documentation; another can be found in the file
+      COPYING included with the source code of this program.
+    </para>
+  </sect1>
+</article>

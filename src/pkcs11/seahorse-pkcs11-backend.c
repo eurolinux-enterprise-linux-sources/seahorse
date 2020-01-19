@@ -14,21 +14,20 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
 
 #include "seahorse-pkcs11-backend.h"
-
 #include "seahorse-pkcs11-generate.h"
+#include "seahorse-token.h"
 
-#include "pkcs11/seahorse-pkcs11.h"
-
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-util.h"
+#include "seahorse-backend.h"
+#include "seahorse-place.h"
+#include "seahorse-util.h"
 
 #include <gcr/gcr-base.h>
 
@@ -43,8 +42,6 @@ enum {
 	PROP_DESCRIPTION,
 	PROP_ACTIONS
 };
-
-void  seahorse_pkcs11_backend_initialize (void);
 
 static SeahorsePkcs11Backend *pkcs11_backend = NULL;
 
@@ -61,6 +58,7 @@ struct _SeahorsePkcs11BackendClass {
 static const char *token_blacklist[] = {
 	"pkcs11:manufacturer=Gnome%20Keyring;serial=1:SSH:HOME",
 	"pkcs11:manufacturer=Gnome%20Keyring;serial=1:SECRET:MAIN",
+	"pkcs11:manufacturer=Gnome%20Keyring;serial=1%3aXDG%3aDEFAULT",
 	"pkcs11:manufacturer=Mozilla%20Foundation;token=NSS%20Generic%20Crypto%20Services",
 	NULL
 };
@@ -146,7 +144,7 @@ on_initialized_registered (GObject *unused,
 			if (token == NULL)
 				continue;
 			if (is_token_usable (self, s->data, token)) {
-				place = SEAHORSE_PLACE (seahorse_pkcs11_token_new (s->data));
+				place = SEAHORSE_PLACE (seahorse_token_new (s->data));
 				self->tokens = g_list_append (self->tokens, place);
 				gcr_collection_emit_added (GCR_COLLECTION (self), G_OBJECT (place));
 			}
@@ -172,50 +170,24 @@ seahorse_pkcs11_backend_constructed (GObject *obj)
 	                                         g_object_ref (self));
 }
 
-static const gchar *
-seahorse_pkcs11_backend_get_name (SeahorseBackend *backend)
-{
-	return SEAHORSE_PKCS11_NAME;
-}
-
-static const gchar *
-seahorse_pkcs11_backend_get_label (SeahorseBackend *backend)
-{
-	return _("Certificates");
-}
-
-static const gchar *
-seahorse_pkcs11_backend_get_description (SeahorseBackend *backend)
-{
-	return _("X.509 certificates and related keys");
-}
-
-static GtkActionGroup *
-seahorse_pkcs11_backend_get_actions (SeahorseBackend *backend)
-{
-	return NULL;
-}
-
 static void
 seahorse_pkcs11_backend_get_property (GObject *obj,
                                       guint prop_id,
                                       GValue *value,
                                       GParamSpec *pspec)
 {
-	SeahorseBackend *backend = SEAHORSE_BACKEND (obj);
-
 	switch (prop_id) {
 	case PROP_NAME:
-		g_value_set_string (value, seahorse_pkcs11_backend_get_name (backend));
+		g_value_set_string (value, SEAHORSE_PKCS11_NAME);
 		break;
 	case PROP_LABEL:
-		g_value_set_string (value, seahorse_pkcs11_backend_get_label (backend));
+		g_value_set_string (value, _("Certificates"));
 		break;
 	case PROP_DESCRIPTION:
-		g_value_set_string (value, seahorse_pkcs11_backend_get_description (backend));
+		g_value_set_string (value, _("X.509 certificates and related keys"));
 		break;
 	case PROP_ACTIONS:
-		g_value_take_object (value, seahorse_pkcs11_backend_get_actions (backend));
+		g_value_set_object (value, NULL);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (obj, prop_id, pspec);
@@ -309,7 +281,7 @@ seahorse_pkcs11_backend_lookup_place (SeahorseBackend *backend,
 		return NULL;
 
 	for (l = self->tokens; l != NULL; l = g_list_next (l)) {
-		if (gck_slot_match (seahorse_pkcs11_token_get_slot (l->data), uri_data))
+		if (gck_slot_match (seahorse_token_get_slot (l->data), uri_data))
 			break;
 	}
 
@@ -321,10 +293,6 @@ static void
 seahorse_pkcs11_backend_iface (SeahorseBackendIface *iface)
 {
 	iface->lookup_place = seahorse_pkcs11_backend_lookup_place;
-	iface->get_actions = seahorse_pkcs11_backend_get_actions;
-	iface->get_description = seahorse_pkcs11_backend_get_description;
-	iface->get_label = seahorse_pkcs11_backend_get_label;
-	iface->get_name = seahorse_pkcs11_backend_get_name;
 }
 
 void
@@ -352,18 +320,18 @@ static gboolean
 on_filter_writable (GObject *object,
                     gpointer user_data)
 {
-	SeahorsePkcs11Token *token = SEAHORSE_PKCS11_TOKEN (object);
+	SeahorseToken *token = SEAHORSE_TOKEN (object);
 	guint mechanism = GPOINTER_TO_UINT (user_data);
 	GckTokenInfo *info;
 
-	info = seahorse_pkcs11_token_get_info (token);
+	info = seahorse_token_get_info (token);
 	g_return_val_if_fail (info != NULL, FALSE);
 
 	if (info->flags & CKF_WRITE_PROTECTED)
 		return FALSE;
 
 	if (mechanism != G_MAXUINT) {
-		if (!seahorse_pkcs11_token_has_mechanism (token, (gulong)mechanism))
+		if (!seahorse_token_has_mechanism (token, (gulong)mechanism))
 			return FALSE;
 	}
 

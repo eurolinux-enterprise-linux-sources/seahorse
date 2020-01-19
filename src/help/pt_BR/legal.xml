@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<legalnotice id="legalnotice">
+	<para>Permissão concedida para copiar, distribuir e/ou modificar este documento sob os termos da Licença de Documentação Livre GNU (GNU Free Documentation License), Versão 1.1 ou qualquer versão mais recente publicada pela Free Software Foundation; sem Seções Invariantes, Textos de Capa Frontal, e sem Textos de Contracapa. Você pode encontrar uma cópia da licença GFDL neste <ulink type="help" url="help:fdl">link</ulink> ou no arquivo COPYING-DOCS distribuído com este manual.</para>
+         <para>Este manual é parte da coleção de manuais do GNOME distribuídos sob a GFDL. Se você quiser distribuí-lo separadamente da coleção, você pode fazê-lo adicionando ao manual uma cópia da licença, como descrito na seção 6 da licença.</para>
+
+	<para>A maioria dos nomes usados pelas empresas para distinguir seus produtos e serviços são reivindicados como marcas. Onde estes nomes aparecem em alguma documentação do GNOME, e os membros do Projeto de Documentação do GNOME estão cientes destas marcas, então os nomes estão em letras maiúsculas ou com inicial maiúscula.</para>
+
+	<para>O DOCUMENTO E VERSÕES MODIFICADAS DO MESMO SÃO FORNECIDO SOB OS TERMOS DA LICENÇA DE DOCUMENTAÇÃO LIVRE GNU (GNU FREE DOCUMENTATION LICENSE) COM O ENTENDIMENTO ADICIONAL DE QUE: <orderedlist>
+		<listitem>
+		  <para>O DOCUMENTO É FORNECIDO "NO ESTADO", SEM GARANTIA DE QUALQUER TIPO, TANTO EXPRESSA QUANTO IMPLÍCITA, INCLUINDO, SEM LIMITAÇÕES, GARANTIAS DE QUE O DOCUMENTO OU VERSÃO MODIFICADA DO MESMO É COMERCIALIZADO LIVRE DE DEFEITOS, PRÓPRIO PARA UM PROPÓSITO ESPECÍFICO OU QUE NÃO HÁ INFRAÇÕES. TODO RISCO DE QUALIDADE, PRECISÃO E PERFORMANCE DO DOCUMENTO OU VERSÃO MODIFICADA É COM VOCÊ. SE ALGUM DOCUMENTO OU VERSÃO MODIFICADA É PROVADO DEFEITUOSO EM QUALQUER ASPECTO, VOCÊ (NÃO O ESCRITOR INICIAL, AUTOR OU QUALQUER CONTRIBUIDOR) ASSUME O CUSTO DE QUALQUER SERVIÇO NECESSÁRIO, REPARO OU CORREÇÃO. ESTE AVISO DE GARANTIA CONSTITUI UMA PARTE ESSENCIAL DA LICENÇA. NENHUM USO DE QUALQUER DOCUMENTO OU VERSÃO MODIFICADA DO DOCUMENTO É AUTORIZADO EXCETO SOB ESTA CONDIÇÃO; E</para>
+		</listitem>
+		<listitem>
+		  <para>SOB NENHUMA CIRCUNSTÂNCIA E SOB NENHUMA TEORIA LEGAL, TANTO EM DANOS (INCLUINDO POR NEGLIGÊNCIA), CONTRATO OU OUTROS, DEVE O AUTOR, ESCRITOR INICIAL OU CONTRIBUIDOR OU QUALQUER DISTRIBUIDOR DO DOCUMENTO, VERSÃO MODIFICADA OU QUALQUER FORNECEDOR DE QUALQUER DESSES GRUPOS, SER CONSIDERADO RESPONSÁVEL A QUALQUER PESSOA POR QUALQUER DANO DIRETO, INDIRETO, ESPECIAL, INCIDENTAL OU CONSEQUENCIAL DE QUALQUER INDIVÍDUO, INCLUINDO, SEM LIMITAÇÕES, DANOS POR PERDA DE BOA VONTADE, PARADA DE TRABALHO, FALHA DE COMPUTADOR, MAU FUNCIONAMENTO OU QUALQUER E TODOS OS OUTROS DANOS OU PERDAS RESULTANTES OU RELACIONADAS AO USO DO DOCUMENTO E VERSÕES MODIFICADAS, MESMO QUE ESSE GRUPO TENHA SIDO INFORMADO DA POSSIBILIDADE DE TAIS DANOS.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>

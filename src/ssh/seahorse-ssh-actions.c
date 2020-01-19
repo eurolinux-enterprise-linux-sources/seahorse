@@ -15,8 +15,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see
- * <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -26,13 +27,16 @@
 #include "seahorse-ssh-dialogs.h"
 #include "seahorse-ssh-operation.h"
 
-#include "seahorse-common.h"
-
-#include "libseahorse/seahorse-object.h"
-#include "libseahorse/seahorse-object-list.h"
-#include "libseahorse/seahorse-util.h"
+#include "seahorse-action.h"
+#include "seahorse-actions.h"
+#include "seahorse-delete-dialog.h"
+#include "seahorse-object.h"
+#include "seahorse-object-list.h"
+#include "seahorse-registry.h"
+#include "seahorse-util.h"
 
 #include <glib/gi18n.h>
+
 #include <glib.h>
 #include <glib-object.h>
 
@@ -87,7 +91,6 @@ on_ssh_upload (GtkAction* action,
 		}
 		g_list_free (objects);
 	}
-	g_object_unref (catalog);
 
 	seahorse_ssh_upload_prompt (keys, seahorse_action_get_window (action));
 	g_list_free (keys);
