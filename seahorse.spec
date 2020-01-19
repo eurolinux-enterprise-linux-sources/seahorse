@@ -1,6 +1,6 @@
 Name:		seahorse
 Version:	3.8.2
-Release:	1%{?dist}
+Release:	3%{?dist}
 Summary:	A GNOME application for managing encryption keys
 Group:		User Interface/Desktops
 # seahorse is GPLv2+
@@ -128,6 +128,12 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %{_datadir}/glib-2.0/schemas/*.gschema.xml
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 3.8.2-3
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 3.8.2-2
+- Mass rebuild 2013-12-27
+
 * Tue May 14 2013 Richard Hughes <rhughes@redhat.com> - 3.8.2-1
 - Update to 3.8.2
 
